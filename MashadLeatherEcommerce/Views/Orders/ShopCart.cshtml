@@ -1,0 +1,216 @@
+﻿
+
+@{
+    ViewBag.Title = "سبد خرید | فروشگاه اینترنتی چرم مشهد";
+    Layout = "~/Views/Shared/FrontEndLayout/_FrontEndLayout.cshtml";
+}
+
+<!-- Page title -->
+<section id="page-title" data-parallax-image="/images/mashad-faq-img.jpg">
+    <div class="container">
+        <div class="page-title">
+            <h1>@Resources.Label.yourBasket</h1>
+            <span>@Resources.Label.ProductInformation</span>
+        </div>
+
+    </div>
+</section>
+<!-- end: Page title -->
+<!-- SHOP CART -->
+<section id="shop-cart-empty">
+    <div class="container">
+        <div class="p-t-10 m-b-20 text-center">
+            <div class="heading-fancy heading-line text-center">
+                <h4>@Resources.Label.EmptyBasket</h4>
+            </div>
+            <a class="btn btn-default icon-left" href="/productCategory/list"><span>@Resources.Label.ReturnToStore</span></a>
+        </div>
+    </div>
+</section>
+<section id="shop-cart">
+    <div class="container">
+        <div class="shop-cart">
+            <div class="table table-condensed table-striped table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="cart-product-remove"></th>
+                            <th class="cart-product-thumbnail">@Resources.Label.Product</th>
+                            <th class="cart-product-color">@Resources.Label.Color</th>
+                            <th class="cart-product-size">@Resources.Label.Size</th>
+                            <th class="cart-product-price">@Resources.Label.Price</th>
+                            <th class="cart-product-quantity">@Resources.Label.Qty</th>
+                            @*<th class="cart-product-subtotal">مجموع</th>*@
+                        </tr>
+                    </thead>
+                    <tbody id="rows"></tbody>
+                </table>
+            </div>
+            <div class="col-md-4 text-center">
+                <button type="button" class="btn btn-default icon-left float-right" onclick="UpdateBasket()" id="btnUpdateBasket">@Resources.Label.UpdateBasket</button>
+                <img id="updateLoadingImg" src="~/images/loading.gif" />
+            </div>
+            <div class="row">
+                <hr class="space">
+                <div class="col-md-6 p-r-10 ">
+                    <div class="table-responsive">
+                        <h4>@Resources.Label.TotalAmount</h4>
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td class="cart-product-name">
+                                        <strong>@Resources.Label.OrderSum</strong>
+                                    </td>
+
+                                    <td class="cart-product-name text-right">
+                                        <span id="orderAmount" class="amount"></span> @Resources.Label.Rial
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="cart-product-name">
+                                        <strong>@Resources.Label.SheepmentPrice</strong>
+                                    </td>
+
+                                    <td class="cart-product-name  text-right">
+                                        <span id="shippmentAmount" class="amount"></span>@Resources.Label.Rial
+                                    </td>
+                                </tr>
+                            <tr>
+                                <td class="cart-product-name">
+                                    <strong>@Resources.Label.discountPrice</strong>
+                                </td>
+
+                                <td class="cart-product-name  text-right">
+                                    <span id="DiscountAmount" class="amount"></span>@Resources.Label.Rial
+                                </td>
+                            </tr>
+
+                                <tr>
+                                    <td class="cart-product-name">
+                                        <strong>@Resources.Label.TotalPayment</strong>
+                                    </td>
+
+                                    <td class="cart-product-name text-right">
+                                        <span id="total" class="amount color lead"> </span>@Resources.Label.Rial
+                                    </td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+
+                    </div>
+                    <div class="alert alert-success" id="successOrder">
+                        سفارش شما با موفقیت ثبت گردید؛ <br />
+                        در حال انتقال به سایت بانک
+                        &nbsp;&nbsp;<img src="/images/loading_dots.gif" width="50" />
+                        @ViewBag.result
+                    </div>
+                    <div class="alert alert-danger" id="errorOrder"> </div>
+                </div>
+
+                <div class="col-md-6">
+                    <h4>@Resources.Label.CustomerInfo</h4>
+                    <div class="row customerInfo">
+                        <div class="col-md-12 m-b-20"></div>
+
+                        <div class="col-md-6 form-group">
+                            <input type="text" placeholder="@Resources.Label.FirstName *" class="form-control" id="txtFirstName">
+                        </div>
+
+                        <div class="col-md-6  form-group">
+                            <input type="text" class="form-control" placeholder="@Resources.Label.LastName *" id="txtLastName">
+                        </div>
+
+                        <div class="col-md-6 form-group">
+                            <input type="text" placeholder="@Resources.Label.CellNumber *" class="form-control" id="txtCellNumber">
+                        </div>
+
+                        <div class="col-md-6 form-group">
+                            <input type="text" placeholder="@Resources.Label.Email *" class="form-control" id="txtEmail">
+                        </div>
+
+                        @using (Html.BeginForm())
+                        {
+                            <div class="col-md-6  form-group">
+                                @Html.DropDownList("provinceId", null, new { @id = "ddlProvince" })
+                            </div>
+
+                            <div class="col-md-5  form-group">
+                                <select id="ddlCity" name="cityId" style="width: 200px"></select>
+                            </div>
+
+                        }
+
+                        <div class="col-md-12 m-b-20">
+                            <input type="text" class="form-control" placeholder="@Resources.Label.Address *" id="txtAddress">
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <input type="text" placeholder="@Resources.Label.Phone" class="form-control" id="txtPhone">
+                        </div>
+
+                        <div class="col-md-6 form-group">
+                            <input type="text" placeholder="@Resources.Label.PostalCode" class="form-control" id="txtPostalCode">
+                        </div>
+                        <div class="col-md-12 m-b-20 policy">
+                            <input type="checkbox" class="form-control" id="chkPolicy">
+                            <label for="chkPolicy">
+                                <a href="/privacy">
+                                    @Resources.Label.Policy
+
+                                </a>
+                                @Resources.Label.PolicyRead
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+                <div class="col-md-4 text-center">
+                    <select id="payment-gateway">
+                        <option value="mellat">درگاه پرداخت بانک ملت</option>
+                        <option value="saman">درگاه پرداخت سامان کیش</option>
+                    </select>
+                    <img id="loadingImg" src="~/images/loading.gif" />
+                </div>
+                <div class="col-md-4 text-center">
+                    <button type="button" onclick="FinalizeOrder();" id="btnFinalizeOrder" class="btn btn-default icon-left float-right"><span>@Resources.Label.Finlize</span></button>
+                    <img id="loadingImg" src="~/images/loading.gif" />
+                </div>
+              
+                <div class="modal fade" id="myModal" role="dialog" tabindex="-1"  aria-labelledby="myModalLabel" data-backdrop="false">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">ارسال کالا</h4>
+                            </div>
+                            <div class="modal-body">
+	                            <p>
+		                            <b>جهت حفظ سلامتی مشتریان عزیز در این ایام تعویض و مرجوع کردن کالا امکان پذیر نمیباشد</b>
+																با سپاس از انتخاب شما، با توجه به حجم بالای سفارشات اینترنتی در زمان جشنواره، سفارشات تهران بسته به ساعت ثبت سفارش، حداکثر تا ۲ روز آتی و سفارشات شهرستان بسته به مسافت، حداکثر تا ۴ روز بعد تقدیم می‌گردد.
+	                            </p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="redirectToBank();">متوجه شدم</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end: SHOP CART -->
+<!-- DELIVERY INFO -->
+@Html.Partial("FrontEndLayout/_MiniFooter")
+<!-- end: DELIVERY INFO -->
+
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            LoadOrders();
+        });
+    </script>
+}

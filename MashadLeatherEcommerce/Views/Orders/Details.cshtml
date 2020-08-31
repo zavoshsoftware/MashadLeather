@@ -1,0 +1,191 @@
+﻿@model ViewModels.OrderDetailViewModel
+
+
+<div class="col-md-6">
+    <div class="panel panel-primary">
+        <div class="panel-heading">اطلاعات سفارش</div>
+        <div class="panel-body">
+            <div class="alert alert-success" id="succesChangeStatus">وضعیت سفارش با موفقیت تغییر پیدا کرد</div>
+            <div class="alert alert-danger" id="errorChangeStatus">در انجام عملیات خطایی رخ داده است. لطفا مجدد تلاش کنید.</div>
+            <div class="row">
+                <div class="col-md-4">تاریخ سفارش</div>
+                <div class="col-md-8">@Model.Order.CreationDate</div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">کد سفارش</div>
+                <div class="col-md-8">@Model.Order.Code</div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">مبلغ کل سفارش</div>
+                <div class="col-md-8">@string.Format("{0:#,#}", Model.Order.TotalAmount) </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-4">کد رهگیری پرداخت</div>
+                <div class="col-md-8">@Model.Order.SaleReferenceId</div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-4">درگاه پرداخت بانک</div>
+                <div class="col-md-8">@Model.Order.BankName</div>
+            </div>
+
+            <div class="row status-box">
+                <div class="col-md-4">وضعیت سفارش</div>
+                <div class="col-md-8">@Model.Order.OrderStatus.Title <i class="fa fa-edit" onclick="changeStatusTogle();"></i> </div>
+            </div>
+
+            <div class="row" id="status-change">
+                <div class="col-md-4">@Html.DropDownList("OrderStatusId", null, String.Empty, new { id = "ddlStatus" })</div>
+                <div class="col-md-8"> <input type="button" onclick="changeStatus();" id="btnChangeStatus" value="تغییر وضعیت سفارش" class="btn btn-success" /> </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<div class="col-md-6">
+    <div class="panel panel-primary">
+        <div class="panel-heading">اطلاعات مشتری</div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-4">نام مشتری</div>
+                <div class="col-md-8">@Model.Order.User.FirstName</div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">نام خانوادگی</div>
+                <div class="col-md-8">@Model.Order.User.LastName</div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">شماره موبایل</div>
+                <div class="col-md-8">@Model.Order.User.CellNum</div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">تاریخ ثبت نام</div>
+                <div class="col-md-8">@Model.Order.User.CreationDate</div>
+            </div>
+
+            @if (@Model.Order.CityId != null)
+            {
+                <div class="row">
+                    <div class="col-md-4">استان</div>
+                    <div class="col-md-8">@Model.Order.City.Province.Title </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-4">شهر</div>
+                    <div class="col-md-8">@Model.Order.City.Title </div>
+                </div>
+            }
+
+            <div class="row">
+                <div class="col-md-4">آدرس</div>
+                <div class="col-md-8">@Model.Order.Address </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">ایمیل</div>
+                <div class="col-md-8">@Model.Order.User.Email </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-4">کد پستی</div>
+                <div class="col-md-8">@Model.Order.User.PostalCode </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-12">
+    <table class="table orderdetailtable table-bordered">
+        <thead>
+            <tr>
+                <th>نام کالا</th>
+                <th>فی</th>
+                <th>تعداد</th>
+                <th>رنگ</th>
+                <th>سایز</th>
+                <th>جمع کل</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.OrderDetails)
+            {
+            <tr>
+                <td>
+                    @item.Product.Title
+                </td>
+
+                <td>
+                    @string.Format("{0:#,#}", item.Price)
+                </td>
+                <td>
+                    @item.Quantity
+                </td>
+                <td>
+                    @if (item.Product.ColorId != null)
+                    {
+                        @item.Product.Color.Title
+                    }
+                   
+                </td>
+                <td>
+                    @if (item.Product.SizeId != null)
+                        {
+                        @item.Product.Size.Title
+                        }
+                </td>
+                <td>
+                    @string.Format("{0:#,#}", item.Amount)
+                </td>
+
+            </tr>
+            }
+
+
+        </tbody>
+
+    </table>
+</div>
+
+
+
+@section scripts{
+    <script type="text/javascript">
+        function changeStatusTogle() {
+            $('#status-change').slideToggle();
+        }
+
+        function changeStatus() {
+            var statusId = $('#ddlStatus').val();
+
+            var pathname = window.location.pathname.split("/");
+            var orderId = pathname[pathname.length - 1];
+
+            $.ajax(
+                {
+                    url: "/Orders/ChangeStatus",
+                    data: { orderId: orderId, statusId: statusId },
+                    type: "GET"
+
+                }).done(function (result) {
+
+                if (result === 'true') {
+                    $('#succesChangeStatus').css('display', 'block');
+                    $('#errorChangeStatus').css('display', 'none');
+
+                } else {
+                    $('#succesChangeStatus').css('display', 'none');
+                    $('#errorChangeStatus').css('display', 'block');
+                }
+
+
+            });
+        }
+    </script>
+}

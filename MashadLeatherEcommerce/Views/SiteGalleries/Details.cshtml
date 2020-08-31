@@ -1,0 +1,40 @@
+﻿@model ViewModels.GalleryDetailViewModel
+
+	@{
+			Layout = "~/Views/Shared/FrontEndLayout/_FrontEndLayout.cshtml";
+			ViewBag.Canonical = "https://www.mashadleather.com/gallery/" + Model.Gallery.SiteGalleryGroup.UrlParam+"/"+ Model.Gallery.UrlParam;
+			ViewBag.Title = Model.Gallery.Title;
+	}
+
+
+<section id="page-title" data-parallax-image="/images/newsheader.jpg">
+	<div id="particles-js" class="particles" style="background: none"></div>
+	
+	<div class="container">
+		<div class="page-title">
+			<h1>@Model.Gallery.TitleSrt</h1>
+
+		</div>
+
+	</div>
+</section>
+
+<section id="page-content">
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			
+	
+
+			<video width="100%" controls>
+				<source src="@Model.Gallery.FileAddress" type="video/mp4">Your browser does not support HTML5 video.
+			</video>
+		</div>
+	</div>
+</div>
+	</section>
+	
+@section scripts{
+	<script src="~/Scripts/UI/plugins/components/particles-animation.js"></script>
+	<script src="~/Scripts/UI/plugins/components/particles.js"></script>
+}

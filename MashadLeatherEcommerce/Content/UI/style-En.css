@@ -1,0 +1,79 @@
+﻿body {
+}
+.price-en {
+    font: normal normal normal 16px/1 FontAwesome !important;
+    margin-bottom: 8px !important;
+    margin-right: 5px;
+    font-family: FontAwesome;
+}
+.topbar-dropdown .dropdown-list
+{
+    text-align:right !important;
+}
+.product .product-price ins, .product .product-price del {
+    font: normal normal normal 16px/1 FontAwesome !important;
+    margin-bottom: 8px !important;
+    margin-right: 5px;
+}
+.icon-box.small > p {
+    direction: ltr;
+    text-align: left;
+}
+.icon-box.small > h3 {
+    text-align: left;
+    direction: ltr;
+    margin-left: 0;
+}
+.branch-section h3{
+    direction: ltr;
+    text-align: left;
+}
+
+.product-description p, .icon-box, .product .product-category {
+    direction: ltr;
+    text-align: left;
+}
+
+.product .product-title h3, .product .product-title h3 a {
+    direction: ltr;
+    text-align: left;
+}
+
+.product .product-price {
+    float: right;
+}
+
+
+.icon-box.small > h3 {
+    margin: 0 12px 4px 60px;
+}
+.icon-box.small > p {
+    margin: 0 0 20px 60px;
+}
+#header #header-wrap #logo {
+    float: left;
+
+}
+#header .header-extras {
+    float: right;
+}
+#mainMenu nav > ul > li {
+    float: left;
+}
+#header #mainMenu-trigger button {
+    float: left;
+}
+#mainMenu nav > ul > li .dropdown-menu > li > a
+{
+    text-align:left;
+    direction:ltr;
+}
+#mainMenu nav > ul > li .dropdown-submenu::before {
+    left: unset;
+    right: 18px;
+    content: "\f105";
+}
+#mainMenu nav > ul > li .dropdown-submenu > .dropdown-menu {
+    left: 100%;
+    right:unset;
+}

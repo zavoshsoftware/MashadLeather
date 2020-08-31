@@ -1,0 +1,40 @@
+﻿@model ViewModels.TextViewModel
+@{
+    ViewBag.Title = "قوانین و مقررات خرید از روشگاه اینترنتی چرم مشهد";
+    Layout = "~/Views/Shared/FrontEndLayout/_FrontEndLayout.cshtml";
+	ViewBag.Canonical = "https://www.mashadleather.com/privacy";
+}
+
+
+<section id="page-title" data-parallax-image="/images/mashad-faq-img.jpg">
+    <div class="container">
+        <div class="page-title">
+            <h1>@Model.Text.Title</h1>
+            <span>قوانین</span>
+        </div>
+
+    </div>
+</section>
+<section>
+    <div class="container">
+        <div class="row  m-b-50">
+            <div class="col-md-3">
+                <div class="heading heading text-left">
+                    <h2>@Model.Text.Title</h2>
+
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-md-12 rtl-paragragh">
+                        @Html.Raw(Model.Text.BodySrt)
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+

@@ -1,0 +1,25 @@
+﻿@model ViewModels.CustomerClubViewModel
+@{
+		ViewBag.Title =  Model.CustomerClub.TitleSrt;
+		ViewBag.Description = "شرکت چرم مشهد به پاس قدردانی از اعتماد مشتریان وفادار خود و جلب رضایت هر چه بیشتر آنان، اقدام به راه اندازی مجدد باشگاه مشتریان نموده است. هدف از معرفی این باشگاه، ارتقاء سطح بهره مندی مشتریان گرانقدر از مزایا و امتیازات و ایجاد بستر مناسب جهت ارتباط صمیمانه با اعضای خانواده بزرگ چرم مشهد است.";
+		ViewBag.Canonical = "https://www.mashadleather.com/customerclub";
+		Layout = "~/Views/Shared/FrontEndLayout/_FrontEndLayout.cshtml";
+}
+
+
+<section id="page-title" data-parallax-image="@Model.CustomerClub.ImageUrl">
+	<div class="container">
+		<div class="page-title">
+			<h1>@Model.CustomerClub.TitleSrt</h1>
+		</div>
+	</div>
+</section>
+<section>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				@Html.Raw(Model.CustomerClub.BodySrt)
+			</div>
+		</div>
+	</div>
+</section>

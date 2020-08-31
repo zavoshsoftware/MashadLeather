@@ -1,0 +1,348 @@
+﻿@model Models.Product
+
+@{
+    ViewBag.Title = "ویرایش " + Server.HtmlDecode(Html.DisplayNameFor(model => model).ToString());
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Edit", "Products", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <hr />
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.Id)
+    @Html.HiddenFor(model => model.ParentId)
+    @Html.HiddenFor(model => model.SizeId)
+    @Html.HiddenFor(model => model.ColorId)
+    @Html.HiddenFor(model => model.Barcode)
+    @Html.HiddenFor(model => model.KiyanCreateDate)
+    @Html.HiddenFor(model => model.Quantity) 
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Title, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Title)
+            @Html.ValidationMessageFor(model => model.Title)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.TitleEn, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.TitleEn)
+            @Html.ValidationMessageFor(model => model.TitleEn)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.TitleAr, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.TitleAr)
+            @Html.ValidationMessageFor(model => model.TitleAr)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Priority, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Priority)
+            @Html.ValidationMessageFor(model => model.Priority)
+        </div>
+    </div>
+    @if (Model.ParentId == null)
+    {
+        <div class="form-group">
+            @Html.LabelFor(model => model.ImageUrl, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.Kendo().Upload().Name("fileUpload").Multiple(false)
+                @Html.HiddenFor(model => model.ImageUrl)
+                @Html.ValidationMessageFor(model => model.ImageUrl)
+            </div>
+        </div>
+    }
+    @if (Model.ParentId != null)
+    {
+        <div class="form-group">
+            @Html.LabelFor(model => model.Size.Title, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("SizeId", null, new { @disabled = "disabled" })
+                @Html.ValidationMessageFor(model => model.Size)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Color.Title, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("ColorId", null, new { @disabled = "disabled" })
+                @Html.ValidationMessageFor(model => model.Size)
+            </div>
+        </div>
+    }
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Amount, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Amount)
+            @Html.ValidationMessageFor(model => model.Amount)
+        </div>
+    </div>
+    @if (Model.ParentId == null)
+    {
+        <div class="form-group">
+            @Html.LabelFor(model => model.ProductCategory.Title, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @*@Html.DropDownList("ParentProductCategoryId", null, new { @id = "ddlParentProductCategory" })*@
+                @*@if (Model.ProductCategoryId != null)
+                    {*@
+                @Html.DropDownList("ProductCategoryId", null, new { @id = "ddlProductCategory" })
+                @*@Html.DropDownList("SubProductCategoryId", null, new { @id = "ddlSubProductCategory" })*@
+                @*}*@
+                @*else
+                     {
+                         <select id="ddlProductCategory" name="ddlProductCategory" style="width: 200px"></select>
+                         <select id="ddlSubProductCategory" name="ddlSubProductCategory" style="width: 200px"></select>
+                     }
+
+
+                    <select id="ddlProductCategory" name="ddlProductCategory" style="width: 200px"></select>*@
+                @Html.ValidationMessageFor(model => model.ProductCategoryId)
+            </div>
+        </div>
+
+    }
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Taxable, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Taxable)
+            @Html.ValidationMessageFor(model => model.Taxable)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Barcode, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(model => model.Barcode, new { @disabled = "disabled" })
+            @Html.ValidationMessageFor(model => model.Barcode)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.KiyanCreateDate, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(model => model.KiyanCreateDate, new { disabled = "disabled" })
+            @Html.ValidationMessageFor(model => model.KiyanCreateDate)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.KiyanName, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.KiyanName)
+            @Html.ValidationMessageFor(model => model.KiyanName)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Quantity, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Quantity, new { htmlAttributes = new { disabled = "disabled" } })
+            @Html.ValidationMessageFor(model => model.Quantity)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.DiscountAmount, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.DiscountAmount)
+            @Html.ValidationMessageFor(model => model.DiscountAmount)
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.IsInPromotion, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.IsInPromotion)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.KiyanId, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.KiyanId)
+            @Html.ValidationMessageFor(model => model.KiyanId)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.IsInHome, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.IsInHome)
+            @Html.ValidationMessageFor(model => model.IsInHome)
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.IsMostSale, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.IsMostSale)
+            @Html.ValidationMessageFor(model => model.IsMostSale)
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.HasTag, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.HasTag)
+            @Html.ValidationMessageFor(model => model.HasTag)
+        </div>
+    </div>
+	
+	
+<div class="form-group">
+	@Html.LabelFor(model => model.TagTitle, new { @class = "control-label col-md-2" })
+	<div class="col-md-10">
+		@Html.EditorFor(model => model.TagTitle)
+		@Html.ValidationMessageFor(model => model.TagTitle)
+	</div>
+</div>
+
+<div class="form-group">
+	@Html.LabelFor(model => model.TagTitleEn, new { @class = "control-label col-md-2" })
+	<div class="col-md-10">
+		@Html.EditorFor(model => model.TagTitleEn)
+		@Html.ValidationMessageFor(model => model.TagTitleEn)
+	</div>
+</div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.TagTitleAr, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.TagTitleAr)
+            @Html.ValidationMessageFor(model => model.TagTitleAr)
+        </div>
+    </div>
+
+
+<div class="form-group">
+        @Html.LabelFor(model => model.IsActive, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.IsActive)
+            @Html.ValidationMessageFor(model => model.IsActive)
+        </div>
+    </div>
+
+    @Html.HiddenFor(model => model.CreationDate)
+    <div class="form-group">
+        @Html.LabelFor(model => model.Description, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextAreaFor(model => model.Description, new { @class = "multilinetextbox" })
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.DescriptionEn, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextAreaFor(model => model.DescriptionEn, new { @class = "multilinetextbox" })
+            @Html.ValidationMessageFor(model => model.DescriptionEn)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.DescriptionAr, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextAreaFor(model => model.DescriptionAr, new { @class = "multilinetextbox" })
+            @Html.ValidationMessageFor(model => model.DescriptionAr)
+        </div>
+    </div>
+
+    <div class="form-group" id="buttons">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="ثبت" class="btn btn-primary" />
+            @Html.ActionLink("بازگشت به فهرست", "Index", new { id = ViewBag.Id })
+        </div>
+    </div>
+</div>
+}
+@section scripts{
+    @*<script>
+       $(document).ready(function () {
+           $("#ddlSubProductCategory").css('display', 'none');
+           //$("#ddlProductCategory").css('display', 'none');
+       });
+       $('#ddlParentProductCategory').on('change',
+           function () {
+               var SelectedValue = $(this).val(); // < added test values
+               if (SelectedValue !== "") {
+                   $("#ddlProductCategory").css('display', 'block');
+                   var procemessage = "<option value='0'> صبرکنید...</option>";
+                   $("#ddlProductCategory").html(procemessage).show();
+                   $.ajax(
+                       {
+                           url: "/Products/FillProductCategories",
+                           data: { id: SelectedValue },
+                           cache: false,
+                           type: "POST",
+                           success: function (data) {
+                               if (data.length == 0)
+                               {
+                                   $("#ddlProductCategory").css('display', 'none');
+                               }
+                               else
+                               {
+                                   var markup = "<option value='0'>انتخاب زیرگروه محصول</option>";
+                                   for (var x = 0; x < data.length; x++) {
+                                       markup += "<option value=" + data[x].Value + ">" + data[x].Text + "</option>";
+                                   }
+                                   $("#ddlProductCategory").html(markup).show();
+                               }
+                           
+                           },
+                           error: function (reponse) {
+                               alert("error : " + reponse);
+                           }
+                       });
+       
+               }
+           });
+       
+       
+       $('#ddlProductCategory').on('change',
+           function () {
+               var SelectedValue = $(this).val(); // < added test values
+               if (SelectedValue !== "") {
+                   $("#ddlSubProductCategory").css('display', 'block');
+                   var procemessage = "<option value='0'> صبرکنید...</option>";
+                   $("#ddlSubProductCategory").html(procemessage).show();
+                   $.ajax(
+                       {
+                           url: "/Products/FillProductCategories",
+                           data: { id: SelectedValue },
+                           cache: false,
+                           type: "POST",
+                           success: function (data) {
+                               if (data.length == 0) {
+                                   $("#ddlSubProductCategory").css('display', 'none');
+                               }
+                               else {
+                                   var markup = "<option value='0'>انتخاب زیرگروه محصول</option>";
+                                   for (var x = 0; x < data.length; x++) {
+                                       markup += "<option value=" + data[x].Value + ">" + data[x].Text + "</option>";
+                                   }
+                                   $("#ddlSubProductCategory").html(markup).show();
+                               }
+       
+                           },
+                           error: function (reponse) {
+                               alert("error : " + reponse);
+                           }
+                       });
+       
+               }
+           });
+        </script>*@
+}

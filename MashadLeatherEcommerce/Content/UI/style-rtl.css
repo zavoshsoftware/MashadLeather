@@ -1,0 +1,486 @@
+﻿body {
+}
+
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: normal;
+    src: url('/fonts/IranSans/eot/IRANSansWeb.eot');
+    src: url('/fonts/IranSans/eot/IRANSansWeb.eot?#iefix') format('embedded-opentype'), /* IE6-8 */
+    url('/fonts/IranSans/woff2/IRANSansWeb.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/
+    url('/fonts/IranSans/woff/IRANSansWeb.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('/fonts/IranSans/ttf/IRANSansWeb.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'IRANSansWeb';
+    src: url('/fonts/IranSans/eot/IRANSansWeb(FaNum).eot') format('embedded-opentype');
+    src: url('/fonts/IranSans/ttf/IRANSansWeb(FaNum).ttf') format('truetype');
+    src: url('/fonts/IranSans/woff/IRANSansWeb(FaNum).woff') format('woff');
+    src: url('../../fonts/IranSans/woff2/IRANSansWeb(FaNum).woff2') format('woff2');
+}
+
+
+.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+    float: right;
+}
+
+.icon-box {
+    direction: rtl;
+    text-align: right;
+}
+
+#successMessage, #successOrder, #errorOrder, #errorMessage {
+    display: none;
+    direction: rtl;
+    text-align: right;
+}
+
+.shop-cart h4 {
+    direction: rtl;
+    text-align: right;
+    font-family: IRANSans;
+}
+
+.customerInfo input {
+    text-align: right;
+    direction: rtl;
+}
+
+.product .product-title h3, .product .product-title h3 a {
+    text-align: right;
+    direction: rtl;
+}
+
+.login-page input, .login-page p, .recoverypass-page p, .recoverypass-page input {
+    text-align: right
+}
+
+.login-page .panel-body h3 {
+    text-align: center;
+}
+
+.product .product-title h3, .product .product-title h3 a {
+    font-size: 14px;
+}
+
+.product .product-price {
+    width: 36%;
+    font-size: 13px;
+}
+
+    .product .product-price ins, .product .product-price del, .shop-cart .amount, .shop-cart .size {
+        font-size: 15px;
+        font-family: IRANSansWeb;
+    }
+
+#loadingImg {
+    display: none;
+}
+
+.product .product-category {
+    text-align: right;
+}
+
+.portfolio-share h4 {
+    text-align: right;
+}
+
+.quick-view-content h6 {
+    text-align: right;
+}
+
+.cart-product-quantity .quantity {
+    text-align: right;
+}
+
+.multilinetextbox {
+    height: 150px;
+    width: 300px;
+}
+
+.product-description p {
+    text-align: right;
+    direction: rtl;
+}
+
+.policy {
+    text-align: right;
+    direction: rtl;
+}
+
+    .policy input {
+        display: inline;
+        width: 35px;
+    }
+
+    .policy label a {
+        text-decoration: underline;
+    }
+
+.shop-cart .cart-product-thumbnail > a {
+    float: right;
+    margin-left: 12px;
+    margin-right: 0;
+}
+
+.orderdetailtable th {
+    text-align: right;
+}
+
+#status-change {
+    display: none;
+}
+
+.status-box .col-md-8 i {
+    cursor: pointer;
+}
+
+#succesChangeStatus, #errorChangeStatus {
+    display: none;
+}
+
+#updateLoadingImg {
+    display: none;
+}
+
+.shop-cart .cart-product-thumbnail .cart-product-thumbnail-name {
+    float: right;
+}
+
+.shop-cart .cart-product-thumbnail img {
+    float: right;
+}
+
+.shop-cart .cart-product-thumbnail > a {
+    width: 100%;
+}
+
+.product-size {
+    margin-right: 0;
+}
+
+    .product-size li {
+        float: right;
+    }
+
+.register-page input.form-control,
+.register-page h3, .other-link {
+    text-align: right !important;
+    direction: rtl;
+}
+
+.likeList {
+    border: 2px solid #333 !important;
+    border-radius: 50% !important;
+    height: 30px !important;
+    left: 12px !important;
+    line-height: 28px !important;
+    position: absolute !important;
+    text-align: center !important;
+    top: 12px !important;
+    width: 30px !important;
+    z-index: -1 !important;
+    opacity: 1 !important;
+    color: RGB(228, 10, 20);
+    display: block !important;
+}
+
+.dir-rtl {
+    direction: rtl;
+    text-align: right;
+}
+
+.first-btn {
+    margin-bottom: 0px;
+}
+
+.logo-xs {
+}
+
+    .logo-xs a {
+        float: right;
+    }
+
+    .logo-xs img {
+        width: 150px !important;
+    }
+
+.rtl-comment {
+    border-top: none !important;
+}
+
+.comment_number {
+    direction: rtl;
+    text-align: right;
+}
+/*.comment-list
+{
+    direction:rtl;
+    text-align:justify;
+}*/
+.respond-comment {
+    direction: rtl;
+    text-align: right;
+}
+
+.rtl-paragragh {
+    direction: rtl;
+    text-align: justify;
+}
+
+.comments .comment .text {
+    padding: 0 50px 0 40px;
+}
+
+.comments .comment .comment {
+    margin-right: 90px;
+    margin-left: 0px;
+}
+
+.comments .comment .image {
+    float: right;
+    margin-left: 20px;
+}
+
+.comment_number {
+    font-family: IRANSans;
+}
+
+#errorDiv, #SuccessDiv {
+    display: none;
+}
+
+.underline-text {
+    text-decoration: underline;
+}
+
+
+
+.wrapper-dropdown {
+    position: relative;
+    width: 100%;
+    background: #FFF;
+    color: #2e2e2e;
+    outline: none;
+    cursor: pointer;
+    direction: rtl;
+    text-align: right;
+}
+
+    .wrapper-dropdown > span {
+        width: 10%;
+        display: block;
+        border: 1px solid #ababab;
+        padding: 5px;
+        float: right;
+        margin-top: 5px;
+    }
+
+        .wrapper-dropdown > span > span {
+            padding: 0 12px;
+            margin-right: 5px;
+        }
+
+    /*.wrapper-dropdown > ul li span:after {
+            content: "";
+            width: 0;
+            height: 0;
+            position: absolute;
+            right: 16px;
+            top: calc(50% + 4px);
+            margin-top: -6px;
+            border-width: 6px 6px 0 6px;
+            border-style: solid;
+            border-color: #2e2e2e transparent;
+        }*/
+
+    .wrapper-dropdown .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        font-weight: normal;
+        list-style-type: none;
+        padding-left: 0;
+        margin: 0;
+        border: 1px solid #ababab;
+        border-top: 0;
+    }
+
+        .wrapper-dropdown .dropdown-menu li {
+            display: block;
+            text-decoration: none;
+            color: #2e2e2e;
+            padding: 5px;
+            cursor: pointer;
+            direction: rtl;
+            text-align: right;
+        }
+
+            .wrapper-dropdown .dropdown-menu li span.hex-color {
+                padding: 0 12px;
+                margin-right: 5px;
+                margin-left: 5px;
+            }
+
+            .wrapper-dropdown .dropdown-menu li:hover {
+                background: #eee;
+                cursor: pointer;
+            }
+
+.green-badge {
+    background-color: #4bb543;
+    float: left;
+}
+
+.img-zoom-container {
+    position: relative;
+}
+
+.img-zoom-lens {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    /*set the size of the lens:*/
+    width: 40px;
+    height: 40px;
+}
+
+.img-zoom-result {
+    border: 1px solid #d4d4d4;
+    /*set the size of the result div:*/
+    width: 300px;
+    height: 300px;
+}
+
+.modal {
+    top: 100px;
+}
+
+.modal-body p {
+    direction: rtl;
+    text-align: right;
+}
+
+
+.post-item .post-item-description > h2 {
+    direction: rtl;
+    text-align: right;
+}
+.post-item .post-item-description > p {
+    direction: rtl;
+    text-align: right;
+}
+
+.item-link i {
+    right: 5px;
+}
+
+#tabs-01 .widget-title-blog {
+    direction: rtl;
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.post-thumbnail-list .post-thumbnail-entry > img {
+    float: right;
+    margin-right: 0;
+    margin-left: 10px;
+}
+
+.sidebar .widget .post-thumbnail-list .post-thumbnail-entry img + .post-thumbnail-content {
+    padding-left: 0;
+    padding-right: 72px;
+    direction: rtl;
+    text-align: right;
+}
+
+.post-thumbnail-entry {
+    float: right;
+}
+
+.single-post .post-item .post-item-description > h2,
+.single-post .post-item .post-item-description > h3  {
+    direction: rtl;
+    text-align: right;
+}
+
+ .single-post .post-item .post-item-description > p {
+    direction: rtl;
+    text-align: justify;
+}
+
+#header #mainMenu-trigger button {
+    float: right;
+}
+
+#header .header-extras > ul > li {
+    margin-left: 0;
+    margin-right: 15px;
+}
+
+.about-main-text div {
+    direction: rtl;
+}
+
+.branch-section table {
+    direction: rtl;
+}
+.branch-section table th {
+   text-align: right
+}
+.branch-section h3 {
+    direction: rtl;
+    text-align: right
+}
+
+.contact-section {
+    direction: rtl;
+}
+
+ul .single-dropdown-menu {
+    right: 0 !important;
+}
+
+@media screen and (max-width: 1199px) {
+    #mainMenu nav > ul > li > a {
+        padding: 11px 4px;
+    }
+}
+
+.tp-caption {
+    direction: rtl;
+    font-family: iransans !important;
+}
+.order-tracking p {
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+.order-tracking form{
+    padding:0;
+}
+
+#trackingDetail {
+    display: none;
+}
+
+@media (max-width: 575px) {
+
+    .tables td {
+        padding: 1px !important;
+        text-align: center;
+        font-size: 0.85em;
+    }
+    .tables .btn {
+        padding :5px;
+        padding-left:11px;
+    }
+
+}
+
+.about-main-text {
+    direction: rtl;
+    text-align: justify;
+}

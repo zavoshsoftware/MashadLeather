@@ -1,0 +1,102 @@
+﻿@model IEnumerable<Models.Product>
+
+@{
+    ViewBag.Title = "فهرست ";
+
+}
+
+<h2>@ViewBag.Title</h2>
+@using (Html.BeginForm("Migration", "Products", FormMethod.Post))
+{
+    <button type="submit" class="btn btn-primary">همگام سازی محصولات با سرور</button>
+}
+
+
+
+@using (Html.BeginForm("Promotion10", "Products", FormMethod.Post))
+{
+	<button type="submit" class="btn btn-warning">اعمال تخفیف 10 درصدی برای محصولات</button>
+}
+
+@using (Html.BeginForm("Promotion15", "Products", FormMethod.Post))
+{
+    <button type="submit" class="btn btn-warning">اعمال تخفیف 15 درصدی برای محصولات</button>
+}
+
+
+@using (Html.BeginForm("Promotion20", "Products", FormMethod.Post))
+{
+    <button type="submit" class="btn btn-warning">اعمال تخفیف 20 درصدی برای محصولات</button>
+}
+
+
+
+<a href="/products/configurepromotion" class="btn btn-warning">اعمال پروموشن کیان برای محصولات</a>
+
+
+@(Html.Kendo().Grid(Model)
+              .Name("Grid")
+              .Columns(columns =>
+              {
+              columns.Bound(model => model.Barcode);
+              columns.Bound(model => model.Title);
+              columns.Bound(model => model.ProductCategory.Title);
+              columns.Bound(model => model.ImageUrl)
+                  .Template(@<text><img src="@item.ImageUrl" height="100px" /></text>);
+                  columns.Bound(model => model.Amount);
+                  columns.Bound(model => model.IsInHome);
+                  columns.Bound(model => model.IsActive);
+                  if (ViewBag.ParentId != null)
+                  {
+                      columns.Bound(model => model.Size.Title);
+
+                      columns.Bound(model => model.Color.Title);
+                  }
+
+
+                  columns.Bound(item => @item.Id).Title("دستورات").Filterable(false).Groupable(false)
+                        .Template(@<text>
+                    @Html.ActionLink("ویرایش", "Edit", new { id = @item.Id }, new { @class = "k-button" })
+                    @if (item.ParentId == null)
+                    {
+                        @Html.ActionLink("مشاهده رنگ ها و سایزها", "Index", new { id = @item.Id }, new { @class = "k-button" })
+                        @Html.ActionLink("مدیریت تصاویر", "Index", "ProductImages", new { id = @item.Id }, new { @class = "k-button" })
+                    }
+
+
+                    @Html.ActionLink("حذف", "Delete", new { id = @item.Id }, new { @class = "k-button" })
+
+                    <input type="button" value="مشاهده آدرس اختصاصی صفحه" onclick="CopyTo('@item.Code');" class="k-button" />
+                        </text>).Width(200);
+              })
+        //.ToolBar(toolbar =>
+        //{
+        //    toolbar.Custom().Action("Create", "Products").Text("افزودن");
+        //}
+        //)
+        .DataSource(dataSource => dataSource
+                                    .Server()
+                            .PageSize(15)
+                                    .Model(model => model.Id(item => item.Id))
+                    ).Pageable().Filterable()
+)
+
+
+@if (ViewBag.Id != null)
+{
+    <a href="/Products">بازگشت به فهرست</a>
+}
+
+
+@section scripts{
+    <script type="text/javascript">
+        function CopyTo(id) {
+
+
+					var addressUrl = 'https://www.mashadleather.com/product-detail/' + id;
+
+
+            alert("آدرس صفحه: " + addressUrl);
+        }
+    </script>
+}

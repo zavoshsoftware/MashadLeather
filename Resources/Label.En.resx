@@ -1,0 +1,430 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="Address1" xml:space="preserve">
+    <value>Tehran, Valiasr Avn., Attefi alley </value>
+  </data>
+  <data name="Address2" xml:space="preserve">
+    <value>Number 100, 5th floor</value>
+  </data>
+  <data name="Address3" xml:space="preserve">
+    <value>Mashhad, Janbaz Square, Pag Building
+</value>
+  </data>
+  <data name="Address4" xml:space="preserve">
+    <value>Office Building No. 2, 9th Floor, Unit 911</value>
+  </data>
+  <data name="addtobasket" xml:space="preserve">
+    <value>add to basket</value>
+  </data>
+  <data name="Branches" xml:space="preserve">
+    <value>Branches</value>
+  </data>
+  <data name="BuyGuid" xml:space="preserve">
+    <value>Buy Guideline</value>
+  </data>
+  <data name="CellNumber" xml:space="preserve">
+    <value>CellNumber</value>
+  </data>
+  <data name="ChooseColor" xml:space="preserve">
+    <value>Select Color</value>
+  </data>
+  <data name="ChooseSize" xml:space="preserve">
+    <value>Select Size</value>
+  </data>
+  <data name="Color" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+  <data name="ComonQuestions" xml:space="preserve">
+    <value>FAQ</value>
+  </data>
+  <data name="ContactInfo" xml:space="preserve">
+    <value>Contact Info</value>
+  </data>
+  <data name="ContactUs" xml:space="preserve">
+    <value>Contact Us</value>
+  </data>
+  <data name="CustomerClub" xml:space="preserve">
+    <value>Customer Club</value>
+  </data>
+  <data name="CustomerInfo" xml:space="preserve">
+    <value>Customer Information</value>
+  </data>
+  <data name="CustomerService" xml:space="preserve">
+    <value>Customer Services</value>
+  </data>
+  <data name="CustomerServiceDesc" xml:space="preserve">
+    <value>we care about your issues</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="EmptyBasket" xml:space="preserve">
+    <value>Basket is empty</value>
+  </data>
+  <data name="Finlize" xml:space="preserve">
+    <value>Finalize Shoping</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>FirstName</value>
+  </data>
+  <data name="FreeShipping" xml:space="preserve">
+    <value>Free Shipping</value>
+  </data>
+  <data name="FreeShippingDesc" xml:space="preserve">
+    <value>For more than 300,000 Toman Orders</value>
+  </data>
+  <data name="Gallery" xml:space="preserve">
+    <value>Gallery</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="InsertNewsletter" xml:space="preserve">
+    <value>Insert email or phone number</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>LastName</value>
+  </data>
+  <data name="LatestProductsandEvents" xml:space="preserve">
+    <value>LATEST PRODUCTS AND EVENTS NEWS</value>
+  </data>
+  <data name="MashadLeather" xml:space="preserve">
+    <value>Mashad Leather</value>
+  </data>
+  <data name="MashadLeatherStore" xml:space="preserve">
+    <value>Mashad Leather Store</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="News" xml:space="preserve">
+    <value>News</value>
+  </data>
+  <data name="newsletterJoin" xml:space="preserve">
+    <value>By subscribing to our newsletter, check out the latest offer sooner than other</value>
+  </data>
+  <data name="OrderSum" xml:space="preserve">
+    <value>Sum of order</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="Policy" xml:space="preserve">
+    <value>Policy</value>
+  </data>
+  <data name="PolicyRead" xml:space="preserve">
+    <value>read and accept by me</value>
+  </data>
+  <data name="PostalCode" xml:space="preserve">
+    <value>PostalCode</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="Product" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="ProductInformation" xml:space="preserve">
+    <value>Products Information</value>
+  </data>
+  <data name="ProductReturn" xml:space="preserve">
+    <value>Free Return</value>
+  </data>
+  <data name="ProductReturnDesc" xml:space="preserve">
+    <value>with 24 hours and changing with 6 days</value>
+  </data>
+  <data name="Products" xml:space="preserve">
+    <value>Products</value>
+  </data>
+  <data name="Qty" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="QuickAccess" xml:space="preserve">
+    <value>Quick Access</value>
+  </data>
+  <data name="QuickView" xml:space="preserve">
+    <value>Quick View</value>
+  </data>
+  <data name="Response" xml:space="preserve">
+    <value>Response</value>
+  </data>
+  <data name="ReturnToStore" xml:space="preserve">
+    <value>Return To Store</value>
+  </data>
+  <data name="Rial" xml:space="preserve">
+    <value>Rial</value>
+  </data>
+  <data name="SecondColor" xml:space="preserve">
+    <value>Second Color</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Send</value>
+  </data>
+  <data name="ShareProduct" xml:space="preserve">
+    <value>Share Product</value>
+  </data>
+  <data name="SheepmentPrice" xml:space="preserve">
+    <value>Sheepment Price</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="Stores" xml:space="preserve">
+    <value>Stores</value>
+  </data>
+  <data name="StoresDesc" xml:space="preserve">
+    <value>find us on the map</value>
+  </data>
+  <data name="Success_AddToBasket" xml:space="preserve">
+    <value>This item has been successfully added to the cart. Click here to view the shopping cart and finalize the purchase.</value>
+  </data>
+  <data name="TotalAmount" xml:space="preserve">
+    <value>Total Amount</value>
+  </data>
+  <data name="TotalPayment" xml:space="preserve">
+    <value>Total Payment</value>
+  </data>
+  <data name="UpdateBasket" xml:space="preserve">
+    <value>Update Basket</value>
+  </data>
+  <data name="WorkTime" xml:space="preserve">
+    <value>Saturday - Wednesday :</value>
+  </data>
+  <data name="you" xml:space="preserve">
+    <value>you</value>
+  </data>
+  <data name="yourBasket" xml:space="preserve">
+    <value>your Basket</value>
+  </data>
+  <data name="discountPrice" xml:space="preserve">
+    <value>discount</value>
+  </data>
+  <data name="Blog" xml:space="preserve">
+    <value>Blog</value>
+  </data>
+  <data name="article" xml:space="preserve">
+    <value>Article</value>
+  </data>
+  <data name="BestsellingProducts" xml:space="preserve">
+    <value>Bestselling Products</value>
+  </data>
+  <data name="CustomerClubPrivacy" xml:space="preserve">
+    <value>Privacy</value>
+  </data>
+  <data name="CustomerClubProfile" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="history" xml:space="preserve">
+    <value>Order List</value>
+  </data>
+  <data name="OrderTracking" xml:space="preserve">
+    <value>Order Tracking</value>
+  </data>
+  <data name="RecentProducts" xml:space="preserve">
+    <value>New Collection</value>
+  </data>
+  <data name="AboutUs" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="AddressMap" xml:space="preserve">
+    <value>Address And Map</value>
+  </data>
+  <data name="BranchInfo" xml:space="preserve">
+    <value>Contact information of Mashad leather branches</value>
+  </data>
+  <data name="BranchName" xml:space="preserve">
+    <value>Branch Name</value>
+  </data>
+  <data name="CallYou" xml:space="preserve">
+    <value>Our colleagues will contact you as soon as possible.</value>
+  </data>
+  <data name="EnterEmail" xml:space="preserve">
+    <value>Please enter your email</value>
+  </data>
+  <data name="EnterMobile" xml:space="preserve">
+    <value>Please enter your mobile phone</value>
+  </data>
+  <data name="FactoryAddress" xml:space="preserve">
+    <value>Factory Address</value>
+  </data>
+  <data name="GoogleMap" xml:space="preserve">
+    <value>Google Map</value>
+  </data>
+  <data name="Honors" xml:space="preserve">
+    <value>Among the honors of Mashhad leather</value>
+  </data>
+  <data name="MashadLeatherBranches" xml:space="preserve">
+    <value>Mashad Leather Branches</value>
+  </data>
+  <data name="MashadOfficeAddress" xml:space="preserve">
+    <value>Mashad Office Address</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="Mobile" xml:space="preserve">
+    <value>Mobile</value>
+  </data>
+  <data name="OnlineStorePhone" xml:space="preserve">
+    <value>Online Store Phone</value>
+  </data>
+  <data name="OtherMembers" xml:space="preserve">
+    <value>Other members of Mashhad Industrial Group</value>
+  </data>
+  <data name="Routing" xml:space="preserve">
+    <value>Routing</value>
+  </data>
+  <data name="SelectColor" xml:space="preserve">
+    <value>Select Color</value>
+  </data>
+  <data name="Subject_Name" xml:space="preserve">
+    <value>Subject/Name</value>
+  </data>
+  <data name="Success_Message" xml:space="preserve">
+    <value>Your message has been successfully sent.</value>
+  </data>
+  <data name="TehranOffice" xml:space="preserve">
+    <value>Tehran Office</value>
+  </data>
+  <data name="Thanks" xml:space="preserve">
+    <value>Thanks</value>
+  </data>
+  <data name="MashadLeatherGallery" xml:space="preserve">
+    <value>Mashad Leather Gallery</value>
+  </data>
+  <data name="OtherBlogContent" xml:space="preserve">
+    <value>Other Blog Content</value>
+  </data>
+  <data name="ReadMore" xml:space="preserve">
+    <value>Read More</value>
+  </data>
+  <data name="OrganizationalSales" xml:space="preserve">
+    <value>Organizational Sales</value>
+  </data>
+</root>

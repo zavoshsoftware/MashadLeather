@@ -1,0 +1,67 @@
+﻿@model ViewModels.BlogListViewModel
+
+@{
+		ViewBag.Title = Model.BlogGroup.TitleSrt +" چرم مشهد";
+		Layout = "~/Views/Shared/FrontEndLayout/_FrontEndLayout.cshtml";
+		ViewBag.Canonical = "https://www.mashadleather.com/blog/" + Model.BlogGroup.UrlParam;
+}
+
+
+<section id="page-title" data-parallax-image="/images/newsheader.jpg" style="background-color:#7391ac; min-height:550px;">
+	<div id="particles-js" class="particles" style="background: none"></div>
+	<div class="container">
+		<div class="page-title">
+			<h1 style="font-size:@ViewBag.FontSize !important;">@Model.BlogGroup.TitleSrt @Resources.Label.MashadLeather</h1>
+		</div>
+	</div>
+</section>
+
+
+@*<section id="page-title" data-parallax-image="/images/mashad-faq-img.jpg">
+		<div class="container">
+			<div class="page-title">
+				<h1 style="font-size:@ViewBag.FontSize !important;">وبلاگ چرم مشهد</h1>
+			</div>
+		</div>
+	</section>*@
+<section id="page-content">
+	<div class="container-fluid">
+
+		<div id="blog" class="grid-layout post-4-columns m-b-30 " data-item="post-item">
+			@foreach (var blog in Model.Blogs)
+			{
+
+				<div class="post-item border">
+					<div class="post-item-wrap">
+						<div class="post-image">
+							<a href="/blog/@blog.BlogGroup.UrlParam/@blog.UrlParam">
+								<img alt="@blog.TitleSrt" src="https://www.mashadleather.com/@blog.ImageUrl" height="200px">
+							</a>
+
+						</div>
+						<div class="post-item-description">
+							<span class="post-meta-date"><i class="fa fa-calendar-o"></i>@blog.CreationDate.ToShortDateString()</span>
+							<h2>
+								<a href="/blog/@blog.BlogGroup.UrlParam/@blog.UrlParam">@blog.TitleSrt</a>
+							</h2>
+							<p>@blog.SummerySrt</p>
+
+							<a href="/blog/@blog.BlogGroup.UrlParam/@blog.UrlParam" class="item-link"><i class="fa fa-arrow-left"></i>@Resources.Label.ReadMore</a>
+
+						</div>
+					</div>
+				</div>
+
+			}
+		</div>
+
+
+	</div>
+	<!-- end: post content -->
+
+</section>
+
+@section scripts{
+	<script src="~/Scripts/UI/plugins/components/particles-animation.js"></script>
+	<script src="~/Scripts/UI/plugins/components/particles.js"></script>
+}

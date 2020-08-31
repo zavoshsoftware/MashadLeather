@@ -1,0 +1,429 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>درباره چرم مشهد</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>آدرس</value>
+  </data>
+  <data name="Address1" xml:space="preserve">
+    <value>تهران، خیابان ولیعصر، خیابان شهید عاطفی</value>
+  </data>
+  <data name="Address2" xml:space="preserve">
+    <value>پلاک 100 طبقه پنجم</value>
+  </data>
+  <data name="Address3" xml:space="preserve">
+    <value>مشهد - میدان جانباز - ساختمان پاژ</value>
+  </data>
+  <data name="Address4" xml:space="preserve">
+    <value>ساختمان اداری شماره 2 - طبقه 9 - واحد 911</value>
+  </data>
+  <data name="addtobasket" xml:space="preserve">
+    <value>افزودن به سبد خرید</value>
+  </data>
+  <data name="Branches" xml:space="preserve">
+    <value>شعب</value>
+  </data>
+  <data name="BuyGuid" xml:space="preserve">
+    <value>راهنمای خرید</value>
+  </data>
+  <data name="CellNumber" xml:space="preserve">
+    <value>موبایل</value>
+  </data>
+  <data name="ChooseColor" xml:space="preserve">
+    <value>انتخاب رنگ</value>
+  </data>
+  <data name="ChooseSize" xml:space="preserve">
+    <value>انتخاب سایز</value>
+  </data>
+  <data name="Color" xml:space="preserve">
+    <value>رنگ</value>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>یادداشت</value>
+  </data>
+  <data name="ComonQuestions" xml:space="preserve">
+    <value>سوالات متداول</value>
+  </data>
+  <data name="ContactInfo" xml:space="preserve">
+    <value>اطلاعات تماس</value>
+  </data>
+  <data name="ContactUs" xml:space="preserve">
+    <value>تماس با ما</value>
+  </data>
+  <data name="CustomerClub" xml:space="preserve">
+    <value>باشگاه مشتریان</value>
+  </data>
+  <data name="CustomerInfo" xml:space="preserve">
+    <value>اطلاعات مشتری</value>
+  </data>
+  <data name="CustomerService" xml:space="preserve">
+    <value>خدمات مشتریان</value>
+  </data>
+  <data name="CustomerServiceDesc" xml:space="preserve">
+    <value>پاسخگوی تمامی پرسش های شما</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>ایمیل</value>
+  </data>
+  <data name="EmptyBasket" xml:space="preserve">
+    <value>سبد خرید شما خالی می باشد</value>
+  </data>
+  <data name="Finlize" xml:space="preserve">
+    <value>نهایی کردن خرید آنلاین</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>نام</value>
+  </data>
+  <data name="FreeShipping" xml:space="preserve">
+    <value>ارسال رایگان به سراسر ایران</value>
+  </data>
+  <data name="FreeShippingDesc" xml:space="preserve">
+    <value>برای سفارشات بالای 300 هزار تومان</value>
+  </data>
+  <data name="Gallery" xml:space="preserve">
+    <value>گالری</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>صفحه اصلی</value>
+  </data>
+  <data name="InsertNewsletter" xml:space="preserve">
+    <value>ایمیل یا تلفن خود را وارد کنید</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>نام خانوادگی</value>
+  </data>
+  <data name="LatestProductsandEvents" xml:space="preserve">
+    <value>اطلاع از آخرین محصولات و رویداد ها</value>
+  </data>
+  <data name="MashadLeather" xml:space="preserve">
+    <value>چرم مشهد</value>
+  </data>
+  <data name="MashadLeatherStore" xml:space="preserve">
+    <value>فروشگاه اینترنتی چرم مشهد</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>نام و نام خانوادگی</value>
+  </data>
+  <data name="News" xml:space="preserve">
+    <value>اخبار</value>
+  </data>
+  <data name="newsletterJoin" xml:space="preserve">
+    <value>با عضویت در خبر نامه ما از آخرین آفر های فصلی زود تر از بقیه با خبر شوید</value>
+  </data>
+  <data name="OrderSum" xml:space="preserve">
+    <value>جمع فاکتور</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>تلفن ثابت</value>
+  </data>
+  <data name="Policy" xml:space="preserve">
+    <value>قوانین و مقررات</value>
+  </data>
+  <data name="PolicyRead" xml:space="preserve">
+    <value>سایت را مطالعه کرده ام و قبول دارم.</value>
+  </data>
+  <data name="PostalCode" xml:space="preserve">
+    <value>کد پستی</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>قیمت واحد</value>
+  </data>
+  <data name="Product" xml:space="preserve">
+    <value>محصول</value>
+  </data>
+  <data name="ProductInformation" xml:space="preserve">
+    <value>اطلاعات محصولات</value>
+  </data>
+  <data name="ProductReturn" xml:space="preserve">
+    <value>بازگشت کالا</value>
+  </data>
+  <data name="ProductReturnDesc" xml:space="preserve">
+    <value>جهت حفظ سلامتی مشتریان عزیز در این ایام تعویض و مرجوع کردن کالا امکان پذیر نمیباشد</value>
+  </data>
+  <data name="Products" xml:space="preserve">
+    <value>فروشگاه اینترنتی</value>
+  </data>
+  <data name="Qty" xml:space="preserve">
+    <value>تعداد</value>
+  </data>
+  <data name="QuickAccess" xml:space="preserve">
+    <value>دسترسی سریع</value>
+  </data>
+  <data name="QuickView" xml:space="preserve">
+    <value>مشاهده سریع</value>
+  </data>
+  <data name="Response" xml:space="preserve">
+    <value>پاسخ</value>
+  </data>
+  <data name="ReturnToStore" xml:space="preserve">
+    <value>بازگشت به فروشگاه</value>
+  </data>
+  <data name="Rial" xml:space="preserve">
+    <value>ریال</value>
+  </data>
+  <data name="SecondColor" xml:space="preserve">
+    <value>رنگ دوم</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>ارسال</value>
+  </data>
+  <data name="ShareProduct" xml:space="preserve">
+    <value>به اشتراک گذاری محصول</value>
+  </data>
+  <data name="SheepmentPrice" xml:space="preserve">
+    <value>هزینه ارسال</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>سایز</value>
+  </data>
+  <data name="Stores" xml:space="preserve">
+    <value>فروشگاه ها</value>
+  </data>
+  <data name="StoresDesc" xml:space="preserve">
+    <value>نمایندگی های ما را بر روی نقشه بیابید</value>
+  </data>
+  <data name="Success_AddToBasket" xml:space="preserve">
+    <value>این کالا با موفقیت به سبد خرید افزوده شد. جهت مشاهده سبد خرید و نهایی سازی خرید اینجا را کلیک کنید.</value>
+  </data>
+  <data name="TotalAmount" xml:space="preserve">
+    <value>مجموع هزینه ها</value>
+  </data>
+  <data name="TotalPayment" xml:space="preserve">
+    <value>مجموع قابل پرداخت</value>
+  </data>
+  <data name="UpdateBasket" xml:space="preserve">
+    <value>بروزرسانی سبد خرید</value>
+  </data>
+  <data name="WorkTime" xml:space="preserve">
+    <value>شنبه تا پنجشنبه:</value>
+  </data>
+  <data name="you" xml:space="preserve">
+    <value>شما</value>
+  </data>
+  <data name="yourBasket" xml:space="preserve">
+    <value>سبد خرید شما</value>
+  </data>
+  <data name="discountPrice" xml:space="preserve">
+    <value>تخفیف</value>
+  </data>
+  <data name="Blog" xml:space="preserve">
+    <value>وبلاگ</value>
+  </data>
+  <data name="article" xml:space="preserve">
+    <value>مقالات</value>
+  </data>
+  <data name="BestsellingProducts" xml:space="preserve">
+    <value>پرفروش ترین محصولات</value>
+  </data>
+  <data name="CustomerClubPrivacy" xml:space="preserve">
+    <value>قوانین باشگاه مشتریان</value>
+  </data>
+  <data name="CustomerClubProfile" xml:space="preserve">
+    <value>مشاهده پروفایل</value>
+  </data>
+  <data name="history" xml:space="preserve">
+    <value>لیست سفارشات</value>
+  </data>
+  <data name="OrderTracking" xml:space="preserve">
+    <value>پیگیری سفارش</value>
+  </data>
+  <data name="RecentProducts" xml:space="preserve">
+    <value>جدیدترین محصولات</value>
+  </data>
+  <data name="AboutUs" xml:space="preserve">
+    <value>درباره</value>
+  </data>
+  <data name="AddressMap" xml:space="preserve">
+    <value>آدرس و نقشه</value>
+  </data>
+  <data name="BranchInfo" xml:space="preserve">
+    <value>اطلاعات تماس شعب چرم مشهد</value>
+  </data>
+  <data name="BranchName" xml:space="preserve">
+    <value>نام شعبه</value>
+  </data>
+  <data name="CallYou" xml:space="preserve">
+    <value>همکاران ما در اسراع وقت با شما تماس می گیرند.</value>
+  </data>
+  <data name="EnterEmail" xml:space="preserve">
+    <value>لطفا آدرس ایمیل خود را وارد کنید</value>
+  </data>
+  <data name="EnterMobile" xml:space="preserve">
+    <value>لطفا تلفن همراه خود را وارد کنید</value>
+  </data>
+  <data name="FactoryAddress" xml:space="preserve">
+    <value>آدرس کارخانه</value>
+  </data>
+  <data name="GoogleMap" xml:space="preserve">
+    <value>گوگل مپ</value>
+  </data>
+  <data name="Honors" xml:space="preserve">
+    <value>از جمله افتخارات چرم مشهد</value>
+  </data>
+  <data name="MashadLeatherBranches" xml:space="preserve">
+    <value>شعب چرم مشهد</value>
+  </data>
+  <data name="MashadOfficeAddress" xml:space="preserve">
+    <value>آدرس دفتر مشهد</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>پیام</value>
+  </data>
+  <data name="Mobile" xml:space="preserve">
+    <value>تلفن همراه</value>
+  </data>
+  <data name="OnlineStorePhone" xml:space="preserve">
+    <value>تلفن فروشگاه اینترنتی</value>
+  </data>
+  <data name="OtherMembers" xml:space="preserve">
+    <value>دیگر اعضای گروه صنعتی مشهد</value>
+  </data>
+  <data name="Routing" xml:space="preserve">
+    <value>مسیریابی</value>
+  </data>
+  <data name="SelectColor" xml:space="preserve">
+    <value>انتخاب رنگ</value>
+  </data>
+  <data name="Subject_Name" xml:space="preserve">
+    <value>موضوع/نام</value>
+  </data>
+  <data name="Success_Message" xml:space="preserve">
+    <value>پیام شما با موفقیت ارسال شد.</value>
+  </data>
+  <data name="TehranOffice" xml:space="preserve">
+    <value>دفتر تهران</value>
+  </data>
+  <data name="Thanks" xml:space="preserve">
+    <value>با تشکر</value>
+  </data>
+  <data name="MashadLeatherGallery" xml:space="preserve">
+    <value>گالری چرم مشهد</value>
+  </data>
+  <data name="OtherBlogContent" xml:space="preserve">
+    <value>سایر مطالب وبلاگ</value>
+  </data>
+  <data name="ReadMore" xml:space="preserve">
+    <value>ادامه مطلب</value>
+  </data>
+  <data name="OrganizationalSales" xml:space="preserve">
+    <value>فروش سازمانی</value>
+  </data>
+</root>

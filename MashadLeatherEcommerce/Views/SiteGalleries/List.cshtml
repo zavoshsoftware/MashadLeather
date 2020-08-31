@@ -1,0 +1,51 @@
+﻿@model ViewModels.GalleryListViewModel
+
+@{
+		ViewBag.Title = Model.GalleryGroup.TitleSrt +" | " +Resources.Label.MashadLeatherGallery;
+		ViewBag.Canonical = "https://www.mashadleather.com/gallery/"+Model.GalleryGroup.UrlParam;
+		Layout = "~/Views/Shared/FrontEndLayout/_FrontEndLayout.cshtml";
+}
+
+<section id="page-title" data-parallax-image="/images/newsheader.jpg">
+	<div id="particles-js" class="particles" style="background: none"></div>
+	
+	<div class="container">
+		<div class="page-title">
+			<h1>@Model.GalleryGroup.TitleSrt</h1>
+
+		</div>
+
+	</div>
+</section>
+
+<section id="page-content">
+	<div class="container">
+	 
+		<div id="portfolio" class="grid-layout portfolio-3-columns" data-margin="20">
+
+		 @foreach (var item in Model.Galleries)
+		 {
+	 
+			<div class="portfolio-item no-overlay img-zoom">
+				<div class="portfolio-item-wrap">
+					<div class="portfolio-image">
+						<a href="/gallery/@Model.GalleryGroup.UrlParam/@item.UrlParam"><img src="@item.ImageUrl" alt=""></a>
+					</div>
+					<div class="portfolio-description">
+						<a href="/gallery/@Model.GalleryGroup.UrlParam/@item.UrlParam">
+							<h3>@item.TitleSrt</h3>
+						</a>
+					</div>
+				</div>
+			</div>
+		 }
+		</div>
+		<!-- end: Portfolio -->
+	</div>
+</section>
+
+
+@section scripts{
+	<script src="~/Scripts/UI/plugins/components/particles-animation.js"></script>
+	<script src="~/Scripts/UI/plugins/components/particles.js"></script>
+}

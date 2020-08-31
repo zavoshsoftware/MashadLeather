@@ -1,0 +1,128 @@
+﻿@model ViewModels.ProductQuickViewModel
+@{
+    Layout = "~/Views/Shared/FrontEndLayout/_FrontEndLayout.cshtml";
+}
+
+<section id="page-title" data-parallax-image="/images/mashad-faq-img.jpg">
+    <div class="container">
+        <div class="page-title">
+            <h1>@Model.Title</h1>
+            <span>@Model.ProductCategoryTitle</span>
+        </div>
+    </div>
+</section>
+
+
+<section id="product-page" class="product-page p-b-0">
+    <div class="container">
+        <div class="product">
+            <div class="row m-b-40">
+                <div class="col-md-5">
+                    <div class="product-image">
+                        <div class="carousel dots-inside dots-dark arrows-visible arrows-only arrows-dark" data-items="1" data-loop="true" data-autoplay="true" data-animate-in="fadeIn" data-animate-out="fadeOut" data-autoplay-timeout="2500" data-lightbox="gallery">
+                            @foreach (var modelProductImage in Model.ProductImages)
+                            {
+                                <a href="@modelProductImage.ImageUrl" data-lightbox="image" title="@Model.Title">
+                                    <img alt="Shop product image!" src="@modelProductImage.ImageUrl">
+                                </a>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="product-description">
+                        <div class="product-category">@Model.ProductCategoryTitle</div>
+                        <div class="product-title">
+                            <h3><a href="#">@Model.Title</a></h3>
+                        </div>
+                        <div class="product-price">
+                            @if (Model.IsInPromotion)
+                            {
+                                <ins> @Model.DiscountAmount</ins>
+                                <del style="margin: 0;"> @Model.Price</del>
+                            }
+                            else
+                            {
+                                <ins> @Model.Price</ins>
+                            }
+                            @Resources.Label.Rial
+                        </div>
+                        <div class="seperator m-b-10"></div>
+                        <p>
+                            @if (Model.Description != null)
+                            {
+                                @Html.Raw(Model.Description.Replace(Environment.NewLine, "<br/>"))
+                            }
+                        </p>
+                        <div class="seperator m-t-20 m-b-10"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5">
+                            @if (Model.Sizes.Count() > 0)
+                            {
+                                <h6 class="text-right">انتخاب سایز</h6>
+                                <ul class="product-size">
+                                    @foreach (var size in Model.Sizes)
+                                    {
+                                        <li>
+                                            <label>
+                                                <input type="radio" name="product-size" value="@size.Id" checked="checked"><span>@size.Title</span>
+                                            </label>
+                                        </li>
+                                    }
+
+                                </ul>
+                            }
+                        </div>
+                        <div class="col-md-5">
+                            @if (Model.Colors.Count() > 0)
+                            {
+                                <h6>@Resources.Label.ChooseColor</h6>
+
+                                <div id="color-picker">
+                                    <div class="wrapper-dropdown">
+                                        <a id="ddlColor" href="#" class="dropdown-toggle form-control" data-toggle="dropdown" role="button" aria-expanded="false">انتخاب رنگ <span class="caret"></span></a>
+                                        <ul class="dropdown-menu" v-show="active" role="menu">
+
+                                            @foreach (var color in Model.Colors)
+                                            {
+                                                <li v-for="color in colors" onClick="changeColor('@color.TitleSrt', '@color.Id', '@Model.Id');">
+                                                    <span style="background-color:#@color.HexCode;" id="@color.Id" class="hex-color"> </span> @color.TitleSrt
+                                                    @if (Model.IsInPromotion)
+                                                    {
+                                                        <span class="badge green-badge">@color.DecreaseAmount %</span>
+                                                    }
+                                                </li>
+                                            }
+                                        </ul>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <h6 class="text-right">تعداد</h6>
+                            <div class="cart-product-quantity">
+                                <div class="quantity m-l-5">
+                                    <input type="number" name="Count" id="txtCount" class="qty" value="1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <h6 class="text-right">اضافه به سبد خرید</h6>
+                            <button type="button" class="btn fullwidth" onclick="addToBasket('@Model.Id');"><i class="fa fa-shopping-cart"></i> اضافه به سبد خرید</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5 col-md-pull-5">
+                            <a href="/purchaseGuide" class="btn fullwidth"><i class="fa fa-shopping-cart"></i> راهنمای خرید</a>
+                        </div>
+                    </div>
+                    <div class="col-md-12 alert alert-success" id="successMessage"></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

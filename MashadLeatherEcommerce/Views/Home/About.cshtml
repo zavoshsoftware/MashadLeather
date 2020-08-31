@@ -1,0 +1,76 @@
+﻿@model ViewModels.AboutViewModel
+@{
+		ViewBag.Title =Resources.Label.About + " | " +Resources.Label.MashadLeather;
+		ViewBag.Description = "شرکت چرم مشهد در سال 1375 در شهرک صنعتی چرم شهر مشهد با هدف حفظ و ارتقاء ارزش افزوده صنعت چرم و محصولات چرمی، ایجاد اشتغال در داخل کشور، عرضه مستقیم کلیه محصولات چرمی به هموطنان و صادرات با به کارگیری کلیه امکانات و توان بالقوه تاسیس گردیده است.";
+		ViewBag.Canonical = "https://www.mashadleather.com/about";
+		Layout = "~/Views/Shared/FrontEndLayout/_FrontEndLayout.cshtml";
+}
+
+
+<div class="inspiro-slider arrows-large arrows-creative dots-creative" data-height-xs="360" id="slider">
+  <div class="slide kenburns" style="background-image:url('@Model.HeaderImage');">
+		<div class="container">
+			<div class="slide-captions text-center text-light">
+  <span class="strong">@Resources.Label.AboutUs</span> <h1>@Resources.Label.MashadLeather</h1>
+			</div>
+		</div>
+	</div>
+</div>
+
+<section>
+	<div class="container">
+		<div class="row about-main-text">
+			@Html.Raw(Model.MainText)
+		</div>
+	</div>
+</section>
+<section class="text-light background-overlay-dark" data-parallax-image="/images/About-us.jpg">
+	<div class="container">
+		<div class="row">
+			@foreach (var number in Model.Numbers)
+			{
+					<div class="col-md-3">
+						<div class="text-center">
+							<div class="counter">
+								<span data-from="0" data-refresh-interval="50" data-seperator="true" data-speed="3000" data-to="@number.SummerySrt"></span>
+							</div>
+							<p>@number.TitleSrt</p>
+						</div>
+					</div>
+			} 
+		</div>
+	</div>
+</section>
+<section>
+	<div class="container">
+		<div class="heading heading-center"><span class="lead">@Resources.Label.Honors </span> </div><ul class="grid grid-4-columns">
+			@foreach (var certificate in Model.Certificates)
+			{
+					<li><a data-container="body" data-content="@certificate.SummerySrt" data-original-title="@certificate.TitleSrt" data-placement="top" data-toggle="popover" data-trigger="hover" title=""><img alt="@certificate.Title" src="@certificate.ImageUrl" /></a> </li>
+
+			} 		</ul>
+	</div>
+</section>
+<section class="box-fancy section-fullwidth text-light p-b-0 p-t-0" style="direction:rtl;">
+	<div class="row">
+
+		@foreach (var text in Model.SaleSystem)
+		{
+				<div class="col-md-4" style="background-color: #917d5d;">
+					<h3>@text.TitleSrt</h3>
+					<p class="text-justify">@text.SummerySrt</p>
+					<div class="grid-item" style="padding: 0px 30px 30px 0px; position: absolute; left: 585px; top: 790px;">
+						<a data-lightbox="gallery-item" href="images/portfolio/project/12.jpg" title="Saiba Chair"><img src="/Theme/MashadLeather/images/portfolio/project/12.jpg" /></a>
+					</div>
+				</div>
+		}
+
+
+	</div>
+</section>
+<section>
+	<div class="container">
+		<div class="heading heading-center"><span class="lead">@Resources.Label.OtherMembers</span> </div>
+		@Html.Raw(Model.Partners)
+	</div>
+</section>

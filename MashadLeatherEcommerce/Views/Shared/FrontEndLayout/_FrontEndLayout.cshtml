@@ -1,0 +1,97 @@
+﻿@using Newtonsoft.Json
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="@ViewBag.Description">
+	<title>@ViewBag.Title</title> 
+	<link rel="canonical" href="@ViewBag.Canonical" />
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,800,700,600|Montserrat:400,500,600,700|Raleway:100,300,600,700,800" rel="stylesheet" type="text/css" />
+	<link rel="icon" href="/Images/favicon.png">
+	<link rel="shortcut icon" href="/Images/favicon.png" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/Images/favicon.png">
+    <link href="/Content/UI/plugins.css" rel="stylesheet">
+    <link href="/Content/UI/style.css" rel="stylesheet">
+    <link href="/Content/UI/responsive.css" rel="stylesheet">
+    <link href="~/Content/UI/style-rtl.css" rel="stylesheet" />
+    <link href="~/Content/UI/style-En.css" rel="stylesheet" />
+
+	@*<script async src="https://www.googletagmanager.com/gtag/js?id=UA-164633799-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-164633799-1');
+	</script>*@
+	
+	@*<link href="~/Content/UI/style-En.css" rel="stylesheet" />*@
+	
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WCLJHZZ');</script>
+	<!-- End Google Tag Manager -->
+</head>
+
+<body class="no-page-loader">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WCLJHZZ"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div id="wrapper">
+	@Html.Partial("FrontEndLayout/_MenuPartial")
+	@RenderBody()
+	@*<section id="sectionChat">
+					<!-- BEGIN JIVOSITE CODE {literal} -->
+					<script type='text/javascript'>
+							(function () {
+									var widget_id = 'pFD8wkh3L0'; var d = document; var w = window; function l() {
+											var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/' + widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);
+									} if (d.readyState === 'complete') { l(); } else { if (w.attachEvent) { w.attachEvent('onload', l); } else { w.addEventListener('load', l, false); } }
+							})();</script>
+					<!-- {/literal} END JIVOSITE CODE -->
+			</section>*@
+
+
+	@Html.Partial("FrontEndLayout/_FooterPartial")
+</div>
+<a id="goToTop"><i class="fa fa-angle-up top-icon"></i><i class="fa fa-angle-up"></i></a>
+
+<!--Plugins-->
+<script src="/Scripts/UI/jquery.js"></script>
+<script src="/Scripts/UI/plugins.js"></script>
+
+<!--Template functions-->
+<script src="/Scripts/UI/functions.js"></script>
+
+<script src="~/Scripts/UI/customfunction.js"></script>
+<script>
+	$(document).ready(function() {
+		setBasketCount();
+	});
+</script>
+
+@RenderSection("scripts", required: false)
+<script type="text/javascript">
+	window.vasleSettings = {
+		app_id: "l1Qkq69o"
+	};
+</script>
+@*<script type="text/javascript">
+				!function () { function t() { var t = n.createElement("script"); t.type = "text/javascript", t.async = !0, t.src = "https://www.retain.ir/app/l1Qkq69o/widget/?" + Math.random().toString(34).slice(2); var e = n.getElementsByTagName("script")[0]; e.parentNode.insertBefore(t, e) } var e = window, a = e.Vasle; if ("function" == typeof a) a("reattach_activator"), a("update", e.vasleSettings); else { var n = document, c = function () { c.c(arguments) }; c.q = [], c.c = function (t) { c.q.push(t) }, e.Vasle = c, e.attachEvent ? e.attachEvent("onload", t) : e.addEventListener("load", t, !1) } }();
+		</script>*@
+
+<script src="~/Scripts/UI/custom.js"></script>
+</body>
+
+
+
+</html>

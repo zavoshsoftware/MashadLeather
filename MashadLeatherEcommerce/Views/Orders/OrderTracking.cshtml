@@ -1,0 +1,89 @@
+﻿@model ViewModels.OrderTrackingDetailViewModel
+@{
+    ViewBag.Title = "پیگیری سفارش | چرم مشهد";
+    Layout = "~/Views/Shared/FrontEndLayout/_FrontEndLayout.cshtml";
+}
+<section id="page-title" data-parallax-image="/images/mashad-faq-img.jpg">
+    <div class="container">
+        <div class="page-title">
+            <h1>پیگیری سفارش</h1>
+            @*<span>جهت پیگیری سفارش کد رهگیری را وارد نمایید</span>*@
+        </div>
+
+    </div>
+</section>
+
+<section class="order-tracking">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-4">
+            </div>
+
+            <div class="col-md-4 login-page">
+                <div class="panel">
+                    <div class="panel-body">
+                        <h3>پیگیری سفارش</h3>
+                        <p class="alert-info text-center">جهت مشاهده وضعیت سفارش کد رهگیری را وارد نمایید</p>
+                        @if (TempData["WrongReference"] != null)
+                        {
+                            <p class="alert alert-danger" id="WrongReference">@TempData["WrongReference"]</p>
+                        }
+
+                        @using (Html.BeginForm("OrderTracking", "Orders",null, FormMethod.Post, new { @class = "panel-body wrapper-lg", role = "form" }))
+                        {
+                            <div class="form-group">
+                                <label class="sr-only">کد رهگیری</label>
+
+                                @Html.TextBoxFor(m => m.ReferenceId, new { @class = "form-control input-lg", @placeholder = "کد رهگیری" })
+                           
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <button class="btn btn-default" type="submit">پیگیری سفارش</button>
+
+                            </div>
+                        }
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="row" id="trackingDetail">
+          
+                <div class="tab-pane active dir-rtl text-right">
+
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th class="text-right">کد رهگیری</th>
+                                <th class="text-right">نام و نام خانوادگی</th>
+                                <th class="text-right">تاریخ سفارش</th>
+                                <th class="text-right">وضعیت سفارش</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>@Model.ReferenceId</td>
+                                <td>@Model.CustomerName</td>
+                                <td>@Model.OrderDate</td>
+                                <td>@Model.Status</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    
+</section>
+<script>
+    if ('@ViewBag.ShowDetail' != "") {
+        document.getElementById("trackingDetail").style.display = 'block';
+    }
+</script>

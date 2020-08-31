@@ -1,0 +1,73 @@
+﻿
+@model ViewModels.LoginPageViewModel
+
+@{
+		ViewBag.Title = "ورود | چرم مشهد";
+		Layout = "~/Views/Shared/FrontEndLayout/_FrontEndLayout.cshtml";
+}
+
+<section id="page-title" data-parallax-image="/images/mashad-faq-img.jpg">
+    <div class="container">
+        <div class="page-title">
+            <h1>ورود</h1>
+            <span>جهت دسترسی به بخش های کاربری باید وارد شوید</span>
+        </div>
+
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-4">
+            </div>
+
+            <div class="col-md-4 login-page">
+                <div class="panel">
+                    <div class="panel-body">
+                        <h3>ورود به فروشگاه</h3>
+                        
+                        @if (TempData["WrongPass"] != null)
+                        {
+                            <p class="alert alert-danger" id="wrongEmail">@TempData["WrongPass"]</p>
+                        }
+                      
+                        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "panel-body wrapper-lg", role = "form" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(false, "", new { @class = "alert-danger" })
+
+                            <div class="form-group">
+                                <label class="sr-only">شماره موبایل</label>
+
+                                @Html.TextBoxFor(m => m.Login.Username, new { @class = "form-control input-lg", @placeholder = Html.DisplayNameFor(model => model.Login.Username) })
+                            </div>
+
+                            <div class="form-group">
+                                <label class="sr-only">کلمه عبور</label>
+                                @Html.PasswordFor(m => m.Login.Password, new { @class = "form-control input-lg", @placeholder = Html.DisplayNameFor(model => model.Login.Password) })
+                            </div>
+
+                            <div class="form-group form-inline m-b-10 ">
+
+                                <div class="checkbox">
+                                    <label>
+                                        @*<input type="checkbox"><small> Remember me</small>*@
+                                    </label>
+                                </div><a class="right" href="/recoverypassword"><small>فراموشی رمز عبور</small></a>
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-default" type="submit">ورود</button>
+
+                            </div>
+                        }
+ 
+                    </div>
+                </div><p class="small">اگر هنوز در وب سایت چرم مشهد ثبت نام نکرده اید بر روی لینک رو به رو کلیک کنید <a href="/register">ایجاد حساب کاربری</a></p>
+
+            </div>
+
+        </div>
+    </div>
+</section>

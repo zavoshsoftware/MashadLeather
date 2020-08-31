@@ -1,0 +1,340 @@
+﻿@model ViewModels.HomeViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="شرکت چرم مشهد بزرگترین تولید کننده چرم با ظرفیت سالانه بیش از یک میلیون قطعه انواع کالای چرمی، البسه، دستکش، کیف (اداری، دوشی، پول و ...) کمربند و سایر محصولات چرمی در کشور است. برای خرید اینترنتی محصولات چرم مشهد کلیک کنید.">
+    <title>@Resources.Label.MashadLeatherStore | @Resources.Label.MashadLeather</title>
+    <link rel="icon" href="/Images/favicon.png">
+    <link rel="shortcut icon" href="/Images/favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/Images/favicon.png">
+
+    <link rel="canonical" href="https://www.mashadleather.com/" />
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,800,700,600|Montserrat:400,500,600,700|Raleway:100,300,600,700,800" rel="stylesheet" type="text/css" />
+    <link href="/Content/UI/plugins.css" rel="stylesheet">
+    <link href="/Content/UI/style.css" rel="stylesheet">
+    <link href="/Content/UI/responsive.css" rel="stylesheet">
+    <link href="~/Content/UI/style-rtl.css" rel="stylesheet" />
+    <link href="~/Content/UI/style-En.css" rel="stylesheet" />
+    @*<script async src="https://www.googletagmanager.com/gtag/js?id=UA-164633799-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+		gtag('config', 'UA-164633799-1');
+	</script>*@
+	
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WCLJHZZ');</script>
+	<!-- End Google Tag Manager -->
+</head>
+<body class="no-page-loader">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WCLJHZZ"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div id="wrapper">
+	
+	@Html.Partial("FrontEndLayout/_MenuPartial")
+	<div id="slider">
+		<div id="rev_slider_30_1_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="POLO Homepage" style="background-color: transparent; padding: 0px;">
+			<div id="rev_slider_30_1" class="rev_slider fullscreenbanner" style="display: none;" data-version="5.1">
+				<ul>
+
+
+
+
+					@{
+			
+
+						int count = 120;
+						foreach (var slider in Model.Sliders)
+						{
+							count = count + 10;
+							//int speed1 = i * 1000;
+							//int speed2 = i * 2340;
+							<li data-index="rs-@count" data-slotamount="default" data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000" data-rotate="0" data-saveperformance="off" data-title="چرم مشهد" data-description="">
+
+								<img src="@slider.ImageUrlSrt" alt="" width="1920" height="1080" data-lazyload="@slider.ImageUrlSrt" data-bgposition="center center" data-kenburns="on" data-duration="10000" data-ease="Linear.easeNone" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" class="rev-slidebg" data-no-retina>
+								<div class="tp-caption text-center NotGeneric-Title tp-resizeme" id="slide-@count-layer-1" data-x="['center','center','center','center']" data-hoffset="['0','0','-1','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-54','0','-90','-92']" data-fontsize="['70','55','40','45']" data-lineheight="['70','70','70','50']" data-width="['none','none','none','462']" data-height="['none','none','none','124']" data-whitespace="['nowrap','nowrap','nowrap','normal']" data-transform_idle="o:1;" data-transform_in="z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;s:1500;e:Power3.easeInOut;" data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="1000" data-splitin="none" data-splitout="none" data-responsive_offset="on" style="z-index: 5; white-space: nowrap; text-align: center;">
+									@slider.TitleSrt
+								</div>
+
+								@if (!string.IsNullOrEmpty(slider.LinkTitleSrt))
+								{
+
+									<div class="tp-caption text-center Fashion-BigDisplay   tp-resizeme" id="slide-@count-layer-11" data-x="['center','center','center','center']" data-hoffset="['0','0','0','-3']" data-y="['top','top','top','top']" data-voffset="['400','376','300','308']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;s:1290;e:Power3.easeInOut;" data-transform_out="opacity:0;s:300;s:300;" data-start="2340" data-splitin="none" data-splitout="none" data-responsive_offset="on" style="z-index: 8; white-space: nowrap;">
+										<a href="@slider.LandingPage" class="btn btn-outline btn-light">@slider.LinkTitleSrt</a>
+									</div>
+								}
+							</li>
+						}
+					}
+				</ul>
+				
+				<div class="tp-static-layers">
+				</div>
+				<div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
+			</div>
+		</div>
+	</div>
+
+	<section class="p-b-0">
+		<div class="container">
+			<div class="heading heading-center m-b-40" data-animation="fadeInUp">
+				<h2>@Resources.Label.RecentProducts</h2>
+
+			</div>
+			<div class="row" data-animation="fadeInUp">
+				<div class="grid-layout grid-4-columns" data-item="grid-item">
+					@foreach (var product in Model.NewProducts)
+					{
+						<div class="grid-item">
+							<div class="product">
+								<div class="product-image">
+									<a href="/productQuiockView/@product.Id" data-lightbox="ajax">
+										<img alt="Shop product image!" src="https://www.mashadleather.com/@product.ImageUrl">
+									</a>
+									@if (product.HasTag)
+									{
+										<span class="product-hot">@product.TagTitle</span>
+									}
+									<div class="product-overlay">
+										<a href="/productQuiockView/@product.Id" data-lightbox="ajax">@Resources.Label.QuickView</a>
+									</div>
+								</div>
+
+								<div class="product-description">
+									<div class="product-category">@product.ProductCategoryTitle</div>
+									<div class="product-title">
+										<h3><a href="/product-detail/@product.Id">@product.Title</a>
+										</h3>
+									</div>
+									<div class="product-price">
+										@if (product.IsInPromotion)
+										{
+											<del class="price-en">@product.Amount</del>@*<text>ریال</text>*@
+											<ins class="price-en">@product.DiscountAmount</ins><text>@Resources.Label.Rial</text>
+										}
+										else
+										{
+											<ins class="price-en">@product.Amount</ins><text>@Resources.Label.Rial</text>
+										}
+									</div>
+								</div>
+							</div>
+						</div>
+					}
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	@Html.Partial("FrontEndLayout/_MiniFooter")
+
+	<section class="p-b-0">
+		<div class="container">
+			<div class="grid-layout grid-4-columns" data-item="grid-item">
+				@foreach (var productCategory in Model.ProductCategories)
+				{
+					<div class="grid-item">
+						<div class="product">
+							<div class="product-image">
+								<a href="/category/@productCategory.UrlParam">
+									<img alt="@productCategory.TitleSrt" src="https://www.mashadleather.com/@productCategory.ImageUrl">
+								</a>
+							</div>
+							<div class="product-description">
+								<div class="product-title">
+									<h3>
+										<a href="/category/@productCategory.UrlParam">@productCategory.TitleSrt</a>
+									</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+				}
+			</div>
+		</div>
+	</section>
+	<section class="p-b-0">
+		<div class="container">
+			<div class="heading heading-center m-b-40" data-animation="fadeInUp">
+				<h2>@Resources.Label.BestsellingProducts</h2>
+
+			</div>
+			<div class="row" data-animation="fadeInUp">
+				<div class="grid-layout grid-4-columns" data-item="grid-item">
+					@foreach (var product in Model.MostSellProducts)
+					{
+						<div class="grid-item">
+							<div class="product">
+								<div class="product-image">
+									<a href="/productQuiockView/@product.Id" data-lightbox="ajax">
+										<img alt="Shop product image!" src="https://www.mashadleather.com/@product.ImageUrl">
+									</a>
+									@if (product.HasTag)
+									{
+										<span class="product-hot">@product.TagTitle</span>
+									}
+									<div class="product-overlay">
+										<a href="/productQuiockView/@product.Id" data-lightbox="ajax">@Resources.Label.QuickView</a>
+									</div>
+								</div>
+
+								<div class="product-description">
+									<div class="product-category">@product.ProductCategoryTitle</div>
+									<div class="product-title">
+										<h3><a href="/product-detail/@product.Id">@product.Title</a>
+										</h3>
+									</div>
+									<div class="product-price">
+										@if (product.IsInPromotion)
+										{
+											<del class="price-en">@product.Amount</del>@*<text>ریال</text>*@
+											<ins class="price-en">@product.DiscountAmount</ins><text>@Resources.Label.Rial</text>
+										}
+										else
+										{
+											<ins class="price-en">@product.Amount</ins><text>@Resources.Label.Rial</text>
+										}
+									</div>
+								</div>
+							</div>
+						</div>
+					}
+				</div>
+			</div>
+		</div>
+	</section>
+	@Html.Partial("FrontEndLayout/_FooterPartial")
+
+</div>
+    <a id="goToTop"><i class="fa fa-angle-up top-icon"></i><i class="fa fa-angle-up"></i></a>
+
+    <script src="/Scripts/UI/jquery.js"></script>
+    <script src="/Scripts/UI/plugins.js"></script>
+
+    <script src="/Scripts/UI/functions.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/Scripts/UI/plugins/revolution/css/settings.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/Scripts/UI/plugins/revolution/css/layers.css">
+    <link rel="stylesheet" type="text/css" href="/Scripts/UI/plugins/revolution/css/navigation.css">
+
+    <script type="text/javascript" src="/Scripts/UI/plugins/revolution/js/jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="/Scripts/UI/plugins/revolution/js/jquery.themepunch.revolution.min.js"></script>
+
+    <script type="text/javascript" src="/Scripts/UI/plugins/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+    <script type="text/javascript" src="/Scripts/UI/plugins/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+    <script type="text/javascript" src="/Scripts/UI/plugins/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+    <script type="text/javascript" src="/Scripts/UI/plugins/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script type="text/javascript" src="/Scripts/UI/plugins/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+    <script type="text/javascript" src="/Scripts/UI/plugins/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script type="text/javascript" src="/Scripts/UI/plugins/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+    <script type="text/javascript" src="/Scripts/UI/plugins/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script type="text/javascript" src="/Scripts/UI/plugins/revolution/js/extensions/revolution.extension.video.min.js"></script>
+
+    <script type="text/javascript">
+	    var tpj = jQuery;
+		
+	    var revapi30;
+	    tpj(document).ready(function () {
+		    if (tpj("#rev_slider_30_1").revolution == undefined) {
+			    revslider_showDoubleJqueryError("#rev_slider_30_1");
+		    } else {
+
+		 
+
+			    revapi30 = tpj("#rev_slider_30_1").show().revolution({
+				    sliderType: "standard",
+				    jsFileLocation: "js/plugins/revolution/js/",
+				    sliderLayout: "fullwidth",
+				    dottedOverlay: "none",
+				    delay: 9000,
+				    navigation: {
+					    keyboardNavigation: "off",
+					    keyboard_direction: "horizontal",
+					    mouseScrollNavigation: "off",
+					    onHoverStop: "on",
+					    touch: {
+						    touchenabled: "on",
+						    swipe_threshold: 75,
+						    swipe_min_touches: 50,
+						    swipe_direction: "horizontal",
+						    drag_block_vertical: false
+					    },
+					    arrows: {
+						    style: "hermes",
+						    enable: true,
+						    hide_onmobile: true,
+						    hide_under: 600,
+						    hide_onleave: true,
+						    hide_delay: 200,
+						    hide_delay_mobile: 1200,
+						    tmp: '<div class="tp-arr-allwrapper">	<div class="tp-arr-imgholder"></div>	<div class="tp-arr-titleholder">{{title}}</div>	</div>',
+						    left: {
+							    h_align: "left",
+							    v_align: "center",
+							    h_offset: 0,
+							    v_offset: 0
+						    },
+						    right: {
+							    h_align: "right",
+							    v_align: "center",
+							    h_offset: 0,
+							    v_offset: 0
+						    }
+					    }
+				    },
+				    responsiveLevels: [1240, 1024, 778, 480],
+				    visibilityLevels: [684, 576, 420, 420],
+				    gridwidth: [1240, 1024, 778, 480],
+				    gridheight: [684, 576, 420, 420],
+				    lazyType: "smart",
+				    shadow: 0,
+				    spinner: "off",
+				    stopLoop: "off",
+				    stopAfterLoops: -1,
+				    stopAtSlide: -1,
+				    shuffle: "off",
+				    autoHeight: "on",
+				    fullScreenAutoWidth: "off",
+				    fullScreenAlignForce: "off",
+				    fullScreenOffsetContainer: "",
+				    fullScreenOffset: "",
+				    disableProgressBar: "on",
+				    hideThumbsOnMobile: "off",
+				    hideSliderAtLimit: 0,
+				    hideCaptionAtLimit: 0,
+				    hideAllCaptionAtLilmit: 0,
+				    debugMode: false,
+				    fallbacks: {
+					    simplifyAll: "off",
+					    nextSlideOnWindowFocus: "off",
+					    disableFocusListener: false,
+				    }
+			    });
+		    }
+	    });
+
+
+		
+    </script>
+    <script src="~/Scripts/UI/customfunction.js"></script>
+
+    <script src="~/Scripts/UI/custom.js"></script>
+
+</body>
+</html>

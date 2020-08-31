@@ -1,0 +1,196 @@
+﻿@model ViewModels._BaseViewModel
+
+
+
+<header id="header">
+	<div id="header-wrap">
+		<div class="container">
+			<!--Logo-->
+			<div id="logo">
+				<a href="/" class="logo" data-dark-logo="/images/logo-dark.png">
+					<img src="/images/logo.png" alt="چرم مشهد">
+@*					<img src="/images/logo-en.jpg" alt="چرم مشهد">*@
+				</a>
+			</div>
+			<!--End: Logo-->
+			<!--Top Search Form-->
+			<div id="top-search">
+				<form action="search-results-page.html" method="get">
+					<input type="text" name="q" class="form-control" value="" placeholder="Start typing & press  &quot;Enter&quot;">
+				</form>
+			</div>
+			<!--end: Top Search Form-->
+			<!--Header Extras-->
+			<div class="header-extras">
+				<ul>
+
+					@*<li>
+
+							<a id="top-search-trigger" href="#" class="toggle-item">
+								<i class="fa fa-search"></i>
+								<i class="fa fa-close"></i>
+							</a>
+
+						</li>*@
+					<li>
+						<div id="shopping-cart">
+							<a href="/orders/shopcart">
+								<span class="shopping-cart-items"></span>
+
+								<i class="fa fa-shopping-cart"></i>
+							</a>
+						</div>
+					</li>
+					<li class="hidden-xs">
+						<div class="topbar-dropdown">
+							<a class="title"><i class="fa fa-globe"></i></a>
+							<div class="dropdown-list">
+								<a class="list-entry" href="https://mashadleather.com/">Fa</a>
+								<a class="list-entry" href="http://en.mashadleather.com/">En</a>
+								<a class="list-entry" href="https://ar.mashadleather.com/">Ar</a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="topbar-dropdown">
+							<a class="title"><i class="fa fa-user"></i></a>
+							<div class="dropdown-list">
+								<a class="list-entry" href="/history">@Resources.Label.history</a>
+								<a class="list-entry" href="/Orders/OrderTracking">@Resources.Label.OrderTracking</a>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!--end: Header Extras-->
+			<!--Navigation Resposnive Trigger-->
+			<div id="mainMenu-trigger">
+				<button class="lines-button x"> <span class="lines"></span> </button>
+			</div>
+			<!--end: Navigation Resposnive Trigger-->
+			<!--Navigation-->
+			<div id="mainMenu">
+				<div class="container">
+					<nav>
+						<ul>
+							<li><a href="/">@Resources.Label.Home</a></li>
+							<li class="dropdown">
+								<a href="#">@Resources.Label.Products</a>
+
+								<ul class="dropdown-menu">
+
+									@foreach (var item in Model.MenuItem.MenuProductCategories.Where(p => p.ParentId == null))
+									{
+
+											<li class="@item.MenuClass">
+
+												@if (item.HasChild == true)
+												{
+
+														<a href="/category/@item.UrlParam" onclick="dropdownMainMenu(@item.UrlParam)">@item.Title</a>
+
+														<ul class="dropdown-menu">
+															@foreach (var childItem in Model.MenuItem.MenuProductCategories.Where(p => p.ParentId == item.Id))
+															{
+
+																	<li class="@childItem.MenuClass">
+																
+																		@if (childItem.HasChild)
+																		{
+																			<a href="/category/@childItem.UrlParam">@childItem.Title</a>
+																			<ul class="dropdown-menu">
+																				@foreach (var childItem2 in Model.MenuItem.MenuProductCategories.Where(p => p.ParentId == childItem.Id))
+																				{
+																					<li><a href="/product/@childItem2.UrlParam">@childItem2.Title</a></li>
+																				}
+																			</ul>
+}
+																		else
+																		{
+																				<a href="/product/@childItem.UrlParam">@childItem.Title</a>
+
+																		}
+
+																	</li>
+}
+
+														</ul>
+}
+												else
+												{
+														<a href="/product/@item.UrlParam">@item.Title</a>
+
+												}
+											</li>
+									}
+								</ul>
+							</li>
+							<li>
+								<a href="/about">@Resources.Label.About</a>
+							</li>
+
+							<li class="dropdown">
+								<a href="#">@Resources.Label.Gallery</a>
+
+								<ul class="dropdown-menu single-dropdown-menu">
+
+									@foreach (var item in Model.MenuGalleryGroups)
+									{
+
+											<li>
+												<a href="/gallery/@item.UrlParam">@item.TitleSrt</a>
+											</li>
+									}
+								</ul>
+							</li>
+
+							<li class="dropdown">
+								<a href="#">@Resources.Label.CustomerClub</a>
+								<ul class="dropdown-menu single-dropdown-menu">
+									<li>
+										<a href="/customerclub">@Resources.Label.CustomerClubPrivacy</a>
+									</li>
+									<li>
+										<a href="https://club.mashadleather.com/">@Resources.Label.CustomerClubProfile</a>
+									</li>
+
+								</ul>
+							</li>
+							<li>
+								<a href="/branches">@Resources.Label.Branches</a>
+							</li>
+							<li>
+								<a href="/contact">@Resources.Label.ContactUs</a>
+							</li>
+
+
+
+							<li class="dropdown">
+								<a href="/blog">@Resources.Label.Blog</a>
+
+								<ul class="dropdown-menu single-dropdown-menu">
+									<li>
+										<a href="/blog/news">@Resources.Label.News</a>
+									</li>
+									<li>
+										<a href="/blog/article">@Resources.Label.article</a>
+									</li>
+
+								</ul>
+							</li>
+
+
+						</ul>
+
+					</nav>
+				</div>
+			</div>
+			<!--end: Navigation-->
+		</div>
+	</div>
+</header>
+<script type="text/javascript">
+	function dropdownMainMenu(urlParam) {
+		window.location.replace("/category/" + urlParam);
+	};
+</script>

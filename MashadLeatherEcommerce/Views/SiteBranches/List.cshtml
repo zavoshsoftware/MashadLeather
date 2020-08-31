@@ -1,0 +1,89 @@
+﻿@model ViewModels.BranchListViewMoel
+@{
+    ViewBag.Title = Resources.Label.MashadLeatherBranches +" | " +Resources.Label.MashadLeather;
+    Layout = "~/Views/Shared/FrontEndLayout/_FrontEndLayout.cshtml";
+	ViewBag.Description = "برای اطلاع از آدرس و شماره تلفن شعب چرم مشهد در سراسر ایران بر روی این صفحه کلیک کنید";
+	ViewBag.Canonical = "https://www.mashadleather.com/branches";
+}
+
+<section id="page-title" data-parallax-image="/images/mashad-faq-img.jpg">
+	<div class="container">
+		<div class="page-title">
+			<h1>@Resources.Label.MashadLeatherBranches</h1>
+		</div>
+	</div>
+</section>
+
+<section id="page-content" class="branch-section">
+	<div class="container">
+		<div id="tabs-11" class="tabs tabs-vertical border tabs-right">
+			<h3>@Resources.Label.BranchInfo</h3>
+		 
+			<ul class="tabs-navigation">
+				@foreach (var branch in Model.Branches)
+				{
+					<li class="@branch.BranchGroup.Id"><a href="#@branch.BranchGroup.Id"><i class="fa fa-home"></i>@branch.BranchGroup.TitleSrt</a> </li>
+
+				}
+				@*<li class="active"><a href="#About11"><i class="fa fa-home"></i>About us</a> </li>
+				<li><a href="#Choose11"><i class="fa fa-home"></i>Why choose us</a> </li>
+				<li><a href="#Assets11"><i class="fa fa-home"></i>Brand assets</a> </li>*@
+			</ul>
+			<div class="tabs-content">
+				
+				@foreach (var branch in Model.Branches)
+				{
+					<div class="tab-pane active" id="@branch.BranchGroup.Id">
+						
+						<table class="table table-bordered tables table-responsive">
+							<thead>
+							<tr>
+								<th>@Resources.Label.BranchName</th>
+								<th>@Resources.Label.Address</th>
+								<th>@Resources.Label.Phone</th>
+								<th>@Resources.Label.Routing</th>
+							</tr>
+							</thead>
+							<tbody>
+							@foreach (var siteBranch in branch.SiteBranches)
+							{
+								<tr>
+									<td>@siteBranch.TitleSrt</td>
+									<td>@siteBranch.AddressSrt</td>
+									<td><a href="tel:@siteBranch.Phone">@siteBranch.Phone</a></td>
+									<td><a href="@siteBranch.Location" class="btn btn-googleplus">@Resources.Label.GoogleMap <i class="fa fa-google"></i></a> </td>
+								</tr>
+							}
+							</tbody>
+						</table>
+					</div>
+				}
+			 
+			</div>
+		</div>
+	</div>
+</section>
+
+@section scripts
+{
+	<script>
+		$(document).ready(function() {
+            $('.a762c731-da8f-4cd7-8f3f-b29ef46d227e').addClass('active');
+
+
+            var width = document.body.clientWidth;
+            if (width < 575)
+            {
+                $.each($(".btn-googleplus"), function () {
+                    this.innerHTML = '<i class="fa fa-google"></i>';
+                    //this.style.padding = '5px';
+                    //this.style.paddingLeft = '15px';
+                })
+               
+            }
+		});
+
+
+        
+	</script>
+}

@@ -1,0 +1,170 @@
+﻿@model ViewModels.RegisterViewModel
+@{
+    ViewBag.Title = "ثبت نام";
+    Layout = "~/Views/Shared/FrontEndLayout/_FrontEndLayout.cshtml";
+}
+
+<section id="page-title" data-parallax-image="/images/mashad-faq-img.jpg">
+    <div class="container">
+        <div class="page-title">
+            <h1>ثبت نام در سایت</h1>
+            <span>جهت ثبت نام در سایت فرم زیر را تکمیل نمایید</span>
+        </div>
+
+    </div>
+</section>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 center no-padding register-page">
+                <div class="col-md-12">
+                    <h3>ثبت نام در وب سایت چرم مشهد</h3>
+                  @*  <p>Create an account by entering the information below. If you are a returning customer please login at the top of the page.</p>*@
+               
+                    <div class="alert alert-success" id="successOrder">ثبت نام شما با موفقیت انجام شد</div>
+                    <div class="alert alert-danger" id="errorOrder"> </div>
+                </div>
+
+
+
+                <div class="col-md-6 form-group">
+                    <label class="sr-only">نام</label>
+                    <input type="text" class="form-control input-lg" placeholder="نام" id="txtFirstName" />
+                </div>
+                <div class="col-md-6 form-group">
+                    <label class="sr-only">نام خانوادگی</label>
+                    <input type="text" class="form-control input-lg" placeholder="نام خانوادگی" id="txtLastName" />
+                </div>
+
+                <div class="col-md-6 form-group">
+                    <label class="sr-only">شماره موبایل</label>
+                    <input type="text" class="form-control input-lg" placeholder="شماره موبایل" id="txtCellNumber" />
+                </div>
+                <div class="col-md-6 form-group">
+                    <label class="sr-only">کلمه عبور</label>
+                    <input type="password" class="form-control input-lg" placeholder="کلمه عبور" id="txtPassword" />
+                </div>
+              
+                    <div class="col-md-6 form-group">
+                        <label class="sr-only">استان</label>
+                        @Html.DropDownList("provinceId", null, new { @id = "ddlProvince" })
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label class="sr-only">شهر</label>
+                        <select id="ddlCity" name="cityId" style="width: 200px"></select>
+                    </div>
+
+               
+
+                <div class="col-md-12 form-group">
+                    <button type="button" id="btnSubmitUser" onclick="FinalizeRegister();" class="btn btn-default">ثبت نام </button>
+                    
+                  
+                </div>
+                <div class="col-md-12 other-link">
+                    <p>
+                    <a href="/recoverypassword"><small>فراموشی رمز عبور</small></a>
+                   |
+                    <a  href="/login"><small>ورود</small></a>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+@section scripts{
+    <script>
+    $('#ddlProvince').on('change',
+        function() {
+            var SelectedValue = $(this).val(); // < added test values
+            if (SelectedValue !== "") {
+                var procemessage = "<option value='0'> صبرکنید...</option>";
+                $("#ddlCity").html(procemessage).show();
+                $.ajax(
+                    {
+                        url: "/Orders/FillCities",
+                        data: { id: SelectedValue },
+                        cache: false,
+                        type: "POST",
+                        success: function(data) {
+                            var markup = "<option value='0'>انتخاب شهر</option>";
+                            for (var x = 0; x < data.length; x++) {
+                                markup += "<option value=" + data[x].Value + ">" + data[x].Text + "</option>";
+                            }
+                            $("#ddlCity").html(markup).show();
+                        },
+                        error: function(reponse) {
+                            alert("error : " + reponse);
+                        }
+                    });
+            }
+        });
+
+
+    function FinalizeRegister() {
+                var txtFirstName = $("#txtFirstName").val();
+                var txtLastName = $("#txtLastName").val();
+                var txtCellNumber = $("#txtCellNumber").val();
+                var txtPassword = $("#txtPassword").val();
+                var txtProvince = $('#ddlProvince option:selected').val();
+                var txtCity = $('#ddlCity option:selected').val();
+
+                if (txtFirstName !== "" && txtLastName !== "" && txtPassword !== "" && txtCellNumber !== "" && txtCity!=="") {
+                    $.ajax(
+                        {
+                            url: "/Account/FinalizeRegister",
+                            data: {
+                                firstName: txtFirstName,
+                                lastName: txtLastName,
+                                cellNumber: txtCellNumber,
+                                password: txtPassword,
+                                province: txtProvince,
+                                city: txtCity,
+                            },
+                            type: "GET"
+                        }).done(function (result) {
+                            if (result.includes('true')) {
+                            
+                               
+                                $('#successOrder').css('display', 'block');
+                                $('#errorOrder').css('display', 'none');
+                             
+
+                            } else if (result === 'invalidCellNumber') {
+
+                                $('#errorOrder').css('display', 'block');
+                                $('#errorOrder').html('شماره موبایل وارد شده صحیح نمی باشد');
+                                $('#successOrder').css('display', 'none');
+
+                            }  
+                            else if (result === 'duplicateUser') {
+
+                                $('#errorOrder').css('display', 'block');
+                                $('#errorOrder').html('کاربر گرامی، شما قبلا با این شماره موبایل ثبت نام کرده اید یا خریدی انجام داده اید');
+                                $('#successOrder').css('display', 'none');
+
+                            }  
+                            else {
+                                console.log(result);
+                                $('#errorOrder').css('display', 'block');
+                                $('#errorOrder')
+                                    .html('متاسفانه هنگام پردازش درخواست شما خطایی رخ داده است. لطفا مجددا تلاش کنید');
+                                $('#successOrder').css('display', 'none');
+
+                            }
+                            $('#loadingImg').css('display', 'none');
+                            $('#btnFinalizeOrder').css('display', 'block');
+                        });
+                } else {
+                    $('#errorOrder').css('display', 'block');
+                    $('#errorOrder').html('فیلد های ستاره دار اجباری می باشند');
+                    $('#successOrder').css('display', 'none');
+                    $('#loadingImg').css('display', 'none');
+                    $('#btnFinalizeOrder').css('display', 'block');
+                }
+            }
+        </script>
+    }

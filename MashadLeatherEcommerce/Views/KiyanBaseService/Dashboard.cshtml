@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+}
+
+<h2>Dashboard</h2>
+
+<div class="alert alert-success" id="SuccessDiv"></div>
+<div class="alert alert-danger" id="errorDiv"></div>
+<input type="button" id="btnGetProductCategory" value="دریافت گروه کالاهای سرور" onclick="GetProductCategory()"/>
+
+
+@section scripts{
+    <script type="text/javascript">
+        function GetProductCategory() {
+            $("#btnGetProductCategory").prop("disabled",true);
+            $.ajax(
+                {
+                    url: "/KiyanBaseService/GetProductCategory",
+                    data: null,
+                    type: "GET"
+                }).done(function (result) {
+                if (result === "true") {
+                    $('#errorDiv').css('display', 'none');
+                    $('#SuccessDiv').css('display', 'block');
+                    $('#SuccessDiv').html('گروه محصولات با موفقیت ثبت گردید'); }
+                else {
+                    $('#errorDiv').css('display', 'block');
+                    $('#SuccessDiv').css('display', 'none');
+                    $('#errorDiv').html('خطا در هنگام ثبت اطلاعات');
+                }
+                });
+            $("#btnGetProductCategory").prop("disabled", false);
+
+        }
+    </script>
+}

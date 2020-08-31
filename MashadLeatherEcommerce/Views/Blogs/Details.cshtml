@@ -1,0 +1,65 @@
+﻿@model ViewModels.BlogDetailViewModel
+@{
+	ViewBag.Title =Model.Blog.TitleSrt+" | " +Resources.Label.MashadLeather;
+	Layout = "~/Views/Shared/FrontEndLayout/_FrontEndLayout.cshtml";
+}
+
+<section id="page-title" data-parallax-image="/images/mashad-faq-img.jpg">
+	<div class="container">
+		<div class="page-title">
+			<h1>@Model.Blog.TitleSrt</h1>
+		</div>
+	</div>
+</section>
+<section id="page-content" class="sidebar-right">
+	<div class="container">
+		<div class="row">
+		<div class="content col-md-9">
+			<!-- Blog -->
+			<div id="blog" class="single-post">
+				<div class="post-item">
+					<div class="post-item-wrap">
+						<div class="post-image">
+							<a href="#">
+								<img alt="" src="@Model.Blog.ImageUrl">
+							</a>
+						</div>
+						<div class="post-item-description">
+							<h2>@Model.Blog.TitleSrt</h2>
+						@Html.Raw(@Model.Blog.BodySrt)
+						</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="sidebar col-md-3">
+				<div class="pinOnScroll">
+					<div class="widget">
+						<div id="tabs-01" class="tabs simple">
+							<div class="widget-title-blog">
+								@Resources.Label.OtherBlogContent
+							</div>
+							<div class="tabs-content">
+								<div class="tab-pane active" id="tab1">
+									<div class="post-thumbnail-list">
+										@foreach (var relatedBlog in Model.RelatedBlogs)
+										{
+											<div class="post-thumbnail-entry">
+												<img alt="" src="@relatedBlog.ImageUrl">
+												<div class="post-thumbnail-content">
+													<a href="/blog/@relatedBlog.BlogGroup.UrlParam/@relatedBlog.UrlParam">@relatedBlog.TitleSrt</a>
+												</div>
+											</div>
+										}
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

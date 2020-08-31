@@ -1,0 +1,32 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>انتقال به درگاه سامان کیش</title>
+    <link href="~/Content/Admin/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+ 
+<form id="form1" method="post" action="https://sep.shaparak.ir/payment.aspx">
+    <div>
+        <input type="hidden"name="Amount" value="@ViewBag.amount" />
+        <input type="hidden" name="ResNum" value="@ViewBag.refId" />
+        <input type="hidden" name="MID" value="21284935" />
+        <input type="hidden" name="RedirectURL" value="https://www.mashadleather.com/saman/callback" />
+      
+        
+        <div class="row text-center">
+            <p class="alert alert-success text-center">   در حال انتقال به درگاه سامان</p>
+            
+            <input type="submit" class="btn btn-primary" value="پرداخت از طریق درگاه سامان" id="OK"/>
+        </div>
+    </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,106 @@
+﻿@model ViewModels.ContactViewModel
+@{
+	ViewBag.Title = Resources.Label.ContactUs +" | " + Resources.Label.MashadLeather;
+	ViewBag.Description = "تلفن فروشگاه اینترنتی 02188310259 تلفن دفتر مرکزی 05138475880 آدرس: تهران، خیابان ولیعصر، خیابان عاطفی، پلاک 100";
+	ViewBag.Canonical = "https://www.mashadleather.com/contact";
+	Layout = "~/Views/Shared/FrontEndLayout/_FrontEndLayout.cshtml";
+}
+
+<div class="inspiro-slider arrows-large arrows-creative dots-creative" data-height-xs="360" id="slider">
+	<!-- Slide 2 --> <div class="slide kenburns" style="background-image:url('/images/mashad-faq-img.jpg');">
+		<div class="container">
+			<div class="slide-captions text-center text-light">
+				<!-- Captions --> <span class="strong">@Resources.Label.ContactUs</span> <h1>@Resources.Label.MashadLeather</h1>
+			
+			</div>
+		</div>
+	</div>
+</div>
+
+ 
+	<section class="contact-section">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<h3 class="text-uppercase">@Resources.Label.AddressMap</h3>
+				<div class="row">
+					<div class="col-md-6">
+						<address>
+							<strong>@Resources.Label.TehranOffice</strong><br>
+							@Model.TehranAdress
+							<p title="Phone">@Resources.Label.OnlineStorePhone: @Model.TehranPhone </p>
+						</address>
+					</div>
+					<div class="col-md-5">
+						<address>
+							<strong>@Resources.Label.MashadOfficeAddress</strong><br>
+						@Model.MashadAddres
+							<p title="Phone">@Resources.Label.Phone: @Model.MashadPhone</p>
+
+						</address>
+					</div>
+				</div>			
+				
+				<div class="row">
+					<div class="col-md-12">
+						<address>
+							<strong>@Resources.Label.FactoryAddress</strong><br>
+							@Model.FactoryAdress
+						</address>
+					</div>
+				 
+				</div>
+
+		
+			</div>
+			<div class="col-md-5">
+
+			 
+				<div class="m-t-30">
+					<div class="contact_info" id="c2" style="display:none;">
+						<h3>@Resources.Label.Thanks</h3>
+						<h5>@Resources.Label.Success_Message</h5>
+						<h6>@Resources.Label.CallYou</h6>
+						<hr>
+					</div>
+			
+
+							<div class="widget-contact-form" id="contact_form">
+								<div class="row">
+									<div class="form-group col-sm-6">
+										<label for="cMobile">@Resources.Label.Mobile</label>
+										<input type="text" aria-required="true" name="cMobile" id="cMobile" class="form-control required name" placeholder="@Resources.Label.EnterMobile">
+									</div>
+									<div class="form-group col-sm-6">
+										<label for="cEmail">@Resources.Label.Email</label>
+										<input type="email" aria-required="true" name="cEmail" id="cEmail" class="form-control required email" placeholder="@Resources.Label.EnterEmail">
+									</div>
+								</div>
+								<div class="row">
+									<div class="form-group col-sm-12">
+										<label for="cTitle">@Resources.Label.Subject_Name</label>
+										<input type="text" name="cTitle" id="cTitle" class="form-control required" placeholder="@Resources.Label.Subject_Name...">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="cContent">@Resources.Label.Message</label>
+									<textarea type="text" name="cContent" id="cContent" rows="5" class="form-control required" placeholder="@Resources.Label.Message"></textarea>
+								</div>
+
+								<div class="form-group">
+									<script src="https://www.google.com/recaptcha/api.js"></script>
+									<div class="g-recaptcha" data-sitekey="6Ldb6nQUAAAAAEnfWXSJNjhqU7bOerUAC-tfQkKw"></div>
+								</div>
+
+
+								<button class="btn btn-default" type="submit" id="form-submit"><i class="fa fa-paper-plane"></i>&nbsp;@Resources.Label.Send</button>
+							</div>
+				
+
+				
+
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

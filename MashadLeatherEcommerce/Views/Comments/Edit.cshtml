@@ -1,0 +1,53 @@
+﻿@model Models.Comment
+
+@{
+    ViewBag.Title = "ویرایش " ;
+    Layout = "~/Views/Shared/BackEndLayout/_BackEndLayout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Edit", "Comments",FormMethod.Post, new { enctype = "multipart/form-data" })) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">        
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CommentBody, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                                  @Html.EditorFor(model => model.CommentBody)
+                @Html.ValidationMessageFor(model => model.CommentBody)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Response, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                                  @Html.EditorFor(model => model.Response)
+                @Html.ValidationMessageFor(model => model.Response)
+            </div>
+        </div>
+	  
+      
+
+	 @Html.HiddenFor(model => model.CreationDate)
+	 @Html.HiddenFor(model => model.Name)
+	 @Html.HiddenFor(model => model.Email)
+	 @Html.HiddenFor(model => model.ParentId)
+	 @Html.HiddenFor(model => model.ProductCategoryId)
+	 @Html.HiddenFor(model => model.IsActive)
+	 @Html.HiddenFor(model => model.IsDeleted) 
+       
+        <div class="form-group" id="buttons">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="ثبت" class="btn btn-primary" />
+				@Html.ActionLink("بازگشت به فهرست", "Index")
+            </div>
+        </div>
+    </div>
+}
+

@@ -1,0 +1,93 @@
+﻿@model ViewModels.ProductCategoryViewModel
+@{
+		ViewBag.Canonical = "https://www.mashadleather.com/category";
+    Layout = "~/Views/Shared/FrontEndLayout/_FrontEndLayout.cshtml";
+}
+
+<section id="page-title" data-parallax-image="@ViewBag.SlideImage">
+    <div class="container">
+        <div class="page-title">
+                <h1 style="font-size: @ViewBag.FontSize;">
+                    @ViewBag.PageTitle
+                </h1>
+        </div>
+
+    </div>
+</section>
+<!-- end: Page title -->
+<!-- Shop products -->
+<section>
+    <div class="container">
+        <div class="row m-b-20">
+
+
+        </div>
+
+        <!--Product list-->
+        <div class="shop">
+            <div class="grid-layout grid-4-columns" data-item="grid-item">
+               
+                    @foreach (var productCategory in Model.ProductCategories)
+                    {
+                        if (productCategory.IsParent)
+                        {
+                            <div class="grid-item">
+                                <div class="product">
+                                    <div class="product-image">
+                                        <a href="/category/@productCategory.ProductCategory.UrlParam">
+                                            <img alt="@productCategory.ProductCategory.TitleSrt" src="@productCategory.ProductCategory.ImageUrl">
+                                        </a>
+                                    </div>
+                                    <div class="product-description">
+                                        <div class="product-title">
+                                            <h3>
+                                                <a href="/category/@productCategory.ProductCategory.UrlParam">@productCategory.ProductCategory.TitleSrt</a>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        else
+                            {
+                                <div class="grid-item">
+                                    <div class="product">
+                                        <div class="product-image">
+                                            <a href="/product/@productCategory.ProductCategory.UrlParam">
+                                                <img alt="@productCategory.ProductCategory.TitleSrt" src="@productCategory.ProductCategory.ImageUrl">
+                                            </a>
+                                        </div>
+                                        <div class="product-description">
+                                            <div class="product-title">
+                                                <h3>
+                                                    <a href="/product/@productCategory.ProductCategory.UrlParam">@productCategory.ProductCategory.TitleSrt</a>
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        }
+                    }
+            </div>
+            <hr>
+            <!-- Pagination -->
+            <div class="pagination">
+                <ul>
+                    <li>
+                        <a href="#" aria-label="Previous"> <span aria-hidden="true"><i class="fa fa-angle-left"></i></span> </a>
+                    </li>
+                    <li><a href="#">1</a> </li>
+
+                    <li>
+                        <a href="#" aria-label="Next"> <span aria-hidden="true"><i class="fa fa-angle-right"></i></span> </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- end: Pagination -->
+        </div>
+    </div>
+</section>
+<!-- end: Shop products -->
+
+@Html.Partial("FrontEndLayout/_MiniFooter")
+

@@ -1,0 +1,80 @@
+﻿@model ViewModels.OrderHistoryViewModel
+@{
+    ViewBag.Title = "تاریخچه سفارشات | چرم مشهد";
+    Layout = "~/Views/Shared/FrontEndLayout/_FrontEndLayout.cshtml";
+}
+
+<section id="page-title" data-parallax-image="/images/mashad-faq-img.jpg">
+    <div class="container">
+        <div class="page-title">
+            <h1>تاریخچه سفارشات</h1>
+            <span>اطلاعات سفارشات</span>
+        </div>
+
+    </div>
+</section>
+<section>
+    <div class="container">
+        <div class="shop-cart">
+            <div class="row">
+                
+                <div class="col-md-12 p-r-10 ">
+                    <div class="table-responsive">
+                      @if (!Model.Orders.Any())
+                      {
+                          <div class="p-t-10 m-b-20 text-center">
+                              <div class="heading-fancy heading-line text-center">
+                                  <h4>تاریخچه سفارش شما خالی می باشد</h4>
+                              </div>
+                          </div>
+                      }
+                      else
+                      {
+                         
+                    
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>شماره فاکتور</th>
+                                <th>تاریخ فاکتور</th>
+                                <th>جمع کل</th>
+                                <th>جزییات</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach (var item in Model.Orders)
+                            {
+                                <tr>
+                                    <td>
+                                       @item.Code
+                                    </td>
+
+                                    <td>
+                                        @item.CreationDate.ToShortDateString()
+                                    </td>
+                                    <td>
+                                        @item.TotalAmount
+                                    </td>
+                                    <td>
+                                        <a href="/historyDetails/@item.Id">مشاهده جزییات</a>
+                                    </td>
+                                </tr>
+                            }
+                           
+
+                            </tbody>
+
+                        </table>
+                      }
+                    </div>
+                   
+                </div>
+
+          
+
+               
+            </div>
+        </div>
+    </div>
+</section>
+
