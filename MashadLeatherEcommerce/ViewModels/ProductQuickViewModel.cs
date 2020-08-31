@@ -22,6 +22,7 @@ namespace ViewModels
         public string SecondColor { get; set; }
         public string DiscountAmount { get; set; }
         public bool IsInPromotion { get; set; }
+        public bool IsActive  { get; set; }
     }
 
     public class ProductColor

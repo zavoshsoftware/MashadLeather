@@ -13,7 +13,7 @@ using Helper;
 
 namespace MashadLeatherEcommerce.Controllers
 {
-    [Authorize(Roles = "Administrator,SuperAdministrator")]
+    [Authorize(Roles = "Administrator,SuperAdministrator,eshopadmin")]
     public class ProductCategoriesController : Controller
     {
         private DatabaseContext db = new DatabaseContext();

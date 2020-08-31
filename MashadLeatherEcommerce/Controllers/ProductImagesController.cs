@@ -11,7 +11,7 @@ using System.IO;
 
 namespace MashadLeatherEcommerce.Controllers
 {
-    [Authorize(Roles = "Administrator,SuperAdministrator")]
+    [Authorize(Roles = "Administrator,SuperAdministrator,eshopadmin")]
     public class ProductImagesController : Controller
     {
         private DatabaseContext db = new DatabaseContext();

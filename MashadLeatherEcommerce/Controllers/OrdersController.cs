@@ -32,7 +32,7 @@ namespace MashadLeatherEcommerce.Controllers
 
         #region CRUD
 
-        [Authorize(Roles = "Administrator,SuperAdministrator")]
+        [Authorize(Roles = "Administrator,SuperAdministrator,eshopadmin")]
         [Route("orders/{statusId:int}")]
         public ActionResult Index(int statusId, string status, string start, string end)
         {
@@ -154,7 +154,7 @@ namespace MashadLeatherEcommerce.Controllers
             return orderlist;
         }
         // GET: Orders/Details/5
-        [Authorize(Roles = "Administrator,SuperAdministrator")]
+        [Authorize(Roles = "Administrator,SuperAdministrator,eshopadmin")]
         public ActionResult Details(Guid? id)
         {
             if (id == null)

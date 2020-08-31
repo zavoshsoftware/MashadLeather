@@ -149,9 +149,14 @@
 							</div>
 						</div>
 						<div class="col-md-6">
-							<h6>@Resources.Label.addtobasket</h6>
-							<button type="button" class="btn fullwidth" onclick="addToBasket('@Model.Id');"><i class="fa fa-shopping-cart"></i> @Resources.Label.addtobasket</button>
+							
+							@if (Model.IsActive)
+							{
+								<h6>@Resources.Label.addtobasket</h6>
 
+
+								<button type="button" class="btn fullwidth" onclick="addToBasket('@Model.Id');"><i class="fa fa-shopping-cart"></i> @Resources.Label.addtobasket</button>
+							}
 						</div>
 						@*<div class="col-md-6 col-md-pull-6">
 									<a href="/purchaseGuide" class="btn fullwidth"><i class="fa fa-shopping-cart"></i> راهنمای خرید</a>

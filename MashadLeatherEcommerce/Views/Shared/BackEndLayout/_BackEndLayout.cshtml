@@ -117,34 +117,39 @@
                                             </ul>
                                         </li>
 
-                                        <li id="orderLi" class="menuitem">
-                                            <a href="#">
-                                                <i class="fa fa-sitemap icon"><b class="bg-primary"></b></i><span class="pull-right"><i class="fa fa-angle-down text"></i><i class="fa fa-angle-up text-active"></i></span><span>مشاهده سفارشات</span>
-                                            </a>
-                                            <ul class="nav lt">
-                                                <li>
-                                                    <a href="/Orders/0">
-                                                        <i class="fa fa-angle-left"></i><span>همه سفارشات</span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="/Orders/2">
-                                                        <i class="fa fa-angle-left"></i><span>سفارشات پرداخت شده</span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="/Orders/3">
-                                                        <i class="fa fa-angle-left"></i><span>سفارشات ارسال شده</span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="/Orders/1">
-                                                        <i class="fa fa-angle-left"></i><span>سفارشات حذف شده</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li id="userLi" class="menuitem">
+	                                    <li id="orderLi" class="menuitem">
+		                                    <a href="#">
+			                                    <i class="fa fa-sitemap icon"><b class="bg-primary"></b></i><span class="pull-right"><i class="fa fa-angle-down text"></i><i class="fa fa-angle-up text-active"></i></span><span>مشاهده سفارشات</span>
+		                                    </a>
+		                                    <ul class="nav lt">
+			                                    <li>
+				                                    <a href="/Orders/0">
+					                                    <i class="fa fa-angle-left"></i><span>همه سفارشات</span>
+				                                    </a>
+			                                    </li>
+			                                    <li>
+				                                    <a href="/Orders/2">
+					                                    <i class="fa fa-angle-left"></i><span>سفارشات پرداخت شده</span>
+				                                    </a>
+			                                    </li>
+			                                    <li>
+				                                    <a href="/Orders/3">
+					                                    <i class="fa fa-angle-left"></i><span>سفارشات ارسال شده</span>
+				                                    </a>
+			                                    </li>
+			                                    <li>
+				                                    <a href="/Orders/1">
+					                                    <i class="fa fa-angle-left"></i><span>سفارشات حذف شده</span>
+				                                    </a>
+			                                    </li>
+		                                    </ul>
+	                                    </li>
+																			@{		var identity = (System.Security.Claims.ClaimsIdentity)User.Identity;
+																					string roleName = identity.FindFirst(System.Security.Claims.ClaimTypes.Role).Value;
+																					if (roleName == "Administrator"||roleName== "SuperAdministrator")
+																					{
+
+	                                    <li id="userLi" class="menuitem">
                                             <a href="/users">
                                                 <i class="fa fa-users icon"><b class="bg-primary"></b></i><span class="pull-right"></span><span>مدیریت کاربران</span>
                                             </a>
@@ -189,6 +194,10 @@
                                                 </li>		<li>
                                                     <a href="/Texts/Index/0fbf61c4-13cf-4762-b131-222c54eec172">
                                                         <i class="fa fa-angle-left"></i><span>قوانین باشگاه مشتریان</span>
+                                                    </a>
+                                                </li>	<li>
+                                                    <a href="/Texts/Index/ba6ee927-a38a-4a43-82f6-78a3b7891889">
+                                                        <i class="fa fa-angle-left"></i><span>فروش سازمانی</span>
                                                     </a>
                                                 </li>
                                             </ul>
@@ -253,7 +262,8 @@
 			                                    
 		                                    </ul>
 	                                    </li>
-                                        
+																					}
+																			}
                                     </ul>
                                 </nav>
                                 <!-- / nav -->

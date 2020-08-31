@@ -20,7 +20,7 @@ namespace MashadLeatherEcommerce.Controllers
         private DatabaseContext db = new DatabaseContext();
 
         // GET: Products
-        [Authorize(Roles = "Administrator,SuperAdministrator")]
+        [Authorize(Roles = "Administrator,SuperAdministrator,eshopadmin")]
         public ActionResult Index(Guid? id)
         {
             List<Product> products = new List<Product>();
@@ -73,7 +73,7 @@ namespace MashadLeatherEcommerce.Controllers
             Helper.BaseViewModelHelper baseViewModelHelper = new BaseViewModelHelper();
 
             
-            Product product = db.Products.FirstOrDefault(current=>current.Code == code && current.IsDeleted==false && current.IsActive==true);
+            Product product = db.Products.FirstOrDefault(current=>current.Code == code );
             if (product == null)
             {
                 return HttpNotFound();
@@ -110,6 +110,7 @@ namespace MashadLeatherEcommerce.Controllers
             quickProduct.SecondColor = ReturnSecondColor(product);
             quickProduct.IsInPromotion = product.IsInPromotion;
             quickProduct.DiscountAmount = string.Format("{0:#,#}", product.DiscountAmount);
+            quickProduct.IsActive = product.IsActive;
             ViewBag.Title = product.Title + " | چرم مشهد";
             ViewBag.Canonical = "https://www.mashadleather.com/product-detail/" + product.Id;
 
@@ -994,7 +995,7 @@ namespace MashadLeatherEcommerce.Controllers
                 return RedirectPermanent("/category");
 
             List<Product> products = db.Products
-                .Where(current => current.IsDeleted == false && current.ImageUrl != null && current.IsActive == true &&
+                .Where(current =>  current.ImageUrl != null && 
                                   current.ParentId == null && current.ProductCategoryId == productCategory.Id).ToList();
             
             ViewBag.total = products.Count();
@@ -1002,7 +1003,7 @@ namespace MashadLeatherEcommerce.Controllers
             ProductListViewModel productList = new ProductListViewModel
             {
                 MenuItem = baseViewModelHelper.GetMenuItems(),
-                Products = GetProductList(products),
+                Products = GetProductList(products).OrderByDescending(c=>c.IsActive).ToList(),
                 MenuGalleryGroups = baseViewModelHelper.GetMenuGalleryGroups(),
                 ProductCategory = GetProductCategory(productCategory),
                 Commnets = db.Comments.Where(c=>c.ProductCategoryId== productCategory.Id && c.IsActive&&c.IsDeleted==false&&c.ParentId==null).ToList()
@@ -1030,7 +1031,8 @@ namespace MashadLeatherEcommerce.Controllers
                     DiscountAmount = string.Format("{0:#,#}", product.DiscountAmount),
                     IsInPromotion = product.IsInPromotion,
                     HasTag = product.HasTag,
-                    TagTitle = product.TagTitleSrt
+                    TagTitle = product.TagTitleSrt,
+                    IsActive = product.IsActive
                 });
             }
 
@@ -1127,7 +1129,7 @@ namespace MashadLeatherEcommerce.Controllers
                 SecondColor = ReturnSecondColor(product),
                 IsInPromotion = product.IsInPromotion,
                 DiscountAmount = string.Format("{0:#,#}", product.DiscountAmount),
-
+                IsActive = product.IsActive
             };
 
 
