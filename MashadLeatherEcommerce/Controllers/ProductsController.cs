@@ -995,7 +995,7 @@ namespace MashadLeatherEcommerce.Controllers
                 return RedirectPermanent("/category");
 
             List<Product> products = db.Products
-                .Where(current =>  current.ImageUrl != null && 
+                .Where(current =>  current.ImageUrl != null && current.IsDeleted==false&&
                                   current.ParentId == null && current.ProductCategoryId == productCategory.Id).ToList();
             
             ViewBag.total = products.Count();
@@ -1581,6 +1581,7 @@ namespace MashadLeatherEcommerce.Controllers
 
                 List<Product> products = db.Products
                     .Where(current => current.Barcode == barcode && current.IsDeleted == false).ToList();
+              
 
                 //Product product = db.Products
                 //    .FirstOrDefault(current => current.Barcode == barcode && current.IsDeleted == false);
@@ -1632,8 +1633,13 @@ namespace MashadLeatherEcommerce.Controllers
                 {
                     decimal maxDiscountAmount = GetMaxDiscountAmount(product.Barcode.Substring(5, 5));
 
-                    if (product.DiscountAmount < maxDiscountAmount && product.IsInPromotion)
+                    if (product.DiscountAmount < maxDiscountAmount)
+                    {
                         product.DiscountAmount = maxDiscountAmount;
+                    }
+
+                    if (maxDiscountAmount != 0)
+                        product.IsInPromotion = true;
                 }
             }
         }
@@ -1749,4 +1755,6 @@ namespace MashadLeatherEcommerce.Controllers
         }
     }
 }
+
+
 
