@@ -4748,6 +4748,10 @@
     <Compile Include="Migrations\202008310758253_V72.Designer.cs">
       <DependentUpon>202008310758253_V72.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009051144559_V73.cs" />
+    <Compile Include="Migrations\202009051144559_V73.Designer.cs">
+      <DependentUpon>202009051144559_V73.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DatabaseContext.cs" />
     <Compile Include="Models\DatabaseContextInitializer.cs" />
@@ -5347,6 +5351,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008310758253_V72.resx">
       <DependentUpon>202008310758253_V72.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009051144559_V73.resx">
+      <DependentUpon>202009051144559_V73.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

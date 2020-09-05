@@ -38,6 +38,17 @@ namespace Models
 
         [Display(Name="صفحه فرود لینک")]
         public string LandingPage { get; set; }
+
+
+        [Display(Name="صفحه فرود لینک انگلیسی")]
+        public string LandingPageEn { get; set; }
+
+
+        [Display(Name="صفحه فرود لینک عربی")]
+        public string LandingPageAr { get; set; }
+
+
+
         GetCulture oGetCulture = new GetCulture();
 
         [NotMapped]
@@ -94,6 +105,26 @@ namespace Models
                         return this.LinkTitleAr;
                     default:
                         return String.Empty;
+                }
+            }
+        }
+
+        [NotMapped]
+        public string LandingPageSrt
+        {
+            get
+            {
+                string currentCulture = oGetCulture.CurrentLang();
+                switch (currentCulture.ToLower())
+                {
+                    case "en-us":
+                        return this.LandingPageEn;
+                    case "fa-ir":
+                        return this.LandingPage;
+                    case "ar-ae":
+                        return this.LandingPageAr;
+                    default:
+                        return this.LandingPage;
                 }
             }
         }

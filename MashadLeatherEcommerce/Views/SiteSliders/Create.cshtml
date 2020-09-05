@@ -1,153 +1,173 @@
 ﻿@model Models.SiteSlider
 
 @{
-    ViewBag.Title = "افزودن " + Server.HtmlDecode(Html.DisplayNameFor(model => model).ToString());
-    Layout = "~/Views/Shared/BackEndLayout/_BackEndLayout.cshtml";
+		ViewBag.Title = "افزودن " + Server.HtmlDecode(Html.DisplayNameFor(model => model).ToString());
+		Layout = "~/Views/Shared/BackEndLayout/_BackEndLayout.cshtml";
 }
 
 <h2>افزودن @Html.DisplayNameFor(model => model)</h2>
 
 @using (Html.BeginForm("Create", "SiteSliders", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
-    @Html.AntiForgeryToken()
+		@Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        @Html.ValidationSummary(true)
+		<div class="form-horizontal">
+			@Html.ValidationSummary(true)
 
-        <div class="form-group">
-            <div class="form-group">
-                @Html.LabelFor(model => model.Order, new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Order)
+			<div class="form-group">
+				<div class="form-group">
+					@Html.LabelFor(model => model.Order, new { @class = "control-label col-md-2" })
+					<div class="col-md-10">
+						@Html.EditorFor(model => model.Order)
 
-                    @Html.ValidationMessageFor(model => model.Order)
-                </div>
-            </div>
+						@Html.ValidationMessageFor(model => model.Order)
+					</div>
+				</div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.ImageUrl, new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.Kendo().Upload().Name("fileUpload").Multiple(false)
-                    @Html.ValidationMessageFor(model => model.ImageUrl)
-                </div>
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(model => model.ImageUrlEn, new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.Kendo().Upload().Name("fileUploadEn").Multiple(false)
-                    @Html.ValidationMessageFor(model => model.ImageUrlEn)
-                </div>
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(model => model.ImageUrlAr, new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.Kendo().Upload().Name("fileUploadAr").Multiple(false)
-                    @Html.ValidationMessageFor(model => model.ImageUrlAr)
-                </div>
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(model => model.Title, new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Title)
+				<div class="form-group">
+					@Html.LabelFor(model => model.ImageUrl, new { @class = "control-label col-md-2" })
+					<div class="col-md-10">
+						@Html.Kendo().Upload().Name("fileUpload").Multiple(false)
+						@Html.ValidationMessageFor(model => model.ImageUrl)
+					</div>
+				</div>
+				<div class="form-group">
+					@Html.LabelFor(model => model.ImageUrlEn, new { @class = "control-label col-md-2" })
+					<div class="col-md-10">
+						@Html.Kendo().Upload().Name("fileUploadEn").Multiple(false)
+						@Html.ValidationMessageFor(model => model.ImageUrlEn)
+					</div>
+				</div>
+				<div class="form-group">
+					@Html.LabelFor(model => model.ImageUrlAr, new { @class = "control-label col-md-2" })
+					<div class="col-md-10">
+						@Html.Kendo().Upload().Name("fileUploadAr").Multiple(false)
+						@Html.ValidationMessageFor(model => model.ImageUrlAr)
+					</div>
+				</div>
+				<div class="form-group">
+					@Html.LabelFor(model => model.Title, new { @class = "control-label col-md-2" })
+					<div class="col-md-10">
+						@Html.EditorFor(model => model.Title)
 
-                    @Html.ValidationMessageFor(model => model.Title)
-                </div>
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(model => model.TitleEn, new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.TitleEn)
+						@Html.ValidationMessageFor(model => model.Title)
+					</div>
+				</div>
+				<div class="form-group">
+					@Html.LabelFor(model => model.TitleEn, new { @class = "control-label col-md-2" })
+					<div class="col-md-10">
+						@Html.EditorFor(model => model.TitleEn)
 
-                    @Html.ValidationMessageFor(model => model.TitleEn)
-                </div>
-            </div>
+						@Html.ValidationMessageFor(model => model.TitleEn)
+					</div>
+				</div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.TitleAr, new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.TitleAr)
+				<div class="form-group">
+					@Html.LabelFor(model => model.TitleAr, new { @class = "control-label col-md-2" })
+					<div class="col-md-10">
+						@Html.EditorFor(model => model.TitleAr)
 
-                    @Html.ValidationMessageFor(model => model.TitleAr)
-                </div>
-            </div>
+						@Html.ValidationMessageFor(model => model.TitleAr)
+					</div>
+				</div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.LinkTitle, new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.LinkTitle)
+				<div class="form-group">
+					@Html.LabelFor(model => model.LinkTitle, new { @class = "control-label col-md-2" })
+					<div class="col-md-10">
+						@Html.EditorFor(model => model.LinkTitle)
 
-                    @Html.ValidationMessageFor(model => model.LinkTitle)
-                </div>
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(model => model.LinkTitleEn, new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.LinkTitleEn)
+						@Html.ValidationMessageFor(model => model.LinkTitle)
+					</div>
+				</div>
+				<div class="form-group">
+					@Html.LabelFor(model => model.LinkTitleEn, new { @class = "control-label col-md-2" })
+					<div class="col-md-10">
+						@Html.EditorFor(model => model.LinkTitleEn)
 
-                    @Html.ValidationMessageFor(model => model.LinkTitleEn)
-                </div>
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(model => model.LinkTitleAr, new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.LinkTitleAr)
+						@Html.ValidationMessageFor(model => model.LinkTitleEn)
+					</div>
+				</div>
+				<div class="form-group">
+					@Html.LabelFor(model => model.LinkTitleAr, new { @class = "control-label col-md-2" })
+					<div class="col-md-10">
+						@Html.EditorFor(model => model.LinkTitleAr)
 
-                    @Html.ValidationMessageFor(model => model.LinkTitleAr)
-                </div>
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(model => model.LandingPage, new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.LandingPage)
+						@Html.ValidationMessageFor(model => model.LinkTitleAr)
+					</div>
+				</div>
+				<div class="form-group">
+					@Html.LabelFor(model => model.LandingPage, new { @class = "control-label col-md-2" })
+					<div class="col-md-10">
+						@Html.EditorFor(model => model.LandingPage)
 
-                    @Html.ValidationMessageFor(model => model.LandingPage)
-                </div>
-            </div>
+						@Html.ValidationMessageFor(model => model.LandingPage)
+					</div>
+				</div>
 
-            <div class="form-group">
-                <div class="col-md-2">
-                </div>
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.IsActive)
+				<div class="form-group">
+					@Html.LabelFor(model => model.LandingPageEn, new { @class = "control-label col-md-2" })
+					<div class="col-md-10">
+						@Html.EditorFor(model => model.LandingPageEn)
 
-                    @Html.LabelFor(model => model.IsActive)
-                    @Html.ValidationMessageFor(model => model.IsActive)
-                </div>
-            </div>
+						@Html.ValidationMessageFor(model => model.LandingPageEn)
+					</div>
+				</div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.Description, new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Description)
 
-                    @Html.ValidationMessageFor(model => model.Description)
-                </div>
-            </div>
+				<div class="form-group">
+					@Html.LabelFor(model => model.LandingPageAr, new { @class = "control-label col-md-2" })
+					<div class="col-md-10">
+						@Html.EditorFor(model => model.LandingPageAr)
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.DescriptionEn, new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.DescriptionEn)
+						@Html.ValidationMessageFor(model => model.LandingPageAr)
+					</div>
+				</div>
 
-                    @Html.ValidationMessageFor(model => model.DescriptionEn)
-                </div>
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(model => model.DescriptionAr, new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.DescriptionAr)
 
-                    @Html.ValidationMessageFor(model => model.DescriptionAr)
-                </div>
-            </div>
+				<div class="form-group">
+					<div class="col-md-2">
+					</div>
+					<div class="col-md-10">
+						@Html.EditorFor(model => model.IsActive)
 
-            <div class="form-group" id="buttons">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="ایجاد" class="btn btn-primary" />
-                    @Html.ActionLink("بازگشت به فهرست", "Index")
-                </div>
-            </div>
-        </div>
-    </div>
+						@Html.LabelFor(model => model.IsActive)
+						@Html.ValidationMessageFor(model => model.IsActive)
+					</div>
+				</div>
+
+				<div class="form-group">
+					@Html.LabelFor(model => model.Description, new { @class = "control-label col-md-2" })
+					<div class="col-md-10">
+						@Html.EditorFor(model => model.Description)
+
+						@Html.ValidationMessageFor(model => model.Description)
+					</div>
+				</div>
+
+				<div class="form-group">
+					@Html.LabelFor(model => model.DescriptionEn, new { @class = "control-label col-md-2" })
+					<div class="col-md-10">
+						@Html.EditorFor(model => model.DescriptionEn)
+
+						@Html.ValidationMessageFor(model => model.DescriptionEn)
+					</div>
+				</div>
+				<div class="form-group">
+					@Html.LabelFor(model => model.DescriptionAr, new { @class = "control-label col-md-2" })
+					<div class="col-md-10">
+						@Html.EditorFor(model => model.DescriptionAr)
+
+						@Html.ValidationMessageFor(model => model.DescriptionAr)
+					</div>
+				</div>
+
+				<div class="form-group" id="buttons">
+					<div class="col-md-offset-2 col-md-10">
+						<input type="submit" value="ایجاد" class="btn btn-primary" />
+						@Html.ActionLink("بازگشت به فهرست", "Index")
+					</div>
+				</div>
+			</div>
+		</div>
 }
 

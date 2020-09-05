@@ -99,8 +99,28 @@
                 @Html.ValidationMessageFor(model => model.LandingPage)
             </div>
         </div>
+			
+	    <div class="form-group">
+		    @Html.LabelFor(model => model.LandingPageEn, new { @class = "control-label col-md-2" })
+		    <div class="col-md-10">
+			    @Html.EditorFor(model => model.LandingPageEn)
 
-        <div class="form-group">
+			    @Html.ValidationMessageFor(model => model.LandingPageEn)
+		    </div>
+	    </div>
+
+
+	    <div class="form-group">
+		    @Html.LabelFor(model => model.LandingPageAr, new { @class = "control-label col-md-2" })
+		    <div class="col-md-10">
+			    @Html.EditorFor(model => model.LandingPageAr)
+
+			    @Html.ValidationMessageFor(model => model.LandingPageAr)
+		    </div>
+	    </div>
+
+
+	    <div class="form-group">
             @Html.LabelFor(model => model.IsActive, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                                   @Html.EditorFor(model => model.IsActive)
