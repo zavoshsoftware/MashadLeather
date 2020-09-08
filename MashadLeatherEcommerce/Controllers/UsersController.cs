@@ -28,6 +28,35 @@ namespace MashadLeatherEcommerce.Controllers
             return View(users);
         }
 
+        public ActionResult GetUserExcel()
+        {
+            List<UserExcellViewModel> gridList = new List<UserExcellViewModel>();
+            List<User> users = db.Users.Where(c => c.Role.Name == "customer" && c.IsDeleted == false).ToList();
+
+            foreach (User user in users)
+            {
+                gridList.Add(new UserExcellViewModel
+                {
+                   CellNumber = user.CellNum,
+                   Email = user.Email,
+                   FirstName = user.FirstName,
+                   LastName = user.LastName
+                });
+            }
+
+            GridView gv = new GridView();
+            gv.DataSource = gridList;
+            gv.DataBind();
+            gv.HeaderRow.Cells[0].Text = "نام";
+            gv.HeaderRow.Cells[1].Text = "نام خانوادگی";
+            gv.HeaderRow.Cells[2].Text = "شماره موبایل";
+            gv.HeaderRow.Cells[3].Text = "ایمیل";
+
+            Session["users"] = gv;
+
+            return new DownloadFileActionResult((GridView)Session["users"], "users.xls");
+        }
+
 
         public ActionResult Create()
         {

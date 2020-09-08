@@ -44,6 +44,15 @@ namespace ViewModels
 
 
     }
+
+    public class UserExcellViewModel
+    {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string CellNumber { get; set; }
+        public string Email { get; set; }
+    }
+
     public class ExcelGridviewForImageViewModel
     {
         public string ProductCode { get; set; }

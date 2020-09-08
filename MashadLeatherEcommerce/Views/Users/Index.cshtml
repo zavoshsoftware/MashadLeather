@@ -4,15 +4,9 @@
 ViewBag.Title = "فهرست کاربران" ;
     
 }
-@if (User.Identity.IsAuthenticated)
-{
-	var identity = (System.Security.Claims.ClaimsIdentity) User.Identity;
-	string role = identity.FindFirst(System.Security.Claims.ClaimTypes.Role).Value;
-	if (role == "SuperAdministrator")
-	{
-		<a href="/users/DownloadReport" class="btn btn-info">دانلود خروجی</a>
-	}
-}
+ 
+		<a href="/users/GetUserExcel" class="btn btn-info">دانلود خروجی</a>
+ 
 	<h2>@ViewBag.Title</h2>
 
         @(Html.Kendo().Grid(Model)
