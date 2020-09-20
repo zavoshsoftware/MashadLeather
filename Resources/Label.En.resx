@@ -427,4 +427,10 @@
   <data name="OrganizationalSales" xml:space="preserve">
     <value>Organizational Sales</value>
   </data>
+  <data name="Export" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="Cooperation" xml:space="preserve">
+    <value>Cooperation</value>
+  </data>
 </root>

@@ -1188,6 +1188,7 @@
     <Content Include="fonts\IranSans\woff2\IRANSansWeb%28FaNum%29.woff2" />
     <None Include="Connected Services\SamanWebService\referencepayment.wsdl" />
     <Content Include="Images\slider\revolution\polo-homepage\Three-Swans.ogv" />
+    <Content Include="Content\CoOperation.doc" />
     <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile2.pubxml" />
     <None Include="Properties\Settings.settings">
@@ -4797,6 +4798,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\BranchListViewMoel.cs" />
     <Compile Include="ViewModels\ContactViewModel.cs" />
+    <Compile Include="ViewModels\CooperationViewModel.cs" />
     <Compile Include="ViewModels\CustomerClubViewModel.cs" />
     <Compile Include="ViewModels\BillingResultViewModel.cs" />
     <Compile Include="ViewModels\BlogDetailViewModel.cs" />
@@ -5119,6 +5121,8 @@
     <Content Include="Views\ProductCategories\ParentList.cshtml" />
     <Content Include="Views\Orders\OrderTracking.cshtml" />
     <Content Include="Views\Home\OrganizationalSales.cshtml" />
+    <Content Include="Views\Home\Export.cshtml" />
+    <Content Include="Views\Home\Cooperation.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -5132,6 +5136,7 @@
     <Folder Include="Uploads\gallery\files\" />
     <Folder Include="Uploads\ProductCategory\" />
     <Folder Include="Uploads\Product\" />
+    <Folder Include="Uploads\Resume\" />
     <Folder Include="Uploads\slider\" />
     <Folder Include="Uploads\text\" />
   </ItemGroup>

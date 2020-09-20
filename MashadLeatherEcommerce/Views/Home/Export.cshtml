@@ -1,0 +1,25 @@
+﻿@model ViewModels.OrganizationalSaleViewModel
+@{
+    ViewBag.Title = Resources.Label.Export + " | " + Resources.Label.MashadLeather;
+    ViewBag.Description = "شرکت چرم مشهد در سال 1375 در شهرک صنعتی چرم شهر مشهد با هدف حفظ و ارتقاء ارزش افزوده صنعت چرم و محصولات چرمی، ایجاد اشتغال در داخل کشور، عرضه مستقیم کلیه محصولات چرمی به هموطنان و صادرات با به کارگیری کلیه امکانات و توان بالقوه تاسیس گردیده است.";
+    ViewBag.Canonical = "https://www.mashadleather.com/Export";
+    Layout = "~/Views/Shared/FrontEndLayout/_FrontEndLayout.cshtml";
+}
+
+<div class="inspiro-slider arrows-large arrows-creative dots-creative" data-height-xs="360" id="slider">
+    <div class="slide kenburns" style="background-image:url('@Model.HeaderImage');">
+        <div class="container">
+            <div class="slide-captions text-center text-light">
+                <span class="strong">@Resources.Label.Export</span> <h1>@Resources.Label.MashadLeather</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section>
+    <div class="container">
+        <div class="row about-main-text">
+            @Html.Raw(Model.MainText)
+        </div>
+    </div>
+</section>

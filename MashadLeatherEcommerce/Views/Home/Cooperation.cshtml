@@ -1,0 +1,55 @@
+﻿@model ViewModels.CooperationViewModel
+@{
+    ViewBag.Title = Resources.Label.Cooperation + " | " + Resources.Label.MashadLeather;
+    ViewBag.Description = "شرکت چرم مشهد در سال 1375 در شهرک صنعتی چرم شهر مشهد با هدف حفظ و ارتقاء ارزش افزوده صنعت چرم و محصولات چرمی، ایجاد اشتغال در داخل کشور، عرضه مستقیم کلیه محصولات چرمی به هموطنان و صادرات با به کارگیری کلیه امکانات و توان بالقوه تاسیس گردیده است.";
+    ViewBag.Canonical = "https://www.mashadleather.com/Export";
+    Layout = "~/Views/Shared/FrontEndLayout/_FrontEndLayout.cshtml";
+}
+
+<div class="inspiro-slider arrows-large arrows-creative dots-creative" data-height-xs="360" id="slider">
+    <div class="slide kenburns" style="background-image:url('@Model.HeaderImage');">
+        <div class="container">
+            <div class="page-title text-right text-light">
+                <h1>@Resources.Label.Cooperation</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section>
+    <div class="container">
+        <div class="row about-main-text col-md-8 col-md-pull-2">
+            
+                @Html.Raw(Model.MainText.BodySrt)
+          
+            <a href="~/Content/CoOperation.doc" class="btn btn-primary">دانلود فرم</a>
+            <hr />
+            @using (Html.BeginForm("Cooperation", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        بارگذاری رزومه
+                    </div>
+                    <div class="panel-body">
+                      @if(!string.IsNullOrEmpty(TempData["alertText"].ToString()))
+                      {
+                          <p class="alert alert-info">@TempData["alertText"]</p>
+                      }
+                        <div class="row">
+                            <div class="col-md-5"><label class="control-label">رزومه خود را در این قسمت بارگذاری نمایید</label></div>
+                            <div class="col-md-4">
+                                @Html.Kendo().Upload().Name("fileUpload").Multiple(false)
+                            </div>
+                        </div>
+
+
+                        <input type="submit" value="ثبت" class="btn btn-default" />
+                    </div>
+                </div>
+
+
+            }
+        </div>
+    </div>
+</section>

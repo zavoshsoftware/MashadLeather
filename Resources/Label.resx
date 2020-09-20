@@ -426,4 +426,13 @@
   <data name="OrganizationalSales" xml:space="preserve">
     <value>فروش سازمانی</value>
   </data>
+  <data name="Export" xml:space="preserve">
+    <value>صادرات</value>
+  </data>
+  <data name="Cooperation" xml:space="preserve">
+    <value>همکاری با چرم مشهد</value>
+  </data>
+  <data name="CooperationMainText" xml:space="preserve">
+    <value>همکاری با چرم مشهد از طریق لینک زیر</value>
+  </data>
 </root>

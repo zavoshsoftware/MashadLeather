@@ -286,6 +286,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to همکاری با چرم مشهد.
+        /// </summary>
+        public static string Cooperation {
+            get {
+                return ResourceManager.GetString("Cooperation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to همکاری با چرم مشهد از طریق لینک زیر.
+        /// </summary>
+        public static string CooperationMainText {
+            get {
+                return ResourceManager.GetString("CooperationMainText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to باشگاه مشتریان.
         /// </summary>
         public static string CustomerClub {
@@ -381,6 +399,15 @@ namespace Resources {
         public static string EnterMobile {
             get {
                 return ResourceManager.GetString("EnterMobile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to صادرات.
+        /// </summary>
+        public static string Export {
+            get {
+                return ResourceManager.GetString("Export", resourceCulture);
             }
         }
         

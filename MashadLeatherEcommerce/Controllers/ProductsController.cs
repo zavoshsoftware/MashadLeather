@@ -167,7 +167,7 @@ namespace MashadLeatherEcommerce.Controllers
         }
 
         // GET: Products/Edit/5
-        [Authorize(Roles = "Administrator,SuperAdministrator")]
+        [Authorize(Roles = "Administrator,SuperAdministrator,eshopadmin")]
         public ActionResult Edit(Guid? id)
         {
             if (id == null)
@@ -201,7 +201,7 @@ namespace MashadLeatherEcommerce.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Administrator,SuperAdministrator")]
+        [Authorize(Roles = "Administrator,SuperAdministrator,eshopadmin")]
         public ActionResult Edit(Product product, HttpPostedFileBase fileupload)
         {
             if (ModelState.IsValid)
@@ -264,7 +264,7 @@ namespace MashadLeatherEcommerce.Controllers
 
 
         // GET: Products/Delete/5
-        [Authorize(Roles = "Administrator,SuperAdministrator")]
+        [Authorize(Roles = "Administrator,SuperAdministrator,eshopadmin")]
         public ActionResult Delete(Guid? id)
         {
             if (id == null)
@@ -282,7 +282,7 @@ namespace MashadLeatherEcommerce.Controllers
         // POST: Products/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Administrator,SuperAdministrator")]
+        [Authorize(Roles = "Administrator,SuperAdministrator,eshopadmin")]
         public ActionResult DeleteConfirmed(Guid id)
         {
             Product product = db.Products.Find(id);

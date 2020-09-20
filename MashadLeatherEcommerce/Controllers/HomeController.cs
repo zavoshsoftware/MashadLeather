@@ -338,8 +338,71 @@ namespace MashadLeatherEcommerce.Controllers
             }
             return View(organizationalSale);
         }
+        [Route("Export")]
+        public ActionResult Export()
+        {
+            OrganizationalSaleViewModel organizationalSale = new OrganizationalSaleViewModel();
+            Text header = db.Texts.Where(current=>current.Name =="export").FirstOrDefault();
+            organizationalSale.MenuItem = baseViewModelHelper.GetMenuItems();
+            organizationalSale.MenuGalleryGroups = baseViewModelHelper.GetMenuGalleryGroups();
+            if (header != null)
+            {
+                organizationalSale.MainText = header.BodySrt;
+                organizationalSale.HeaderImage = header.ImageUrl;
+            }
+            return View(organizationalSale);
+        }
+        
+        public ActionResult Cooperation()
+        {
+            CooperationViewModel cooperationViewModel = new CooperationViewModel();
+            cooperationViewModel.MenuItem = baseViewModelHelper.GetMenuItems();
+            cooperationViewModel.MenuGalleryGroups = baseViewModelHelper.GetMenuGalleryGroups();
+            Text mainText = db.Texts.Where(current => current.Name == "cooperation").FirstOrDefault();
+            if(mainText!=null)
+            {
+                cooperationViewModel.MainText = mainText;
+                cooperationViewModel.HeaderImage = mainText.ImageUrl;
+            }
+            TempData["alertText"] = "";
+            //if (!string.IsNullOrEmpty(alertText))
+            //{
+            //    TempData["alertText"] = alertText;
+            //}
+            return View(cooperationViewModel);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Cooperation(CooperationViewModel model,HttpPostedFileBase fileUpload)
+        {
+            model.MenuItem = baseViewModelHelper.GetMenuItems();
+            model.MenuGalleryGroups = baseViewModelHelper.GetMenuGalleryGroups();
+            Text mainText = db.Texts.Where(current => current.Name == "cooperation").FirstOrDefault();
+            if (mainText != null)
+            {
+                model.MainText = mainText;
+                model.HeaderImage = mainText.ImageUrl;
+            }
+            string newFilenameUrl = string.Empty;
+            //string message = string.Empty;
+            if (fileUpload != null)
+            {
+                string filename = Path.GetFileName(fileUpload.FileName);
+                string newFilename = Guid.NewGuid().ToString().Replace("-", string.Empty)
+                                     + Path.GetExtension(filename);
 
+                newFilenameUrl = "/Uploads/Resume/" + newFilename;
+                string physicalFilename = Server.MapPath(newFilenameUrl);
 
+                fileUpload.SaveAs(physicalFilename);
+                TempData["alertText"] = "رزومه شما با موفقیت ثبت گردید.";
+                return View(model);
+                //return RedirectToAction("Cooperation",new { alertText = message });
+            }
+            TempData["alertText"] = "خطا در ثبت رزومه!! مجددا تلاش نمایید";
+            return View(model);
+            //return RedirectToAction("Cooperation", new { alertText = message });
+        }
 
     }
 }

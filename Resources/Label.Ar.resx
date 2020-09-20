@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
-    <value>حول مشهد للجلود</value>
+    <value>نبذه عن شركه مشهد للجلود</value>
   </data>
   <data name="AboutUs" xml:space="preserve">
     <value>من نحن</value>
@@ -151,7 +151,7 @@
     <value>المنتجات الأكثر مبيعا</value>
   </data>
   <data name="Blog" xml:space="preserve">
-    <value>مدونة الويب</value>
+    <value>مدونه الويب</value>
   </data>
   <data name="Branches" xml:space="preserve">
     <value>معارجنا</value>
@@ -160,7 +160,7 @@
     <value>معلومات الاتصال بفروع مشهد للجلود</value>
   </data>
   <data name="BranchName" xml:space="preserve">
-    <value>اسم الفرع</value>
+    <value>اسم الفروع</value>
   </data>
   <data name="BuyGuid" xml:space="preserve">
     <value>دليل التسوق</value>
@@ -193,10 +193,10 @@
     <value>نادي العملاء</value>
   </data>
   <data name="CustomerClubPrivacy" xml:space="preserve">
-    <value>قواعد نادي العملاء</value>
+    <value>قواعد نادي العملا</value>
   </data>
   <data name="CustomerClubProfile" xml:space="preserve">
-    <value>عرض الصفحة الشخصية</value>
+    <value>الحساب الشخصي</value>
   </data>
   <data name="CustomerInfo" xml:space="preserve">
     <value>معلومات العميل</value>
@@ -247,7 +247,7 @@
     <value>لائحة الطلبات</value>
   </data>
   <data name="Home" xml:space="preserve">
-    <value>الصفحة الرئيسية</value>
+    <value>الصفحه الرئيسيه</value>
   </data>
   <data name="Honors" xml:space="preserve">
     <value>من أوسمة مشهد للجلود</value>
@@ -334,7 +334,7 @@
     <value>من أجل الحفاظ على صحة عملائنا الأعزاء ، لا يمكن تبادل السلع وإعادتها هذه الأيام</value>
   </data>
   <data name="Products" xml:space="preserve">
-    <value>متجر على الانترنت</value>
+    <value>التسويق الالكتروني</value>
   </data>
   <data name="Qty" xml:space="preserve">
     <value>رقم</value>
@@ -382,7 +382,7 @@
     <value>بحجم</value>
   </data>
   <data name="Stores" xml:space="preserve">
-    <value>مخازن</value>
+    <value>فروع الشركه</value>
   </data>
   <data name="StoresDesc" xml:space="preserve">
     <value>ابحث عن متاجرنا على الخريطة</value>
@@ -425,5 +425,11 @@
   </data>
   <data name="OrganizationalSales" xml:space="preserve">
     <value>المبيعات التنظيمية</value>
+  </data>
+  <data name="Export" xml:space="preserve">
+    <value>تصدير</value>
+  </data>
+  <data name="Cooperation" xml:space="preserve">
+    <value>تعاون</value>
   </data>
 </root>
