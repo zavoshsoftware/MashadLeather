@@ -4437,6 +4437,7 @@
     <Compile Include="Controllers\ProductCategoryApiController.cs" />
     <Compile Include="Controllers\ProductImagesController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\ResumeFilesController.cs" />
     <Compile Include="Controllers\SamanPaymentController.cs" />
     <Compile Include="Controllers\SiteBranchesController.cs" />
     <Compile Include="Controllers\SiteBranchGroupsController.cs" />
@@ -4753,6 +4754,10 @@
     <Compile Include="Migrations\202009051144559_V73.Designer.cs">
       <DependentUpon>202009051144559_V73.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009210710190_V74.cs" />
+    <Compile Include="Migrations\202009210710190_V74.Designer.cs">
+      <DependentUpon>202009210710190_V74.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DatabaseContext.cs" />
     <Compile Include="Models\DatabaseContextInitializer.cs" />
@@ -4774,6 +4779,7 @@
     <Compile Include="Models\Entities\ProductCategory.cs" />
     <Compile Include="Models\Entities\ProductImage.cs" />
     <Compile Include="Models\Entities\Province.cs" />
+    <Compile Include="Models\Entities\ResumeFile.cs" />
     <Compile Include="Models\Entities\Role.cs" />
     <Compile Include="Models\Entities\SecondColor.cs" />
     <Compile Include="Models\Entities\SiteBranch.cs" />
@@ -5123,6 +5129,11 @@
     <Content Include="Views\Home\OrganizationalSales.cshtml" />
     <Content Include="Views\Home\Export.cshtml" />
     <Content Include="Views\Home\Cooperation.cshtml" />
+    <Content Include="Views\ResumeFiles\Create.cshtml" />
+    <Content Include="Views\ResumeFiles\Delete.cshtml" />
+    <Content Include="Views\ResumeFiles\Details.cshtml" />
+    <Content Include="Views\ResumeFiles\Edit.cshtml" />
+    <Content Include="Views\ResumeFiles\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -5359,6 +5370,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202009051144559_V73.resx">
       <DependentUpon>202009051144559_V73.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009210710190_V74.resx">
+      <DependentUpon>202009210710190_V74.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

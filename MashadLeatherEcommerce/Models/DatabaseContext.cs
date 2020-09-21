@@ -55,6 +55,8 @@ namespace Models
         public System.Data.Entity.DbSet<Models.BlogGroup> BlogGroups { get; set; }
         public System.Data.Entity.DbSet<Models.SiteBranchGroup> SiteBranchGroups { get; set; }
         public System.Data.Entity.DbSet<Models.SiteBranch> SiteBranches { get; set; }
+        public DbSet<ResumeFile> ResumeFiles { get; set; }
+
     }
 
 }

@@ -29,15 +29,15 @@ namespace MashadLeatherEcommerce.Controllers
         // GET: Home
         Helper.BaseViewModelHelper baseViewModelHelper = new BaseViewModelHelper();
         public ActionResult Index()
-        {    
-       
+        {
+
 
             HomeViewModel home = new HomeViewModel()
             {
                 MenuItem = baseViewModelHelper.GetMenuItems(),
                 MenuGalleryGroups = baseViewModelHelper.GetMenuGalleryGroups(),
-                NewProducts = GetNewstProductList(true,false),
-                MostSellProducts = GetNewstProductList(false,true),
+                NewProducts = GetNewstProductList(true, false),
+                MostSellProducts = GetNewstProductList(false, true),
                 ProductCategories = db.ProductCategories.Where(c => c.IsDeleted == false && c.ParentId == null && c.IsActive).Take(4).ToList(),
                 Sliders = db.SiteSliders.Where(c => c.IsDeleted == false && c.IsActive).OrderBy(c => c.Order).ToList()
             };
@@ -55,7 +55,7 @@ namespace MashadLeatherEcommerce.Controllers
                      .Where(current => current.IsDeleted == false && current.IsActive && current.ParentId == null &&
                                        current.IsInHome).Take(8).ToList();
 
-            if(isMostSale)
+            if (isMostSale)
                 products = db.Products
                     .Where(current => current.IsDeleted == false && current.IsActive && current.ParentId == null &&
                                       current.IsMostSale).Take(8).ToList();
@@ -322,7 +322,7 @@ namespace MashadLeatherEcommerce.Controllers
         {
             return RedirectPermanent("contact");
         }
-        
+
         [Route("OrganizationalSales")]
         public ActionResult OrganizationalSales()
         {
@@ -342,7 +342,7 @@ namespace MashadLeatherEcommerce.Controllers
         public ActionResult Export()
         {
             OrganizationalSaleViewModel organizationalSale = new OrganizationalSaleViewModel();
-            Text header = db.Texts.Where(current=>current.Name =="export").FirstOrDefault();
+            Text header = db.Texts.Where(current => current.Name == "export").FirstOrDefault();
             organizationalSale.MenuItem = baseViewModelHelper.GetMenuItems();
             organizationalSale.MenuGalleryGroups = baseViewModelHelper.GetMenuGalleryGroups();
             if (header != null)
@@ -352,14 +352,15 @@ namespace MashadLeatherEcommerce.Controllers
             }
             return View(organizationalSale);
         }
-        
+
+        [Route("career")]
         public ActionResult Cooperation()
         {
             CooperationViewModel cooperationViewModel = new CooperationViewModel();
             cooperationViewModel.MenuItem = baseViewModelHelper.GetMenuItems();
             cooperationViewModel.MenuGalleryGroups = baseViewModelHelper.GetMenuGalleryGroups();
             Text mainText = db.Texts.Where(current => current.Name == "cooperation").FirstOrDefault();
-            if(mainText!=null)
+            if (mainText != null)
             {
                 cooperationViewModel.MainText = mainText;
                 cooperationViewModel.HeaderImage = mainText.ImageUrl;
@@ -373,7 +374,8 @@ namespace MashadLeatherEcommerce.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Cooperation(CooperationViewModel model,HttpPostedFileBase fileUpload)
+        [Route("career")]
+        public ActionResult Cooperation(CooperationViewModel model, HttpPostedFileBase fileUpload)
         {
             model.MenuItem = baseViewModelHelper.GetMenuItems();
             model.MenuGalleryGroups = baseViewModelHelper.GetMenuGalleryGroups();
@@ -383,24 +385,52 @@ namespace MashadLeatherEcommerce.Controllers
                 model.MainText = mainText;
                 model.HeaderImage = mainText.ImageUrl;
             }
-            string newFilenameUrl = string.Empty;
-            //string message = string.Empty;
-            if (fileUpload != null)
+
+
+            try
             {
-                string filename = Path.GetFileName(fileUpload.FileName);
-                string newFilename = Guid.NewGuid().ToString().Replace("-", string.Empty)
-                                     + Path.GetExtension(filename);
 
-                newFilenameUrl = "/Uploads/Resume/" + newFilename;
-                string physicalFilename = Server.MapPath(newFilenameUrl);
 
-                fileUpload.SaveAs(physicalFilename);
-                TempData["alertText"] = "رزومه شما با موفقیت ثبت گردید.";
+                string newFilenameUrl = string.Empty;
+
+
+                if (fileUpload != null)
+                {
+                    string filename = Path.GetFileName(fileUpload.FileName);
+                    string newFilename = Guid.NewGuid().ToString().Replace("-", string.Empty)
+                                         + Path.GetExtension(filename);
+
+                    newFilenameUrl = "/Uploads/Resume/" + newFilename;
+                    string physicalFilename = Server.MapPath(newFilenameUrl);
+
+                    fileUpload.SaveAs(physicalFilename);
+                    TempData["alertText"] = "رزومه شما با موفقیت ثبت گردید.";
+
+                    ResumeFile resume = new ResumeFile()
+                    {
+                        Id = Guid.NewGuid(),
+                        CreationDate = DateTime.Now,
+                        IsDeleted = false,
+                        IsActive = true,
+                        FileUrl = newFilenameUrl
+                    };
+                    db.ResumeFiles.Add(resume);
+                    db.SaveChanges();
+
+                    return View(model);
+                    //return RedirectToAction("Cooperation",new { alertText = message });
+
+
+                }
+                TempData["alertText"] = "خطا در ثبت رزومه!! مجددا تلاش نمایید";
                 return View(model);
-                //return RedirectToAction("Cooperation",new { alertText = message });
             }
-            TempData["alertText"] = "خطا در ثبت رزومه!! مجددا تلاش نمایید";
-            return View(model);
+            catch (Exception e)
+            {
+                TempData["alertText"] = "خطا در ثبت رزومه!! مجددا تلاش نمایید";
+                return View(model);
+            }
+
             //return RedirectToAction("Cooperation", new { alertText = message });
         }
 
