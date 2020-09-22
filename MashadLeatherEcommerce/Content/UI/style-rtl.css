@@ -368,6 +368,7 @@
     direction: rtl;
     text-align: right;
 }
+
 .post-item .post-item-description > p {
     direction: rtl;
     text-align: right;
@@ -401,12 +402,12 @@
 }
 
 .single-post .post-item .post-item-description > h2,
-.single-post .post-item .post-item-description > h3  {
+.single-post .post-item .post-item-description > h3 {
     direction: rtl;
     text-align: right;
 }
 
- .single-post .post-item .post-item-description > p {
+.single-post .post-item .post-item-description > p {
     direction: rtl;
     text-align: justify;
 }
@@ -427,9 +428,11 @@
 .branch-section table {
     direction: rtl;
 }
-.branch-section table th {
-   text-align: right
-}
+
+    .branch-section table th {
+        text-align: right
+    }
+
 .branch-section h3 {
     direction: rtl;
     text-align: right
@@ -453,13 +456,15 @@ ul .single-dropdown-menu {
     direction: rtl;
     font-family: iransans !important;
 }
+
 .order-tracking p {
     padding: 5px;
     border-radius: 5px;
     margin-bottom: 15px;
 }
-.order-tracking form{
-    padding:0;
+
+.order-tracking form {
+    padding: 0;
 }
 
 #trackingDetail {
@@ -473,14 +478,63 @@ ul .single-dropdown-menu {
         text-align: center;
         font-size: 0.85em;
     }
-    .tables .btn {
-        padding :5px;
-        padding-left:11px;
-    }
 
+    .tables .btn {
+        padding: 5px;
+        padding-left: 11px;
+    }
 }
 
 .about-main-text {
     direction: rtl;
     text-align: justify;
+}
+
+.page-title h2 {
+    color: #fff;
+}
+
+.broadcrumb {
+    color: #fff;
+    font-size: 16px;
+}
+
+    .broadcrumb a {
+        color: #fff;
+    }
+
+.about-caption h1 {
+    display: block;
+    font-family: IRANSans;
+    font-size: 12px !important;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 12px;
+    margin-bottom: 20px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+    .about-caption h1:after {
+        border-top: 3px solid #fff;
+        content: "";
+        display: block;
+        margin-bottom: 0;
+        margin-top: 8px;
+        width: 26px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+/*.about-caption h1 {
+    border-bottom: 3px solid;
+    width: 200px;
+    margin: 20px auto;
+}*/
+.about-caption label {
+    font-size: 80px;
+    line-height: 100px;
+}
+
+.specification-title {
+    font-size: 0.85714286em;
 }

@@ -6,7 +6,15 @@
 	Layout = "~/Views/Shared/FrontEndLayout/_FrontEndLayout.cshtml";
 }
 
-<div class="inspiro-slider arrows-large arrows-creative dots-creative" data-height-xs="360" id="slider">
+<section id="page-title" data-parallax-image="/images/mashad-faq-img.jpg">
+    <div id="particles-js" class="particles" style="background: none"></div>
+    <div class="container">
+        <div class="slide-captions text-center text-light about-caption">
+           <h1 class="strong">@Resources.Label.ContactUs</h1> <label>@Resources.Label.MashadLeather</label>
+        </div>
+    </div>
+</section>
+@*<div class="inspiro-slider arrows-large arrows-creative dots-creative" data-height-xs="360" id="slider">
 	<!-- Slide 2 --> <div class="slide kenburns" style="background-image:url('/images/mashad-faq-img.jpg');">
 		<div class="container">
 			<div class="slide-captions text-center text-light">
@@ -15,7 +23,7 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div>*@
 
  
 	<section class="contact-section">
@@ -104,3 +112,7 @@
 		</div>
 	</div>
 </section>
+@section scripts{
+    <script src="~/Scripts/UI/plugins/components/particles-animation.js"></script>
+    <script src="~/Scripts/UI/plugins/components/particles.js"></script>
+}

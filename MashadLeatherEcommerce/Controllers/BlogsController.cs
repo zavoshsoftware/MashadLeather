@@ -37,6 +37,7 @@ namespace MashadLeatherEcommerce.Controllers
                 MenuItem = baseViewModelHelper.GetMenuItems(),
                 RelatedBlogs = db.Blogs.Where(current => current.IsDeleted == false).Take(4).ToList()
             };
+            ViewBag.Canonical = "https://www.mashadleather.com/blog/" + blog.BlogGroup.UrlParam +"/" +blog.UrlParam;
             return View(blogDetail);
         }
 

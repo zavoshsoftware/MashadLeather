@@ -2,12 +2,32 @@
 @{
     Layout = "~/Views/Shared/FrontEndLayout/_FrontEndLayout.cshtml";
 }
+ @*id="particles-js" class="particles"*@
 <section id="page-title" data-parallax-image="@ViewBag.SlideImage">
-	<div id="particles-js" class="particles" style="background: none"></div>
+	<div style="background: none"></div>
 	<div class="container">
 		<div class="page-title">
-			<h1 style="font-size: @ViewBag.FontSize !important;">@Model.ProductCategory.TitleSrt</h1>
+			<h2 style="font-size: @ViewBag.FontSize !important;">@Model.ProductCategory.TitleSrt</h2>
 			<span>@Model.ProductCategory.DescriptionSrt</span>
+            <div class="broadcrumb">
+                <a href="/">@Resources.Label.MashadLeather</a> 
+                >
+                @if (Model.ProductCategory.Parent.Parent != null)
+                {
+                    <span>@Model.ProductCategory.Parent.Parent.Title ></span>
+
+                    
+
+                }
+                @if (Model.ProductCategory.Parent != null)
+                {
+                    <span>@Model.ProductCategory.Parent.Title ></span>
+                }
+
+
+
+                <span>@Model.ProductCategory.Title</span>
+            </div>
 		</div>
 	</div>
 </section>
@@ -179,7 +199,7 @@
 </div>
 
 
-@section scripts{
+@*@section scripts{
 	<script src="~/Scripts/UI/plugins/components/particles-animation.js"></script>
 	<script src="~/Scripts/UI/plugins/components/particles.js"></script>
-}
+}*@
