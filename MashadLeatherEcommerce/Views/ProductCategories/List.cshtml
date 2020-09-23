@@ -6,26 +6,29 @@
 <section id="page-title" data-parallax-image="@ViewBag.SlideImage">
     <div class="container">
         <div class="page-title">
-                <h1 style="font-size: @ViewBag.FontSize;">
-                    @ViewBag.PageTitle
-                </h1>
-        </div>
+	        <h1 style="font-size: @ViewBag.FontSize;">
+		        @ViewBag.PageTitle
+	        </h1>
+					
+	        <div class="broadcrumb">
+		        <a href="/">@Resources.Label.MashadLeather</a> 
+		        >
+		        @foreach (var item in Model.BreadcrumpItems)
+						{
+							<a href="/category/@item.UrlParam">@item.Title </a> <i class="fa fa-angle-left"></i>
+						}
 
+	        </div>
+        </div>
     </div>
 </section>
-<!-- end: Page title -->
-<!-- Shop products -->
+ 
 <section>
     <div class="container">
         <div class="row m-b-20">
-
-
         </div>
-
-        <!--Product list-->
         <div class="shop">
             <div class="grid-layout grid-4-columns" data-item="grid-item">
-               
                     @foreach (var productCategory in Model.ProductCategories)
                     {
                         if (productCategory.IsParent)
@@ -90,3 +93,13 @@
 
 @Html.Partial("FrontEndLayout/_MiniFooter")
 
+@section scripts{
+	<script>
+		$(document).ready(function() {
+		 
+	 
+	
+			$('.broadcrumb i:last-child').css('display', 'none');
+		});
+	</script>
+}

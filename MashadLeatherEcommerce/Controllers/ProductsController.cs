@@ -72,8 +72,8 @@ namespace MashadLeatherEcommerce.Controllers
         {
             Helper.BaseViewModelHelper baseViewModelHelper = new BaseViewModelHelper();
 
-            
-            Product product = db.Products.FirstOrDefault(current=>current.Code == code );
+
+            Product product = db.Products.FirstOrDefault(current => current.Code == code);
             if (product == null)
             {
                 return HttpNotFound();
@@ -114,6 +114,8 @@ namespace MashadLeatherEcommerce.Controllers
             ViewBag.Title = product.Title + " | چرم مشهد";
             ViewBag.Canonical = "https://www.mashadleather.com/product-detail/" + product.Code;
             ViewBag.Description = "بررسی ابعاد، رنگ و مشخصات" + product.Title + "با امکان خرید اینترنتی از وب‌سایت رسمی چرم مشهد.";
+
+            quickProduct.BreadcrumpItems = GetProductBreadcrump(product);
             return View(quickProduct);
         }
 
@@ -978,7 +980,7 @@ namespace MashadLeatherEcommerce.Controllers
 
             return RedirectPermanent("/product/" + productCategory.UrlParam);
 
-            
+
         }
 
         [AllowAnonymous]
@@ -995,24 +997,98 @@ namespace MashadLeatherEcommerce.Controllers
                 return RedirectPermanent("/category");
 
             List<Product> products = db.Products
-                .Where(current =>  current.ImageUrl != null && current.IsDeleted==false&&
+                .Where(current => current.ImageUrl != null && current.IsDeleted == false &&
                                   current.ParentId == null && current.ProductCategoryId == productCategory.Id).ToList();
-            
+
             ViewBag.total = products.Count();
 
             ProductListViewModel productList = new ProductListViewModel
             {
                 MenuItem = baseViewModelHelper.GetMenuItems(),
-                Products = GetProductList(products).OrderByDescending(c=>c.IsActive).ToList(),
+                Products = GetProductList(products).OrderByDescending(c => c.IsActive).ToList(),
                 MenuGalleryGroups = baseViewModelHelper.GetMenuGalleryGroups(),
                 ProductCategory = GetProductCategory(productCategory),
-                Commnets = db.Comments.Where(c=>c.ProductCategoryId== productCategory.Id && c.IsActive&&c.IsDeleted==false&&c.ParentId==null).ToList()
+                Commnets = db.Comments.Where(c => c.ProductCategoryId == productCategory.Id && c.IsActive && c.IsDeleted == false && c.ParentId == null).ToList()
+                ,BreadcrumpItems = GetProductCategoryBreadcrump(productCategory)
             };
 
             return View(productList);
         }
-     
 
+        public List<BreadcrumpItemViewModel> GetProductCategoryBreadcrump(ProductCategory currentProductCategory)
+        {
+            List<BreadcrumpItemViewModel> list = new List<BreadcrumpItemViewModel>();
+
+            list.Add(new BreadcrumpItemViewModel()
+            {
+                Order = 10,
+                Title = currentProductCategory.TitleSrt,
+                UrlParam = currentProductCategory.UrlParam,
+            });
+
+            if (currentProductCategory.ParentId != null)
+            {
+                list.Add(new BreadcrumpItemViewModel()
+                {
+                    Order = 9,
+                    Title = currentProductCategory.Parent.TitleSrt,
+                    UrlParam = currentProductCategory.Parent.UrlParam,
+                });
+
+                if (currentProductCategory.Parent.ParentId != null)
+                {
+                    list.Add(new BreadcrumpItemViewModel()
+                    {
+                        Order = 8,
+                        Title = currentProductCategory.Parent.Parent.TitleSrt,
+                        UrlParam = currentProductCategory.Parent.Parent.UrlParam,
+                    });
+                }
+            }
+            return list.OrderBy(c => c.Order).ToList();
+        }
+        public List<BreadcrumpItemViewModel> GetProductBreadcrump(Product currentProduct)
+        {
+            List<BreadcrumpItemViewModel> list = new List<BreadcrumpItemViewModel>();
+
+
+            list.Add(new BreadcrumpItemViewModel()
+            {
+                Order = 10,
+                Title = currentProduct.TitleSrt,
+                UrlParam = currentProduct.Code.ToString(),
+            });
+
+            if (currentProduct.ProductCategoryId != null)
+            {
+                list.Add(new BreadcrumpItemViewModel()
+                {
+                    Order = 9,
+                    Title = currentProduct.ProductCategory.TitleSrt,
+                    UrlParam = currentProduct.ProductCategory.UrlParam,
+                });
+
+                if (currentProduct.ProductCategory.ParentId != null)
+                {
+                    list.Add(new BreadcrumpItemViewModel()
+                    {
+                        Order = 8,
+                        Title = currentProduct.ProductCategory.Parent.TitleSrt,
+                        UrlParam = currentProduct.ProductCategory.Parent.UrlParam,
+                    });
+                    if (currentProduct.ProductCategory.Parent.ParentId != null)
+                    {
+                        list.Add(new BreadcrumpItemViewModel()
+                        {
+                            Order =7,
+                            Title = currentProduct.ProductCategory.Parent.Parent.TitleSrt,
+                            UrlParam = currentProduct.ProductCategory.Parent.Parent.UrlParam,
+                        });
+                    }
+                }
+            }
+            return list.OrderBy(c => c.Order).ToList();
+        }
 
         public List<ProductListItem> GetProductList(List<Product> products)
         {
@@ -1302,13 +1378,13 @@ namespace MashadLeatherEcommerce.Controllers
                     comment.Id = Guid.NewGuid();
                     comment.ProductCategoryId = productCategory.Id;
                     comment.IsActive = false;
-                    
+
                     db.Comments.Add(comment);
                     db.SaveChanges();
                     return Json("true", JsonRequestBehavior.AllowGet);
                 }
 
-                    return Json("false", JsonRequestBehavior.AllowGet);
+                return Json("false", JsonRequestBehavior.AllowGet);
 
             }
         }
@@ -1554,7 +1630,7 @@ namespace MashadLeatherEcommerce.Controllers
 
         public void AddKiyanPromotion(string containCharachter)
         {
-          
+
             KiyanHelper kiyan = new KiyanHelper();
 
             KyanOnlineSaleServiceSoapClient ks = new KyanOnlineSaleServiceSoapClient();
@@ -1581,7 +1657,7 @@ namespace MashadLeatherEcommerce.Controllers
 
                 List<Product> products = db.Products
                     .Where(current => current.Barcode == barcode && current.IsDeleted == false).ToList();
-              
+
 
                 //Product product = db.Products
                 //    .FirstOrDefault(current => current.Barcode == barcode && current.IsDeleted == false);
@@ -1596,7 +1672,7 @@ namespace MashadLeatherEcommerce.Controllers
                         product.DecreaseAmount = promotion.DecreaseAmount;
                     }
                 }
-               
+
             }
 
             CalculateParentPrices();
@@ -1689,10 +1765,10 @@ namespace MashadLeatherEcommerce.Controllers
         {
             List<Product> products = db.Products
                 .Where(current => current.IsInPromotion != true && current.IsDeleted == false).ToList();
-            
+
             foreach (Product product in products)
             {
-                decimal disVal =((decimal)product.Amount * (decimal)(0.2));
+                decimal disVal = ((decimal)product.Amount * (decimal)(0.2));
                 decimal discountAmount = Convert.ToDecimal(product.Amount - disVal);
                 product.IsInPromotion = true;
                 product.DiscountAmount = discountAmount;

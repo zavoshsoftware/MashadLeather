@@ -9,25 +9,19 @@
 		<div class="page-title">
 			<h2 style="font-size: @ViewBag.FontSize !important;">@Model.ProductCategory.TitleSrt</h2>
 			<span>@Model.ProductCategory.DescriptionSrt</span>
-            <div class="broadcrumb">
-                <a href="/">@Resources.Label.MashadLeather</a> 
-                >
-                @if (Model.ProductCategory.Parent.Parent != null)
-                {
-                    <span>@Model.ProductCategory.Parent.Parent.Title ></span>
+			<div class="broadcrumb">
+				<a href="/">@Resources.Label.MashadLeather</a> 
+				>
+				@foreach (var item in Model.BreadcrumpItems)
+				{
+					<a href="/category/@item.UrlParam">@item.Title </a>
+					if (item.Order != 10)
+					{
+						<i class="fa fa-angle-left"></i>
+					}
+				}
 
-                    
-
-                }
-                @if (Model.ProductCategory.Parent != null)
-                {
-                    <span>@Model.ProductCategory.Parent.Title ></span>
-                }
-
-
-
-                <span>@Model.ProductCategory.Title</span>
-            </div>
+			</div>
 		</div>
 	</div>
 </section>

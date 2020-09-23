@@ -23,6 +23,8 @@ namespace ViewModels
         public string DiscountAmount { get; set; }
         public bool IsInPromotion { get; set; }
         public bool IsActive  { get; set; }
+        public List<BreadcrumpItemViewModel> BreadcrumpItems { get; set; }
+
     }
 
     public class ProductColor

@@ -4443,6 +4443,7 @@
     <Compile Include="Controllers\SiteBranchGroupsController.cs" />
     <Compile Include="Controllers\SiteGalleriesController.cs" />
     <Compile Include="Controllers\SiteGalleryGroupsController.cs" />
+    <Compile Include="Controllers\SiteMapGeneratorController.cs" />
     <Compile Include="Controllers\SiteSlidersController.cs" />
     <Compile Include="Controllers\StepDiscountDetailsController.cs" />
     <Compile Include="Controllers\StepDiscountsController.cs" />
@@ -4460,6 +4461,7 @@
     <Compile Include="Helper\GetCulture.cs" />
     <Compile Include="Helper\KiyanHelper.cs" />
     <Compile Include="Helper\PersianCulture.cs" />
+    <Compile Include="Helper\Sitemap.cs" />
     <Compile Include="Helper\SmsMessageHelper.cs" />
     <Compile Include="Helper\Utils.cs" />
     <Compile Include="Migrations\201805310938557_v001.cs" />
@@ -5134,6 +5136,7 @@
     <Content Include="Views\ResumeFiles\Details.cshtml" />
     <Content Include="Views\ResumeFiles\Edit.cshtml" />
     <Content Include="Views\ResumeFiles\Index.cshtml" />
+    <Content Include="Views\Shared\FrontEndLayout\_MenuPartial_Home.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

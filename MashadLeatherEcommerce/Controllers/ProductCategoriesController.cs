@@ -316,21 +316,52 @@ namespace MashadLeatherEcommerce.Controllers
 
             if (!db.ProductCategories.Any(c => c.ParentId == oProductCategory.Id))
                 return RedirectPermanent("/product/" + urlParam);
-
-
+            
             ProductCategoryViewModel productCategoryList = new ProductCategoryViewModel
             {
-
                 MenuGalleryGroups = baseViewModelHelper.GetMenuGalleryGroups(),
                 MenuItem = baseViewModelHelper.GetMenuItems(),
                 //  ParentProductCategory = GetParentProductCategory(parentId),
                 ProductCategories = GetProductCategory(oProductCategory),
                 //  IsParent = GetIsParent(parentId),
+                BreadcrumpItems = GetProductCategoryBreadcrump(oProductCategory)
             };
 
             return View(productCategoryList);
         }
 
+        public List<BreadcrumpItemViewModel> GetProductCategoryBreadcrump(ProductCategory currentProductCategory)
+        {
+            List<BreadcrumpItemViewModel> list = new List<BreadcrumpItemViewModel>();
+
+            list.Add(new BreadcrumpItemViewModel()
+            {
+                Order = 10,
+                Title = currentProductCategory.TitleSrt,
+                UrlParam = currentProductCategory.UrlParam,
+            });
+
+            if (currentProductCategory.ParentId != null)
+            {
+                list.Add(new BreadcrumpItemViewModel()
+                {
+                    Order = 9,
+                    Title = currentProductCategory.Parent.TitleSrt,
+                UrlParam = currentProductCategory.Parent.UrlParam,
+                });
+
+                if (currentProductCategory.Parent.ParentId != null)
+                {
+                    list.Add(new BreadcrumpItemViewModel()
+                    {
+                        Order = 8,
+                        Title = currentProductCategory.Parent.Parent.TitleSrt,
+                UrlParam = currentProductCategory.Parent.Parent.UrlParam,
+                    });
+                }
+                }
+            return list.OrderBy(c=>c.Order).ToList();
+        }
       
         public List<ProductCategoryListItem> GetProductCategory(ProductCategory oProductCategory)
         {

@@ -11,6 +11,7 @@ namespace ViewModels
         public List<ProductListItem> Products { get; set; }
         public ProductCategory ProductCategory { get; set; }
         public List<Comment> Commnets { get; set; }
+        public List<BreadcrumpItemViewModel> BreadcrumpItems { get; set; }
     }
 
     public class ProductListItem

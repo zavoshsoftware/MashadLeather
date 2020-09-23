@@ -7,7 +7,24 @@
     <div class="container">
         <div class="page-title">
             <h1>@Model.Title</h1>
-            <span>@Model.ProductCategoryTitle</span>
+	        <div class="broadcrumb">
+		        <a href="/">@Resources.Label.MashadLeather</a> 
+		        >
+		        @foreach (var item in Model.BreadcrumpItems)
+		        {
+			        if (item.Order != 10)
+			        {
+				        <a href="/category/@item.UrlParam">@item.Title </a>
+				        <i class="fa fa-angle-left"></i>
+			        }
+			        else
+			        {
+				        <a href="/product-detail/@item.UrlParam">@item.Title </a>
+			 
+			        }
+		        }
+
+	        </div>
         </div>
     </div>
 </section>
