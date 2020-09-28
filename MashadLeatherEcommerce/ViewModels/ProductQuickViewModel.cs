@@ -24,6 +24,7 @@ namespace ViewModels
         public bool IsInPromotion { get; set; }
         public bool IsActive  { get; set; }
         public List<BreadcrumpItemViewModel> BreadcrumpItems { get; set; }
+        public string CurrentCurrency { get; set; }
 
     }
 

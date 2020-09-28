@@ -26,6 +26,7 @@ namespace MashadLeatherEcommerce.Controllers
         public static readonly string UserName = ConfigurationManager.AppSettings["UserName"];
         public static readonly string UserPassword = ConfigurationManager.AppSettings["UserPassword"];
         private DatabaseContext db = new DatabaseContext();
+        GetCurrency oGetCurrency = new GetCurrency();
         // GET: Home
         Helper.BaseViewModelHelper baseViewModelHelper = new BaseViewModelHelper();
         public ActionResult Index()
@@ -39,7 +40,8 @@ namespace MashadLeatherEcommerce.Controllers
                 NewProducts = GetNewstProductList(true, false),
                 MostSellProducts = GetNewstProductList(false, true),
                 ProductCategories = db.ProductCategories.Where(c => c.IsDeleted == false && c.ParentId == null && c.IsActive).Take(4).ToList(),
-                Sliders = db.SiteSliders.Where(c => c.IsDeleted == false && c.IsActive).OrderBy(c => c.Order).ToList()
+                Sliders = db.SiteSliders.Where(c => c.IsDeleted == false && c.IsActive).OrderBy(c => c.Order).ToList(),
+                CurrentCurrency = oGetCurrency.CurrentCurrency()
             };
             return View(home);
 
@@ -68,11 +70,11 @@ namespace MashadLeatherEcommerce.Controllers
                 {
                     Id = product.Id,
                     ImageUrl = product.ImageUrl,
-                    Amount = string.Format("{0:#,#}", product.Amount),
+                    Amount = string.Format("{0:#,#}", product.AmountSrt),
                     Title = product.TitleSrt,
                     ProductCategoryTitle = product.ProductCategory.TitleSrt,
                     LikeClass = ReturnUserLike(product.Id),
-                    DiscountAmount = string.Format("{0:#,#}", product.DiscountAmount),
+                    DiscountAmount = string.Format("{0:#,#}", product.DiscountAmountSrt),
                     IsInPromotion = product.IsInPromotion,
                     HasTag = product.HasTag,
                     TagTitle = product.TagTitleSrt
@@ -432,6 +434,25 @@ namespace MashadLeatherEcommerce.Controllers
             }
 
             //return RedirectToAction("Cooperation", new { alertText = message });
+        }
+
+        public ActionResult ChangeCurrency()
+        {
+            return View(db.Configurations.FirstOrDefault());
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ChangeCurrency(Models.Configuration configuration)
+        {
+            if (ModelState.IsValid)
+            {
+                configuration.IsDeleted = true;
+                configuration.IsDeleted = false;
+                configuration.LastModifiedDate = DateTime.Now;
+                db.Entry(configuration).State = EntityState.Modified;
+                db.SaveChanges();
+            }
+            return View(configuration);
         }
 
     }

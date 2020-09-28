@@ -433,4 +433,7 @@
   <data name="Cooperation" xml:space="preserve">
     <value>Cooperation</value>
   </data>
+  <data name="Euro" xml:space="preserve">
+    <value>Euro</value>
+  </data>
 </root>

@@ -18,6 +18,7 @@ namespace MashadLeatherEcommerce.Controllers
     public class ProductsController : Controller
     {
         private DatabaseContext db = new DatabaseContext();
+        GetCurrency oGetCurrency = new GetCurrency();
 
         // GET: Products
         [Authorize(Roles = "Administrator,SuperAdministrator,eshopadmin")]
@@ -84,7 +85,7 @@ namespace MashadLeatherEcommerce.Controllers
             quickProduct.Title = product.Title;
             quickProduct.Sizes = GetProductSize(product);
             quickProduct.Colors = GetProductColor(product.Id);
-            quickProduct.Price = string.Format("{0:#,#}", product.Amount);
+            quickProduct.Price = string.Format("{0:#,#}", product.AmountSrt);
             quickProduct.ProductImages = GetProductImages(product.Id);
             quickProduct.Description = product.Description;
             quickProduct.ProductCategoryTitle = product.ProductCategory.Title;
@@ -109,8 +110,10 @@ namespace MashadLeatherEcommerce.Controllers
             //};
             quickProduct.SecondColor = ReturnSecondColor(product);
             quickProduct.IsInPromotion = product.IsInPromotion;
-            quickProduct.DiscountAmount = string.Format("{0:#,#}", product.DiscountAmount);
+            quickProduct.DiscountAmount = string.Format("{0:#,#}", product.DiscountAmountSrt);
             quickProduct.IsActive = product.IsActive;
+           
+            quickProduct.CurrentCurrency = oGetCurrency.CurrentCurrency();
             ViewBag.Title = product.Title + " | چرم مشهد";
             ViewBag.Canonical = "https://www.mashadleather.com/product-detail/" + product.Code;
             ViewBag.Description = "بررسی ابعاد، رنگ و مشخصات" + product.Title + "با امکان خرید اینترنتی از وب‌سایت رسمی چرم مشهد.";
@@ -1009,8 +1012,9 @@ namespace MashadLeatherEcommerce.Controllers
                 MenuGalleryGroups = baseViewModelHelper.GetMenuGalleryGroups(),
                 ProductCategory = GetProductCategory(productCategory),
                 Commnets = db.Comments.Where(c => c.ProductCategoryId == productCategory.Id && c.IsActive && c.IsDeleted == false && c.ParentId == null).ToList()
-                ,BreadcrumpItems = GetProductCategoryBreadcrump(productCategory)
-            };
+                ,BreadcrumpItems = GetProductCategoryBreadcrump(productCategory),
+                CurrentCurrency = oGetCurrency.CurrentCurrency()
+        };
 
             return View(productList);
         }
@@ -1100,11 +1104,11 @@ namespace MashadLeatherEcommerce.Controllers
                 {
                     Id = product.Id,
                     ImageUrl = product.ImageUrl,
-                    Amount = string.Format("{0:#,#}", product.Amount),
+                    Amount = string.Format("{0:#,#}", product.AmountSrt),
                     Title = product.TitleSrt,
                     ProductCategoryTitle = product.ProductCategory.TitleSrt,
                     LikeClass = ReturnUserLike(product.Id),
-                    DiscountAmount = string.Format("{0:#,#}", product.DiscountAmount),
+                    DiscountAmount = string.Format("{0:#,#}", product.DiscountAmountSrt),
                     IsInPromotion = product.IsInPromotion,
                     HasTag = product.HasTag,
                     TagTitle = product.TagTitleSrt,
@@ -1194,7 +1198,7 @@ namespace MashadLeatherEcommerce.Controllers
                 Title = product.TitleSrt,
                 Sizes = GetProductSize(product),
                 Colors = GetProductColor(id),
-                Price = string.Format("{0:#,#}", product.Amount),
+                Price = string.Format("{0:#,#}", product.AmountSrt),
                 ProductImages = GetProductImages(id),
                 Description = product.DescriptionSrt,
                 FacebookShareLink =
@@ -1204,8 +1208,9 @@ namespace MashadLeatherEcommerce.Controllers
                 TelegramShareLink = "https://t.me/share/url?url=http%3A//mashadleather.com/product/" + id,
                 SecondColor = ReturnSecondColor(product),
                 IsInPromotion = product.IsInPromotion,
-                DiscountAmount = string.Format("{0:#,#}", product.DiscountAmount),
-                IsActive = product.IsActive
+                DiscountAmount = string.Format("{0:#,#}", product.DiscountAmountSrt),
+                IsActive = product.IsActive,
+                CurrentCurrency = oGetCurrency.CurrentCurrency()
             };
 
 

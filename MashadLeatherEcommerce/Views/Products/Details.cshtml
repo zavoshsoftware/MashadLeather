@@ -62,7 +62,14 @@
                             {
                                 <ins> @Model.Price</ins>
                             }
-                            @Resources.Label.Rial
+                            @if(Model.CurrentCurrency != "euro")
+                            {
+                                @Resources.Label.Rial
+                            }
+                            else
+                            {
+                                <span><i class="fa fa-euro"></i></span>
+                            }
                         </div>
                         <div class="seperator m-b-10"></div>
                         <h2 class="text-right specification-title">توضیحات و مشخصات</h2>

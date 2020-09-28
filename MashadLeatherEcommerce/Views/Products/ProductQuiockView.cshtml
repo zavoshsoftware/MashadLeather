@@ -1,193 +1,200 @@
 ﻿@model ViewModels.ProductQuickViewModel
 @{
-		Layout = null;
+    Layout = null;
 }
 
 <div class="ajax-quick-view">
-	<div class="quick-view-content">
-		<div class="product">
-			<div class="row">
-				<div class="col-md-5">
-					<div class="product-image">
-						<div class="carousel" data-items="1">
-							@foreach (var image in Model.ProductImages)
-							{
-									<img src="https://mashadleather.com/@image.ImageUrl" alt="@image.Title">
-							}
-						</div>
-					</div>
-					<div class="portfolio-share m-b-40" data-animation="fadeIn" data-animation-delay="1800">
-						<h4 class="text-dark">@Resources.Label.ShareProduct</h4>
-						<div class="align-center">
-							<a class="btn btn-xs btn-light btn-slide" href="@Model.TelegramShareLink">
-								<i class="fa fa-telegram"></i>
-								<span>Telegram</span>
-							</a>
-							<a class="btn btn-xs btn-light btn-slide" href="@Model.FacebookShareLink">
-								<i class="fa fa-facebook"></i>
-								<span>Facebook</span>
-							</a>
-							<a class="btn btn-xs btn-light btn-slide" href="@Model.TwitterShareLink" data-width="100">
-								<i class="fa fa-twitter"></i>
-								<span>Twitter</span>
-							</a>
-							<a class="btn btn-xs btn-light btn-slide" href="@Model.GooglePlusShareLink" data-width="118">
-								<i class="fa fa-google-plus"></i>
-								<span>Google Plus</span>
-							</a>
-							<a class="btn btn-xs btn-light btn-slide" href="mailto:#" data-width="80">
-								<i class="fa fa-envelope"></i>
-								<span>Mail</span>
-							</a>
+    <div class="quick-view-content">
+        <div class="product">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="product-image">
+                        <div class="carousel" data-items="1">
+                            @foreach (var image in Model.ProductImages)
+                            {
+                                <img src="https://mashadleather.com/@image.ImageUrl" alt="@image.Title">
+                            }
+                        </div>
+                    </div>
+                    <div class="portfolio-share m-b-40" data-animation="fadeIn" data-animation-delay="1800">
+                        <h4 class="text-dark">@Resources.Label.ShareProduct</h4>
+                        <div class="align-center">
+                            <a class="btn btn-xs btn-light btn-slide" href="@Model.TelegramShareLink">
+                                <i class="fa fa-telegram"></i>
+                                <span>Telegram</span>
+                            </a>
+                            <a class="btn btn-xs btn-light btn-slide" href="@Model.FacebookShareLink">
+                                <i class="fa fa-facebook"></i>
+                                <span>Facebook</span>
+                            </a>
+                            <a class="btn btn-xs btn-light btn-slide" href="@Model.TwitterShareLink" data-width="100">
+                                <i class="fa fa-twitter"></i>
+                                <span>Twitter</span>
+                            </a>
+                            <a class="btn btn-xs btn-light btn-slide" href="@Model.GooglePlusShareLink" data-width="118">
+                                <i class="fa fa-google-plus"></i>
+                                <span>Google Plus</span>
+                            </a>
+                            <a class="btn btn-xs btn-light btn-slide" href="mailto:#" data-width="80">
+                                <i class="fa fa-envelope"></i>
+                                <span>Mail</span>
+                            </a>
 
-						</div>
-					</div>
+                        </div>
+                    </div>
 
-				</div>
-				<div class="col-md-7">
-					<div class="row">
-						<div class="product-description">
+                </div>
+                <div class="col-md-7">
+                    <div class="row">
+                        <div class="product-description">
 
-							<div class="product-title">
-								<h3>
-									<a href="#">@Model.Title</a>
-								</h3>
-							</div>
+                            <div class="product-title">
+                                <h3>
+                                    <a href="#">@Model.Title</a>
+                                </h3>
+                            </div>
 
-							<div class="product-price">
-								@if (Model.IsInPromotion)
-								{
-										<ins> @Model.DiscountAmount</ins>
-																		<del style="margin: 0;"> @Model.Price</del>
-								}
-								else
-								{
-										<ins> @Model.Price</ins>
-								}
-								@Resources.Label.Rial
-							</div>
+                            <div class="product-price">
+                                @if (Model.IsInPromotion)
+                                {
+                                    <ins> @Model.DiscountAmount</ins>
+                                        <del style="margin: 0;"> @Model.Price</del>
+                                }
+                                else
+                                {
+                                    <ins> @Model.Price</ins>
+                                }
+                                @if (Model.CurrentCurrency != "euro")
+                                {
+                                    <text>@Resources.Label.Rial</text>
+                                }
+                                else
+                                {
+                                    <span><i class="fa fa-euro"></i></span>
+                                }
+                            </div>
 
-							<div class="col-md-12 alert alert-success" id="successMessage"></div>
-							<div class="col-md-12 alert alert-danger" id="errorMessage"></div>
+                            <div class="col-md-12 alert alert-success" id="successMessage"></div>
+                            <div class="col-md-12 alert alert-danger" id="errorMessage"></div>
 
-							<div class="seperator m-b-10"></div>
-							<p>
-								@if (Model.Description != null)
-								{
-										@Html.Raw(Model.Description.Replace(Environment.NewLine, "<br/>"))
-								}
-							</p>
+                            <div class="seperator m-b-10"></div>
+                            <p>
+                                @if (Model.Description != null)
+                                {
+                                    @Html.Raw(Model.Description.Replace(Environment.NewLine, "<br/>"))
+                                }
+                            </p>
 
-							<div class="seperator m-t-20 m-b-10"></div>
+                            <div class="seperator m-t-20 m-b-10"></div>
 
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-6"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6"></div>
 
-						<div class="col-md-6">
-							@if (Model.Sizes.Count() > 0)
-							{
-									<h6>@Resources.Label.ChooseSize</h6>
-																<ul class="product-size">
+                        <div class="col-md-6">
+                            @if (Model.Sizes.Count() > 0)
+                            {
+                                <h6>@Resources.Label.ChooseSize</h6>
+                                    <ul class="product-size">
 
-																	@foreach (var size in Model.Sizes)
-																	{
-																			<li>
-																				<label>
-																					<input type="radio" name="product-size" value="@size.Id" checked="checked"><span>@size.Title</span>
-																				</label>
-																			</li>
-}
+                                        @foreach (var size in Model.Sizes)
+                                        {
+                                            <li>
+                                                <label>
+                                                    <input type="radio" name="product-size" value="@size.Id" checked="checked"><span>@size.Title</span>
+                                                </label>
+                                            </li>
+                                        }
 
-																</ul>
-							}
-						</div>
-						<div class="col-md-6">
-							@if (Model.Colors.Count() > 0)
-							{
-									<h6>@Resources.Label.ChooseColor</h6>
+                                    </ul>
+                            }
+                        </div>
+                        <div class="col-md-6">
+                            @if (Model.Colors.Count() > 0)
+                            {
+                                <h6>@Resources.Label.ChooseColor</h6>
 
-																<div id="color-picker">
-																	<div class="wrapper-dropdown">
-																		<a id="ddlColor" href="#" class="dropdown-toggle form-control" data-toggle="dropdown" role="button" aria-expanded="false">@Resources.Label.SelectColor <span class="caret"></span></a>
-																		<ul class="dropdown-menu" v-show="active" role="menu">
+                                    <div id="color-picker">
+                                        <div class="wrapper-dropdown">
+                                            <a id="ddlColor" href="#" class="dropdown-toggle form-control" data-toggle="dropdown" role="button" aria-expanded="false">@Resources.Label.SelectColor <span class="caret"></span></a>
+                                            <ul class="dropdown-menu" v-show="active" role="menu">
 
-																			@foreach (var color in Model.Colors)
-																			{
-																					<li v-for="color in colors" onClick="changeColor('@color.TitleSrt', '@color.Id', '@Model.Id');">
+                                                @foreach (var color in Model.Colors)
+                                                {
+                                                    <li v-for="color in colors" onClick="changeColor('@color.TitleSrt', '@color.Id', '@Model.Id');">
 
-																						<span style="background-color:#@color.HexCode;" id="@color.Id" class="hex-color"> </span> @color.TitleSrt
-																						@if (Model.IsInPromotion)
-																						{
-																								<span class="badge green-badge">@color.DecreaseAmount %</span>
-}
-																					</li>
-}
-																		</ul>
-																	</div>
-																</div>
-							}
-						</div>
-					</div>
-					<div class="row">
+                                                        <span style="background-color:#@color.HexCode;" id="@color.Id" class="hex-color"> </span> @color.TitleSrt
+                                                        @if (Model.IsInPromotion)
+                                                        {
+                                                            <span class="badge green-badge">@color.DecreaseAmount %</span>
+                                                        }
+                                                    </li>
+                                                }
+                                            </ul>
+                                        </div>
+                                    </div>
+                            }
+                        </div>
+                    </div>
+                    <div class="row">
 
-						<div class="col-md-2">
-							<h6>@Resources.Label.Qty</h6>
-							<div class="cart-product-quantity">
-								<div class="quantity m-l-5">
-									<input type="number" name="Count" id="txtCount" class="qty" value="1">
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4">
+                        <div class="col-md-2">
+                            <h6>@Resources.Label.Qty</h6>
+                            <div class="cart-product-quantity">
+                                <div class="quantity m-l-5">
+                                    <input type="number" name="Count" id="txtCount" class="qty" value="1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
 
-							<div class="dir-rtl">
-								<h6>
-									@Model.SecondColor
-								</h6>
-							</div>
-						</div>
-						<div class="col-md-6">
-							
-							@if (Model.IsActive)
-							{
-								<h6>@Resources.Label.addtobasket</h6>
+                            <div class="dir-rtl">
+                                <h6>
+                                    @Model.SecondColor
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
 
-
-								<button type="button" class="btn fullwidth" onclick="addToBasket('@Model.Id');"><i class="fa fa-shopping-cart"></i> @Resources.Label.addtobasket</button>
-							}
-						</div>
-						@*<div class="col-md-6 col-md-pull-6">
-									<a href="/purchaseGuide" class="btn fullwidth"><i class="fa fa-shopping-cart"></i> راهنمای خرید</a>
-
-							</div>*@
+                            @if (Model.IsActive)
+                            {
+                                <h6>@Resources.Label.addtobasket</h6>
 
 
-					</div>
-					<div class="row">
-						<div class="col-md-6 col-md-pull-6">
-							<a href="/purchaseGuide" class="btn fullwidth"><i class="fa fa-shopping-cart"></i> @Resources.Label.BuyGuid</a>
+                                <button type="button" class="btn fullwidth" onclick="addToBasket('@Model.Id');"><i class="fa fa-shopping-cart"></i> @Resources.Label.addtobasket</button>
+                            }
+                        </div>
+                        @*<div class="col-md-6 col-md-pull-6">
+                                    <a href="/purchaseGuide" class="btn fullwidth"><i class="fa fa-shopping-cart"></i> راهنمای خرید</a>
 
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+                            </div>*@
 
-	</div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-md-pull-6">
+                            <a href="/purchaseGuide" class="btn fullwidth"><i class="fa fa-shopping-cart"></i> @Resources.Label.BuyGuid</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>
 @*</div>*@
 
 
 <script>
-	//EventSetup
-	$(document).ready(function () {
-		window.dataLayer = window.dataLayer || [];
-		window.dataLayer.push({
-			event: 'quickview'
-		});
+    //EventSetup
+    $(document).ready(function () {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            event: 'quickview'
+        });
 
-	});
+    });
 	//EventSetup
 </script>

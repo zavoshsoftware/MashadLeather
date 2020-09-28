@@ -12,6 +12,7 @@ namespace ViewModels
         public ProductCategory ProductCategory { get; set; }
         public List<Comment> Commnets { get; set; }
         public List<BreadcrumpItemViewModel> BreadcrumpItems { get; set; }
+        public string CurrentCurrency { get; set; }
     }
 
     public class ProductListItem

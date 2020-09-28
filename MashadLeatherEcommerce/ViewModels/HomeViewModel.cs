@@ -12,5 +12,6 @@ namespace ViewModels
         public List<ProductListItem> NewProducts { get; set; }
         public List<ProductListItem> MostSellProducts { get; set; }
         public List<ProductCategory> ProductCategories { get; set; }
+        public string CurrentCurrency { get; set; }
     }
 }

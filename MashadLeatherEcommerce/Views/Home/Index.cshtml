@@ -125,12 +125,20 @@
 										@if (product.IsInPromotion)
 										{
 											<del class="price-en">@product.Amount</del>@*<text>ریال</text>*@
-											<ins class="price-en">@product.DiscountAmount</ins><text>@Resources.Label.Rial</text>
+											<ins class="price-en">@product.DiscountAmount</ins>
 										}
 										else
 										{
-											<ins class="price-en">@product.Amount</ins><text>@Resources.Label.Rial</text>
+											<ins class="price-en">@product.Amount</ins>
 										}
+                                        @if (Model.CurrentCurrency != "euro")
+                                        {
+                                            <text>@Resources.Label.Rial</text>
+                                        }
+                                        else
+                                        {
+                                            <span><i class="fa fa-euro"></i></span>
+                                        }
 									</div>
 								</div>
 							</div>
@@ -204,12 +212,20 @@
 										@if (product.IsInPromotion)
 										{
 											<del class="price-en">@product.Amount</del>@*<text>ریال</text>*@
-											<ins class="price-en">@product.DiscountAmount</ins><text>@Resources.Label.Rial</text>
+											<ins class="price-en">@product.DiscountAmount</ins>
 										}
 										else
 										{
-											<ins class="price-en">@product.Amount</ins><text>@Resources.Label.Rial</text>
+											<ins class="price-en">@product.Amount</ins>
 										}
+                                        @if (Model.CurrentCurrency != "euro")
+                                        {
+                                            <text>@Resources.Label.Rial</text>
+                                        }
+                                        else
+                                        {
+                                            <span><i class="fa fa-euro"></i></span>
+                                        }
 									</div>
 								</div>
 							</div>

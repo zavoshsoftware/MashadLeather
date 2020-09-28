@@ -435,4 +435,7 @@
   <data name="CooperationMainText" xml:space="preserve">
     <value>همکاری با چرم مشهد از طریق لینک زیر</value>
   </data>
+  <data name="Euro" xml:space="preserve">
+    <value>یورو</value>
+  </data>
 </root>

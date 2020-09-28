@@ -403,6 +403,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to یورو.
+        /// </summary>
+        public static string Euro {
+            get {
+                return ResourceManager.GetString("Euro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to صادرات.
         /// </summary>
         public static string Export {

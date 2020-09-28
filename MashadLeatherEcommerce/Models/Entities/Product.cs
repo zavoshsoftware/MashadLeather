@@ -162,5 +162,51 @@ namespace Models
                 }
             }
         }
+        GetCurrency oGetCurrency = new GetCurrency();
+        [NotMapped]
+        public decimal? AmountSrt
+        {
+            get
+            {
+                string currentCurrency = oGetCurrency.CurrentCurrency();
+                
+                switch (currentCurrency.ToLower())
+                {
+                    case "none":
+                        return this.Amount;
+                    case "toman":
+                        return this.Amount;
+                    case "euro":
+                        {
+                            return this.Amount / oGetCurrency.CurrentEuroPrice();
+                        }
+                    default:
+                        return this.Amount;
+                }
+            }
+        }
+
+        [NotMapped]
+        public decimal? DiscountAmountSrt
+        {
+            get
+            {
+                string currentCurrency = oGetCurrency.CurrentCurrency();
+
+                switch (currentCurrency.ToLower())
+                {
+                    case "none":
+                        return this.DiscountAmount;
+                    case "toman":
+                        return this.DiscountAmount;
+                    case "euro":
+                        {
+                            return this.DiscountAmount / oGetCurrency.CurrentEuroPrice();
+                        }
+                    default:
+                        return this.Amount;
+                }
+            }
+        }
     }
 }

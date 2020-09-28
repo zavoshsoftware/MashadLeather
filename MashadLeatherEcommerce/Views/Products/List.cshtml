@@ -2,28 +2,28 @@
 @{
     Layout = "~/Views/Shared/FrontEndLayout/_FrontEndLayout.cshtml";
 }
- @*id="particles-js" class="particles"*@
+@*id="particles-js" class="particles"*@
 <section id="page-title" data-parallax-image="@ViewBag.SlideImage">
-	<div style="background: none"></div>
-	<div class="container">
-		<div class="page-title">
-			<h2 style="font-size: @ViewBag.FontSize !important;">@Model.ProductCategory.TitleSrt</h2>
-			<span>@Model.ProductCategory.DescriptionSrt</span>
-			<div class="broadcrumb">
-				<a href="/">@Resources.Label.MashadLeather</a> 
-				>
-				@foreach (var item in Model.BreadcrumpItems)
-				{
-					<a href="/category/@item.UrlParam">@item.Title </a>
-					if (item.Order != 10)
-					{
-						<i class="fa fa-angle-left"></i>
-					}
-				}
+    <div style="background: none"></div>
+    <div class="container">
+        <div class="page-title">
+            <h2 style="font-size: @ViewBag.FontSize !important;">@Model.ProductCategory.TitleSrt</h2>
+            <span>@Model.ProductCategory.DescriptionSrt</span>
+            <div class="broadcrumb">
+                <a href="/">@Resources.Label.MashadLeather</a>
+                >
+                @foreach (var item in Model.BreadcrumpItems)
+                {
+                    <a href="/category/@item.UrlParam">@item.Title </a>
+                    if (item.Order != 10)
+                    {
+                        <i class="fa fa-angle-left"></i>
+                    }
+                }
 
-			</div>
-		</div>
-	</div>
+            </div>
+        </div>
+    </div>
 </section>
 <section>
     <div class="container">
@@ -35,27 +35,27 @@
                 {
                     <div class="grid-item">
                         <div class="product">
-	                        <div class="product-image">
-		                        <a href="/productQuiockView/@product.Id" data-lightbox="ajax">
-			                        <img alt="Shop product image!" src="https://mashadleather.com/@product.ImageUrl">
-		                        </a>
-														@if (product.HasTag)
-														{
-															<span class="product-hot">@product.TagTitle</span>
-														}
-														@if (product.IsActive == false)
-														{
-																<span class="product-hot">ناموجود</span>
+                            <div class="product-image">
+                                <a href="/productQuiockView/@product.Id" data-lightbox="ajax">
+                                    <img alt="Shop product image!" src="https://mashadleather.com/@product.ImageUrl">
+                                </a>
+                                @if (product.HasTag)
+                                {
+                                    <span class="product-hot">@product.TagTitle</span>
+                                }
+                                @if (product.IsActive == false)
+                                {
+                                    <span class="product-hot">ناموجود</span>
 
-														}
-		                        <span class="product-wishlist" id="likeBtn_@product.Id">
-			                        <a onclick="like('@product.Id');"><i class="fa fa-heart"></i></a>
-			                        <span class="hidden @product.LikeClass" id="like_@product.Id"><i class="fa fa-heart"></i></span>
-		                        </span>
-		                        <div class="product-overlay">
-			                        <a href="/productQuiockView/@product.Id" data-lightbox="ajax">@Resources.Label.QuickView</a>
-		                        </div>
-	                        </div>
+                                }
+                                <span class="product-wishlist" id="likeBtn_@product.Id">
+                                    <a onclick="like('@product.Id');"><i class="fa fa-heart"></i></a>
+                                    <span class="hidden @product.LikeClass" id="like_@product.Id"><i class="fa fa-heart"></i></span>
+                                </span>
+                                <div class="product-overlay">
+                                    <a href="/productQuiockView/@product.Id" data-lightbox="ajax">@Resources.Label.QuickView</a>
+                                </div>
+                            </div>
 
                             <div class="product-description">
                                 <div class="product-category">@product.ProductCategoryTitle</div>
@@ -66,12 +66,23 @@
                                     @if (product.IsInPromotion)
                                     {
                                         <del>@product.Amount</del>@*<text>ریال</text>*@
-                                        <ins>@product.DiscountAmount</ins><text>@Resources.Label.Rial</text>
+                                        <ins>@product.DiscountAmount</ins>
+
+                                        @*<text>@Resources.Label.Rial</text>*@
                                     }
                                     else
                                     {
-                                        <ins>@product.Amount</ins><text>@Resources.Label.Rial</text>
-}
+                                        <ins>@product.Amount</ins>
+                                        @*<text>@Resources.Label.Rial</text>*@
+                                    }
+                                    @if (Model.CurrentCurrency != "euro")
+                                    {
+                                        <text>@Resources.Label.Rial</text>
+                                    }
+                                    else
+                                    {
+                                        <span><i class="fa fa-euro"></i></span>
+                                    }
                                 </div>
                             </div>
                         </div>
@@ -113,7 +124,8 @@
                                                     <p>@Html.Raw(comment.CommentBody)</p>
                                                 </div>
                                             </div>
-                                           @if (!string.IsNullOrEmpty(comment.Response)) {
+                                            @if (!string.IsNullOrEmpty(comment.Response))
+                                            {
                                                 <div class="comment" id="comment-1-1">
                                                     <div class="image"><img alt="" src="/Images/avatar_default.jpg" class="avatar"></div>
                                                     <div class="text dir-rtl">
@@ -123,7 +135,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                           }                                            
+                                            }
                                         </div>
                                     }
                                 </div>
@@ -194,6 +206,6 @@
 
 
 @*@section scripts{
-	<script src="~/Scripts/UI/plugins/components/particles-animation.js"></script>
-	<script src="~/Scripts/UI/plugins/components/particles.js"></script>
-}*@
+        <script src="~/Scripts/UI/plugins/components/particles-animation.js"></script>
+        <script src="~/Scripts/UI/plugins/components/particles.js"></script>
+    }*@

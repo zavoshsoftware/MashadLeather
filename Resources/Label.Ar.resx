@@ -432,4 +432,7 @@
   <data name="Cooperation" xml:space="preserve">
     <value>تعاون</value>
   </data>
+  <data name="Euro" xml:space="preserve">
+    <value>اليورو</value>
+  </data>
 </root>
