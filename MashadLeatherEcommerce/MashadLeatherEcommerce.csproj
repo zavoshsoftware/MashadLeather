@@ -825,6 +825,7 @@
     <Content Include="Content\UI\plugins.css" />
     <Content Include="Content\UI\responsive.css" />
     <Content Include="Content\UI\rtl.css" />
+    <Content Include="Content\UI\style-home.css" />
     <Content Include="Content\UI\style-En.css" />
     <Content Include="Content\UI\style-rtl.css" />
     <Content Include="Content\UI\style.css" />

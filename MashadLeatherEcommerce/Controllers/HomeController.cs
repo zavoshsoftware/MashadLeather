@@ -436,10 +436,13 @@ namespace MashadLeatherEcommerce.Controllers
             //return RedirectToAction("Cooperation", new { alertText = message });
         }
 
+        [Authorize(Roles = "Administrator,SuperAdministrator,eshopadmin")]
         public ActionResult ChangeCurrency()
         {
             return View(db.Configurations.FirstOrDefault());
         }
+
+        [Authorize(Roles = "Administrator,SuperAdministrator,eshopadmin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult ChangeCurrency(Models.Configuration configuration)

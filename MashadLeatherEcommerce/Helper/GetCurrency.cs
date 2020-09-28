@@ -24,7 +24,6 @@ namespace Helper
         public decimal CurrentEuroPrice()
         {
             return Convert.ToDecimal(db.Configurations.FirstOrDefault().Value);
-
         }
     }
 }
