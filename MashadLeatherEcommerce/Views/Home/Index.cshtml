@@ -22,7 +22,7 @@
 	<link rel="apple-touch-icon" href="/Images/favicon.png">
 	<link rel="canonical" href="https://www.mashadleather.com/" />
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,800,700,600|Montserrat:400,500,600,700|Raleway:100,300,600,700,800" rel="stylesheet" type="text/css" />
-	@*<link href="~/Content/UI/style-En.css" rel="stylesheet" />*@
+	<link href="~/Content/UI/style-En.css" rel="stylesheet" />
 	<script>
 		(function (w, d, s, l, i) {
 			w[l] = w[l] || []; w[l].push({
@@ -40,7 +40,7 @@
 	</noscript>
 	<div id="wrapper">
 		@Html.Partial("FrontEndLayout/_MenuPartial_Home")
-		<div id="slider">
+		<div id="slider" dir="ltr">
 			<div id="rev_slider_30_1_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="POLO Homepage" style="background-color: transparent; padding: 0px;">
 				<div id="rev_slider_30_1" class="rev_slider fullscreenbanner" style="display: none;" data-version="5.1">
 					<ul>
@@ -279,7 +279,7 @@
 					},
 					responsiveLevels: [1240, 1024, 778, 480],
 					visibilityLevels: [684, 576, 420, 420],
-					gridwidth: [1240, 1024, 778, 480],
+					gridwidth: [1240, 1024, 778, 780],
 					gridheight: [684, 576, 420, 420],
 					lazyType: "smart",
 					shadow: 0,
