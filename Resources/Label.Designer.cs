@@ -916,6 +916,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to راهنمای سایز.
+        /// </summary>
+        public static string SizeGuid {
+            get {
+                return ResourceManager.GetString("SizeGuid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to فروشگاه ها.
         /// </summary>
         public static string Stores {

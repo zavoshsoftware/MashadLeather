@@ -25,8 +25,10 @@ namespace Helper
 
         public List<MenuProductCategory> GetMenuProductCategory()
         {
-            List<ProductCategory> ProductCategories = db.ProductCategories.Where(current => current.IsDeleted == false).OrderBy(current => current.Priority).ToList();
-            List<MenuProductCategory> menuProductCategories = new List<MenuProductCategory>();
+            List<ProductCategory> ProductCategories = db.ProductCategories.Where(current => current.IsDeleted == false
+            && current.UrlParam.ToLower() != "gifts" && current.UrlParam.ToLower() != "leather-care"
+            ).OrderBy(current => current.Priority).ToList();
+            List <MenuProductCategory> menuProductCategories = new List<MenuProductCategory>();
 
             foreach (ProductCategory productCategory in ProductCategories)
             {

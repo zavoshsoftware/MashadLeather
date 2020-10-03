@@ -441,4 +441,7 @@
   <data name="Currency" xml:space="preserve">
     <value>نوع ارز</value>
   </data>
+  <data name="SizeGuid" xml:space="preserve">
+    <value>راهنمای سایز</value>
+  </data>
 </root>

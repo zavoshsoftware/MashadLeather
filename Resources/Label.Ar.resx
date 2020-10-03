@@ -438,4 +438,7 @@
   <data name="Currency" xml:space="preserve">
     <value>عملة</value>
   </data>
+  <data name="SizeGuid" xml:space="preserve">
+    <value>دليل المقاسات</value>
+  </data>
 </root>

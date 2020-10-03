@@ -439,4 +439,7 @@
   <data name="Currency" xml:space="preserve">
     <value>Currency</value>
   </data>
+  <data name="SizeGuid" xml:space="preserve">
+    <value>Size Guid</value>
+  </data>
 </root>

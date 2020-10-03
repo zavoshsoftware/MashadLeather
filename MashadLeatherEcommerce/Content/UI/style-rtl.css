@@ -538,3 +538,13 @@ ul .single-dropdown-menu {
 .specification-title {
     font-size: 0.85714286em;
 }
+.basketCounter
+{
+    display:none;
+}
+@media screen and (max-width: 991px) {
+    .mfp-close
+    {
+        font-size:28px !important;
+    }
+}

@@ -100,8 +100,6 @@ function addToBasket(id) {
                         successMessage();
                         setBasketCount();
 
-                     
-
                     } else {
                         showErrorMessage();
                     }
@@ -174,8 +172,18 @@ function setBasketCount() {
         }
 
         $('#basketItemCount').html(idList.length);
+        if (idList.length > 0) {
+            $(".basketCounter").css('display', 'block');
+            $(".basketCounter").html(idList.length);
+        }
+        else {
+            $(".basketCounter").css('display', 'none');
+        }
+        
     } else {
         $('#basketItemCount').html('0');
+        $(".basketCounter").html('0');
+        $(".basketCounter").css('display', 'none');
 
     }
 }
