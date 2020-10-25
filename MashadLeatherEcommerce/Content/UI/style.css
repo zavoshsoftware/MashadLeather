@@ -5058,7 +5058,8 @@ span.rec-by {
   .product .product-description {
     padding: 8px 0 10px; }
   .product .product-title h3,
-  .product .product-title h3 a {
+  .product .product-title h3 a  , .product .product-title h2,
+  .product .product-title h2 a {
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 0;

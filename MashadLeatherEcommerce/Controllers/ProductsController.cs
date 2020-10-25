@@ -116,7 +116,7 @@ namespace MashadLeatherEcommerce.Controllers
             quickProduct.CurrentCurrency = oGetCurrency.CurrentCurrency();
             ViewBag.Title = product.Title + " | چرم مشهد";
             ViewBag.Canonical = "https://www.mashadleather.com/product-detail/" + product.Code;
-            ViewBag.Description = "بررسی ابعاد، رنگ و مشخصات" + product.Title + "با امکان خرید اینترنتی از وب‌سایت رسمی چرم مشهد.";
+            ViewBag.Description = "بررسی ابعاد، رنگ و مشخصات " + product.Title + " با امکان خرید اینترنتی از وب‌سایت رسمی چرم مشهد.";
 
             quickProduct.BreadcrumpItems = GetProductBreadcrump(product);
             return View(quickProduct);

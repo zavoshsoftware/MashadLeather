@@ -51,7 +51,7 @@ namespace MashadLeatherEcommerce.Controllers
 
             foreach (Product product in products)
             {
-                AddToSiteMap(sm, "https://www.mashadleather.com/product-detail/" + product.Code , 0.9D, Location.eChangeFrequency.monthly);
+                AddToSiteMap(sm, "https://www.mashadleather.com/product-detail/" + product.Id , 0.9D, Location.eChangeFrequency.monthly);
             }
         }
 

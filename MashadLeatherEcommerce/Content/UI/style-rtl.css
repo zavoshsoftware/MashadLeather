@@ -47,9 +47,10 @@
     direction: rtl;
 }
 
-.product .product-title h3, .product .product-title h3 a {
+.product .product-title h3, .product .product-title h3 a, .product .product-title h2, .product .product-title h2 a {
     text-align: right;
     direction: rtl;
+    font-size: 14px;
 }
 
 .login-page input, .login-page p, .recoverypass-page p, .recoverypass-page input {
@@ -59,10 +60,7 @@
 .login-page .panel-body h3 {
     text-align: center;
 }
-
-.product .product-title h3, .product .product-title h3 a {
-    font-size: 14px;
-}
+ 
 
 .product .product-price {
     width: 36%;
@@ -545,6 +543,6 @@ ul .single-dropdown-menu {
 @media screen and (max-width: 991px) {
     .mfp-close
     {
-        font-size:28px !important;
+        font-size:40px !important;
     }
 }
