@@ -88,7 +88,8 @@ namespace MashadLeatherEcommerce.Controllers
             quickProduct.Price = string.Format("{0:#,#}", product.AmountSrt);
             quickProduct.ProductImages = GetProductImages(product.Id);
             quickProduct.Description = product.Description;
-            quickProduct.ProductCategoryTitle = product.ProductCategory.Title;
+            if (product.ProductCategoryId != null)
+                quickProduct.ProductCategoryTitle = product.ProductCategory.Title;
             quickProduct.MenuGalleryGroups = baseViewModelHelper.GetMenuGalleryGroups();
             quickProduct.MenuItem = baseViewModelHelper.GetMenuItems();
             quickProduct.FacebookShareLink =
@@ -112,7 +113,7 @@ namespace MashadLeatherEcommerce.Controllers
             quickProduct.IsInPromotion = product.IsInPromotion;
             quickProduct.DiscountAmount = string.Format("{0:#,#}", product.DiscountAmountSrt);
             quickProduct.IsActive = product.IsActive;
-           
+
             quickProduct.CurrentCurrency = oGetCurrency.CurrentCurrency();
             ViewBag.Title = product.Title + " | چرم مشهد";
             ViewBag.Canonical = "https://www.mashadleather.com/product-detail/" + product.Code;
@@ -1012,9 +1013,10 @@ namespace MashadLeatherEcommerce.Controllers
                 MenuGalleryGroups = baseViewModelHelper.GetMenuGalleryGroups(),
                 ProductCategory = GetProductCategory(productCategory),
                 Commnets = db.Comments.Where(c => c.ProductCategoryId == productCategory.Id && c.IsActive && c.IsDeleted == false && c.ParentId == null).ToList()
-                ,BreadcrumpItems = GetProductCategoryBreadcrump(productCategory),
+                ,
+                BreadcrumpItems = GetProductCategoryBreadcrump(productCategory),
                 CurrentCurrency = oGetCurrency.CurrentCurrency()
-        };
+            };
 
             return View(productList);
         }
@@ -1084,7 +1086,7 @@ namespace MashadLeatherEcommerce.Controllers
                     {
                         list.Add(new BreadcrumpItemViewModel()
                         {
-                            Order =7,
+                            Order = 7,
                             Title = currentProduct.ProductCategory.Parent.Parent.TitleSrt,
                             UrlParam = currentProduct.ProductCategory.Parent.Parent.UrlParam,
                         });
@@ -1397,7 +1399,7 @@ namespace MashadLeatherEcommerce.Controllers
         [AllowAnonymous]
         public string ReturnSecondColor(Product product)
         {
-            if (product.SecondColorId.ToString() != "")
+            if (product.SecondColorId != null)
             {
                 SecondColor secondColor = db.SecondColors.FirstOrDefault(current => current.Id == product.SecondColorId);
 
