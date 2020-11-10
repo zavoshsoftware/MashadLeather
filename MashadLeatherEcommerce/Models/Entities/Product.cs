@@ -143,6 +143,8 @@ namespace Models
         [Display(Name = "عنوان تگ عربی")]
         public string TagTitleAr { get; set; }
 
+        public bool IsAvailable { get; set; }
+
         [NotMapped]
         public string TagTitleSrt
         {

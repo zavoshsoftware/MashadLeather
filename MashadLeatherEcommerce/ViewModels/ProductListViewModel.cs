@@ -27,7 +27,7 @@ namespace ViewModels
         public bool IsInPromotion { get; set; }
         public bool HasTag { get; set; }
         public string TagTitle { get; set; }
-        public bool IsActive { get; set; }
+        public bool IsAvailable { get; set; }
     }
    
 }

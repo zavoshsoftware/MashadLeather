@@ -41,12 +41,11 @@
                                 </a>
                                 @if (product.HasTag)
                                 {
-                                    <span class="product-hot">@product.TagTitle</span>
+                                    <span class="product-new">@product.TagTitle</span>
                                 }
-                                @if (product.IsActive == false)
+                                @if (product.IsAvailable == false)
                                 {
                                     <span class="product-hot">ناموجود</span>
-
                                 }
                                 <span class="product-wishlist" id="likeBtn_@product.Id">
                                     <a onclick="like('@product.Id');"><i class="fa fa-heart"></i></a>
