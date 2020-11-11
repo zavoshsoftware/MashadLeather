@@ -907,6 +907,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to تلفن فروشگاه اینترنتی.
+        /// </summary>
+        public static string ShopPhone {
+            get {
+                return ResourceManager.GetString("ShopPhone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to سایز.
         /// </summary>
         public static string Size {

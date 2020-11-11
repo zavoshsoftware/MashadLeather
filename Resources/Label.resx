@@ -444,4 +444,7 @@
   <data name="SizeGuid" xml:space="preserve">
     <value>راهنمای سایز</value>
   </data>
+  <data name="ShopPhone" xml:space="preserve">
+    <value>تلفن فروشگاه اینترنتی</value>
+  </data>
 </root>

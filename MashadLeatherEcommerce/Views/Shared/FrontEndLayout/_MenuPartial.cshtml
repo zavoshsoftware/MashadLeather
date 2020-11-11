@@ -69,30 +69,45 @@
                                 <li class="@item.MenuClass">
                                     @if (item.HasChild == true)
                                     {
-                                        <a href="/category/@item.UrlParam" onclick="dropdownMainMenu(@item.UrlParam)">@item.Title</a>
-                                                        <ul class="dropdown-menu">
-                                                            @foreach (var childItem in Model.MenuItem.MenuProductCategories.Where(p => p.ParentId == item.Id))
-                                                            {
-                                                                <li class="@childItem.MenuClass">
-                                                                    @if (childItem.HasChild)
-                                                                    {
-                                                                        <a href="/category/@childItem.UrlParam">@childItem.Title</a>
-                                                                                <ul class="dropdown-menu">
-                                                                                    @foreach (var childItem2 in Model.MenuItem.MenuProductCategories.Where(p => p.ParentId == childItem.Id))
-                                                                                    {
-                                                                                        <li><a href="/product/@childItem2.UrlParam">@childItem2.Title</a></li>
-                                                                                    }
-                                                                                </ul>
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        <a href="/product/@childItem.UrlParam">@childItem.Title</a>
-                                                                    }
+                                      <a href="/category/@item.UrlParam" onclick="dropdownMainMenu(@item.UrlParam)">@item.Title</a>
+	                                    <ul class="dropdown-menu">
+		                                    @foreach (var childItem in Model.MenuItem.MenuProductCategories.Where(p => p.ParentId == item.Id))
+		                                    {
+			                                    <li class="@childItem.MenuClass">
+				                                    @if (childItem.HasChild)
+				                                    {
+					                                    <a href="/category/@childItem.UrlParam">@childItem.Title</a>
+					                                    <ul class="dropdown-menu">
+						                                    @foreach (var childItem2 in Model.MenuItem.MenuProductCategories.Where(p => p.ParentId == childItem.Id))
+						                                    {
+							                                    <li><a href="/product/@childItem2.UrlParam">@childItem2.Title</a></li>
+						                                    }
+					                                    </ul>
+				                                    }
+				                                    else
+				                                    {
+					                                    <a href="/product/@childItem.UrlParam">@childItem.Title</a>
+				                                    }
 
-                                                                </li>
-                                                            }
+			                                    </li>
+																				
+																}
+		                                    @foreach (var category in Model.MenuJointProductGroups)
+		                                    {
+		                                    <li>
+			                                    <a href="/product/@category.UrlParam">@category.Title</a>
+		                                    </li>
+		                                    }
+																				
+																					
+		                                    @if (item.UrlParam == "men")
+		                                    {
+			                                    <li>
+				                                    <a href="/category/gift">@Model.MenuExtraMenuCategory</a>
+			                                    </li>
+		                                    }
+	                                    </ul>
 
-                                                        </ul>
                                     }
                                     else
                                     {

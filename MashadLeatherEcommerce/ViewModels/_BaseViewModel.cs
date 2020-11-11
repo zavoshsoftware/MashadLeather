@@ -2,14 +2,27 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Helper;
 using Models;
 
 namespace ViewModels
 {
     public class _BaseViewModel
-    {
+    { 
+        BaseViewModelHelper helper=new BaseViewModelHelper();
+
         public MenuItem MenuItem { get; set; }
         public List<SiteGalleryGroup> MenuGalleryGroups { get; set; }
+
+        public List<ProductCategory> MenuJointProductGroups
+        {
+            get { return helper.GetMenuJoinProductCategory(); }
+        }
+
+        public string MenuExtraMenuCategory
+        {
+            get { return helper.GetMenExtraMenuCategory(); }
+        }
     }
 
     public class MenuItem

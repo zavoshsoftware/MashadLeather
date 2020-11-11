@@ -90,6 +90,20 @@
 
                                                                 </li>
                                                             }
+																													
+	                                                        @foreach (var category in Model.MenuJointProductGroups)
+	                                                        {
+		                                                        <li>
+			                                                        <a href="/product/@category.UrlParam">@category.TitleSrt</a>
+		                                                        </li>
+	                                                        }
+																													
+																													@if (item.UrlParam == "men")
+																													{
+																														<li>
+																															<a href="/category/gift">@Model.MenuExtraMenuCategory</a>
+																														</li>
+																													}
 
                                                         </ul>
                                     }

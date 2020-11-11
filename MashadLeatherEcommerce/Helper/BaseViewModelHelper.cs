@@ -22,12 +22,12 @@ namespace Helper
 
             return db.SiteGalleryGroups.Where(c => c.IsDeleted == false && c.IsActive).ToList();
         }
-
         public List<MenuProductCategory> GetMenuProductCategory()
         {
             List<ProductCategory> ProductCategories = db.ProductCategories.Where(current => current.IsDeleted == false
             && current.UrlParam.ToLower() != "gifts" && current.UrlParam.ToLower() != "leather-care"
             ).OrderBy(current => current.Priority).ToList();
+
             List <MenuProductCategory> menuProductCategories = new List<MenuProductCategory>();
 
             foreach (ProductCategory productCategory in ProductCategories)
@@ -52,8 +52,32 @@ namespace Helper
                     UrlParam = productCategory.UrlParam
                 });
             }
+          
 
             return menuProductCategories;
         }
+
+        public List<ProductCategory> GetMenuJoinProductCategory()
+        {
+            return db.ProductCategories.Where(current => current.IsDeleted == false
+            &&  current.UrlParam.ToLower() == "leather-care"
+            ).OrderBy(current => current.Priority).ToList();
+
+        }
+
+
+        public string GetMenExtraMenuCategory()
+        {
+            ProductCategory productCategory= db.ProductCategories.FirstOrDefault(current => current.IsDeleted == false
+            &&  current.UrlParam.ToLower() == "gifts");
+
+
+            if (productCategory != null)
+                return productCategory.TitleSrt;
+
+             return string.Empty;
+        }
+
+
     }
 }
