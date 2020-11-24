@@ -349,7 +349,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to خدمات مشتریان.
+        ///   Looks up a localized string similar to باشگاه مشتریان.
         /// </summary>
         public static string CustomerService {
             get {
@@ -466,7 +466,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to برای سفارشات بالای 300 هزار تومان.
+        ///   Looks up a localized string similar to برای تمام سفارشات.
         /// </summary>
         public static string FreeShippingDesc {
             get {

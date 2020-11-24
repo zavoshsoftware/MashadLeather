@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://172.20.20.2:2626/KyanOnlineSaleService.asmx" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://192.168.100.7:2626/KyanOnlineSaleService.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="KyanOnlineSaleService.wsdl" MetadataType="Wsdl" ID="5ec23017-e4fa-4231-8503-e0977daf6e5c" SourceId="1" SourceUrl="http://172.20.20.2:2626/KyanOnlineSaleService.asmx?wsdl" />
-    <MetadataFile FileName="KyanOnlineSaleService.disco" MetadataType="Disco" ID="a15b2dec-c146-40b4-84c3-64e353c679f1" SourceId="1" SourceUrl="http://172.20.20.2:2626/KyanOnlineSaleService.asmx?disco" />
+    <MetadataFile FileName="KyanOnlineSaleService1.disco" MetadataType="Disco" ID="22a8ca69-20f8-4a43-b337-c418e85d98fb" SourceId="1" SourceUrl="http://192.168.100.7:2626/KyanOnlineSaleService.asmx?disco" />
+    <MetadataFile FileName="KyanOnlineSaleService1.wsdl" MetadataType="Wsdl" ID="8b62da56-899b-4ca8-a744-48f35d3d7767" SourceId="1" SourceUrl="http://192.168.100.7:2626/KyanOnlineSaleService.asmx?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

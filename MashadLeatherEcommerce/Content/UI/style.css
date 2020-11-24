@@ -6962,7 +6962,7 @@ span.rec-by {
 .icon-box.small > h3,
 .icon-box.small > h5 {
     font-size: 18px;
-    margin: 0 60px 4px 12px;
+    margin: 10px 60px 4px 12px;
 }
 .icon-box.small > p {
     margin: 0 60px 20px 0;
@@ -8928,7 +8928,7 @@ img.mfp-img {
     font-family: fontawesome;
     font-size: 15px; }
   .list-icon.list-icon-arrow li:before {
-    content: "\f105";
+    content: "\f104";
     margin-left: -16px; }
   .list-icon.list-icon-arrow-circle li:before {
     content: "\f18e"; }
@@ -13563,4 +13563,8 @@ select {
 }
 .fullwidth{
     width:100%;
+}
+.icon-box .col-md-3 {
+    padding-right: 8px;
+    padding-left: 8px;
 }

@@ -15,37 +15,37 @@ namespace MashadLeatherEcommerce.KiyanService {
     [System.ServiceModel.ServiceContractAttribute(Namespace="KyanOnlineSaleService", ConfigurationName="KiyanService.KyanOnlineSaleServiceSoap")]
     public interface KyanOnlineSaleServiceSoap {
         
-        // CODEGEN: Generating message contract since message GetTaxChargeAmountRequest has headers
-        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetTaxChargeAmount", ReplyAction="*")]
+        // CODEGEN: Generating message contract since message AuthenticationUserRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/AuthenticationUser", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        MashadLeatherEcommerce.KiyanService.GetTaxChargeAmountResponse GetTaxChargeAmount(MashadLeatherEcommerce.KiyanService.GetTaxChargeAmountRequest request);
+        MashadLeatherEcommerce.KiyanService.AuthenticationUserResponse AuthenticationUser(MashadLeatherEcommerce.KiyanService.AuthenticationUserRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetTaxChargeAmount", ReplyAction="*")]
-        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetTaxChargeAmountResponse> GetTaxChargeAmountAsync(MashadLeatherEcommerce.KiyanService.GetTaxChargeAmountRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/AuthenticationUser", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.AuthenticationUserResponse> AuthenticationUserAsync(MashadLeatherEcommerce.KiyanService.AuthenticationUserRequest request);
         
-        // CODEGEN: Generating message contract since message GetInventoriesListRequest has headers
-        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetInventoriesList", ReplyAction="*")]
+        // CODEGEN: Generating message contract since message InputPermissionRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/InputPermission", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        MashadLeatherEcommerce.KiyanService.GetInventoriesListResponse GetInventoriesList(MashadLeatherEcommerce.KiyanService.GetInventoriesListRequest request);
+        MashadLeatherEcommerce.KiyanService.InputPermissionResponse InputPermission(MashadLeatherEcommerce.KiyanService.InputPermissionRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetInventoriesList", ReplyAction="*")]
-        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetInventoriesListResponse> GetInventoriesListAsync(MashadLeatherEcommerce.KiyanService.GetInventoriesListRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/InputPermission", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.InputPermissionResponse> InputPermissionAsync(MashadLeatherEcommerce.KiyanService.InputPermissionRequest request);
         
-        // CODEGEN: Generating message contract since message SaleItemsRequest has headers
-        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/SaleItems", ReplyAction="*")]
+        // CODEGEN: Generating message contract since message InputPermissionMethodRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/InputPermissionMethod", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        MashadLeatherEcommerce.KiyanService.SaleItemsResponse SaleItems(MashadLeatherEcommerce.KiyanService.SaleItemsRequest request);
+        MashadLeatherEcommerce.KiyanService.InputPermissionMethodResponse InputPermissionMethod(MashadLeatherEcommerce.KiyanService.InputPermissionMethodRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/SaleItems", ReplyAction="*")]
-        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.SaleItemsResponse> SaleItemsAsync(MashadLeatherEcommerce.KiyanService.SaleItemsRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/InputPermissionMethod", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.InputPermissionMethodResponse> InputPermissionMethodAsync(MashadLeatherEcommerce.KiyanService.InputPermissionMethodRequest request);
         
-        // CODEGEN: Generating message contract since message GetRecieptDetailRequest has headers
-        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetRecieptDetail", ReplyAction="*")]
+        // CODEGEN: Generating message contract since message ProductDescriptionRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/ProductDescription", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        MashadLeatherEcommerce.KiyanService.GetRecieptDetailResponse GetRecieptDetail(MashadLeatherEcommerce.KiyanService.GetRecieptDetailRequest request);
+        MashadLeatherEcommerce.KiyanService.ProductDescriptionResponse ProductDescription(MashadLeatherEcommerce.KiyanService.ProductDescriptionRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetRecieptDetail", ReplyAction="*")]
-        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetRecieptDetailResponse> GetRecieptDetailAsync(MashadLeatherEcommerce.KiyanService.GetRecieptDetailRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/ProductDescription", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.ProductDescriptionResponse> ProductDescriptionAsync(MashadLeatherEcommerce.KiyanService.ProductDescriptionRequest request);
         
         // CODEGEN: Generating message contract since message GetItemListRequest has headers
         [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetItemList", ReplyAction="*")]
@@ -55,6 +55,30 @@ namespace MashadLeatherEcommerce.KiyanService {
         [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetItemList", ReplyAction="*")]
         System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemListResponse> GetItemListAsync(MashadLeatherEcommerce.KiyanService.GetItemListRequest request);
         
+        // CODEGEN: Generating message contract since message GetItemListWithPaginationRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetItemListWithPagination", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        MashadLeatherEcommerce.KiyanService.GetItemListWithPaginationResponse GetItemListWithPagination(MashadLeatherEcommerce.KiyanService.GetItemListWithPaginationRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetItemListWithPagination", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemListWithPaginationResponse> GetItemListWithPaginationAsync(MashadLeatherEcommerce.KiyanService.GetItemListWithPaginationRequest request);
+        
+        // CODEGEN: Generating message contract since message GetItemInfoWithInventoryIDPlusJetRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetItemInfoWithInventoryIDPlusJet", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        MashadLeatherEcommerce.KiyanService.GetItemInfoWithInventoryIDPlusJetResponse GetItemInfoWithInventoryIDPlusJet(MashadLeatherEcommerce.KiyanService.GetItemInfoWithInventoryIDPlusJetRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetItemInfoWithInventoryIDPlusJet", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemInfoWithInventoryIDPlusJetResponse> GetItemInfoWithInventoryIDPlusJetAsync(MashadLeatherEcommerce.KiyanService.GetItemInfoWithInventoryIDPlusJetRequest request);
+        
+        // CODEGEN: Generating message contract since message GetItemListWithParentInfoRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetItemListWithParentInfo", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        MashadLeatherEcommerce.KiyanService.GetItemListWithParentInfoResponse GetItemListWithParentInfo(MashadLeatherEcommerce.KiyanService.GetItemListWithParentInfoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetItemListWithParentInfo", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemListWithParentInfoResponse> GetItemListWithParentInfoAsync(MashadLeatherEcommerce.KiyanService.GetItemListWithParentInfoRequest request);
+        
         // CODEGEN: Generating message contract since message GetItemListWithinventoryIDRequest has headers
         [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetItemListWithinventoryID", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -62,6 +86,85 @@ namespace MashadLeatherEcommerce.KiyanService {
         
         [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetItemListWithinventoryID", ReplyAction="*")]
         System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemListWithinventoryIDResponse> GetItemListWithinventoryIDAsync(MashadLeatherEcommerce.KiyanService.GetItemListWithinventoryIDRequest request);
+        
+        // CODEGEN: Generating message contract since message GetItemInfoWithinventoryIDRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetItemInfoWithinventoryID", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        MashadLeatherEcommerce.KiyanService.GetItemInfoWithinventoryIDResponse GetItemInfoWithinventoryID(MashadLeatherEcommerce.KiyanService.GetItemInfoWithinventoryIDRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetItemInfoWithinventoryID", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemInfoWithinventoryIDResponse> GetItemInfoWithinventoryIDAsync(MashadLeatherEcommerce.KiyanService.GetItemInfoWithinventoryIDRequest request);
+        
+        // CODEGEN: Generating message contract since message GetItemInfoWithinventoryIDandBarcodesRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetItemInfoWithinventoryIDandBarcodes", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        MashadLeatherEcommerce.KiyanService.GetItemInfoWithinventoryIDandBarcodesResponse GetItemInfoWithinventoryIDandBarcodes(MashadLeatherEcommerce.KiyanService.GetItemInfoWithinventoryIDandBarcodesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetItemInfoWithinventoryIDandBarcodes", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemInfoWithinventoryIDandBarcodesResponse> GetItemInfoWithinventoryIDandBarcodesAsync(MashadLeatherEcommerce.KiyanService.GetItemInfoWithinventoryIDandBarcodesRequest request);
+        
+        // CODEGEN: Generating message contract since message GetGeneralItemInfoRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetGeneralItemInfo", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        MashadLeatherEcommerce.KiyanService.GetGeneralItemInfoResponse GetGeneralItemInfo(MashadLeatherEcommerce.KiyanService.GetGeneralItemInfoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetGeneralItemInfo", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetGeneralItemInfoResponse> GetGeneralItemInfoAsync(MashadLeatherEcommerce.KiyanService.GetGeneralItemInfoRequest request);
+        
+        // CODEGEN: Generating message contract since message GetGeneralItemInfo_CRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetGeneralItemInfo_C", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        MashadLeatherEcommerce.KiyanService.GetGeneralItemInfo_CResponse GetGeneralItemInfo_C(MashadLeatherEcommerce.KiyanService.GetGeneralItemInfo_CRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetGeneralItemInfo_C", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetGeneralItemInfo_CResponse> GetGeneralItemInfo_CAsync(MashadLeatherEcommerce.KiyanService.GetGeneralItemInfo_CRequest request);
+        
+        // CODEGEN: Generating message contract since message GetGeneralItemInfo_C_PlusRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetGeneralItemInfo_C_Plus", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        MashadLeatherEcommerce.KiyanService.GetGeneralItemInfo_C_PlusResponse GetGeneralItemInfo_C_Plus(MashadLeatherEcommerce.KiyanService.GetGeneralItemInfo_C_PlusRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetGeneralItemInfo_C_Plus", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetGeneralItemInfo_C_PlusResponse> GetGeneralItemInfo_C_PlusAsync(MashadLeatherEcommerce.KiyanService.GetGeneralItemInfo_C_PlusRequest request);
+        
+        // CODEGEN: Generating message contract since message GetGeneralItemInfoWithBarcodeRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetGeneralItemInfoWithBarcode", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        MashadLeatherEcommerce.KiyanService.GetGeneralItemInfoWithBarcodeResponse GetGeneralItemInfoWithBarcode(MashadLeatherEcommerce.KiyanService.GetGeneralItemInfoWithBarcodeRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetGeneralItemInfoWithBarcode", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetGeneralItemInfoWithBarcodeResponse> GetGeneralItemInfoWithBarcodeAsync(MashadLeatherEcommerce.KiyanService.GetGeneralItemInfoWithBarcodeRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetGeneralItemInfoWithRS", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        MashadLeatherEcommerce.KiyanService.ResponseDataOfGeneralItemInfoModel GetGeneralItemInfoWithRS(string retailStores);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetGeneralItemInfoWithRS", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.ResponseDataOfGeneralItemInfoModel> GetGeneralItemInfoWithRSAsync(string retailStores);
+        
+        // CODEGEN: Generating message contract since message GetItemsQuantityAllInventoryRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetItemsQuantityAllInventory", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        MashadLeatherEcommerce.KiyanService.GetItemsQuantityAllInventoryResponse GetItemsQuantityAllInventory(MashadLeatherEcommerce.KiyanService.GetItemsQuantityAllInventoryRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetItemsQuantityAllInventory", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemsQuantityAllInventoryResponse> GetItemsQuantityAllInventoryAsync(MashadLeatherEcommerce.KiyanService.GetItemsQuantityAllInventoryRequest request);
+        
+        // CODEGEN: Generating message contract since message GetItemsQuantityAllInventoryWithBarcodeRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetItemsQuantityAllInventoryWithBarcode", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        MashadLeatherEcommerce.KiyanService.GetItemsQuantityAllInventoryWithBarcodeResponse GetItemsQuantityAllInventoryWithBarcode(MashadLeatherEcommerce.KiyanService.GetItemsQuantityAllInventoryWithBarcodeRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetItemsQuantityAllInventoryWithBarcode", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemsQuantityAllInventoryWithBarcodeResponse> GetItemsQuantityAllInventoryWithBarcodeAsync(MashadLeatherEcommerce.KiyanService.GetItemsQuantityAllInventoryWithBarcodeRequest request);
+        
+        // CODEGEN: Generating message contract since message GetItemsQuantityListInventoryWithBarcodeRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetItemsQuantityListInventoryWithBarcode", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        MashadLeatherEcommerce.KiyanService.GetItemsQuantityListInventoryWithBarcodeResponse GetItemsQuantityListInventoryWithBarcode(MashadLeatherEcommerce.KiyanService.GetItemsQuantityListInventoryWithBarcodeRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetItemsQuantityListInventoryWithBarcode", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemsQuantityListInventoryWithBarcodeResponse> GetItemsQuantityListInventoryWithBarcodeAsync(MashadLeatherEcommerce.KiyanService.GetItemsQuantityListInventoryWithBarcodeRequest request);
         
         // CODEGEN: Generating message contract since message GetItemQuantityWithInventoryIDRequest has headers
         [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetItemQuantityWithInventoryID", ReplyAction="*")]
@@ -71,13 +174,13 @@ namespace MashadLeatherEcommerce.KiyanService {
         [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetItemQuantityWithInventoryID", ReplyAction="*")]
         System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemQuantityWithInventoryIDResponse> GetItemQuantityWithInventoryIDAsync(MashadLeatherEcommerce.KiyanService.GetItemQuantityWithInventoryIDRequest request);
         
-        // CODEGEN: Generating message contract since message GetItemsQuantityAllInventoryRequest has headers
-        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetItemsQuantityAllInventory", ReplyAction="*")]
+        // CODEGEN: Generating message contract since message GetItemsInformationWithInventoryIDandBarcodesRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetItemsInformationWithInventoryIDandBarcodes", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        MashadLeatherEcommerce.KiyanService.GetItemsQuantityAllInventoryResponse GetItemsQuantityAllInventory(MashadLeatherEcommerce.KiyanService.GetItemsQuantityAllInventoryRequest request);
+        MashadLeatherEcommerce.KiyanService.GetItemsInformationWithInventoryIDandBarcodesResponse GetItemsInformationWithInventoryIDandBarcodes(MashadLeatherEcommerce.KiyanService.GetItemsInformationWithInventoryIDandBarcodesRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetItemsQuantityAllInventory", ReplyAction="*")]
-        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemsQuantityAllInventoryResponse> GetItemsQuantityAllInventoryAsync(MashadLeatherEcommerce.KiyanService.GetItemsQuantityAllInventoryRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetItemsInformationWithInventoryIDandBarcodes", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemsInformationWithInventoryIDandBarcodesResponse> GetItemsInformationWithInventoryIDandBarcodesAsync(MashadLeatherEcommerce.KiyanService.GetItemsInformationWithInventoryIDandBarcodesRequest request);
         
         // CODEGEN: Generating message contract since message GetItemInfoRequest has headers
         [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetItemInfo", ReplyAction="*")]
@@ -95,6 +198,14 @@ namespace MashadLeatherEcommerce.KiyanService {
         [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetArrayItemInfo", ReplyAction="*")]
         System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetArrayItemInfoResponse> GetArrayItemInfoAsync(MashadLeatherEcommerce.KiyanService.GetArrayItemInfoRequest request);
         
+        // CODEGEN: Generating message contract since message ItemsCostInformationWithBarcodesRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/ItemsCostInformationWithBarcodes", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        MashadLeatherEcommerce.KiyanService.ItemsCostInformationWithBarcodesResponse ItemsCostInformationWithBarcodes(MashadLeatherEcommerce.KiyanService.ItemsCostInformationWithBarcodesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/ItemsCostInformationWithBarcodes", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.ItemsCostInformationWithBarcodesResponse> ItemsCostInformationWithBarcodesAsync(MashadLeatherEcommerce.KiyanService.ItemsCostInformationWithBarcodesRequest request);
+        
         // CODEGEN: Generating message contract since message GetItemInfoWithItemIDRequest has headers
         [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetItemInfoWithItemID", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -102,6 +213,30 @@ namespace MashadLeatherEcommerce.KiyanService {
         
         [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetItemInfoWithItemID", ReplyAction="*")]
         System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemInfoWithItemIDResponse> GetItemInfoWithItemIDAsync(MashadLeatherEcommerce.KiyanService.GetItemInfoWithItemIDRequest request);
+        
+        // CODEGEN: Generating message contract since message GetItemInfoWithItemIDWithStatusRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetItemInfoWithItemIDWithStatus", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        MashadLeatherEcommerce.KiyanService.GetItemInfoWithItemIDWithStatusResponse GetItemInfoWithItemIDWithStatus(MashadLeatherEcommerce.KiyanService.GetItemInfoWithItemIDWithStatusRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetItemInfoWithItemIDWithStatus", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemInfoWithItemIDWithStatusResponse> GetItemInfoWithItemIDWithStatusAsync(MashadLeatherEcommerce.KiyanService.GetItemInfoWithItemIDWithStatusRequest request);
+        
+        // CODEGEN: Generating message contract since message GetItemInfoWithGroupIDRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetItemInfoWithGroupID", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        MashadLeatherEcommerce.KiyanService.GetItemInfoWithGroupIDResponse GetItemInfoWithGroupID(MashadLeatherEcommerce.KiyanService.GetItemInfoWithGroupIDRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetItemInfoWithGroupID", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemInfoWithGroupIDResponse> GetItemInfoWithGroupIDAsync(MashadLeatherEcommerce.KiyanService.GetItemInfoWithGroupIDRequest request);
+        
+        // CODEGEN: Generating message contract since message GetItemStockStatusRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetItemStockStatus", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        MashadLeatherEcommerce.KiyanService.GetItemStockStatusResponse GetItemStockStatus(MashadLeatherEcommerce.KiyanService.GetItemStockStatusRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetItemStockStatus", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemStockStatusResponse> GetItemStockStatusAsync(MashadLeatherEcommerce.KiyanService.GetItemStockStatusRequest request);
         
         // CODEGEN: Generating message contract since message GetTemplatePropertyRequest has headers
         [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetTemplateProperty", ReplyAction="*")]
@@ -167,22 +302,6 @@ namespace MashadLeatherEcommerce.KiyanService {
         [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetAllMatrixItems", ReplyAction="*")]
         System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetAllMatrixItemsResponse> GetAllMatrixItemsAsync(MashadLeatherEcommerce.KiyanService.GetAllMatrixItemsRequest request);
         
-        // CODEGEN: Generating message contract since message GetItemStockStatusRequest has headers
-        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetItemStockStatus", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        MashadLeatherEcommerce.KiyanService.GetItemStockStatusResponse GetItemStockStatus(MashadLeatherEcommerce.KiyanService.GetItemStockStatusRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetItemStockStatus", ReplyAction="*")]
-        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemStockStatusResponse> GetItemStockStatusAsync(MashadLeatherEcommerce.KiyanService.GetItemStockStatusRequest request);
-        
-        // CODEGEN: Generating message contract since message AddToReserveRequest has headers
-        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/AddToReserve", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        MashadLeatherEcommerce.KiyanService.AddToReserveResponse AddToReserve(MashadLeatherEcommerce.KiyanService.AddToReserveRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/AddToReserve", ReplyAction="*")]
-        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.AddToReserveResponse> AddToReserveAsync(MashadLeatherEcommerce.KiyanService.AddToReserveRequest request);
-        
         // CODEGEN: Generating message contract since message GetPosDepartmentListRequest has headers
         [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetPosDepartmentList", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -191,6 +310,38 @@ namespace MashadLeatherEcommerce.KiyanService {
         [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetPosDepartmentList", ReplyAction="*")]
         System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetPosDepartmentListResponse> GetPosDepartmentListAsync(MashadLeatherEcommerce.KiyanService.GetPosDepartmentListRequest request);
         
+        // CODEGEN: Generating message contract since message GetPosDepartmentLevelListRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetPosDepartmentLevelList", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        MashadLeatherEcommerce.KiyanService.GetPosDepartmentLevelListResponse GetPosDepartmentLevelList(MashadLeatherEcommerce.KiyanService.GetPosDepartmentLevelListRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetPosDepartmentLevelList", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetPosDepartmentLevelListResponse> GetPosDepartmentLevelListAsync(MashadLeatherEcommerce.KiyanService.GetPosDepartmentLevelListRequest request);
+        
+        // CODEGEN: Generating message contract since message ApproveDocumentRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/ApproveDocument", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        MashadLeatherEcommerce.KiyanService.ApproveDocumentResponse ApproveDocument(MashadLeatherEcommerce.KiyanService.ApproveDocumentRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/ApproveDocument", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.ApproveDocumentResponse> ApproveDocumentAsync(MashadLeatherEcommerce.KiyanService.ApproveDocumentRequest request);
+        
+        // CODEGEN: Generating message contract since message QuickExternalTransferRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/QuickExternalTransfer", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        MashadLeatherEcommerce.KiyanService.QuickExternalTransferResponse QuickExternalTransfer(MashadLeatherEcommerce.KiyanService.QuickExternalTransferRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/QuickExternalTransfer", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.QuickExternalTransferResponse> QuickExternalTransferAsync(MashadLeatherEcommerce.KiyanService.QuickExternalTransferRequest request);
+        
+        // CODEGEN: Generating message contract since message GetInventoriesListRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetInventoriesList", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        MashadLeatherEcommerce.KiyanService.GetInventoriesListResponse GetInventoriesList(MashadLeatherEcommerce.KiyanService.GetInventoriesListRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetInventoriesList", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetInventoriesListResponse> GetInventoriesListAsync(MashadLeatherEcommerce.KiyanService.GetInventoriesListRequest request);
+        
         // CODEGEN: Generating message contract since message CreateCustomerRequest has headers
         [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/CreateCustomer", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -198,6 +349,14 @@ namespace MashadLeatherEcommerce.KiyanService {
         
         [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/CreateCustomer", ReplyAction="*")]
         System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.CreateCustomerResponse> CreateCustomerAsync(MashadLeatherEcommerce.KiyanService.CreateCustomerRequest request);
+        
+        // CODEGEN: Generating message contract since message CreateCustomerToRSRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/CreateCustomerToRS", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        MashadLeatherEcommerce.KiyanService.CreateCustomerToRSResponse CreateCustomerToRS(MashadLeatherEcommerce.KiyanService.CreateCustomerToRSRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/CreateCustomerToRS", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.CreateCustomerToRSResponse> CreateCustomerToRSAsync(MashadLeatherEcommerce.KiyanService.CreateCustomerToRSRequest request);
         
         // CODEGEN: Generating message contract since message GetCustomerListRequest has headers
         [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetCustomerList", ReplyAction="*")]
@@ -247,6 +406,22 @@ namespace MashadLeatherEcommerce.KiyanService {
         [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetCustomerTransaction", ReplyAction="*")]
         System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetCustomerTransactionResponse> GetCustomerTransactionAsync(MashadLeatherEcommerce.KiyanService.GetCustomerTransactionRequest request);
         
+        // CODEGEN: Generating message contract since message GetTransactionWithDs_info_2Request has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetTransactionWithDs_info_2", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        MashadLeatherEcommerce.KiyanService.GetTransactionWithDs_info_2Response GetTransactionWithDs_info_2(MashadLeatherEcommerce.KiyanService.GetTransactionWithDs_info_2Request request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetTransactionWithDs_info_2", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetTransactionWithDs_info_2Response> GetTransactionWithDs_info_2Async(MashadLeatherEcommerce.KiyanService.GetTransactionWithDs_info_2Request request);
+        
+        // CODEGEN: Generating message contract since message GetCustomerTransactionWithDataFilterRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetCustomerTransactionWithDataFilter", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        MashadLeatherEcommerce.KiyanService.GetCustomerTransactionWithDataFilterResponse GetCustomerTransactionWithDataFilter(MashadLeatherEcommerce.KiyanService.GetCustomerTransactionWithDataFilterRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetCustomerTransactionWithDataFilter", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetCustomerTransactionWithDataFilterResponse> GetCustomerTransactionWithDataFilterAsync(MashadLeatherEcommerce.KiyanService.GetCustomerTransactionWithDataFilterRequest request);
+        
         // CODEGEN: Generating message contract since message GetCustomersReceiptsRequest has headers
         [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetCustomersReceipts", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -255,21 +430,53 @@ namespace MashadLeatherEcommerce.KiyanService {
         [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetCustomersReceipts", ReplyAction="*")]
         System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetCustomersReceiptsResponse> GetCustomersReceiptsAsync(MashadLeatherEcommerce.KiyanService.GetCustomersReceiptsRequest request);
         
-        // CODEGEN: Generating message contract since message CreateStoreCreditDocumentRequest has headers
-        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/CreateStoreCreditDocument", ReplyAction="*")]
+        // CODEGEN: Generating message contract since message GetCustomerAddressInfoWithCustomerIDRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetCustomerAddressInfoWithCustomerID", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        MashadLeatherEcommerce.KiyanService.CreateStoreCreditDocumentResponse CreateStoreCreditDocument(MashadLeatherEcommerce.KiyanService.CreateStoreCreditDocumentRequest request);
+        MashadLeatherEcommerce.KiyanService.GetCustomerAddressInfoWithCustomerIDResponse GetCustomerAddressInfoWithCustomerID(MashadLeatherEcommerce.KiyanService.GetCustomerAddressInfoWithCustomerIDRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/CreateStoreCreditDocument", ReplyAction="*")]
-        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.CreateStoreCreditDocumentResponse> CreateStoreCreditDocumentAsync(MashadLeatherEcommerce.KiyanService.CreateStoreCreditDocumentRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetCustomerAddressInfoWithCustomerID", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetCustomerAddressInfoWithCustomerIDResponse> GetCustomerAddressInfoWithCustomerIDAsync(MashadLeatherEcommerce.KiyanService.GetCustomerAddressInfoWithCustomerIDRequest request);
         
-        // CODEGEN: Generating message contract since message ChangeCustomerGroupRequest has headers
-        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/ChangeCustomerGroup", ReplyAction="*")]
+        // CODEGEN: Generating message contract since message ValidateGiftCertificatesRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/ValidateGiftCertificates", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        MashadLeatherEcommerce.KiyanService.ChangeCustomerGroupResponse ChangeCustomerGroup(MashadLeatherEcommerce.KiyanService.ChangeCustomerGroupRequest request);
+        MashadLeatherEcommerce.KiyanService.ValidateGiftCertificatesResponse ValidateGiftCertificates(MashadLeatherEcommerce.KiyanService.ValidateGiftCertificatesRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/ChangeCustomerGroup", ReplyAction="*")]
-        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.ChangeCustomerGroupResponse> ChangeCustomerGroupAsync(MashadLeatherEcommerce.KiyanService.ChangeCustomerGroupRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/ValidateGiftCertificates", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.ValidateGiftCertificatesResponse> ValidateGiftCertificatesAsync(MashadLeatherEcommerce.KiyanService.ValidateGiftCertificatesRequest request);
+        
+        // CODEGEN: Generating message contract since message CreateGiftCertificateRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/CreateGiftCertificate", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        MashadLeatherEcommerce.KiyanService.CreateGiftCertificateResponse CreateGiftCertificate(MashadLeatherEcommerce.KiyanService.CreateGiftCertificateRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/CreateGiftCertificate", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.CreateGiftCertificateResponse> CreateGiftCertificateAsync(MashadLeatherEcommerce.KiyanService.CreateGiftCertificateRequest request);
+        
+        // CODEGEN: Generating message contract since message GetUnUsedGiftCertificatesRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetUnUsedGiftCertificates", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        MashadLeatherEcommerce.KiyanService.GetUnUsedGiftCertificatesResponse GetUnUsedGiftCertificates(MashadLeatherEcommerce.KiyanService.GetUnUsedGiftCertificatesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetUnUsedGiftCertificates", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetUnUsedGiftCertificatesResponse> GetUnUsedGiftCertificatesAsync(MashadLeatherEcommerce.KiyanService.GetUnUsedGiftCertificatesRequest request);
+        
+        // CODEGEN: Generating message contract since message GetUsedGiftCertificatesRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetUsedGiftCertificates", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        MashadLeatherEcommerce.KiyanService.GetUsedGiftCertificatesResponse GetUsedGiftCertificates(MashadLeatherEcommerce.KiyanService.GetUsedGiftCertificatesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetUsedGiftCertificates", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetUsedGiftCertificatesResponse> GetUsedGiftCertificatesAsync(MashadLeatherEcommerce.KiyanService.GetUsedGiftCertificatesRequest request);
+        
+        // CODEGEN: Generating message contract since message GetUsedCreditCustomerRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetUsedCreditCustomer", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        MashadLeatherEcommerce.KiyanService.GetUsedCreditCustomerResponse GetUsedCreditCustomer(MashadLeatherEcommerce.KiyanService.GetUsedCreditCustomerRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetUsedCreditCustomer", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetUsedCreditCustomerResponse> GetUsedCreditCustomerAsync(MashadLeatherEcommerce.KiyanService.GetUsedCreditCustomerRequest request);
         
         // CODEGEN: Generating message contract since message CustomerCreditOperationsRequest has headers
         [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/CustomerCreditOperations", ReplyAction="*")]
@@ -278,6 +485,38 @@ namespace MashadLeatherEcommerce.KiyanService {
         
         [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/CustomerCreditOperations", ReplyAction="*")]
         System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.CustomerCreditOperationsResponse> CustomerCreditOperationsAsync(MashadLeatherEcommerce.KiyanService.CustomerCreditOperationsRequest request);
+        
+        // CODEGEN: Generating message contract since message GetCustomerGroupRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetCustomerGroup", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        MashadLeatherEcommerce.KiyanService.GetCustomerGroupResponse GetCustomerGroup(MashadLeatherEcommerce.KiyanService.GetCustomerGroupRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetCustomerGroup", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetCustomerGroupResponse> GetCustomerGroupAsync(MashadLeatherEcommerce.KiyanService.GetCustomerGroupRequest request);
+        
+        // CODEGEN: Generating message contract since message BuycustomersRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/Buycustomers", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        MashadLeatherEcommerce.KiyanService.BuycustomersResponse Buycustomers(MashadLeatherEcommerce.KiyanService.BuycustomersRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/Buycustomers", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.BuycustomersResponse> BuycustomersAsync(MashadLeatherEcommerce.KiyanService.BuycustomersRequest request);
+        
+        // CODEGEN: Generating message contract since message BuycustomersWithFactorItemsRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/BuycustomersWithFactorItems", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        MashadLeatherEcommerce.KiyanService.BuycustomersWithFactorItemsResponse BuycustomersWithFactorItems(MashadLeatherEcommerce.KiyanService.BuycustomersWithFactorItemsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/BuycustomersWithFactorItems", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.BuycustomersWithFactorItemsResponse> BuycustomersWithFactorItemsAsync(MashadLeatherEcommerce.KiyanService.BuycustomersWithFactorItemsRequest request);
+        
+        // CODEGEN: Generating message contract since message GetTaxChargeAmountRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetTaxChargeAmount", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        MashadLeatherEcommerce.KiyanService.GetTaxChargeAmountResponse GetTaxChargeAmount(MashadLeatherEcommerce.KiyanService.GetTaxChargeAmountRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetTaxChargeAmount", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetTaxChargeAmountResponse> GetTaxChargeAmountAsync(MashadLeatherEcommerce.KiyanService.GetTaxChargeAmountRequest request);
         
         // CODEGEN: Generating message contract since message GetTenderListRequest has headers
         [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetTenderList", ReplyAction="*")]
@@ -303,36 +542,176 @@ namespace MashadLeatherEcommerce.KiyanService {
         [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetPromotionCustomerGroups", ReplyAction="*")]
         System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetPromotionCustomerGroupsResponse> GetPromotionCustomerGroupsAsync(MashadLeatherEcommerce.KiyanService.GetPromotionCustomerGroupsRequest request);
         
-        // CODEGEN: Generating message contract since message ValidateGiftCertificatesRequest has headers
-        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/ValidateGiftCertificates", ReplyAction="*")]
+        // CODEGEN: Generating message contract since message AddToReserveRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/AddToReserve", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        MashadLeatherEcommerce.KiyanService.ValidateGiftCertificatesResponse ValidateGiftCertificates(MashadLeatherEcommerce.KiyanService.ValidateGiftCertificatesRequest request);
+        MashadLeatherEcommerce.KiyanService.AddToReserveResponse AddToReserve(MashadLeatherEcommerce.KiyanService.AddToReserveRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/ValidateGiftCertificates", ReplyAction="*")]
-        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.ValidateGiftCertificatesResponse> ValidateGiftCertificatesAsync(MashadLeatherEcommerce.KiyanService.ValidateGiftCertificatesRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/AddToReserve", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.AddToReserveResponse> AddToReserveAsync(MashadLeatherEcommerce.KiyanService.AddToReserveRequest request);
+        
+        // CODEGEN: Generating message contract since message AddToReserveRSRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/AddToReserveRS", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        MashadLeatherEcommerce.KiyanService.AddToReserveRSResponse AddToReserveRS(MashadLeatherEcommerce.KiyanService.AddToReserveRSRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/AddToReserveRS", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.AddToReserveRSResponse> AddToReserveRSAsync(MashadLeatherEcommerce.KiyanService.AddToReserveRSRequest request);
+        
+        // CODEGEN: Generating message contract since message SaleItemsRSRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/SaleItemsRS", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        MashadLeatherEcommerce.KiyanService.SaleItemsRSResponse SaleItemsRS(MashadLeatherEcommerce.KiyanService.SaleItemsRSRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/SaleItemsRS", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.SaleItemsRSResponse> SaleItemsRSAsync(MashadLeatherEcommerce.KiyanService.SaleItemsRSRequest request);
+        
+        // CODEGEN: Generating message contract since message SaleItemsRsDateRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/SaleItemsRsDate", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        MashadLeatherEcommerce.KiyanService.SaleItemsRsDateResponse SaleItemsRsDate(MashadLeatherEcommerce.KiyanService.SaleItemsRsDateRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/SaleItemsRsDate", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.SaleItemsRsDateResponse> SaleItemsRsDateAsync(MashadLeatherEcommerce.KiyanService.SaleItemsRsDateRequest request);
+        
+        // CODEGEN: Generating message contract since message SaleItemsDateRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/SaleItemsDate", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        MashadLeatherEcommerce.KiyanService.SaleItemsDateResponse SaleItemsDate(MashadLeatherEcommerce.KiyanService.SaleItemsDateRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/SaleItemsDate", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.SaleItemsDateResponse> SaleItemsDateAsync(MashadLeatherEcommerce.KiyanService.SaleItemsDateRequest request);
+        
+        // CODEGEN: Generating message contract since message SaleItemsRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/SaleItems", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        MashadLeatherEcommerce.KiyanService.SaleItemsResponse SaleItems(MashadLeatherEcommerce.KiyanService.SaleItemsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/SaleItems", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.SaleItemsResponse> SaleItemsAsync(MashadLeatherEcommerce.KiyanService.SaleItemsRequest request);
+        
+        // CODEGEN: Generating message contract since message WholesaleRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/Wholesale", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        MashadLeatherEcommerce.KiyanService.WholesaleResponse Wholesale(MashadLeatherEcommerce.KiyanService.WholesaleRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/Wholesale", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.WholesaleResponse> WholesaleAsync(MashadLeatherEcommerce.KiyanService.WholesaleRequest request);
+        
+        // CODEGEN: Generating message contract since message SuspendTransactionRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/SuspendTransaction", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        MashadLeatherEcommerce.KiyanService.SuspendTransactionResponse SuspendTransaction(MashadLeatherEcommerce.KiyanService.SuspendTransactionRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/SuspendTransaction", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.SuspendTransactionResponse> SuspendTransactionAsync(MashadLeatherEcommerce.KiyanService.SuspendTransactionRequest request);
+        
+        // CODEGEN: Generating message contract since message GetRecieptDetailRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetRecieptDetail", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        MashadLeatherEcommerce.KiyanService.GetRecieptDetailResponse GetRecieptDetail(MashadLeatherEcommerce.KiyanService.GetRecieptDetailRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetRecieptDetail", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetRecieptDetailResponse> GetRecieptDetailAsync(MashadLeatherEcommerce.KiyanService.GetRecieptDetailRequest request);
+        
+        // CODEGEN: Generating message contract since message GetRecieptHeaderRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetRecieptHeader", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        MashadLeatherEcommerce.KiyanService.GetRecieptHeaderResponse GetRecieptHeader(MashadLeatherEcommerce.KiyanService.GetRecieptHeaderRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/GetRecieptHeader", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetRecieptHeaderResponse> GetRecieptHeaderAsync(MashadLeatherEcommerce.KiyanService.GetRecieptHeaderRequest request);
+        
+        // CODEGEN: Generating message contract since message SaleReturnItemsRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/SaleReturnItems", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        MashadLeatherEcommerce.KiyanService.SaleReturnItemsResponse SaleReturnItems(MashadLeatherEcommerce.KiyanService.SaleReturnItemsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/SaleReturnItems", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.SaleReturnItemsResponse> SaleReturnItemsAsync(MashadLeatherEcommerce.KiyanService.SaleReturnItemsRequest request);
+        
+        // CODEGEN: Generating message contract since message ReturnItemsRSDateRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/ReturnItemsRSDate", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        MashadLeatherEcommerce.KiyanService.ReturnItemsRSDateResponse ReturnItemsRSDate(MashadLeatherEcommerce.KiyanService.ReturnItemsRSDateRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/ReturnItemsRSDate", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.ReturnItemsRSDateResponse> ReturnItemsRSDateAsync(MashadLeatherEcommerce.KiyanService.ReturnItemsRSDateRequest request);
+        
+        // CODEGEN: Generating message contract since message ReturnItemsRSRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/ReturnItemsRS", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        MashadLeatherEcommerce.KiyanService.ReturnItemsRSResponse ReturnItemsRS(MashadLeatherEcommerce.KiyanService.ReturnItemsRSRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/ReturnItemsRS", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.ReturnItemsRSResponse> ReturnItemsRSAsync(MashadLeatherEcommerce.KiyanService.ReturnItemsRSRequest request);
+        
+        // CODEGEN: Generating message contract since message ReturnItemsRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/ReturnItems", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        MashadLeatherEcommerce.KiyanService.ReturnItemsResponse ReturnItems(MashadLeatherEcommerce.KiyanService.ReturnItemsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/ReturnItems", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.ReturnItemsResponse> ReturnItemsAsync(MashadLeatherEcommerce.KiyanService.ReturnItemsRequest request);
+        
+        // CODEGEN: Generating message contract since message LayAwaySaleItemsRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/LayAwaySaleItems", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        MashadLeatherEcommerce.KiyanService.LayAwaySaleItemsResponse LayAwaySaleItems(MashadLeatherEcommerce.KiyanService.LayAwaySaleItemsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="KyanOnlineSaleService/LayAwaySaleItems", ReplyAction="*")]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.LayAwaySaleItemsResponse> LayAwaySaleItemsAsync(MashadLeatherEcommerce.KiyanService.LayAwaySaleItemsRequest request);
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
-    public partial class ValidationSoapHeader : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class AuthUser : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private string tokenField;
+        private string userNameField;
+        
+        private string passwordField;
+        
+        private string authenticationTokenField;
         
         private System.Xml.XmlAttribute[] anyAttrField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string Token {
+        public string UserName {
             get {
-                return this.tokenField;
+                return this.userNameField;
             }
             set {
-                this.tokenField = value;
-                this.RaisePropertyChanged("Token");
+                this.userNameField = value;
+                this.RaisePropertyChanged("UserName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string Password {
+            get {
+                return this.passwordField;
+            }
+            set {
+                this.passwordField = value;
+                this.RaisePropertyChanged("Password");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string AuthenticationToken {
+            get {
+                return this.authenticationTokenField;
+            }
+            set {
+                this.authenticationTokenField = value;
+                this.RaisePropertyChanged("AuthenticationToken");
             }
         }
         
@@ -359,108 +738,94 @@ namespace MashadLeatherEcommerce.KiyanService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
-    public partial class GiftCertificate : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class ReturnItemObject : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private string giftCertificateSerialNumberField;
+        private int itemIDField;
         
-        private string giftCertificateBarcodeField;
+        private System.Nullable<decimal> quantityField;
         
-        private string giftCertificateBarcodeTypField;
+        private System.Nullable<decimal> extendedAmountField;
         
-        private System.Nullable<System.DateTime> paidDateTimeStampField;
+        private decimal actualUnitPriceField;
         
-        private int giftCertificateTypeCodeField;
+        private System.Nullable<decimal> chargeAmountField;
         
-        private System.Nullable<System.DateTime> expirationDateField;
-        
-        private decimal faceValueAmountField;
+        private System.Nullable<decimal> taxAmountField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string GiftCertificateSerialNumber {
+        public int ItemID {
             get {
-                return this.giftCertificateSerialNumberField;
+                return this.itemIDField;
             }
             set {
-                this.giftCertificateSerialNumberField = value;
-                this.RaisePropertyChanged("GiftCertificateSerialNumber");
+                this.itemIDField = value;
+                this.RaisePropertyChanged("ItemID");
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string GiftCertificateBarcode {
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public System.Nullable<decimal> Quantity {
             get {
-                return this.giftCertificateBarcodeField;
+                return this.quantityField;
             }
             set {
-                this.giftCertificateBarcodeField = value;
-                this.RaisePropertyChanged("GiftCertificateBarcode");
+                this.quantityField = value;
+                this.RaisePropertyChanged("Quantity");
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string GiftCertificateBarcodeTyp {
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public System.Nullable<decimal> ExtendedAmount {
             get {
-                return this.giftCertificateBarcodeTypField;
+                return this.extendedAmountField;
             }
             set {
-                this.giftCertificateBarcodeTypField = value;
-                this.RaisePropertyChanged("GiftCertificateBarcodeTyp");
+                this.extendedAmountField = value;
+                this.RaisePropertyChanged("ExtendedAmount");
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
-        public System.Nullable<System.DateTime> PaidDateTimeStamp {
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public decimal ActualUnitPrice {
             get {
-                return this.paidDateTimeStampField;
+                return this.actualUnitPriceField;
             }
             set {
-                this.paidDateTimeStampField = value;
-                this.RaisePropertyChanged("PaidDateTimeStamp");
+                this.actualUnitPriceField = value;
+                this.RaisePropertyChanged("ActualUnitPrice");
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public int GiftCertificateTypeCode {
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
+        public System.Nullable<decimal> ChargeAmount {
             get {
-                return this.giftCertificateTypeCodeField;
+                return this.chargeAmountField;
             }
             set {
-                this.giftCertificateTypeCodeField = value;
-                this.RaisePropertyChanged("GiftCertificateTypeCode");
+                this.chargeAmountField = value;
+                this.RaisePropertyChanged("ChargeAmount");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
-        public System.Nullable<System.DateTime> ExpirationDate {
+        public System.Nullable<decimal> TaxAmount {
             get {
-                return this.expirationDateField;
+                return this.taxAmountField;
             }
             set {
-                this.expirationDateField = value;
-                this.RaisePropertyChanged("ExpirationDate");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
-        public decimal FaceValueAmount {
-            get {
-                return this.faceValueAmountField;
-            }
-            set {
-                this.faceValueAmountField = value;
-                this.RaisePropertyChanged("FaceValueAmount");
+                this.taxAmountField = value;
+                this.RaisePropertyChanged("TaxAmount");
             }
         }
         
@@ -475,19 +840,189 @@ namespace MashadLeatherEcommerce.KiyanService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
-    public partial class GiftCertificateListResultModel : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class RecieptsHeader : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private Result responseMessageField;
+        private System.DateTime transactionDateField;
         
-        private GiftCertificate[] responseResultField;
+        private System.Nullable<decimal> totalSaleAmountField;
+        
+        private System.Nullable<decimal> totalTaxAmountField;
+        
+        private System.Nullable<decimal> totalDiscountAmountField;
+        
+        private System.Nullable<decimal> totalGrossAmountField;
+        
+        private System.Nullable<decimal> totalPaymentAmountField;
+        
+        private decimal transactionSeqNoField;
+        
+        private int retailStoreIDField;
+        
+        private int workstaionIDField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public System.DateTime TransactionDate {
+            get {
+                return this.transactionDateField;
+            }
+            set {
+                this.transactionDateField = value;
+                this.RaisePropertyChanged("TransactionDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public System.Nullable<decimal> TotalSaleAmount {
+            get {
+                return this.totalSaleAmountField;
+            }
+            set {
+                this.totalSaleAmountField = value;
+                this.RaisePropertyChanged("TotalSaleAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public System.Nullable<decimal> TotalTaxAmount {
+            get {
+                return this.totalTaxAmountField;
+            }
+            set {
+                this.totalTaxAmountField = value;
+                this.RaisePropertyChanged("TotalTaxAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        public System.Nullable<decimal> TotalDiscountAmount {
+            get {
+                return this.totalDiscountAmountField;
+            }
+            set {
+                this.totalDiscountAmountField = value;
+                this.RaisePropertyChanged("TotalDiscountAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
+        public System.Nullable<decimal> TotalGrossAmount {
+            get {
+                return this.totalGrossAmountField;
+            }
+            set {
+                this.totalGrossAmountField = value;
+                this.RaisePropertyChanged("TotalGrossAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
+        public System.Nullable<decimal> TotalPaymentAmount {
+            get {
+                return this.totalPaymentAmountField;
+            }
+            set {
+                this.totalPaymentAmountField = value;
+                this.RaisePropertyChanged("TotalPaymentAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public decimal TransactionSeqNo {
+            get {
+                return this.transactionSeqNoField;
+            }
+            set {
+                this.transactionSeqNoField = value;
+                this.RaisePropertyChanged("TransactionSeqNo");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public int RetailStoreID {
+            get {
+                return this.retailStoreIDField;
+            }
+            set {
+                this.retailStoreIDField = value;
+                this.RaisePropertyChanged("RetailStoreID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public int WorkstaionID {
+            get {
+                return this.workstaionIDField;
+            }
+            set {
+                this.workstaionIDField = value;
+                this.RaisePropertyChanged("WorkstaionID");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class ResponseDataOfRecieptsHeader : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int stateField;
+        
+        private RecieptsHeader[] responseResultField;
+        
+        private Result responseMessageField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int state {
+            get {
+                return this.stateField;
+            }
+            set {
+                this.stateField = value;
+                this.RaisePropertyChanged("state");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
+        public RecieptsHeader[] ResponseResult {
+            get {
+                return this.responseResultField;
+            }
+            set {
+                this.responseResultField = value;
+                this.RaisePropertyChanged("ResponseResult");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public Result ResponseMessage {
             get {
                 return this.responseMessageField;
@@ -498,18 +1033,6 @@ namespace MashadLeatherEcommerce.KiyanService {
             }
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
-        public GiftCertificate[] ResponseResult {
-            get {
-                return this.responseResultField;
-            }
-            set {
-                this.responseResultField = value;
-                this.RaisePropertyChanged("ResponseResult");
-            }
-        }
-        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -521,7 +1044,7 @@ namespace MashadLeatherEcommerce.KiyanService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
     public enum Result {
@@ -668,6 +1191,9 @@ namespace MashadLeatherEcommerce.KiyanService {
         CustomerNotFound,
         
         /// <remarks/>
+        CustomerNotSelectedCreditPayment,
+        
+        /// <remarks/>
         CustomerGroupNotFound,
         
         /// <remarks/>
@@ -726,10 +1252,683 @@ namespace MashadLeatherEcommerce.KiyanService {
         
         /// <remarks/>
         Operation_Was_Unsuccessful,
+        
+        /// <remarks/>
+        CreditIsNotEnough,
+        
+        /// <remarks/>
+        GiftNotValid,
+        
+        /// <remarks/>
+        GiftBarcodeExists,
+        
+        /// <remarks/>
+        CheckGiftType,
+        
+        /// <remarks/>
+        NullException,
+        
+        /// <remarks/>
+        InvalidInventoryID,
+        
+        /// <remarks/>
+        MaxDaysEr,
+        
+        /// <remarks/>
+        CustomerAccountInvalid,
+        
+        /// <remarks/>
+        AccessLevelNotAllowed,
+        
+        /// <remarks/>
+        ProvideUserAndPassword,
+        
+        /// <remarks/>
+        CAllMethodAuthenticationUser,
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class RecieptsDetail : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int lineNumberField;
+        
+        private int itemIdField;
+        
+        private string itemBarcodeField;
+        
+        private string itemNameField;
+        
+        private System.DateTime transactionDateField;
+        
+        private decimal saleQTYField;
+        
+        private decimal saleAmountField;
+        
+        private decimal taxAmountField;
+        
+        private decimal returnQTYField;
+        
+        private decimal returnAmountField;
+        
+        private decimal returnTaxField;
+        
+        private System.Nullable<int> customerIdField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int LineNumber {
+            get {
+                return this.lineNumberField;
+            }
+            set {
+                this.lineNumberField = value;
+                this.RaisePropertyChanged("LineNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int ItemId {
+            get {
+                return this.itemIdField;
+            }
+            set {
+                this.itemIdField = value;
+                this.RaisePropertyChanged("ItemId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string ItemBarcode {
+            get {
+                return this.itemBarcodeField;
+            }
+            set {
+                this.itemBarcodeField = value;
+                this.RaisePropertyChanged("ItemBarcode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string ItemName {
+            get {
+                return this.itemNameField;
+            }
+            set {
+                this.itemNameField = value;
+                this.RaisePropertyChanged("ItemName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public System.DateTime TransactionDate {
+            get {
+                return this.transactionDateField;
+            }
+            set {
+                this.transactionDateField = value;
+                this.RaisePropertyChanged("TransactionDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public decimal SaleQTY {
+            get {
+                return this.saleQTYField;
+            }
+            set {
+                this.saleQTYField = value;
+                this.RaisePropertyChanged("SaleQTY");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public decimal SaleAmount {
+            get {
+                return this.saleAmountField;
+            }
+            set {
+                this.saleAmountField = value;
+                this.RaisePropertyChanged("SaleAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public decimal TaxAmount {
+            get {
+                return this.taxAmountField;
+            }
+            set {
+                this.taxAmountField = value;
+                this.RaisePropertyChanged("TaxAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public decimal ReturnQTY {
+            get {
+                return this.returnQTYField;
+            }
+            set {
+                this.returnQTYField = value;
+                this.RaisePropertyChanged("ReturnQTY");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public decimal ReturnAmount {
+            get {
+                return this.returnAmountField;
+            }
+            set {
+                this.returnAmountField = value;
+                this.RaisePropertyChanged("ReturnAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public decimal ReturnTax {
+            get {
+                return this.returnTaxField;
+            }
+            set {
+                this.returnTaxField = value;
+                this.RaisePropertyChanged("ReturnTax");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=11)]
+        public System.Nullable<int> CustomerId {
+            get {
+                return this.customerIdField;
+            }
+            set {
+                this.customerIdField = value;
+                this.RaisePropertyChanged("CustomerId");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class ResponseDataOfRecieptsDetail : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int stateField;
+        
+        private RecieptsDetail[] responseResultField;
+        
+        private Result responseMessageField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int state {
+            get {
+                return this.stateField;
+            }
+            set {
+                this.stateField = value;
+                this.RaisePropertyChanged("state");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
+        public RecieptsDetail[] ResponseResult {
+            get {
+                return this.responseResultField;
+            }
+            set {
+                this.responseResultField = value;
+                this.RaisePropertyChanged("ResponseResult");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public Result ResponseMessage {
+            get {
+                return this.responseMessageField;
+            }
+            set {
+                this.responseMessageField = value;
+                this.RaisePropertyChanged("ResponseMessage");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class WholeSaleReultModel : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private Result responseMessageField;
+        
+        private string cSDocumentNoField;
+        
+        private string cCDocumentNoField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public Result ResponseMessage {
+            get {
+                return this.responseMessageField;
+            }
+            set {
+                this.responseMessageField = value;
+                this.RaisePropertyChanged("ResponseMessage");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string CSDocumentNo {
+            get {
+                return this.cSDocumentNoField;
+            }
+            set {
+                this.cSDocumentNoField = value;
+                this.RaisePropertyChanged("CSDocumentNo");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string CCDocumentNo {
+            get {
+                return this.cCDocumentNoField;
+            }
+            set {
+                this.cCDocumentNoField = value;
+                this.RaisePropertyChanged("CCDocumentNo");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class WholeSaleModel : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int itemIDField;
+        
+        private System.Nullable<decimal> quantityField;
+        
+        private decimal retailAmountField;
+        
+        private System.Nullable<decimal> taxAmountField;
+        
+        private System.Nullable<decimal> discountAmountField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int ItemID {
+            get {
+                return this.itemIDField;
+            }
+            set {
+                this.itemIDField = value;
+                this.RaisePropertyChanged("ItemID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public System.Nullable<decimal> Quantity {
+            get {
+                return this.quantityField;
+            }
+            set {
+                this.quantityField = value;
+                this.RaisePropertyChanged("Quantity");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public decimal RetailAmount {
+            get {
+                return this.retailAmountField;
+            }
+            set {
+                this.retailAmountField = value;
+                this.RaisePropertyChanged("RetailAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        public System.Nullable<decimal> TaxAmount {
+            get {
+                return this.taxAmountField;
+            }
+            set {
+                this.taxAmountField = value;
+                this.RaisePropertyChanged("TaxAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
+        public System.Nullable<decimal> DiscountAmount {
+            get {
+                return this.discountAmountField;
+            }
+            set {
+                this.discountAmountField = value;
+                this.RaisePropertyChanged("DiscountAmount");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class TenderPrice : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int tenderIDField;
+        
+        private System.Nullable<decimal> priceField;
+        
+        private string barCodeField;
+        
+        private string bonTypeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int TenderID {
+            get {
+                return this.tenderIDField;
+            }
+            set {
+                this.tenderIDField = value;
+                this.RaisePropertyChanged("TenderID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public System.Nullable<decimal> Price {
+            get {
+                return this.priceField;
+            }
+            set {
+                this.priceField = value;
+                this.RaisePropertyChanged("Price");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string BarCode {
+            get {
+                return this.barCodeField;
+            }
+            set {
+                this.barCodeField = value;
+                this.RaisePropertyChanged("BarCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string BonType {
+            get {
+                return this.bonTypeField;
+            }
+            set {
+                this.bonTypeField = value;
+                this.RaisePropertyChanged("BonType");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class SaleItemObject : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int itemIDField;
+        
+        private System.Nullable<decimal> quantityField;
+        
+        private System.Nullable<decimal> grossSaleAmountField;
+        
+        private System.Nullable<decimal> extendedAmountField;
+        
+        private decimal actualUnitPriceField;
+        
+        private decimal regularUnitPriceField;
+        
+        private string serialNumberField;
+        
+        private System.Nullable<decimal> chargeAmountField;
+        
+        private System.Nullable<decimal> taxAmountField;
+        
+        private bool isMiscellaneousField;
+        
+        private string itemDetailField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int ItemID {
+            get {
+                return this.itemIDField;
+            }
+            set {
+                this.itemIDField = value;
+                this.RaisePropertyChanged("ItemID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public System.Nullable<decimal> Quantity {
+            get {
+                return this.quantityField;
+            }
+            set {
+                this.quantityField = value;
+                this.RaisePropertyChanged("Quantity");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public System.Nullable<decimal> GrossSaleAmount {
+            get {
+                return this.grossSaleAmountField;
+            }
+            set {
+                this.grossSaleAmountField = value;
+                this.RaisePropertyChanged("GrossSaleAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        public System.Nullable<decimal> ExtendedAmount {
+            get {
+                return this.extendedAmountField;
+            }
+            set {
+                this.extendedAmountField = value;
+                this.RaisePropertyChanged("ExtendedAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public decimal ActualUnitPrice {
+            get {
+                return this.actualUnitPriceField;
+            }
+            set {
+                this.actualUnitPriceField = value;
+                this.RaisePropertyChanged("ActualUnitPrice");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public decimal RegularUnitPrice {
+            get {
+                return this.regularUnitPriceField;
+            }
+            set {
+                this.regularUnitPriceField = value;
+                this.RaisePropertyChanged("RegularUnitPrice");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string SerialNumber {
+            get {
+                return this.serialNumberField;
+            }
+            set {
+                this.serialNumberField = value;
+                this.RaisePropertyChanged("SerialNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=7)]
+        public System.Nullable<decimal> ChargeAmount {
+            get {
+                return this.chargeAmountField;
+            }
+            set {
+                this.chargeAmountField = value;
+                this.RaisePropertyChanged("ChargeAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=8)]
+        public System.Nullable<decimal> TaxAmount {
+            get {
+                return this.taxAmountField;
+            }
+            set {
+                this.taxAmountField = value;
+                this.RaisePropertyChanged("TaxAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public bool IsMiscellaneous {
+            get {
+                return this.isMiscellaneousField;
+            }
+            set {
+                this.isMiscellaneousField = value;
+                this.RaisePropertyChanged("IsMiscellaneous");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public string ItemDetail {
+            get {
+                return this.itemDetailField;
+            }
+            set {
+                this.itemDetailField = value;
+                this.RaisePropertyChanged("ItemDetail");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -775,26 +1974,28 @@ namespace MashadLeatherEcommerce.KiyanService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
-    public partial class PromotionCustomerGroupResultModel : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class ResponseDataOfPromotionCustomerGroupModel : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private Result responseMessageField;
+        private int stateField;
         
         private PromotionCustomerGroupModel[] responseResultField;
         
+        private Result responseMessageField;
+        
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public Result ResponseMessage {
+        public int state {
             get {
-                return this.responseMessageField;
+                return this.stateField;
             }
             set {
-                this.responseMessageField = value;
-                this.RaisePropertyChanged("ResponseMessage");
+                this.stateField = value;
+                this.RaisePropertyChanged("state");
             }
         }
         
@@ -810,6 +2011,18 @@ namespace MashadLeatherEcommerce.KiyanService {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public Result ResponseMessage {
+            get {
+                return this.responseMessageField;
+            }
+            set {
+                this.responseMessageField = value;
+                this.RaisePropertyChanged("ResponseMessage");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -821,7 +2034,7 @@ namespace MashadLeatherEcommerce.KiyanService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -979,7 +2192,7 @@ namespace MashadLeatherEcommerce.KiyanService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1151,26 +2364,28 @@ namespace MashadLeatherEcommerce.KiyanService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
-    public partial class PromotionHeaderResultModel : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class ResponseDataOfPromotionHeaderModel : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private Result responseMessageField;
+        private int stateField;
         
         private PromotionHeaderModel[] responseResultField;
         
+        private Result responseMessageField;
+        
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public Result ResponseMessage {
+        public int state {
             get {
-                return this.responseMessageField;
+                return this.stateField;
             }
             set {
-                this.responseMessageField = value;
-                this.RaisePropertyChanged("ResponseMessage");
+                this.stateField = value;
+                this.RaisePropertyChanged("state");
             }
         }
         
@@ -1186,6 +2401,18 @@ namespace MashadLeatherEcommerce.KiyanService {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public Result ResponseMessage {
+            get {
+                return this.responseMessageField;
+            }
+            set {
+                this.responseMessageField = value;
+                this.RaisePropertyChanged("ResponseMessage");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -1197,7 +2424,7 @@ namespace MashadLeatherEcommerce.KiyanService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1257,26 +2484,28 @@ namespace MashadLeatherEcommerce.KiyanService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
-    public partial class TenderListResultModel : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class ResponseDataOfTenderModel : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private Result responseMessageField;
+        private int stateField;
         
         private TenderModel[] responseResultField;
         
+        private Result responseMessageField;
+        
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public Result ResponseMessage {
+        public int state {
             get {
-                return this.responseMessageField;
+                return this.stateField;
             }
             set {
-                this.responseMessageField = value;
-                this.RaisePropertyChanged("ResponseMessage");
+                this.stateField = value;
+                this.RaisePropertyChanged("state");
             }
         }
         
@@ -1292,30 +2521,8 @@ namespace MashadLeatherEcommerce.KiyanService {
             }
         }
         
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
-    public partial class StoreCreditDocumentResultModel : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private Result responseMessageField;
-        
-        private int[] responceResultField;
-        
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public Result ResponseMessage {
             get {
                 return this.responseMessageField;
@@ -1326,18 +2533,6 @@ namespace MashadLeatherEcommerce.KiyanService {
             }
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
-        public int[] ResponceResult {
-            get {
-                return this.responceResultField;
-            }
-            set {
-                this.responceResultField = value;
-                this.RaisePropertyChanged("ResponceResult");
-            }
-        }
-        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -1349,38 +2544,38 @@ namespace MashadLeatherEcommerce.KiyanService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
-    public partial class ResponseError : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class ConfigEntity : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private int errorCodeField;
+        private decimal taxAmountField;
         
-        private string errorDescriptionField;
+        private decimal chargeAmountField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public int ErrorCode {
+        public decimal TaxAmount {
             get {
-                return this.errorCodeField;
+                return this.taxAmountField;
             }
             set {
-                this.errorCodeField = value;
-                this.RaisePropertyChanged("ErrorCode");
+                this.taxAmountField = value;
+                this.RaisePropertyChanged("TaxAmount");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string ErrorDescription {
+        public decimal ChargeAmount {
             get {
-                return this.errorDescriptionField;
+                return this.chargeAmountField;
             }
             set {
-                this.errorDescriptionField = value;
-                this.RaisePropertyChanged("ErrorDescription");
+                this.chargeAmountField = value;
+                this.RaisePropertyChanged("ChargeAmount");
             }
         }
         
@@ -1395,7 +2590,1777 @@ namespace MashadLeatherEcommerce.KiyanService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class ResponseDataOfConfigEntity : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int stateField;
+        
+        private ConfigEntity[] responseResultField;
+        
+        private Result responseMessageField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int state {
+            get {
+                return this.stateField;
+            }
+            set {
+                this.stateField = value;
+                this.RaisePropertyChanged("state");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
+        public ConfigEntity[] ResponseResult {
+            get {
+                return this.responseResultField;
+            }
+            set {
+                this.responseResultField = value;
+                this.RaisePropertyChanged("ResponseResult");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public Result ResponseMessage {
+            get {
+                return this.responseMessageField;
+            }
+            set {
+                this.responseMessageField = value;
+                this.RaisePropertyChanged("ResponseMessage");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class BuycustomersWithFactorItemsModel : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string customerIDField;
+        
+        private string customerMobileField;
+        
+        private string retailStoreCodeField;
+        
+        private string retailStoreIDField;
+        
+        private string workstationIDField;
+        
+        private string businessDateField;
+        
+        private string transactionSeqNoField;
+        
+        private string cashierIDField;
+        
+        private string barcodeField;
+        
+        private string itemIDField;
+        
+        private string salePriceField;
+        
+        private string saleQuantityField;
+        
+        private string customerPriceBuyField;
+        
+        private string itemDiscountPercentField;
+        
+        private string itemDiscountField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string CustomerID {
+            get {
+                return this.customerIDField;
+            }
+            set {
+                this.customerIDField = value;
+                this.RaisePropertyChanged("CustomerID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string CustomerMobile {
+            get {
+                return this.customerMobileField;
+            }
+            set {
+                this.customerMobileField = value;
+                this.RaisePropertyChanged("CustomerMobile");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string RetailStoreCode {
+            get {
+                return this.retailStoreCodeField;
+            }
+            set {
+                this.retailStoreCodeField = value;
+                this.RaisePropertyChanged("RetailStoreCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string RetailStoreID {
+            get {
+                return this.retailStoreIDField;
+            }
+            set {
+                this.retailStoreIDField = value;
+                this.RaisePropertyChanged("RetailStoreID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string WorkstationID {
+            get {
+                return this.workstationIDField;
+            }
+            set {
+                this.workstationIDField = value;
+                this.RaisePropertyChanged("WorkstationID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string BusinessDate {
+            get {
+                return this.businessDateField;
+            }
+            set {
+                this.businessDateField = value;
+                this.RaisePropertyChanged("BusinessDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string TransactionSeqNo {
+            get {
+                return this.transactionSeqNoField;
+            }
+            set {
+                this.transactionSeqNoField = value;
+                this.RaisePropertyChanged("TransactionSeqNo");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public string CashierID {
+            get {
+                return this.cashierIDField;
+            }
+            set {
+                this.cashierIDField = value;
+                this.RaisePropertyChanged("CashierID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public string barcode {
+            get {
+                return this.barcodeField;
+            }
+            set {
+                this.barcodeField = value;
+                this.RaisePropertyChanged("barcode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public string ItemID {
+            get {
+                return this.itemIDField;
+            }
+            set {
+                this.itemIDField = value;
+                this.RaisePropertyChanged("ItemID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public string SalePrice {
+            get {
+                return this.salePriceField;
+            }
+            set {
+                this.salePriceField = value;
+                this.RaisePropertyChanged("SalePrice");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        public string SaleQuantity {
+            get {
+                return this.saleQuantityField;
+            }
+            set {
+                this.saleQuantityField = value;
+                this.RaisePropertyChanged("SaleQuantity");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        public string CustomerPriceBuy {
+            get {
+                return this.customerPriceBuyField;
+            }
+            set {
+                this.customerPriceBuyField = value;
+                this.RaisePropertyChanged("CustomerPriceBuy");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+        public string ItemDiscountPercent {
+            get {
+                return this.itemDiscountPercentField;
+            }
+            set {
+                this.itemDiscountPercentField = value;
+                this.RaisePropertyChanged("ItemDiscountPercent");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
+        public string ItemDiscount {
+            get {
+                return this.itemDiscountField;
+            }
+            set {
+                this.itemDiscountField = value;
+                this.RaisePropertyChanged("ItemDiscount");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class ResponseDataOfBuycustomersWithFactorItemsModel : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int stateField;
+        
+        private BuycustomersWithFactorItemsModel[] responseResultField;
+        
+        private Result responseMessageField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int state {
+            get {
+                return this.stateField;
+            }
+            set {
+                this.stateField = value;
+                this.RaisePropertyChanged("state");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
+        public BuycustomersWithFactorItemsModel[] ResponseResult {
+            get {
+                return this.responseResultField;
+            }
+            set {
+                this.responseResultField = value;
+                this.RaisePropertyChanged("ResponseResult");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public Result ResponseMessage {
+            get {
+                return this.responseMessageField;
+            }
+            set {
+                this.responseMessageField = value;
+                this.RaisePropertyChanged("ResponseMessage");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class BuycustomersModel : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string customerIDField;
+        
+        private string customerMobileField;
+        
+        private string retailStoreCodeField;
+        
+        private string retailStoreIDField;
+        
+        private string workstationIDField;
+        
+        private string businessDateField;
+        
+        private string transactionSeqNoField;
+        
+        private string cashierIDField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string CustomerID {
+            get {
+                return this.customerIDField;
+            }
+            set {
+                this.customerIDField = value;
+                this.RaisePropertyChanged("CustomerID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string CustomerMobile {
+            get {
+                return this.customerMobileField;
+            }
+            set {
+                this.customerMobileField = value;
+                this.RaisePropertyChanged("CustomerMobile");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string RetailStoreCode {
+            get {
+                return this.retailStoreCodeField;
+            }
+            set {
+                this.retailStoreCodeField = value;
+                this.RaisePropertyChanged("RetailStoreCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string RetailStoreID {
+            get {
+                return this.retailStoreIDField;
+            }
+            set {
+                this.retailStoreIDField = value;
+                this.RaisePropertyChanged("RetailStoreID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string WorkstationID {
+            get {
+                return this.workstationIDField;
+            }
+            set {
+                this.workstationIDField = value;
+                this.RaisePropertyChanged("WorkstationID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string BusinessDate {
+            get {
+                return this.businessDateField;
+            }
+            set {
+                this.businessDateField = value;
+                this.RaisePropertyChanged("BusinessDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string TransactionSeqNo {
+            get {
+                return this.transactionSeqNoField;
+            }
+            set {
+                this.transactionSeqNoField = value;
+                this.RaisePropertyChanged("TransactionSeqNo");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public string CashierID {
+            get {
+                return this.cashierIDField;
+            }
+            set {
+                this.cashierIDField = value;
+                this.RaisePropertyChanged("CashierID");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class ResponseDataOfBuycustomersModel : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int stateField;
+        
+        private BuycustomersModel[] responseResultField;
+        
+        private Result responseMessageField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int state {
+            get {
+                return this.stateField;
+            }
+            set {
+                this.stateField = value;
+                this.RaisePropertyChanged("state");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
+        public BuycustomersModel[] ResponseResult {
+            get {
+                return this.responseResultField;
+            }
+            set {
+                this.responseResultField = value;
+                this.RaisePropertyChanged("ResponseResult");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public Result ResponseMessage {
+            get {
+                return this.responseMessageField;
+            }
+            set {
+                this.responseMessageField = value;
+                this.RaisePropertyChanged("ResponseMessage");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class customerGroup : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int groupIDField;
+        
+        private System.Nullable<int> levelIDField;
+        
+        private System.Nullable<int> groupTypeIDField;
+        
+        private string groupNameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int GroupID {
+            get {
+                return this.groupIDField;
+            }
+            set {
+                this.groupIDField = value;
+                this.RaisePropertyChanged("GroupID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public System.Nullable<int> LevelID {
+            get {
+                return this.levelIDField;
+            }
+            set {
+                this.levelIDField = value;
+                this.RaisePropertyChanged("LevelID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public System.Nullable<int> GroupTypeID {
+            get {
+                return this.groupTypeIDField;
+            }
+            set {
+                this.groupTypeIDField = value;
+                this.RaisePropertyChanged("GroupTypeID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string GroupName {
+            get {
+                return this.groupNameField;
+            }
+            set {
+                this.groupNameField = value;
+                this.RaisePropertyChanged("GroupName");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class ResponseDataOfcustomerGroup : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int stateField;
+        
+        private customerGroup[] responseResultField;
+        
+        private Result responseMessageField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int state {
+            get {
+                return this.stateField;
+            }
+            set {
+                this.stateField = value;
+                this.RaisePropertyChanged("state");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
+        public customerGroup[] ResponseResult {
+            get {
+                return this.responseResultField;
+            }
+            set {
+                this.responseResultField = value;
+                this.RaisePropertyChanged("ResponseResult");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public Result ResponseMessage {
+            get {
+                return this.responseMessageField;
+            }
+            set {
+                this.responseMessageField = value;
+                this.RaisePropertyChanged("ResponseMessage");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class ResponseDataOfString : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int stateField;
+        
+        private string[] responseResultField;
+        
+        private Result responseMessageField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int state {
+            get {
+                return this.stateField;
+            }
+            set {
+                this.stateField = value;
+                this.RaisePropertyChanged("state");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
+        public string[] ResponseResult {
+            get {
+                return this.responseResultField;
+            }
+            set {
+                this.responseResultField = value;
+                this.RaisePropertyChanged("ResponseResult");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public Result ResponseMessage {
+            get {
+                return this.responseMessageField;
+            }
+            set {
+                this.responseMessageField = value;
+                this.RaisePropertyChanged("ResponseMessage");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class UsedCreditCustomer : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int retailStoreIDField;
+        
+        private string receiptKyanField;
+        
+        private string retailStoreNameField;
+        
+        private System.Nullable<int> customerIDField;
+        
+        private string memberNumberField;
+        
+        private System.Nullable<System.DateTime> transactionDateTimeField;
+        
+        private string fullNameField;
+        
+        private System.Nullable<decimal> spentAmountField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int RetailStoreID {
+            get {
+                return this.retailStoreIDField;
+            }
+            set {
+                this.retailStoreIDField = value;
+                this.RaisePropertyChanged("RetailStoreID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string ReceiptKyan {
+            get {
+                return this.receiptKyanField;
+            }
+            set {
+                this.receiptKyanField = value;
+                this.RaisePropertyChanged("ReceiptKyan");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string RetailStoreName {
+            get {
+                return this.retailStoreNameField;
+            }
+            set {
+                this.retailStoreNameField = value;
+                this.RaisePropertyChanged("RetailStoreName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        public System.Nullable<int> CustomerID {
+            get {
+                return this.customerIDField;
+            }
+            set {
+                this.customerIDField = value;
+                this.RaisePropertyChanged("CustomerID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string MemberNumber {
+            get {
+                return this.memberNumberField;
+            }
+            set {
+                this.memberNumberField = value;
+                this.RaisePropertyChanged("MemberNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
+        public System.Nullable<System.DateTime> TransactionDateTime {
+            get {
+                return this.transactionDateTimeField;
+            }
+            set {
+                this.transactionDateTimeField = value;
+                this.RaisePropertyChanged("TransactionDateTime");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string FullName {
+            get {
+                return this.fullNameField;
+            }
+            set {
+                this.fullNameField = value;
+                this.RaisePropertyChanged("FullName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=7)]
+        public System.Nullable<decimal> SpentAmount {
+            get {
+                return this.spentAmountField;
+            }
+            set {
+                this.spentAmountField = value;
+                this.RaisePropertyChanged("SpentAmount");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class ResponseDataOfUsedCreditCustomer : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int stateField;
+        
+        private UsedCreditCustomer[] responseResultField;
+        
+        private Result responseMessageField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int state {
+            get {
+                return this.stateField;
+            }
+            set {
+                this.stateField = value;
+                this.RaisePropertyChanged("state");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
+        public UsedCreditCustomer[] ResponseResult {
+            get {
+                return this.responseResultField;
+            }
+            set {
+                this.responseResultField = value;
+                this.RaisePropertyChanged("ResponseResult");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public Result ResponseMessage {
+            get {
+                return this.responseMessageField;
+            }
+            set {
+                this.responseMessageField = value;
+                this.RaisePropertyChanged("ResponseMessage");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class UsedGiftCertificate : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int retailStoreIDField;
+        
+        private string receiptKyanField;
+        
+        private string retailStoreNameField;
+        
+        private string giftCertificateSerialNumberField;
+        
+        private string giftCertificateBarcodeField;
+        
+        private System.Nullable<System.DateTime> transactionDateTimeField;
+        
+        private string giftCertificateNameField;
+        
+        private decimal spentAmountField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int RetailStoreID {
+            get {
+                return this.retailStoreIDField;
+            }
+            set {
+                this.retailStoreIDField = value;
+                this.RaisePropertyChanged("RetailStoreID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string ReceiptKyan {
+            get {
+                return this.receiptKyanField;
+            }
+            set {
+                this.receiptKyanField = value;
+                this.RaisePropertyChanged("ReceiptKyan");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string RetailStoreName {
+            get {
+                return this.retailStoreNameField;
+            }
+            set {
+                this.retailStoreNameField = value;
+                this.RaisePropertyChanged("RetailStoreName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string GiftCertificateSerialNumber {
+            get {
+                return this.giftCertificateSerialNumberField;
+            }
+            set {
+                this.giftCertificateSerialNumberField = value;
+                this.RaisePropertyChanged("GiftCertificateSerialNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string GiftCertificateBarcode {
+            get {
+                return this.giftCertificateBarcodeField;
+            }
+            set {
+                this.giftCertificateBarcodeField = value;
+                this.RaisePropertyChanged("GiftCertificateBarcode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
+        public System.Nullable<System.DateTime> TransactionDateTime {
+            get {
+                return this.transactionDateTimeField;
+            }
+            set {
+                this.transactionDateTimeField = value;
+                this.RaisePropertyChanged("TransactionDateTime");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string GiftCertificateName {
+            get {
+                return this.giftCertificateNameField;
+            }
+            set {
+                this.giftCertificateNameField = value;
+                this.RaisePropertyChanged("GiftCertificateName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public decimal SpentAmount {
+            get {
+                return this.spentAmountField;
+            }
+            set {
+                this.spentAmountField = value;
+                this.RaisePropertyChanged("SpentAmount");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class ResponseDataOfUsedGiftCertificate : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int stateField;
+        
+        private UsedGiftCertificate[] responseResultField;
+        
+        private Result responseMessageField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int state {
+            get {
+                return this.stateField;
+            }
+            set {
+                this.stateField = value;
+                this.RaisePropertyChanged("state");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
+        public UsedGiftCertificate[] ResponseResult {
+            get {
+                return this.responseResultField;
+            }
+            set {
+                this.responseResultField = value;
+                this.RaisePropertyChanged("ResponseResult");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public Result ResponseMessage {
+            get {
+                return this.responseMessageField;
+            }
+            set {
+                this.responseMessageField = value;
+                this.RaisePropertyChanged("ResponseMessage");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class UnUsedGiftCertificates : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string giftCertificateSerialNumberField;
+        
+        private string giftCertificateBarcodeField;
+        
+        private System.Nullable<System.DateTime> createDateTimeField;
+        
+        private System.Nullable<System.DateTime> expireDateTimeField;
+        
+        private decimal amountField;
+        
+        private string bonTypeField;
+        
+        private string customerIDField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string GiftCertificateSerialNumber {
+            get {
+                return this.giftCertificateSerialNumberField;
+            }
+            set {
+                this.giftCertificateSerialNumberField = value;
+                this.RaisePropertyChanged("GiftCertificateSerialNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string GiftCertificateBarcode {
+            get {
+                return this.giftCertificateBarcodeField;
+            }
+            set {
+                this.giftCertificateBarcodeField = value;
+                this.RaisePropertyChanged("GiftCertificateBarcode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public System.Nullable<System.DateTime> CreateDateTime {
+            get {
+                return this.createDateTimeField;
+            }
+            set {
+                this.createDateTimeField = value;
+                this.RaisePropertyChanged("CreateDateTime");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        public System.Nullable<System.DateTime> ExpireDateTime {
+            get {
+                return this.expireDateTimeField;
+            }
+            set {
+                this.expireDateTimeField = value;
+                this.RaisePropertyChanged("ExpireDateTime");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public decimal Amount {
+            get {
+                return this.amountField;
+            }
+            set {
+                this.amountField = value;
+                this.RaisePropertyChanged("Amount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string BonType {
+            get {
+                return this.bonTypeField;
+            }
+            set {
+                this.bonTypeField = value;
+                this.RaisePropertyChanged("BonType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string CustomerID {
+            get {
+                return this.customerIDField;
+            }
+            set {
+                this.customerIDField = value;
+                this.RaisePropertyChanged("CustomerID");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class ResponseDataOfUnUsedGiftCertificates : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int stateField;
+        
+        private UnUsedGiftCertificates[] responseResultField;
+        
+        private Result responseMessageField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int state {
+            get {
+                return this.stateField;
+            }
+            set {
+                this.stateField = value;
+                this.RaisePropertyChanged("state");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
+        public UnUsedGiftCertificates[] ResponseResult {
+            get {
+                return this.responseResultField;
+            }
+            set {
+                this.responseResultField = value;
+                this.RaisePropertyChanged("ResponseResult");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public Result ResponseMessage {
+            get {
+                return this.responseMessageField;
+            }
+            set {
+                this.responseMessageField = value;
+                this.RaisePropertyChanged("ResponseMessage");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class ResponseDataOfResult : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int stateField;
+        
+        private Result[] responseResultField;
+        
+        private Result responseMessageField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int state {
+            get {
+                return this.stateField;
+            }
+            set {
+                this.stateField = value;
+                this.RaisePropertyChanged("state");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
+        public Result[] ResponseResult {
+            get {
+                return this.responseResultField;
+            }
+            set {
+                this.responseResultField = value;
+                this.RaisePropertyChanged("ResponseResult");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public Result ResponseMessage {
+            get {
+                return this.responseMessageField;
+            }
+            set {
+                this.responseMessageField = value;
+                this.RaisePropertyChanged("ResponseMessage");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class GiftCertificate : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string giftCertificateSerialNumberField;
+        
+        private string giftCertificateBarcodeField;
+        
+        private string giftCertificateBarcodeTypField;
+        
+        private System.Nullable<System.DateTime> paidDateTimeStampField;
+        
+        private int giftCertificateTypeCodeField;
+        
+        private System.Nullable<System.DateTime> expirationDateField;
+        
+        private decimal faceValueAmountField;
+        
+        private string giftCertificateTypeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string GiftCertificateSerialNumber {
+            get {
+                return this.giftCertificateSerialNumberField;
+            }
+            set {
+                this.giftCertificateSerialNumberField = value;
+                this.RaisePropertyChanged("GiftCertificateSerialNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string GiftCertificateBarcode {
+            get {
+                return this.giftCertificateBarcodeField;
+            }
+            set {
+                this.giftCertificateBarcodeField = value;
+                this.RaisePropertyChanged("GiftCertificateBarcode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string GiftCertificateBarcodeTyp {
+            get {
+                return this.giftCertificateBarcodeTypField;
+            }
+            set {
+                this.giftCertificateBarcodeTypField = value;
+                this.RaisePropertyChanged("GiftCertificateBarcodeTyp");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        public System.Nullable<System.DateTime> PaidDateTimeStamp {
+            get {
+                return this.paidDateTimeStampField;
+            }
+            set {
+                this.paidDateTimeStampField = value;
+                this.RaisePropertyChanged("PaidDateTimeStamp");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public int GiftCertificateTypeCode {
+            get {
+                return this.giftCertificateTypeCodeField;
+            }
+            set {
+                this.giftCertificateTypeCodeField = value;
+                this.RaisePropertyChanged("GiftCertificateTypeCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
+        public System.Nullable<System.DateTime> ExpirationDate {
+            get {
+                return this.expirationDateField;
+            }
+            set {
+                this.expirationDateField = value;
+                this.RaisePropertyChanged("ExpirationDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public decimal FaceValueAmount {
+            get {
+                return this.faceValueAmountField;
+            }
+            set {
+                this.faceValueAmountField = value;
+                this.RaisePropertyChanged("FaceValueAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public string GiftCertificateType {
+            get {
+                return this.giftCertificateTypeField;
+            }
+            set {
+                this.giftCertificateTypeField = value;
+                this.RaisePropertyChanged("GiftCertificateType");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class ResponseDataOfGiftCertificate : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int stateField;
+        
+        private GiftCertificate[] responseResultField;
+        
+        private Result responseMessageField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int state {
+            get {
+                return this.stateField;
+            }
+            set {
+                this.stateField = value;
+                this.RaisePropertyChanged("state");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
+        public GiftCertificate[] ResponseResult {
+            get {
+                return this.responseResultField;
+            }
+            set {
+                this.responseResultField = value;
+                this.RaisePropertyChanged("ResponseResult");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public Result ResponseMessage {
+            get {
+                return this.responseMessageField;
+            }
+            set {
+                this.responseMessageField = value;
+                this.RaisePropertyChanged("ResponseMessage");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class CustomerAddress : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string addressTypeField;
+        
+        private string addressTypeIdField;
+        
+        private string firstNameField;
+        
+        private string lastNameField;
+        
+        private string addressIDField;
+        
+        private string cityField;
+        
+        private string stateField;
+        
+        private string phoneField;
+        
+        private string mobileField;
+        
+        private string postalcodeField;
+        
+        private string addressField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string AddressType {
+            get {
+                return this.addressTypeField;
+            }
+            set {
+                this.addressTypeField = value;
+                this.RaisePropertyChanged("AddressType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string AddressTypeId {
+            get {
+                return this.addressTypeIdField;
+            }
+            set {
+                this.addressTypeIdField = value;
+                this.RaisePropertyChanged("AddressTypeId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string FirstName {
+            get {
+                return this.firstNameField;
+            }
+            set {
+                this.firstNameField = value;
+                this.RaisePropertyChanged("FirstName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string LastName {
+            get {
+                return this.lastNameField;
+            }
+            set {
+                this.lastNameField = value;
+                this.RaisePropertyChanged("LastName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string AddressID {
+            get {
+                return this.addressIDField;
+            }
+            set {
+                this.addressIDField = value;
+                this.RaisePropertyChanged("AddressID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string City {
+            get {
+                return this.cityField;
+            }
+            set {
+                this.cityField = value;
+                this.RaisePropertyChanged("City");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string State {
+            get {
+                return this.stateField;
+            }
+            set {
+                this.stateField = value;
+                this.RaisePropertyChanged("State");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public string Phone {
+            get {
+                return this.phoneField;
+            }
+            set {
+                this.phoneField = value;
+                this.RaisePropertyChanged("Phone");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public string Mobile {
+            get {
+                return this.mobileField;
+            }
+            set {
+                this.mobileField = value;
+                this.RaisePropertyChanged("Mobile");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public string Postalcode {
+            get {
+                return this.postalcodeField;
+            }
+            set {
+                this.postalcodeField = value;
+                this.RaisePropertyChanged("Postalcode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public string Address {
+            get {
+                return this.addressField;
+            }
+            set {
+                this.addressField = value;
+                this.RaisePropertyChanged("Address");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class ResponseDataOfCustomerAddress : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int stateField;
+        
+        private CustomerAddress[] responseResultField;
+        
+        private Result responseMessageField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int state {
+            get {
+                return this.stateField;
+            }
+            set {
+                this.stateField = value;
+                this.RaisePropertyChanged("state");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
+        public CustomerAddress[] ResponseResult {
+            get {
+                return this.responseResultField;
+            }
+            set {
+                this.responseResultField = value;
+                this.RaisePropertyChanged("ResponseResult");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public Result ResponseMessage {
+            get {
+                return this.responseMessageField;
+            }
+            set {
+                this.responseMessageField = value;
+                this.RaisePropertyChanged("ResponseMessage");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1525,80 +4490,34 @@ namespace MashadLeatherEcommerce.KiyanService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
-    public partial class ReceiptsOfCustomerModel : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class ResponseDataOfReceiptModel : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private int customerIDField;
+        private int stateField;
         
-        private ReceiptModel[] receiptsField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public int CustomerID {
-            get {
-                return this.customerIDField;
-            }
-            set {
-                this.customerIDField = value;
-                this.RaisePropertyChanged("CustomerID");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
-        public ReceiptModel[] Receipts {
-            get {
-                return this.receiptsField;
-            }
-            set {
-                this.receiptsField = value;
-                this.RaisePropertyChanged("Receipts");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
-    public partial class GetCustomersReceiptsResultModel : object, System.ComponentModel.INotifyPropertyChanged {
+        private ReceiptModel[] responseResultField;
         
         private Result responseMessageField;
         
-        private ReceiptsOfCustomerModel[] responseResultField;
-        
-        private ResponseError[] responseErrorField;
-        
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public Result ResponseMessage {
+        public int state {
             get {
-                return this.responseMessageField;
+                return this.stateField;
             }
             set {
-                this.responseMessageField = value;
-                this.RaisePropertyChanged("ResponseMessage");
+                this.stateField = value;
+                this.RaisePropertyChanged("state");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
-        public ReceiptsOfCustomerModel[] ResponseResult {
+        public ReceiptModel[] ResponseResult {
             get {
                 return this.responseResultField;
             }
@@ -1609,14 +4528,14 @@ namespace MashadLeatherEcommerce.KiyanService {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=2)]
-        public ResponseError[] ResponseError {
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public Result ResponseMessage {
             get {
-                return this.responseErrorField;
+                return this.responseMessageField;
             }
             set {
-                this.responseErrorField = value;
-                this.RaisePropertyChanged("ResponseError");
+                this.responseMessageField = value;
+                this.RaisePropertyChanged("ResponseMessage");
             }
         }
         
@@ -1631,7 +4550,625 @@ namespace MashadLeatherEcommerce.KiyanService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class ReciepModel2 : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private System.Nullable<int> customerIDField;
+        
+        private string customerMemberIDField;
+        
+        private System.DateTime businessDateField;
+        
+        private int retailStoreIDField;
+        
+        private string receiptIDField;
+        
+        private System.Nullable<decimal> saleQuantityField;
+        
+        private System.Nullable<decimal> returnQuantityField;
+        
+        private System.Nullable<decimal> saleAmountField;
+        
+        private System.Nullable<decimal> returnAmountField;
+        
+        private System.Nullable<decimal> discountAmountField;
+        
+        private System.Nullable<decimal> returnDiscountAmountField;
+        
+        private System.Nullable<decimal> saleTaxAmountField;
+        
+        private System.Nullable<decimal> returnTaxAmountField;
+        
+        private System.Nullable<decimal> saleChargeAmountField;
+        
+        private System.Nullable<decimal> returnChargeAmountField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
+        public System.Nullable<int> CustomerID {
+            get {
+                return this.customerIDField;
+            }
+            set {
+                this.customerIDField = value;
+                this.RaisePropertyChanged("CustomerID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string CustomerMemberID {
+            get {
+                return this.customerMemberIDField;
+            }
+            set {
+                this.customerMemberIDField = value;
+                this.RaisePropertyChanged("CustomerMemberID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public System.DateTime BusinessDate {
+            get {
+                return this.businessDateField;
+            }
+            set {
+                this.businessDateField = value;
+                this.RaisePropertyChanged("BusinessDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public int RetailStoreID {
+            get {
+                return this.retailStoreIDField;
+            }
+            set {
+                this.retailStoreIDField = value;
+                this.RaisePropertyChanged("RetailStoreID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string ReceiptID {
+            get {
+                return this.receiptIDField;
+            }
+            set {
+                this.receiptIDField = value;
+                this.RaisePropertyChanged("ReceiptID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
+        public System.Nullable<decimal> SaleQuantity {
+            get {
+                return this.saleQuantityField;
+            }
+            set {
+                this.saleQuantityField = value;
+                this.RaisePropertyChanged("SaleQuantity");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=6)]
+        public System.Nullable<decimal> ReturnQuantity {
+            get {
+                return this.returnQuantityField;
+            }
+            set {
+                this.returnQuantityField = value;
+                this.RaisePropertyChanged("ReturnQuantity");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=7)]
+        public System.Nullable<decimal> SaleAmount {
+            get {
+                return this.saleAmountField;
+            }
+            set {
+                this.saleAmountField = value;
+                this.RaisePropertyChanged("SaleAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=8)]
+        public System.Nullable<decimal> ReturnAmount {
+            get {
+                return this.returnAmountField;
+            }
+            set {
+                this.returnAmountField = value;
+                this.RaisePropertyChanged("ReturnAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=9)]
+        public System.Nullable<decimal> DiscountAmount {
+            get {
+                return this.discountAmountField;
+            }
+            set {
+                this.discountAmountField = value;
+                this.RaisePropertyChanged("DiscountAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=10)]
+        public System.Nullable<decimal> ReturnDiscountAmount {
+            get {
+                return this.returnDiscountAmountField;
+            }
+            set {
+                this.returnDiscountAmountField = value;
+                this.RaisePropertyChanged("ReturnDiscountAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=11)]
+        public System.Nullable<decimal> SaleTaxAmount {
+            get {
+                return this.saleTaxAmountField;
+            }
+            set {
+                this.saleTaxAmountField = value;
+                this.RaisePropertyChanged("SaleTaxAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=12)]
+        public System.Nullable<decimal> ReturnTaxAmount {
+            get {
+                return this.returnTaxAmountField;
+            }
+            set {
+                this.returnTaxAmountField = value;
+                this.RaisePropertyChanged("ReturnTaxAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=13)]
+        public System.Nullable<decimal> SaleChargeAmount {
+            get {
+                return this.saleChargeAmountField;
+            }
+            set {
+                this.saleChargeAmountField = value;
+                this.RaisePropertyChanged("SaleChargeAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=14)]
+        public System.Nullable<decimal> ReturnChargeAmount {
+            get {
+                return this.returnChargeAmountField;
+            }
+            set {
+                this.returnChargeAmountField = value;
+                this.RaisePropertyChanged("ReturnChargeAmount");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class ResponseDataOfReciepModel2 : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int stateField;
+        
+        private ReciepModel2[] responseResultField;
+        
+        private Result responseMessageField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int state {
+            get {
+                return this.stateField;
+            }
+            set {
+                this.stateField = value;
+                this.RaisePropertyChanged("state");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
+        public ReciepModel2[] ResponseResult {
+            get {
+                return this.responseResultField;
+            }
+            set {
+                this.responseResultField = value;
+                this.RaisePropertyChanged("ResponseResult");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public Result ResponseMessage {
+            get {
+                return this.responseMessageField;
+            }
+            set {
+                this.responseMessageField = value;
+                this.RaisePropertyChanged("ResponseMessage");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class ReceiptDsInfModel : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private System.Nullable<int> customerIDField;
+        
+        private System.DateTime businessDateField;
+        
+        private int retailStoreIDField;
+        
+        private string retailStoreNameField;
+        
+        private string receiptNoField;
+        
+        private string receiptKyanField;
+        
+        private string barcodeField;
+        
+        private string itemNameField;
+        
+        private System.Nullable<decimal> saleQuantityField;
+        
+        private System.Nullable<decimal> returnQuantityField;
+        
+        private decimal saleAmountField;
+        
+        private System.Nullable<decimal> returnAmountField;
+        
+        private System.Nullable<decimal> retDiscountAmounturnAmountField;
+        
+        private System.Nullable<decimal> returnDiscountAmountField;
+        
+        private System.Nullable<decimal> saleTaxAmountField;
+        
+        private System.Nullable<decimal> returnTaxAmountField;
+        
+        private System.Nullable<decimal> saleChargeAmountField;
+        
+        private System.Nullable<decimal> returnChargeAmountField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
+        public System.Nullable<int> CustomerID {
+            get {
+                return this.customerIDField;
+            }
+            set {
+                this.customerIDField = value;
+                this.RaisePropertyChanged("CustomerID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public System.DateTime BusinessDate {
+            get {
+                return this.businessDateField;
+            }
+            set {
+                this.businessDateField = value;
+                this.RaisePropertyChanged("BusinessDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public int RetailStoreID {
+            get {
+                return this.retailStoreIDField;
+            }
+            set {
+                this.retailStoreIDField = value;
+                this.RaisePropertyChanged("RetailStoreID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string RetailStoreName {
+            get {
+                return this.retailStoreNameField;
+            }
+            set {
+                this.retailStoreNameField = value;
+                this.RaisePropertyChanged("RetailStoreName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string ReceiptNo {
+            get {
+                return this.receiptNoField;
+            }
+            set {
+                this.receiptNoField = value;
+                this.RaisePropertyChanged("ReceiptNo");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string ReceiptKyan {
+            get {
+                return this.receiptKyanField;
+            }
+            set {
+                this.receiptKyanField = value;
+                this.RaisePropertyChanged("ReceiptKyan");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string Barcode {
+            get {
+                return this.barcodeField;
+            }
+            set {
+                this.barcodeField = value;
+                this.RaisePropertyChanged("Barcode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public string ItemName {
+            get {
+                return this.itemNameField;
+            }
+            set {
+                this.itemNameField = value;
+                this.RaisePropertyChanged("ItemName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=8)]
+        public System.Nullable<decimal> SaleQuantity {
+            get {
+                return this.saleQuantityField;
+            }
+            set {
+                this.saleQuantityField = value;
+                this.RaisePropertyChanged("SaleQuantity");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=9)]
+        public System.Nullable<decimal> ReturnQuantity {
+            get {
+                return this.returnQuantityField;
+            }
+            set {
+                this.returnQuantityField = value;
+                this.RaisePropertyChanged("ReturnQuantity");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public decimal SaleAmount {
+            get {
+                return this.saleAmountField;
+            }
+            set {
+                this.saleAmountField = value;
+                this.RaisePropertyChanged("SaleAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=11)]
+        public System.Nullable<decimal> ReturnAmount {
+            get {
+                return this.returnAmountField;
+            }
+            set {
+                this.returnAmountField = value;
+                this.RaisePropertyChanged("ReturnAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=12)]
+        public System.Nullable<decimal> RetDiscountAmounturnAmount {
+            get {
+                return this.retDiscountAmounturnAmountField;
+            }
+            set {
+                this.retDiscountAmounturnAmountField = value;
+                this.RaisePropertyChanged("RetDiscountAmounturnAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=13)]
+        public System.Nullable<decimal> ReturnDiscountAmount {
+            get {
+                return this.returnDiscountAmountField;
+            }
+            set {
+                this.returnDiscountAmountField = value;
+                this.RaisePropertyChanged("ReturnDiscountAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=14)]
+        public System.Nullable<decimal> SaleTaxAmount {
+            get {
+                return this.saleTaxAmountField;
+            }
+            set {
+                this.saleTaxAmountField = value;
+                this.RaisePropertyChanged("SaleTaxAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=15)]
+        public System.Nullable<decimal> ReturnTaxAmount {
+            get {
+                return this.returnTaxAmountField;
+            }
+            set {
+                this.returnTaxAmountField = value;
+                this.RaisePropertyChanged("ReturnTaxAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=16)]
+        public System.Nullable<decimal> SaleChargeAmount {
+            get {
+                return this.saleChargeAmountField;
+            }
+            set {
+                this.saleChargeAmountField = value;
+                this.RaisePropertyChanged("SaleChargeAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=17)]
+        public System.Nullable<decimal> ReturnChargeAmount {
+            get {
+                return this.returnChargeAmountField;
+            }
+            set {
+                this.returnChargeAmountField = value;
+                this.RaisePropertyChanged("ReturnChargeAmount");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class ResponseDataOfReceiptDsInfModel : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int stateField;
+        
+        private ReceiptDsInfModel[] responseResultField;
+        
+        private Result responseMessageField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int state {
+            get {
+                return this.stateField;
+            }
+            set {
+                this.stateField = value;
+                this.RaisePropertyChanged("state");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
+        public ReceiptDsInfModel[] ResponseResult {
+            get {
+                return this.responseResultField;
+            }
+            set {
+                this.responseResultField = value;
+                this.RaisePropertyChanged("ResponseResult");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public Result ResponseMessage {
+            get {
+                return this.responseMessageField;
+            }
+            set {
+                this.responseMessageField = value;
+                this.RaisePropertyChanged("ResponseMessage");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1845,26 +5382,28 @@ namespace MashadLeatherEcommerce.KiyanService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
-    public partial class CustomerTransactionResultModel : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class ResponseDataOfCustomerTransaction : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private Result responseMessageField;
+        private int stateField;
         
         private CustomerTransaction[] responseResultField;
         
+        private Result responseMessageField;
+        
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public Result ResponseMessage {
+        public int state {
             get {
-                return this.responseMessageField;
+                return this.stateField;
             }
             set {
-                this.responseMessageField = value;
-                this.RaisePropertyChanged("ResponseMessage");
+                this.stateField = value;
+                this.RaisePropertyChanged("state");
             }
         }
         
@@ -1880,30 +5419,8 @@ namespace MashadLeatherEcommerce.KiyanService {
             }
         }
         
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
-    public partial class CustomerResultModel : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private Result responseMessageField;
-        
-        private Customer responseResultField;
-        
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public Result ResponseMessage {
             get {
                 return this.responseMessageField;
@@ -1914,15 +5431,63 @@ namespace MashadLeatherEcommerce.KiyanService {
             }
         }
         
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class ResponseDataOfCustomer : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int stateField;
+        
+        private Customer[] responseResultField;
+        
+        private Result responseMessageField;
+        
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public Customer ResponseResult {
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int state {
+            get {
+                return this.stateField;
+            }
+            set {
+                this.stateField = value;
+                this.RaisePropertyChanged("state");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
+        public Customer[] ResponseResult {
             get {
                 return this.responseResultField;
             }
             set {
                 this.responseResultField = value;
                 this.RaisePropertyChanged("ResponseResult");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public Result ResponseMessage {
+            get {
+                return this.responseMessageField;
+            }
+            set {
+                this.responseMessageField = value;
+                this.RaisePropertyChanged("ResponseMessage");
             }
         }
         
@@ -1937,7 +5502,7 @@ namespace MashadLeatherEcommerce.KiyanService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1961,6 +5526,8 @@ namespace MashadLeatherEcommerce.KiyanService {
         private System.Nullable<decimal> creditField;
         
         private string phoneField;
+        
+        private string addressField;
         
         private System.Nullable<int> groupIDField;
         
@@ -2081,7 +5648,19 @@ namespace MashadLeatherEcommerce.KiyanService {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=9)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public string Address {
+            get {
+                return this.addressField;
+            }
+            set {
+                this.addressField = value;
+                this.RaisePropertyChanged("Address");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=10)]
         public System.Nullable<int> GroupID {
             get {
                 return this.groupIDField;
@@ -2093,7 +5672,7 @@ namespace MashadLeatherEcommerce.KiyanService {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
         public string GroupName {
             get {
                 return this.groupNameField;
@@ -2105,7 +5684,7 @@ namespace MashadLeatherEcommerce.KiyanService {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
         public string BirthDayDate {
             get {
                 return this.birthDayDateField;
@@ -2117,7 +5696,7 @@ namespace MashadLeatherEcommerce.KiyanService {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
         public int Gender {
             get {
                 return this.genderField;
@@ -2129,7 +5708,7 @@ namespace MashadLeatherEcommerce.KiyanService {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
         public string SocialSecurityNumber {
             get {
                 return this.socialSecurityNumberField;
@@ -2151,58 +5730,14 @@ namespace MashadLeatherEcommerce.KiyanService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
-    public partial class CustomerListResultModel : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class SaleResultModel : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private Result responseMessageField;
-        
-        private Customer[] responseResultField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public Result ResponseMessage {
-            get {
-                return this.responseMessageField;
-            }
-            set {
-                this.responseMessageField = value;
-                this.RaisePropertyChanged("ResponseMessage");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
-        public Customer[] ResponseResult {
-            get {
-                return this.responseResultField;
-            }
-            set {
-                this.responseResultField = value;
-                this.RaisePropertyChanged("ResponseResult");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
-    public partial class CreateCustomerResultModel : object, System.ComponentModel.INotifyPropertyChanged {
+        private int stateField;
         
         private Result responseMessageField;
         
@@ -2210,6 +5745,18 @@ namespace MashadLeatherEcommerce.KiyanService {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int state {
+            get {
+                return this.stateField;
+            }
+            set {
+                this.stateField = value;
+                this.RaisePropertyChanged("state");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public Result ResponseMessage {
             get {
                 return this.responseMessageField;
@@ -2221,7 +5768,7 @@ namespace MashadLeatherEcommerce.KiyanService {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public string ResponseResult {
             get {
                 return this.responseResultField;
@@ -2243,7 +5790,377 @@ namespace MashadLeatherEcommerce.KiyanService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class Inventory : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int retailStoreIDField;
+        
+        private int inventoryIDField;
+        
+        private string retailStoreNameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int RetailStoreID {
+            get {
+                return this.retailStoreIDField;
+            }
+            set {
+                this.retailStoreIDField = value;
+                this.RaisePropertyChanged("RetailStoreID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int InventoryID {
+            get {
+                return this.inventoryIDField;
+            }
+            set {
+                this.inventoryIDField = value;
+                this.RaisePropertyChanged("InventoryID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string RetailStoreName {
+            get {
+                return this.retailStoreNameField;
+            }
+            set {
+                this.retailStoreNameField = value;
+                this.RaisePropertyChanged("RetailStoreName");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class ResponseDataOfInventory : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int stateField;
+        
+        private Inventory[] responseResultField;
+        
+        private Result responseMessageField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int state {
+            get {
+                return this.stateField;
+            }
+            set {
+                this.stateField = value;
+                this.RaisePropertyChanged("state");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
+        public Inventory[] ResponseResult {
+            get {
+                return this.responseResultField;
+            }
+            set {
+                this.responseResultField = value;
+                this.RaisePropertyChanged("ResponseResult");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public Result ResponseMessage {
+            get {
+                return this.responseMessageField;
+            }
+            set {
+                this.responseMessageField = value;
+                this.RaisePropertyChanged("ResponseMessage");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class QuickTransferReultModel : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private Result responseMessageField;
+        
+        private string qIDocumentNoField;
+        
+        private string qODocumentNoField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public Result ResponseMessage {
+            get {
+                return this.responseMessageField;
+            }
+            set {
+                this.responseMessageField = value;
+                this.RaisePropertyChanged("ResponseMessage");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string QIDocumentNo {
+            get {
+                return this.qIDocumentNoField;
+            }
+            set {
+                this.qIDocumentNoField = value;
+                this.RaisePropertyChanged("QIDocumentNo");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string QODocumentNo {
+            get {
+                return this.qODocumentNoField;
+            }
+            set {
+                this.qODocumentNoField = value;
+                this.RaisePropertyChanged("QODocumentNo");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class PosDepartmentList : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private System.Nullable<int> level1IDField;
+        
+        private System.Nullable<int> level2IDField;
+        
+        private System.Nullable<int> level3IDField;
+        
+        private System.Nullable<int> level4IDField;
+        
+        private string level1NameField;
+        
+        private string level2NameField;
+        
+        private string level3NameField;
+        
+        private string level4NameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
+        public System.Nullable<int> Level1ID {
+            get {
+                return this.level1IDField;
+            }
+            set {
+                this.level1IDField = value;
+                this.RaisePropertyChanged("Level1ID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public System.Nullable<int> Level2ID {
+            get {
+                return this.level2IDField;
+            }
+            set {
+                this.level2IDField = value;
+                this.RaisePropertyChanged("Level2ID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public System.Nullable<int> Level3ID {
+            get {
+                return this.level3IDField;
+            }
+            set {
+                this.level3IDField = value;
+                this.RaisePropertyChanged("Level3ID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        public System.Nullable<int> Level4ID {
+            get {
+                return this.level4IDField;
+            }
+            set {
+                this.level4IDField = value;
+                this.RaisePropertyChanged("Level4ID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string Level1Name {
+            get {
+                return this.level1NameField;
+            }
+            set {
+                this.level1NameField = value;
+                this.RaisePropertyChanged("Level1Name");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string Level2Name {
+            get {
+                return this.level2NameField;
+            }
+            set {
+                this.level2NameField = value;
+                this.RaisePropertyChanged("Level2Name");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string Level3Name {
+            get {
+                return this.level3NameField;
+            }
+            set {
+                this.level3NameField = value;
+                this.RaisePropertyChanged("Level3Name");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public string Level4Name {
+            get {
+                return this.level4NameField;
+            }
+            set {
+                this.level4NameField = value;
+                this.RaisePropertyChanged("Level4Name");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class ResponseDataOfPosDepartmentList : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int stateField;
+        
+        private PosDepartmentList[] responseResultField;
+        
+        private Result responseMessageField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int state {
+            get {
+                return this.stateField;
+            }
+            set {
+                this.stateField = value;
+                this.RaisePropertyChanged("state");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
+        public PosDepartmentList[] ResponseResult {
+            get {
+                return this.responseResultField;
+            }
+            set {
+                this.responseResultField = value;
+                this.RaisePropertyChanged("ResponseResult");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public Result ResponseMessage {
+            get {
+                return this.responseMessageField;
+            }
+            set {
+                this.responseMessageField = value;
+                this.RaisePropertyChanged("ResponseMessage");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2289,26 +6206,28 @@ namespace MashadLeatherEcommerce.KiyanService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
-    public partial class PosDepartmentListResultModel : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class ResponseDataOfPosDepartment : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private Result responseMessageField;
+        private int stateField;
         
         private PosDepartment[] responseResultField;
         
+        private Result responseMessageField;
+        
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public Result ResponseMessage {
+        public int state {
             get {
-                return this.responseMessageField;
+                return this.stateField;
             }
             set {
-                this.responseMessageField = value;
-                this.RaisePropertyChanged("ResponseMessage");
+                this.stateField = value;
+                this.RaisePropertyChanged("state");
             }
         }
         
@@ -2324,6 +6243,18 @@ namespace MashadLeatherEcommerce.KiyanService {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public Result ResponseMessage {
+            get {
+                return this.responseMessageField;
+            }
+            set {
+                this.responseMessageField = value;
+                this.RaisePropertyChanged("ResponseMessage");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -2335,7 +6266,367 @@ namespace MashadLeatherEcommerce.KiyanService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class TemplateItem : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int itmIDField;
+        
+        private int propertyIDField;
+        
+        private int attributeIDField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int itmID {
+            get {
+                return this.itmIDField;
+            }
+            set {
+                this.itmIDField = value;
+                this.RaisePropertyChanged("itmID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int PropertyID {
+            get {
+                return this.propertyIDField;
+            }
+            set {
+                this.propertyIDField = value;
+                this.RaisePropertyChanged("PropertyID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public int AttributeID {
+            get {
+                return this.attributeIDField;
+            }
+            set {
+                this.attributeIDField = value;
+                this.RaisePropertyChanged("AttributeID");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class ResponseDataOfTemplateItem : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int stateField;
+        
+        private TemplateItem[] responseResultField;
+        
+        private Result responseMessageField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int state {
+            get {
+                return this.stateField;
+            }
+            set {
+                this.stateField = value;
+                this.RaisePropertyChanged("state");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
+        public TemplateItem[] ResponseResult {
+            get {
+                return this.responseResultField;
+            }
+            set {
+                this.responseResultField = value;
+                this.RaisePropertyChanged("ResponseResult");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public Result ResponseMessage {
+            get {
+                return this.responseMessageField;
+            }
+            set {
+                this.responseMessageField = value;
+                this.RaisePropertyChanged("ResponseMessage");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class Attribute : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int propertyIDField;
+        
+        private int attributeIDField;
+        
+        private string attributeValueField;
+        
+        private string descriptionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int PropertyID {
+            get {
+                return this.propertyIDField;
+            }
+            set {
+                this.propertyIDField = value;
+                this.RaisePropertyChanged("PropertyID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int AttributeID {
+            get {
+                return this.attributeIDField;
+            }
+            set {
+                this.attributeIDField = value;
+                this.RaisePropertyChanged("AttributeID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string AttributeValue {
+            get {
+                return this.attributeValueField;
+            }
+            set {
+                this.attributeValueField = value;
+                this.RaisePropertyChanged("AttributeValue");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string Description {
+            get {
+                return this.descriptionField;
+            }
+            set {
+                this.descriptionField = value;
+                this.RaisePropertyChanged("Description");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class ResponseDataOfAttribute : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int stateField;
+        
+        private Attribute[] responseResultField;
+        
+        private Result responseMessageField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int state {
+            get {
+                return this.stateField;
+            }
+            set {
+                this.stateField = value;
+                this.RaisePropertyChanged("state");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
+        public Attribute[] ResponseResult {
+            get {
+                return this.responseResultField;
+            }
+            set {
+                this.responseResultField = value;
+                this.RaisePropertyChanged("ResponseResult");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public Result ResponseMessage {
+            get {
+                return this.responseMessageField;
+            }
+            set {
+                this.responseMessageField = value;
+                this.RaisePropertyChanged("ResponseMessage");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class Template : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int propertyIDField;
+        
+        private string propertyValueField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int PropertyID {
+            get {
+                return this.propertyIDField;
+            }
+            set {
+                this.propertyIDField = value;
+                this.RaisePropertyChanged("PropertyID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string PropertyValue {
+            get {
+                return this.propertyValueField;
+            }
+            set {
+                this.propertyValueField = value;
+                this.RaisePropertyChanged("PropertyValue");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class ResponseDataOfTemplate : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int stateField;
+        
+        private Template[] responseResultField;
+        
+        private Result responseMessageField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int state {
+            get {
+                return this.stateField;
+            }
+            set {
+                this.stateField = value;
+                this.RaisePropertyChanged("state");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
+        public Template[] ResponseResult {
+            get {
+                return this.responseResultField;
+            }
+            set {
+                this.responseResultField = value;
+                this.RaisePropertyChanged("ResponseResult");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public Result ResponseMessage {
+            get {
+                return this.responseMessageField;
+            }
+            set {
+                this.responseMessageField = value;
+                this.RaisePropertyChanged("ResponseMessage");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2465,26 +6756,28 @@ namespace MashadLeatherEcommerce.KiyanService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
-    public partial class ItemStockStatusResultModel : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class ResponseDataOfLoanItemStock : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private Result responseMessageField;
+        private int stateField;
         
         private LoanItemStock[] responseResultField;
         
+        private Result responseMessageField;
+        
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public Result ResponseMessage {
+        public int state {
             get {
-                return this.responseMessageField;
+                return this.stateField;
             }
             set {
-                this.responseMessageField = value;
-                this.RaisePropertyChanged("ResponseMessage");
+                this.stateField = value;
+                this.RaisePropertyChanged("state");
             }
         }
         
@@ -2500,90 +6793,8 @@ namespace MashadLeatherEcommerce.KiyanService {
             }
         }
         
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
-    public partial class TemplateItem : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private int itmIDField;
-        
-        private int propertyIDField;
-        
-        private int attributeIDField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public int itmID {
-            get {
-                return this.itmIDField;
-            }
-            set {
-                this.itmIDField = value;
-                this.RaisePropertyChanged("itmID");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public int PropertyID {
-            get {
-                return this.propertyIDField;
-            }
-            set {
-                this.propertyIDField = value;
-                this.RaisePropertyChanged("PropertyID");
-            }
-        }
-        
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public int AttributeID {
-            get {
-                return this.attributeIDField;
-            }
-            set {
-                this.attributeIDField = value;
-                this.RaisePropertyChanged("AttributeID");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
-    public partial class TemplateItemResultModle : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private Result responseMessageField;
-        
-        private TemplateItem[] responseResultField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public Result ResponseMessage {
             get {
                 return this.responseMessageField;
@@ -2594,18 +6805,6 @@ namespace MashadLeatherEcommerce.KiyanService {
             }
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
-        public TemplateItem[] ResponseResult {
-            get {
-                return this.responseResultField;
-            }
-            set {
-                this.responseResultField = value;
-                this.RaisePropertyChanged("ResponseResult");
-            }
-        }
-        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -2617,270 +6816,12 @@ namespace MashadLeatherEcommerce.KiyanService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
-    public partial class Attribute : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private int propertyIDField;
-        
-        private int attributeIDField;
-        
-        private string attributeValueField;
-        
-        private string descriptionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public int PropertyID {
-            get {
-                return this.propertyIDField;
-            }
-            set {
-                this.propertyIDField = value;
-                this.RaisePropertyChanged("PropertyID");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public int AttributeID {
-            get {
-                return this.attributeIDField;
-            }
-            set {
-                this.attributeIDField = value;
-                this.RaisePropertyChanged("AttributeID");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string AttributeValue {
-            get {
-                return this.attributeValueField;
-            }
-            set {
-                this.attributeValueField = value;
-                this.RaisePropertyChanged("AttributeValue");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public string Description {
-            get {
-                return this.descriptionField;
-            }
-            set {
-                this.descriptionField = value;
-                this.RaisePropertyChanged("Description");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
-    public partial class TemplateAttributeResultModel : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private Result responseMessageField;
-        
-        private Attribute[] responseResultField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public Result ResponseMessage {
-            get {
-                return this.responseMessageField;
-            }
-            set {
-                this.responseMessageField = value;
-                this.RaisePropertyChanged("ResponseMessage");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
-        public Attribute[] ResponseResult {
-            get {
-                return this.responseResultField;
-            }
-            set {
-                this.responseResultField = value;
-                this.RaisePropertyChanged("ResponseResult");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
-    public partial class Template : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private int propertyIDField;
-        
-        private string propertyValueField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public int PropertyID {
-            get {
-                return this.propertyIDField;
-            }
-            set {
-                this.propertyIDField = value;
-                this.RaisePropertyChanged("PropertyID");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string PropertyValue {
-            get {
-                return this.propertyValueField;
-            }
-            set {
-                this.propertyValueField = value;
-                this.RaisePropertyChanged("PropertyValue");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
-    public partial class TemplatePropertyResultModel : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private Result responseMessageField;
-        
-        private Template[] responseResultField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public Result ResponseMessage {
-            get {
-                return this.responseMessageField;
-            }
-            set {
-                this.responseMessageField = value;
-                this.RaisePropertyChanged("ResponseMessage");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
-        public Template[] ResponseResult {
-            get {
-                return this.responseResultField;
-            }
-            set {
-                this.responseResultField = value;
-                this.RaisePropertyChanged("ResponseResult");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
-    public partial class ItemInfoResultModel : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private Result responseMessageField;
-        
-        private itm responseResultField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public Result ResponseMessage {
-            get {
-                return this.responseMessageField;
-            }
-            set {
-                this.responseMessageField = value;
-                this.RaisePropertyChanged("ResponseMessage");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public itm ResponseResult {
-            get {
-                return this.responseResultField;
-            }
-            set {
-                this.responseResultField = value;
-                this.RaisePropertyChanged("ResponseResult");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
-    public partial class itm : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class itm4 : object, System.ComponentModel.INotifyPropertyChanged {
         
         private int itmIDField;
         
@@ -2911,6 +6852,10 @@ namespace MashadLeatherEcommerce.KiyanService {
         private System.Nullable<int> pOSDepartmentIDField;
         
         private string pOSDepartmentNameField;
+        
+        private string statusField;
+        
+        private string itemDescriptionField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -3092,6 +7037,30 @@ namespace MashadLeatherEcommerce.KiyanService {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
+        public string status {
+            get {
+                return this.statusField;
+            }
+            set {
+                this.statusField = value;
+                this.RaisePropertyChanged("status");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
+        public string ItemDescription {
+            get {
+                return this.itemDescriptionField;
+            }
+            set {
+                this.itemDescriptionField = value;
+                this.RaisePropertyChanged("ItemDescription");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -3103,7 +7072,7 @@ namespace MashadLeatherEcommerce.KiyanService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
     public enum ItemType {
@@ -3143,65 +7112,45 @@ namespace MashadLeatherEcommerce.KiyanService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
-    public partial class ItemStock : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class ResponseDataOfitm4 : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private int itemIDField;
+        private int stateField;
         
-        private System.Nullable<decimal> quantityField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public int ItemID {
-            get {
-                return this.itemIDField;
-            }
-            set {
-                this.itemIDField = value;
-                this.RaisePropertyChanged("ItemID");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
-        public System.Nullable<decimal> Quantity {
-            get {
-                return this.quantityField;
-            }
-            set {
-                this.quantityField = value;
-                this.RaisePropertyChanged("Quantity");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
-    public partial class ItemsStockResultModel : object, System.ComponentModel.INotifyPropertyChanged {
+        private itm4[] responseResultField;
         
         private Result responseMessageField;
         
-        private ItemStock[] responseResultField;
-        
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int state {
+            get {
+                return this.stateField;
+            }
+            set {
+                this.stateField = value;
+                this.RaisePropertyChanged("state");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
+        public itm4[] ResponseResult {
+            get {
+                return this.responseResultField;
+            }
+            set {
+                this.responseResultField = value;
+                this.RaisePropertyChanged("ResponseResult");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public Result ResponseMessage {
             get {
                 return this.responseMessageField;
@@ -3212,15 +7161,119 @@ namespace MashadLeatherEcommerce.KiyanService {
             }
         }
         
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class itm2 : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int itmIDField;
+        
+        private string itmBrcdField;
+        
+        private string itmNameField;
+        
+        private decimal itmPriceField;
+        
+        private decimal itmTempPriceField;
+        
+        private System.Nullable<bool> taxableField;
+        
+        private System.Nullable<decimal> itemCostField;
+        
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
-        public ItemStock[] ResponseResult {
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int itmID {
             get {
-                return this.responseResultField;
+                return this.itmIDField;
             }
             set {
-                this.responseResultField = value;
-                this.RaisePropertyChanged("ResponseResult");
+                this.itmIDField = value;
+                this.RaisePropertyChanged("itmID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string itmBrcd {
+            get {
+                return this.itmBrcdField;
+            }
+            set {
+                this.itmBrcdField = value;
+                this.RaisePropertyChanged("itmBrcd");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string itmName {
+            get {
+                return this.itmNameField;
+            }
+            set {
+                this.itmNameField = value;
+                this.RaisePropertyChanged("itmName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public decimal itmPrice {
+            get {
+                return this.itmPriceField;
+            }
+            set {
+                this.itmPriceField = value;
+                this.RaisePropertyChanged("itmPrice");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public decimal itmTempPrice {
+            get {
+                return this.itmTempPriceField;
+            }
+            set {
+                this.itmTempPriceField = value;
+                this.RaisePropertyChanged("itmTempPrice");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
+        public System.Nullable<bool> Taxable {
+            get {
+                return this.taxableField;
+            }
+            set {
+                this.taxableField = value;
+                this.RaisePropertyChanged("Taxable");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=6)]
+        public System.Nullable<decimal> ItemCost {
+            get {
+                return this.itemCostField;
+            }
+            set {
+                this.itemCostField = value;
+                this.RaisePropertyChanged("ItemCost");
             }
         }
         
@@ -3235,7 +7288,67 @@ namespace MashadLeatherEcommerce.KiyanService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class ResponseDataOfitm2 : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int stateField;
+        
+        private itm2[] responseResultField;
+        
+        private Result responseMessageField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int state {
+            get {
+                return this.stateField;
+            }
+            set {
+                this.stateField = value;
+                this.RaisePropertyChanged("state");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
+        public itm2[] ResponseResult {
+            get {
+                return this.responseResultField;
+            }
+            set {
+                this.responseResultField = value;
+                this.RaisePropertyChanged("ResponseResult");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public Result ResponseMessage {
+            get {
+                return this.responseMessageField;
+            }
+            set {
+                this.responseMessageField = value;
+                this.RaisePropertyChanged("ResponseMessage");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3281,26 +7394,28 @@ namespace MashadLeatherEcommerce.KiyanService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
-    public partial class BarCodeStockResultModel : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class ResponseDataOfBarCodeStock : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private Result responseMessageField;
+        private int stateField;
         
         private BarCodeStock[] responseResultField;
         
+        private Result responseMessageField;
+        
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public Result ResponseMessage {
+        public int state {
             get {
-                return this.responseMessageField;
+                return this.stateField;
             }
             set {
-                this.responseMessageField = value;
-                this.RaisePropertyChanged("ResponseMessage");
+                this.stateField = value;
+                this.RaisePropertyChanged("state");
             }
         }
         
@@ -3316,30 +7431,8 @@ namespace MashadLeatherEcommerce.KiyanService {
             }
         }
         
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
-    public partial class ItemListResultModel : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private Result responseMessageField;
-        
-        private itm[] responseResultField;
-        
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public Result ResponseMessage {
             get {
                 return this.responseMessageField;
@@ -3350,18 +7443,6 @@ namespace MashadLeatherEcommerce.KiyanService {
             }
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
-        public itm[] ResponseResult {
-            get {
-                return this.responseResultField;
-            }
-            set {
-                this.responseResultField = value;
-                this.RaisePropertyChanged("ResponseResult");
-            }
-        }
-        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -3373,178 +7454,52 @@ namespace MashadLeatherEcommerce.KiyanService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
-    public partial class RecieptsDetail : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class ItemStock2 : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private int lineNumberField;
+        private int anbarCodeField;
         
-        private int itemIdField;
+        private string barcodeField;
         
-        private string itemBarcodeField;
-        
-        private string itemNameField;
-        
-        private System.DateTime transactionDateField;
-        
-        private decimal saleQTYField;
-        
-        private decimal saleAmountField;
-        
-        private decimal taxAmountField;
-        
-        private decimal returnQTYField;
-        
-        private decimal returnAmountField;
-        
-        private decimal returnTaxField;
-        
-        private System.Nullable<int> customerIdField;
+        private System.Nullable<decimal> quantityField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public int LineNumber {
+        public int AnbarCode {
             get {
-                return this.lineNumberField;
+                return this.anbarCodeField;
             }
             set {
-                this.lineNumberField = value;
-                this.RaisePropertyChanged("LineNumber");
+                this.anbarCodeField = value;
+                this.RaisePropertyChanged("AnbarCode");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public int ItemId {
+        public string Barcode {
             get {
-                return this.itemIdField;
+                return this.barcodeField;
             }
             set {
-                this.itemIdField = value;
-                this.RaisePropertyChanged("ItemId");
+                this.barcodeField = value;
+                this.RaisePropertyChanged("Barcode");
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string ItemBarcode {
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public System.Nullable<decimal> Quantity {
             get {
-                return this.itemBarcodeField;
+                return this.quantityField;
             }
             set {
-                this.itemBarcodeField = value;
-                this.RaisePropertyChanged("ItemBarcode");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public string ItemName {
-            get {
-                return this.itemNameField;
-            }
-            set {
-                this.itemNameField = value;
-                this.RaisePropertyChanged("ItemName");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public System.DateTime TransactionDate {
-            get {
-                return this.transactionDateField;
-            }
-            set {
-                this.transactionDateField = value;
-                this.RaisePropertyChanged("TransactionDate");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
-        public decimal SaleQTY {
-            get {
-                return this.saleQTYField;
-            }
-            set {
-                this.saleQTYField = value;
-                this.RaisePropertyChanged("SaleQTY");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
-        public decimal SaleAmount {
-            get {
-                return this.saleAmountField;
-            }
-            set {
-                this.saleAmountField = value;
-                this.RaisePropertyChanged("SaleAmount");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
-        public decimal TaxAmount {
-            get {
-                return this.taxAmountField;
-            }
-            set {
-                this.taxAmountField = value;
-                this.RaisePropertyChanged("TaxAmount");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
-        public decimal ReturnQTY {
-            get {
-                return this.returnQTYField;
-            }
-            set {
-                this.returnQTYField = value;
-                this.RaisePropertyChanged("ReturnQTY");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
-        public decimal ReturnAmount {
-            get {
-                return this.returnAmountField;
-            }
-            set {
-                this.returnAmountField = value;
-                this.RaisePropertyChanged("ReturnAmount");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
-        public decimal ReturnTax {
-            get {
-                return this.returnTaxField;
-            }
-            set {
-                this.returnTaxField = value;
-                this.RaisePropertyChanged("ReturnTax");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=11)]
-        public System.Nullable<int> CustomerId {
-            get {
-                return this.customerIdField;
-            }
-            set {
-                this.customerIdField = value;
-                this.RaisePropertyChanged("CustomerId");
+                this.quantityField = value;
+                this.RaisePropertyChanged("Quantity");
             }
         }
         
@@ -3559,32 +7514,34 @@ namespace MashadLeatherEcommerce.KiyanService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
-    public partial class RecieptsDetailResultModel : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class ResponseDataOfItemStock2 : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int stateField;
+        
+        private ItemStock2[] responseResultField;
         
         private Result responseMessageField;
         
-        private RecieptsDetail[] responseResultField;
-        
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public Result ResponseMessage {
+        public int state {
             get {
-                return this.responseMessageField;
+                return this.stateField;
             }
             set {
-                this.responseMessageField = value;
-                this.RaisePropertyChanged("ResponseMessage");
+                this.stateField = value;
+                this.RaisePropertyChanged("state");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
-        public RecieptsDetail[] ResponseResult {
+        public ItemStock2[] ResponseResult {
             get {
                 return this.responseResultField;
             }
@@ -3594,30 +7551,8 @@ namespace MashadLeatherEcommerce.KiyanService {
             }
         }
         
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
-    public partial class SaleResultModel : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private Result responseMessageField;
-        
-        private string responseResultField;
-        
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public Result ResponseMessage {
             get {
                 return this.responseMessageField;
@@ -3628,18 +7563,6 @@ namespace MashadLeatherEcommerce.KiyanService {
             }
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string ResponseResult {
-            get {
-                return this.responseResultField;
-            }
-            set {
-                this.responseResultField = value;
-                this.RaisePropertyChanged("ResponseResult");
-            }
-        }
-        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -3651,108 +7574,16 @@ namespace MashadLeatherEcommerce.KiyanService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
-    public partial class TenderPrice : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private int tenderIDField;
-        
-        private System.Nullable<decimal> priceField;
-        
-        private string barCodeField;
-        
-        private string bonTypeField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public int TenderID {
-            get {
-                return this.tenderIDField;
-            }
-            set {
-                this.tenderIDField = value;
-                this.RaisePropertyChanged("TenderID");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
-        public System.Nullable<decimal> Price {
-            get {
-                return this.priceField;
-            }
-            set {
-                this.priceField = value;
-                this.RaisePropertyChanged("Price");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string BarCode {
-            get {
-                return this.barCodeField;
-            }
-            set {
-                this.barCodeField = value;
-                this.RaisePropertyChanged("BarCode");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public string BonType {
-            get {
-                return this.bonTypeField;
-            }
-            set {
-                this.bonTypeField = value;
-                this.RaisePropertyChanged("BonType");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
-    public partial class SaleItemObject : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class ItemStock : object, System.ComponentModel.INotifyPropertyChanged {
         
         private int itemIDField;
         
         private System.Nullable<decimal> quantityField;
-        
-        private System.Nullable<decimal> grossSaleAmountField;
-        
-        private System.Nullable<decimal> extendedAmountField;
-        
-        private decimal actualUnitPriceField;
-        
-        private decimal regularUnitPriceField;
-        
-        private string serialNumberField;
-        
-        private System.Nullable<decimal> chargeAmountField;
-        
-        private System.Nullable<decimal> taxAmountField;
-        
-        private bool isMiscellaneousField;
-        
-        private string itemDetailField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -3778,114 +7609,6 @@ namespace MashadLeatherEcommerce.KiyanService {
             }
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
-        public System.Nullable<decimal> GrossSaleAmount {
-            get {
-                return this.grossSaleAmountField;
-            }
-            set {
-                this.grossSaleAmountField = value;
-                this.RaisePropertyChanged("GrossSaleAmount");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
-        public System.Nullable<decimal> ExtendedAmount {
-            get {
-                return this.extendedAmountField;
-            }
-            set {
-                this.extendedAmountField = value;
-                this.RaisePropertyChanged("ExtendedAmount");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public decimal ActualUnitPrice {
-            get {
-                return this.actualUnitPriceField;
-            }
-            set {
-                this.actualUnitPriceField = value;
-                this.RaisePropertyChanged("ActualUnitPrice");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
-        public decimal RegularUnitPrice {
-            get {
-                return this.regularUnitPriceField;
-            }
-            set {
-                this.regularUnitPriceField = value;
-                this.RaisePropertyChanged("RegularUnitPrice");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
-        public string SerialNumber {
-            get {
-                return this.serialNumberField;
-            }
-            set {
-                this.serialNumberField = value;
-                this.RaisePropertyChanged("SerialNumber");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=7)]
-        public System.Nullable<decimal> ChargeAmount {
-            get {
-                return this.chargeAmountField;
-            }
-            set {
-                this.chargeAmountField = value;
-                this.RaisePropertyChanged("ChargeAmount");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=8)]
-        public System.Nullable<decimal> TaxAmount {
-            get {
-                return this.taxAmountField;
-            }
-            set {
-                this.taxAmountField = value;
-                this.RaisePropertyChanged("TaxAmount");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
-        public bool IsMiscellaneous {
-            get {
-                return this.isMiscellaneousField;
-            }
-            set {
-                this.isMiscellaneousField = value;
-                this.RaisePropertyChanged("IsMiscellaneous");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
-        public string ItemDetail {
-            get {
-                return this.itemDetailField;
-            }
-            set {
-                this.itemDetailField = value;
-                this.RaisePropertyChanged("ItemDetail");
-            }
-        }
-        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -3897,92 +7620,34 @@ namespace MashadLeatherEcommerce.KiyanService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
-    public partial class Inventory : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class ResponseDataOfItemStock : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private int retailStoreIDField;
+        private int stateField;
         
-        private int inventoryIDField;
-        
-        private string retailStoreNameField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public int RetailStoreID {
-            get {
-                return this.retailStoreIDField;
-            }
-            set {
-                this.retailStoreIDField = value;
-                this.RaisePropertyChanged("RetailStoreID");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public int InventoryID {
-            get {
-                return this.inventoryIDField;
-            }
-            set {
-                this.inventoryIDField = value;
-                this.RaisePropertyChanged("InventoryID");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string RetailStoreName {
-            get {
-                return this.retailStoreNameField;
-            }
-            set {
-                this.retailStoreNameField = value;
-                this.RaisePropertyChanged("RetailStoreName");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
-    public partial class InventoriesListResultModel : object, System.ComponentModel.INotifyPropertyChanged {
+        private ItemStock[] responseResultField;
         
         private Result responseMessageField;
         
-        private Inventory[] responseResultField;
-        
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public Result ResponseMessage {
+        public int state {
             get {
-                return this.responseMessageField;
+                return this.stateField;
             }
             set {
-                this.responseMessageField = value;
-                this.RaisePropertyChanged("ResponseMessage");
+                this.stateField = value;
+                this.RaisePropertyChanged("state");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
-        public Inventory[] ResponseResult {
+        public ItemStock[] ResponseResult {
             get {
                 return this.responseResultField;
             }
@@ -3992,76 +7657,8 @@ namespace MashadLeatherEcommerce.KiyanService {
             }
         }
         
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
-    public partial class ConfigEntity : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private decimal taxAmountField;
-        
-        private decimal chargeAmountField;
-        
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public decimal TaxAmount {
-            get {
-                return this.taxAmountField;
-            }
-            set {
-                this.taxAmountField = value;
-                this.RaisePropertyChanged("TaxAmount");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public decimal ChargeAmount {
-            get {
-                return this.chargeAmountField;
-            }
-            set {
-                this.chargeAmountField = value;
-                this.RaisePropertyChanged("ChargeAmount");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
-    public partial class ConfigValueResultModel : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private Result responseMessageField;
-        
-        private ConfigEntity responseResultField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public Result ResponseMessage {
             get {
                 return this.responseMessageField;
@@ -4072,15 +7669,2357 @@ namespace MashadLeatherEcommerce.KiyanService {
             }
         }
         
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class GeneralItemInfo_CModel : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private System.Nullable<int> retailStoreGroupIDField;
+        
+        private int itemIDField;
+        
+        private string itemNameField;
+        
+        private string barcodeField;
+        
+        private System.Nullable<decimal> priceField;
+        
+        private System.Nullable<decimal> tempPriceField;
+        
+        private System.Nullable<decimal> customerPriceDiscountPercentField;
+        
+        private string unitField;
+        
+        private System.Nullable<decimal> taxField;
+        
+        private System.Nullable<decimal> quantityField;
+        
+        private System.Nullable<int> anbarIDField;
+        
+        private System.Nullable<int> posDepartment4IDField;
+        
+        private System.Nullable<int> posDepartment3IDField;
+        
+        private System.Nullable<int> posDepartment2IDField;
+        
+        private string brandNameField;
+        
+        private string itemDescriptionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
+        public System.Nullable<int> RetailStoreGroupID {
+            get {
+                return this.retailStoreGroupIDField;
+            }
+            set {
+                this.retailStoreGroupIDField = value;
+                this.RaisePropertyChanged("RetailStoreGroupID");
+            }
+        }
+        
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public ConfigEntity ResponseResult {
+        public int ItemID {
+            get {
+                return this.itemIDField;
+            }
+            set {
+                this.itemIDField = value;
+                this.RaisePropertyChanged("ItemID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string ItemName {
+            get {
+                return this.itemNameField;
+            }
+            set {
+                this.itemNameField = value;
+                this.RaisePropertyChanged("ItemName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string Barcode {
+            get {
+                return this.barcodeField;
+            }
+            set {
+                this.barcodeField = value;
+                this.RaisePropertyChanged("Barcode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
+        public System.Nullable<decimal> Price {
+            get {
+                return this.priceField;
+            }
+            set {
+                this.priceField = value;
+                this.RaisePropertyChanged("Price");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
+        public System.Nullable<decimal> TempPrice {
+            get {
+                return this.tempPriceField;
+            }
+            set {
+                this.tempPriceField = value;
+                this.RaisePropertyChanged("TempPrice");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=6)]
+        public System.Nullable<decimal> CustomerPriceDiscountPercent {
+            get {
+                return this.customerPriceDiscountPercentField;
+            }
+            set {
+                this.customerPriceDiscountPercentField = value;
+                this.RaisePropertyChanged("CustomerPriceDiscountPercent");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public string Unit {
+            get {
+                return this.unitField;
+            }
+            set {
+                this.unitField = value;
+                this.RaisePropertyChanged("Unit");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=8)]
+        public System.Nullable<decimal> Tax {
+            get {
+                return this.taxField;
+            }
+            set {
+                this.taxField = value;
+                this.RaisePropertyChanged("Tax");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=9)]
+        public System.Nullable<decimal> Quantity {
+            get {
+                return this.quantityField;
+            }
+            set {
+                this.quantityField = value;
+                this.RaisePropertyChanged("Quantity");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=10)]
+        public System.Nullable<int> AnbarID {
+            get {
+                return this.anbarIDField;
+            }
+            set {
+                this.anbarIDField = value;
+                this.RaisePropertyChanged("AnbarID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=11)]
+        public System.Nullable<int> PosDepartment4ID {
+            get {
+                return this.posDepartment4IDField;
+            }
+            set {
+                this.posDepartment4IDField = value;
+                this.RaisePropertyChanged("PosDepartment4ID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=12)]
+        public System.Nullable<int> PosDepartment3ID {
+            get {
+                return this.posDepartment3IDField;
+            }
+            set {
+                this.posDepartment3IDField = value;
+                this.RaisePropertyChanged("PosDepartment3ID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=13)]
+        public System.Nullable<int> PosDepartment2ID {
+            get {
+                return this.posDepartment2IDField;
+            }
+            set {
+                this.posDepartment2IDField = value;
+                this.RaisePropertyChanged("PosDepartment2ID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
+        public string BrandName {
+            get {
+                return this.brandNameField;
+            }
+            set {
+                this.brandNameField = value;
+                this.RaisePropertyChanged("BrandName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
+        public string ItemDescription {
+            get {
+                return this.itemDescriptionField;
+            }
+            set {
+                this.itemDescriptionField = value;
+                this.RaisePropertyChanged("ItemDescription");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class ResponseDataOfGeneralItemInfo_CModel : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int stateField;
+        
+        private GeneralItemInfo_CModel[] responseResultField;
+        
+        private Result responseMessageField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int state {
+            get {
+                return this.stateField;
+            }
+            set {
+                this.stateField = value;
+                this.RaisePropertyChanged("state");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
+        public GeneralItemInfo_CModel[] ResponseResult {
             get {
                 return this.responseResultField;
             }
             set {
                 this.responseResultField = value;
                 this.RaisePropertyChanged("ResponseResult");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public Result ResponseMessage {
+            get {
+                return this.responseMessageField;
+            }
+            set {
+                this.responseMessageField = value;
+                this.RaisePropertyChanged("ResponseMessage");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class GeneralItemInfoModel : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private System.Nullable<int> retailStoreGroupIDField;
+        
+        private int itemIDField;
+        
+        private string itemNameField;
+        
+        private string barcodeField;
+        
+        private System.Nullable<decimal> priceField;
+        
+        private System.Nullable<decimal> tempPriceField;
+        
+        private string unitField;
+        
+        private System.Nullable<decimal> taxField;
+        
+        private System.Nullable<decimal> quantityField;
+        
+        private System.Nullable<int> anbarIDField;
+        
+        private System.Nullable<int> posDepartment4IDField;
+        
+        private System.Nullable<int> posDepartment3IDField;
+        
+        private System.Nullable<int> posDepartment2IDField;
+        
+        private string brandNameField;
+        
+        private string itemDescriptionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
+        public System.Nullable<int> RetailStoreGroupID {
+            get {
+                return this.retailStoreGroupIDField;
+            }
+            set {
+                this.retailStoreGroupIDField = value;
+                this.RaisePropertyChanged("RetailStoreGroupID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int ItemID {
+            get {
+                return this.itemIDField;
+            }
+            set {
+                this.itemIDField = value;
+                this.RaisePropertyChanged("ItemID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string ItemName {
+            get {
+                return this.itemNameField;
+            }
+            set {
+                this.itemNameField = value;
+                this.RaisePropertyChanged("ItemName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string Barcode {
+            get {
+                return this.barcodeField;
+            }
+            set {
+                this.barcodeField = value;
+                this.RaisePropertyChanged("Barcode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
+        public System.Nullable<decimal> Price {
+            get {
+                return this.priceField;
+            }
+            set {
+                this.priceField = value;
+                this.RaisePropertyChanged("Price");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
+        public System.Nullable<decimal> TempPrice {
+            get {
+                return this.tempPriceField;
+            }
+            set {
+                this.tempPriceField = value;
+                this.RaisePropertyChanged("TempPrice");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string Unit {
+            get {
+                return this.unitField;
+            }
+            set {
+                this.unitField = value;
+                this.RaisePropertyChanged("Unit");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=7)]
+        public System.Nullable<decimal> Tax {
+            get {
+                return this.taxField;
+            }
+            set {
+                this.taxField = value;
+                this.RaisePropertyChanged("Tax");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=8)]
+        public System.Nullable<decimal> Quantity {
+            get {
+                return this.quantityField;
+            }
+            set {
+                this.quantityField = value;
+                this.RaisePropertyChanged("Quantity");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=9)]
+        public System.Nullable<int> AnbarID {
+            get {
+                return this.anbarIDField;
+            }
+            set {
+                this.anbarIDField = value;
+                this.RaisePropertyChanged("AnbarID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=10)]
+        public System.Nullable<int> PosDepartment4ID {
+            get {
+                return this.posDepartment4IDField;
+            }
+            set {
+                this.posDepartment4IDField = value;
+                this.RaisePropertyChanged("PosDepartment4ID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=11)]
+        public System.Nullable<int> PosDepartment3ID {
+            get {
+                return this.posDepartment3IDField;
+            }
+            set {
+                this.posDepartment3IDField = value;
+                this.RaisePropertyChanged("PosDepartment3ID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=12)]
+        public System.Nullable<int> PosDepartment2ID {
+            get {
+                return this.posDepartment2IDField;
+            }
+            set {
+                this.posDepartment2IDField = value;
+                this.RaisePropertyChanged("PosDepartment2ID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+        public string BrandName {
+            get {
+                return this.brandNameField;
+            }
+            set {
+                this.brandNameField = value;
+                this.RaisePropertyChanged("BrandName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
+        public string ItemDescription {
+            get {
+                return this.itemDescriptionField;
+            }
+            set {
+                this.itemDescriptionField = value;
+                this.RaisePropertyChanged("ItemDescription");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class ResponseDataOfGeneralItemInfoModel : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int stateField;
+        
+        private GeneralItemInfoModel[] responseResultField;
+        
+        private Result responseMessageField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int state {
+            get {
+                return this.stateField;
+            }
+            set {
+                this.stateField = value;
+                this.RaisePropertyChanged("state");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
+        public GeneralItemInfoModel[] ResponseResult {
+            get {
+                return this.responseResultField;
+            }
+            set {
+                this.responseResultField = value;
+                this.RaisePropertyChanged("ResponseResult");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public Result ResponseMessage {
+            get {
+                return this.responseMessageField;
+            }
+            set {
+                this.responseMessageField = value;
+                this.RaisePropertyChanged("ResponseMessage");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class itm3 : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int itmIDField;
+        
+        private decimal itmPriceField;
+        
+        private decimal itmTempPriceField;
+        
+        private System.Nullable<decimal> quantityField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int itmID {
+            get {
+                return this.itmIDField;
+            }
+            set {
+                this.itmIDField = value;
+                this.RaisePropertyChanged("itmID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public decimal itmPrice {
+            get {
+                return this.itmPriceField;
+            }
+            set {
+                this.itmPriceField = value;
+                this.RaisePropertyChanged("itmPrice");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public decimal itmTempPrice {
+            get {
+                return this.itmTempPriceField;
+            }
+            set {
+                this.itmTempPriceField = value;
+                this.RaisePropertyChanged("itmTempPrice");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        public System.Nullable<decimal> Quantity {
+            get {
+                return this.quantityField;
+            }
+            set {
+                this.quantityField = value;
+                this.RaisePropertyChanged("Quantity");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class ResponseDataOfitm3 : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int stateField;
+        
+        private itm3[] responseResultField;
+        
+        private Result responseMessageField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int state {
+            get {
+                return this.stateField;
+            }
+            set {
+                this.stateField = value;
+                this.RaisePropertyChanged("state");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
+        public itm3[] ResponseResult {
+            get {
+                return this.responseResultField;
+            }
+            set {
+                this.responseResultField = value;
+                this.RaisePropertyChanged("ResponseResult");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public Result ResponseMessage {
+            get {
+                return this.responseMessageField;
+            }
+            set {
+                this.responseMessageField = value;
+                this.RaisePropertyChanged("ResponseMessage");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class itmWithParentInfo : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int itmIDField;
+        
+        private string zQ_DS_BRCDField;
+        
+        private string itmNameField;
+        
+        private ItemType itemTypesField;
+        
+        private decimal itmPriceField;
+        
+        private decimal itmTempPriceField;
+        
+        private decimal itmRsGrpPriceField;
+        
+        private decimal itmRsGrpTempPriceField;
+        
+        private decimal itmQuantityField;
+        
+        private string itmCreateDateField;
+        
+        private bool taxableField;
+        
+        private System.Nullable<decimal> userPriceField;
+        
+        private System.Nullable<int> pOSDepartmentIDField;
+        
+        private string pOSDepartmentNameField;
+        
+        private string itemDescriptionField;
+        
+        private System.Nullable<int> parentIdField;
+        
+        private string parentNameField;
+        
+        private string proprtyName1Field;
+        
+        private string proprtyName2Field;
+        
+        private string proprtyName3Field;
+        
+        private string itemStatField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int itmID {
+            get {
+                return this.itmIDField;
+            }
+            set {
+                this.itmIDField = value;
+                this.RaisePropertyChanged("itmID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string ZQ_DS_BRCD {
+            get {
+                return this.zQ_DS_BRCDField;
+            }
+            set {
+                this.zQ_DS_BRCDField = value;
+                this.RaisePropertyChanged("ZQ_DS_BRCD");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string itmName {
+            get {
+                return this.itmNameField;
+            }
+            set {
+                this.itmNameField = value;
+                this.RaisePropertyChanged("itmName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public ItemType ItemTypes {
+            get {
+                return this.itemTypesField;
+            }
+            set {
+                this.itemTypesField = value;
+                this.RaisePropertyChanged("ItemTypes");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public decimal itmPrice {
+            get {
+                return this.itmPriceField;
+            }
+            set {
+                this.itmPriceField = value;
+                this.RaisePropertyChanged("itmPrice");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public decimal itmTempPrice {
+            get {
+                return this.itmTempPriceField;
+            }
+            set {
+                this.itmTempPriceField = value;
+                this.RaisePropertyChanged("itmTempPrice");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public decimal itmRsGrpPrice {
+            get {
+                return this.itmRsGrpPriceField;
+            }
+            set {
+                this.itmRsGrpPriceField = value;
+                this.RaisePropertyChanged("itmRsGrpPrice");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public decimal itmRsGrpTempPrice {
+            get {
+                return this.itmRsGrpTempPriceField;
+            }
+            set {
+                this.itmRsGrpTempPriceField = value;
+                this.RaisePropertyChanged("itmRsGrpTempPrice");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public decimal itmQuantity {
+            get {
+                return this.itmQuantityField;
+            }
+            set {
+                this.itmQuantityField = value;
+                this.RaisePropertyChanged("itmQuantity");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public string itmCreateDate {
+            get {
+                return this.itmCreateDateField;
+            }
+            set {
+                this.itmCreateDateField = value;
+                this.RaisePropertyChanged("itmCreateDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public bool Taxable {
+            get {
+                return this.taxableField;
+            }
+            set {
+                this.taxableField = value;
+                this.RaisePropertyChanged("Taxable");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=11)]
+        public System.Nullable<decimal> UserPrice {
+            get {
+                return this.userPriceField;
+            }
+            set {
+                this.userPriceField = value;
+                this.RaisePropertyChanged("UserPrice");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=12)]
+        public System.Nullable<int> POSDepartmentID {
+            get {
+                return this.pOSDepartmentIDField;
+            }
+            set {
+                this.pOSDepartmentIDField = value;
+                this.RaisePropertyChanged("POSDepartmentID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+        public string POSDepartmentName {
+            get {
+                return this.pOSDepartmentNameField;
+            }
+            set {
+                this.pOSDepartmentNameField = value;
+                this.RaisePropertyChanged("POSDepartmentName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
+        public string ItemDescription {
+            get {
+                return this.itemDescriptionField;
+            }
+            set {
+                this.itemDescriptionField = value;
+                this.RaisePropertyChanged("ItemDescription");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=15)]
+        public System.Nullable<int> ParentId {
+            get {
+                return this.parentIdField;
+            }
+            set {
+                this.parentIdField = value;
+                this.RaisePropertyChanged("ParentId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
+        public string ParentName {
+            get {
+                return this.parentNameField;
+            }
+            set {
+                this.parentNameField = value;
+                this.RaisePropertyChanged("ParentName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
+        public string ProprtyName1 {
+            get {
+                return this.proprtyName1Field;
+            }
+            set {
+                this.proprtyName1Field = value;
+                this.RaisePropertyChanged("ProprtyName1");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=18)]
+        public string ProprtyName2 {
+            get {
+                return this.proprtyName2Field;
+            }
+            set {
+                this.proprtyName2Field = value;
+                this.RaisePropertyChanged("ProprtyName2");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=19)]
+        public string ProprtyName3 {
+            get {
+                return this.proprtyName3Field;
+            }
+            set {
+                this.proprtyName3Field = value;
+                this.RaisePropertyChanged("ProprtyName3");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=20)]
+        public string ItemStat {
+            get {
+                return this.itemStatField;
+            }
+            set {
+                this.itemStatField = value;
+                this.RaisePropertyChanged("ItemStat");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class ResponseDataOfitmWithParentInfo : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int stateField;
+        
+        private itmWithParentInfo[] responseResultField;
+        
+        private Result responseMessageField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int state {
+            get {
+                return this.stateField;
+            }
+            set {
+                this.stateField = value;
+                this.RaisePropertyChanged("state");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
+        public itmWithParentInfo[] ResponseResult {
+            get {
+                return this.responseResultField;
+            }
+            set {
+                this.responseResultField = value;
+                this.RaisePropertyChanged("ResponseResult");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public Result ResponseMessage {
+            get {
+                return this.responseMessageField;
+            }
+            set {
+                this.responseMessageField = value;
+                this.RaisePropertyChanged("ResponseMessage");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class goodDetail : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int rowNumField;
+        
+        private int itmIDField;
+        
+        private string itmBrcdField;
+        
+        private string itmNameField;
+        
+        private string itemTypesField;
+        
+        private decimal itmPriceField;
+        
+        private decimal itmTempPriceField;
+        
+        private string tempPriceExpireDateField;
+        
+        private System.Nullable<decimal> discountField;
+        
+        private decimal itmQuantityField;
+        
+        private bool taxableField;
+        
+        private System.Nullable<decimal> userPriceField;
+        
+        private System.Nullable<int> pOSDepartmentIDField;
+        
+        private string pOSDepartmentNameField;
+        
+        private string itemDescriptionField;
+        
+        private string itmStatusField;
+        
+        private System.Nullable<decimal> jetPriceField;
+        
+        private System.Nullable<decimal> jetQuatityTotalField;
+        
+        private System.Nullable<decimal> jetQuatityRemainField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int RowNum {
+            get {
+                return this.rowNumField;
+            }
+            set {
+                this.rowNumField = value;
+                this.RaisePropertyChanged("RowNum");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int itmID {
+            get {
+                return this.itmIDField;
+            }
+            set {
+                this.itmIDField = value;
+                this.RaisePropertyChanged("itmID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string itmBrcd {
+            get {
+                return this.itmBrcdField;
+            }
+            set {
+                this.itmBrcdField = value;
+                this.RaisePropertyChanged("itmBrcd");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string itmName {
+            get {
+                return this.itmNameField;
+            }
+            set {
+                this.itmNameField = value;
+                this.RaisePropertyChanged("itmName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string ItemTypes {
+            get {
+                return this.itemTypesField;
+            }
+            set {
+                this.itemTypesField = value;
+                this.RaisePropertyChanged("ItemTypes");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public decimal itmPrice {
+            get {
+                return this.itmPriceField;
+            }
+            set {
+                this.itmPriceField = value;
+                this.RaisePropertyChanged("itmPrice");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public decimal itmTempPrice {
+            get {
+                return this.itmTempPriceField;
+            }
+            set {
+                this.itmTempPriceField = value;
+                this.RaisePropertyChanged("itmTempPrice");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public string TempPriceExpireDate {
+            get {
+                return this.tempPriceExpireDateField;
+            }
+            set {
+                this.tempPriceExpireDateField = value;
+                this.RaisePropertyChanged("TempPriceExpireDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=8)]
+        public System.Nullable<decimal> discount {
+            get {
+                return this.discountField;
+            }
+            set {
+                this.discountField = value;
+                this.RaisePropertyChanged("discount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public decimal itmQuantity {
+            get {
+                return this.itmQuantityField;
+            }
+            set {
+                this.itmQuantityField = value;
+                this.RaisePropertyChanged("itmQuantity");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public bool Taxable {
+            get {
+                return this.taxableField;
+            }
+            set {
+                this.taxableField = value;
+                this.RaisePropertyChanged("Taxable");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=11)]
+        public System.Nullable<decimal> UserPrice {
+            get {
+                return this.userPriceField;
+            }
+            set {
+                this.userPriceField = value;
+                this.RaisePropertyChanged("UserPrice");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=12)]
+        public System.Nullable<int> POSDepartmentID {
+            get {
+                return this.pOSDepartmentIDField;
+            }
+            set {
+                this.pOSDepartmentIDField = value;
+                this.RaisePropertyChanged("POSDepartmentID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+        public string POSDepartmentName {
+            get {
+                return this.pOSDepartmentNameField;
+            }
+            set {
+                this.pOSDepartmentNameField = value;
+                this.RaisePropertyChanged("POSDepartmentName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
+        public string ItemDescription {
+            get {
+                return this.itemDescriptionField;
+            }
+            set {
+                this.itemDescriptionField = value;
+                this.RaisePropertyChanged("ItemDescription");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
+        public string itmStatus {
+            get {
+                return this.itmStatusField;
+            }
+            set {
+                this.itmStatusField = value;
+                this.RaisePropertyChanged("itmStatus");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=16)]
+        public System.Nullable<decimal> JetPrice {
+            get {
+                return this.jetPriceField;
+            }
+            set {
+                this.jetPriceField = value;
+                this.RaisePropertyChanged("JetPrice");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=17)]
+        public System.Nullable<decimal> JetQuatityTotal {
+            get {
+                return this.jetQuatityTotalField;
+            }
+            set {
+                this.jetQuatityTotalField = value;
+                this.RaisePropertyChanged("JetQuatityTotal");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=18)]
+        public System.Nullable<decimal> JetQuatityRemain {
+            get {
+                return this.jetQuatityRemainField;
+            }
+            set {
+                this.jetQuatityRemainField = value;
+                this.RaisePropertyChanged("JetQuatityRemain");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class ResponseDataOfgoodDetail : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int stateField;
+        
+        private goodDetail[] responseResultField;
+        
+        private Result responseMessageField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int state {
+            get {
+                return this.stateField;
+            }
+            set {
+                this.stateField = value;
+                this.RaisePropertyChanged("state");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
+        public goodDetail[] ResponseResult {
+            get {
+                return this.responseResultField;
+            }
+            set {
+                this.responseResultField = value;
+                this.RaisePropertyChanged("ResponseResult");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public Result ResponseMessage {
+            get {
+                return this.responseMessageField;
+            }
+            set {
+                this.responseMessageField = value;
+                this.RaisePropertyChanged("ResponseMessage");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class itmWithRowNo : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int rowNumField;
+        
+        private int itmIDField;
+        
+        private string itmBrcdField;
+        
+        private string itmNameField;
+        
+        private string[] serialsField;
+        
+        private ItemType itemTypesField;
+        
+        private decimal itmPriceField;
+        
+        private decimal itmTempPriceField;
+        
+        private decimal itmRsGrpPriceField;
+        
+        private decimal itmRsGrpTempPriceField;
+        
+        private decimal itmQuantityField;
+        
+        private string itmCreateDateField;
+        
+        private bool taxableField;
+        
+        private System.Nullable<decimal> userPriceField;
+        
+        private System.Nullable<int> pOSDepartmentIDField;
+        
+        private string pOSDepartmentNameField;
+        
+        private string itemDescriptionField;
+        
+        private byte[] itemImageField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int RowNum {
+            get {
+                return this.rowNumField;
+            }
+            set {
+                this.rowNumField = value;
+                this.RaisePropertyChanged("RowNum");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int itmID {
+            get {
+                return this.itmIDField;
+            }
+            set {
+                this.itmIDField = value;
+                this.RaisePropertyChanged("itmID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string itmBrcd {
+            get {
+                return this.itmBrcdField;
+            }
+            set {
+                this.itmBrcdField = value;
+                this.RaisePropertyChanged("itmBrcd");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string itmName {
+            get {
+                return this.itmNameField;
+            }
+            set {
+                this.itmNameField = value;
+                this.RaisePropertyChanged("itmName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=4)]
+        public string[] serials {
+            get {
+                return this.serialsField;
+            }
+            set {
+                this.serialsField = value;
+                this.RaisePropertyChanged("serials");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public ItemType ItemTypes {
+            get {
+                return this.itemTypesField;
+            }
+            set {
+                this.itemTypesField = value;
+                this.RaisePropertyChanged("ItemTypes");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public decimal itmPrice {
+            get {
+                return this.itmPriceField;
+            }
+            set {
+                this.itmPriceField = value;
+                this.RaisePropertyChanged("itmPrice");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public decimal itmTempPrice {
+            get {
+                return this.itmTempPriceField;
+            }
+            set {
+                this.itmTempPriceField = value;
+                this.RaisePropertyChanged("itmTempPrice");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public decimal itmRsGrpPrice {
+            get {
+                return this.itmRsGrpPriceField;
+            }
+            set {
+                this.itmRsGrpPriceField = value;
+                this.RaisePropertyChanged("itmRsGrpPrice");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public decimal itmRsGrpTempPrice {
+            get {
+                return this.itmRsGrpTempPriceField;
+            }
+            set {
+                this.itmRsGrpTempPriceField = value;
+                this.RaisePropertyChanged("itmRsGrpTempPrice");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public decimal itmQuantity {
+            get {
+                return this.itmQuantityField;
+            }
+            set {
+                this.itmQuantityField = value;
+                this.RaisePropertyChanged("itmQuantity");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        public string itmCreateDate {
+            get {
+                return this.itmCreateDateField;
+            }
+            set {
+                this.itmCreateDateField = value;
+                this.RaisePropertyChanged("itmCreateDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        public bool Taxable {
+            get {
+                return this.taxableField;
+            }
+            set {
+                this.taxableField = value;
+                this.RaisePropertyChanged("Taxable");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=13)]
+        public System.Nullable<decimal> UserPrice {
+            get {
+                return this.userPriceField;
+            }
+            set {
+                this.userPriceField = value;
+                this.RaisePropertyChanged("UserPrice");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=14)]
+        public System.Nullable<int> POSDepartmentID {
+            get {
+                return this.pOSDepartmentIDField;
+            }
+            set {
+                this.pOSDepartmentIDField = value;
+                this.RaisePropertyChanged("POSDepartmentID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
+        public string POSDepartmentName {
+            get {
+                return this.pOSDepartmentNameField;
+            }
+            set {
+                this.pOSDepartmentNameField = value;
+                this.RaisePropertyChanged("POSDepartmentName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
+        public string ItemDescription {
+            get {
+                return this.itemDescriptionField;
+            }
+            set {
+                this.itemDescriptionField = value;
+                this.RaisePropertyChanged("ItemDescription");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary", Order=17)]
+        public byte[] ItemImage {
+            get {
+                return this.itemImageField;
+            }
+            set {
+                this.itemImageField = value;
+                this.RaisePropertyChanged("ItemImage");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class ResponseDataOfitmWithRowNo : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int stateField;
+        
+        private itmWithRowNo[] responseResultField;
+        
+        private Result responseMessageField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int state {
+            get {
+                return this.stateField;
+            }
+            set {
+                this.stateField = value;
+                this.RaisePropertyChanged("state");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
+        public itmWithRowNo[] ResponseResult {
+            get {
+                return this.responseResultField;
+            }
+            set {
+                this.responseResultField = value;
+                this.RaisePropertyChanged("ResponseResult");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public Result ResponseMessage {
+            get {
+                return this.responseMessageField;
+            }
+            set {
+                this.responseMessageField = value;
+                this.RaisePropertyChanged("ResponseMessage");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class itm : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int itmIDField;
+        
+        private string itmBrcdField;
+        
+        private string itmNameField;
+        
+        private string[] serialsField;
+        
+        private ItemType itemTypesField;
+        
+        private decimal itmPriceField;
+        
+        private decimal itmTempPriceField;
+        
+        private decimal itmRsGrpPriceField;
+        
+        private decimal itmRsGrpTempPriceField;
+        
+        private decimal itmQuantityField;
+        
+        private string itmCreateDateField;
+        
+        private bool taxableField;
+        
+        private System.Nullable<decimal> userPriceField;
+        
+        private System.Nullable<int> pOSDepartmentIDField;
+        
+        private string pOSDepartmentNameField;
+        
+        private string itemDescriptionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int itmID {
+            get {
+                return this.itmIDField;
+            }
+            set {
+                this.itmIDField = value;
+                this.RaisePropertyChanged("itmID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string itmBrcd {
+            get {
+                return this.itmBrcdField;
+            }
+            set {
+                this.itmBrcdField = value;
+                this.RaisePropertyChanged("itmBrcd");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string itmName {
+            get {
+                return this.itmNameField;
+            }
+            set {
+                this.itmNameField = value;
+                this.RaisePropertyChanged("itmName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=3)]
+        public string[] serials {
+            get {
+                return this.serialsField;
+            }
+            set {
+                this.serialsField = value;
+                this.RaisePropertyChanged("serials");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public ItemType ItemTypes {
+            get {
+                return this.itemTypesField;
+            }
+            set {
+                this.itemTypesField = value;
+                this.RaisePropertyChanged("ItemTypes");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public decimal itmPrice {
+            get {
+                return this.itmPriceField;
+            }
+            set {
+                this.itmPriceField = value;
+                this.RaisePropertyChanged("itmPrice");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public decimal itmTempPrice {
+            get {
+                return this.itmTempPriceField;
+            }
+            set {
+                this.itmTempPriceField = value;
+                this.RaisePropertyChanged("itmTempPrice");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public decimal itmRsGrpPrice {
+            get {
+                return this.itmRsGrpPriceField;
+            }
+            set {
+                this.itmRsGrpPriceField = value;
+                this.RaisePropertyChanged("itmRsGrpPrice");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public decimal itmRsGrpTempPrice {
+            get {
+                return this.itmRsGrpTempPriceField;
+            }
+            set {
+                this.itmRsGrpTempPriceField = value;
+                this.RaisePropertyChanged("itmRsGrpTempPrice");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public decimal itmQuantity {
+            get {
+                return this.itmQuantityField;
+            }
+            set {
+                this.itmQuantityField = value;
+                this.RaisePropertyChanged("itmQuantity");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public string itmCreateDate {
+            get {
+                return this.itmCreateDateField;
+            }
+            set {
+                this.itmCreateDateField = value;
+                this.RaisePropertyChanged("itmCreateDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        public bool Taxable {
+            get {
+                return this.taxableField;
+            }
+            set {
+                this.taxableField = value;
+                this.RaisePropertyChanged("Taxable");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=12)]
+        public System.Nullable<decimal> UserPrice {
+            get {
+                return this.userPriceField;
+            }
+            set {
+                this.userPriceField = value;
+                this.RaisePropertyChanged("UserPrice");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=13)]
+        public System.Nullable<int> POSDepartmentID {
+            get {
+                return this.pOSDepartmentIDField;
+            }
+            set {
+                this.pOSDepartmentIDField = value;
+                this.RaisePropertyChanged("POSDepartmentID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
+        public string POSDepartmentName {
+            get {
+                return this.pOSDepartmentNameField;
+            }
+            set {
+                this.pOSDepartmentNameField = value;
+                this.RaisePropertyChanged("POSDepartmentName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
+        public string ItemDescription {
+            get {
+                return this.itemDescriptionField;
+            }
+            set {
+                this.itemDescriptionField = value;
+                this.RaisePropertyChanged("ItemDescription");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class ResponseDataOfitm : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int stateField;
+        
+        private itm[] responseResultField;
+        
+        private Result responseMessageField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int state {
+            get {
+                return this.stateField;
+            }
+            set {
+                this.stateField = value;
+                this.RaisePropertyChanged("state");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
+        public itm[] ResponseResult {
+            get {
+                return this.responseResultField;
+            }
+            set {
+                this.responseResultField = value;
+                this.RaisePropertyChanged("ResponseResult");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public Result ResponseMessage {
+            get {
+                return this.responseMessageField;
+            }
+            set {
+                this.responseMessageField = value;
+                this.RaisePropertyChanged("ResponseMessage");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class ProductDescription : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string barcodeField;
+        
+        private string itemIDField;
+        
+        private string itemNameField;
+        
+        private string salePriceField;
+        
+        private string itemDiscountPercentField;
+        
+        private string itemDiscountField;
+        
+        private string expiryDateDiscountField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string barcode {
+            get {
+                return this.barcodeField;
+            }
+            set {
+                this.barcodeField = value;
+                this.RaisePropertyChanged("barcode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string ItemID {
+            get {
+                return this.itemIDField;
+            }
+            set {
+                this.itemIDField = value;
+                this.RaisePropertyChanged("ItemID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string ItemName {
+            get {
+                return this.itemNameField;
+            }
+            set {
+                this.itemNameField = value;
+                this.RaisePropertyChanged("ItemName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string SalePrice {
+            get {
+                return this.salePriceField;
+            }
+            set {
+                this.salePriceField = value;
+                this.RaisePropertyChanged("SalePrice");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string ItemDiscountPercent {
+            get {
+                return this.itemDiscountPercentField;
+            }
+            set {
+                this.itemDiscountPercentField = value;
+                this.RaisePropertyChanged("ItemDiscountPercent");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string ItemDiscount {
+            get {
+                return this.itemDiscountField;
+            }
+            set {
+                this.itemDiscountField = value;
+                this.RaisePropertyChanged("ItemDiscount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string ExpiryDateDiscount {
+            get {
+                return this.expiryDateDiscountField;
+            }
+            set {
+                this.expiryDateDiscountField = value;
+                this.RaisePropertyChanged("ExpiryDateDiscount");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class ResponseDataOfProductDescription : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int stateField;
+        
+        private ProductDescription[] responseResultField;
+        
+        private Result responseMessageField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int state {
+            get {
+                return this.stateField;
+            }
+            set {
+                this.stateField = value;
+                this.RaisePropertyChanged("state");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
+        public ProductDescription[] ResponseResult {
+            get {
+                return this.responseResultField;
+            }
+            set {
+                this.responseResultField = value;
+                this.RaisePropertyChanged("ResponseResult");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public Result ResponseMessage {
+            get {
+                return this.responseMessageField;
+            }
+            set {
+                this.responseMessageField = value;
+                this.RaisePropertyChanged("ResponseMessage");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class ValidationSoapHeader : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string tokenAUTField;
+        
+        private System.Xml.XmlAttribute[] anyAttrField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string TokenAUT {
+            get {
+                return this.tokenAUTField;
+            }
+            set {
+                this.tokenAUTField = value;
+                this.RaisePropertyChanged("TokenAUT");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAnyAttributeAttribute()]
+        public System.Xml.XmlAttribute[] AnyAttr {
+            get {
+                return this.anyAttrField;
+            }
+            set {
+                this.anyAttrField = value;
+                this.RaisePropertyChanged("AnyAttr");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public partial class AuthenticationResult : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string tokenField;
+        
+        private bool successField;
+        
+        private string errorField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string Token {
+            get {
+                return this.tokenField;
+            }
+            set {
+                this.tokenField = value;
+                this.RaisePropertyChanged("Token");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public bool Success {
+            get {
+                return this.successField;
+            }
+            set {
+                this.successField = value;
+                this.RaisePropertyChanged("Success");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string Error {
+            get {
+                return this.errorField;
+            }
+            set {
+                this.errorField = value;
+                this.RaisePropertyChanged("Error");
             }
         }
         
@@ -4097,34 +10036,1658 @@ namespace MashadLeatherEcommerce.KiyanService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetTaxChargeAmount", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetTaxChargeAmountRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="AuthenticationUser", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class AuthenticationUserRequest {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
-        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
         
-        public GetTaxChargeAmountRequest() {
+        public AuthenticationUserRequest() {
         }
         
-        public GetTaxChargeAmountRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader) {
-            this.ValidationSoapHeader = ValidationSoapHeader;
+        public AuthenticationUserRequest(MashadLeatherEcommerce.KiyanService.AuthUser AuthUser) {
+            this.AuthUser = AuthUser;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetTaxChargeAmountResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetTaxChargeAmountResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="AuthenticationUserResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class AuthenticationUserResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public MashadLeatherEcommerce.KiyanService.ConfigValueResultModel GetTaxChargeAmountResult;
+        public MashadLeatherEcommerce.KiyanService.AuthenticationResult AuthenticationUserResult;
         
-        public GetTaxChargeAmountResponse() {
+        public AuthenticationUserResponse() {
         }
         
-        public GetTaxChargeAmountResponse(MashadLeatherEcommerce.KiyanService.ConfigValueResultModel GetTaxChargeAmountResult) {
-            this.GetTaxChargeAmountResult = GetTaxChargeAmountResult;
+        public AuthenticationUserResponse(MashadLeatherEcommerce.KiyanService.AuthenticationResult AuthenticationUserResult) {
+            this.AuthenticationUserResult = AuthenticationUserResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="InputPermission", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class InputPermissionRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public int RsID;
+        
+        public InputPermissionRequest() {
+        }
+        
+        public InputPermissionRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int RsID) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.RsID = RsID;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="InputPermissionResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class InputPermissionResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.Result InputPermissionResult;
+        
+        public InputPermissionResponse() {
+        }
+        
+        public InputPermissionResponse(MashadLeatherEcommerce.KiyanService.Result InputPermissionResult) {
+            this.InputPermissionResult = InputPermissionResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="InputPermissionMethod", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class InputPermissionMethodRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public string MethodName;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=1)]
+        public bool Active;
+        
+        public InputPermissionMethodRequest() {
+        }
+        
+        public InputPermissionMethodRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string MethodName, bool Active) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.MethodName = MethodName;
+            this.Active = Active;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="InputPermissionMethodResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class InputPermissionMethodResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.Result InputPermissionMethodResult;
+        
+        public InputPermissionMethodResponse() {
+        }
+        
+        public InputPermissionMethodResponse(MashadLeatherEcommerce.KiyanService.Result InputPermissionMethodResult) {
+            this.InputPermissionMethodResult = InputPermissionMethodResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ProductDescription", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class ProductDescriptionRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        public ProductDescriptionRequest() {
+        }
+        
+        public ProductDescriptionRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ProductDescriptionResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class ProductDescriptionResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfProductDescription ProductDescriptionResult;
+        
+        public ProductDescriptionResponse() {
+        }
+        
+        public ProductDescriptionResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfProductDescription ProductDescriptionResult) {
+            this.ProductDescriptionResult = ProductDescriptionResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetItemList", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetItemListRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public string StartDate;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=1)]
+        public string EndDate;
+        
+        public GetItemListRequest() {
+        }
+        
+        public GetItemListRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string StartDate, string EndDate) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.StartDate = StartDate;
+            this.EndDate = EndDate;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetItemListResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetItemListResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfitm GetItemListResult;
+        
+        public GetItemListResponse() {
+        }
+        
+        public GetItemListResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfitm GetItemListResult) {
+            this.GetItemListResult = GetItemListResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetItemListWithPagination", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetItemListWithPaginationRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public int RowNoBgin;
+        
+        public GetItemListWithPaginationRequest() {
+        }
+        
+        public GetItemListWithPaginationRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int RowNoBgin) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.RowNoBgin = RowNoBgin;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetItemListWithPaginationResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetItemListWithPaginationResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfitmWithRowNo GetItemListWithPaginationResult;
+        
+        public GetItemListWithPaginationResponse() {
+        }
+        
+        public GetItemListWithPaginationResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfitmWithRowNo GetItemListWithPaginationResult) {
+            this.GetItemListWithPaginationResult = GetItemListWithPaginationResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetItemInfoWithInventoryIDPlusJet", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetItemInfoWithInventoryIDPlusJetRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public int inventoryID;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=1)]
+        public int RowNoBgin;
+        
+        public GetItemInfoWithInventoryIDPlusJetRequest() {
+        }
+        
+        public GetItemInfoWithInventoryIDPlusJetRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int inventoryID, int RowNoBgin) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.inventoryID = inventoryID;
+            this.RowNoBgin = RowNoBgin;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetItemInfoWithInventoryIDPlusJetResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetItemInfoWithInventoryIDPlusJetResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfgoodDetail GetItemInfoWithInventoryIDPlusJetResult;
+        
+        public GetItemInfoWithInventoryIDPlusJetResponse() {
+        }
+        
+        public GetItemInfoWithInventoryIDPlusJetResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfgoodDetail GetItemInfoWithInventoryIDPlusJetResult) {
+            this.GetItemInfoWithInventoryIDPlusJetResult = GetItemInfoWithInventoryIDPlusJetResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetItemListWithParentInfo", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetItemListWithParentInfoRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public string StartDate;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=1)]
+        public string EndDate;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=2)]
+        public bool Active;
+        
+        public GetItemListWithParentInfoRequest() {
+        }
+        
+        public GetItemListWithParentInfoRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string StartDate, string EndDate, bool Active) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.StartDate = StartDate;
+            this.EndDate = EndDate;
+            this.Active = Active;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetItemListWithParentInfoResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetItemListWithParentInfoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfitmWithParentInfo GetItemListWithParentInfoResult;
+        
+        public GetItemListWithParentInfoResponse() {
+        }
+        
+        public GetItemListWithParentInfoResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfitmWithParentInfo GetItemListWithParentInfoResult) {
+            this.GetItemListWithParentInfoResult = GetItemListWithParentInfoResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetItemListWithinventoryID", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetItemListWithinventoryIDRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public int inventory;
+        
+        public GetItemListWithinventoryIDRequest() {
+        }
+        
+        public GetItemListWithinventoryIDRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int inventory) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.inventory = inventory;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetItemListWithinventoryIDResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetItemListWithinventoryIDResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfitm GetItemListWithinventoryIDResult;
+        
+        public GetItemListWithinventoryIDResponse() {
+        }
+        
+        public GetItemListWithinventoryIDResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfitm GetItemListWithinventoryIDResult) {
+            this.GetItemListWithinventoryIDResult = GetItemListWithinventoryIDResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetItemInfoWithinventoryID", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetItemInfoWithinventoryIDRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public int[] inventories;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=1)]
+        public string StartDate;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=2)]
+        public string EndDate;
+        
+        public GetItemInfoWithinventoryIDRequest() {
+        }
+        
+        public GetItemInfoWithinventoryIDRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int[] inventories, string StartDate, string EndDate) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.inventories = inventories;
+            this.StartDate = StartDate;
+            this.EndDate = EndDate;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetItemInfoWithinventoryIDResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetItemInfoWithinventoryIDResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfitm3 GetItemInfoWithinventoryIDResult;
+        
+        public GetItemInfoWithinventoryIDResponse() {
+        }
+        
+        public GetItemInfoWithinventoryIDResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfitm3 GetItemInfoWithinventoryIDResult) {
+            this.GetItemInfoWithinventoryIDResult = GetItemInfoWithinventoryIDResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetItemInfoWithinventoryIDandBarcodes", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetItemInfoWithinventoryIDandBarcodesRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public int[] inventories;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=1)]
+        public string[] barcodes;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=2)]
+        public string StartDate;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=3)]
+        public string EndDate;
+        
+        public GetItemInfoWithinventoryIDandBarcodesRequest() {
+        }
+        
+        public GetItemInfoWithinventoryIDandBarcodesRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int[] inventories, string[] barcodes, string StartDate, string EndDate) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.inventories = inventories;
+            this.barcodes = barcodes;
+            this.StartDate = StartDate;
+            this.EndDate = EndDate;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetItemInfoWithinventoryIDandBarcodesResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetItemInfoWithinventoryIDandBarcodesResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfitm3 GetItemInfoWithinventoryIDandBarcodesResult;
+        
+        public GetItemInfoWithinventoryIDandBarcodesResponse() {
+        }
+        
+        public GetItemInfoWithinventoryIDandBarcodesResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfitm3 GetItemInfoWithinventoryIDandBarcodesResult) {
+            this.GetItemInfoWithinventoryIDandBarcodesResult = GetItemInfoWithinventoryIDandBarcodesResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetGeneralItemInfo", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetGeneralItemInfoRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public int retailStoreId;
+        
+        public GetGeneralItemInfoRequest() {
+        }
+        
+        public GetGeneralItemInfoRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int retailStoreId) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.retailStoreId = retailStoreId;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetGeneralItemInfoResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetGeneralItemInfoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfGeneralItemInfoModel GetGeneralItemInfoResult;
+        
+        public GetGeneralItemInfoResponse() {
+        }
+        
+        public GetGeneralItemInfoResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfGeneralItemInfoModel GetGeneralItemInfoResult) {
+            this.GetGeneralItemInfoResult = GetGeneralItemInfoResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetGeneralItemInfo_C", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetGeneralItemInfo_CRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public int retailStoreId;
+        
+        public GetGeneralItemInfo_CRequest() {
+        }
+        
+        public GetGeneralItemInfo_CRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int retailStoreId) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.retailStoreId = retailStoreId;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetGeneralItemInfo_CResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetGeneralItemInfo_CResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfGeneralItemInfo_CModel GetGeneralItemInfo_CResult;
+        
+        public GetGeneralItemInfo_CResponse() {
+        }
+        
+        public GetGeneralItemInfo_CResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfGeneralItemInfo_CModel GetGeneralItemInfo_CResult) {
+            this.GetGeneralItemInfo_CResult = GetGeneralItemInfo_CResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetGeneralItemInfo_C_Plus", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetGeneralItemInfo_C_PlusRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public int retailStoreId;
+        
+        public GetGeneralItemInfo_C_PlusRequest() {
+        }
+        
+        public GetGeneralItemInfo_C_PlusRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int retailStoreId) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.retailStoreId = retailStoreId;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetGeneralItemInfo_C_PlusResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetGeneralItemInfo_C_PlusResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfGeneralItemInfo_CModel GetGeneralItemInfo_C_PlusResult;
+        
+        public GetGeneralItemInfo_C_PlusResponse() {
+        }
+        
+        public GetGeneralItemInfo_C_PlusResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfGeneralItemInfo_CModel GetGeneralItemInfo_C_PlusResult) {
+            this.GetGeneralItemInfo_C_PlusResult = GetGeneralItemInfo_C_PlusResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetGeneralItemInfoWithBarcode", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetGeneralItemInfoWithBarcodeRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public int retailStoreId;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=1)]
+        public string barcode;
+        
+        public GetGeneralItemInfoWithBarcodeRequest() {
+        }
+        
+        public GetGeneralItemInfoWithBarcodeRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int retailStoreId, string barcode) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.retailStoreId = retailStoreId;
+            this.barcode = barcode;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetGeneralItemInfoWithBarcodeResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetGeneralItemInfoWithBarcodeResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfGeneralItemInfoModel GetGeneralItemInfoWithBarcodeResult;
+        
+        public GetGeneralItemInfoWithBarcodeResponse() {
+        }
+        
+        public GetGeneralItemInfoWithBarcodeResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfGeneralItemInfoModel GetGeneralItemInfoWithBarcodeResult) {
+            this.GetGeneralItemInfoWithBarcodeResult = GetGeneralItemInfoWithBarcodeResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetItemsQuantityAllInventory", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetItemsQuantityAllInventoryRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public int[] retailStores;
+        
+        public GetItemsQuantityAllInventoryRequest() {
+        }
+        
+        public GetItemsQuantityAllInventoryRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int[] retailStores) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.retailStores = retailStores;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetItemsQuantityAllInventoryResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetItemsQuantityAllInventoryResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfItemStock GetItemsQuantityAllInventoryResult;
+        
+        public GetItemsQuantityAllInventoryResponse() {
+        }
+        
+        public GetItemsQuantityAllInventoryResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfItemStock GetItemsQuantityAllInventoryResult) {
+            this.GetItemsQuantityAllInventoryResult = GetItemsQuantityAllInventoryResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetItemsQuantityAllInventoryWithBarcode", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetItemsQuantityAllInventoryWithBarcodeRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public int[] retailStores;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=1)]
+        public string[] barcodes;
+        
+        public GetItemsQuantityAllInventoryWithBarcodeRequest() {
+        }
+        
+        public GetItemsQuantityAllInventoryWithBarcodeRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int[] retailStores, string[] barcodes) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.retailStores = retailStores;
+            this.barcodes = barcodes;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetItemsQuantityAllInventoryWithBarcodeResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetItemsQuantityAllInventoryWithBarcodeResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfItemStock GetItemsQuantityAllInventoryWithBarcodeResult;
+        
+        public GetItemsQuantityAllInventoryWithBarcodeResponse() {
+        }
+        
+        public GetItemsQuantityAllInventoryWithBarcodeResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfItemStock GetItemsQuantityAllInventoryWithBarcodeResult) {
+            this.GetItemsQuantityAllInventoryWithBarcodeResult = GetItemsQuantityAllInventoryWithBarcodeResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetItemsQuantityListInventoryWithBarcode", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetItemsQuantityListInventoryWithBarcodeRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public int[] Inventories;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=1)]
+        public string barcode;
+        
+        public GetItemsQuantityListInventoryWithBarcodeRequest() {
+        }
+        
+        public GetItemsQuantityListInventoryWithBarcodeRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int[] Inventories, string barcode) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.Inventories = Inventories;
+            this.barcode = barcode;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetItemsQuantityListInventoryWithBarcodeResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetItemsQuantityListInventoryWithBarcodeResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfItemStock2 GetItemsQuantityListInventoryWithBarcodeResult;
+        
+        public GetItemsQuantityListInventoryWithBarcodeResponse() {
+        }
+        
+        public GetItemsQuantityListInventoryWithBarcodeResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfItemStock2 GetItemsQuantityListInventoryWithBarcodeResult) {
+            this.GetItemsQuantityListInventoryWithBarcodeResult = GetItemsQuantityListInventoryWithBarcodeResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetItemQuantityWithInventoryID", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetItemQuantityWithInventoryIDRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public int inventory;
+        
+        public GetItemQuantityWithInventoryIDRequest() {
+        }
+        
+        public GetItemQuantityWithInventoryIDRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int inventory) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.inventory = inventory;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetItemQuantityWithInventoryIDResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetItemQuantityWithInventoryIDResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfBarCodeStock GetItemQuantityWithInventoryIDResult;
+        
+        public GetItemQuantityWithInventoryIDResponse() {
+        }
+        
+        public GetItemQuantityWithInventoryIDResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfBarCodeStock GetItemQuantityWithInventoryIDResult) {
+            this.GetItemQuantityWithInventoryIDResult = GetItemQuantityWithInventoryIDResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetItemsInformationWithInventoryIDandBarcodes", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetItemsInformationWithInventoryIDandBarcodesRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public int inventoryId;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=1)]
+        public string[] barcodes;
+        
+        public GetItemsInformationWithInventoryIDandBarcodesRequest() {
+        }
+        
+        public GetItemsInformationWithInventoryIDandBarcodesRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int inventoryId, string[] barcodes) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.inventoryId = inventoryId;
+            this.barcodes = barcodes;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetItemsInformationWithInventoryIDandBarcodesResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetItemsInformationWithInventoryIDandBarcodesResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfitm GetItemsInformationWithInventoryIDandBarcodesResult;
+        
+        public GetItemsInformationWithInventoryIDandBarcodesResponse() {
+        }
+        
+        public GetItemsInformationWithInventoryIDandBarcodesResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfitm GetItemsInformationWithInventoryIDandBarcodesResult) {
+            this.GetItemsInformationWithInventoryIDandBarcodesResult = GetItemsInformationWithInventoryIDandBarcodesResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetItemInfo", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetItemInfoRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public string barcode;
+        
+        public GetItemInfoRequest() {
+        }
+        
+        public GetItemInfoRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string barcode) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.barcode = barcode;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetItemInfoResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetItemInfoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfitm GetItemInfoResult;
+        
+        public GetItemInfoResponse() {
+        }
+        
+        public GetItemInfoResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfitm GetItemInfoResult) {
+            this.GetItemInfoResult = GetItemInfoResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetArrayItemInfo", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetArrayItemInfoRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public string[] barcodes;
+        
+        public GetArrayItemInfoRequest() {
+        }
+        
+        public GetArrayItemInfoRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string[] barcodes) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.barcodes = barcodes;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetArrayItemInfoResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetArrayItemInfoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfitm GetArrayItemInfoResult;
+        
+        public GetArrayItemInfoResponse() {
+        }
+        
+        public GetArrayItemInfoResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfitm GetArrayItemInfoResult) {
+            this.GetArrayItemInfoResult = GetArrayItemInfoResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ItemsCostInformationWithBarcodes", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class ItemsCostInformationWithBarcodesRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public string[] barcodes;
+        
+        public ItemsCostInformationWithBarcodesRequest() {
+        }
+        
+        public ItemsCostInformationWithBarcodesRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string[] barcodes) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.barcodes = barcodes;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ItemsCostInformationWithBarcodesResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class ItemsCostInformationWithBarcodesResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfitm2 ItemsCostInformationWithBarcodesResult;
+        
+        public ItemsCostInformationWithBarcodesResponse() {
+        }
+        
+        public ItemsCostInformationWithBarcodesResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfitm2 ItemsCostInformationWithBarcodesResult) {
+            this.ItemsCostInformationWithBarcodesResult = ItemsCostInformationWithBarcodesResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetItemInfoWithItemID", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetItemInfoWithItemIDRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public int ItemID;
+        
+        public GetItemInfoWithItemIDRequest() {
+        }
+        
+        public GetItemInfoWithItemIDRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int ItemID) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.ItemID = ItemID;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetItemInfoWithItemIDResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetItemInfoWithItemIDResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfitm GetItemInfoWithItemIDResult;
+        
+        public GetItemInfoWithItemIDResponse() {
+        }
+        
+        public GetItemInfoWithItemIDResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfitm GetItemInfoWithItemIDResult) {
+            this.GetItemInfoWithItemIDResult = GetItemInfoWithItemIDResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetItemInfoWithItemIDWithStatus", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetItemInfoWithItemIDWithStatusRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public int ItemID;
+        
+        public GetItemInfoWithItemIDWithStatusRequest() {
+        }
+        
+        public GetItemInfoWithItemIDWithStatusRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int ItemID) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.ItemID = ItemID;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetItemInfoWithItemIDWithStatusResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetItemInfoWithItemIDWithStatusResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfitm4 GetItemInfoWithItemIDWithStatusResult;
+        
+        public GetItemInfoWithItemIDWithStatusResponse() {
+        }
+        
+        public GetItemInfoWithItemIDWithStatusResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfitm4 GetItemInfoWithItemIDWithStatusResult) {
+            this.GetItemInfoWithItemIDWithStatusResult = GetItemInfoWithItemIDWithStatusResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetItemInfoWithGroupID", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetItemInfoWithGroupIDRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public int groupID;
+        
+        public GetItemInfoWithGroupIDRequest() {
+        }
+        
+        public GetItemInfoWithGroupIDRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int groupID) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.groupID = groupID;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetItemInfoWithGroupIDResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetItemInfoWithGroupIDResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfitm GetItemInfoWithGroupIDResult;
+        
+        public GetItemInfoWithGroupIDResponse() {
+        }
+        
+        public GetItemInfoWithGroupIDResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfitm GetItemInfoWithGroupIDResult) {
+            this.GetItemInfoWithGroupIDResult = GetItemInfoWithGroupIDResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetItemStockStatus", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetItemStockStatusRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public string Barcode;
+        
+        public GetItemStockStatusRequest() {
+        }
+        
+        public GetItemStockStatusRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string Barcode) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.Barcode = Barcode;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetItemStockStatusResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetItemStockStatusResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfLoanItemStock GetItemStockStatusResult;
+        
+        public GetItemStockStatusResponse() {
+        }
+        
+        public GetItemStockStatusResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfLoanItemStock GetItemStockStatusResult) {
+            this.GetItemStockStatusResult = GetItemStockStatusResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetTemplateProperty", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetTemplatePropertyRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        public GetTemplatePropertyRequest() {
+        }
+        
+        public GetTemplatePropertyRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetTemplatePropertyResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetTemplatePropertyResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfTemplate GetTemplatePropertyResult;
+        
+        public GetTemplatePropertyResponse() {
+        }
+        
+        public GetTemplatePropertyResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfTemplate GetTemplatePropertyResult) {
+            this.GetTemplatePropertyResult = GetTemplatePropertyResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetTemplateAttributes", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetTemplateAttributesRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        public GetTemplateAttributesRequest() {
+        }
+        
+        public GetTemplateAttributesRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetTemplateAttributesResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetTemplateAttributesResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfAttribute GetTemplateAttributesResult;
+        
+        public GetTemplateAttributesResponse() {
+        }
+        
+        public GetTemplateAttributesResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfAttribute GetTemplateAttributesResult) {
+            this.GetTemplateAttributesResult = GetTemplateAttributesResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetTemplateItemInfo", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetTemplateItemInfoRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public string Barcode;
+        
+        public GetTemplateItemInfoRequest() {
+        }
+        
+        public GetTemplateItemInfoRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string Barcode) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.Barcode = Barcode;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetTemplateItemInfoResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetTemplateItemInfoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfTemplateItem GetTemplateItemInfoResult;
+        
+        public GetTemplateItemInfoResponse() {
+        }
+        
+        public GetTemplateItemInfoResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfTemplateItem GetTemplateItemInfoResult) {
+            this.GetTemplateItemInfoResult = GetTemplateItemInfoResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetAllTemplateItems", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetAllTemplateItemsRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        public GetAllTemplateItemsRequest() {
+        }
+        
+        public GetAllTemplateItemsRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetAllTemplateItemsResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetAllTemplateItemsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfTemplateItem GetAllTemplateItemsResult;
+        
+        public GetAllTemplateItemsResponse() {
+        }
+        
+        public GetAllTemplateItemsResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfTemplateItem GetAllTemplateItemsResult) {
+            this.GetAllTemplateItemsResult = GetAllTemplateItemsResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetMatrixProperty", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetMatrixPropertyRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        public GetMatrixPropertyRequest() {
+        }
+        
+        public GetMatrixPropertyRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetMatrixPropertyResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetMatrixPropertyResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfTemplate GetMatrixPropertyResult;
+        
+        public GetMatrixPropertyResponse() {
+        }
+        
+        public GetMatrixPropertyResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfTemplate GetMatrixPropertyResult) {
+            this.GetMatrixPropertyResult = GetMatrixPropertyResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetMatrixAttribute", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetMatrixAttributeRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        public GetMatrixAttributeRequest() {
+        }
+        
+        public GetMatrixAttributeRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetMatrixAttributeResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetMatrixAttributeResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfAttribute GetMatrixAttributeResult;
+        
+        public GetMatrixAttributeResponse() {
+        }
+        
+        public GetMatrixAttributeResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfAttribute GetMatrixAttributeResult) {
+            this.GetMatrixAttributeResult = GetMatrixAttributeResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetMatrixItemInfo", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetMatrixItemInfoRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public string Barcode;
+        
+        public GetMatrixItemInfoRequest() {
+        }
+        
+        public GetMatrixItemInfoRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string Barcode) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.Barcode = Barcode;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetMatrixItemInfoResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetMatrixItemInfoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfTemplateItem GetMatrixItemInfoResult;
+        
+        public GetMatrixItemInfoResponse() {
+        }
+        
+        public GetMatrixItemInfoResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfTemplateItem GetMatrixItemInfoResult) {
+            this.GetMatrixItemInfoResult = GetMatrixItemInfoResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetAllMatrixItems", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetAllMatrixItemsRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        public GetAllMatrixItemsRequest() {
+        }
+        
+        public GetAllMatrixItemsRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetAllMatrixItemsResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetAllMatrixItemsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfTemplateItem GetAllMatrixItemsResult;
+        
+        public GetAllMatrixItemsResponse() {
+        }
+        
+        public GetAllMatrixItemsResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfTemplateItem GetAllMatrixItemsResult) {
+            this.GetAllMatrixItemsResult = GetAllMatrixItemsResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetPosDepartmentList", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetPosDepartmentListRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        public GetPosDepartmentListRequest() {
+        }
+        
+        public GetPosDepartmentListRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetPosDepartmentListResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetPosDepartmentListResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfPosDepartment GetPosDepartmentListResult;
+        
+        public GetPosDepartmentListResponse() {
+        }
+        
+        public GetPosDepartmentListResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfPosDepartment GetPosDepartmentListResult) {
+            this.GetPosDepartmentListResult = GetPosDepartmentListResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetPosDepartmentLevelList", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetPosDepartmentLevelListRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        public GetPosDepartmentLevelListRequest() {
+        }
+        
+        public GetPosDepartmentLevelListRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetPosDepartmentLevelListResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetPosDepartmentLevelListResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfPosDepartmentList GetPosDepartmentLevelListResult;
+        
+        public GetPosDepartmentLevelListResponse() {
+        }
+        
+        public GetPosDepartmentLevelListResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfPosDepartmentList GetPosDepartmentLevelListResult) {
+            this.GetPosDepartmentLevelListResult = GetPosDepartmentLevelListResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ApproveDocument", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class ApproveDocumentRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ItemStock[] LstTransfer;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=1)]
+        public int SourceRsID;
+        
+        public ApproveDocumentRequest() {
+        }
+        
+        public ApproveDocumentRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.ItemStock[] LstTransfer, int SourceRsID) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.LstTransfer = LstTransfer;
+            this.SourceRsID = SourceRsID;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ApproveDocumentResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class ApproveDocumentResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.QuickTransferReultModel ApproveDocumentResult;
+        
+        public ApproveDocumentResponse() {
+        }
+        
+        public ApproveDocumentResponse(MashadLeatherEcommerce.KiyanService.QuickTransferReultModel ApproveDocumentResult) {
+            this.ApproveDocumentResult = ApproveDocumentResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="QuickExternalTransfer", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class QuickExternalTransferRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ItemStock[] LstTransfer;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=1)]
+        public int DestinationRsID;
+        
+        public QuickExternalTransferRequest() {
+        }
+        
+        public QuickExternalTransferRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.ItemStock[] LstTransfer, int DestinationRsID) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.LstTransfer = LstTransfer;
+            this.DestinationRsID = DestinationRsID;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="QuickExternalTransferResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class QuickExternalTransferResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.QuickTransferReultModel QuickExternalTransferResult;
+        
+        public QuickExternalTransferResponse() {
+        }
+        
+        public QuickExternalTransferResponse(MashadLeatherEcommerce.KiyanService.QuickTransferReultModel QuickExternalTransferResult) {
+            this.QuickExternalTransferResult = QuickExternalTransferResult;
         }
     }
     
@@ -4137,11 +11700,15 @@ namespace MashadLeatherEcommerce.KiyanService {
         [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
         public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
         
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
         public GetInventoriesListRequest() {
         }
         
-        public GetInventoriesListRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader) {
+        public GetInventoriesListRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser) {
             this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
         }
     }
     
@@ -4152,13 +11719,1440 @@ namespace MashadLeatherEcommerce.KiyanService {
     public partial class GetInventoriesListResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public MashadLeatherEcommerce.KiyanService.InventoriesListResultModel GetInventoriesListResult;
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfInventory GetInventoriesListResult;
         
         public GetInventoriesListResponse() {
         }
         
-        public GetInventoriesListResponse(MashadLeatherEcommerce.KiyanService.InventoriesListResultModel GetInventoriesListResult) {
+        public GetInventoriesListResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfInventory GetInventoriesListResult) {
             this.GetInventoriesListResult = GetInventoriesListResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="CreateCustomer", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class CreateCustomerRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.Customer NewCustomer;
+        
+        public CreateCustomerRequest() {
+        }
+        
+        public CreateCustomerRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.Customer NewCustomer) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.NewCustomer = NewCustomer;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="CreateCustomerResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class CreateCustomerResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.SaleResultModel CreateCustomerResult;
+        
+        public CreateCustomerResponse() {
+        }
+        
+        public CreateCustomerResponse(MashadLeatherEcommerce.KiyanService.SaleResultModel CreateCustomerResult) {
+            this.CreateCustomerResult = CreateCustomerResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="CreateCustomerToRS", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class CreateCustomerToRSRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.Customer NewCustomer;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=1)]
+        public int RetailStoreID;
+        
+        public CreateCustomerToRSRequest() {
+        }
+        
+        public CreateCustomerToRSRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.Customer NewCustomer, int RetailStoreID) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.NewCustomer = NewCustomer;
+            this.RetailStoreID = RetailStoreID;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="CreateCustomerToRSResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class CreateCustomerToRSResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.SaleResultModel CreateCustomerToRSResult;
+        
+        public CreateCustomerToRSResponse() {
+        }
+        
+        public CreateCustomerToRSResponse(MashadLeatherEcommerce.KiyanService.SaleResultModel CreateCustomerToRSResult) {
+            this.CreateCustomerToRSResult = CreateCustomerToRSResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetCustomerList", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetCustomerListRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public string StartDate;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=1)]
+        public string EndDate;
+        
+        public GetCustomerListRequest() {
+        }
+        
+        public GetCustomerListRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string StartDate, string EndDate) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.StartDate = StartDate;
+            this.EndDate = EndDate;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetCustomerListResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetCustomerListResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfCustomer GetCustomerListResult;
+        
+        public GetCustomerListResponse() {
+        }
+        
+        public GetCustomerListResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfCustomer GetCustomerListResult) {
+            this.GetCustomerListResult = GetCustomerListResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetCustomerInfoWithCustomerID", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetCustomerInfoWithCustomerIDRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public int customerID;
+        
+        public GetCustomerInfoWithCustomerIDRequest() {
+        }
+        
+        public GetCustomerInfoWithCustomerIDRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int customerID) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.customerID = customerID;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetCustomerInfoWithCustomerIDResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetCustomerInfoWithCustomerIDResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfCustomer GetCustomerInfoWithCustomerIDResult;
+        
+        public GetCustomerInfoWithCustomerIDResponse() {
+        }
+        
+        public GetCustomerInfoWithCustomerIDResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfCustomer GetCustomerInfoWithCustomerIDResult) {
+            this.GetCustomerInfoWithCustomerIDResult = GetCustomerInfoWithCustomerIDResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetCustomerInfoWithMemberID", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetCustomerInfoWithMemberIDRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public string MemberID;
+        
+        public GetCustomerInfoWithMemberIDRequest() {
+        }
+        
+        public GetCustomerInfoWithMemberIDRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string MemberID) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.MemberID = MemberID;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetCustomerInfoWithMemberIDResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetCustomerInfoWithMemberIDResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfCustomer GetCustomerInfoWithMemberIDResult;
+        
+        public GetCustomerInfoWithMemberIDResponse() {
+        }
+        
+        public GetCustomerInfoWithMemberIDResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfCustomer GetCustomerInfoWithMemberIDResult) {
+            this.GetCustomerInfoWithMemberIDResult = GetCustomerInfoWithMemberIDResult;
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public enum FiledName {
+        
+        /// <remarks/>
+        SocialSecurityNumber,
+        
+        /// <remarks/>
+        MemberID,
+        
+        /// <remarks/>
+        CustomerID,
+        
+        /// <remarks/>
+        Mobile,
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetCustomersBaseInfo", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetCustomersBaseInfoRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.FiledName filedName;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=1)]
+        public string[] value;
+        
+        public GetCustomersBaseInfoRequest() {
+        }
+        
+        public GetCustomersBaseInfoRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.FiledName filedName, string[] value) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.filedName = filedName;
+            this.value = value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetCustomersBaseInfoResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetCustomersBaseInfoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfCustomer GetCustomersBaseInfoResult;
+        
+        public GetCustomersBaseInfoResponse() {
+        }
+        
+        public GetCustomersBaseInfoResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfCustomer GetCustomersBaseInfoResult) {
+            this.GetCustomersBaseInfoResult = GetCustomersBaseInfoResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="UpdateCustomerInfo", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class UpdateCustomerInfoRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.Customer UpdattedCustomer;
+        
+        public UpdateCustomerInfoRequest() {
+        }
+        
+        public UpdateCustomerInfoRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.Customer UpdattedCustomer) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.UpdattedCustomer = UpdattedCustomer;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="UpdateCustomerInfoResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class UpdateCustomerInfoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public string UpdateCustomerInfoResult;
+        
+        public UpdateCustomerInfoResponse() {
+        }
+        
+        public UpdateCustomerInfoResponse(string UpdateCustomerInfoResult) {
+            this.UpdateCustomerInfoResult = UpdateCustomerInfoResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetCustomerTransaction", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetCustomerTransactionRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public string StartDate;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=1)]
+        public string EndDate;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=2)]
+        public string CustomerID;
+        
+        public GetCustomerTransactionRequest() {
+        }
+        
+        public GetCustomerTransactionRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string StartDate, string EndDate, string CustomerID) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.StartDate = StartDate;
+            this.EndDate = EndDate;
+            this.CustomerID = CustomerID;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetCustomerTransactionResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetCustomerTransactionResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfCustomerTransaction GetCustomerTransactionResult;
+        
+        public GetCustomerTransactionResponse() {
+        }
+        
+        public GetCustomerTransactionResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfCustomerTransaction GetCustomerTransactionResult) {
+            this.GetCustomerTransactionResult = GetCustomerTransactionResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetTransactionWithDs_info_2", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetTransactionWithDs_info_2Request {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public int RS;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=1)]
+        public System.DateTime StartDate;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=2)]
+        public System.DateTime EndDate;
+        
+        public GetTransactionWithDs_info_2Request() {
+        }
+        
+        public GetTransactionWithDs_info_2Request(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int RS, System.DateTime StartDate, System.DateTime EndDate) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.RS = RS;
+            this.StartDate = StartDate;
+            this.EndDate = EndDate;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetTransactionWithDs_info_2Response", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetTransactionWithDs_info_2Response {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfReceiptDsInfModel GetTransactionWithDs_info_2Result;
+        
+        public GetTransactionWithDs_info_2Response() {
+        }
+        
+        public GetTransactionWithDs_info_2Response(MashadLeatherEcommerce.KiyanService.ResponseDataOfReceiptDsInfModel GetTransactionWithDs_info_2Result) {
+            this.GetTransactionWithDs_info_2Result = GetTransactionWithDs_info_2Result;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetCustomerTransactionWithDataFilter", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetCustomerTransactionWithDataFilterRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public System.DateTime StartDate;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=1)]
+        public System.DateTime EndDate;
+        
+        public GetCustomerTransactionWithDataFilterRequest() {
+        }
+        
+        public GetCustomerTransactionWithDataFilterRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, System.DateTime StartDate, System.DateTime EndDate) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.StartDate = StartDate;
+            this.EndDate = EndDate;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetCustomerTransactionWithDataFilterResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetCustomerTransactionWithDataFilterResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfReciepModel2 GetCustomerTransactionWithDataFilterResult;
+        
+        public GetCustomerTransactionWithDataFilterResponse() {
+        }
+        
+        public GetCustomerTransactionWithDataFilterResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfReciepModel2 GetCustomerTransactionWithDataFilterResult) {
+            this.GetCustomerTransactionWithDataFilterResult = GetCustomerTransactionWithDataFilterResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetCustomersReceipts", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetCustomersReceiptsRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public int[] customersIDList;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=1)]
+        public System.DateTime startDate;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=2)]
+        public System.DateTime endDate;
+        
+        public GetCustomersReceiptsRequest() {
+        }
+        
+        public GetCustomersReceiptsRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int[] customersIDList, System.DateTime startDate, System.DateTime endDate) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.customersIDList = customersIDList;
+            this.startDate = startDate;
+            this.endDate = endDate;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetCustomersReceiptsResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetCustomersReceiptsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfReceiptModel GetCustomersReceiptsResult;
+        
+        public GetCustomersReceiptsResponse() {
+        }
+        
+        public GetCustomersReceiptsResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfReceiptModel GetCustomersReceiptsResult) {
+            this.GetCustomersReceiptsResult = GetCustomersReceiptsResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetCustomerAddressInfoWithCustomerID", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetCustomerAddressInfoWithCustomerIDRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public int customerID;
+        
+        public GetCustomerAddressInfoWithCustomerIDRequest() {
+        }
+        
+        public GetCustomerAddressInfoWithCustomerIDRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int customerID) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.customerID = customerID;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetCustomerAddressInfoWithCustomerIDResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetCustomerAddressInfoWithCustomerIDResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfCustomerAddress GetCustomerAddressInfoWithCustomerIDResult;
+        
+        public GetCustomerAddressInfoWithCustomerIDResponse() {
+        }
+        
+        public GetCustomerAddressInfoWithCustomerIDResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfCustomerAddress GetCustomerAddressInfoWithCustomerIDResult) {
+            this.GetCustomerAddressInfoWithCustomerIDResult = GetCustomerAddressInfoWithCustomerIDResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ValidateGiftCertificates", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class ValidateGiftCertificatesRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public string[] barcode;
+        
+        public ValidateGiftCertificatesRequest() {
+        }
+        
+        public ValidateGiftCertificatesRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string[] barcode) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.barcode = barcode;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ValidateGiftCertificatesResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class ValidateGiftCertificatesResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfGiftCertificate ValidateGiftCertificatesResult;
+        
+        public ValidateGiftCertificatesResponse() {
+        }
+        
+        public ValidateGiftCertificatesResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfGiftCertificate ValidateGiftCertificatesResult) {
+            this.ValidateGiftCertificatesResult = ValidateGiftCertificatesResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="CreateGiftCertificate", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class CreateGiftCertificateRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public string barcode;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=1)]
+        public string memberID;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=2)]
+        public decimal Amount;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=3)]
+        public int BonHOrBonT;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=4)]
+        public int BonCartType;
+        
+        public CreateGiftCertificateRequest() {
+        }
+        
+        public CreateGiftCertificateRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string barcode, string memberID, decimal Amount, int BonHOrBonT, int BonCartType) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.barcode = barcode;
+            this.memberID = memberID;
+            this.Amount = Amount;
+            this.BonHOrBonT = BonHOrBonT;
+            this.BonCartType = BonCartType;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="CreateGiftCertificateResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class CreateGiftCertificateResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfResult CreateGiftCertificateResult;
+        
+        public CreateGiftCertificateResponse() {
+        }
+        
+        public CreateGiftCertificateResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfResult CreateGiftCertificateResult) {
+            this.CreateGiftCertificateResult = CreateGiftCertificateResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetUnUsedGiftCertificates", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetUnUsedGiftCertificatesRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        public GetUnUsedGiftCertificatesRequest() {
+        }
+        
+        public GetUnUsedGiftCertificatesRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetUnUsedGiftCertificatesResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetUnUsedGiftCertificatesResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfUnUsedGiftCertificates GetUnUsedGiftCertificatesResult;
+        
+        public GetUnUsedGiftCertificatesResponse() {
+        }
+        
+        public GetUnUsedGiftCertificatesResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfUnUsedGiftCertificates GetUnUsedGiftCertificatesResult) {
+            this.GetUnUsedGiftCertificatesResult = GetUnUsedGiftCertificatesResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetUsedGiftCertificates", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetUsedGiftCertificatesRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public string StartDate;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=1)]
+        public string EndDate;
+        
+        public GetUsedGiftCertificatesRequest() {
+        }
+        
+        public GetUsedGiftCertificatesRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string StartDate, string EndDate) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.StartDate = StartDate;
+            this.EndDate = EndDate;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetUsedGiftCertificatesResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetUsedGiftCertificatesResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfUsedGiftCertificate GetUsedGiftCertificatesResult;
+        
+        public GetUsedGiftCertificatesResponse() {
+        }
+        
+        public GetUsedGiftCertificatesResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfUsedGiftCertificate GetUsedGiftCertificatesResult) {
+            this.GetUsedGiftCertificatesResult = GetUsedGiftCertificatesResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetUsedCreditCustomer", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetUsedCreditCustomerRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public string StartDate;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=1)]
+        public string EndDate;
+        
+        public GetUsedCreditCustomerRequest() {
+        }
+        
+        public GetUsedCreditCustomerRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string StartDate, string EndDate) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.StartDate = StartDate;
+            this.EndDate = EndDate;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetUsedCreditCustomerResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetUsedCreditCustomerResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfUsedCreditCustomer GetUsedCreditCustomerResult;
+        
+        public GetUsedCreditCustomerResponse() {
+        }
+        
+        public GetUsedCreditCustomerResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfUsedCreditCustomer GetUsedCreditCustomerResult) {
+            this.GetUsedCreditCustomerResult = GetUsedCreditCustomerResult;
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
+    public enum OperationCredit {
+        
+        /// <remarks/>
+        Repalce,
+        
+        /// <remarks/>
+        AddUpdate,
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="CustomerCreditOperations", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class CustomerCreditOperationsRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public int customersID;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=1)]
+        public decimal credit;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=2)]
+        public MashadLeatherEcommerce.KiyanService.OperationCredit operationCredit;
+        
+        public CustomerCreditOperationsRequest() {
+        }
+        
+        public CustomerCreditOperationsRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int customersID, decimal credit, MashadLeatherEcommerce.KiyanService.OperationCredit operationCredit) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.customersID = customersID;
+            this.credit = credit;
+            this.operationCredit = operationCredit;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="CustomerCreditOperationsResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class CustomerCreditOperationsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfString CustomerCreditOperationsResult;
+        
+        public CustomerCreditOperationsResponse() {
+        }
+        
+        public CustomerCreditOperationsResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfString CustomerCreditOperationsResult) {
+            this.CustomerCreditOperationsResult = CustomerCreditOperationsResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetCustomerGroup", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetCustomerGroupRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        public GetCustomerGroupRequest() {
+        }
+        
+        public GetCustomerGroupRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetCustomerGroupResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetCustomerGroupResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfcustomerGroup GetCustomerGroupResult;
+        
+        public GetCustomerGroupResponse() {
+        }
+        
+        public GetCustomerGroupResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfcustomerGroup GetCustomerGroupResult) {
+            this.GetCustomerGroupResult = GetCustomerGroupResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Buycustomers", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class BuycustomersRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public string StartDate;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=1)]
+        public string EndDate;
+        
+        public BuycustomersRequest() {
+        }
+        
+        public BuycustomersRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string StartDate, string EndDate) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.StartDate = StartDate;
+            this.EndDate = EndDate;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="BuycustomersResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class BuycustomersResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfBuycustomersModel BuycustomersResult;
+        
+        public BuycustomersResponse() {
+        }
+        
+        public BuycustomersResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfBuycustomersModel BuycustomersResult) {
+            this.BuycustomersResult = BuycustomersResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="BuycustomersWithFactorItems", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class BuycustomersWithFactorItemsRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public string StartDate;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=1)]
+        public string EndDate;
+        
+        public BuycustomersWithFactorItemsRequest() {
+        }
+        
+        public BuycustomersWithFactorItemsRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string StartDate, string EndDate) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.StartDate = StartDate;
+            this.EndDate = EndDate;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="BuycustomersWithFactorItemsResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class BuycustomersWithFactorItemsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfBuycustomersWithFactorItemsModel BuycustomersWithFactorItemsResult;
+        
+        public BuycustomersWithFactorItemsResponse() {
+        }
+        
+        public BuycustomersWithFactorItemsResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfBuycustomersWithFactorItemsModel BuycustomersWithFactorItemsResult) {
+            this.BuycustomersWithFactorItemsResult = BuycustomersWithFactorItemsResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetTaxChargeAmount", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetTaxChargeAmountRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        public GetTaxChargeAmountRequest() {
+        }
+        
+        public GetTaxChargeAmountRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetTaxChargeAmountResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetTaxChargeAmountResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfConfigEntity GetTaxChargeAmountResult;
+        
+        public GetTaxChargeAmountResponse() {
+        }
+        
+        public GetTaxChargeAmountResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfConfigEntity GetTaxChargeAmountResult) {
+            this.GetTaxChargeAmountResult = GetTaxChargeAmountResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetTenderList", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetTenderListRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        public GetTenderListRequest() {
+        }
+        
+        public GetTenderListRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetTenderListResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetTenderListResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfTenderModel GetTenderListResult;
+        
+        public GetTenderListResponse() {
+        }
+        
+        public GetTenderListResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfTenderModel GetTenderListResult) {
+            this.GetTenderListResult = GetTenderListResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetPromotions", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetPromotionsRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public int retialStore;
+        
+        public GetPromotionsRequest() {
+        }
+        
+        public GetPromotionsRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int retialStore) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.retialStore = retialStore;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetPromotionsResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetPromotionsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfPromotionHeaderModel GetPromotionsResult;
+        
+        public GetPromotionsResponse() {
+        }
+        
+        public GetPromotionsResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfPromotionHeaderModel GetPromotionsResult) {
+            this.GetPromotionsResult = GetPromotionsResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetPromotionCustomerGroups", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetPromotionCustomerGroupsRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public int retialStore;
+        
+        public GetPromotionCustomerGroupsRequest() {
+        }
+        
+        public GetPromotionCustomerGroupsRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int retialStore) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.retialStore = retialStore;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetPromotionCustomerGroupsResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetPromotionCustomerGroupsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfPromotionCustomerGroupModel GetPromotionCustomerGroupsResult;
+        
+        public GetPromotionCustomerGroupsResponse() {
+        }
+        
+        public GetPromotionCustomerGroupsResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfPromotionCustomerGroupModel GetPromotionCustomerGroupsResult) {
+            this.GetPromotionCustomerGroupsResult = GetPromotionCustomerGroupsResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="AddToReserve", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class AddToReserveRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ItemStock[] ItemsID;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=1)]
+        public bool CancelReservation;
+        
+        public AddToReserveRequest() {
+        }
+        
+        public AddToReserveRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.ItemStock[] ItemsID, bool CancelReservation) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.ItemsID = ItemsID;
+            this.CancelReservation = CancelReservation;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="AddToReserveResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class AddToReserveResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfResult AddToReserveResult;
+        
+        public AddToReserveResponse() {
+        }
+        
+        public AddToReserveResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfResult AddToReserveResult) {
+            this.AddToReserveResult = AddToReserveResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="AddToReserveRS", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class AddToReserveRSRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ItemStock[] ItemsID;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=1)]
+        public int RetailStore;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=2)]
+        public bool CancelReservation;
+        
+        public AddToReserveRSRequest() {
+        }
+        
+        public AddToReserveRSRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.ItemStock[] ItemsID, int RetailStore, bool CancelReservation) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.ItemsID = ItemsID;
+            this.RetailStore = RetailStore;
+            this.CancelReservation = CancelReservation;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="AddToReserveRSResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class AddToReserveRSResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfResult AddToReserveRSResult;
+        
+        public AddToReserveRSResponse() {
+        }
+        
+        public AddToReserveRSResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfResult AddToReserveRSResult) {
+            this.AddToReserveRSResult = AddToReserveRSResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="SaleItemsRS", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class SaleItemsRSRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.SaleItemObject[] lstSaleItms;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public System.Nullable<int> CustomerID;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=2)]
+        public int SourceRetailStoreID;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=3)]
+        public int SourceWorkStationID;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=4)]
+        public int OperatorID;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=5)]
+        public MashadLeatherEcommerce.KiyanService.TenderPrice[] listTenderPrice;
+        
+        public SaleItemsRSRequest() {
+        }
+        
+        public SaleItemsRSRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.SaleItemObject[] lstSaleItms, System.Nullable<int> CustomerID, int SourceRetailStoreID, int SourceWorkStationID, int OperatorID, MashadLeatherEcommerce.KiyanService.TenderPrice[] listTenderPrice) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.lstSaleItms = lstSaleItms;
+            this.CustomerID = CustomerID;
+            this.SourceRetailStoreID = SourceRetailStoreID;
+            this.SourceWorkStationID = SourceWorkStationID;
+            this.OperatorID = OperatorID;
+            this.listTenderPrice = listTenderPrice;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="SaleItemsRSResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class SaleItemsRSResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.SaleResultModel SaleItemsRSResult;
+        
+        public SaleItemsRSResponse() {
+        }
+        
+        public SaleItemsRSResponse(MashadLeatherEcommerce.KiyanService.SaleResultModel SaleItemsRSResult) {
+            this.SaleItemsRSResult = SaleItemsRSResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="SaleItemsRsDate", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class SaleItemsRsDateRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.SaleItemObject[] lstSaleItms;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public System.Nullable<int> CustomerID;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=2)]
+        public int SourceRetailStoreID;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=3)]
+        public int SourceWorkStationID;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=4)]
+        public int OperatorID;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=5)]
+        public MashadLeatherEcommerce.KiyanService.TenderPrice[] listTenderPrice;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=6)]
+        public System.DateTime bussinessDay;
+        
+        public SaleItemsRsDateRequest() {
+        }
+        
+        public SaleItemsRsDateRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.SaleItemObject[] lstSaleItms, System.Nullable<int> CustomerID, int SourceRetailStoreID, int SourceWorkStationID, int OperatorID, MashadLeatherEcommerce.KiyanService.TenderPrice[] listTenderPrice, System.DateTime bussinessDay) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.lstSaleItms = lstSaleItms;
+            this.CustomerID = CustomerID;
+            this.SourceRetailStoreID = SourceRetailStoreID;
+            this.SourceWorkStationID = SourceWorkStationID;
+            this.OperatorID = OperatorID;
+            this.listTenderPrice = listTenderPrice;
+            this.bussinessDay = bussinessDay;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="SaleItemsRsDateResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class SaleItemsRsDateResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.SaleResultModel SaleItemsRsDateResult;
+        
+        public SaleItemsRsDateResponse() {
+        }
+        
+        public SaleItemsRsDateResponse(MashadLeatherEcommerce.KiyanService.SaleResultModel SaleItemsRsDateResult) {
+            this.SaleItemsRsDateResult = SaleItemsRsDateResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="SaleItemsDate", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class SaleItemsDateRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.SaleItemObject[] lstSaleItms;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public System.Nullable<int> CustomerID;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=2)]
+        public MashadLeatherEcommerce.KiyanService.TenderPrice[] listTenderPrice;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=3)]
+        public System.DateTime bussinessDay;
+        
+        public SaleItemsDateRequest() {
+        }
+        
+        public SaleItemsDateRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.SaleItemObject[] lstSaleItms, System.Nullable<int> CustomerID, MashadLeatherEcommerce.KiyanService.TenderPrice[] listTenderPrice, System.DateTime bussinessDay) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.lstSaleItms = lstSaleItms;
+            this.CustomerID = CustomerID;
+            this.listTenderPrice = listTenderPrice;
+            this.bussinessDay = bussinessDay;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="SaleItemsDateResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class SaleItemsDateResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.SaleResultModel SaleItemsDateResult;
+        
+        public SaleItemsDateResponse() {
+        }
+        
+        public SaleItemsDateResponse(MashadLeatherEcommerce.KiyanService.SaleResultModel SaleItemsDateResult) {
+            this.SaleItemsDateResult = SaleItemsDateResult;
         }
     }
     
@@ -4170,6 +13164,9 @@ namespace MashadLeatherEcommerce.KiyanService {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
         public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
         public MashadLeatherEcommerce.KiyanService.SaleItemObject[] lstSaleItms;
@@ -4187,8 +13184,9 @@ namespace MashadLeatherEcommerce.KiyanService {
         public SaleItemsRequest() {
         }
         
-        public SaleItemsRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.SaleItemObject[] lstSaleItms, System.Nullable<int> CustomerID, int SourceRetailStoreID, MashadLeatherEcommerce.KiyanService.TenderPrice[] listTenderPrice) {
+        public SaleItemsRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.SaleItemObject[] lstSaleItms, System.Nullable<int> CustomerID, int SourceRetailStoreID, MashadLeatherEcommerce.KiyanService.TenderPrice[] listTenderPrice) {
             this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
             this.lstSaleItms = lstSaleItms;
             this.CustomerID = CustomerID;
             this.SourceRetailStoreID = SourceRetailStoreID;
@@ -4216,11 +13214,115 @@ namespace MashadLeatherEcommerce.KiyanService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Wholesale", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class WholesaleRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.WholeSaleModel[] lstWholeSaleItms;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=1)]
+        public int CustomerID;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=2)]
+        public string Description;
+        
+        public WholesaleRequest() {
+        }
+        
+        public WholesaleRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.WholeSaleModel[] lstWholeSaleItms, int CustomerID, string Description) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.lstWholeSaleItms = lstWholeSaleItms;
+            this.CustomerID = CustomerID;
+            this.Description = Description;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="WholesaleResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class WholesaleResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.WholeSaleReultModel WholesaleResult;
+        
+        public WholesaleResponse() {
+        }
+        
+        public WholesaleResponse(MashadLeatherEcommerce.KiyanService.WholeSaleReultModel WholesaleResult) {
+            this.WholesaleResult = WholesaleResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="SuspendTransaction", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class SuspendTransactionRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.SaleItemObject[] lstSuspendItms;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public System.Nullable<int> CustomerID;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=2)]
+        public int SourceRetailStoreID;
+        
+        public SuspendTransactionRequest() {
+        }
+        
+        public SuspendTransactionRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.SaleItemObject[] lstSuspendItms, System.Nullable<int> CustomerID, int SourceRetailStoreID) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.lstSuspendItms = lstSuspendItms;
+            this.CustomerID = CustomerID;
+            this.SourceRetailStoreID = SourceRetailStoreID;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="SuspendTransactionResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class SuspendTransactionResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.SaleResultModel SuspendTransactionResult;
+        
+        public SuspendTransactionResponse() {
+        }
+        
+        public SuspendTransactionResponse(MashadLeatherEcommerce.KiyanService.SaleResultModel SuspendTransactionResult) {
+            this.SuspendTransactionResult = SuspendTransactionResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="GetRecieptDetail", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
     public partial class GetRecieptDetailRequest {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
         public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
         public string RecieptBarcode;
@@ -4228,8 +13330,9 @@ namespace MashadLeatherEcommerce.KiyanService {
         public GetRecieptDetailRequest() {
         }
         
-        public GetRecieptDetailRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, string RecieptBarcode) {
+        public GetRecieptDetailRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string RecieptBarcode) {
             this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
             this.RecieptBarcode = RecieptBarcode;
         }
     }
@@ -4241,12 +13344,12 @@ namespace MashadLeatherEcommerce.KiyanService {
     public partial class GetRecieptDetailResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public MashadLeatherEcommerce.KiyanService.RecieptsDetailResultModel GetRecieptDetailResult;
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfRecieptsDetail GetRecieptDetailResult;
         
         public GetRecieptDetailResponse() {
         }
         
-        public GetRecieptDetailResponse(MashadLeatherEcommerce.KiyanService.RecieptsDetailResultModel GetRecieptDetailResult) {
+        public GetRecieptDetailResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfRecieptsDetail GetRecieptDetailResult) {
             this.GetRecieptDetailResult = GetRecieptDetailResult;
         }
     }
@@ -4254,764 +13357,188 @@ namespace MashadLeatherEcommerce.KiyanService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetItemList", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetItemListRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetRecieptHeader", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetRecieptHeaderRequest {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
         public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
         
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public string StartDate;
+        public string RecieptBarcodeSale;
+        
+        public GetRecieptHeaderRequest() {
+        }
+        
+        public GetRecieptHeaderRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string RecieptBarcodeSale) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.RecieptBarcodeSale = RecieptBarcodeSale;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetRecieptHeaderResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class GetRecieptHeaderResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfRecieptsHeader GetRecieptHeaderResult;
+        
+        public GetRecieptHeaderResponse() {
+        }
+        
+        public GetRecieptHeaderResponse(MashadLeatherEcommerce.KiyanService.ResponseDataOfRecieptsHeader GetRecieptHeaderResult) {
+            this.GetRecieptHeaderResult = GetRecieptHeaderResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="SaleReturnItems", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class SaleReturnItemsRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public string RecieptBarcodeSale;
+        
+        public SaleReturnItemsRequest() {
+        }
+        
+        public SaleReturnItemsRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string RecieptBarcodeSale) {
+            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.RecieptBarcodeSale = RecieptBarcodeSale;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="SaleReturnItemsResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class SaleReturnItemsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.SaleResultModel SaleReturnItemsResult;
+        
+        public SaleReturnItemsResponse() {
+        }
+        
+        public SaleReturnItemsResponse(MashadLeatherEcommerce.KiyanService.SaleResultModel SaleReturnItemsResult) {
+            this.SaleReturnItemsResult = SaleReturnItemsResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ReturnItemsRSDate", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class ReturnItemsRSDateRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
+        public MashadLeatherEcommerce.KiyanService.ReturnItemObject[] ReturnItems;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=1)]
-        public string EndDate;
+        public int SourceRetailStoreID;
         
-        public GetItemListRequest() {
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=2)]
+        public int SourceWorkStationID;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=3)]
+        public int OperatorID;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public System.Nullable<int> customerID;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=5)]
+        public System.DateTime bussinessDay;
+        
+        public ReturnItemsRSDateRequest() {
         }
         
-        public GetItemListRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, string StartDate, string EndDate) {
+        public ReturnItemsRSDateRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.ReturnItemObject[] ReturnItems, int SourceRetailStoreID, int SourceWorkStationID, int OperatorID, System.Nullable<int> customerID, System.DateTime bussinessDay) {
             this.ValidationSoapHeader = ValidationSoapHeader;
-            this.StartDate = StartDate;
-            this.EndDate = EndDate;
+            this.AuthUser = AuthUser;
+            this.ReturnItems = ReturnItems;
+            this.SourceRetailStoreID = SourceRetailStoreID;
+            this.SourceWorkStationID = SourceWorkStationID;
+            this.OperatorID = OperatorID;
+            this.customerID = customerID;
+            this.bussinessDay = bussinessDay;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetItemListResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetItemListResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ReturnItemsRSDateResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class ReturnItemsRSDateResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public MashadLeatherEcommerce.KiyanService.ItemListResultModel GetItemListResult;
+        public MashadLeatherEcommerce.KiyanService.SaleResultModel ReturnItemsRSDateResult;
         
-        public GetItemListResponse() {
+        public ReturnItemsRSDateResponse() {
         }
         
-        public GetItemListResponse(MashadLeatherEcommerce.KiyanService.ItemListResultModel GetItemListResult) {
-            this.GetItemListResult = GetItemListResult;
+        public ReturnItemsRSDateResponse(MashadLeatherEcommerce.KiyanService.SaleResultModel ReturnItemsRSDateResult) {
+            this.ReturnItemsRSDateResult = ReturnItemsRSDateResult;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetItemListWithinventoryID", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetItemListWithinventoryIDRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ReturnItemsRS", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class ReturnItemsRSRequest {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
         public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public int inventory;
-        
-        public GetItemListWithinventoryIDRequest() {
-        }
-        
-        public GetItemListWithinventoryIDRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, int inventory) {
-            this.ValidationSoapHeader = ValidationSoapHeader;
-            this.inventory = inventory;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetItemListWithinventoryIDResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetItemListWithinventoryIDResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public MashadLeatherEcommerce.KiyanService.ItemListResultModel GetItemListWithinventoryIDResult;
-        
-        public GetItemListWithinventoryIDResponse() {
-        }
-        
-        public GetItemListWithinventoryIDResponse(MashadLeatherEcommerce.KiyanService.ItemListResultModel GetItemListWithinventoryIDResult) {
-            this.GetItemListWithinventoryIDResult = GetItemListWithinventoryIDResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetItemQuantityWithInventoryID", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetItemQuantityWithInventoryIDRequest {
-        
         [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
-        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public int inventory;
-        
-        public GetItemQuantityWithInventoryIDRequest() {
-        }
-        
-        public GetItemQuantityWithInventoryIDRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, int inventory) {
-            this.ValidationSoapHeader = ValidationSoapHeader;
-            this.inventory = inventory;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetItemQuantityWithInventoryIDResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetItemQuantityWithInventoryIDResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public MashadLeatherEcommerce.KiyanService.BarCodeStockResultModel GetItemQuantityWithInventoryIDResult;
-        
-        public GetItemQuantityWithInventoryIDResponse() {
-        }
-        
-        public GetItemQuantityWithInventoryIDResponse(MashadLeatherEcommerce.KiyanService.BarCodeStockResultModel GetItemQuantityWithInventoryIDResult) {
-            this.GetItemQuantityWithInventoryIDResult = GetItemQuantityWithInventoryIDResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetItemsQuantityAllInventory", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetItemsQuantityAllInventoryRequest {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
-        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public int[] retailStores;
-        
-        public GetItemsQuantityAllInventoryRequest() {
-        }
-        
-        public GetItemsQuantityAllInventoryRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, int[] retailStores) {
-            this.ValidationSoapHeader = ValidationSoapHeader;
-            this.retailStores = retailStores;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetItemsQuantityAllInventoryResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetItemsQuantityAllInventoryResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public MashadLeatherEcommerce.KiyanService.ItemsStockResultModel GetItemsQuantityAllInventoryResult;
-        
-        public GetItemsQuantityAllInventoryResponse() {
-        }
-        
-        public GetItemsQuantityAllInventoryResponse(MashadLeatherEcommerce.KiyanService.ItemsStockResultModel GetItemsQuantityAllInventoryResult) {
-            this.GetItemsQuantityAllInventoryResult = GetItemsQuantityAllInventoryResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetItemInfo", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetItemInfoRequest {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
-        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public string barcode;
-        
-        public GetItemInfoRequest() {
-        }
-        
-        public GetItemInfoRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, string barcode) {
-            this.ValidationSoapHeader = ValidationSoapHeader;
-            this.barcode = barcode;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetItemInfoResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetItemInfoResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public MashadLeatherEcommerce.KiyanService.ItemInfoResultModel GetItemInfoResult;
-        
-        public GetItemInfoResponse() {
-        }
-        
-        public GetItemInfoResponse(MashadLeatherEcommerce.KiyanService.ItemInfoResultModel GetItemInfoResult) {
-            this.GetItemInfoResult = GetItemInfoResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetArrayItemInfo", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetArrayItemInfoRequest {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
-        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public string[] barcodes;
-        
-        public GetArrayItemInfoRequest() {
-        }
-        
-        public GetArrayItemInfoRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, string[] barcodes) {
-            this.ValidationSoapHeader = ValidationSoapHeader;
-            this.barcodes = barcodes;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetArrayItemInfoResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetArrayItemInfoResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public MashadLeatherEcommerce.KiyanService.ItemListResultModel GetArrayItemInfoResult;
-        
-        public GetArrayItemInfoResponse() {
-        }
-        
-        public GetArrayItemInfoResponse(MashadLeatherEcommerce.KiyanService.ItemListResultModel GetArrayItemInfoResult) {
-            this.GetArrayItemInfoResult = GetArrayItemInfoResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetItemInfoWithItemID", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetItemInfoWithItemIDRequest {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
-        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public int ItemID;
-        
-        public GetItemInfoWithItemIDRequest() {
-        }
-        
-        public GetItemInfoWithItemIDRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, int ItemID) {
-            this.ValidationSoapHeader = ValidationSoapHeader;
-            this.ItemID = ItemID;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetItemInfoWithItemIDResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetItemInfoWithItemIDResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public MashadLeatherEcommerce.KiyanService.ItemInfoResultModel GetItemInfoWithItemIDResult;
-        
-        public GetItemInfoWithItemIDResponse() {
-        }
-        
-        public GetItemInfoWithItemIDResponse(MashadLeatherEcommerce.KiyanService.ItemInfoResultModel GetItemInfoWithItemIDResult) {
-            this.GetItemInfoWithItemIDResult = GetItemInfoWithItemIDResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetTemplateProperty", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetTemplatePropertyRequest {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
-        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
-        
-        public GetTemplatePropertyRequest() {
-        }
-        
-        public GetTemplatePropertyRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader) {
-            this.ValidationSoapHeader = ValidationSoapHeader;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetTemplatePropertyResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetTemplatePropertyResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public MashadLeatherEcommerce.KiyanService.TemplatePropertyResultModel GetTemplatePropertyResult;
-        
-        public GetTemplatePropertyResponse() {
-        }
-        
-        public GetTemplatePropertyResponse(MashadLeatherEcommerce.KiyanService.TemplatePropertyResultModel GetTemplatePropertyResult) {
-            this.GetTemplatePropertyResult = GetTemplatePropertyResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetTemplateAttributes", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetTemplateAttributesRequest {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
-        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
-        
-        public GetTemplateAttributesRequest() {
-        }
-        
-        public GetTemplateAttributesRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader) {
-            this.ValidationSoapHeader = ValidationSoapHeader;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetTemplateAttributesResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetTemplateAttributesResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public MashadLeatherEcommerce.KiyanService.TemplateAttributeResultModel GetTemplateAttributesResult;
-        
-        public GetTemplateAttributesResponse() {
-        }
-        
-        public GetTemplateAttributesResponse(MashadLeatherEcommerce.KiyanService.TemplateAttributeResultModel GetTemplateAttributesResult) {
-            this.GetTemplateAttributesResult = GetTemplateAttributesResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetTemplateItemInfo", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetTemplateItemInfoRequest {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
-        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public string Barcode;
-        
-        public GetTemplateItemInfoRequest() {
-        }
-        
-        public GetTemplateItemInfoRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, string Barcode) {
-            this.ValidationSoapHeader = ValidationSoapHeader;
-            this.Barcode = Barcode;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetTemplateItemInfoResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetTemplateItemInfoResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public MashadLeatherEcommerce.KiyanService.TemplateItemResultModle GetTemplateItemInfoResult;
-        
-        public GetTemplateItemInfoResponse() {
-        }
-        
-        public GetTemplateItemInfoResponse(MashadLeatherEcommerce.KiyanService.TemplateItemResultModle GetTemplateItemInfoResult) {
-            this.GetTemplateItemInfoResult = GetTemplateItemInfoResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetAllTemplateItems", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetAllTemplateItemsRequest {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
-        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
-        
-        public GetAllTemplateItemsRequest() {
-        }
-        
-        public GetAllTemplateItemsRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader) {
-            this.ValidationSoapHeader = ValidationSoapHeader;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetAllTemplateItemsResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetAllTemplateItemsResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public MashadLeatherEcommerce.KiyanService.TemplateItemResultModle GetAllTemplateItemsResult;
-        
-        public GetAllTemplateItemsResponse() {
-        }
-        
-        public GetAllTemplateItemsResponse(MashadLeatherEcommerce.KiyanService.TemplateItemResultModle GetAllTemplateItemsResult) {
-            this.GetAllTemplateItemsResult = GetAllTemplateItemsResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetMatrixProperty", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetMatrixPropertyRequest {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
-        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
-        
-        public GetMatrixPropertyRequest() {
-        }
-        
-        public GetMatrixPropertyRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader) {
-            this.ValidationSoapHeader = ValidationSoapHeader;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetMatrixPropertyResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetMatrixPropertyResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public MashadLeatherEcommerce.KiyanService.TemplatePropertyResultModel GetMatrixPropertyResult;
-        
-        public GetMatrixPropertyResponse() {
-        }
-        
-        public GetMatrixPropertyResponse(MashadLeatherEcommerce.KiyanService.TemplatePropertyResultModel GetMatrixPropertyResult) {
-            this.GetMatrixPropertyResult = GetMatrixPropertyResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetMatrixAttribute", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetMatrixAttributeRequest {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
-        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
-        
-        public GetMatrixAttributeRequest() {
-        }
-        
-        public GetMatrixAttributeRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader) {
-            this.ValidationSoapHeader = ValidationSoapHeader;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetMatrixAttributeResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetMatrixAttributeResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public MashadLeatherEcommerce.KiyanService.TemplateAttributeResultModel GetMatrixAttributeResult;
-        
-        public GetMatrixAttributeResponse() {
-        }
-        
-        public GetMatrixAttributeResponse(MashadLeatherEcommerce.KiyanService.TemplateAttributeResultModel GetMatrixAttributeResult) {
-            this.GetMatrixAttributeResult = GetMatrixAttributeResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetMatrixItemInfo", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetMatrixItemInfoRequest {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
-        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public string Barcode;
-        
-        public GetMatrixItemInfoRequest() {
-        }
-        
-        public GetMatrixItemInfoRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, string Barcode) {
-            this.ValidationSoapHeader = ValidationSoapHeader;
-            this.Barcode = Barcode;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetMatrixItemInfoResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetMatrixItemInfoResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public MashadLeatherEcommerce.KiyanService.TemplateItemResultModle GetMatrixItemInfoResult;
-        
-        public GetMatrixItemInfoResponse() {
-        }
-        
-        public GetMatrixItemInfoResponse(MashadLeatherEcommerce.KiyanService.TemplateItemResultModle GetMatrixItemInfoResult) {
-            this.GetMatrixItemInfoResult = GetMatrixItemInfoResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetAllMatrixItems", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetAllMatrixItemsRequest {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
-        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
-        
-        public GetAllMatrixItemsRequest() {
-        }
-        
-        public GetAllMatrixItemsRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader) {
-            this.ValidationSoapHeader = ValidationSoapHeader;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetAllMatrixItemsResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetAllMatrixItemsResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public MashadLeatherEcommerce.KiyanService.TemplateItemResultModle GetAllMatrixItemsResult;
-        
-        public GetAllMatrixItemsResponse() {
-        }
-        
-        public GetAllMatrixItemsResponse(MashadLeatherEcommerce.KiyanService.TemplateItemResultModle GetAllMatrixItemsResult) {
-            this.GetAllMatrixItemsResult = GetAllMatrixItemsResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetItemStockStatus", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetItemStockStatusRequest {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
-        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public string Barcode;
-        
-        public GetItemStockStatusRequest() {
-        }
-        
-        public GetItemStockStatusRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, string Barcode) {
-            this.ValidationSoapHeader = ValidationSoapHeader;
-            this.Barcode = Barcode;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetItemStockStatusResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetItemStockStatusResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public MashadLeatherEcommerce.KiyanService.ItemStockStatusResultModel GetItemStockStatusResult;
-        
-        public GetItemStockStatusResponse() {
-        }
-        
-        public GetItemStockStatusResponse(MashadLeatherEcommerce.KiyanService.ItemStockStatusResultModel GetItemStockStatusResult) {
-            this.GetItemStockStatusResult = GetItemStockStatusResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="AddToReserve", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class AddToReserveRequest {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
-        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public MashadLeatherEcommerce.KiyanService.ItemStock[] ItemsID;
+        public MashadLeatherEcommerce.KiyanService.ReturnItemObject[] ReturnItems;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=1)]
-        public bool CancelReservation;
+        public int SourceRetailStoreID;
         
-        public AddToReserveRequest() {
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=2)]
+        public int SourceWorkStationID;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=3)]
+        public int OperatorID;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public System.Nullable<int> customerID;
+        
+        public ReturnItemsRSRequest() {
         }
         
-        public AddToReserveRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.ItemStock[] ItemsID, bool CancelReservation) {
+        public ReturnItemsRSRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.ReturnItemObject[] ReturnItems, int SourceRetailStoreID, int SourceWorkStationID, int OperatorID, System.Nullable<int> customerID) {
             this.ValidationSoapHeader = ValidationSoapHeader;
-            this.ItemsID = ItemsID;
-            this.CancelReservation = CancelReservation;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="AddToReserveResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class AddToReserveResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public MashadLeatherEcommerce.KiyanService.Result AddToReserveResult;
-        
-        public AddToReserveResponse() {
-        }
-        
-        public AddToReserveResponse(MashadLeatherEcommerce.KiyanService.Result AddToReserveResult) {
-            this.AddToReserveResult = AddToReserveResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetPosDepartmentList", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetPosDepartmentListRequest {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
-        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
-        
-        public GetPosDepartmentListRequest() {
-        }
-        
-        public GetPosDepartmentListRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader) {
-            this.ValidationSoapHeader = ValidationSoapHeader;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetPosDepartmentListResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetPosDepartmentListResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public MashadLeatherEcommerce.KiyanService.PosDepartmentListResultModel GetPosDepartmentListResult;
-        
-        public GetPosDepartmentListResponse() {
-        }
-        
-        public GetPosDepartmentListResponse(MashadLeatherEcommerce.KiyanService.PosDepartmentListResultModel GetPosDepartmentListResult) {
-            this.GetPosDepartmentListResult = GetPosDepartmentListResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="CreateCustomer", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class CreateCustomerRequest {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
-        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public MashadLeatherEcommerce.KiyanService.Customer NewCustomer;
-        
-        public CreateCustomerRequest() {
-        }
-        
-        public CreateCustomerRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.Customer NewCustomer) {
-            this.ValidationSoapHeader = ValidationSoapHeader;
-            this.NewCustomer = NewCustomer;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="CreateCustomerResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class CreateCustomerResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public MashadLeatherEcommerce.KiyanService.CreateCustomerResultModel CreateCustomerResult;
-        
-        public CreateCustomerResponse() {
-        }
-        
-        public CreateCustomerResponse(MashadLeatherEcommerce.KiyanService.CreateCustomerResultModel CreateCustomerResult) {
-            this.CreateCustomerResult = CreateCustomerResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetCustomerList", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetCustomerListRequest {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
-        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public string StartDate;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=1)]
-        public string EndDate;
-        
-        public GetCustomerListRequest() {
-        }
-        
-        public GetCustomerListRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, string StartDate, string EndDate) {
-            this.ValidationSoapHeader = ValidationSoapHeader;
-            this.StartDate = StartDate;
-            this.EndDate = EndDate;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetCustomerListResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetCustomerListResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public MashadLeatherEcommerce.KiyanService.CustomerListResultModel GetCustomerListResult;
-        
-        public GetCustomerListResponse() {
-        }
-        
-        public GetCustomerListResponse(MashadLeatherEcommerce.KiyanService.CustomerListResultModel GetCustomerListResult) {
-            this.GetCustomerListResult = GetCustomerListResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetCustomerInfoWithCustomerID", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetCustomerInfoWithCustomerIDRequest {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
-        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public int customerID;
-        
-        public GetCustomerInfoWithCustomerIDRequest() {
-        }
-        
-        public GetCustomerInfoWithCustomerIDRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, int customerID) {
-            this.ValidationSoapHeader = ValidationSoapHeader;
+            this.AuthUser = AuthUser;
+            this.ReturnItems = ReturnItems;
+            this.SourceRetailStoreID = SourceRetailStoreID;
+            this.SourceWorkStationID = SourceWorkStationID;
+            this.OperatorID = OperatorID;
             this.customerID = customerID;
         }
     }
@@ -5019,557 +13546,114 @@ namespace MashadLeatherEcommerce.KiyanService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetCustomerInfoWithCustomerIDResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetCustomerInfoWithCustomerIDResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ReturnItemsRSResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class ReturnItemsRSResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public MashadLeatherEcommerce.KiyanService.CustomerResultModel GetCustomerInfoWithCustomerIDResult;
+        public MashadLeatherEcommerce.KiyanService.SaleResultModel ReturnItemsRSResult;
         
-        public GetCustomerInfoWithCustomerIDResponse() {
+        public ReturnItemsRSResponse() {
         }
         
-        public GetCustomerInfoWithCustomerIDResponse(MashadLeatherEcommerce.KiyanService.CustomerResultModel GetCustomerInfoWithCustomerIDResult) {
-            this.GetCustomerInfoWithCustomerIDResult = GetCustomerInfoWithCustomerIDResult;
+        public ReturnItemsRSResponse(MashadLeatherEcommerce.KiyanService.SaleResultModel ReturnItemsRSResult) {
+            this.ReturnItemsRSResult = ReturnItemsRSResult;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetCustomerInfoWithMemberID", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetCustomerInfoWithMemberIDRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ReturnItems", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class ReturnItemsRequest {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
         public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public string MemberID;
-        
-        public GetCustomerInfoWithMemberIDRequest() {
-        }
-        
-        public GetCustomerInfoWithMemberIDRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, string MemberID) {
-            this.ValidationSoapHeader = ValidationSoapHeader;
-            this.MemberID = MemberID;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetCustomerInfoWithMemberIDResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetCustomerInfoWithMemberIDResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public MashadLeatherEcommerce.KiyanService.CustomerResultModel GetCustomerInfoWithMemberIDResult;
-        
-        public GetCustomerInfoWithMemberIDResponse() {
-        }
-        
-        public GetCustomerInfoWithMemberIDResponse(MashadLeatherEcommerce.KiyanService.CustomerResultModel GetCustomerInfoWithMemberIDResult) {
-            this.GetCustomerInfoWithMemberIDResult = GetCustomerInfoWithMemberIDResult;
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
-    public enum FiledName {
-        
-        /// <remarks/>
-        SocialSecurityNumber,
-        
-        /// <remarks/>
-        MemberID,
-        
-        /// <remarks/>
-        CustomerID,
-        
-        /// <remarks/>
-        Mobile,
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetCustomersBaseInfo", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetCustomersBaseInfoRequest {
-        
         [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
-        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public MashadLeatherEcommerce.KiyanService.FiledName filedName;
+        public MashadLeatherEcommerce.KiyanService.ReturnItemObject[] ReturnItems;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=1)]
-        public string[] value;
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public System.Nullable<int> customerID;
         
-        public GetCustomersBaseInfoRequest() {
+        public ReturnItemsRequest() {
         }
         
-        public GetCustomersBaseInfoRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.FiledName filedName, string[] value) {
+        public ReturnItemsRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.ReturnItemObject[] ReturnItems, System.Nullable<int> customerID) {
             this.ValidationSoapHeader = ValidationSoapHeader;
-            this.filedName = filedName;
-            this.value = value;
+            this.AuthUser = AuthUser;
+            this.ReturnItems = ReturnItems;
+            this.customerID = customerID;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetCustomersBaseInfoResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetCustomersBaseInfoResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ReturnItemsResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class ReturnItemsResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public MashadLeatherEcommerce.KiyanService.CustomerListResultModel GetCustomersBaseInfoResult;
+        public MashadLeatherEcommerce.KiyanService.SaleResultModel ReturnItemsResult;
         
-        public GetCustomersBaseInfoResponse() {
+        public ReturnItemsResponse() {
         }
         
-        public GetCustomersBaseInfoResponse(MashadLeatherEcommerce.KiyanService.CustomerListResultModel GetCustomersBaseInfoResult) {
-            this.GetCustomersBaseInfoResult = GetCustomersBaseInfoResult;
+        public ReturnItemsResponse(MashadLeatherEcommerce.KiyanService.SaleResultModel ReturnItemsResult) {
+            this.ReturnItemsResult = ReturnItemsResult;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="UpdateCustomerInfo", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class UpdateCustomerInfoRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="LayAwaySaleItems", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class LayAwaySaleItemsRequest {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
         public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public MashadLeatherEcommerce.KiyanService.Customer UpdattedCustomer;
-        
-        public UpdateCustomerInfoRequest() {
-        }
-        
-        public UpdateCustomerInfoRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.Customer UpdattedCustomer) {
-            this.ValidationSoapHeader = ValidationSoapHeader;
-            this.UpdattedCustomer = UpdattedCustomer;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="UpdateCustomerInfoResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class UpdateCustomerInfoResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public MashadLeatherEcommerce.KiyanService.Result UpdateCustomerInfoResult;
-        
-        public UpdateCustomerInfoResponse() {
-        }
-        
-        public UpdateCustomerInfoResponse(MashadLeatherEcommerce.KiyanService.Result UpdateCustomerInfoResult) {
-            this.UpdateCustomerInfoResult = UpdateCustomerInfoResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetCustomerTransaction", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetCustomerTransactionRequest {
-        
         [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
-        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
+        public MashadLeatherEcommerce.KiyanService.AuthUser AuthUser;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public string StartDate;
+        public MashadLeatherEcommerce.KiyanService.SaleItemObject[] lstSaleItms;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=1)]
-        public string EndDate;
+        public int CustomerID;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=2)]
-        public string CustomerID;
+        public int SourceRetailStoreID;
         
-        public GetCustomerTransactionRequest() {
+        public LayAwaySaleItemsRequest() {
         }
         
-        public GetCustomerTransactionRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, string StartDate, string EndDate, string CustomerID) {
+        public LayAwaySaleItemsRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.SaleItemObject[] lstSaleItms, int CustomerID, int SourceRetailStoreID) {
             this.ValidationSoapHeader = ValidationSoapHeader;
-            this.StartDate = StartDate;
-            this.EndDate = EndDate;
+            this.AuthUser = AuthUser;
+            this.lstSaleItms = lstSaleItms;
             this.CustomerID = CustomerID;
+            this.SourceRetailStoreID = SourceRetailStoreID;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetCustomerTransactionResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetCustomerTransactionResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="LayAwaySaleItemsResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
+    public partial class LayAwaySaleItemsResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public MashadLeatherEcommerce.KiyanService.CustomerTransactionResultModel GetCustomerTransactionResult;
+        public MashadLeatherEcommerce.KiyanService.SaleResultModel LayAwaySaleItemsResult;
         
-        public GetCustomerTransactionResponse() {
+        public LayAwaySaleItemsResponse() {
         }
         
-        public GetCustomerTransactionResponse(MashadLeatherEcommerce.KiyanService.CustomerTransactionResultModel GetCustomerTransactionResult) {
-            this.GetCustomerTransactionResult = GetCustomerTransactionResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetCustomersReceipts", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetCustomersReceiptsRequest {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
-        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public int[] customersIDList;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=1)]
-        public System.DateTime startDate;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=2)]
-        public System.DateTime endDate;
-        
-        public GetCustomersReceiptsRequest() {
-        }
-        
-        public GetCustomersReceiptsRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, int[] customersIDList, System.DateTime startDate, System.DateTime endDate) {
-            this.ValidationSoapHeader = ValidationSoapHeader;
-            this.customersIDList = customersIDList;
-            this.startDate = startDate;
-            this.endDate = endDate;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetCustomersReceiptsResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetCustomersReceiptsResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public MashadLeatherEcommerce.KiyanService.GetCustomersReceiptsResultModel GetCustomersReceiptsResult;
-        
-        public GetCustomersReceiptsResponse() {
-        }
-        
-        public GetCustomersReceiptsResponse(MashadLeatherEcommerce.KiyanService.GetCustomersReceiptsResultModel GetCustomersReceiptsResult) {
-            this.GetCustomersReceiptsResult = GetCustomersReceiptsResult;
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
-    public enum StoreCreditHistory {
-        
-        /// <remarks/>
-        ID,
-        
-        /// <remarks/>
-        DD,
-        
-        /// <remarks/>
-        RD,
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="CreateStoreCreditDocument", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class CreateStoreCreditDocumentRequest {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
-        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public int[] customersList;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=1)]
-        public decimal amount;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=2)]
-        public MashadLeatherEcommerce.KiyanService.StoreCreditHistory storeCreditHistory;
-        
-        public CreateStoreCreditDocumentRequest() {
-        }
-        
-        public CreateStoreCreditDocumentRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, int[] customersList, decimal amount, MashadLeatherEcommerce.KiyanService.StoreCreditHistory storeCreditHistory) {
-            this.ValidationSoapHeader = ValidationSoapHeader;
-            this.customersList = customersList;
-            this.amount = amount;
-            this.storeCreditHistory = storeCreditHistory;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="CreateStoreCreditDocumentResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class CreateStoreCreditDocumentResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public MashadLeatherEcommerce.KiyanService.StoreCreditDocumentResultModel CreateStoreCreditDocumentResult;
-        
-        public CreateStoreCreditDocumentResponse() {
-        }
-        
-        public CreateStoreCreditDocumentResponse(MashadLeatherEcommerce.KiyanService.StoreCreditDocumentResultModel CreateStoreCreditDocumentResult) {
-            this.CreateStoreCreditDocumentResult = CreateStoreCreditDocumentResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="ChangeCustomerGroup", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class ChangeCustomerGroupRequest {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
-        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public int customersID;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=1)]
-        public int customersGroupID;
-        
-        public ChangeCustomerGroupRequest() {
-        }
-        
-        public ChangeCustomerGroupRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, int customersID, int customersGroupID) {
-            this.ValidationSoapHeader = ValidationSoapHeader;
-            this.customersID = customersID;
-            this.customersGroupID = customersGroupID;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="ChangeCustomerGroupResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class ChangeCustomerGroupResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public MashadLeatherEcommerce.KiyanService.Result ChangeCustomerGroupResult;
-        
-        public ChangeCustomerGroupResponse() {
-        }
-        
-        public ChangeCustomerGroupResponse(MashadLeatherEcommerce.KiyanService.Result ChangeCustomerGroupResult) {
-            this.ChangeCustomerGroupResult = ChangeCustomerGroupResult;
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="KyanOnlineSaleService")]
-    public enum OperationCredit {
-        
-        /// <remarks/>
-        Repalce,
-        
-        /// <remarks/>
-        AddUpdate,
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="CustomerCreditOperations", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class CustomerCreditOperationsRequest {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
-        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public int customersID;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=1)]
-        public decimal credit;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=2)]
-        public MashadLeatherEcommerce.KiyanService.OperationCredit operationCredit;
-        
-        public CustomerCreditOperationsRequest() {
-        }
-        
-        public CustomerCreditOperationsRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, int customersID, decimal credit, MashadLeatherEcommerce.KiyanService.OperationCredit operationCredit) {
-            this.ValidationSoapHeader = ValidationSoapHeader;
-            this.customersID = customersID;
-            this.credit = credit;
-            this.operationCredit = operationCredit;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="CustomerCreditOperationsResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class CustomerCreditOperationsResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public MashadLeatherEcommerce.KiyanService.Result CustomerCreditOperationsResult;
-        
-        public CustomerCreditOperationsResponse() {
-        }
-        
-        public CustomerCreditOperationsResponse(MashadLeatherEcommerce.KiyanService.Result CustomerCreditOperationsResult) {
-            this.CustomerCreditOperationsResult = CustomerCreditOperationsResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetTenderList", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetTenderListRequest {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
-        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
-        
-        public GetTenderListRequest() {
-        }
-        
-        public GetTenderListRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader) {
-            this.ValidationSoapHeader = ValidationSoapHeader;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetTenderListResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetTenderListResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public MashadLeatherEcommerce.KiyanService.TenderListResultModel GetTenderListResult;
-        
-        public GetTenderListResponse() {
-        }
-        
-        public GetTenderListResponse(MashadLeatherEcommerce.KiyanService.TenderListResultModel GetTenderListResult) {
-            this.GetTenderListResult = GetTenderListResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetPromotions", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetPromotionsRequest {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
-        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public int retialStore;
-        
-        public GetPromotionsRequest() {
-        }
-        
-        public GetPromotionsRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, int retialStore) {
-            this.ValidationSoapHeader = ValidationSoapHeader;
-            this.retialStore = retialStore;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetPromotionsResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetPromotionsResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public MashadLeatherEcommerce.KiyanService.PromotionHeaderResultModel GetPromotionsResult;
-        
-        public GetPromotionsResponse() {
-        }
-        
-        public GetPromotionsResponse(MashadLeatherEcommerce.KiyanService.PromotionHeaderResultModel GetPromotionsResult) {
-            this.GetPromotionsResult = GetPromotionsResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetPromotionCustomerGroups", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetPromotionCustomerGroupsRequest {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
-        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public int retialStore;
-        
-        public GetPromotionCustomerGroupsRequest() {
-        }
-        
-        public GetPromotionCustomerGroupsRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, int retialStore) {
-            this.ValidationSoapHeader = ValidationSoapHeader;
-            this.retialStore = retialStore;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetPromotionCustomerGroupsResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class GetPromotionCustomerGroupsResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public MashadLeatherEcommerce.KiyanService.PromotionCustomerGroupResultModel GetPromotionCustomerGroupsResult;
-        
-        public GetPromotionCustomerGroupsResponse() {
-        }
-        
-        public GetPromotionCustomerGroupsResponse(MashadLeatherEcommerce.KiyanService.PromotionCustomerGroupResultModel GetPromotionCustomerGroupsResult) {
-            this.GetPromotionCustomerGroupsResult = GetPromotionCustomerGroupsResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="ValidateGiftCertificates", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class ValidateGiftCertificatesRequest {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="KyanOnlineSaleService")]
-        public MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public string[] barcode;
-        
-        public ValidateGiftCertificatesRequest() {
-        }
-        
-        public ValidateGiftCertificatesRequest(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, string[] barcode) {
-            this.ValidationSoapHeader = ValidationSoapHeader;
-            this.barcode = barcode;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="ValidateGiftCertificatesResponse", WrapperNamespace="KyanOnlineSaleService", IsWrapped=true)]
-    public partial class ValidateGiftCertificatesResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="KyanOnlineSaleService", Order=0)]
-        public MashadLeatherEcommerce.KiyanService.GiftCertificateListResultModel ValidateGiftCertificatesResult;
-        
-        public ValidateGiftCertificatesResponse() {
-        }
-        
-        public ValidateGiftCertificatesResponse(MashadLeatherEcommerce.KiyanService.GiftCertificateListResultModel ValidateGiftCertificatesResult) {
-            this.ValidateGiftCertificatesResult = ValidateGiftCertificatesResult;
+        public LayAwaySaleItemsResponse(MashadLeatherEcommerce.KiyanService.SaleResultModel LayAwaySaleItemsResult) {
+            this.LayAwaySaleItemsResult = LayAwaySaleItemsResult;
         }
     }
     
@@ -5601,26 +13685,1074 @@ namespace MashadLeatherEcommerce.KiyanService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        MashadLeatherEcommerce.KiyanService.GetTaxChargeAmountResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetTaxChargeAmount(MashadLeatherEcommerce.KiyanService.GetTaxChargeAmountRequest request) {
-            return base.Channel.GetTaxChargeAmount(request);
+        MashadLeatherEcommerce.KiyanService.AuthenticationUserResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.AuthenticationUser(MashadLeatherEcommerce.KiyanService.AuthenticationUserRequest request) {
+            return base.Channel.AuthenticationUser(request);
         }
         
-        public MashadLeatherEcommerce.KiyanService.ConfigValueResultModel GetTaxChargeAmount(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader) {
-            MashadLeatherEcommerce.KiyanService.GetTaxChargeAmountRequest inValue = new MashadLeatherEcommerce.KiyanService.GetTaxChargeAmountRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            MashadLeatherEcommerce.KiyanService.GetTaxChargeAmountResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetTaxChargeAmount(inValue);
-            return retVal.GetTaxChargeAmountResult;
+        public MashadLeatherEcommerce.KiyanService.AuthenticationResult AuthenticationUser(MashadLeatherEcommerce.KiyanService.AuthUser AuthUser) {
+            MashadLeatherEcommerce.KiyanService.AuthenticationUserRequest inValue = new MashadLeatherEcommerce.KiyanService.AuthenticationUserRequest();
+            inValue.AuthUser = AuthUser;
+            MashadLeatherEcommerce.KiyanService.AuthenticationUserResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).AuthenticationUser(inValue);
+            return retVal.AuthenticationUserResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetTaxChargeAmountResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetTaxChargeAmountAsync(MashadLeatherEcommerce.KiyanService.GetTaxChargeAmountRequest request) {
-            return base.Channel.GetTaxChargeAmountAsync(request);
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.AuthenticationUserResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.AuthenticationUserAsync(MashadLeatherEcommerce.KiyanService.AuthenticationUserRequest request) {
+            return base.Channel.AuthenticationUserAsync(request);
         }
         
-        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetTaxChargeAmountResponse> GetTaxChargeAmountAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader) {
-            MashadLeatherEcommerce.KiyanService.GetTaxChargeAmountRequest inValue = new MashadLeatherEcommerce.KiyanService.GetTaxChargeAmountRequest();
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.AuthenticationUserResponse> AuthenticationUserAsync(MashadLeatherEcommerce.KiyanService.AuthUser AuthUser) {
+            MashadLeatherEcommerce.KiyanService.AuthenticationUserRequest inValue = new MashadLeatherEcommerce.KiyanService.AuthenticationUserRequest();
+            inValue.AuthUser = AuthUser;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).AuthenticationUserAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.InputPermissionResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.InputPermission(MashadLeatherEcommerce.KiyanService.InputPermissionRequest request) {
+            return base.Channel.InputPermission(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.Result InputPermission(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int RsID) {
+            MashadLeatherEcommerce.KiyanService.InputPermissionRequest inValue = new MashadLeatherEcommerce.KiyanService.InputPermissionRequest();
             inValue.ValidationSoapHeader = ValidationSoapHeader;
-            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetTaxChargeAmountAsync(inValue);
+            inValue.AuthUser = AuthUser;
+            inValue.RsID = RsID;
+            MashadLeatherEcommerce.KiyanService.InputPermissionResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).InputPermission(inValue);
+            return retVal.InputPermissionResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.InputPermissionResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.InputPermissionAsync(MashadLeatherEcommerce.KiyanService.InputPermissionRequest request) {
+            return base.Channel.InputPermissionAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.InputPermissionResponse> InputPermissionAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int RsID) {
+            MashadLeatherEcommerce.KiyanService.InputPermissionRequest inValue = new MashadLeatherEcommerce.KiyanService.InputPermissionRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.RsID = RsID;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).InputPermissionAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.InputPermissionMethodResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.InputPermissionMethod(MashadLeatherEcommerce.KiyanService.InputPermissionMethodRequest request) {
+            return base.Channel.InputPermissionMethod(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.Result InputPermissionMethod(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string MethodName, bool Active) {
+            MashadLeatherEcommerce.KiyanService.InputPermissionMethodRequest inValue = new MashadLeatherEcommerce.KiyanService.InputPermissionMethodRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.MethodName = MethodName;
+            inValue.Active = Active;
+            MashadLeatherEcommerce.KiyanService.InputPermissionMethodResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).InputPermissionMethod(inValue);
+            return retVal.InputPermissionMethodResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.InputPermissionMethodResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.InputPermissionMethodAsync(MashadLeatherEcommerce.KiyanService.InputPermissionMethodRequest request) {
+            return base.Channel.InputPermissionMethodAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.InputPermissionMethodResponse> InputPermissionMethodAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string MethodName, bool Active) {
+            MashadLeatherEcommerce.KiyanService.InputPermissionMethodRequest inValue = new MashadLeatherEcommerce.KiyanService.InputPermissionMethodRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.MethodName = MethodName;
+            inValue.Active = Active;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).InputPermissionMethodAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.ProductDescriptionResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.ProductDescription(MashadLeatherEcommerce.KiyanService.ProductDescriptionRequest request) {
+            return base.Channel.ProductDescription(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfProductDescription ProductDescription(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser) {
+            MashadLeatherEcommerce.KiyanService.ProductDescriptionRequest inValue = new MashadLeatherEcommerce.KiyanService.ProductDescriptionRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            MashadLeatherEcommerce.KiyanService.ProductDescriptionResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).ProductDescription(inValue);
+            return retVal.ProductDescriptionResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.ProductDescriptionResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.ProductDescriptionAsync(MashadLeatherEcommerce.KiyanService.ProductDescriptionRequest request) {
+            return base.Channel.ProductDescriptionAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.ProductDescriptionResponse> ProductDescriptionAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser) {
+            MashadLeatherEcommerce.KiyanService.ProductDescriptionRequest inValue = new MashadLeatherEcommerce.KiyanService.ProductDescriptionRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).ProductDescriptionAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.GetItemListResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetItemList(MashadLeatherEcommerce.KiyanService.GetItemListRequest request) {
+            return base.Channel.GetItemList(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfitm GetItemList(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string StartDate, string EndDate) {
+            MashadLeatherEcommerce.KiyanService.GetItemListRequest inValue = new MashadLeatherEcommerce.KiyanService.GetItemListRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.StartDate = StartDate;
+            inValue.EndDate = EndDate;
+            MashadLeatherEcommerce.KiyanService.GetItemListResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetItemList(inValue);
+            return retVal.GetItemListResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemListResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetItemListAsync(MashadLeatherEcommerce.KiyanService.GetItemListRequest request) {
+            return base.Channel.GetItemListAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemListResponse> GetItemListAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string StartDate, string EndDate) {
+            MashadLeatherEcommerce.KiyanService.GetItemListRequest inValue = new MashadLeatherEcommerce.KiyanService.GetItemListRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.StartDate = StartDate;
+            inValue.EndDate = EndDate;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetItemListAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.GetItemListWithPaginationResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetItemListWithPagination(MashadLeatherEcommerce.KiyanService.GetItemListWithPaginationRequest request) {
+            return base.Channel.GetItemListWithPagination(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfitmWithRowNo GetItemListWithPagination(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int RowNoBgin) {
+            MashadLeatherEcommerce.KiyanService.GetItemListWithPaginationRequest inValue = new MashadLeatherEcommerce.KiyanService.GetItemListWithPaginationRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.RowNoBgin = RowNoBgin;
+            MashadLeatherEcommerce.KiyanService.GetItemListWithPaginationResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetItemListWithPagination(inValue);
+            return retVal.GetItemListWithPaginationResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemListWithPaginationResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetItemListWithPaginationAsync(MashadLeatherEcommerce.KiyanService.GetItemListWithPaginationRequest request) {
+            return base.Channel.GetItemListWithPaginationAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemListWithPaginationResponse> GetItemListWithPaginationAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int RowNoBgin) {
+            MashadLeatherEcommerce.KiyanService.GetItemListWithPaginationRequest inValue = new MashadLeatherEcommerce.KiyanService.GetItemListWithPaginationRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.RowNoBgin = RowNoBgin;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetItemListWithPaginationAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.GetItemInfoWithInventoryIDPlusJetResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetItemInfoWithInventoryIDPlusJet(MashadLeatherEcommerce.KiyanService.GetItemInfoWithInventoryIDPlusJetRequest request) {
+            return base.Channel.GetItemInfoWithInventoryIDPlusJet(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfgoodDetail GetItemInfoWithInventoryIDPlusJet(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int inventoryID, int RowNoBgin) {
+            MashadLeatherEcommerce.KiyanService.GetItemInfoWithInventoryIDPlusJetRequest inValue = new MashadLeatherEcommerce.KiyanService.GetItemInfoWithInventoryIDPlusJetRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.inventoryID = inventoryID;
+            inValue.RowNoBgin = RowNoBgin;
+            MashadLeatherEcommerce.KiyanService.GetItemInfoWithInventoryIDPlusJetResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetItemInfoWithInventoryIDPlusJet(inValue);
+            return retVal.GetItemInfoWithInventoryIDPlusJetResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemInfoWithInventoryIDPlusJetResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetItemInfoWithInventoryIDPlusJetAsync(MashadLeatherEcommerce.KiyanService.GetItemInfoWithInventoryIDPlusJetRequest request) {
+            return base.Channel.GetItemInfoWithInventoryIDPlusJetAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemInfoWithInventoryIDPlusJetResponse> GetItemInfoWithInventoryIDPlusJetAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int inventoryID, int RowNoBgin) {
+            MashadLeatherEcommerce.KiyanService.GetItemInfoWithInventoryIDPlusJetRequest inValue = new MashadLeatherEcommerce.KiyanService.GetItemInfoWithInventoryIDPlusJetRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.inventoryID = inventoryID;
+            inValue.RowNoBgin = RowNoBgin;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetItemInfoWithInventoryIDPlusJetAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.GetItemListWithParentInfoResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetItemListWithParentInfo(MashadLeatherEcommerce.KiyanService.GetItemListWithParentInfoRequest request) {
+            return base.Channel.GetItemListWithParentInfo(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfitmWithParentInfo GetItemListWithParentInfo(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string StartDate, string EndDate, bool Active) {
+            MashadLeatherEcommerce.KiyanService.GetItemListWithParentInfoRequest inValue = new MashadLeatherEcommerce.KiyanService.GetItemListWithParentInfoRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.StartDate = StartDate;
+            inValue.EndDate = EndDate;
+            inValue.Active = Active;
+            MashadLeatherEcommerce.KiyanService.GetItemListWithParentInfoResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetItemListWithParentInfo(inValue);
+            return retVal.GetItemListWithParentInfoResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemListWithParentInfoResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetItemListWithParentInfoAsync(MashadLeatherEcommerce.KiyanService.GetItemListWithParentInfoRequest request) {
+            return base.Channel.GetItemListWithParentInfoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemListWithParentInfoResponse> GetItemListWithParentInfoAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string StartDate, string EndDate, bool Active) {
+            MashadLeatherEcommerce.KiyanService.GetItemListWithParentInfoRequest inValue = new MashadLeatherEcommerce.KiyanService.GetItemListWithParentInfoRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.StartDate = StartDate;
+            inValue.EndDate = EndDate;
+            inValue.Active = Active;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetItemListWithParentInfoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.GetItemListWithinventoryIDResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetItemListWithinventoryID(MashadLeatherEcommerce.KiyanService.GetItemListWithinventoryIDRequest request) {
+            return base.Channel.GetItemListWithinventoryID(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfitm GetItemListWithinventoryID(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int inventory) {
+            MashadLeatherEcommerce.KiyanService.GetItemListWithinventoryIDRequest inValue = new MashadLeatherEcommerce.KiyanService.GetItemListWithinventoryIDRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.inventory = inventory;
+            MashadLeatherEcommerce.KiyanService.GetItemListWithinventoryIDResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetItemListWithinventoryID(inValue);
+            return retVal.GetItemListWithinventoryIDResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemListWithinventoryIDResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetItemListWithinventoryIDAsync(MashadLeatherEcommerce.KiyanService.GetItemListWithinventoryIDRequest request) {
+            return base.Channel.GetItemListWithinventoryIDAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemListWithinventoryIDResponse> GetItemListWithinventoryIDAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int inventory) {
+            MashadLeatherEcommerce.KiyanService.GetItemListWithinventoryIDRequest inValue = new MashadLeatherEcommerce.KiyanService.GetItemListWithinventoryIDRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.inventory = inventory;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetItemListWithinventoryIDAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.GetItemInfoWithinventoryIDResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetItemInfoWithinventoryID(MashadLeatherEcommerce.KiyanService.GetItemInfoWithinventoryIDRequest request) {
+            return base.Channel.GetItemInfoWithinventoryID(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfitm3 GetItemInfoWithinventoryID(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int[] inventories, string StartDate, string EndDate) {
+            MashadLeatherEcommerce.KiyanService.GetItemInfoWithinventoryIDRequest inValue = new MashadLeatherEcommerce.KiyanService.GetItemInfoWithinventoryIDRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.inventories = inventories;
+            inValue.StartDate = StartDate;
+            inValue.EndDate = EndDate;
+            MashadLeatherEcommerce.KiyanService.GetItemInfoWithinventoryIDResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetItemInfoWithinventoryID(inValue);
+            return retVal.GetItemInfoWithinventoryIDResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemInfoWithinventoryIDResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetItemInfoWithinventoryIDAsync(MashadLeatherEcommerce.KiyanService.GetItemInfoWithinventoryIDRequest request) {
+            return base.Channel.GetItemInfoWithinventoryIDAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemInfoWithinventoryIDResponse> GetItemInfoWithinventoryIDAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int[] inventories, string StartDate, string EndDate) {
+            MashadLeatherEcommerce.KiyanService.GetItemInfoWithinventoryIDRequest inValue = new MashadLeatherEcommerce.KiyanService.GetItemInfoWithinventoryIDRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.inventories = inventories;
+            inValue.StartDate = StartDate;
+            inValue.EndDate = EndDate;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetItemInfoWithinventoryIDAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.GetItemInfoWithinventoryIDandBarcodesResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetItemInfoWithinventoryIDandBarcodes(MashadLeatherEcommerce.KiyanService.GetItemInfoWithinventoryIDandBarcodesRequest request) {
+            return base.Channel.GetItemInfoWithinventoryIDandBarcodes(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfitm3 GetItemInfoWithinventoryIDandBarcodes(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int[] inventories, string[] barcodes, string StartDate, string EndDate) {
+            MashadLeatherEcommerce.KiyanService.GetItemInfoWithinventoryIDandBarcodesRequest inValue = new MashadLeatherEcommerce.KiyanService.GetItemInfoWithinventoryIDandBarcodesRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.inventories = inventories;
+            inValue.barcodes = barcodes;
+            inValue.StartDate = StartDate;
+            inValue.EndDate = EndDate;
+            MashadLeatherEcommerce.KiyanService.GetItemInfoWithinventoryIDandBarcodesResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetItemInfoWithinventoryIDandBarcodes(inValue);
+            return retVal.GetItemInfoWithinventoryIDandBarcodesResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemInfoWithinventoryIDandBarcodesResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetItemInfoWithinventoryIDandBarcodesAsync(MashadLeatherEcommerce.KiyanService.GetItemInfoWithinventoryIDandBarcodesRequest request) {
+            return base.Channel.GetItemInfoWithinventoryIDandBarcodesAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemInfoWithinventoryIDandBarcodesResponse> GetItemInfoWithinventoryIDandBarcodesAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int[] inventories, string[] barcodes, string StartDate, string EndDate) {
+            MashadLeatherEcommerce.KiyanService.GetItemInfoWithinventoryIDandBarcodesRequest inValue = new MashadLeatherEcommerce.KiyanService.GetItemInfoWithinventoryIDandBarcodesRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.inventories = inventories;
+            inValue.barcodes = barcodes;
+            inValue.StartDate = StartDate;
+            inValue.EndDate = EndDate;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetItemInfoWithinventoryIDandBarcodesAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.GetGeneralItemInfoResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetGeneralItemInfo(MashadLeatherEcommerce.KiyanService.GetGeneralItemInfoRequest request) {
+            return base.Channel.GetGeneralItemInfo(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfGeneralItemInfoModel GetGeneralItemInfo(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int retailStoreId) {
+            MashadLeatherEcommerce.KiyanService.GetGeneralItemInfoRequest inValue = new MashadLeatherEcommerce.KiyanService.GetGeneralItemInfoRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.retailStoreId = retailStoreId;
+            MashadLeatherEcommerce.KiyanService.GetGeneralItemInfoResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetGeneralItemInfo(inValue);
+            return retVal.GetGeneralItemInfoResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetGeneralItemInfoResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetGeneralItemInfoAsync(MashadLeatherEcommerce.KiyanService.GetGeneralItemInfoRequest request) {
+            return base.Channel.GetGeneralItemInfoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetGeneralItemInfoResponse> GetGeneralItemInfoAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int retailStoreId) {
+            MashadLeatherEcommerce.KiyanService.GetGeneralItemInfoRequest inValue = new MashadLeatherEcommerce.KiyanService.GetGeneralItemInfoRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.retailStoreId = retailStoreId;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetGeneralItemInfoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.GetGeneralItemInfo_CResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetGeneralItemInfo_C(MashadLeatherEcommerce.KiyanService.GetGeneralItemInfo_CRequest request) {
+            return base.Channel.GetGeneralItemInfo_C(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfGeneralItemInfo_CModel GetGeneralItemInfo_C(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int retailStoreId) {
+            MashadLeatherEcommerce.KiyanService.GetGeneralItemInfo_CRequest inValue = new MashadLeatherEcommerce.KiyanService.GetGeneralItemInfo_CRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.retailStoreId = retailStoreId;
+            MashadLeatherEcommerce.KiyanService.GetGeneralItemInfo_CResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetGeneralItemInfo_C(inValue);
+            return retVal.GetGeneralItemInfo_CResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetGeneralItemInfo_CResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetGeneralItemInfo_CAsync(MashadLeatherEcommerce.KiyanService.GetGeneralItemInfo_CRequest request) {
+            return base.Channel.GetGeneralItemInfo_CAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetGeneralItemInfo_CResponse> GetGeneralItemInfo_CAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int retailStoreId) {
+            MashadLeatherEcommerce.KiyanService.GetGeneralItemInfo_CRequest inValue = new MashadLeatherEcommerce.KiyanService.GetGeneralItemInfo_CRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.retailStoreId = retailStoreId;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetGeneralItemInfo_CAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.GetGeneralItemInfo_C_PlusResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetGeneralItemInfo_C_Plus(MashadLeatherEcommerce.KiyanService.GetGeneralItemInfo_C_PlusRequest request) {
+            return base.Channel.GetGeneralItemInfo_C_Plus(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfGeneralItemInfo_CModel GetGeneralItemInfo_C_Plus(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int retailStoreId) {
+            MashadLeatherEcommerce.KiyanService.GetGeneralItemInfo_C_PlusRequest inValue = new MashadLeatherEcommerce.KiyanService.GetGeneralItemInfo_C_PlusRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.retailStoreId = retailStoreId;
+            MashadLeatherEcommerce.KiyanService.GetGeneralItemInfo_C_PlusResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetGeneralItemInfo_C_Plus(inValue);
+            return retVal.GetGeneralItemInfo_C_PlusResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetGeneralItemInfo_C_PlusResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetGeneralItemInfo_C_PlusAsync(MashadLeatherEcommerce.KiyanService.GetGeneralItemInfo_C_PlusRequest request) {
+            return base.Channel.GetGeneralItemInfo_C_PlusAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetGeneralItemInfo_C_PlusResponse> GetGeneralItemInfo_C_PlusAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int retailStoreId) {
+            MashadLeatherEcommerce.KiyanService.GetGeneralItemInfo_C_PlusRequest inValue = new MashadLeatherEcommerce.KiyanService.GetGeneralItemInfo_C_PlusRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.retailStoreId = retailStoreId;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetGeneralItemInfo_C_PlusAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.GetGeneralItemInfoWithBarcodeResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetGeneralItemInfoWithBarcode(MashadLeatherEcommerce.KiyanService.GetGeneralItemInfoWithBarcodeRequest request) {
+            return base.Channel.GetGeneralItemInfoWithBarcode(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfGeneralItemInfoModel GetGeneralItemInfoWithBarcode(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int retailStoreId, string barcode) {
+            MashadLeatherEcommerce.KiyanService.GetGeneralItemInfoWithBarcodeRequest inValue = new MashadLeatherEcommerce.KiyanService.GetGeneralItemInfoWithBarcodeRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.retailStoreId = retailStoreId;
+            inValue.barcode = barcode;
+            MashadLeatherEcommerce.KiyanService.GetGeneralItemInfoWithBarcodeResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetGeneralItemInfoWithBarcode(inValue);
+            return retVal.GetGeneralItemInfoWithBarcodeResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetGeneralItemInfoWithBarcodeResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetGeneralItemInfoWithBarcodeAsync(MashadLeatherEcommerce.KiyanService.GetGeneralItemInfoWithBarcodeRequest request) {
+            return base.Channel.GetGeneralItemInfoWithBarcodeAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetGeneralItemInfoWithBarcodeResponse> GetGeneralItemInfoWithBarcodeAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int retailStoreId, string barcode) {
+            MashadLeatherEcommerce.KiyanService.GetGeneralItemInfoWithBarcodeRequest inValue = new MashadLeatherEcommerce.KiyanService.GetGeneralItemInfoWithBarcodeRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.retailStoreId = retailStoreId;
+            inValue.barcode = barcode;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetGeneralItemInfoWithBarcodeAsync(inValue);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfGeneralItemInfoModel GetGeneralItemInfoWithRS(string retailStores) {
+            return base.Channel.GetGeneralItemInfoWithRS(retailStores);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.ResponseDataOfGeneralItemInfoModel> GetGeneralItemInfoWithRSAsync(string retailStores) {
+            return base.Channel.GetGeneralItemInfoWithRSAsync(retailStores);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.GetItemsQuantityAllInventoryResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetItemsQuantityAllInventory(MashadLeatherEcommerce.KiyanService.GetItemsQuantityAllInventoryRequest request) {
+            return base.Channel.GetItemsQuantityAllInventory(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfItemStock GetItemsQuantityAllInventory(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int[] retailStores) {
+            MashadLeatherEcommerce.KiyanService.GetItemsQuantityAllInventoryRequest inValue = new MashadLeatherEcommerce.KiyanService.GetItemsQuantityAllInventoryRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.retailStores = retailStores;
+            MashadLeatherEcommerce.KiyanService.GetItemsQuantityAllInventoryResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetItemsQuantityAllInventory(inValue);
+            return retVal.GetItemsQuantityAllInventoryResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemsQuantityAllInventoryResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetItemsQuantityAllInventoryAsync(MashadLeatherEcommerce.KiyanService.GetItemsQuantityAllInventoryRequest request) {
+            return base.Channel.GetItemsQuantityAllInventoryAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemsQuantityAllInventoryResponse> GetItemsQuantityAllInventoryAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int[] retailStores) {
+            MashadLeatherEcommerce.KiyanService.GetItemsQuantityAllInventoryRequest inValue = new MashadLeatherEcommerce.KiyanService.GetItemsQuantityAllInventoryRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.retailStores = retailStores;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetItemsQuantityAllInventoryAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.GetItemsQuantityAllInventoryWithBarcodeResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetItemsQuantityAllInventoryWithBarcode(MashadLeatherEcommerce.KiyanService.GetItemsQuantityAllInventoryWithBarcodeRequest request) {
+            return base.Channel.GetItemsQuantityAllInventoryWithBarcode(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfItemStock GetItemsQuantityAllInventoryWithBarcode(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int[] retailStores, string[] barcodes) {
+            MashadLeatherEcommerce.KiyanService.GetItemsQuantityAllInventoryWithBarcodeRequest inValue = new MashadLeatherEcommerce.KiyanService.GetItemsQuantityAllInventoryWithBarcodeRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.retailStores = retailStores;
+            inValue.barcodes = barcodes;
+            MashadLeatherEcommerce.KiyanService.GetItemsQuantityAllInventoryWithBarcodeResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetItemsQuantityAllInventoryWithBarcode(inValue);
+            return retVal.GetItemsQuantityAllInventoryWithBarcodeResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemsQuantityAllInventoryWithBarcodeResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetItemsQuantityAllInventoryWithBarcodeAsync(MashadLeatherEcommerce.KiyanService.GetItemsQuantityAllInventoryWithBarcodeRequest request) {
+            return base.Channel.GetItemsQuantityAllInventoryWithBarcodeAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemsQuantityAllInventoryWithBarcodeResponse> GetItemsQuantityAllInventoryWithBarcodeAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int[] retailStores, string[] barcodes) {
+            MashadLeatherEcommerce.KiyanService.GetItemsQuantityAllInventoryWithBarcodeRequest inValue = new MashadLeatherEcommerce.KiyanService.GetItemsQuantityAllInventoryWithBarcodeRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.retailStores = retailStores;
+            inValue.barcodes = barcodes;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetItemsQuantityAllInventoryWithBarcodeAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.GetItemsQuantityListInventoryWithBarcodeResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetItemsQuantityListInventoryWithBarcode(MashadLeatherEcommerce.KiyanService.GetItemsQuantityListInventoryWithBarcodeRequest request) {
+            return base.Channel.GetItemsQuantityListInventoryWithBarcode(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfItemStock2 GetItemsQuantityListInventoryWithBarcode(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int[] Inventories, string barcode) {
+            MashadLeatherEcommerce.KiyanService.GetItemsQuantityListInventoryWithBarcodeRequest inValue = new MashadLeatherEcommerce.KiyanService.GetItemsQuantityListInventoryWithBarcodeRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.Inventories = Inventories;
+            inValue.barcode = barcode;
+            MashadLeatherEcommerce.KiyanService.GetItemsQuantityListInventoryWithBarcodeResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetItemsQuantityListInventoryWithBarcode(inValue);
+            return retVal.GetItemsQuantityListInventoryWithBarcodeResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemsQuantityListInventoryWithBarcodeResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetItemsQuantityListInventoryWithBarcodeAsync(MashadLeatherEcommerce.KiyanService.GetItemsQuantityListInventoryWithBarcodeRequest request) {
+            return base.Channel.GetItemsQuantityListInventoryWithBarcodeAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemsQuantityListInventoryWithBarcodeResponse> GetItemsQuantityListInventoryWithBarcodeAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int[] Inventories, string barcode) {
+            MashadLeatherEcommerce.KiyanService.GetItemsQuantityListInventoryWithBarcodeRequest inValue = new MashadLeatherEcommerce.KiyanService.GetItemsQuantityListInventoryWithBarcodeRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.Inventories = Inventories;
+            inValue.barcode = barcode;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetItemsQuantityListInventoryWithBarcodeAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.GetItemQuantityWithInventoryIDResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetItemQuantityWithInventoryID(MashadLeatherEcommerce.KiyanService.GetItemQuantityWithInventoryIDRequest request) {
+            return base.Channel.GetItemQuantityWithInventoryID(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfBarCodeStock GetItemQuantityWithInventoryID(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int inventory) {
+            MashadLeatherEcommerce.KiyanService.GetItemQuantityWithInventoryIDRequest inValue = new MashadLeatherEcommerce.KiyanService.GetItemQuantityWithInventoryIDRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.inventory = inventory;
+            MashadLeatherEcommerce.KiyanService.GetItemQuantityWithInventoryIDResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetItemQuantityWithInventoryID(inValue);
+            return retVal.GetItemQuantityWithInventoryIDResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemQuantityWithInventoryIDResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetItemQuantityWithInventoryIDAsync(MashadLeatherEcommerce.KiyanService.GetItemQuantityWithInventoryIDRequest request) {
+            return base.Channel.GetItemQuantityWithInventoryIDAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemQuantityWithInventoryIDResponse> GetItemQuantityWithInventoryIDAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int inventory) {
+            MashadLeatherEcommerce.KiyanService.GetItemQuantityWithInventoryIDRequest inValue = new MashadLeatherEcommerce.KiyanService.GetItemQuantityWithInventoryIDRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.inventory = inventory;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetItemQuantityWithInventoryIDAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.GetItemsInformationWithInventoryIDandBarcodesResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetItemsInformationWithInventoryIDandBarcodes(MashadLeatherEcommerce.KiyanService.GetItemsInformationWithInventoryIDandBarcodesRequest request) {
+            return base.Channel.GetItemsInformationWithInventoryIDandBarcodes(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfitm GetItemsInformationWithInventoryIDandBarcodes(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int inventoryId, string[] barcodes) {
+            MashadLeatherEcommerce.KiyanService.GetItemsInformationWithInventoryIDandBarcodesRequest inValue = new MashadLeatherEcommerce.KiyanService.GetItemsInformationWithInventoryIDandBarcodesRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.inventoryId = inventoryId;
+            inValue.barcodes = barcodes;
+            MashadLeatherEcommerce.KiyanService.GetItemsInformationWithInventoryIDandBarcodesResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetItemsInformationWithInventoryIDandBarcodes(inValue);
+            return retVal.GetItemsInformationWithInventoryIDandBarcodesResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemsInformationWithInventoryIDandBarcodesResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetItemsInformationWithInventoryIDandBarcodesAsync(MashadLeatherEcommerce.KiyanService.GetItemsInformationWithInventoryIDandBarcodesRequest request) {
+            return base.Channel.GetItemsInformationWithInventoryIDandBarcodesAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemsInformationWithInventoryIDandBarcodesResponse> GetItemsInformationWithInventoryIDandBarcodesAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int inventoryId, string[] barcodes) {
+            MashadLeatherEcommerce.KiyanService.GetItemsInformationWithInventoryIDandBarcodesRequest inValue = new MashadLeatherEcommerce.KiyanService.GetItemsInformationWithInventoryIDandBarcodesRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.inventoryId = inventoryId;
+            inValue.barcodes = barcodes;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetItemsInformationWithInventoryIDandBarcodesAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.GetItemInfoResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetItemInfo(MashadLeatherEcommerce.KiyanService.GetItemInfoRequest request) {
+            return base.Channel.GetItemInfo(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfitm GetItemInfo(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string barcode) {
+            MashadLeatherEcommerce.KiyanService.GetItemInfoRequest inValue = new MashadLeatherEcommerce.KiyanService.GetItemInfoRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.barcode = barcode;
+            MashadLeatherEcommerce.KiyanService.GetItemInfoResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetItemInfo(inValue);
+            return retVal.GetItemInfoResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemInfoResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetItemInfoAsync(MashadLeatherEcommerce.KiyanService.GetItemInfoRequest request) {
+            return base.Channel.GetItemInfoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemInfoResponse> GetItemInfoAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string barcode) {
+            MashadLeatherEcommerce.KiyanService.GetItemInfoRequest inValue = new MashadLeatherEcommerce.KiyanService.GetItemInfoRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.barcode = barcode;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetItemInfoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.GetArrayItemInfoResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetArrayItemInfo(MashadLeatherEcommerce.KiyanService.GetArrayItemInfoRequest request) {
+            return base.Channel.GetArrayItemInfo(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfitm GetArrayItemInfo(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string[] barcodes) {
+            MashadLeatherEcommerce.KiyanService.GetArrayItemInfoRequest inValue = new MashadLeatherEcommerce.KiyanService.GetArrayItemInfoRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.barcodes = barcodes;
+            MashadLeatherEcommerce.KiyanService.GetArrayItemInfoResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetArrayItemInfo(inValue);
+            return retVal.GetArrayItemInfoResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetArrayItemInfoResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetArrayItemInfoAsync(MashadLeatherEcommerce.KiyanService.GetArrayItemInfoRequest request) {
+            return base.Channel.GetArrayItemInfoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetArrayItemInfoResponse> GetArrayItemInfoAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string[] barcodes) {
+            MashadLeatherEcommerce.KiyanService.GetArrayItemInfoRequest inValue = new MashadLeatherEcommerce.KiyanService.GetArrayItemInfoRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.barcodes = barcodes;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetArrayItemInfoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.ItemsCostInformationWithBarcodesResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.ItemsCostInformationWithBarcodes(MashadLeatherEcommerce.KiyanService.ItemsCostInformationWithBarcodesRequest request) {
+            return base.Channel.ItemsCostInformationWithBarcodes(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfitm2 ItemsCostInformationWithBarcodes(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string[] barcodes) {
+            MashadLeatherEcommerce.KiyanService.ItemsCostInformationWithBarcodesRequest inValue = new MashadLeatherEcommerce.KiyanService.ItemsCostInformationWithBarcodesRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.barcodes = barcodes;
+            MashadLeatherEcommerce.KiyanService.ItemsCostInformationWithBarcodesResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).ItemsCostInformationWithBarcodes(inValue);
+            return retVal.ItemsCostInformationWithBarcodesResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.ItemsCostInformationWithBarcodesResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.ItemsCostInformationWithBarcodesAsync(MashadLeatherEcommerce.KiyanService.ItemsCostInformationWithBarcodesRequest request) {
+            return base.Channel.ItemsCostInformationWithBarcodesAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.ItemsCostInformationWithBarcodesResponse> ItemsCostInformationWithBarcodesAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string[] barcodes) {
+            MashadLeatherEcommerce.KiyanService.ItemsCostInformationWithBarcodesRequest inValue = new MashadLeatherEcommerce.KiyanService.ItemsCostInformationWithBarcodesRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.barcodes = barcodes;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).ItemsCostInformationWithBarcodesAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.GetItemInfoWithItemIDResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetItemInfoWithItemID(MashadLeatherEcommerce.KiyanService.GetItemInfoWithItemIDRequest request) {
+            return base.Channel.GetItemInfoWithItemID(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfitm GetItemInfoWithItemID(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int ItemID) {
+            MashadLeatherEcommerce.KiyanService.GetItemInfoWithItemIDRequest inValue = new MashadLeatherEcommerce.KiyanService.GetItemInfoWithItemIDRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.ItemID = ItemID;
+            MashadLeatherEcommerce.KiyanService.GetItemInfoWithItemIDResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetItemInfoWithItemID(inValue);
+            return retVal.GetItemInfoWithItemIDResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemInfoWithItemIDResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetItemInfoWithItemIDAsync(MashadLeatherEcommerce.KiyanService.GetItemInfoWithItemIDRequest request) {
+            return base.Channel.GetItemInfoWithItemIDAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemInfoWithItemIDResponse> GetItemInfoWithItemIDAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int ItemID) {
+            MashadLeatherEcommerce.KiyanService.GetItemInfoWithItemIDRequest inValue = new MashadLeatherEcommerce.KiyanService.GetItemInfoWithItemIDRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.ItemID = ItemID;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetItemInfoWithItemIDAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.GetItemInfoWithItemIDWithStatusResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetItemInfoWithItemIDWithStatus(MashadLeatherEcommerce.KiyanService.GetItemInfoWithItemIDWithStatusRequest request) {
+            return base.Channel.GetItemInfoWithItemIDWithStatus(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfitm4 GetItemInfoWithItemIDWithStatus(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int ItemID) {
+            MashadLeatherEcommerce.KiyanService.GetItemInfoWithItemIDWithStatusRequest inValue = new MashadLeatherEcommerce.KiyanService.GetItemInfoWithItemIDWithStatusRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.ItemID = ItemID;
+            MashadLeatherEcommerce.KiyanService.GetItemInfoWithItemIDWithStatusResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetItemInfoWithItemIDWithStatus(inValue);
+            return retVal.GetItemInfoWithItemIDWithStatusResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemInfoWithItemIDWithStatusResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetItemInfoWithItemIDWithStatusAsync(MashadLeatherEcommerce.KiyanService.GetItemInfoWithItemIDWithStatusRequest request) {
+            return base.Channel.GetItemInfoWithItemIDWithStatusAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemInfoWithItemIDWithStatusResponse> GetItemInfoWithItemIDWithStatusAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int ItemID) {
+            MashadLeatherEcommerce.KiyanService.GetItemInfoWithItemIDWithStatusRequest inValue = new MashadLeatherEcommerce.KiyanService.GetItemInfoWithItemIDWithStatusRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.ItemID = ItemID;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetItemInfoWithItemIDWithStatusAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.GetItemInfoWithGroupIDResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetItemInfoWithGroupID(MashadLeatherEcommerce.KiyanService.GetItemInfoWithGroupIDRequest request) {
+            return base.Channel.GetItemInfoWithGroupID(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfitm GetItemInfoWithGroupID(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int groupID) {
+            MashadLeatherEcommerce.KiyanService.GetItemInfoWithGroupIDRequest inValue = new MashadLeatherEcommerce.KiyanService.GetItemInfoWithGroupIDRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.groupID = groupID;
+            MashadLeatherEcommerce.KiyanService.GetItemInfoWithGroupIDResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetItemInfoWithGroupID(inValue);
+            return retVal.GetItemInfoWithGroupIDResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemInfoWithGroupIDResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetItemInfoWithGroupIDAsync(MashadLeatherEcommerce.KiyanService.GetItemInfoWithGroupIDRequest request) {
+            return base.Channel.GetItemInfoWithGroupIDAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemInfoWithGroupIDResponse> GetItemInfoWithGroupIDAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int groupID) {
+            MashadLeatherEcommerce.KiyanService.GetItemInfoWithGroupIDRequest inValue = new MashadLeatherEcommerce.KiyanService.GetItemInfoWithGroupIDRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.groupID = groupID;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetItemInfoWithGroupIDAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.GetItemStockStatusResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetItemStockStatus(MashadLeatherEcommerce.KiyanService.GetItemStockStatusRequest request) {
+            return base.Channel.GetItemStockStatus(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfLoanItemStock GetItemStockStatus(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string Barcode) {
+            MashadLeatherEcommerce.KiyanService.GetItemStockStatusRequest inValue = new MashadLeatherEcommerce.KiyanService.GetItemStockStatusRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.Barcode = Barcode;
+            MashadLeatherEcommerce.KiyanService.GetItemStockStatusResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetItemStockStatus(inValue);
+            return retVal.GetItemStockStatusResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemStockStatusResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetItemStockStatusAsync(MashadLeatherEcommerce.KiyanService.GetItemStockStatusRequest request) {
+            return base.Channel.GetItemStockStatusAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemStockStatusResponse> GetItemStockStatusAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string Barcode) {
+            MashadLeatherEcommerce.KiyanService.GetItemStockStatusRequest inValue = new MashadLeatherEcommerce.KiyanService.GetItemStockStatusRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.Barcode = Barcode;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetItemStockStatusAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.GetTemplatePropertyResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetTemplateProperty(MashadLeatherEcommerce.KiyanService.GetTemplatePropertyRequest request) {
+            return base.Channel.GetTemplateProperty(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfTemplate GetTemplateProperty(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser) {
+            MashadLeatherEcommerce.KiyanService.GetTemplatePropertyRequest inValue = new MashadLeatherEcommerce.KiyanService.GetTemplatePropertyRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            MashadLeatherEcommerce.KiyanService.GetTemplatePropertyResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetTemplateProperty(inValue);
+            return retVal.GetTemplatePropertyResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetTemplatePropertyResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetTemplatePropertyAsync(MashadLeatherEcommerce.KiyanService.GetTemplatePropertyRequest request) {
+            return base.Channel.GetTemplatePropertyAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetTemplatePropertyResponse> GetTemplatePropertyAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser) {
+            MashadLeatherEcommerce.KiyanService.GetTemplatePropertyRequest inValue = new MashadLeatherEcommerce.KiyanService.GetTemplatePropertyRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetTemplatePropertyAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.GetTemplateAttributesResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetTemplateAttributes(MashadLeatherEcommerce.KiyanService.GetTemplateAttributesRequest request) {
+            return base.Channel.GetTemplateAttributes(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfAttribute GetTemplateAttributes(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser) {
+            MashadLeatherEcommerce.KiyanService.GetTemplateAttributesRequest inValue = new MashadLeatherEcommerce.KiyanService.GetTemplateAttributesRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            MashadLeatherEcommerce.KiyanService.GetTemplateAttributesResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetTemplateAttributes(inValue);
+            return retVal.GetTemplateAttributesResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetTemplateAttributesResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetTemplateAttributesAsync(MashadLeatherEcommerce.KiyanService.GetTemplateAttributesRequest request) {
+            return base.Channel.GetTemplateAttributesAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetTemplateAttributesResponse> GetTemplateAttributesAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser) {
+            MashadLeatherEcommerce.KiyanService.GetTemplateAttributesRequest inValue = new MashadLeatherEcommerce.KiyanService.GetTemplateAttributesRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetTemplateAttributesAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.GetTemplateItemInfoResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetTemplateItemInfo(MashadLeatherEcommerce.KiyanService.GetTemplateItemInfoRequest request) {
+            return base.Channel.GetTemplateItemInfo(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfTemplateItem GetTemplateItemInfo(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string Barcode) {
+            MashadLeatherEcommerce.KiyanService.GetTemplateItemInfoRequest inValue = new MashadLeatherEcommerce.KiyanService.GetTemplateItemInfoRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.Barcode = Barcode;
+            MashadLeatherEcommerce.KiyanService.GetTemplateItemInfoResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetTemplateItemInfo(inValue);
+            return retVal.GetTemplateItemInfoResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetTemplateItemInfoResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetTemplateItemInfoAsync(MashadLeatherEcommerce.KiyanService.GetTemplateItemInfoRequest request) {
+            return base.Channel.GetTemplateItemInfoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetTemplateItemInfoResponse> GetTemplateItemInfoAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string Barcode) {
+            MashadLeatherEcommerce.KiyanService.GetTemplateItemInfoRequest inValue = new MashadLeatherEcommerce.KiyanService.GetTemplateItemInfoRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.Barcode = Barcode;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetTemplateItemInfoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.GetAllTemplateItemsResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetAllTemplateItems(MashadLeatherEcommerce.KiyanService.GetAllTemplateItemsRequest request) {
+            return base.Channel.GetAllTemplateItems(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfTemplateItem GetAllTemplateItems(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser) {
+            MashadLeatherEcommerce.KiyanService.GetAllTemplateItemsRequest inValue = new MashadLeatherEcommerce.KiyanService.GetAllTemplateItemsRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            MashadLeatherEcommerce.KiyanService.GetAllTemplateItemsResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetAllTemplateItems(inValue);
+            return retVal.GetAllTemplateItemsResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetAllTemplateItemsResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetAllTemplateItemsAsync(MashadLeatherEcommerce.KiyanService.GetAllTemplateItemsRequest request) {
+            return base.Channel.GetAllTemplateItemsAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetAllTemplateItemsResponse> GetAllTemplateItemsAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser) {
+            MashadLeatherEcommerce.KiyanService.GetAllTemplateItemsRequest inValue = new MashadLeatherEcommerce.KiyanService.GetAllTemplateItemsRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetAllTemplateItemsAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.GetMatrixPropertyResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetMatrixProperty(MashadLeatherEcommerce.KiyanService.GetMatrixPropertyRequest request) {
+            return base.Channel.GetMatrixProperty(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfTemplate GetMatrixProperty(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser) {
+            MashadLeatherEcommerce.KiyanService.GetMatrixPropertyRequest inValue = new MashadLeatherEcommerce.KiyanService.GetMatrixPropertyRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            MashadLeatherEcommerce.KiyanService.GetMatrixPropertyResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetMatrixProperty(inValue);
+            return retVal.GetMatrixPropertyResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetMatrixPropertyResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetMatrixPropertyAsync(MashadLeatherEcommerce.KiyanService.GetMatrixPropertyRequest request) {
+            return base.Channel.GetMatrixPropertyAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetMatrixPropertyResponse> GetMatrixPropertyAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser) {
+            MashadLeatherEcommerce.KiyanService.GetMatrixPropertyRequest inValue = new MashadLeatherEcommerce.KiyanService.GetMatrixPropertyRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetMatrixPropertyAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.GetMatrixAttributeResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetMatrixAttribute(MashadLeatherEcommerce.KiyanService.GetMatrixAttributeRequest request) {
+            return base.Channel.GetMatrixAttribute(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfAttribute GetMatrixAttribute(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser) {
+            MashadLeatherEcommerce.KiyanService.GetMatrixAttributeRequest inValue = new MashadLeatherEcommerce.KiyanService.GetMatrixAttributeRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            MashadLeatherEcommerce.KiyanService.GetMatrixAttributeResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetMatrixAttribute(inValue);
+            return retVal.GetMatrixAttributeResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetMatrixAttributeResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetMatrixAttributeAsync(MashadLeatherEcommerce.KiyanService.GetMatrixAttributeRequest request) {
+            return base.Channel.GetMatrixAttributeAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetMatrixAttributeResponse> GetMatrixAttributeAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser) {
+            MashadLeatherEcommerce.KiyanService.GetMatrixAttributeRequest inValue = new MashadLeatherEcommerce.KiyanService.GetMatrixAttributeRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetMatrixAttributeAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.GetMatrixItemInfoResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetMatrixItemInfo(MashadLeatherEcommerce.KiyanService.GetMatrixItemInfoRequest request) {
+            return base.Channel.GetMatrixItemInfo(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfTemplateItem GetMatrixItemInfo(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string Barcode) {
+            MashadLeatherEcommerce.KiyanService.GetMatrixItemInfoRequest inValue = new MashadLeatherEcommerce.KiyanService.GetMatrixItemInfoRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.Barcode = Barcode;
+            MashadLeatherEcommerce.KiyanService.GetMatrixItemInfoResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetMatrixItemInfo(inValue);
+            return retVal.GetMatrixItemInfoResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetMatrixItemInfoResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetMatrixItemInfoAsync(MashadLeatherEcommerce.KiyanService.GetMatrixItemInfoRequest request) {
+            return base.Channel.GetMatrixItemInfoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetMatrixItemInfoResponse> GetMatrixItemInfoAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string Barcode) {
+            MashadLeatherEcommerce.KiyanService.GetMatrixItemInfoRequest inValue = new MashadLeatherEcommerce.KiyanService.GetMatrixItemInfoRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.Barcode = Barcode;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetMatrixItemInfoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.GetAllMatrixItemsResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetAllMatrixItems(MashadLeatherEcommerce.KiyanService.GetAllMatrixItemsRequest request) {
+            return base.Channel.GetAllMatrixItems(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfTemplateItem GetAllMatrixItems(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser) {
+            MashadLeatherEcommerce.KiyanService.GetAllMatrixItemsRequest inValue = new MashadLeatherEcommerce.KiyanService.GetAllMatrixItemsRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            MashadLeatherEcommerce.KiyanService.GetAllMatrixItemsResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetAllMatrixItems(inValue);
+            return retVal.GetAllMatrixItemsResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetAllMatrixItemsResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetAllMatrixItemsAsync(MashadLeatherEcommerce.KiyanService.GetAllMatrixItemsRequest request) {
+            return base.Channel.GetAllMatrixItemsAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetAllMatrixItemsResponse> GetAllMatrixItemsAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser) {
+            MashadLeatherEcommerce.KiyanService.GetAllMatrixItemsRequest inValue = new MashadLeatherEcommerce.KiyanService.GetAllMatrixItemsRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetAllMatrixItemsAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.GetPosDepartmentListResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetPosDepartmentList(MashadLeatherEcommerce.KiyanService.GetPosDepartmentListRequest request) {
+            return base.Channel.GetPosDepartmentList(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfPosDepartment GetPosDepartmentList(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser) {
+            MashadLeatherEcommerce.KiyanService.GetPosDepartmentListRequest inValue = new MashadLeatherEcommerce.KiyanService.GetPosDepartmentListRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            MashadLeatherEcommerce.KiyanService.GetPosDepartmentListResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetPosDepartmentList(inValue);
+            return retVal.GetPosDepartmentListResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetPosDepartmentListResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetPosDepartmentListAsync(MashadLeatherEcommerce.KiyanService.GetPosDepartmentListRequest request) {
+            return base.Channel.GetPosDepartmentListAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetPosDepartmentListResponse> GetPosDepartmentListAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser) {
+            MashadLeatherEcommerce.KiyanService.GetPosDepartmentListRequest inValue = new MashadLeatherEcommerce.KiyanService.GetPosDepartmentListRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetPosDepartmentListAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.GetPosDepartmentLevelListResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetPosDepartmentLevelList(MashadLeatherEcommerce.KiyanService.GetPosDepartmentLevelListRequest request) {
+            return base.Channel.GetPosDepartmentLevelList(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfPosDepartmentList GetPosDepartmentLevelList(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser) {
+            MashadLeatherEcommerce.KiyanService.GetPosDepartmentLevelListRequest inValue = new MashadLeatherEcommerce.KiyanService.GetPosDepartmentLevelListRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            MashadLeatherEcommerce.KiyanService.GetPosDepartmentLevelListResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetPosDepartmentLevelList(inValue);
+            return retVal.GetPosDepartmentLevelListResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetPosDepartmentLevelListResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetPosDepartmentLevelListAsync(MashadLeatherEcommerce.KiyanService.GetPosDepartmentLevelListRequest request) {
+            return base.Channel.GetPosDepartmentLevelListAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetPosDepartmentLevelListResponse> GetPosDepartmentLevelListAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser) {
+            MashadLeatherEcommerce.KiyanService.GetPosDepartmentLevelListRequest inValue = new MashadLeatherEcommerce.KiyanService.GetPosDepartmentLevelListRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetPosDepartmentLevelListAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.ApproveDocumentResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.ApproveDocument(MashadLeatherEcommerce.KiyanService.ApproveDocumentRequest request) {
+            return base.Channel.ApproveDocument(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.QuickTransferReultModel ApproveDocument(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.ItemStock[] LstTransfer, int SourceRsID) {
+            MashadLeatherEcommerce.KiyanService.ApproveDocumentRequest inValue = new MashadLeatherEcommerce.KiyanService.ApproveDocumentRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.LstTransfer = LstTransfer;
+            inValue.SourceRsID = SourceRsID;
+            MashadLeatherEcommerce.KiyanService.ApproveDocumentResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).ApproveDocument(inValue);
+            return retVal.ApproveDocumentResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.ApproveDocumentResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.ApproveDocumentAsync(MashadLeatherEcommerce.KiyanService.ApproveDocumentRequest request) {
+            return base.Channel.ApproveDocumentAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.ApproveDocumentResponse> ApproveDocumentAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.ItemStock[] LstTransfer, int SourceRsID) {
+            MashadLeatherEcommerce.KiyanService.ApproveDocumentRequest inValue = new MashadLeatherEcommerce.KiyanService.ApproveDocumentRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.LstTransfer = LstTransfer;
+            inValue.SourceRsID = SourceRsID;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).ApproveDocumentAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.QuickExternalTransferResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.QuickExternalTransfer(MashadLeatherEcommerce.KiyanService.QuickExternalTransferRequest request) {
+            return base.Channel.QuickExternalTransfer(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.QuickTransferReultModel QuickExternalTransfer(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.ItemStock[] LstTransfer, int DestinationRsID) {
+            MashadLeatherEcommerce.KiyanService.QuickExternalTransferRequest inValue = new MashadLeatherEcommerce.KiyanService.QuickExternalTransferRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.LstTransfer = LstTransfer;
+            inValue.DestinationRsID = DestinationRsID;
+            MashadLeatherEcommerce.KiyanService.QuickExternalTransferResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).QuickExternalTransfer(inValue);
+            return retVal.QuickExternalTransferResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.QuickExternalTransferResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.QuickExternalTransferAsync(MashadLeatherEcommerce.KiyanService.QuickExternalTransferRequest request) {
+            return base.Channel.QuickExternalTransferAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.QuickExternalTransferResponse> QuickExternalTransferAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.ItemStock[] LstTransfer, int DestinationRsID) {
+            MashadLeatherEcommerce.KiyanService.QuickExternalTransferRequest inValue = new MashadLeatherEcommerce.KiyanService.QuickExternalTransferRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.LstTransfer = LstTransfer;
+            inValue.DestinationRsID = DestinationRsID;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).QuickExternalTransferAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -5628,9 +14760,10 @@ namespace MashadLeatherEcommerce.KiyanService {
             return base.Channel.GetInventoriesList(request);
         }
         
-        public MashadLeatherEcommerce.KiyanService.InventoriesListResultModel GetInventoriesList(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader) {
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfInventory GetInventoriesList(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser) {
             MashadLeatherEcommerce.KiyanService.GetInventoriesListRequest inValue = new MashadLeatherEcommerce.KiyanService.GetInventoriesListRequest();
             inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
             MashadLeatherEcommerce.KiyanService.GetInventoriesListResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetInventoriesList(inValue);
             return retVal.GetInventoriesListResult;
         }
@@ -5640,10 +14773,887 @@ namespace MashadLeatherEcommerce.KiyanService {
             return base.Channel.GetInventoriesListAsync(request);
         }
         
-        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetInventoriesListResponse> GetInventoriesListAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader) {
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetInventoriesListResponse> GetInventoriesListAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser) {
             MashadLeatherEcommerce.KiyanService.GetInventoriesListRequest inValue = new MashadLeatherEcommerce.KiyanService.GetInventoriesListRequest();
             inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
             return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetInventoriesListAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.CreateCustomerResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.CreateCustomer(MashadLeatherEcommerce.KiyanService.CreateCustomerRequest request) {
+            return base.Channel.CreateCustomer(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.SaleResultModel CreateCustomer(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.Customer NewCustomer) {
+            MashadLeatherEcommerce.KiyanService.CreateCustomerRequest inValue = new MashadLeatherEcommerce.KiyanService.CreateCustomerRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.NewCustomer = NewCustomer;
+            MashadLeatherEcommerce.KiyanService.CreateCustomerResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).CreateCustomer(inValue);
+            return retVal.CreateCustomerResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.CreateCustomerResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.CreateCustomerAsync(MashadLeatherEcommerce.KiyanService.CreateCustomerRequest request) {
+            return base.Channel.CreateCustomerAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.CreateCustomerResponse> CreateCustomerAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.Customer NewCustomer) {
+            MashadLeatherEcommerce.KiyanService.CreateCustomerRequest inValue = new MashadLeatherEcommerce.KiyanService.CreateCustomerRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.NewCustomer = NewCustomer;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).CreateCustomerAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.CreateCustomerToRSResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.CreateCustomerToRS(MashadLeatherEcommerce.KiyanService.CreateCustomerToRSRequest request) {
+            return base.Channel.CreateCustomerToRS(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.SaleResultModel CreateCustomerToRS(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.Customer NewCustomer, int RetailStoreID) {
+            MashadLeatherEcommerce.KiyanService.CreateCustomerToRSRequest inValue = new MashadLeatherEcommerce.KiyanService.CreateCustomerToRSRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.NewCustomer = NewCustomer;
+            inValue.RetailStoreID = RetailStoreID;
+            MashadLeatherEcommerce.KiyanService.CreateCustomerToRSResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).CreateCustomerToRS(inValue);
+            return retVal.CreateCustomerToRSResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.CreateCustomerToRSResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.CreateCustomerToRSAsync(MashadLeatherEcommerce.KiyanService.CreateCustomerToRSRequest request) {
+            return base.Channel.CreateCustomerToRSAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.CreateCustomerToRSResponse> CreateCustomerToRSAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.Customer NewCustomer, int RetailStoreID) {
+            MashadLeatherEcommerce.KiyanService.CreateCustomerToRSRequest inValue = new MashadLeatherEcommerce.KiyanService.CreateCustomerToRSRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.NewCustomer = NewCustomer;
+            inValue.RetailStoreID = RetailStoreID;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).CreateCustomerToRSAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.GetCustomerListResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetCustomerList(MashadLeatherEcommerce.KiyanService.GetCustomerListRequest request) {
+            return base.Channel.GetCustomerList(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfCustomer GetCustomerList(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string StartDate, string EndDate) {
+            MashadLeatherEcommerce.KiyanService.GetCustomerListRequest inValue = new MashadLeatherEcommerce.KiyanService.GetCustomerListRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.StartDate = StartDate;
+            inValue.EndDate = EndDate;
+            MashadLeatherEcommerce.KiyanService.GetCustomerListResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetCustomerList(inValue);
+            return retVal.GetCustomerListResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetCustomerListResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetCustomerListAsync(MashadLeatherEcommerce.KiyanService.GetCustomerListRequest request) {
+            return base.Channel.GetCustomerListAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetCustomerListResponse> GetCustomerListAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string StartDate, string EndDate) {
+            MashadLeatherEcommerce.KiyanService.GetCustomerListRequest inValue = new MashadLeatherEcommerce.KiyanService.GetCustomerListRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.StartDate = StartDate;
+            inValue.EndDate = EndDate;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetCustomerListAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.GetCustomerInfoWithCustomerIDResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetCustomerInfoWithCustomerID(MashadLeatherEcommerce.KiyanService.GetCustomerInfoWithCustomerIDRequest request) {
+            return base.Channel.GetCustomerInfoWithCustomerID(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfCustomer GetCustomerInfoWithCustomerID(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int customerID) {
+            MashadLeatherEcommerce.KiyanService.GetCustomerInfoWithCustomerIDRequest inValue = new MashadLeatherEcommerce.KiyanService.GetCustomerInfoWithCustomerIDRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.customerID = customerID;
+            MashadLeatherEcommerce.KiyanService.GetCustomerInfoWithCustomerIDResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetCustomerInfoWithCustomerID(inValue);
+            return retVal.GetCustomerInfoWithCustomerIDResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetCustomerInfoWithCustomerIDResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetCustomerInfoWithCustomerIDAsync(MashadLeatherEcommerce.KiyanService.GetCustomerInfoWithCustomerIDRequest request) {
+            return base.Channel.GetCustomerInfoWithCustomerIDAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetCustomerInfoWithCustomerIDResponse> GetCustomerInfoWithCustomerIDAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int customerID) {
+            MashadLeatherEcommerce.KiyanService.GetCustomerInfoWithCustomerIDRequest inValue = new MashadLeatherEcommerce.KiyanService.GetCustomerInfoWithCustomerIDRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.customerID = customerID;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetCustomerInfoWithCustomerIDAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.GetCustomerInfoWithMemberIDResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetCustomerInfoWithMemberID(MashadLeatherEcommerce.KiyanService.GetCustomerInfoWithMemberIDRequest request) {
+            return base.Channel.GetCustomerInfoWithMemberID(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfCustomer GetCustomerInfoWithMemberID(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string MemberID) {
+            MashadLeatherEcommerce.KiyanService.GetCustomerInfoWithMemberIDRequest inValue = new MashadLeatherEcommerce.KiyanService.GetCustomerInfoWithMemberIDRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.MemberID = MemberID;
+            MashadLeatherEcommerce.KiyanService.GetCustomerInfoWithMemberIDResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetCustomerInfoWithMemberID(inValue);
+            return retVal.GetCustomerInfoWithMemberIDResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetCustomerInfoWithMemberIDResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetCustomerInfoWithMemberIDAsync(MashadLeatherEcommerce.KiyanService.GetCustomerInfoWithMemberIDRequest request) {
+            return base.Channel.GetCustomerInfoWithMemberIDAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetCustomerInfoWithMemberIDResponse> GetCustomerInfoWithMemberIDAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string MemberID) {
+            MashadLeatherEcommerce.KiyanService.GetCustomerInfoWithMemberIDRequest inValue = new MashadLeatherEcommerce.KiyanService.GetCustomerInfoWithMemberIDRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.MemberID = MemberID;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetCustomerInfoWithMemberIDAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.GetCustomersBaseInfoResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetCustomersBaseInfo(MashadLeatherEcommerce.KiyanService.GetCustomersBaseInfoRequest request) {
+            return base.Channel.GetCustomersBaseInfo(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfCustomer GetCustomersBaseInfo(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.FiledName filedName, string[] value) {
+            MashadLeatherEcommerce.KiyanService.GetCustomersBaseInfoRequest inValue = new MashadLeatherEcommerce.KiyanService.GetCustomersBaseInfoRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.filedName = filedName;
+            inValue.value = value;
+            MashadLeatherEcommerce.KiyanService.GetCustomersBaseInfoResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetCustomersBaseInfo(inValue);
+            return retVal.GetCustomersBaseInfoResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetCustomersBaseInfoResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetCustomersBaseInfoAsync(MashadLeatherEcommerce.KiyanService.GetCustomersBaseInfoRequest request) {
+            return base.Channel.GetCustomersBaseInfoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetCustomersBaseInfoResponse> GetCustomersBaseInfoAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.FiledName filedName, string[] value) {
+            MashadLeatherEcommerce.KiyanService.GetCustomersBaseInfoRequest inValue = new MashadLeatherEcommerce.KiyanService.GetCustomersBaseInfoRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.filedName = filedName;
+            inValue.value = value;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetCustomersBaseInfoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.UpdateCustomerInfoResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.UpdateCustomerInfo(MashadLeatherEcommerce.KiyanService.UpdateCustomerInfoRequest request) {
+            return base.Channel.UpdateCustomerInfo(request);
+        }
+        
+        public string UpdateCustomerInfo(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.Customer UpdattedCustomer) {
+            MashadLeatherEcommerce.KiyanService.UpdateCustomerInfoRequest inValue = new MashadLeatherEcommerce.KiyanService.UpdateCustomerInfoRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.UpdattedCustomer = UpdattedCustomer;
+            MashadLeatherEcommerce.KiyanService.UpdateCustomerInfoResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).UpdateCustomerInfo(inValue);
+            return retVal.UpdateCustomerInfoResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.UpdateCustomerInfoResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.UpdateCustomerInfoAsync(MashadLeatherEcommerce.KiyanService.UpdateCustomerInfoRequest request) {
+            return base.Channel.UpdateCustomerInfoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.UpdateCustomerInfoResponse> UpdateCustomerInfoAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.Customer UpdattedCustomer) {
+            MashadLeatherEcommerce.KiyanService.UpdateCustomerInfoRequest inValue = new MashadLeatherEcommerce.KiyanService.UpdateCustomerInfoRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.UpdattedCustomer = UpdattedCustomer;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).UpdateCustomerInfoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.GetCustomerTransactionResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetCustomerTransaction(MashadLeatherEcommerce.KiyanService.GetCustomerTransactionRequest request) {
+            return base.Channel.GetCustomerTransaction(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfCustomerTransaction GetCustomerTransaction(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string StartDate, string EndDate, string CustomerID) {
+            MashadLeatherEcommerce.KiyanService.GetCustomerTransactionRequest inValue = new MashadLeatherEcommerce.KiyanService.GetCustomerTransactionRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.StartDate = StartDate;
+            inValue.EndDate = EndDate;
+            inValue.CustomerID = CustomerID;
+            MashadLeatherEcommerce.KiyanService.GetCustomerTransactionResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetCustomerTransaction(inValue);
+            return retVal.GetCustomerTransactionResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetCustomerTransactionResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetCustomerTransactionAsync(MashadLeatherEcommerce.KiyanService.GetCustomerTransactionRequest request) {
+            return base.Channel.GetCustomerTransactionAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetCustomerTransactionResponse> GetCustomerTransactionAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string StartDate, string EndDate, string CustomerID) {
+            MashadLeatherEcommerce.KiyanService.GetCustomerTransactionRequest inValue = new MashadLeatherEcommerce.KiyanService.GetCustomerTransactionRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.StartDate = StartDate;
+            inValue.EndDate = EndDate;
+            inValue.CustomerID = CustomerID;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetCustomerTransactionAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.GetTransactionWithDs_info_2Response MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetTransactionWithDs_info_2(MashadLeatherEcommerce.KiyanService.GetTransactionWithDs_info_2Request request) {
+            return base.Channel.GetTransactionWithDs_info_2(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfReceiptDsInfModel GetTransactionWithDs_info_2(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int RS, System.DateTime StartDate, System.DateTime EndDate) {
+            MashadLeatherEcommerce.KiyanService.GetTransactionWithDs_info_2Request inValue = new MashadLeatherEcommerce.KiyanService.GetTransactionWithDs_info_2Request();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.RS = RS;
+            inValue.StartDate = StartDate;
+            inValue.EndDate = EndDate;
+            MashadLeatherEcommerce.KiyanService.GetTransactionWithDs_info_2Response retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetTransactionWithDs_info_2(inValue);
+            return retVal.GetTransactionWithDs_info_2Result;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetTransactionWithDs_info_2Response> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetTransactionWithDs_info_2Async(MashadLeatherEcommerce.KiyanService.GetTransactionWithDs_info_2Request request) {
+            return base.Channel.GetTransactionWithDs_info_2Async(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetTransactionWithDs_info_2Response> GetTransactionWithDs_info_2Async(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int RS, System.DateTime StartDate, System.DateTime EndDate) {
+            MashadLeatherEcommerce.KiyanService.GetTransactionWithDs_info_2Request inValue = new MashadLeatherEcommerce.KiyanService.GetTransactionWithDs_info_2Request();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.RS = RS;
+            inValue.StartDate = StartDate;
+            inValue.EndDate = EndDate;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetTransactionWithDs_info_2Async(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.GetCustomerTransactionWithDataFilterResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetCustomerTransactionWithDataFilter(MashadLeatherEcommerce.KiyanService.GetCustomerTransactionWithDataFilterRequest request) {
+            return base.Channel.GetCustomerTransactionWithDataFilter(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfReciepModel2 GetCustomerTransactionWithDataFilter(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, System.DateTime StartDate, System.DateTime EndDate) {
+            MashadLeatherEcommerce.KiyanService.GetCustomerTransactionWithDataFilterRequest inValue = new MashadLeatherEcommerce.KiyanService.GetCustomerTransactionWithDataFilterRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.StartDate = StartDate;
+            inValue.EndDate = EndDate;
+            MashadLeatherEcommerce.KiyanService.GetCustomerTransactionWithDataFilterResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetCustomerTransactionWithDataFilter(inValue);
+            return retVal.GetCustomerTransactionWithDataFilterResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetCustomerTransactionWithDataFilterResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetCustomerTransactionWithDataFilterAsync(MashadLeatherEcommerce.KiyanService.GetCustomerTransactionWithDataFilterRequest request) {
+            return base.Channel.GetCustomerTransactionWithDataFilterAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetCustomerTransactionWithDataFilterResponse> GetCustomerTransactionWithDataFilterAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, System.DateTime StartDate, System.DateTime EndDate) {
+            MashadLeatherEcommerce.KiyanService.GetCustomerTransactionWithDataFilterRequest inValue = new MashadLeatherEcommerce.KiyanService.GetCustomerTransactionWithDataFilterRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.StartDate = StartDate;
+            inValue.EndDate = EndDate;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetCustomerTransactionWithDataFilterAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.GetCustomersReceiptsResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetCustomersReceipts(MashadLeatherEcommerce.KiyanService.GetCustomersReceiptsRequest request) {
+            return base.Channel.GetCustomersReceipts(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfReceiptModel GetCustomersReceipts(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int[] customersIDList, System.DateTime startDate, System.DateTime endDate) {
+            MashadLeatherEcommerce.KiyanService.GetCustomersReceiptsRequest inValue = new MashadLeatherEcommerce.KiyanService.GetCustomersReceiptsRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.customersIDList = customersIDList;
+            inValue.startDate = startDate;
+            inValue.endDate = endDate;
+            MashadLeatherEcommerce.KiyanService.GetCustomersReceiptsResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetCustomersReceipts(inValue);
+            return retVal.GetCustomersReceiptsResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetCustomersReceiptsResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetCustomersReceiptsAsync(MashadLeatherEcommerce.KiyanService.GetCustomersReceiptsRequest request) {
+            return base.Channel.GetCustomersReceiptsAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetCustomersReceiptsResponse> GetCustomersReceiptsAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int[] customersIDList, System.DateTime startDate, System.DateTime endDate) {
+            MashadLeatherEcommerce.KiyanService.GetCustomersReceiptsRequest inValue = new MashadLeatherEcommerce.KiyanService.GetCustomersReceiptsRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.customersIDList = customersIDList;
+            inValue.startDate = startDate;
+            inValue.endDate = endDate;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetCustomersReceiptsAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.GetCustomerAddressInfoWithCustomerIDResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetCustomerAddressInfoWithCustomerID(MashadLeatherEcommerce.KiyanService.GetCustomerAddressInfoWithCustomerIDRequest request) {
+            return base.Channel.GetCustomerAddressInfoWithCustomerID(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfCustomerAddress GetCustomerAddressInfoWithCustomerID(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int customerID) {
+            MashadLeatherEcommerce.KiyanService.GetCustomerAddressInfoWithCustomerIDRequest inValue = new MashadLeatherEcommerce.KiyanService.GetCustomerAddressInfoWithCustomerIDRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.customerID = customerID;
+            MashadLeatherEcommerce.KiyanService.GetCustomerAddressInfoWithCustomerIDResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetCustomerAddressInfoWithCustomerID(inValue);
+            return retVal.GetCustomerAddressInfoWithCustomerIDResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetCustomerAddressInfoWithCustomerIDResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetCustomerAddressInfoWithCustomerIDAsync(MashadLeatherEcommerce.KiyanService.GetCustomerAddressInfoWithCustomerIDRequest request) {
+            return base.Channel.GetCustomerAddressInfoWithCustomerIDAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetCustomerAddressInfoWithCustomerIDResponse> GetCustomerAddressInfoWithCustomerIDAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int customerID) {
+            MashadLeatherEcommerce.KiyanService.GetCustomerAddressInfoWithCustomerIDRequest inValue = new MashadLeatherEcommerce.KiyanService.GetCustomerAddressInfoWithCustomerIDRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.customerID = customerID;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetCustomerAddressInfoWithCustomerIDAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.ValidateGiftCertificatesResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.ValidateGiftCertificates(MashadLeatherEcommerce.KiyanService.ValidateGiftCertificatesRequest request) {
+            return base.Channel.ValidateGiftCertificates(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfGiftCertificate ValidateGiftCertificates(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string[] barcode) {
+            MashadLeatherEcommerce.KiyanService.ValidateGiftCertificatesRequest inValue = new MashadLeatherEcommerce.KiyanService.ValidateGiftCertificatesRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.barcode = barcode;
+            MashadLeatherEcommerce.KiyanService.ValidateGiftCertificatesResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).ValidateGiftCertificates(inValue);
+            return retVal.ValidateGiftCertificatesResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.ValidateGiftCertificatesResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.ValidateGiftCertificatesAsync(MashadLeatherEcommerce.KiyanService.ValidateGiftCertificatesRequest request) {
+            return base.Channel.ValidateGiftCertificatesAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.ValidateGiftCertificatesResponse> ValidateGiftCertificatesAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string[] barcode) {
+            MashadLeatherEcommerce.KiyanService.ValidateGiftCertificatesRequest inValue = new MashadLeatherEcommerce.KiyanService.ValidateGiftCertificatesRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.barcode = barcode;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).ValidateGiftCertificatesAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.CreateGiftCertificateResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.CreateGiftCertificate(MashadLeatherEcommerce.KiyanService.CreateGiftCertificateRequest request) {
+            return base.Channel.CreateGiftCertificate(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfResult CreateGiftCertificate(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string barcode, string memberID, decimal Amount, int BonHOrBonT, int BonCartType) {
+            MashadLeatherEcommerce.KiyanService.CreateGiftCertificateRequest inValue = new MashadLeatherEcommerce.KiyanService.CreateGiftCertificateRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.barcode = barcode;
+            inValue.memberID = memberID;
+            inValue.Amount = Amount;
+            inValue.BonHOrBonT = BonHOrBonT;
+            inValue.BonCartType = BonCartType;
+            MashadLeatherEcommerce.KiyanService.CreateGiftCertificateResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).CreateGiftCertificate(inValue);
+            return retVal.CreateGiftCertificateResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.CreateGiftCertificateResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.CreateGiftCertificateAsync(MashadLeatherEcommerce.KiyanService.CreateGiftCertificateRequest request) {
+            return base.Channel.CreateGiftCertificateAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.CreateGiftCertificateResponse> CreateGiftCertificateAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string barcode, string memberID, decimal Amount, int BonHOrBonT, int BonCartType) {
+            MashadLeatherEcommerce.KiyanService.CreateGiftCertificateRequest inValue = new MashadLeatherEcommerce.KiyanService.CreateGiftCertificateRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.barcode = barcode;
+            inValue.memberID = memberID;
+            inValue.Amount = Amount;
+            inValue.BonHOrBonT = BonHOrBonT;
+            inValue.BonCartType = BonCartType;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).CreateGiftCertificateAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.GetUnUsedGiftCertificatesResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetUnUsedGiftCertificates(MashadLeatherEcommerce.KiyanService.GetUnUsedGiftCertificatesRequest request) {
+            return base.Channel.GetUnUsedGiftCertificates(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfUnUsedGiftCertificates GetUnUsedGiftCertificates(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser) {
+            MashadLeatherEcommerce.KiyanService.GetUnUsedGiftCertificatesRequest inValue = new MashadLeatherEcommerce.KiyanService.GetUnUsedGiftCertificatesRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            MashadLeatherEcommerce.KiyanService.GetUnUsedGiftCertificatesResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetUnUsedGiftCertificates(inValue);
+            return retVal.GetUnUsedGiftCertificatesResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetUnUsedGiftCertificatesResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetUnUsedGiftCertificatesAsync(MashadLeatherEcommerce.KiyanService.GetUnUsedGiftCertificatesRequest request) {
+            return base.Channel.GetUnUsedGiftCertificatesAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetUnUsedGiftCertificatesResponse> GetUnUsedGiftCertificatesAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser) {
+            MashadLeatherEcommerce.KiyanService.GetUnUsedGiftCertificatesRequest inValue = new MashadLeatherEcommerce.KiyanService.GetUnUsedGiftCertificatesRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetUnUsedGiftCertificatesAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.GetUsedGiftCertificatesResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetUsedGiftCertificates(MashadLeatherEcommerce.KiyanService.GetUsedGiftCertificatesRequest request) {
+            return base.Channel.GetUsedGiftCertificates(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfUsedGiftCertificate GetUsedGiftCertificates(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string StartDate, string EndDate) {
+            MashadLeatherEcommerce.KiyanService.GetUsedGiftCertificatesRequest inValue = new MashadLeatherEcommerce.KiyanService.GetUsedGiftCertificatesRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.StartDate = StartDate;
+            inValue.EndDate = EndDate;
+            MashadLeatherEcommerce.KiyanService.GetUsedGiftCertificatesResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetUsedGiftCertificates(inValue);
+            return retVal.GetUsedGiftCertificatesResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetUsedGiftCertificatesResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetUsedGiftCertificatesAsync(MashadLeatherEcommerce.KiyanService.GetUsedGiftCertificatesRequest request) {
+            return base.Channel.GetUsedGiftCertificatesAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetUsedGiftCertificatesResponse> GetUsedGiftCertificatesAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string StartDate, string EndDate) {
+            MashadLeatherEcommerce.KiyanService.GetUsedGiftCertificatesRequest inValue = new MashadLeatherEcommerce.KiyanService.GetUsedGiftCertificatesRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.StartDate = StartDate;
+            inValue.EndDate = EndDate;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetUsedGiftCertificatesAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.GetUsedCreditCustomerResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetUsedCreditCustomer(MashadLeatherEcommerce.KiyanService.GetUsedCreditCustomerRequest request) {
+            return base.Channel.GetUsedCreditCustomer(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfUsedCreditCustomer GetUsedCreditCustomer(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string StartDate, string EndDate) {
+            MashadLeatherEcommerce.KiyanService.GetUsedCreditCustomerRequest inValue = new MashadLeatherEcommerce.KiyanService.GetUsedCreditCustomerRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.StartDate = StartDate;
+            inValue.EndDate = EndDate;
+            MashadLeatherEcommerce.KiyanService.GetUsedCreditCustomerResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetUsedCreditCustomer(inValue);
+            return retVal.GetUsedCreditCustomerResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetUsedCreditCustomerResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetUsedCreditCustomerAsync(MashadLeatherEcommerce.KiyanService.GetUsedCreditCustomerRequest request) {
+            return base.Channel.GetUsedCreditCustomerAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetUsedCreditCustomerResponse> GetUsedCreditCustomerAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string StartDate, string EndDate) {
+            MashadLeatherEcommerce.KiyanService.GetUsedCreditCustomerRequest inValue = new MashadLeatherEcommerce.KiyanService.GetUsedCreditCustomerRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.StartDate = StartDate;
+            inValue.EndDate = EndDate;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetUsedCreditCustomerAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.CustomerCreditOperationsResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.CustomerCreditOperations(MashadLeatherEcommerce.KiyanService.CustomerCreditOperationsRequest request) {
+            return base.Channel.CustomerCreditOperations(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfString CustomerCreditOperations(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int customersID, decimal credit, MashadLeatherEcommerce.KiyanService.OperationCredit operationCredit) {
+            MashadLeatherEcommerce.KiyanService.CustomerCreditOperationsRequest inValue = new MashadLeatherEcommerce.KiyanService.CustomerCreditOperationsRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.customersID = customersID;
+            inValue.credit = credit;
+            inValue.operationCredit = operationCredit;
+            MashadLeatherEcommerce.KiyanService.CustomerCreditOperationsResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).CustomerCreditOperations(inValue);
+            return retVal.CustomerCreditOperationsResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.CustomerCreditOperationsResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.CustomerCreditOperationsAsync(MashadLeatherEcommerce.KiyanService.CustomerCreditOperationsRequest request) {
+            return base.Channel.CustomerCreditOperationsAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.CustomerCreditOperationsResponse> CustomerCreditOperationsAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int customersID, decimal credit, MashadLeatherEcommerce.KiyanService.OperationCredit operationCredit) {
+            MashadLeatherEcommerce.KiyanService.CustomerCreditOperationsRequest inValue = new MashadLeatherEcommerce.KiyanService.CustomerCreditOperationsRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.customersID = customersID;
+            inValue.credit = credit;
+            inValue.operationCredit = operationCredit;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).CustomerCreditOperationsAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.GetCustomerGroupResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetCustomerGroup(MashadLeatherEcommerce.KiyanService.GetCustomerGroupRequest request) {
+            return base.Channel.GetCustomerGroup(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfcustomerGroup GetCustomerGroup(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser) {
+            MashadLeatherEcommerce.KiyanService.GetCustomerGroupRequest inValue = new MashadLeatherEcommerce.KiyanService.GetCustomerGroupRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            MashadLeatherEcommerce.KiyanService.GetCustomerGroupResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetCustomerGroup(inValue);
+            return retVal.GetCustomerGroupResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetCustomerGroupResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetCustomerGroupAsync(MashadLeatherEcommerce.KiyanService.GetCustomerGroupRequest request) {
+            return base.Channel.GetCustomerGroupAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetCustomerGroupResponse> GetCustomerGroupAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser) {
+            MashadLeatherEcommerce.KiyanService.GetCustomerGroupRequest inValue = new MashadLeatherEcommerce.KiyanService.GetCustomerGroupRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetCustomerGroupAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.BuycustomersResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.Buycustomers(MashadLeatherEcommerce.KiyanService.BuycustomersRequest request) {
+            return base.Channel.Buycustomers(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfBuycustomersModel Buycustomers(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string StartDate, string EndDate) {
+            MashadLeatherEcommerce.KiyanService.BuycustomersRequest inValue = new MashadLeatherEcommerce.KiyanService.BuycustomersRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.StartDate = StartDate;
+            inValue.EndDate = EndDate;
+            MashadLeatherEcommerce.KiyanService.BuycustomersResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).Buycustomers(inValue);
+            return retVal.BuycustomersResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.BuycustomersResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.BuycustomersAsync(MashadLeatherEcommerce.KiyanService.BuycustomersRequest request) {
+            return base.Channel.BuycustomersAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.BuycustomersResponse> BuycustomersAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string StartDate, string EndDate) {
+            MashadLeatherEcommerce.KiyanService.BuycustomersRequest inValue = new MashadLeatherEcommerce.KiyanService.BuycustomersRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.StartDate = StartDate;
+            inValue.EndDate = EndDate;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).BuycustomersAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.BuycustomersWithFactorItemsResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.BuycustomersWithFactorItems(MashadLeatherEcommerce.KiyanService.BuycustomersWithFactorItemsRequest request) {
+            return base.Channel.BuycustomersWithFactorItems(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfBuycustomersWithFactorItemsModel BuycustomersWithFactorItems(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string StartDate, string EndDate) {
+            MashadLeatherEcommerce.KiyanService.BuycustomersWithFactorItemsRequest inValue = new MashadLeatherEcommerce.KiyanService.BuycustomersWithFactorItemsRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.StartDate = StartDate;
+            inValue.EndDate = EndDate;
+            MashadLeatherEcommerce.KiyanService.BuycustomersWithFactorItemsResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).BuycustomersWithFactorItems(inValue);
+            return retVal.BuycustomersWithFactorItemsResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.BuycustomersWithFactorItemsResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.BuycustomersWithFactorItemsAsync(MashadLeatherEcommerce.KiyanService.BuycustomersWithFactorItemsRequest request) {
+            return base.Channel.BuycustomersWithFactorItemsAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.BuycustomersWithFactorItemsResponse> BuycustomersWithFactorItemsAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string StartDate, string EndDate) {
+            MashadLeatherEcommerce.KiyanService.BuycustomersWithFactorItemsRequest inValue = new MashadLeatherEcommerce.KiyanService.BuycustomersWithFactorItemsRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.StartDate = StartDate;
+            inValue.EndDate = EndDate;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).BuycustomersWithFactorItemsAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.GetTaxChargeAmountResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetTaxChargeAmount(MashadLeatherEcommerce.KiyanService.GetTaxChargeAmountRequest request) {
+            return base.Channel.GetTaxChargeAmount(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfConfigEntity GetTaxChargeAmount(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser) {
+            MashadLeatherEcommerce.KiyanService.GetTaxChargeAmountRequest inValue = new MashadLeatherEcommerce.KiyanService.GetTaxChargeAmountRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            MashadLeatherEcommerce.KiyanService.GetTaxChargeAmountResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetTaxChargeAmount(inValue);
+            return retVal.GetTaxChargeAmountResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetTaxChargeAmountResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetTaxChargeAmountAsync(MashadLeatherEcommerce.KiyanService.GetTaxChargeAmountRequest request) {
+            return base.Channel.GetTaxChargeAmountAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetTaxChargeAmountResponse> GetTaxChargeAmountAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser) {
+            MashadLeatherEcommerce.KiyanService.GetTaxChargeAmountRequest inValue = new MashadLeatherEcommerce.KiyanService.GetTaxChargeAmountRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetTaxChargeAmountAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.GetTenderListResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetTenderList(MashadLeatherEcommerce.KiyanService.GetTenderListRequest request) {
+            return base.Channel.GetTenderList(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfTenderModel GetTenderList(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser) {
+            MashadLeatherEcommerce.KiyanService.GetTenderListRequest inValue = new MashadLeatherEcommerce.KiyanService.GetTenderListRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            MashadLeatherEcommerce.KiyanService.GetTenderListResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetTenderList(inValue);
+            return retVal.GetTenderListResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetTenderListResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetTenderListAsync(MashadLeatherEcommerce.KiyanService.GetTenderListRequest request) {
+            return base.Channel.GetTenderListAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetTenderListResponse> GetTenderListAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser) {
+            MashadLeatherEcommerce.KiyanService.GetTenderListRequest inValue = new MashadLeatherEcommerce.KiyanService.GetTenderListRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetTenderListAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.GetPromotionsResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetPromotions(MashadLeatherEcommerce.KiyanService.GetPromotionsRequest request) {
+            return base.Channel.GetPromotions(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfPromotionHeaderModel GetPromotions(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int retialStore) {
+            MashadLeatherEcommerce.KiyanService.GetPromotionsRequest inValue = new MashadLeatherEcommerce.KiyanService.GetPromotionsRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.retialStore = retialStore;
+            MashadLeatherEcommerce.KiyanService.GetPromotionsResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetPromotions(inValue);
+            return retVal.GetPromotionsResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetPromotionsResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetPromotionsAsync(MashadLeatherEcommerce.KiyanService.GetPromotionsRequest request) {
+            return base.Channel.GetPromotionsAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetPromotionsResponse> GetPromotionsAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int retialStore) {
+            MashadLeatherEcommerce.KiyanService.GetPromotionsRequest inValue = new MashadLeatherEcommerce.KiyanService.GetPromotionsRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.retialStore = retialStore;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetPromotionsAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.GetPromotionCustomerGroupsResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetPromotionCustomerGroups(MashadLeatherEcommerce.KiyanService.GetPromotionCustomerGroupsRequest request) {
+            return base.Channel.GetPromotionCustomerGroups(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfPromotionCustomerGroupModel GetPromotionCustomerGroups(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int retialStore) {
+            MashadLeatherEcommerce.KiyanService.GetPromotionCustomerGroupsRequest inValue = new MashadLeatherEcommerce.KiyanService.GetPromotionCustomerGroupsRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.retialStore = retialStore;
+            MashadLeatherEcommerce.KiyanService.GetPromotionCustomerGroupsResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetPromotionCustomerGroups(inValue);
+            return retVal.GetPromotionCustomerGroupsResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetPromotionCustomerGroupsResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetPromotionCustomerGroupsAsync(MashadLeatherEcommerce.KiyanService.GetPromotionCustomerGroupsRequest request) {
+            return base.Channel.GetPromotionCustomerGroupsAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetPromotionCustomerGroupsResponse> GetPromotionCustomerGroupsAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, int retialStore) {
+            MashadLeatherEcommerce.KiyanService.GetPromotionCustomerGroupsRequest inValue = new MashadLeatherEcommerce.KiyanService.GetPromotionCustomerGroupsRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.retialStore = retialStore;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetPromotionCustomerGroupsAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.AddToReserveResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.AddToReserve(MashadLeatherEcommerce.KiyanService.AddToReserveRequest request) {
+            return base.Channel.AddToReserve(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfResult AddToReserve(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.ItemStock[] ItemsID, bool CancelReservation) {
+            MashadLeatherEcommerce.KiyanService.AddToReserveRequest inValue = new MashadLeatherEcommerce.KiyanService.AddToReserveRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.ItemsID = ItemsID;
+            inValue.CancelReservation = CancelReservation;
+            MashadLeatherEcommerce.KiyanService.AddToReserveResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).AddToReserve(inValue);
+            return retVal.AddToReserveResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.AddToReserveResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.AddToReserveAsync(MashadLeatherEcommerce.KiyanService.AddToReserveRequest request) {
+            return base.Channel.AddToReserveAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.AddToReserveResponse> AddToReserveAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.ItemStock[] ItemsID, bool CancelReservation) {
+            MashadLeatherEcommerce.KiyanService.AddToReserveRequest inValue = new MashadLeatherEcommerce.KiyanService.AddToReserveRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.ItemsID = ItemsID;
+            inValue.CancelReservation = CancelReservation;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).AddToReserveAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.AddToReserveRSResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.AddToReserveRS(MashadLeatherEcommerce.KiyanService.AddToReserveRSRequest request) {
+            return base.Channel.AddToReserveRS(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfResult AddToReserveRS(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.ItemStock[] ItemsID, int RetailStore, bool CancelReservation) {
+            MashadLeatherEcommerce.KiyanService.AddToReserveRSRequest inValue = new MashadLeatherEcommerce.KiyanService.AddToReserveRSRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.ItemsID = ItemsID;
+            inValue.RetailStore = RetailStore;
+            inValue.CancelReservation = CancelReservation;
+            MashadLeatherEcommerce.KiyanService.AddToReserveRSResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).AddToReserveRS(inValue);
+            return retVal.AddToReserveRSResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.AddToReserveRSResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.AddToReserveRSAsync(MashadLeatherEcommerce.KiyanService.AddToReserveRSRequest request) {
+            return base.Channel.AddToReserveRSAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.AddToReserveRSResponse> AddToReserveRSAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.ItemStock[] ItemsID, int RetailStore, bool CancelReservation) {
+            MashadLeatherEcommerce.KiyanService.AddToReserveRSRequest inValue = new MashadLeatherEcommerce.KiyanService.AddToReserveRSRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.ItemsID = ItemsID;
+            inValue.RetailStore = RetailStore;
+            inValue.CancelReservation = CancelReservation;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).AddToReserveRSAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.SaleItemsRSResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.SaleItemsRS(MashadLeatherEcommerce.KiyanService.SaleItemsRSRequest request) {
+            return base.Channel.SaleItemsRS(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.SaleResultModel SaleItemsRS(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.SaleItemObject[] lstSaleItms, System.Nullable<int> CustomerID, int SourceRetailStoreID, int SourceWorkStationID, int OperatorID, MashadLeatherEcommerce.KiyanService.TenderPrice[] listTenderPrice) {
+            MashadLeatherEcommerce.KiyanService.SaleItemsRSRequest inValue = new MashadLeatherEcommerce.KiyanService.SaleItemsRSRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.lstSaleItms = lstSaleItms;
+            inValue.CustomerID = CustomerID;
+            inValue.SourceRetailStoreID = SourceRetailStoreID;
+            inValue.SourceWorkStationID = SourceWorkStationID;
+            inValue.OperatorID = OperatorID;
+            inValue.listTenderPrice = listTenderPrice;
+            MashadLeatherEcommerce.KiyanService.SaleItemsRSResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).SaleItemsRS(inValue);
+            return retVal.SaleItemsRSResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.SaleItemsRSResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.SaleItemsRSAsync(MashadLeatherEcommerce.KiyanService.SaleItemsRSRequest request) {
+            return base.Channel.SaleItemsRSAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.SaleItemsRSResponse> SaleItemsRSAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.SaleItemObject[] lstSaleItms, System.Nullable<int> CustomerID, int SourceRetailStoreID, int SourceWorkStationID, int OperatorID, MashadLeatherEcommerce.KiyanService.TenderPrice[] listTenderPrice) {
+            MashadLeatherEcommerce.KiyanService.SaleItemsRSRequest inValue = new MashadLeatherEcommerce.KiyanService.SaleItemsRSRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.lstSaleItms = lstSaleItms;
+            inValue.CustomerID = CustomerID;
+            inValue.SourceRetailStoreID = SourceRetailStoreID;
+            inValue.SourceWorkStationID = SourceWorkStationID;
+            inValue.OperatorID = OperatorID;
+            inValue.listTenderPrice = listTenderPrice;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).SaleItemsRSAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.SaleItemsRsDateResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.SaleItemsRsDate(MashadLeatherEcommerce.KiyanService.SaleItemsRsDateRequest request) {
+            return base.Channel.SaleItemsRsDate(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.SaleResultModel SaleItemsRsDate(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.SaleItemObject[] lstSaleItms, System.Nullable<int> CustomerID, int SourceRetailStoreID, int SourceWorkStationID, int OperatorID, MashadLeatherEcommerce.KiyanService.TenderPrice[] listTenderPrice, System.DateTime bussinessDay) {
+            MashadLeatherEcommerce.KiyanService.SaleItemsRsDateRequest inValue = new MashadLeatherEcommerce.KiyanService.SaleItemsRsDateRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.lstSaleItms = lstSaleItms;
+            inValue.CustomerID = CustomerID;
+            inValue.SourceRetailStoreID = SourceRetailStoreID;
+            inValue.SourceWorkStationID = SourceWorkStationID;
+            inValue.OperatorID = OperatorID;
+            inValue.listTenderPrice = listTenderPrice;
+            inValue.bussinessDay = bussinessDay;
+            MashadLeatherEcommerce.KiyanService.SaleItemsRsDateResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).SaleItemsRsDate(inValue);
+            return retVal.SaleItemsRsDateResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.SaleItemsRsDateResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.SaleItemsRsDateAsync(MashadLeatherEcommerce.KiyanService.SaleItemsRsDateRequest request) {
+            return base.Channel.SaleItemsRsDateAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.SaleItemsRsDateResponse> SaleItemsRsDateAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.SaleItemObject[] lstSaleItms, System.Nullable<int> CustomerID, int SourceRetailStoreID, int SourceWorkStationID, int OperatorID, MashadLeatherEcommerce.KiyanService.TenderPrice[] listTenderPrice, System.DateTime bussinessDay) {
+            MashadLeatherEcommerce.KiyanService.SaleItemsRsDateRequest inValue = new MashadLeatherEcommerce.KiyanService.SaleItemsRsDateRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.lstSaleItms = lstSaleItms;
+            inValue.CustomerID = CustomerID;
+            inValue.SourceRetailStoreID = SourceRetailStoreID;
+            inValue.SourceWorkStationID = SourceWorkStationID;
+            inValue.OperatorID = OperatorID;
+            inValue.listTenderPrice = listTenderPrice;
+            inValue.bussinessDay = bussinessDay;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).SaleItemsRsDateAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.SaleItemsDateResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.SaleItemsDate(MashadLeatherEcommerce.KiyanService.SaleItemsDateRequest request) {
+            return base.Channel.SaleItemsDate(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.SaleResultModel SaleItemsDate(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.SaleItemObject[] lstSaleItms, System.Nullable<int> CustomerID, MashadLeatherEcommerce.KiyanService.TenderPrice[] listTenderPrice, System.DateTime bussinessDay) {
+            MashadLeatherEcommerce.KiyanService.SaleItemsDateRequest inValue = new MashadLeatherEcommerce.KiyanService.SaleItemsDateRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.lstSaleItms = lstSaleItms;
+            inValue.CustomerID = CustomerID;
+            inValue.listTenderPrice = listTenderPrice;
+            inValue.bussinessDay = bussinessDay;
+            MashadLeatherEcommerce.KiyanService.SaleItemsDateResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).SaleItemsDate(inValue);
+            return retVal.SaleItemsDateResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.SaleItemsDateResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.SaleItemsDateAsync(MashadLeatherEcommerce.KiyanService.SaleItemsDateRequest request) {
+            return base.Channel.SaleItemsDateAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.SaleItemsDateResponse> SaleItemsDateAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.SaleItemObject[] lstSaleItms, System.Nullable<int> CustomerID, MashadLeatherEcommerce.KiyanService.TenderPrice[] listTenderPrice, System.DateTime bussinessDay) {
+            MashadLeatherEcommerce.KiyanService.SaleItemsDateRequest inValue = new MashadLeatherEcommerce.KiyanService.SaleItemsDateRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.lstSaleItms = lstSaleItms;
+            inValue.CustomerID = CustomerID;
+            inValue.listTenderPrice = listTenderPrice;
+            inValue.bussinessDay = bussinessDay;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).SaleItemsDateAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -5651,9 +15661,10 @@ namespace MashadLeatherEcommerce.KiyanService {
             return base.Channel.SaleItems(request);
         }
         
-        public MashadLeatherEcommerce.KiyanService.SaleResultModel SaleItems(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.SaleItemObject[] lstSaleItms, System.Nullable<int> CustomerID, int SourceRetailStoreID, MashadLeatherEcommerce.KiyanService.TenderPrice[] listTenderPrice) {
+        public MashadLeatherEcommerce.KiyanService.SaleResultModel SaleItems(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.SaleItemObject[] lstSaleItms, System.Nullable<int> CustomerID, int SourceRetailStoreID, MashadLeatherEcommerce.KiyanService.TenderPrice[] listTenderPrice) {
             MashadLeatherEcommerce.KiyanService.SaleItemsRequest inValue = new MashadLeatherEcommerce.KiyanService.SaleItemsRequest();
             inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
             inValue.lstSaleItms = lstSaleItms;
             inValue.CustomerID = CustomerID;
             inValue.SourceRetailStoreID = SourceRetailStoreID;
@@ -5667,9 +15678,10 @@ namespace MashadLeatherEcommerce.KiyanService {
             return base.Channel.SaleItemsAsync(request);
         }
         
-        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.SaleItemsResponse> SaleItemsAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.SaleItemObject[] lstSaleItms, System.Nullable<int> CustomerID, int SourceRetailStoreID, MashadLeatherEcommerce.KiyanService.TenderPrice[] listTenderPrice) {
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.SaleItemsResponse> SaleItemsAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.SaleItemObject[] lstSaleItms, System.Nullable<int> CustomerID, int SourceRetailStoreID, MashadLeatherEcommerce.KiyanService.TenderPrice[] listTenderPrice) {
             MashadLeatherEcommerce.KiyanService.SaleItemsRequest inValue = new MashadLeatherEcommerce.KiyanService.SaleItemsRequest();
             inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
             inValue.lstSaleItms = lstSaleItms;
             inValue.CustomerID = CustomerID;
             inValue.SourceRetailStoreID = SourceRetailStoreID;
@@ -5678,13 +15690,76 @@ namespace MashadLeatherEcommerce.KiyanService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.WholesaleResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.Wholesale(MashadLeatherEcommerce.KiyanService.WholesaleRequest request) {
+            return base.Channel.Wholesale(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.WholeSaleReultModel Wholesale(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.WholeSaleModel[] lstWholeSaleItms, int CustomerID, string Description) {
+            MashadLeatherEcommerce.KiyanService.WholesaleRequest inValue = new MashadLeatherEcommerce.KiyanService.WholesaleRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.lstWholeSaleItms = lstWholeSaleItms;
+            inValue.CustomerID = CustomerID;
+            inValue.Description = Description;
+            MashadLeatherEcommerce.KiyanService.WholesaleResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).Wholesale(inValue);
+            return retVal.WholesaleResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.WholesaleResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.WholesaleAsync(MashadLeatherEcommerce.KiyanService.WholesaleRequest request) {
+            return base.Channel.WholesaleAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.WholesaleResponse> WholesaleAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.WholeSaleModel[] lstWholeSaleItms, int CustomerID, string Description) {
+            MashadLeatherEcommerce.KiyanService.WholesaleRequest inValue = new MashadLeatherEcommerce.KiyanService.WholesaleRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.lstWholeSaleItms = lstWholeSaleItms;
+            inValue.CustomerID = CustomerID;
+            inValue.Description = Description;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).WholesaleAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MashadLeatherEcommerce.KiyanService.SuspendTransactionResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.SuspendTransaction(MashadLeatherEcommerce.KiyanService.SuspendTransactionRequest request) {
+            return base.Channel.SuspendTransaction(request);
+        }
+        
+        public MashadLeatherEcommerce.KiyanService.SaleResultModel SuspendTransaction(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.SaleItemObject[] lstSuspendItms, System.Nullable<int> CustomerID, int SourceRetailStoreID) {
+            MashadLeatherEcommerce.KiyanService.SuspendTransactionRequest inValue = new MashadLeatherEcommerce.KiyanService.SuspendTransactionRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.lstSuspendItms = lstSuspendItms;
+            inValue.CustomerID = CustomerID;
+            inValue.SourceRetailStoreID = SourceRetailStoreID;
+            MashadLeatherEcommerce.KiyanService.SuspendTransactionResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).SuspendTransaction(inValue);
+            return retVal.SuspendTransactionResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.SuspendTransactionResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.SuspendTransactionAsync(MashadLeatherEcommerce.KiyanService.SuspendTransactionRequest request) {
+            return base.Channel.SuspendTransactionAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.SuspendTransactionResponse> SuspendTransactionAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.SaleItemObject[] lstSuspendItms, System.Nullable<int> CustomerID, int SourceRetailStoreID) {
+            MashadLeatherEcommerce.KiyanService.SuspendTransactionRequest inValue = new MashadLeatherEcommerce.KiyanService.SuspendTransactionRequest();
+            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.lstSuspendItms = lstSuspendItms;
+            inValue.CustomerID = CustomerID;
+            inValue.SourceRetailStoreID = SourceRetailStoreID;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).SuspendTransactionAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         MashadLeatherEcommerce.KiyanService.GetRecieptDetailResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetRecieptDetail(MashadLeatherEcommerce.KiyanService.GetRecieptDetailRequest request) {
             return base.Channel.GetRecieptDetail(request);
         }
         
-        public MashadLeatherEcommerce.KiyanService.RecieptsDetailResultModel GetRecieptDetail(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, string RecieptBarcode) {
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfRecieptsDetail GetRecieptDetail(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string RecieptBarcode) {
             MashadLeatherEcommerce.KiyanService.GetRecieptDetailRequest inValue = new MashadLeatherEcommerce.KiyanService.GetRecieptDetailRequest();
             inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
             inValue.RecieptBarcode = RecieptBarcode;
             MashadLeatherEcommerce.KiyanService.GetRecieptDetailResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetRecieptDetail(inValue);
             return retVal.GetRecieptDetailResult;
@@ -5695,846 +15770,198 @@ namespace MashadLeatherEcommerce.KiyanService {
             return base.Channel.GetRecieptDetailAsync(request);
         }
         
-        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetRecieptDetailResponse> GetRecieptDetailAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, string RecieptBarcode) {
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetRecieptDetailResponse> GetRecieptDetailAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string RecieptBarcode) {
             MashadLeatherEcommerce.KiyanService.GetRecieptDetailRequest inValue = new MashadLeatherEcommerce.KiyanService.GetRecieptDetailRequest();
             inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
             inValue.RecieptBarcode = RecieptBarcode;
             return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetRecieptDetailAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        MashadLeatherEcommerce.KiyanService.GetItemListResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetItemList(MashadLeatherEcommerce.KiyanService.GetItemListRequest request) {
-            return base.Channel.GetItemList(request);
+        MashadLeatherEcommerce.KiyanService.GetRecieptHeaderResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetRecieptHeader(MashadLeatherEcommerce.KiyanService.GetRecieptHeaderRequest request) {
+            return base.Channel.GetRecieptHeader(request);
         }
         
-        public MashadLeatherEcommerce.KiyanService.ItemListResultModel GetItemList(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, string StartDate, string EndDate) {
-            MashadLeatherEcommerce.KiyanService.GetItemListRequest inValue = new MashadLeatherEcommerce.KiyanService.GetItemListRequest();
+        public MashadLeatherEcommerce.KiyanService.ResponseDataOfRecieptsHeader GetRecieptHeader(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string RecieptBarcodeSale) {
+            MashadLeatherEcommerce.KiyanService.GetRecieptHeaderRequest inValue = new MashadLeatherEcommerce.KiyanService.GetRecieptHeaderRequest();
             inValue.ValidationSoapHeader = ValidationSoapHeader;
-            inValue.StartDate = StartDate;
-            inValue.EndDate = EndDate;
-            MashadLeatherEcommerce.KiyanService.GetItemListResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetItemList(inValue);
-            return retVal.GetItemListResult;
+            inValue.AuthUser = AuthUser;
+            inValue.RecieptBarcodeSale = RecieptBarcodeSale;
+            MashadLeatherEcommerce.KiyanService.GetRecieptHeaderResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetRecieptHeader(inValue);
+            return retVal.GetRecieptHeaderResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemListResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetItemListAsync(MashadLeatherEcommerce.KiyanService.GetItemListRequest request) {
-            return base.Channel.GetItemListAsync(request);
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetRecieptHeaderResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetRecieptHeaderAsync(MashadLeatherEcommerce.KiyanService.GetRecieptHeaderRequest request) {
+            return base.Channel.GetRecieptHeaderAsync(request);
         }
         
-        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemListResponse> GetItemListAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, string StartDate, string EndDate) {
-            MashadLeatherEcommerce.KiyanService.GetItemListRequest inValue = new MashadLeatherEcommerce.KiyanService.GetItemListRequest();
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetRecieptHeaderResponse> GetRecieptHeaderAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string RecieptBarcodeSale) {
+            MashadLeatherEcommerce.KiyanService.GetRecieptHeaderRequest inValue = new MashadLeatherEcommerce.KiyanService.GetRecieptHeaderRequest();
             inValue.ValidationSoapHeader = ValidationSoapHeader;
-            inValue.StartDate = StartDate;
-            inValue.EndDate = EndDate;
-            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetItemListAsync(inValue);
+            inValue.AuthUser = AuthUser;
+            inValue.RecieptBarcodeSale = RecieptBarcodeSale;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetRecieptHeaderAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        MashadLeatherEcommerce.KiyanService.GetItemListWithinventoryIDResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetItemListWithinventoryID(MashadLeatherEcommerce.KiyanService.GetItemListWithinventoryIDRequest request) {
-            return base.Channel.GetItemListWithinventoryID(request);
+        MashadLeatherEcommerce.KiyanService.SaleReturnItemsResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.SaleReturnItems(MashadLeatherEcommerce.KiyanService.SaleReturnItemsRequest request) {
+            return base.Channel.SaleReturnItems(request);
         }
         
-        public MashadLeatherEcommerce.KiyanService.ItemListResultModel GetItemListWithinventoryID(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, int inventory) {
-            MashadLeatherEcommerce.KiyanService.GetItemListWithinventoryIDRequest inValue = new MashadLeatherEcommerce.KiyanService.GetItemListWithinventoryIDRequest();
+        public MashadLeatherEcommerce.KiyanService.SaleResultModel SaleReturnItems(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string RecieptBarcodeSale) {
+            MashadLeatherEcommerce.KiyanService.SaleReturnItemsRequest inValue = new MashadLeatherEcommerce.KiyanService.SaleReturnItemsRequest();
             inValue.ValidationSoapHeader = ValidationSoapHeader;
-            inValue.inventory = inventory;
-            MashadLeatherEcommerce.KiyanService.GetItemListWithinventoryIDResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetItemListWithinventoryID(inValue);
-            return retVal.GetItemListWithinventoryIDResult;
+            inValue.AuthUser = AuthUser;
+            inValue.RecieptBarcodeSale = RecieptBarcodeSale;
+            MashadLeatherEcommerce.KiyanService.SaleReturnItemsResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).SaleReturnItems(inValue);
+            return retVal.SaleReturnItemsResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemListWithinventoryIDResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetItemListWithinventoryIDAsync(MashadLeatherEcommerce.KiyanService.GetItemListWithinventoryIDRequest request) {
-            return base.Channel.GetItemListWithinventoryIDAsync(request);
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.SaleReturnItemsResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.SaleReturnItemsAsync(MashadLeatherEcommerce.KiyanService.SaleReturnItemsRequest request) {
+            return base.Channel.SaleReturnItemsAsync(request);
         }
         
-        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemListWithinventoryIDResponse> GetItemListWithinventoryIDAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, int inventory) {
-            MashadLeatherEcommerce.KiyanService.GetItemListWithinventoryIDRequest inValue = new MashadLeatherEcommerce.KiyanService.GetItemListWithinventoryIDRequest();
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.SaleReturnItemsResponse> SaleReturnItemsAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, string RecieptBarcodeSale) {
+            MashadLeatherEcommerce.KiyanService.SaleReturnItemsRequest inValue = new MashadLeatherEcommerce.KiyanService.SaleReturnItemsRequest();
             inValue.ValidationSoapHeader = ValidationSoapHeader;
-            inValue.inventory = inventory;
-            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetItemListWithinventoryIDAsync(inValue);
+            inValue.AuthUser = AuthUser;
+            inValue.RecieptBarcodeSale = RecieptBarcodeSale;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).SaleReturnItemsAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        MashadLeatherEcommerce.KiyanService.GetItemQuantityWithInventoryIDResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetItemQuantityWithInventoryID(MashadLeatherEcommerce.KiyanService.GetItemQuantityWithInventoryIDRequest request) {
-            return base.Channel.GetItemQuantityWithInventoryID(request);
+        MashadLeatherEcommerce.KiyanService.ReturnItemsRSDateResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.ReturnItemsRSDate(MashadLeatherEcommerce.KiyanService.ReturnItemsRSDateRequest request) {
+            return base.Channel.ReturnItemsRSDate(request);
         }
         
-        public MashadLeatherEcommerce.KiyanService.BarCodeStockResultModel GetItemQuantityWithInventoryID(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, int inventory) {
-            MashadLeatherEcommerce.KiyanService.GetItemQuantityWithInventoryIDRequest inValue = new MashadLeatherEcommerce.KiyanService.GetItemQuantityWithInventoryIDRequest();
+        public MashadLeatherEcommerce.KiyanService.SaleResultModel ReturnItemsRSDate(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.ReturnItemObject[] ReturnItems, int SourceRetailStoreID, int SourceWorkStationID, int OperatorID, System.Nullable<int> customerID, System.DateTime bussinessDay) {
+            MashadLeatherEcommerce.KiyanService.ReturnItemsRSDateRequest inValue = new MashadLeatherEcommerce.KiyanService.ReturnItemsRSDateRequest();
             inValue.ValidationSoapHeader = ValidationSoapHeader;
-            inValue.inventory = inventory;
-            MashadLeatherEcommerce.KiyanService.GetItemQuantityWithInventoryIDResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetItemQuantityWithInventoryID(inValue);
-            return retVal.GetItemQuantityWithInventoryIDResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemQuantityWithInventoryIDResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetItemQuantityWithInventoryIDAsync(MashadLeatherEcommerce.KiyanService.GetItemQuantityWithInventoryIDRequest request) {
-            return base.Channel.GetItemQuantityWithInventoryIDAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemQuantityWithInventoryIDResponse> GetItemQuantityWithInventoryIDAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, int inventory) {
-            MashadLeatherEcommerce.KiyanService.GetItemQuantityWithInventoryIDRequest inValue = new MashadLeatherEcommerce.KiyanService.GetItemQuantityWithInventoryIDRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            inValue.inventory = inventory;
-            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetItemQuantityWithInventoryIDAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        MashadLeatherEcommerce.KiyanService.GetItemsQuantityAllInventoryResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetItemsQuantityAllInventory(MashadLeatherEcommerce.KiyanService.GetItemsQuantityAllInventoryRequest request) {
-            return base.Channel.GetItemsQuantityAllInventory(request);
-        }
-        
-        public MashadLeatherEcommerce.KiyanService.ItemsStockResultModel GetItemsQuantityAllInventory(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, int[] retailStores) {
-            MashadLeatherEcommerce.KiyanService.GetItemsQuantityAllInventoryRequest inValue = new MashadLeatherEcommerce.KiyanService.GetItemsQuantityAllInventoryRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            inValue.retailStores = retailStores;
-            MashadLeatherEcommerce.KiyanService.GetItemsQuantityAllInventoryResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetItemsQuantityAllInventory(inValue);
-            return retVal.GetItemsQuantityAllInventoryResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemsQuantityAllInventoryResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetItemsQuantityAllInventoryAsync(MashadLeatherEcommerce.KiyanService.GetItemsQuantityAllInventoryRequest request) {
-            return base.Channel.GetItemsQuantityAllInventoryAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemsQuantityAllInventoryResponse> GetItemsQuantityAllInventoryAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, int[] retailStores) {
-            MashadLeatherEcommerce.KiyanService.GetItemsQuantityAllInventoryRequest inValue = new MashadLeatherEcommerce.KiyanService.GetItemsQuantityAllInventoryRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            inValue.retailStores = retailStores;
-            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetItemsQuantityAllInventoryAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        MashadLeatherEcommerce.KiyanService.GetItemInfoResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetItemInfo(MashadLeatherEcommerce.KiyanService.GetItemInfoRequest request) {
-            return base.Channel.GetItemInfo(request);
-        }
-        
-        public MashadLeatherEcommerce.KiyanService.ItemInfoResultModel GetItemInfo(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, string barcode) {
-            MashadLeatherEcommerce.KiyanService.GetItemInfoRequest inValue = new MashadLeatherEcommerce.KiyanService.GetItemInfoRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            inValue.barcode = barcode;
-            MashadLeatherEcommerce.KiyanService.GetItemInfoResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetItemInfo(inValue);
-            return retVal.GetItemInfoResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemInfoResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetItemInfoAsync(MashadLeatherEcommerce.KiyanService.GetItemInfoRequest request) {
-            return base.Channel.GetItemInfoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemInfoResponse> GetItemInfoAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, string barcode) {
-            MashadLeatherEcommerce.KiyanService.GetItemInfoRequest inValue = new MashadLeatherEcommerce.KiyanService.GetItemInfoRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            inValue.barcode = barcode;
-            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetItemInfoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        MashadLeatherEcommerce.KiyanService.GetArrayItemInfoResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetArrayItemInfo(MashadLeatherEcommerce.KiyanService.GetArrayItemInfoRequest request) {
-            return base.Channel.GetArrayItemInfo(request);
-        }
-        
-        public MashadLeatherEcommerce.KiyanService.ItemListResultModel GetArrayItemInfo(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, string[] barcodes) {
-            MashadLeatherEcommerce.KiyanService.GetArrayItemInfoRequest inValue = new MashadLeatherEcommerce.KiyanService.GetArrayItemInfoRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            inValue.barcodes = barcodes;
-            MashadLeatherEcommerce.KiyanService.GetArrayItemInfoResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetArrayItemInfo(inValue);
-            return retVal.GetArrayItemInfoResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetArrayItemInfoResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetArrayItemInfoAsync(MashadLeatherEcommerce.KiyanService.GetArrayItemInfoRequest request) {
-            return base.Channel.GetArrayItemInfoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetArrayItemInfoResponse> GetArrayItemInfoAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, string[] barcodes) {
-            MashadLeatherEcommerce.KiyanService.GetArrayItemInfoRequest inValue = new MashadLeatherEcommerce.KiyanService.GetArrayItemInfoRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            inValue.barcodes = barcodes;
-            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetArrayItemInfoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        MashadLeatherEcommerce.KiyanService.GetItemInfoWithItemIDResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetItemInfoWithItemID(MashadLeatherEcommerce.KiyanService.GetItemInfoWithItemIDRequest request) {
-            return base.Channel.GetItemInfoWithItemID(request);
-        }
-        
-        public MashadLeatherEcommerce.KiyanService.ItemInfoResultModel GetItemInfoWithItemID(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, int ItemID) {
-            MashadLeatherEcommerce.KiyanService.GetItemInfoWithItemIDRequest inValue = new MashadLeatherEcommerce.KiyanService.GetItemInfoWithItemIDRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            inValue.ItemID = ItemID;
-            MashadLeatherEcommerce.KiyanService.GetItemInfoWithItemIDResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetItemInfoWithItemID(inValue);
-            return retVal.GetItemInfoWithItemIDResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemInfoWithItemIDResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetItemInfoWithItemIDAsync(MashadLeatherEcommerce.KiyanService.GetItemInfoWithItemIDRequest request) {
-            return base.Channel.GetItemInfoWithItemIDAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemInfoWithItemIDResponse> GetItemInfoWithItemIDAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, int ItemID) {
-            MashadLeatherEcommerce.KiyanService.GetItemInfoWithItemIDRequest inValue = new MashadLeatherEcommerce.KiyanService.GetItemInfoWithItemIDRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            inValue.ItemID = ItemID;
-            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetItemInfoWithItemIDAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        MashadLeatherEcommerce.KiyanService.GetTemplatePropertyResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetTemplateProperty(MashadLeatherEcommerce.KiyanService.GetTemplatePropertyRequest request) {
-            return base.Channel.GetTemplateProperty(request);
-        }
-        
-        public MashadLeatherEcommerce.KiyanService.TemplatePropertyResultModel GetTemplateProperty(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader) {
-            MashadLeatherEcommerce.KiyanService.GetTemplatePropertyRequest inValue = new MashadLeatherEcommerce.KiyanService.GetTemplatePropertyRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            MashadLeatherEcommerce.KiyanService.GetTemplatePropertyResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetTemplateProperty(inValue);
-            return retVal.GetTemplatePropertyResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetTemplatePropertyResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetTemplatePropertyAsync(MashadLeatherEcommerce.KiyanService.GetTemplatePropertyRequest request) {
-            return base.Channel.GetTemplatePropertyAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetTemplatePropertyResponse> GetTemplatePropertyAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader) {
-            MashadLeatherEcommerce.KiyanService.GetTemplatePropertyRequest inValue = new MashadLeatherEcommerce.KiyanService.GetTemplatePropertyRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetTemplatePropertyAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        MashadLeatherEcommerce.KiyanService.GetTemplateAttributesResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetTemplateAttributes(MashadLeatherEcommerce.KiyanService.GetTemplateAttributesRequest request) {
-            return base.Channel.GetTemplateAttributes(request);
-        }
-        
-        public MashadLeatherEcommerce.KiyanService.TemplateAttributeResultModel GetTemplateAttributes(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader) {
-            MashadLeatherEcommerce.KiyanService.GetTemplateAttributesRequest inValue = new MashadLeatherEcommerce.KiyanService.GetTemplateAttributesRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            MashadLeatherEcommerce.KiyanService.GetTemplateAttributesResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetTemplateAttributes(inValue);
-            return retVal.GetTemplateAttributesResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetTemplateAttributesResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetTemplateAttributesAsync(MashadLeatherEcommerce.KiyanService.GetTemplateAttributesRequest request) {
-            return base.Channel.GetTemplateAttributesAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetTemplateAttributesResponse> GetTemplateAttributesAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader) {
-            MashadLeatherEcommerce.KiyanService.GetTemplateAttributesRequest inValue = new MashadLeatherEcommerce.KiyanService.GetTemplateAttributesRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetTemplateAttributesAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        MashadLeatherEcommerce.KiyanService.GetTemplateItemInfoResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetTemplateItemInfo(MashadLeatherEcommerce.KiyanService.GetTemplateItemInfoRequest request) {
-            return base.Channel.GetTemplateItemInfo(request);
-        }
-        
-        public MashadLeatherEcommerce.KiyanService.TemplateItemResultModle GetTemplateItemInfo(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, string Barcode) {
-            MashadLeatherEcommerce.KiyanService.GetTemplateItemInfoRequest inValue = new MashadLeatherEcommerce.KiyanService.GetTemplateItemInfoRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            inValue.Barcode = Barcode;
-            MashadLeatherEcommerce.KiyanService.GetTemplateItemInfoResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetTemplateItemInfo(inValue);
-            return retVal.GetTemplateItemInfoResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetTemplateItemInfoResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetTemplateItemInfoAsync(MashadLeatherEcommerce.KiyanService.GetTemplateItemInfoRequest request) {
-            return base.Channel.GetTemplateItemInfoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetTemplateItemInfoResponse> GetTemplateItemInfoAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, string Barcode) {
-            MashadLeatherEcommerce.KiyanService.GetTemplateItemInfoRequest inValue = new MashadLeatherEcommerce.KiyanService.GetTemplateItemInfoRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            inValue.Barcode = Barcode;
-            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetTemplateItemInfoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        MashadLeatherEcommerce.KiyanService.GetAllTemplateItemsResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetAllTemplateItems(MashadLeatherEcommerce.KiyanService.GetAllTemplateItemsRequest request) {
-            return base.Channel.GetAllTemplateItems(request);
-        }
-        
-        public MashadLeatherEcommerce.KiyanService.TemplateItemResultModle GetAllTemplateItems(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader) {
-            MashadLeatherEcommerce.KiyanService.GetAllTemplateItemsRequest inValue = new MashadLeatherEcommerce.KiyanService.GetAllTemplateItemsRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            MashadLeatherEcommerce.KiyanService.GetAllTemplateItemsResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetAllTemplateItems(inValue);
-            return retVal.GetAllTemplateItemsResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetAllTemplateItemsResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetAllTemplateItemsAsync(MashadLeatherEcommerce.KiyanService.GetAllTemplateItemsRequest request) {
-            return base.Channel.GetAllTemplateItemsAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetAllTemplateItemsResponse> GetAllTemplateItemsAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader) {
-            MashadLeatherEcommerce.KiyanService.GetAllTemplateItemsRequest inValue = new MashadLeatherEcommerce.KiyanService.GetAllTemplateItemsRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetAllTemplateItemsAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        MashadLeatherEcommerce.KiyanService.GetMatrixPropertyResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetMatrixProperty(MashadLeatherEcommerce.KiyanService.GetMatrixPropertyRequest request) {
-            return base.Channel.GetMatrixProperty(request);
-        }
-        
-        public MashadLeatherEcommerce.KiyanService.TemplatePropertyResultModel GetMatrixProperty(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader) {
-            MashadLeatherEcommerce.KiyanService.GetMatrixPropertyRequest inValue = new MashadLeatherEcommerce.KiyanService.GetMatrixPropertyRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            MashadLeatherEcommerce.KiyanService.GetMatrixPropertyResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetMatrixProperty(inValue);
-            return retVal.GetMatrixPropertyResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetMatrixPropertyResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetMatrixPropertyAsync(MashadLeatherEcommerce.KiyanService.GetMatrixPropertyRequest request) {
-            return base.Channel.GetMatrixPropertyAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetMatrixPropertyResponse> GetMatrixPropertyAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader) {
-            MashadLeatherEcommerce.KiyanService.GetMatrixPropertyRequest inValue = new MashadLeatherEcommerce.KiyanService.GetMatrixPropertyRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetMatrixPropertyAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        MashadLeatherEcommerce.KiyanService.GetMatrixAttributeResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetMatrixAttribute(MashadLeatherEcommerce.KiyanService.GetMatrixAttributeRequest request) {
-            return base.Channel.GetMatrixAttribute(request);
-        }
-        
-        public MashadLeatherEcommerce.KiyanService.TemplateAttributeResultModel GetMatrixAttribute(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader) {
-            MashadLeatherEcommerce.KiyanService.GetMatrixAttributeRequest inValue = new MashadLeatherEcommerce.KiyanService.GetMatrixAttributeRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            MashadLeatherEcommerce.KiyanService.GetMatrixAttributeResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetMatrixAttribute(inValue);
-            return retVal.GetMatrixAttributeResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetMatrixAttributeResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetMatrixAttributeAsync(MashadLeatherEcommerce.KiyanService.GetMatrixAttributeRequest request) {
-            return base.Channel.GetMatrixAttributeAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetMatrixAttributeResponse> GetMatrixAttributeAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader) {
-            MashadLeatherEcommerce.KiyanService.GetMatrixAttributeRequest inValue = new MashadLeatherEcommerce.KiyanService.GetMatrixAttributeRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetMatrixAttributeAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        MashadLeatherEcommerce.KiyanService.GetMatrixItemInfoResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetMatrixItemInfo(MashadLeatherEcommerce.KiyanService.GetMatrixItemInfoRequest request) {
-            return base.Channel.GetMatrixItemInfo(request);
-        }
-        
-        public MashadLeatherEcommerce.KiyanService.TemplateItemResultModle GetMatrixItemInfo(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, string Barcode) {
-            MashadLeatherEcommerce.KiyanService.GetMatrixItemInfoRequest inValue = new MashadLeatherEcommerce.KiyanService.GetMatrixItemInfoRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            inValue.Barcode = Barcode;
-            MashadLeatherEcommerce.KiyanService.GetMatrixItemInfoResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetMatrixItemInfo(inValue);
-            return retVal.GetMatrixItemInfoResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetMatrixItemInfoResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetMatrixItemInfoAsync(MashadLeatherEcommerce.KiyanService.GetMatrixItemInfoRequest request) {
-            return base.Channel.GetMatrixItemInfoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetMatrixItemInfoResponse> GetMatrixItemInfoAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, string Barcode) {
-            MashadLeatherEcommerce.KiyanService.GetMatrixItemInfoRequest inValue = new MashadLeatherEcommerce.KiyanService.GetMatrixItemInfoRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            inValue.Barcode = Barcode;
-            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetMatrixItemInfoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        MashadLeatherEcommerce.KiyanService.GetAllMatrixItemsResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetAllMatrixItems(MashadLeatherEcommerce.KiyanService.GetAllMatrixItemsRequest request) {
-            return base.Channel.GetAllMatrixItems(request);
-        }
-        
-        public MashadLeatherEcommerce.KiyanService.TemplateItemResultModle GetAllMatrixItems(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader) {
-            MashadLeatherEcommerce.KiyanService.GetAllMatrixItemsRequest inValue = new MashadLeatherEcommerce.KiyanService.GetAllMatrixItemsRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            MashadLeatherEcommerce.KiyanService.GetAllMatrixItemsResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetAllMatrixItems(inValue);
-            return retVal.GetAllMatrixItemsResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetAllMatrixItemsResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetAllMatrixItemsAsync(MashadLeatherEcommerce.KiyanService.GetAllMatrixItemsRequest request) {
-            return base.Channel.GetAllMatrixItemsAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetAllMatrixItemsResponse> GetAllMatrixItemsAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader) {
-            MashadLeatherEcommerce.KiyanService.GetAllMatrixItemsRequest inValue = new MashadLeatherEcommerce.KiyanService.GetAllMatrixItemsRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetAllMatrixItemsAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        MashadLeatherEcommerce.KiyanService.GetItemStockStatusResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetItemStockStatus(MashadLeatherEcommerce.KiyanService.GetItemStockStatusRequest request) {
-            return base.Channel.GetItemStockStatus(request);
-        }
-        
-        public MashadLeatherEcommerce.KiyanService.ItemStockStatusResultModel GetItemStockStatus(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, string Barcode) {
-            MashadLeatherEcommerce.KiyanService.GetItemStockStatusRequest inValue = new MashadLeatherEcommerce.KiyanService.GetItemStockStatusRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            inValue.Barcode = Barcode;
-            MashadLeatherEcommerce.KiyanService.GetItemStockStatusResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetItemStockStatus(inValue);
-            return retVal.GetItemStockStatusResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemStockStatusResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetItemStockStatusAsync(MashadLeatherEcommerce.KiyanService.GetItemStockStatusRequest request) {
-            return base.Channel.GetItemStockStatusAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetItemStockStatusResponse> GetItemStockStatusAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, string Barcode) {
-            MashadLeatherEcommerce.KiyanService.GetItemStockStatusRequest inValue = new MashadLeatherEcommerce.KiyanService.GetItemStockStatusRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            inValue.Barcode = Barcode;
-            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetItemStockStatusAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        MashadLeatherEcommerce.KiyanService.AddToReserveResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.AddToReserve(MashadLeatherEcommerce.KiyanService.AddToReserveRequest request) {
-            return base.Channel.AddToReserve(request);
-        }
-        
-        public MashadLeatherEcommerce.KiyanService.Result AddToReserve(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.ItemStock[] ItemsID, bool CancelReservation) {
-            MashadLeatherEcommerce.KiyanService.AddToReserveRequest inValue = new MashadLeatherEcommerce.KiyanService.AddToReserveRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            inValue.ItemsID = ItemsID;
-            inValue.CancelReservation = CancelReservation;
-            MashadLeatherEcommerce.KiyanService.AddToReserveResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).AddToReserve(inValue);
-            return retVal.AddToReserveResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.AddToReserveResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.AddToReserveAsync(MashadLeatherEcommerce.KiyanService.AddToReserveRequest request) {
-            return base.Channel.AddToReserveAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.AddToReserveResponse> AddToReserveAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.ItemStock[] ItemsID, bool CancelReservation) {
-            MashadLeatherEcommerce.KiyanService.AddToReserveRequest inValue = new MashadLeatherEcommerce.KiyanService.AddToReserveRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            inValue.ItemsID = ItemsID;
-            inValue.CancelReservation = CancelReservation;
-            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).AddToReserveAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        MashadLeatherEcommerce.KiyanService.GetPosDepartmentListResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetPosDepartmentList(MashadLeatherEcommerce.KiyanService.GetPosDepartmentListRequest request) {
-            return base.Channel.GetPosDepartmentList(request);
-        }
-        
-        public MashadLeatherEcommerce.KiyanService.PosDepartmentListResultModel GetPosDepartmentList(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader) {
-            MashadLeatherEcommerce.KiyanService.GetPosDepartmentListRequest inValue = new MashadLeatherEcommerce.KiyanService.GetPosDepartmentListRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            MashadLeatherEcommerce.KiyanService.GetPosDepartmentListResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetPosDepartmentList(inValue);
-            return retVal.GetPosDepartmentListResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetPosDepartmentListResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetPosDepartmentListAsync(MashadLeatherEcommerce.KiyanService.GetPosDepartmentListRequest request) {
-            return base.Channel.GetPosDepartmentListAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetPosDepartmentListResponse> GetPosDepartmentListAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader) {
-            MashadLeatherEcommerce.KiyanService.GetPosDepartmentListRequest inValue = new MashadLeatherEcommerce.KiyanService.GetPosDepartmentListRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetPosDepartmentListAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        MashadLeatherEcommerce.KiyanService.CreateCustomerResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.CreateCustomer(MashadLeatherEcommerce.KiyanService.CreateCustomerRequest request) {
-            return base.Channel.CreateCustomer(request);
-        }
-        
-        public MashadLeatherEcommerce.KiyanService.CreateCustomerResultModel CreateCustomer(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.Customer NewCustomer) {
-            MashadLeatherEcommerce.KiyanService.CreateCustomerRequest inValue = new MashadLeatherEcommerce.KiyanService.CreateCustomerRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            inValue.NewCustomer = NewCustomer;
-            MashadLeatherEcommerce.KiyanService.CreateCustomerResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).CreateCustomer(inValue);
-            return retVal.CreateCustomerResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.CreateCustomerResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.CreateCustomerAsync(MashadLeatherEcommerce.KiyanService.CreateCustomerRequest request) {
-            return base.Channel.CreateCustomerAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.CreateCustomerResponse> CreateCustomerAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.Customer NewCustomer) {
-            MashadLeatherEcommerce.KiyanService.CreateCustomerRequest inValue = new MashadLeatherEcommerce.KiyanService.CreateCustomerRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            inValue.NewCustomer = NewCustomer;
-            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).CreateCustomerAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        MashadLeatherEcommerce.KiyanService.GetCustomerListResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetCustomerList(MashadLeatherEcommerce.KiyanService.GetCustomerListRequest request) {
-            return base.Channel.GetCustomerList(request);
-        }
-        
-        public MashadLeatherEcommerce.KiyanService.CustomerListResultModel GetCustomerList(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, string StartDate, string EndDate) {
-            MashadLeatherEcommerce.KiyanService.GetCustomerListRequest inValue = new MashadLeatherEcommerce.KiyanService.GetCustomerListRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            inValue.StartDate = StartDate;
-            inValue.EndDate = EndDate;
-            MashadLeatherEcommerce.KiyanService.GetCustomerListResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetCustomerList(inValue);
-            return retVal.GetCustomerListResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetCustomerListResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetCustomerListAsync(MashadLeatherEcommerce.KiyanService.GetCustomerListRequest request) {
-            return base.Channel.GetCustomerListAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetCustomerListResponse> GetCustomerListAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, string StartDate, string EndDate) {
-            MashadLeatherEcommerce.KiyanService.GetCustomerListRequest inValue = new MashadLeatherEcommerce.KiyanService.GetCustomerListRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            inValue.StartDate = StartDate;
-            inValue.EndDate = EndDate;
-            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetCustomerListAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        MashadLeatherEcommerce.KiyanService.GetCustomerInfoWithCustomerIDResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetCustomerInfoWithCustomerID(MashadLeatherEcommerce.KiyanService.GetCustomerInfoWithCustomerIDRequest request) {
-            return base.Channel.GetCustomerInfoWithCustomerID(request);
-        }
-        
-        public MashadLeatherEcommerce.KiyanService.CustomerResultModel GetCustomerInfoWithCustomerID(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, int customerID) {
-            MashadLeatherEcommerce.KiyanService.GetCustomerInfoWithCustomerIDRequest inValue = new MashadLeatherEcommerce.KiyanService.GetCustomerInfoWithCustomerIDRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.ReturnItems = ReturnItems;
+            inValue.SourceRetailStoreID = SourceRetailStoreID;
+            inValue.SourceWorkStationID = SourceWorkStationID;
+            inValue.OperatorID = OperatorID;
             inValue.customerID = customerID;
-            MashadLeatherEcommerce.KiyanService.GetCustomerInfoWithCustomerIDResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetCustomerInfoWithCustomerID(inValue);
-            return retVal.GetCustomerInfoWithCustomerIDResult;
+            inValue.bussinessDay = bussinessDay;
+            MashadLeatherEcommerce.KiyanService.ReturnItemsRSDateResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).ReturnItemsRSDate(inValue);
+            return retVal.ReturnItemsRSDateResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetCustomerInfoWithCustomerIDResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetCustomerInfoWithCustomerIDAsync(MashadLeatherEcommerce.KiyanService.GetCustomerInfoWithCustomerIDRequest request) {
-            return base.Channel.GetCustomerInfoWithCustomerIDAsync(request);
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.ReturnItemsRSDateResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.ReturnItemsRSDateAsync(MashadLeatherEcommerce.KiyanService.ReturnItemsRSDateRequest request) {
+            return base.Channel.ReturnItemsRSDateAsync(request);
         }
         
-        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetCustomerInfoWithCustomerIDResponse> GetCustomerInfoWithCustomerIDAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, int customerID) {
-            MashadLeatherEcommerce.KiyanService.GetCustomerInfoWithCustomerIDRequest inValue = new MashadLeatherEcommerce.KiyanService.GetCustomerInfoWithCustomerIDRequest();
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.ReturnItemsRSDateResponse> ReturnItemsRSDateAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.ReturnItemObject[] ReturnItems, int SourceRetailStoreID, int SourceWorkStationID, int OperatorID, System.Nullable<int> customerID, System.DateTime bussinessDay) {
+            MashadLeatherEcommerce.KiyanService.ReturnItemsRSDateRequest inValue = new MashadLeatherEcommerce.KiyanService.ReturnItemsRSDateRequest();
             inValue.ValidationSoapHeader = ValidationSoapHeader;
+            inValue.AuthUser = AuthUser;
+            inValue.ReturnItems = ReturnItems;
+            inValue.SourceRetailStoreID = SourceRetailStoreID;
+            inValue.SourceWorkStationID = SourceWorkStationID;
+            inValue.OperatorID = OperatorID;
             inValue.customerID = customerID;
-            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetCustomerInfoWithCustomerIDAsync(inValue);
+            inValue.bussinessDay = bussinessDay;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).ReturnItemsRSDateAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        MashadLeatherEcommerce.KiyanService.GetCustomerInfoWithMemberIDResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetCustomerInfoWithMemberID(MashadLeatherEcommerce.KiyanService.GetCustomerInfoWithMemberIDRequest request) {
-            return base.Channel.GetCustomerInfoWithMemberID(request);
+        MashadLeatherEcommerce.KiyanService.ReturnItemsRSResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.ReturnItemsRS(MashadLeatherEcommerce.KiyanService.ReturnItemsRSRequest request) {
+            return base.Channel.ReturnItemsRS(request);
         }
         
-        public MashadLeatherEcommerce.KiyanService.CustomerResultModel GetCustomerInfoWithMemberID(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, string MemberID) {
-            MashadLeatherEcommerce.KiyanService.GetCustomerInfoWithMemberIDRequest inValue = new MashadLeatherEcommerce.KiyanService.GetCustomerInfoWithMemberIDRequest();
+        public MashadLeatherEcommerce.KiyanService.SaleResultModel ReturnItemsRS(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.ReturnItemObject[] ReturnItems, int SourceRetailStoreID, int SourceWorkStationID, int OperatorID, System.Nullable<int> customerID) {
+            MashadLeatherEcommerce.KiyanService.ReturnItemsRSRequest inValue = new MashadLeatherEcommerce.KiyanService.ReturnItemsRSRequest();
             inValue.ValidationSoapHeader = ValidationSoapHeader;
-            inValue.MemberID = MemberID;
-            MashadLeatherEcommerce.KiyanService.GetCustomerInfoWithMemberIDResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetCustomerInfoWithMemberID(inValue);
-            return retVal.GetCustomerInfoWithMemberIDResult;
+            inValue.AuthUser = AuthUser;
+            inValue.ReturnItems = ReturnItems;
+            inValue.SourceRetailStoreID = SourceRetailStoreID;
+            inValue.SourceWorkStationID = SourceWorkStationID;
+            inValue.OperatorID = OperatorID;
+            inValue.customerID = customerID;
+            MashadLeatherEcommerce.KiyanService.ReturnItemsRSResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).ReturnItemsRS(inValue);
+            return retVal.ReturnItemsRSResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetCustomerInfoWithMemberIDResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetCustomerInfoWithMemberIDAsync(MashadLeatherEcommerce.KiyanService.GetCustomerInfoWithMemberIDRequest request) {
-            return base.Channel.GetCustomerInfoWithMemberIDAsync(request);
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.ReturnItemsRSResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.ReturnItemsRSAsync(MashadLeatherEcommerce.KiyanService.ReturnItemsRSRequest request) {
+            return base.Channel.ReturnItemsRSAsync(request);
         }
         
-        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetCustomerInfoWithMemberIDResponse> GetCustomerInfoWithMemberIDAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, string MemberID) {
-            MashadLeatherEcommerce.KiyanService.GetCustomerInfoWithMemberIDRequest inValue = new MashadLeatherEcommerce.KiyanService.GetCustomerInfoWithMemberIDRequest();
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.ReturnItemsRSResponse> ReturnItemsRSAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.ReturnItemObject[] ReturnItems, int SourceRetailStoreID, int SourceWorkStationID, int OperatorID, System.Nullable<int> customerID) {
+            MashadLeatherEcommerce.KiyanService.ReturnItemsRSRequest inValue = new MashadLeatherEcommerce.KiyanService.ReturnItemsRSRequest();
             inValue.ValidationSoapHeader = ValidationSoapHeader;
-            inValue.MemberID = MemberID;
-            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetCustomerInfoWithMemberIDAsync(inValue);
+            inValue.AuthUser = AuthUser;
+            inValue.ReturnItems = ReturnItems;
+            inValue.SourceRetailStoreID = SourceRetailStoreID;
+            inValue.SourceWorkStationID = SourceWorkStationID;
+            inValue.OperatorID = OperatorID;
+            inValue.customerID = customerID;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).ReturnItemsRSAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        MashadLeatherEcommerce.KiyanService.GetCustomersBaseInfoResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetCustomersBaseInfo(MashadLeatherEcommerce.KiyanService.GetCustomersBaseInfoRequest request) {
-            return base.Channel.GetCustomersBaseInfo(request);
+        MashadLeatherEcommerce.KiyanService.ReturnItemsResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.ReturnItems(MashadLeatherEcommerce.KiyanService.ReturnItemsRequest request) {
+            return base.Channel.ReturnItems(request);
         }
         
-        public MashadLeatherEcommerce.KiyanService.CustomerListResultModel GetCustomersBaseInfo(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.FiledName filedName, string[] value) {
-            MashadLeatherEcommerce.KiyanService.GetCustomersBaseInfoRequest inValue = new MashadLeatherEcommerce.KiyanService.GetCustomersBaseInfoRequest();
+        public MashadLeatherEcommerce.KiyanService.SaleResultModel ReturnItems(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.ReturnItemObject[] ReturnItems1, System.Nullable<int> customerID) {
+            MashadLeatherEcommerce.KiyanService.ReturnItemsRequest inValue = new MashadLeatherEcommerce.KiyanService.ReturnItemsRequest();
             inValue.ValidationSoapHeader = ValidationSoapHeader;
-            inValue.filedName = filedName;
-            inValue.value = value;
-            MashadLeatherEcommerce.KiyanService.GetCustomersBaseInfoResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetCustomersBaseInfo(inValue);
-            return retVal.GetCustomersBaseInfoResult;
+            inValue.AuthUser = AuthUser;
+            inValue.ReturnItems = ReturnItems1;
+            inValue.customerID = customerID;
+            MashadLeatherEcommerce.KiyanService.ReturnItemsResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).ReturnItems(inValue);
+            return retVal.ReturnItemsResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetCustomersBaseInfoResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetCustomersBaseInfoAsync(MashadLeatherEcommerce.KiyanService.GetCustomersBaseInfoRequest request) {
-            return base.Channel.GetCustomersBaseInfoAsync(request);
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.ReturnItemsResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.ReturnItemsAsync(MashadLeatherEcommerce.KiyanService.ReturnItemsRequest request) {
+            return base.Channel.ReturnItemsAsync(request);
         }
         
-        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetCustomersBaseInfoResponse> GetCustomersBaseInfoAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.FiledName filedName, string[] value) {
-            MashadLeatherEcommerce.KiyanService.GetCustomersBaseInfoRequest inValue = new MashadLeatherEcommerce.KiyanService.GetCustomersBaseInfoRequest();
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.ReturnItemsResponse> ReturnItemsAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.ReturnItemObject[] ReturnItems, System.Nullable<int> customerID) {
+            MashadLeatherEcommerce.KiyanService.ReturnItemsRequest inValue = new MashadLeatherEcommerce.KiyanService.ReturnItemsRequest();
             inValue.ValidationSoapHeader = ValidationSoapHeader;
-            inValue.filedName = filedName;
-            inValue.value = value;
-            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetCustomersBaseInfoAsync(inValue);
+            inValue.AuthUser = AuthUser;
+            inValue.ReturnItems = ReturnItems;
+            inValue.customerID = customerID;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).ReturnItemsAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        MashadLeatherEcommerce.KiyanService.UpdateCustomerInfoResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.UpdateCustomerInfo(MashadLeatherEcommerce.KiyanService.UpdateCustomerInfoRequest request) {
-            return base.Channel.UpdateCustomerInfo(request);
+        MashadLeatherEcommerce.KiyanService.LayAwaySaleItemsResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.LayAwaySaleItems(MashadLeatherEcommerce.KiyanService.LayAwaySaleItemsRequest request) {
+            return base.Channel.LayAwaySaleItems(request);
         }
         
-        public MashadLeatherEcommerce.KiyanService.Result UpdateCustomerInfo(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.Customer UpdattedCustomer) {
-            MashadLeatherEcommerce.KiyanService.UpdateCustomerInfoRequest inValue = new MashadLeatherEcommerce.KiyanService.UpdateCustomerInfoRequest();
+        public MashadLeatherEcommerce.KiyanService.SaleResultModel LayAwaySaleItems(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.SaleItemObject[] lstSaleItms, int CustomerID, int SourceRetailStoreID) {
+            MashadLeatherEcommerce.KiyanService.LayAwaySaleItemsRequest inValue = new MashadLeatherEcommerce.KiyanService.LayAwaySaleItemsRequest();
             inValue.ValidationSoapHeader = ValidationSoapHeader;
-            inValue.UpdattedCustomer = UpdattedCustomer;
-            MashadLeatherEcommerce.KiyanService.UpdateCustomerInfoResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).UpdateCustomerInfo(inValue);
-            return retVal.UpdateCustomerInfoResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.UpdateCustomerInfoResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.UpdateCustomerInfoAsync(MashadLeatherEcommerce.KiyanService.UpdateCustomerInfoRequest request) {
-            return base.Channel.UpdateCustomerInfoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.UpdateCustomerInfoResponse> UpdateCustomerInfoAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.Customer UpdattedCustomer) {
-            MashadLeatherEcommerce.KiyanService.UpdateCustomerInfoRequest inValue = new MashadLeatherEcommerce.KiyanService.UpdateCustomerInfoRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            inValue.UpdattedCustomer = UpdattedCustomer;
-            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).UpdateCustomerInfoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        MashadLeatherEcommerce.KiyanService.GetCustomerTransactionResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetCustomerTransaction(MashadLeatherEcommerce.KiyanService.GetCustomerTransactionRequest request) {
-            return base.Channel.GetCustomerTransaction(request);
-        }
-        
-        public MashadLeatherEcommerce.KiyanService.CustomerTransactionResultModel GetCustomerTransaction(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, string StartDate, string EndDate, string CustomerID) {
-            MashadLeatherEcommerce.KiyanService.GetCustomerTransactionRequest inValue = new MashadLeatherEcommerce.KiyanService.GetCustomerTransactionRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            inValue.StartDate = StartDate;
-            inValue.EndDate = EndDate;
+            inValue.AuthUser = AuthUser;
+            inValue.lstSaleItms = lstSaleItms;
             inValue.CustomerID = CustomerID;
-            MashadLeatherEcommerce.KiyanService.GetCustomerTransactionResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetCustomerTransaction(inValue);
-            return retVal.GetCustomerTransactionResult;
+            inValue.SourceRetailStoreID = SourceRetailStoreID;
+            MashadLeatherEcommerce.KiyanService.LayAwaySaleItemsResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).LayAwaySaleItems(inValue);
+            return retVal.LayAwaySaleItemsResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetCustomerTransactionResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetCustomerTransactionAsync(MashadLeatherEcommerce.KiyanService.GetCustomerTransactionRequest request) {
-            return base.Channel.GetCustomerTransactionAsync(request);
+        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.LayAwaySaleItemsResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.LayAwaySaleItemsAsync(MashadLeatherEcommerce.KiyanService.LayAwaySaleItemsRequest request) {
+            return base.Channel.LayAwaySaleItemsAsync(request);
         }
         
-        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetCustomerTransactionResponse> GetCustomerTransactionAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, string StartDate, string EndDate, string CustomerID) {
-            MashadLeatherEcommerce.KiyanService.GetCustomerTransactionRequest inValue = new MashadLeatherEcommerce.KiyanService.GetCustomerTransactionRequest();
+        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.LayAwaySaleItemsResponse> LayAwaySaleItemsAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, MashadLeatherEcommerce.KiyanService.AuthUser AuthUser, MashadLeatherEcommerce.KiyanService.SaleItemObject[] lstSaleItms, int CustomerID, int SourceRetailStoreID) {
+            MashadLeatherEcommerce.KiyanService.LayAwaySaleItemsRequest inValue = new MashadLeatherEcommerce.KiyanService.LayAwaySaleItemsRequest();
             inValue.ValidationSoapHeader = ValidationSoapHeader;
-            inValue.StartDate = StartDate;
-            inValue.EndDate = EndDate;
+            inValue.AuthUser = AuthUser;
+            inValue.lstSaleItms = lstSaleItms;
             inValue.CustomerID = CustomerID;
-            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetCustomerTransactionAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        MashadLeatherEcommerce.KiyanService.GetCustomersReceiptsResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetCustomersReceipts(MashadLeatherEcommerce.KiyanService.GetCustomersReceiptsRequest request) {
-            return base.Channel.GetCustomersReceipts(request);
-        }
-        
-        public MashadLeatherEcommerce.KiyanService.GetCustomersReceiptsResultModel GetCustomersReceipts(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, int[] customersIDList, System.DateTime startDate, System.DateTime endDate) {
-            MashadLeatherEcommerce.KiyanService.GetCustomersReceiptsRequest inValue = new MashadLeatherEcommerce.KiyanService.GetCustomersReceiptsRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            inValue.customersIDList = customersIDList;
-            inValue.startDate = startDate;
-            inValue.endDate = endDate;
-            MashadLeatherEcommerce.KiyanService.GetCustomersReceiptsResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetCustomersReceipts(inValue);
-            return retVal.GetCustomersReceiptsResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetCustomersReceiptsResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetCustomersReceiptsAsync(MashadLeatherEcommerce.KiyanService.GetCustomersReceiptsRequest request) {
-            return base.Channel.GetCustomersReceiptsAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetCustomersReceiptsResponse> GetCustomersReceiptsAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, int[] customersIDList, System.DateTime startDate, System.DateTime endDate) {
-            MashadLeatherEcommerce.KiyanService.GetCustomersReceiptsRequest inValue = new MashadLeatherEcommerce.KiyanService.GetCustomersReceiptsRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            inValue.customersIDList = customersIDList;
-            inValue.startDate = startDate;
-            inValue.endDate = endDate;
-            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetCustomersReceiptsAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        MashadLeatherEcommerce.KiyanService.CreateStoreCreditDocumentResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.CreateStoreCreditDocument(MashadLeatherEcommerce.KiyanService.CreateStoreCreditDocumentRequest request) {
-            return base.Channel.CreateStoreCreditDocument(request);
-        }
-        
-        public MashadLeatherEcommerce.KiyanService.StoreCreditDocumentResultModel CreateStoreCreditDocument(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, int[] customersList, decimal amount, MashadLeatherEcommerce.KiyanService.StoreCreditHistory storeCreditHistory) {
-            MashadLeatherEcommerce.KiyanService.CreateStoreCreditDocumentRequest inValue = new MashadLeatherEcommerce.KiyanService.CreateStoreCreditDocumentRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            inValue.customersList = customersList;
-            inValue.amount = amount;
-            inValue.storeCreditHistory = storeCreditHistory;
-            MashadLeatherEcommerce.KiyanService.CreateStoreCreditDocumentResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).CreateStoreCreditDocument(inValue);
-            return retVal.CreateStoreCreditDocumentResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.CreateStoreCreditDocumentResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.CreateStoreCreditDocumentAsync(MashadLeatherEcommerce.KiyanService.CreateStoreCreditDocumentRequest request) {
-            return base.Channel.CreateStoreCreditDocumentAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.CreateStoreCreditDocumentResponse> CreateStoreCreditDocumentAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, int[] customersList, decimal amount, MashadLeatherEcommerce.KiyanService.StoreCreditHistory storeCreditHistory) {
-            MashadLeatherEcommerce.KiyanService.CreateStoreCreditDocumentRequest inValue = new MashadLeatherEcommerce.KiyanService.CreateStoreCreditDocumentRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            inValue.customersList = customersList;
-            inValue.amount = amount;
-            inValue.storeCreditHistory = storeCreditHistory;
-            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).CreateStoreCreditDocumentAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        MashadLeatherEcommerce.KiyanService.ChangeCustomerGroupResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.ChangeCustomerGroup(MashadLeatherEcommerce.KiyanService.ChangeCustomerGroupRequest request) {
-            return base.Channel.ChangeCustomerGroup(request);
-        }
-        
-        public MashadLeatherEcommerce.KiyanService.Result ChangeCustomerGroup(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, int customersID, int customersGroupID) {
-            MashadLeatherEcommerce.KiyanService.ChangeCustomerGroupRequest inValue = new MashadLeatherEcommerce.KiyanService.ChangeCustomerGroupRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            inValue.customersID = customersID;
-            inValue.customersGroupID = customersGroupID;
-            MashadLeatherEcommerce.KiyanService.ChangeCustomerGroupResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).ChangeCustomerGroup(inValue);
-            return retVal.ChangeCustomerGroupResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.ChangeCustomerGroupResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.ChangeCustomerGroupAsync(MashadLeatherEcommerce.KiyanService.ChangeCustomerGroupRequest request) {
-            return base.Channel.ChangeCustomerGroupAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.ChangeCustomerGroupResponse> ChangeCustomerGroupAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, int customersID, int customersGroupID) {
-            MashadLeatherEcommerce.KiyanService.ChangeCustomerGroupRequest inValue = new MashadLeatherEcommerce.KiyanService.ChangeCustomerGroupRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            inValue.customersID = customersID;
-            inValue.customersGroupID = customersGroupID;
-            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).ChangeCustomerGroupAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        MashadLeatherEcommerce.KiyanService.CustomerCreditOperationsResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.CustomerCreditOperations(MashadLeatherEcommerce.KiyanService.CustomerCreditOperationsRequest request) {
-            return base.Channel.CustomerCreditOperations(request);
-        }
-        
-        public MashadLeatherEcommerce.KiyanService.Result CustomerCreditOperations(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, int customersID, decimal credit, MashadLeatherEcommerce.KiyanService.OperationCredit operationCredit) {
-            MashadLeatherEcommerce.KiyanService.CustomerCreditOperationsRequest inValue = new MashadLeatherEcommerce.KiyanService.CustomerCreditOperationsRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            inValue.customersID = customersID;
-            inValue.credit = credit;
-            inValue.operationCredit = operationCredit;
-            MashadLeatherEcommerce.KiyanService.CustomerCreditOperationsResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).CustomerCreditOperations(inValue);
-            return retVal.CustomerCreditOperationsResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.CustomerCreditOperationsResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.CustomerCreditOperationsAsync(MashadLeatherEcommerce.KiyanService.CustomerCreditOperationsRequest request) {
-            return base.Channel.CustomerCreditOperationsAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.CustomerCreditOperationsResponse> CustomerCreditOperationsAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, int customersID, decimal credit, MashadLeatherEcommerce.KiyanService.OperationCredit operationCredit) {
-            MashadLeatherEcommerce.KiyanService.CustomerCreditOperationsRequest inValue = new MashadLeatherEcommerce.KiyanService.CustomerCreditOperationsRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            inValue.customersID = customersID;
-            inValue.credit = credit;
-            inValue.operationCredit = operationCredit;
-            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).CustomerCreditOperationsAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        MashadLeatherEcommerce.KiyanService.GetTenderListResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetTenderList(MashadLeatherEcommerce.KiyanService.GetTenderListRequest request) {
-            return base.Channel.GetTenderList(request);
-        }
-        
-        public MashadLeatherEcommerce.KiyanService.TenderListResultModel GetTenderList(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader) {
-            MashadLeatherEcommerce.KiyanService.GetTenderListRequest inValue = new MashadLeatherEcommerce.KiyanService.GetTenderListRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            MashadLeatherEcommerce.KiyanService.GetTenderListResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetTenderList(inValue);
-            return retVal.GetTenderListResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetTenderListResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetTenderListAsync(MashadLeatherEcommerce.KiyanService.GetTenderListRequest request) {
-            return base.Channel.GetTenderListAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetTenderListResponse> GetTenderListAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader) {
-            MashadLeatherEcommerce.KiyanService.GetTenderListRequest inValue = new MashadLeatherEcommerce.KiyanService.GetTenderListRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetTenderListAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        MashadLeatherEcommerce.KiyanService.GetPromotionsResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetPromotions(MashadLeatherEcommerce.KiyanService.GetPromotionsRequest request) {
-            return base.Channel.GetPromotions(request);
-        }
-        
-        public MashadLeatherEcommerce.KiyanService.PromotionHeaderResultModel GetPromotions(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, int retialStore) {
-            MashadLeatherEcommerce.KiyanService.GetPromotionsRequest inValue = new MashadLeatherEcommerce.KiyanService.GetPromotionsRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            inValue.retialStore = retialStore;
-            MashadLeatherEcommerce.KiyanService.GetPromotionsResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetPromotions(inValue);
-            return retVal.GetPromotionsResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetPromotionsResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetPromotionsAsync(MashadLeatherEcommerce.KiyanService.GetPromotionsRequest request) {
-            return base.Channel.GetPromotionsAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetPromotionsResponse> GetPromotionsAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, int retialStore) {
-            MashadLeatherEcommerce.KiyanService.GetPromotionsRequest inValue = new MashadLeatherEcommerce.KiyanService.GetPromotionsRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            inValue.retialStore = retialStore;
-            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetPromotionsAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        MashadLeatherEcommerce.KiyanService.GetPromotionCustomerGroupsResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetPromotionCustomerGroups(MashadLeatherEcommerce.KiyanService.GetPromotionCustomerGroupsRequest request) {
-            return base.Channel.GetPromotionCustomerGroups(request);
-        }
-        
-        public MashadLeatherEcommerce.KiyanService.PromotionCustomerGroupResultModel GetPromotionCustomerGroups(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, int retialStore) {
-            MashadLeatherEcommerce.KiyanService.GetPromotionCustomerGroupsRequest inValue = new MashadLeatherEcommerce.KiyanService.GetPromotionCustomerGroupsRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            inValue.retialStore = retialStore;
-            MashadLeatherEcommerce.KiyanService.GetPromotionCustomerGroupsResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetPromotionCustomerGroups(inValue);
-            return retVal.GetPromotionCustomerGroupsResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetPromotionCustomerGroupsResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.GetPromotionCustomerGroupsAsync(MashadLeatherEcommerce.KiyanService.GetPromotionCustomerGroupsRequest request) {
-            return base.Channel.GetPromotionCustomerGroupsAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.GetPromotionCustomerGroupsResponse> GetPromotionCustomerGroupsAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, int retialStore) {
-            MashadLeatherEcommerce.KiyanService.GetPromotionCustomerGroupsRequest inValue = new MashadLeatherEcommerce.KiyanService.GetPromotionCustomerGroupsRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            inValue.retialStore = retialStore;
-            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).GetPromotionCustomerGroupsAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        MashadLeatherEcommerce.KiyanService.ValidateGiftCertificatesResponse MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.ValidateGiftCertificates(MashadLeatherEcommerce.KiyanService.ValidateGiftCertificatesRequest request) {
-            return base.Channel.ValidateGiftCertificates(request);
-        }
-        
-        public MashadLeatherEcommerce.KiyanService.GiftCertificateListResultModel ValidateGiftCertificates(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, string[] barcode) {
-            MashadLeatherEcommerce.KiyanService.ValidateGiftCertificatesRequest inValue = new MashadLeatherEcommerce.KiyanService.ValidateGiftCertificatesRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            inValue.barcode = barcode;
-            MashadLeatherEcommerce.KiyanService.ValidateGiftCertificatesResponse retVal = ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).ValidateGiftCertificates(inValue);
-            return retVal.ValidateGiftCertificatesResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.ValidateGiftCertificatesResponse> MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap.ValidateGiftCertificatesAsync(MashadLeatherEcommerce.KiyanService.ValidateGiftCertificatesRequest request) {
-            return base.Channel.ValidateGiftCertificatesAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<MashadLeatherEcommerce.KiyanService.ValidateGiftCertificatesResponse> ValidateGiftCertificatesAsync(MashadLeatherEcommerce.KiyanService.ValidationSoapHeader ValidationSoapHeader, string[] barcode) {
-            MashadLeatherEcommerce.KiyanService.ValidateGiftCertificatesRequest inValue = new MashadLeatherEcommerce.KiyanService.ValidateGiftCertificatesRequest();
-            inValue.ValidationSoapHeader = ValidationSoapHeader;
-            inValue.barcode = barcode;
-            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).ValidateGiftCertificatesAsync(inValue);
+            inValue.SourceRetailStoreID = SourceRetailStoreID;
+            return ((MashadLeatherEcommerce.KiyanService.KyanOnlineSaleServiceSoap)(this)).LayAwaySaleItemsAsync(inValue);
         }
     }
 }

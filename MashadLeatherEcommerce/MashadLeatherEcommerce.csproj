@@ -209,31 +209,13 @@
     <Content Include="CodeTemplates\MvcView\Imports.include.t4" />
     <Content Include="CodeTemplates\MvcView\List.cs.t4" />
     <Content Include="CodeTemplates\MvcView\ModelMetadataFunctions.cs.include.t4" />
-    <None Include="Connected Services\KiyanService\KyanOnlineSaleService.disco" />
     <None Include="Connected Services\KiyanService\configuration91.svcinfo" />
     <None Include="Connected Services\KiyanService\configuration.svcinfo" />
+    <None Include="Connected Services\KiyanService\KyanOnlineSaleService1.disco" />
     <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.AddToReserveResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ConfigValueResultModel.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.CreateCustomerResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.CreateCustomerResultModel.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.CreateStoreCreditDocumentResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.CustomerListResultModel.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.CustomerResultModel.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.CustomerTransactionResultModel.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.GetAllMatrixItemsResponse.datasource">
@@ -255,9 +237,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.GetCustomersReceiptsResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.GetCustomersReceiptsResultModel.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.GetCustomerTransactionResponse.datasource">
@@ -305,24 +284,6 @@
     <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.GetTemplatePropertyResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.InventoriesListResultModel.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ItemInfoResultModel.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ItemListResultModel.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ItemStockStatusResultModel.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.PosDepartmentListResultModel.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.RecieptsDetailResultModel.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.Result.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -332,25 +293,10 @@
     <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.SaleResultModel.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.StoreCreditDocumentResultModel.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.TemplateAttributeResultModel.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.TemplateItemResultModle.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.TemplatePropertyResultModel.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.UpdateCustomerInfoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.GetItemListWithinventoryIDResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.BarCodeStockResultModel.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.GetArrayItemInfoResponse.datasource">
@@ -368,31 +314,281 @@
     <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.GetTenderListResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.PromotionCustomerGroupResultModel.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.PromotionHeaderResultModel.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.TenderListResultModel.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ChangeCustomerGroupResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.CustomerCreditOperationsResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.GetItemsQuantityAllInventoryResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.GiftCertificateListResultModel.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ItemsStockResultModel.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ValidateGiftCertificatesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\KiyanService\KyanOnlineSaleService1.wsdl" />
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.AddToReserveRSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ApproveDocumentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.AuthenticationResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.AuthenticationUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.BuycustomersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.BuycustomersWithFactorItemsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.CreateCustomerToRSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.CreateGiftCertificateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.GetCustomerAddressInfoWithCustomerIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.GetCustomerGroupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.GetCustomerTransactionWithDataFilterResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.GetGeneralItemInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.GetGeneralItemInfoWithBarcodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.GetGeneralItemInfo_CResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.GetGeneralItemInfo_C_PlusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.GetItemInfoWithGroupIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.GetItemInfoWithinventoryIDandBarcodesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.GetItemInfoWithInventoryIDPlusJetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.GetItemInfoWithinventoryIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.GetItemInfoWithItemIDWithStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.GetItemListWithPaginationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.GetItemListWithParentInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.GetItemsInformationWithInventoryIDandBarcodesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.GetItemsQuantityAllInventoryWithBarcodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.GetItemsQuantityListInventoryWithBarcodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.GetPosDepartmentLevelListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.GetRecieptHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.GetTransactionWithDs_info_2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.GetUnUsedGiftCertificatesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.GetUsedCreditCustomerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.GetUsedGiftCertificatesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.InputPermissionMethodResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.InputPermissionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ItemsCostInformationWithBarcodesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.LayAwaySaleItemsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ProductDescriptionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.QuickExternalTransferResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.QuickTransferReultModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ResponseDataOfAttribute.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ResponseDataOfBarCodeStock.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ResponseDataOfBuycustomersModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ResponseDataOfBuycustomersWithFactorItemsModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ResponseDataOfConfigEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ResponseDataOfCustomer.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ResponseDataOfCustomerAddress.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ResponseDataOfcustomerGroup.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ResponseDataOfCustomerTransaction.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ResponseDataOfGeneralItemInfoModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ResponseDataOfGeneralItemInfo_CModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ResponseDataOfGiftCertificate.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ResponseDataOfgoodDetail.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ResponseDataOfInventory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ResponseDataOfItemStock.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ResponseDataOfItemStock2.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ResponseDataOfitm.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ResponseDataOfitm2.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ResponseDataOfitm3.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ResponseDataOfitm4.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ResponseDataOfitmWithParentInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ResponseDataOfitmWithRowNo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ResponseDataOfLoanItemStock.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ResponseDataOfPosDepartment.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ResponseDataOfPosDepartmentList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ResponseDataOfProductDescription.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ResponseDataOfPromotionCustomerGroupModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ResponseDataOfPromotionHeaderModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ResponseDataOfReceiptDsInfModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ResponseDataOfReceiptModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ResponseDataOfReciepModel2.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ResponseDataOfRecieptsDetail.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ResponseDataOfRecieptsHeader.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ResponseDataOfResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ResponseDataOfString.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ResponseDataOfTemplate.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ResponseDataOfTemplateItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ResponseDataOfTenderModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ResponseDataOfUnUsedGiftCertificates.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ResponseDataOfUsedCreditCustomer.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ResponseDataOfUsedGiftCertificate.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ReturnItemsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ReturnItemsRSDateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.ReturnItemsRSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.SaleItemsDateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.SaleItemsRsDateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.SaleItemsRSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.SaleReturnItemsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.SuspendTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.WholesaleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\KiyanService\MashadLeatherEcommerce.KiyanService.WholeSaleReultModel.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\KiyanService\Reference.svcmap">
@@ -1305,7 +1501,6 @@
     <Content Include="Content\kendo\2017.3.913\fonts\glyphs\WebComponentsIcons.woff" />
     <Content Include="Content\kendo\2017.3.913\images\kendoui.ttf" />
     <Content Include="Content\kendo\2017.3.913\images\kendoui.woff" />
-    <None Include="Connected Services\KiyanService\KyanOnlineSaleService.wsdl" />
     <Content Include="fonts\Flaticon.eot" />
     <Content Include="fonts\Flaticon.ttf" />
     <Content Include="fonts\Flaticon.woff" />

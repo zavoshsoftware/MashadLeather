@@ -126,7 +126,7 @@ namespace MashadLeatherEcommerce.Controllers
                                         Order order = db.Orders.Find(orderId);
                                         if (order != null)
                                         {
-                                            // SendMessageToUser(order.User.CellNum, order.Code.ToString());
+                                           //SendMessageToUser(order.User.CellNum, order.Code.ToString());
                                             ViewBag.Code = order.Code;
                                             ViewBag.CellNumber = order.User.CellNum;
                                         }
@@ -182,6 +182,11 @@ namespace MashadLeatherEcommerce.Controllers
             }
         }
 
+        //public string TestSms()
+        //{
+        //    SendMessageToUser("09124806404", "111");
+        //    return "";
+        //}
 
         public ActionResult SendMessageToUser(string cellNumber, string orderCode)
         {

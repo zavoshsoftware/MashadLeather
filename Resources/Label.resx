@@ -175,7 +175,7 @@
     <value>اطلاعات مشتری</value>
   </data>
   <data name="CustomerService" xml:space="preserve">
-    <value>خدمات مشتریان</value>
+    <value>باشگاه مشتریان</value>
   </data>
   <data name="CustomerServiceDesc" xml:space="preserve">
     <value>پاسخگوی تمامی پرسش های شما</value>
@@ -196,7 +196,7 @@
     <value>ارسال رایگان به سراسر ایران</value>
   </data>
   <data name="FreeShippingDesc" xml:space="preserve">
-    <value>برای سفارشات بالای 300 هزار تومان</value>
+    <value>برای تمام سفارشات</value>
   </data>
   <data name="Gallery" xml:space="preserve">
     <value>گالری</value>

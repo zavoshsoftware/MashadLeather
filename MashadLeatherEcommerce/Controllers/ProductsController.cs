@@ -383,7 +383,13 @@ namespace MashadLeatherEcommerce.Controllers
             List<KiyanProductItem> productList616 = GetProductFromInventory(616, ks, header);
 
             //فردوسی
-            List<KiyanProductItem> productList988 = GetProductFromInventory(988, ks, header);
+            //List<KiyanProductItem> productList988 = GetProductFromInventory(988, ks, header);
+
+            ////ونک
+              List<KiyanProductItem> productList209 = GetProductFromInventory(209, ks, header);
+          
+            ////احمد آباد
+              List<KiyanProductItem> productList862 = GetProductFromInventory(862, ks, header);
 
             ////کریمخان
             // List<KiyanProductItem> productList698 = GetProductFromInventory(698, ks, header);
@@ -393,7 +399,8 @@ namespace MashadLeatherEcommerce.Controllers
             ChangeChangeStatus();
 
             TransferProducts(productList616, true);
-            TransferProducts(productList988, false);
+            TransferProducts(productList209, false);
+            TransferProducts(productList862, false);
             db.SaveChanges();
 
             DeleteNotChangedProducts();
@@ -794,8 +801,9 @@ namespace MashadLeatherEcommerce.Controllers
         public List<KiyanProductItem> GetProductFromInventory(int inventoryId, KyanOnlineSaleServiceSoapClient ks, ValidationSoapHeader header)
         {
             List<KiyanProductItem> productList = new List<KiyanProductItem>();
-            header.Token = "Charm@#$568";
-            var list = ks.GetItemListWithinventoryID(header, inventoryId);
+            header.TokenAUT = "Charm@#$568";
+            //var list = ks.GetItemListWithinventoryID(header, inventoryId);
+            var list = ks.GetItemListWithinventoryID(header,new AuthUser(), inventoryId);
 
 
             InsertIntoKiyanLog(list.ResponseResult.Length, inventoryId);
@@ -1655,7 +1663,8 @@ namespace MashadLeatherEcommerce.Controllers
             ValidationSoapHeader header = kiyan.ConnectToService();
 
             //ورودی مربوط به ای دی فروشگاه مهم نیست چه عددی باشد
-            var pro = ks.GetPromotions(header, 616);
+           // var pro = ks.GetPromotions(header, 616);
+            var pro = ks.GetPromotions(header,new AuthUser(), 616);
 
             int promotionIndex = 0;
 

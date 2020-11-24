@@ -11,7 +11,7 @@ namespace Helper
         {
             ValidationSoapHeader header = new ValidationSoapHeader();
 
-            header.Token = "Charm@#$568";
+            header.TokenAUT = "Charm@#$568";
 
             return header;
         }

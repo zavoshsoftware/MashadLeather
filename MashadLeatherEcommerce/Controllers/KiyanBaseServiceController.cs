@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MashadLeatherEcommerce.KiyanService;
 using Models;
 
 namespace MashadLeatherEcommerce.Controllers
@@ -23,10 +24,10 @@ namespace MashadLeatherEcommerce.Controllers
                 KiyanService.KyanOnlineSaleServiceSoapClient kiyanService = new KiyanService.KyanOnlineSaleServiceSoapClient();
 
                 KiyanService.ValidationSoapHeader header = new KiyanService.ValidationSoapHeader();
-                header.Token = "Charm@#$568";
 
-                var list = kiyanService.GetPosDepartmentList(header);
+                header.TokenAUT = "Charm@#$568";
 
+                var list = kiyanService.GetPosDepartmentList(header, new AuthUser());
 
                 foreach (var item in list.ResponseResult)
                 {
@@ -42,7 +43,6 @@ namespace MashadLeatherEcommerce.Controllers
                             CreationDate = DateTime.Now,
                             IsDeleted = false,
                             IsActive = true
-
                         };
 
                         db.KiyanProductCategories.Add(kiyanProductCategory);
