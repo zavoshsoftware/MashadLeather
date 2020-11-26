@@ -524,13 +524,21 @@ namespace MashadLeatherEcommerce.Controllers
             return Json(GetShoppingCartInfo(jsonvar), JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult Finalize(string jsonvar, string firstName, string lastName, string cellNumber, string email, string province, string city, string address, string phone, string postalCode, string bank)
+        public ActionResult Finalize(string jsonvar, string firstName, string lastName, string cellNumber, string email, string province, string city, string address, string phone, string postalCode, string bank,string paymentType)
         {
             try
             {
                 cellNumber = cellNumber.Replace("۰", "0").Replace("۱", "1").Replace("۲", "2").Replace("۳", "3").Replace("۴", "4").Replace("۵", "5").Replace("۶", "6").Replace("v", "7").Replace("۸", "8").Replace("۹", "9");
 
                 bool isValidMobile = Regex.IsMatch(cellNumber, @"(^(09|9)[0123456789][0123456789]\d{7}$)|(^(09|9)[0123456789][0123456789]\d{7}$)", RegexOptions.IgnoreCase);
+
+                if (paymentType != "online" && city != "2c730dce-774d-4007-88a9-4acb1dd48cea" &&
+                    city != "88e17e07-d8fc-4989-96b6-a9fbf394b521")
+                {
+                    return Json("invalidPaymentType", JsonRequestBehavior.AllowGet);
+
+                }
+                else { 
 
                 if (isValidMobile)
                 {
@@ -579,7 +587,8 @@ namespace MashadLeatherEcommerce.Controllers
                             CreationDate = DateTime.Now,
                             IsDeleted = false,
                             CityId = new Guid(city),
-                            BankName = bank
+                            BankName = bank,
+                            PaymentType = paymentType
                         };
                         db.Orders.Add(order);
 
@@ -681,23 +690,30 @@ namespace MashadLeatherEcommerce.Controllers
 
                         //       db.SaveChanges();
                         string uniqueOrderId = GetUniqueOrderId(order.Id);
-
-                        if (bank == "mellat")
+                        if (paymentType == "online")
                         {
-                            string log = PayRequest(order.Id, uniqueOrderId, order.TotalAmount.ToString());
-                            // string log = PayRequest(order.Id, uniqueOrderId, "3000");
-                            if (!log.Contains("false"))
+                            if (bank == "mellat")
                             {
-                                return Json("true-" + log, JsonRequestBehavior.AllowGet);
+                                string log = PayRequest(order.Id, uniqueOrderId, order.TotalAmount.ToString());
+                                // string log = PayRequest(order.Id, uniqueOrderId, "3000");
+                                if (!log.Contains("false"))
+                                {
+                                    return Json("true-" + log, JsonRequestBehavior.AllowGet);
+                                }
+                                else
+                                {
+                                    return Json("bankerror|" + log.Split('-')[1], JsonRequestBehavior.AllowGet);
+                                }
                             }
                             else
                             {
-                                return Json("bankerror|" + log.Split('-')[1], JsonRequestBehavior.AllowGet);
+                                return Json("true-" + uniqueOrderId, JsonRequestBehavior.AllowGet);
                             }
                         }
                         else
                         {
-                            return Json("true-" + uniqueOrderId, JsonRequestBehavior.AllowGet);
+                                    return Json("true-offlinepayment", JsonRequestBehavior.AllowGet);
+
                         }
                     }
                     else
@@ -706,6 +722,7 @@ namespace MashadLeatherEcommerce.Controllers
 
                 else
                     return Json("invalidCellNumber", JsonRequestBehavior.AllowGet);
+            }
             }
             catch (Exception e)
             {

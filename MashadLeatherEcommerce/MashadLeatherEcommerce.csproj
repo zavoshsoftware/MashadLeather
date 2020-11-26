@@ -1030,12 +1030,15 @@
     <Content Include="fonts\fontAwesome\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Images\1786dea72fa342799ccc49f13f59d249.jpg" />
+    <Content Include="Images\3c25c6ed8a5e4201963b441e4af2f0c2.jpg" />
     <Content Include="Images\About-us.jpg" />
     <Content Include="Images\about\1.jpg" />
     <Content Include="Images\about\parallax-1.jpg" />
     <Content Include="Images\aparat.png" />
     <Content Include="Images\audio-bg.jpg" />
     <Content Include="Images\avatar_default.jpg" />
+    <Content Include="Images\blackfriday.png" />
     <Content Include="Images\blog\1.jpg" />
     <Content Include="Images\blog\10.jpg" />
     <Content Include="Images\blog\11.jpg" />
@@ -1088,6 +1091,8 @@
     <Content Include="Images\dropdown-arrow.png" />
     <Content Include="Images\expand.png" />
     <Content Include="Images\favicon.png" />
+    <Content Include="Images\final-2.jpg" />
+    <Content Include="Images\final-7.jpg" />
     <Content Include="Images\gallery\1.jpg" />
     <Content Include="Images\gallery\10.jpg" />
     <Content Include="Images\gallery\2.jpg" />
@@ -1098,6 +1103,7 @@
     <Content Include="Images\gallery\7.jpg" />
     <Content Include="Images\gallery\8.jpg" />
     <Content Include="Images\gallery\9.jpg" />
+    <Content Include="Images\img_548775.png" />
     <Content Include="Images\loader.gif" />
     <Content Include="Images\loading.gif" />
     <Content Include="Images\loading_dots.gif" />
@@ -4965,6 +4971,10 @@
     <Compile Include="Migrations\202011101035376_V76.Designer.cs">
       <DependentUpon>202011101035376_V76.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202011261111011_V77.cs" />
+    <Compile Include="Migrations\202011261111011_V77.Designer.cs">
+      <DependentUpon>202011261111011_V77.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DatabaseContext.cs" />
     <Compile Include="Models\DatabaseContextInitializer.cs" />
@@ -5042,6 +5052,7 @@
     <Compile Include="ViewModels\SamanCallbackViewModel.cs" />
     <Compile Include="ViewModels\ShopCartItemViewModel.cs" />
     <Compile Include="ViewModels\ShopCartViewModel.cs" />
+    <Compile Include="ViewModels\BlackFridayViewModel.cs" />
     <Compile Include="ViewModels\TextViewModel.cs" />
     <Compile Include="ViewModels\_BaseViewModel.cs" />
   </ItemGroup>
@@ -5344,6 +5355,7 @@
     <Content Include="Views\ResumeFiles\Index.cshtml" />
     <Content Include="Views\Shared\FrontEndLayout\_MenuPartial_Home.cshtml" />
     <Content Include="Views\Home\ChangeCurrency.cshtml" />
+    <Content Include="Views\Home\BlackFriday.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -5589,6 +5601,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202011101035376_V76.resx">
       <DependentUpon>202011101035376_V76.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011261111011_V77.resx">
+      <DependentUpon>202011261111011_V77.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

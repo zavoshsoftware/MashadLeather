@@ -1,0 +1,229 @@
+﻿@model ViewModels.BlackFridayViewModel
+@{
+		ViewBag.Title = "تخفیف استثنایی چرم مشهد ";
+		Layout = "~/Views/Shared/FrontEndLayout/_FrontEndLayout.cshtml";
+		ViewBag.Canonical = "https://www.mashadleather.com/blackfriday";
+}
+@section head{
+	<style>
+		.bg-gray {
+			background-color: #efefef;
+			direction: rtl;
+			text-align: right;
+			color: #000
+		}
+
+		.bg-gray h2 {
+			text-align: center
+		}
+
+		.bg-gray ul {
+			background-color: #ddd;
+			direction: rtl;
+			text-align: right;
+		}
+
+		.bc-card {
+			padding: 15px;
+			border: 1px solid #000;
+			text-align: center
+		}
+
+		.bc-card img {
+			margin-bottom: 15px;
+		}
+
+		.nextline-row {
+			margin-top: 30px;
+		}
+
+		.row label {
+			min-height: 80px;
+		}
+
+		.product-title h3 {
+			text-align: center !important;
+			margin-bottom: 8px !important;
+		}
+
+		.gotodiscount {
+			margin-top: 30px !important;
+		}
+
+		.gotodiscount a {
+			font-size: 1.5rem
+		}
+
+		.gotodiscount i {
+			margin: 0 30px !important;
+		}
+
+		.product-title .btn {
+			padding: 12px !important;
+			font-size: 1rem;
+		}
+	</style>
+	
+	<meta property="og:title" content="تخفیف استثنایی چرم مشهد" />
+	<meta property="og:url" content="https://www.mashadleather.com/blackfriday" />
+	<meta property="og:image" content="https://www.mashadleather.com/Uploads/slider/9531aa8e04a04591856a98b3a0458ac8.jpg" />
+	<meta property="og:description" content="از 15 تا ٧٠ درصد تخفیف ویژه برای کلیه محصولات به مدت فقط ١ روز" />
+}
+@section scripts{
+	<script src="~/Scripts/UI/plugins/components/particles-animation.js"></script>
+	<script src="~/Scripts/UI/plugins/components/particles.js"></script>
+}
+<section id="page-title" data-parallax-image="/images/mashad-faq-img.jpg">
+	<div id="particles-js" class="particles" style="background: none"></div>
+	<div class="container">
+		<div class="slide-captions text-center text-light about-caption">
+			<h1 class="strong">Black Friday</h1> <label>تخفیف استثنایی چرم مشهد</label>
+		</div>
+	</div>
+</section>
+<section class="bg-gray">
+	<div class="container">
+		<div class="row ">
+			<div class="col-md-12">
+				<div>
+					<h2>
+						تخفیف استثنایی چرم مشهد را از دست ندهید
+					</h2>
+					<div class="row">
+						<div class="col-md-3">
+							<div class="bc-card">
+								<img src="~/Images/blackfriday.png" />
+								<label>از 15 تا ٧٠ درصد تخفیف ویژه برای کلیه محصولات به مدت فقط ١ روز</label>
+							</div>
+						</div>
+
+						<div class="col-md-3">
+							<div class="bc-card">
+								<img src="~/Images/blackfriday.png" />
+								<label>ارسال رایگان به تمام نقاط ایران برای کلیه محصولات با رعایت پروتکل های بهداشتی</label>
+							</div>
+						</div>
+
+						<div class="col-md-3">
+							<div class="bc-card">
+								<img src="~/Images/blackfriday.png" />
+								<label>ارسال ٢۴ ساعته محصولات در شهر های تهران و مشهد با رعایت اصول بهداشتی</label>
+							</div>
+						</div>
+
+						<div class="col-md-3">
+							<div class="bc-card">
+								<img src="~/Images/blackfriday.png" />
+								<label>امکان مرجوع نمودن کالا تا ۶ روز پس از دریافت کالا توسط مشتری(به شرط استفاده نکردن کالا)</label>
+							</div>
+						</div>
+					</div>
+
+					<div class="row nextline-row">
+						<div class="col-md-3">
+							<div class="bc-card">
+								<img src="~/Images/blackfriday.png" />
+								<label>امکان تعویض رنگ و سایز تا ۴٨ ساعت پس از دریافت کالا توسط مشتری</label>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="bc-card">
+								<img src="~/Images/blackfriday.png" />
+								<label>در صورت پرداخت در محل ممکن است زمان تحویل بیش از ۲۴ ساعت شود</label>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="bc-card">
+								<img src="~/Images/blackfriday.png" />
+								<label class="iransansnum">امکان ثبت سفارش تلفنی محصولات با شماره ۸۸۷۸۴۳۸۱-021</label>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="bc-card">
+								<img src="~/Images/blackfriday.png" />
+								<label class="iransansnum">برای اطلاعات بیشتر میتوانید با شماره 88796846-021  تماس بگیرید</label>
+							</div>
+						</div>
+					</div>
+					<div class="gotodiscount">
+						<a class="btn fullwidth" href="#discountsec"><i class="fa fa-angle-down"></i>مشاهده تخفیفات<i class="fa fa-angle-down"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="p-b-0" id="discountsec">
+	<div class="container">
+
+		<div class="row">
+			<div class="col-md-3">
+				<div class="product">
+					<div class="product-image">
+						<a href="/category/women">
+							<img alt="	محصولات بانوان" src="/images/final-2.jpg">
+						</a>
+					</div>
+					<div class="product-description">
+						<div class="product-title">
+							<h3><a href="/category/women">محصولات بانوان</a></h3>
+							<a class="btn fullwidth" href="/category/women">مشاهده دسته بندی محصولات و تخفیفات</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3">
+				<div class="product">
+					<div class="product-image">
+						<a href="/category/men">
+							<img alt="محصولات آقایان" src="/images/final-7.jpg">
+						</a>
+					</div>
+					<div class="product-description">
+						<div class="product-title">
+							<h3><a href="/category/men">محصولات آقایان</a></h3>
+							<a class="btn fullwidth" href="/category/men">مشاهده دسته بندی محصولات و تخفیفات</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3">
+				<div class="product">
+					<div class="product-image">
+						<a href="/category/gifts">
+							<img alt="ست هدیه" src="/images/3c25c6ed8a5e4201963b441e4af2f0c2.jpg">
+						</a>
+					</div>
+					<div class="product-description">
+						<div class="product-title">
+							<h3><a href="/category/gifts">ست هدیه</a></h3>
+							<a class="btn fullwidth" href="/category/gifts">مشاهده دسته بندی محصولات و تخفیفات</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3">
+				<div class="product">
+					<div class="product-image">
+						<a href="/category/leather-care">
+							<img alt="مراقبت از چرم و جیر" src="/images/1786dea72fa342799ccc49f13f59d249.jpg">
+						</a>
+					</div>
+					<div class="product-description">
+						<div class="product-title">
+							<h3><a href="/category/leather-care">مراقبت از چرم و جیر</a></h3>
+							<a class="btn fullwidth" href="/category/leather-care">مشاهده دسته بندی محصولات و تخفیفات</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+

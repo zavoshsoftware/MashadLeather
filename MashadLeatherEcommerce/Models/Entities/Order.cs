@@ -53,7 +53,7 @@ namespace Models
         public virtual User User { get; set; }
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
         public virtual City City { get; set; }
-       
+
         public virtual ICollection<Payment> Payments { get; set; }
         public virtual ICollection<PaymentUniqeCodes> PaymentUniqeCodes { get; set; }
         internal class Configuration : EntityTypeConfiguration<Order>
@@ -72,7 +72,21 @@ namespace Models
                     .WithMany(j => j.Orders)
                     .HasForeignKey(p => p.CityId);
 
-               
+
+            }
+        }
+
+        [Display(Name = "نحوه پرداخت")]
+        public string PaymentType { get; set; }
+        [NotMapped]
+        [Display(Name = "نحوه پرداخت")]
+        public string PaymentTypeTitle
+        {
+            get
+            {
+                if (PaymentType == "recieve")
+                    return "پرداخت در محل";
+                return "پرداخت آنلاین";
             }
         }
     }

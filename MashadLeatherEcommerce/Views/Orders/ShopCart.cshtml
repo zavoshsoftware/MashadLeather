@@ -151,15 +151,49 @@
                         <div class="col-md-6 form-group">
                             <input type="text" placeholder="@Resources.Label.PostalCode" class="form-control" id="txtPostalCode">
                         </div>
-                        <div class="col-md-12 m-b-20 policy">
-                            <input type="checkbox" class="form-control" id="chkPolicy">
-                            <label for="chkPolicy">
-                                <a href="/privacy">
-                                    @Resources.Label.Policy
+	                    <div class="col-md-12 m-b-20 policy">
+		                    <input type="checkbox" class="form-control" id="chkPolicy">
+		                    <label for="chkPolicy">
+			                    <a href="/privacy">
+				                    @Resources.Label.Policy
 
-                                </a>
-                                @Resources.Label.PolicyRead
-                            </label>
+			                    </a>
+			                    @Resources.Label.PolicyRead
+		                    </label>
+	                    </div>
+	                    
+											<div class="col-md-12 m-b-20 policy">
+												<div class="payment_method">
+													<div class="heading_s1">
+														<h4>نحوه پرداخت</h4>
+													</div>
+													<div class="payment_option">
+														<div class="custome-radio">
+															<input class="form-check-input" required="" type="radio" name="payment_option" id="exampleRadios3" value="online" checked="">
+															<label class="form-check-label" for="exampleRadios3">پرداخت آنلاین</label>
+														</div>
+														<div class="custome-radio">
+															<input class="form-check-input" type="radio" name="payment_option" id="exampleRadios4" value="recieve">
+															<label class="form-check-label" for="exampleRadios4">پرداخت در محل (فقط سفارشات شهر تهران و مشهد)</label>
+														</div>
+													 
+													</div>
+												</div>
+                        </div>
+	                    
+											<div class="col-md-12 m-b-20 policy">
+												<select id="payment-gateway">
+													<option value="mellat">درگاه پرداخت بانک ملت</option>
+													<option value="saman">درگاه پرداخت سامان کیش</option>
+												</select>
+												<img id="loadingImg" src="~/images/loading.gif" />
+                        </div>
+											<div class="col-md-12 m-b-20 policy">
+												<div class="col-md-4 text-center">
+													<button type="button" onclick="FinalizeOrder();" id="btnFinalizeOrder" class="btn btn-default icon-left float-right"><span>@Resources.Label.Finlize</span></button>
+													<img id="loadingImg" src="~/images/loading.gif" />
+												</div>
+              
                         </div>
                     </div>
                 </div>
@@ -167,17 +201,9 @@
                 
                 
                 <div class="col-md-4 text-center">
-                    <select id="payment-gateway">
-                        <option value="mellat">درگاه پرداخت بانک ملت</option>
-                        <option value="saman">درگاه پرداخت سامان کیش</option>
-                    </select>
-                    <img id="loadingImg" src="~/images/loading.gif" />
+                  
                 </div>
-                <div class="col-md-4 text-center">
-                    <button type="button" onclick="FinalizeOrder();" id="btnFinalizeOrder" class="btn btn-default icon-left float-right"><span>@Resources.Label.Finlize</span></button>
-                    <img id="loadingImg" src="~/images/loading.gif" />
-                </div>
-              
+             
                 <div class="modal fade" id="myModal" role="dialog" tabindex="-1"  aria-labelledby="myModalLabel" data-backdrop="false">
                     <div class="modal-dialog">
                         <div class="modal-content">

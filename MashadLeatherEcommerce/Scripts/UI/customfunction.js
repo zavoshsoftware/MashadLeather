@@ -436,6 +436,7 @@ function FinalizeOrder() {
             var txtAddress = $("#txtAddress").val();
             var txtPhone = $("#txtPhone").val();
             var txtPostalCode = $("#txtPostalCode").val();
+            var paymentType = $('input[name="payment_option"]:checked').val();
 
             if (txtCity === undefined || txtCity === "0") {
                 $('#errorOrder').css('display', 'block');
@@ -452,7 +453,13 @@ function FinalizeOrder() {
                 $('#loadingImg').css('display', 'none');
                 $('#btnFinalizeOrder').css('display', 'block');
             }
-
+            else if (paymentType === "recieve" && (txtCity !== "2c730dce-774d-4007-88a9-4acb1dd48cea" && txtCity !=="88e17e07-d8fc-4989-96b6-a9fbf394b521")) {
+                $('#errorOrder').css('display', 'block');
+                $('#errorOrder').html('امکان پرداخت در محل فقط برای سفارشات شهر تهران و مشهد امکان پذیر می باشد.');
+                $('#successOrder').css('display', 'none');
+                $('#loadingImg').css('display', 'none');
+                $('#btnFinalizeOrder').css('display', 'block');
+            }
             else if (txtFirstName !== "" && txtLastName !== "" && txtAddress !== "" && txtCellNumber !== "" &&
                 txtEmail !== "" && txtCity !== "" && txtProvince !== "" && txtCity !== "undefined") {
                 $.ajax(
@@ -469,7 +476,8 @@ function FinalizeOrder() {
                             address: txtAddress,
                             phone: txtPhone,
                             postalCode: txtPostalCode,
-                            bank:gateway
+                            bank: gateway,
+                            paymentType: paymentType
                         },
                         type: "GET"
                     }).done(function (result) {
@@ -492,10 +500,16 @@ function FinalizeOrder() {
                             $('#errorOrder').html('شماره موبایل وارد شده صحیح نمی باشد');
                             $('#successOrder').css('display', 'none');
 
-                        } else if (result === 'invalidEmail') {
+                        } else if (result === 'invalidPaymentType') {
 
                             $('#errorOrder').css('display', 'block');
                             $('#errorOrder').html('ایمیل وارد شده صحیح نمی باشد');
+                            $('#successOrder').css('display', 'none');
+
+                        }else if (result === 'invalidEmail') {
+
+                            $('#errorOrder').css('display', 'block');
+                            $('#errorOrder').html('امکان پرداخت در محل فقط برای سفارشات شهر تهران و مشهد امکان پذیر می باشد.');
                             $('#successOrder').css('display', 'none');
 
                         } else if (result.includes('invalidQty')) {
@@ -551,14 +565,24 @@ function FinalizeOrder() {
 
 function redirectToBank() {
    // alert(refffid);
+
+    var paymentType = $('input[name="payment_option"]:checked').val();
+
     var gateway = $('#payment-gateway').val();
-    if (gateway === 'mellat') {
-        postRefId(refffid);
+
+    if (paymentType === "online") {
+
+        if (gateway === 'mellat') {
+            postRefId(refffid);
+        } else {
+            window.location.href = "/saman?refId=" + refffid;
+        }
+        $('#successOrder').css('display', 'block');
     } else {
-        window.location.href = "/saman?refId=" + refffid;
+        $('#successOrder').css('display', 'block');
+        $('#successOrder').html('سفارش مشا با موفقیت ثبت گردید. همکاران ما جهت هماهنگی ارسال با شما تماس خواهند گرفت');
     }
-    
-    $('#successOrder').css('display', 'block');
+  
     $('#errorOrder').css('display', 'none');
     localStorage.clear();
     setBasketCount();

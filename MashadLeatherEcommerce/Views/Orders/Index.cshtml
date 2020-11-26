@@ -38,6 +38,7 @@
         .Columns(columns =>
         {
         columns.Bound(model => model.Code);
+        columns.Bound(model => model.PaymentTypeTitle);
         columns.Bound(model => model.SaleReferenceId);
         columns.Bound(model => model.OrderStatus.Title);
         columns.Bound(model => model.User.FirstName);

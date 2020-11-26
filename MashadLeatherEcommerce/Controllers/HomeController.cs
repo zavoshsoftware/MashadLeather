@@ -458,5 +458,21 @@ namespace MashadLeatherEcommerce.Controllers
             return View(configuration);
         }
 
+
+
+
+        [Route("blackfriday")]
+        public ActionResult BlackFriday()
+        {
+            BlackFridayViewModel textViewModel = new BlackFridayViewModel()
+            {
+                MenuGalleryGroups = baseViewModelHelper.GetMenuGalleryGroups(),
+                MenuItem = baseViewModelHelper.GetMenuItems(),
+                ProductCategories = db.ProductCategories.Where(c => c.IsDeleted == false && c.ParentId == null && c.IsActive).Take(4).ToList(),
+
+            };
+            return View(textViewModel);
+        }
+
     }
 }
