@@ -24,14 +24,26 @@
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,800,700,600|Montserrat:400,500,600,700|Raleway:100,300,600,700,800" rel="stylesheet" type="text/css" />
 	@*<link href="~/Content/UI/style-En.css" rel="stylesheet" />*@
 	<script>
-		(function (w, d, s, l, i) {
-			w[l] = w[l] || []; w[l].push({
-				'gtm.start':
+	(function (w, d, s, l, i) {
+		w[l] = w[l] || []; w[l].push({
+			'gtm.start':
 				new Date().getTime(), event: 'gtm.js'
-			}); var f = d.getElementsByTagName(s)[0],
-				j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-					'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-		})(window, document, 'script', 'dataLayer', 'GTM-WCLJHZZ');</script>
+		}); var f = d.getElementsByTagName(s)[0],
+			j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+			'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+	})(window, document, 'script', 'dataLayer', 'GTM-WCLJHZZ');</script>
+	
+	<script>
+		!function (t, e, n) {
+			t.yektanetAnalyticsObject = n, t[n] = t[n] || function () {
+				t[n].q.push(arguments)
+			}, t[n].q = t[n].q || [];
+			var a = new Date, r = a.getFullYear().toString() + "0" + a.getMonth() + "0" + a.getDate() + "0" + a.getHours(),
+				c = e.getElementsByTagName("script")[0], s = e.createElement("script");
+			s.id = "ua-script-YdvEuFZH"; s.dataset.analyticsobject = n; s.async = 1; s.type = "text/javascript";
+			s.src = "https://cdn.yektanet.com/rg_woebegone/scripts_v3/YdvEuFZH/rg.complete.js?v=" + r, c.parentNode.insertBefore(s, c)
+		}(window, document, "yektanet");
+	</script>
 </head>
 <body class="no-page-loader">
 	<noscript>
@@ -308,7 +320,7 @@
 			}
 		});
 	</script>
-	<script src="~/Scripts/UI/customfunction.js"></script>
+	<script src="~/Scripts/UI/customfunction-new2.js?v=1.3"></script>
     <script>
         $(document).ready(function () {
             setBasketCount();

@@ -36,17 +36,57 @@ namespace MashadLeatherEcommerce.Controllers
         [Route("orders/{statusId:int}")]
         public ActionResult Index(int statusId, string status, string start, string end)
         {
+            ViewBag.vb1 = statusId;
+            ViewBag.vb2 = status;
+            ViewBag.vb3 = start;
+            ViewBag.vb4 = end;
+
             decimal amount = 0;
-            List<Order> orders = new List<Order>();
+            List<OrderListViewModel> orders = GetOrders(statusId, status, start, end);
+
+            if (!string.IsNullOrEmpty(status) || !string.IsNullOrEmpty(start) || !string.IsNullOrEmpty(end))
+                amount = ReturnTotalAmountOfFilter(orders);
+
+            ViewBag.ddlStatus = new SelectList(db.OrderStatuses, "Id", "Title");
+            ViewBag.isDelete = statusId;
+            ViewBag.TotalAmount = amount.ToString("n0");
+            //   GridviewBind(orders);
+            return View(orders);
+        }
+
+        public List<OrderListViewModel> GetOrders(int statusId, string status, string start, string end)
+        {
+            List<OrderListViewModel> orders = new List<OrderListViewModel>();
             //مشاهده همه سفارشات
             if (statusId == 0)
             {
-                orders = db.Orders.Include(o => o.OrderStatus).Where(o => o.IsDeleted == false).OrderByDescending(o => o.CreationDate).Include(o => o.User).Where(o => o.IsDeleted == false).OrderByDescending(o => o.CreationDate).ToList();
+                orders = db.Orders.AsNoTracking()
+                    .Where(current => current.IsDeleted == false)
+                  .OrderByDescending(o => o.CreationDate).Select(
+
+                        x => new OrderListViewModel()
+                        {
+                            Code = x.Code,
+                            SaleReferenceId = x.SaleReferenceId,
+                            OrderStatusTitle = x.OrderStatus.Title,
+                            FirstName = x.User.FirstName,
+                            LastName = x.User.LastName,
+                            CellNum = x.User.CellNum,
+                            TotalAmount = x.TotalAmount,
+                            CreationDate = x.CreationDate,
+                            Id = x.Id,
+                            City = x.User.City.Title,
+                            Address = x.Address,
+                            PaymentType = x.PaymentType,
+                            OrderStatusId = x.OrderStatusId
+
+                        }).ToList();
+
+
                 if (!string.IsNullOrEmpty(status) || !string.IsNullOrEmpty(start) || !string.IsNullOrEmpty(end))
                 {
 
                     orders = ReturnFilteredOrders(orders, status, start, end);
-                    amount = ReturnTotalAmountOfFilter(orders);
                 }
 
 
@@ -55,16 +95,57 @@ namespace MashadLeatherEcommerce.Controllers
             //مشاهده سفارشات حذف شده
             else if (statusId == 1)
             {
-                orders = db.Orders.Where(current => current.IsDeleted == true).Include(o => o.OrderStatus).Where(o => o.IsDeleted == true).OrderByDescending(o => o.CreationDate).Include(o => o.User).ToList();
+                orders = db.Orders
+                    .Where(current => current.IsDeleted == true)
+                    .Include(o => o.OrderStatus).OrderByDescending(o => o.CreationDate).Include(o => o.User).Select(
+
+                        x => new OrderListViewModel()
+                        {
+                            Code = x.Code,
+                            SaleReferenceId = x.SaleReferenceId,
+                            OrderStatusTitle = x.OrderStatus.Title,
+                            FirstName = x.User.FirstName,
+                            LastName = x.User.LastName,
+                            CellNum = x.User.CellNum,
+                            TotalAmount = x.TotalAmount,
+                            CreationDate = x.CreationDate,
+                            Id = x.Id,
+                            City = x.User.City.Title,
+                            Address = x.Address,
+                            PaymentType = x.PaymentType,
+                            OrderStatusId = x.OrderStatusId
+
+                        }).ToList();
             }
             //مشاهده سفارشات پرداخت شده
             else if (statusId == 2)
             {
+
                 Guid isPayedStatus = BankHelper.GetOrderStatusIdByCode(2).Value;
 
                 orders = db.Orders
-                    .Where(current => current.IsDeleted == false && current.OrderStatusId == isPayedStatus)
-                    .Include(o => o.OrderStatus).OrderByDescending(o => o.CreationDate).Include(o => o.User).ToList();
+                    .Where(current => current.OrderStatusId == isPayedStatus && current.IsDeleted == false)
+                    .Include(o => o.OrderStatus).OrderByDescending(o => o.CreationDate).Include(o => o.User).Select(
+
+                        x => new OrderListViewModel()
+                        {
+                            Code = x.Code,
+                            SaleReferenceId = x.SaleReferenceId,
+                            OrderStatusTitle = x.OrderStatus.Title,
+                            FirstName = x.User.FirstName,
+                            LastName = x.User.LastName,
+                            CellNum = x.User.CellNum,
+                            TotalAmount = x.TotalAmount,
+                            CreationDate = x.CreationDate,
+                            Id = x.Id,
+                            City = x.User.City.Title,
+                            Address = x.Address,
+                            PaymentType = x.PaymentType,
+                            OrderStatusId = x.OrderStatusId
+
+                        }).ToList();
+
+
 
             }
 
@@ -74,19 +155,35 @@ namespace MashadLeatherEcommerce.Controllers
                 Guid isPayedStatus = BankHelper.GetOrderStatusIdByCode(3).Value;
 
                 orders = db.Orders
-                    .Where(current => current.IsDeleted == false && current.OrderStatusId == isPayedStatus)
-                    .Include(o => o.OrderStatus).OrderByDescending(o => o.CreationDate).Include(o => o.User).ToList();
+                    .Where(current => current.OrderStatusId == isPayedStatus && current.IsDeleted == false)
+                    .Include(o => o.OrderStatus).OrderByDescending(o => o.CreationDate).Include(o => o.User).Select(
+
+                        x => new OrderListViewModel()
+                        {
+                            Code = x.Code,
+                            SaleReferenceId = x.SaleReferenceId,
+                            OrderStatusTitle = x.OrderStatus.Title,
+                            FirstName = x.User.FirstName,
+                            LastName = x.User.LastName,
+                            CellNum = x.User.CellNum,
+                            TotalAmount = x.TotalAmount,
+                            CreationDate = x.CreationDate,
+                            Id = x.Id,
+                            City = x.User.City.Title,
+                            Address = x.Address,
+                            PaymentType = x.PaymentType,
+                            OrderStatusId = x.OrderStatusId
+
+                        }).ToList();
 
             }
-            ViewBag.ddlStatus = new SelectList(db.OrderStatuses, "Id", "Title");
-            ViewBag.isDelete = statusId;
-            ViewBag.TotalAmount = amount.ToString("n0");
-            GridviewBind(orders);
-            return View(orders);
+
+            return orders;
         }
-        public List<Order> ReturnFilteredOrders(List<Order> orders, string status, string start, string end)
+
+        public List<OrderListViewModel> ReturnFilteredOrders(List<OrderListViewModel> orders, string status, string start, string end)
         {
-            List<Order> orderlist = new List<Order>();
+            List<OrderListViewModel> orderlist = new List<OrderListViewModel>();
             if (!string.IsNullOrEmpty(status) && !string.IsNullOrEmpty(start) && !string.IsNullOrEmpty(end))
             {
 
@@ -524,7 +621,7 @@ namespace MashadLeatherEcommerce.Controllers
             return Json(GetShoppingCartInfo(jsonvar), JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult Finalize(string jsonvar, string firstName, string lastName, string cellNumber, string email, string province, string city, string address, string phone, string postalCode, string bank,string paymentType)
+        public ActionResult Finalize(string jsonvar, string firstName, string lastName, string cellNumber, string email, string province, string city, string address, string phone, string postalCode, string bank)
         {
             try
             {
@@ -532,13 +629,13 @@ namespace MashadLeatherEcommerce.Controllers
 
                 bool isValidMobile = Regex.IsMatch(cellNumber, @"(^(09|9)[0123456789][0123456789]\d{7}$)|(^(09|9)[0123456789][0123456789]\d{7}$)", RegexOptions.IgnoreCase);
 
-                if (paymentType != "online" && city != "2c730dce-774d-4007-88a9-4acb1dd48cea" &&
-                    city != "88e17e07-d8fc-4989-96b6-a9fbf394b521")
-                {
-                    return Json("invalidPaymentType", JsonRequestBehavior.AllowGet);
+                //if (paymentType != "online" && city != "2c730dce-774d-4007-88a9-4acb1dd48cea" &&
+                //    city != "88e17e07-d8fc-4989-96b6-a9fbf394b521")
+                //{
+                //    return Json("invalidPaymentType", JsonRequestBehavior.AllowGet);
 
-                }
-                else { 
+                //}
+                //else { 
 
                 if (isValidMobile)
                 {
@@ -588,7 +685,7 @@ namespace MashadLeatherEcommerce.Controllers
                             IsDeleted = false,
                             CityId = new Guid(city),
                             BankName = bank,
-                            PaymentType = paymentType
+                            //  PaymentType = paymentType
                         };
                         db.Orders.Add(order);
 
@@ -690,31 +787,31 @@ namespace MashadLeatherEcommerce.Controllers
 
                         //       db.SaveChanges();
                         string uniqueOrderId = GetUniqueOrderId(order.Id);
-                        if (paymentType == "online")
+                        //if (paymentType == "online")
+                        //{
+                        if (bank == "mellat")
                         {
-                            if (bank == "mellat")
+                            string log = PayRequest(order.Id, uniqueOrderId, order.TotalAmount.ToString());
+                            // string log = PayRequest(order.Id, uniqueOrderId, "3000");
+                            if (!log.Contains("false"))
                             {
-                                string log = PayRequest(order.Id, uniqueOrderId, order.TotalAmount.ToString());
-                                // string log = PayRequest(order.Id, uniqueOrderId, "3000");
-                                if (!log.Contains("false"))
-                                {
-                                    return Json("true-" + log, JsonRequestBehavior.AllowGet);
-                                }
-                                else
-                                {
-                                    return Json("bankerror|" + log.Split('-')[1], JsonRequestBehavior.AllowGet);
-                                }
+                                return Json("true-" + log, JsonRequestBehavior.AllowGet);
                             }
                             else
                             {
-                                return Json("true-" + uniqueOrderId, JsonRequestBehavior.AllowGet);
+                                return Json("bankerror|" + log.Split('-')[1], JsonRequestBehavior.AllowGet);
                             }
                         }
                         else
                         {
-                                    return Json("true-offlinepayment", JsonRequestBehavior.AllowGet);
-
+                            return Json("true-" + uniqueOrderId, JsonRequestBehavior.AllowGet);
                         }
+                        //}
+                        //else
+                        //{
+                        //            return Json("true-offlinepayment", JsonRequestBehavior.AllowGet);
+
+                        //}
                     }
                     else
                         return Json("invalidEmail", JsonRequestBehavior.AllowGet);
@@ -722,7 +819,7 @@ namespace MashadLeatherEcommerce.Controllers
 
                 else
                     return Json("invalidCellNumber", JsonRequestBehavior.AllowGet);
-            }
+                // }
             }
             catch (Exception e)
             {
@@ -938,10 +1035,10 @@ namespace MashadLeatherEcommerce.Controllers
 
         }
 
-        public decimal ReturnTotalAmountOfFilter(List<Order> orders)
+        public decimal ReturnTotalAmountOfFilter(List<OrderListViewModel> orders)
         {
             decimal amount = 0;
-            foreach (Order order in orders)
+            foreach (OrderListViewModel order in orders)
             {
                 amount = amount + order.TotalAmount;
             }
@@ -954,20 +1051,36 @@ namespace MashadLeatherEcommerce.Controllers
             foreach (Order order in orders)
             {
                 string[] totalAmount = order.TotalAmount.ToString("n0").Split('/');
-                gridList.Add(new ExcelGridviewViewModel
+                foreach (OrderDetail orderOrderDetail in order.OrderDetails)
                 {
-                    Code = order.Code,
-                    SaleReferenceId = order.SaleReferenceId.ToString(),
-                    OrderStatus = order.OrderStatus.Title,
-                    FirstName = order.User.FirstName,
-                    LastName = order.User.LastName,
-                    CellNum = order.User.CellNum,
-                    CityTitle = order.User.City.Title,
-                    Address = order.User.Address,
-                    TotalAmount = totalAmount[0],
-                    CreationDate = order.CreationDate
 
-                });
+                    string colorTitle = "";
+                    if (orderOrderDetail.Product.ColorId != null)
+                        colorTitle = orderOrderDetail.Product.Color.Title;
+
+                    string sizeTitle = "";
+                    if (orderOrderDetail.Product.SizeId != null)
+                        sizeTitle = orderOrderDetail.Product.Size.Title;
+
+
+                    gridList.Add(new ExcelGridviewViewModel
+                    {
+                        Code = order.Code,
+                        SaleReferenceId = order.SaleReferenceId.ToString(),
+                        OrderStatus = order.OrderStatus.Title,
+                        FirstName = order.User.FirstName,
+                        LastName = order.User.LastName,
+                        CellNum = order.User.CellNum,
+                        CityTitle = order.User.City.Title,
+                        Address = order.User.Address,
+                        TotalAmount = totalAmount[0],
+                        CreationDate = order.CreationDate,
+                        ProductTitle = orderOrderDetail.Product.Title,
+                        ColorTitle = colorTitle,
+                        SizeTitle = sizeTitle
+
+                    });
+                }
             }
 
             GridView gv = new GridView();
@@ -983,6 +1096,9 @@ namespace MashadLeatherEcommerce.Controllers
             gv.HeaderRow.Cells[7].Text = "آدرس";
             gv.HeaderRow.Cells[8].Text = "جمع کل سفارش";
             gv.HeaderRow.Cells[9].Text = "تاریخ";
+            gv.HeaderRow.Cells[10].Text = "محصول";
+            gv.HeaderRow.Cells[11].Text = "رنگ";
+            gv.HeaderRow.Cells[12].Text = "سایز";
 
             Session["orders"] = gv;
 
@@ -991,9 +1107,98 @@ namespace MashadLeatherEcommerce.Controllers
             //Session["orders"] = gv;
 
         }
-
-        public ActionResult Download()
+        public void GridviewBindViewModel(List<OrderListViewModel> orders)
         {
+            List<ExcelGridviewViewModel> gridList = new List<ExcelGridviewViewModel>();
+            foreach (OrderListViewModel order in orders)
+            {
+                string[] totalAmount = order.TotalAmount.ToString("n0").Split('/');
+
+
+                var orderDetails = db.OrderDetails.Where(c => c.OrderId == order.Id).Select(
+
+                    x => new
+                    {
+                        x.Product.Title,
+                        x.Product.ColorId,
+                        x.Product.SizeId
+                    }).ToList();
+
+
+                foreach (var orderOrderDetail in orderDetails)
+                {
+
+                    string colorTitle = "";
+                    if (orderOrderDetail.ColorId != null)
+
+                        colorTitle = db.Colors.Find(orderOrderDetail.ColorId).Title;
+
+                    string sizeTitle = "";
+                    if (orderOrderDetail.SizeId != null)
+                        sizeTitle = db.Sizes.Find(orderOrderDetail.SizeId).Title;
+
+
+                    gridList.Add(new ExcelGridviewViewModel
+                    {
+                        Code = order.Code,
+                        SaleReferenceId = order.SaleReferenceId.ToString(),
+                        OrderStatus = order.OrderStatusTitle,
+                        FirstName = order.FirstName,
+                        LastName = order.LastName,
+                        CellNum = order.CellNum,
+                        CityTitle = order.City,
+                        Address = order.Address,
+                        TotalAmount = totalAmount[0],
+                        CreationDate = order.CreationDate,
+                        ProductTitle = orderOrderDetail.Title,
+                        ColorTitle = colorTitle,
+                        SizeTitle = sizeTitle
+
+                    });
+                }
+            }
+
+            GridView gv = new GridView();
+            gv.DataSource = gridList;
+            gv.DataBind();
+            gv.HeaderRow.Cells[0].Text = "کد سفارش";
+            gv.HeaderRow.Cells[1].Text = "کد رهگیری پرداخت";
+            gv.HeaderRow.Cells[2].Text = "وضعیت سفارش";
+            gv.HeaderRow.Cells[3].Text = "نام";
+            gv.HeaderRow.Cells[4].Text = "نام خانوادگی";
+            gv.HeaderRow.Cells[5].Text = "موبایل";
+            gv.HeaderRow.Cells[6].Text = "شهر";
+            gv.HeaderRow.Cells[7].Text = "آدرس";
+            gv.HeaderRow.Cells[8].Text = "جمع کل سفارش";
+            gv.HeaderRow.Cells[9].Text = "تاریخ";
+            gv.HeaderRow.Cells[10].Text = "محصول";
+            gv.HeaderRow.Cells[11].Text = "رنگ";
+            gv.HeaderRow.Cells[12].Text = "سایز";
+
+            Session["orders"] = gv;
+
+            //gv.DataSource = gridList;
+            //gv.DataBind();
+            //Session["orders"] = gv;
+
+        }
+        //public ActionResult Excel_Export_Read([DataSourceRequest]DataSourceRequest request)
+        //{
+        //    return Json(productService.Read().ToDataSourceResult(request));
+        //}
+
+        [HttpPost]
+        public ActionResult Excel_Export_Save(string contentType, string base64, string fileName)
+        {
+            var fileContents = Convert.FromBase64String(base64);
+
+            return File(fileContents, contentType, fileName);
+        }
+        public ActionResult Download(int statusId, string status, string start, string end)
+        {
+            List<OrderListViewModel> orders = GetOrders(statusId, status, start, end);
+
+            GridviewBindViewModel(orders);
             if (Session["orders"] != null)
             {
                 return new DownloadFileActionResult((GridView)Session["orders"], "orders.xls");
@@ -1075,7 +1280,7 @@ namespace MashadLeatherEcommerce.Controllers
                     if (orderTracking == null)
                     {
                         ViewBag.ShowDetail = "";
-                         TempData["WrongReference"] = "شماره پیگیری صحیح نمی باشد";
+                        TempData["WrongReference"] = "شماره پیگیری صحیح نمی باشد";
                     }
                     else
                     {
@@ -1098,7 +1303,7 @@ namespace MashadLeatherEcommerce.Controllers
             order.MenuItem = baseViewModelHelper.GetMenuItems();
             return View(order);
         }
-      
+
         #endregion Tracking / پیگیری سفارش
     }
 }

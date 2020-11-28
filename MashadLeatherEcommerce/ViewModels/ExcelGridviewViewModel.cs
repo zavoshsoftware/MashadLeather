@@ -38,7 +38,9 @@ namespace ViewModels
         [Display(Name = "CreationDate", ResourceType = typeof(Resources.Models.BaseEntity))]
         public System.DateTime CreationDate { get; set; }
 
-
+        public string ProductTitle { get; set; }
+        public string ColorTitle { get; set; }
+        public string SizeTitle { get; set; }
 
 
 

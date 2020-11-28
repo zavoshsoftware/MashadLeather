@@ -99,13 +99,8 @@
                         </table>
 
                     </div>
-                    <div class="alert alert-success" id="successOrder">
-                        سفارش شما با موفقیت ثبت گردید؛ <br />
-                        در حال انتقال به سایت بانک
-                        &nbsp;&nbsp;<img src="/images/loading_dots.gif" width="50" />
-                        @ViewBag.result
-                    </div>
-                    <div class="alert alert-danger" id="errorOrder"> </div>
+               
+
                 </div>
 
                 <div class="col-md-6">
@@ -162,7 +157,7 @@
 		                    </label>
 	                    </div>
 	                    
-											<div class="col-md-12 m-b-20 policy">
+											@*<div class="col-md-12 m-b-20 policy">
 												<div class="payment_method">
 													<div class="heading_s1">
 														<h4>نحوه پرداخت</h4>
@@ -179,7 +174,7 @@
 													 
 													</div>
 												</div>
-                        </div>
+                        </div>*@
 	                    
 											<div class="col-md-12 m-b-20 policy">
 												<select id="payment-gateway">
@@ -193,8 +188,15 @@
 													<button type="button" onclick="FinalizeOrder();" id="btnFinalizeOrder" class="btn btn-default icon-left float-right"><span>@Resources.Label.Finlize</span></button>
 													<img id="loadingImg" src="~/images/loading.gif" />
 												</div>
-              
-                        </div>
+												<div class="alert alert-success" id="successOrder">
+													سفارش شما با موفقیت ثبت گردید؛ <br />
+													در حال انتقال به سایت بانک
+													&nbsp;&nbsp;<img src="/images/loading_dots.gif" width="50" />
+													@ViewBag.result
+												</div>
+												
+												<div class="alert alert-danger" id="errorOrder"> </div>
+											</div>
                     </div>
                 </div>
                 

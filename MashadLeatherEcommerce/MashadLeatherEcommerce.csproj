@@ -1725,6 +1725,8 @@
     <Content Include="Scripts\PersianDatePicker.js" />
     <Content Include="Scripts\PersianDatePicker.min.js" />
     <Content Include="Scripts\UI\custom.js" />
+    <Content Include="Scripts\UI\customfunction-new2.js" />
+    <Content Include="Scripts\UI\customfunction-new.js" />
     <Content Include="Scripts\UI\customfunction.js" />
     <Content Include="Scripts\UI\functions.js" />
     <Content Include="Scripts\UI\functions.min.js" />
@@ -5039,6 +5041,7 @@
     <Compile Include="ViewModels\EventStatusViewModel.cs" />
     <Compile Include="ViewModels\OrderDetailViewModel.cs" />
     <Compile Include="ViewModels\OrderHistoryViewModel.cs" />
+    <Compile Include="ViewModels\OrderListViewModel.cs" />
     <Compile Include="ViewModels\OrderTrackingDetailViewModel.cs" />
     <Compile Include="ViewModels\OrganizationalSaleViewModel.cs" />
     <Compile Include="ViewModels\ProductCategoryApiViewModel.cs" />
