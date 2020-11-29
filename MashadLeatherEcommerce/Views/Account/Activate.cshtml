@@ -1,0 +1,53 @@
+﻿@model ViewModels.ActivateViewModel
+@{
+		ViewBag.Title = "بازیابی کلمه عبور";
+		Layout = "~/Views/Shared/FrontEndLayout/_FrontEndLayout.cshtml";
+}
+
+<section id="page-title" data-parallax-image="/images/mashad-faq-img.jpg">
+	<div class="container">
+		<div class="page-title">
+			<h1> کد تایید را وارد نمایید </h1>
+		</div>
+
+	</div>
+</section>
+<section class="bg-gray">
+	<div class="container ">
+		<div class="row">
+			<div class="col-sm-4 col-sm-offset-4 recoverypass-page auth-page">
+				<h2 class="text-center"> کد تایید را وارد نمایید</h2>
+
+				@if (TempData["WrongActivationCode"] != null)
+				{
+						<p class="alert alert-danger" id="wrongEmail">@TempData["WrongActivationCode"]</p>
+				}
+			 
+				@using (Html.BeginForm("Activate", "Account", new { returnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "", role = "form" }))
+				{
+						@Html.AntiForgeryToken()
+						@Html.ValidationSummary(false, "", new { @class = "alert-danger" })
+						@Html.HiddenFor(c=>c.CellNumber)
+						<div class="form-group">
+							<p class="center">یک کد تایید برای شماره موبایل @Model.CellNumber ارسال شده است.</p>
+
+							@Html.TextBoxFor(m => m.ActivationCode, new { @class = "form-control form-white", @placeholder = "کد فعال سازی "})
+
+						</div>
+						<div class="text-center">
+							<button type="submit" class="btn btn-default btn-full">ورود</button>
+						</div>
+					<div class="login-footer">
+						<p>
+						جهت تایید شماره موبایل، کد فعال سازی ارسال شده را وارد نمایید.
+						</p>
+					</div>
+				}
+
+
+
+
+			</div>
+		</div>
+	</div>
+</section>

@@ -20,8 +20,8 @@ namespace MashadLeatherEcommerce.Controllers
         BaseViewModelHelper baseViewModelHelper = new BaseViewModelHelper();
         private DatabaseContext db = new DatabaseContext();
 
-        [Route("login")]
-        public ActionResult Login(string ReturnUrl = "")
+        [Route("OldLogin")]
+        public ActionResult OldLogin(string ReturnUrl = "")
         {
 
             ViewBag.Message = "";
@@ -36,11 +36,11 @@ namespace MashadLeatherEcommerce.Controllers
 
         }
 
-        [Route("login")]
+        [Route("OldLogin")]
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public ActionResult Login(LoginPageViewModel model, string returnUrl)
+        public ActionResult OldLogin(LoginPageViewModel model, string returnUrl)
         {
             if (ModelState.IsValid)
             {
@@ -50,25 +50,7 @@ namespace MashadLeatherEcommerce.Controllers
 
                 if (oUser != null)
                 {
-                    var ident = new ClaimsIdentity(
-                        new[]
-                        {
-                            // adding following 2 claim just for supporting default antiforgery provider
-                            new Claim(ClaimTypes.NameIdentifier, oUser.CellNum),
-                            new Claim(
-                                "http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider",
-                                "ASP.NET Identity", "http://www.w3.org/2001/XMLSchema#string"),
-
-                            new Claim(ClaimTypes.Name, oUser.Id.ToString()),
-
-                            // optionally you could add roles if any
-                            new Claim(ClaimTypes.Role, oUser.Role.Name),
-
-                        },
-                        DefaultAuthenticationTypes.ApplicationCookie);
-
-                    HttpContext.GetOwinContext().Authentication.SignIn(
-                        new AuthenticationProperties { IsPersistent = true }, ident);
+                    LoginAction(oUser);
                     return RedirectToLocal(returnUrl, oUser.Role.Name); // auth succeed 
                 }
                 else
@@ -86,6 +68,29 @@ namespace MashadLeatherEcommerce.Controllers
             };
 
             return View(login);
+        }
+
+        public void LoginAction(User oUser)
+        {
+            var ident = new ClaimsIdentity(
+                new[]
+                {
+                    // adding following 2 claim just for supporting default antiforgery provider
+                    new Claim(ClaimTypes.NameIdentifier, oUser.CellNum),
+                    new Claim(
+                        "http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider",
+                        "ASP.NET Identity", "http://www.w3.org/2001/XMLSchema#string"),
+
+                    new Claim(ClaimTypes.Name, oUser.Id.ToString()),
+
+                    // optionally you could add roles if any
+                    new Claim(ClaimTypes.Role, oUser.Role.Name),
+
+                },
+                DefaultAuthenticationTypes.ApplicationCookie);
+
+            HttpContext.GetOwinContext().Authentication.SignIn(
+                new AuthenticationProperties { IsPersistent = true }, ident);
         }
 
         private ActionResult RedirectToLocal(string returnUrl, string role)
@@ -110,15 +115,20 @@ namespace MashadLeatherEcommerce.Controllers
         }
 
 
-        [Route("RecoveryPassword")]
+
+
+        [Route("Login")]
         [AllowAnonymous]
-        public ActionResult RecoveryPassword()
+        public ActionResult Login(string returnUrl)
         {
             RecoveryPasswordViewModel recoveryPass = new RecoveryPasswordViewModel()
             {
                 MenuGalleryGroups = baseViewModelHelper.GetMenuGalleryGroups(),
                 MenuItem = baseViewModelHelper.GetMenuItems()
             };
+
+            ViewBag.ReturnUrl = returnUrl;
+
             return View(recoveryPass);
         }
 
@@ -126,10 +136,9 @@ namespace MashadLeatherEcommerce.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        [Route("RecoveryPassword")]
-        public ActionResult RecoveryPassword(RecoveryPasswordViewModel recoveryPassword)
+        [Route("Login")]
+        public ActionResult Login(RecoveryPasswordViewModel recoveryPassword, string returnUrl)
         {
-
             if (ModelState.IsValid)
             {
                 string cellNumber = recoveryPassword.CellNumber.Replace("۰", "0").Replace("۱", "1").Replace("۲", "2")
@@ -138,29 +147,47 @@ namespace MashadLeatherEcommerce.Controllers
 
                 bool isValidMobile = Regex.IsMatch(cellNumber, @"(^(09|9)[0123456789][0123456789]\d{7}$)|(^(09|9)[0123456789][0123456789]\d{7}$)", RegexOptions.IgnoreCase);
 
-
                 if (isValidMobile)
                 {
-                    Guid roleId = new Guid((System.Configuration.ConfigurationManager.AppSettings["customerRoleId"]));
+                    var user = db.Users.FirstOrDefault(current =>
+                        current.CellNum == cellNumber && current.IsDeleted == false);
 
-                    User user = db.Users.Where(current => current.IsDeleted == false &&
-                                                          current.CellNum == cellNumber)
-                                                         .FirstOrDefault();
+                    string code = RandomCode();
 
                     if (user != null)
                     {
-                        string code = RandomCode();
+                        SmsMessageHelper.SendSms(cellNumber, SmsMessageHelper.SendActivationCode(code));
 
-                        SmsMessageHelper.SendSms(cellNumber, SmsMessageHelper.RecoveryPasswordCode(code));
 
-                        UpdateUserPassword(user, code);
+                        user.Password = code;
+                        user.LastModifiedDate = DateTime.Now;
 
-                        TempData["success"] = "کلمه عبور جدید برای شما از طریق پیامک ارسال گردید. اکنون می توانید از طریق صفحه ورود، وارد شود.";
-                        recoveryPassword.MenuItem = baseViewModelHelper.GetMenuItems();
-                        return View(recoveryPassword);
+                        db.SaveChanges();
+
+                        return RedirectToAction("Activate", new { returnUrl = returnUrl, id = user.Code });
                     }
-                    else
-                        TempData["WrongCellNumber"] = "این شماره موبایل در سایت ثبت نام نکرده است. لطفا در وب سایت ثبت نام کنید.";
+
+                    Guid roleId = new Guid((System.Configuration.ConfigurationManager.AppSettings["customerRoleId"]));
+
+                    User oUser = new User()
+                    {
+                        Id = Guid.NewGuid(),
+                        Username = cellNumber,
+                        Password = code,
+                        CellNum = cellNumber,
+                        IsActive = false,
+                        Code = GenerateUserCode(),
+                        RoleId = roleId,
+                        CreationDate = DateTime.Now,
+                        IsDeleted = false,
+                    };
+
+                    db.Users.Add(oUser);
+                    db.SaveChanges();
+                    SmsMessageHelper.SendSms(cellNumber, SmsMessageHelper.SendActivationCode(code));
+
+                    return RedirectToAction("Activate", new { returnUrl = returnUrl, id = oUser.Code });
+
                 }
                 else
                     TempData["WrongCellNumber"] = "شماره موبایل وارد شده صحیح نمی باشد.";
@@ -172,6 +199,68 @@ namespace MashadLeatherEcommerce.Controllers
             };
             return View(recoveryPass);
         }
+
+
+
+
+        [Route("Activate/{id:int}")]
+        [AllowAnonymous]
+        public ActionResult Activate(int id, string returnUrl)
+        {
+            var user = db.Users.Where(c => c.Code == id).Select(c => new { c.CellNum, c.Password }).FirstOrDefault();
+            ViewBag.ReturnUrl = returnUrl;
+
+            if (user != null)
+            {
+                ActivateViewModel activateViewModel = new ActivateViewModel()
+                {
+                    MenuGalleryGroups = baseViewModelHelper.GetMenuGalleryGroups(),
+                    MenuItem = baseViewModelHelper.GetMenuItems(),
+                    CellNumber = user.CellNum,
+                };
+                return View(activateViewModel);
+            }
+
+            return RedirectToAction("Login");
+        }
+
+        [Route("Activate/{id:int}")]
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public ActionResult Activate(int id, ActivateViewModel activateViewModel, string returnUrl)
+        {
+            User user = db.Users.FirstOrDefault(c => c.Code == id && c.Password == activateViewModel.ActivationCode);
+
+            if (user != null)
+            {
+                if (!user.IsActive)
+                {
+                    user.IsActive = true;
+                    user.LastModifiedDate=DateTime.Now;
+
+                    db.SaveChanges();
+                }
+                LoginAction(user);
+
+                if (returnUrl != null)
+                    return Redirect(returnUrl);
+
+                return RedirectToAction("index", "home");
+            }
+         
+                TempData["WrongActivationCode"] = "کد فعالسازی وارد شده صحیح نمی باشد.";
+                activateViewModel.MenuGalleryGroups = baseViewModelHelper.GetMenuGalleryGroups();
+                activateViewModel.MenuItem = baseViewModelHelper.GetMenuItems();
+                ViewBag.ReturnUrl = returnUrl;
+
+                return View(activateViewModel);
+
+             
+
+        }
+
+
 
         [Route("Register")]
         [AllowAnonymous]
@@ -199,11 +288,7 @@ namespace MashadLeatherEcommerce.Controllers
             }
             return cities;
         }
-        public void UpdateUserPassword(User user, string pass)
-        {
-            user.Password = pass;
-            db.SaveChanges();
-        }
+
         public string RandomCode()
         {
             Random generator = new Random();
@@ -277,13 +362,13 @@ namespace MashadLeatherEcommerce.Controllers
 
         public int FindeLastUserCode()
         {
-            User user = db.Users.Where(current => current.IsDeleted == false).OrderByDescending(current => current.Code).FirstOrDefault();
+            var user = db.Users.Where(current => current.IsDeleted == false).OrderByDescending(current => current.Code).Select(x => new { x.Code }).FirstOrDefault();
 
             if (user != null)
                 return user.Code;
             else
                 return 999;
         }
-        
+
     }
 }

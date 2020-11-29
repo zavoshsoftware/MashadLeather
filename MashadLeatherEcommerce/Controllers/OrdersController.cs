@@ -458,7 +458,17 @@ namespace MashadLeatherEcommerce.Controllers
                     {
                         orderDetailCount[0] = orderDetailCount[0].Replace("undefined", "");
                     }
-                    Product product = db.Products.Find(new Guid(orderDetailCount[0]));
+
+                    Guid proId = new Guid(orderDetailCount[0]);
+                    var product = db.Products.Where(c => c.Id == proId).Select(x => new
+                    {
+                        x.Id,
+                        x.Title,
+                        x.IsInPromotion,
+                        x.DiscountAmount,
+                        x.Amount,
+                        x.ImageUrl
+                    }).FirstOrDefault();
 
                     decimal amount = 0;
 
@@ -500,9 +510,9 @@ namespace MashadLeatherEcommerce.Controllers
                         shopCartItems.Add(new ShopCartItemViewModel()
                         {
                             Id = orderDetailCount[0],
-                            Title = product.TitleSrt,
+                            Title = product.Title,
                             ImageUrl = product.ImageUrl,
-                            Amount = (amount * Convert.ToDecimal(orderDetailCount[1])).ToString().Split('.')[0],
+                            Amount = (amount * Convert.ToDecimal(orderDetailCount[1])).ToString("N0"),
                             Price = String.Format("{0:n0}", amount),
                             Qty = orderDetailCount[1],
                             color = orderDetailCount[2],
@@ -598,8 +608,11 @@ namespace MashadLeatherEcommerce.Controllers
             }
             else
             {
-                string sizeTitle = db.Sizes.Find(new Guid(sizeId))?.Title;
-                return sizeTitle;
+                Guid sizeIdGuid = new Guid(sizeId);
+                var size = db.Sizes.Where(c => c.Id == sizeIdGuid).Select(x => new { x.Title }).FirstOrDefault();
+                if (size != null)
+                    return size.Title;
+                return "-";
             }
         }
 
@@ -612,8 +625,11 @@ namespace MashadLeatherEcommerce.Controllers
             }
             else
             {
-                string colorTitle = db.Colors.Find(new Guid(colorId))?.TitleSrt;
-                return colorTitle;
+                Guid colorIdGuid = new Guid(colorId);
+                var color = db.Colors.Where(c => c.Id == colorIdGuid).Select(x => new {x.Title }).FirstOrDefault();
+                if (color != null)
+                    return color.Title;
+                return "-";
             }
         }
         public ActionResult LoadShopCart(string jsonvar)
@@ -1305,5 +1321,23 @@ namespace MashadLeatherEcommerce.Controllers
         }
 
         #endregion Tracking / پیگیری سفارش
+        
+        [Route("checkout")]
+        [Authorize(Roles = "Customer")]
+        public ActionResult CheckOut()
+        {
+            Helper.BaseViewModelHelper baseViewModelHelper = new BaseViewModelHelper();
+
+            ShopCartViewModel shopCart = new ShopCartViewModel
+            {
+
+                MenuGalleryGroups = baseViewModelHelper.GetMenuGalleryGroups(),
+                MenuItem = baseViewModelHelper.GetMenuItems(),
+
+            };
+            ViewBag.provinceId = new SelectList(db.Provinces.OrderBy(current => current.Title), "Id", "Title");
+            ViewBag.cityId = ReturnCities(null);
+            return View(shopCart);
+        }
     }
 }

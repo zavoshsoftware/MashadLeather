@@ -18,6 +18,7 @@ namespace Models
         {
             Orders = new List<Order>();
             UserProductLike = new List<UserProductLike>();
+            DiscountCodes = new List<DiscountCode>();
         }
 
         [Display(Name = "Username", ResourceType = typeof(Resources.Models.User))]
@@ -35,12 +36,10 @@ namespace Models
 
     
         [Display(Name = "FirstName", ResourceType = typeof(Resources.Models.User))]
-        [Required(ErrorMessage = "لطفا {0} را وارد نمایید.")]
         [StringLength(250, ErrorMessage = "طول {0} نباید بیشتر از {1} باشد")]
         public string FirstName { get; set; }
 
         [Display(Name = "LastName", ResourceType = typeof(Resources.Models.User))]
-        [Required(ErrorMessage = "لطفا {0} را وارد نمایید.")]
         [StringLength(250, ErrorMessage = "طول {0} نباید بیشتر از {1} باشد")]
         public string LastName { get; set; }
         [Display(Name = "Phone", ResourceType = typeof(Resources.Models.User))]
@@ -52,7 +51,7 @@ namespace Models
         public int Code { get; set; }
 
         [Display(Name = "CityTitle", ResourceType = typeof(Resources.Models.City))]
-        public Guid CityId { get; set; }
+        public Guid? CityId { get; set; }
 
         [Display(Name = "Address", ResourceType = typeof(Resources.Models.User))]
         [StringLength(500, ErrorMessage = "طول {0} نباید بیشتر از {1} باشد")]
@@ -77,6 +76,7 @@ namespace Models
 
         public virtual ICollection<Order> Orders { get; set; }
         public virtual ICollection<UserProductLike> UserProductLike { get; set; }
+        public virtual ICollection<DiscountCode> DiscountCodes { get; set; }
 
 
 

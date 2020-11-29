@@ -59,5 +59,17 @@ namespace Helper
         }
 
       
+        public static string SendActivationCode(string code)
+        {
+            string nextLine = "\n";
+           
+            string message =
+                "کلمه فعال سازی شما در وب سایت چرم مشهد" + nextLine +
+                "code:"+code;
+
+            return message;
+        }
+
+      
     }
 }

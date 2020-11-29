@@ -57,6 +57,7 @@ namespace Models
         public System.Data.Entity.DbSet<Models.SiteBranch> SiteBranches { get; set; }
         public DbSet<ResumeFile> ResumeFiles { get; set; }
         public DbSet<Configuration> Configurations { get; set; }
+        public DbSet<DiscountCode> DiscountCodes { get; set; }
 
     }
 

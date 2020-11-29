@@ -1725,8 +1725,6 @@
     <Content Include="Scripts\PersianDatePicker.js" />
     <Content Include="Scripts\PersianDatePicker.min.js" />
     <Content Include="Scripts\UI\custom.js" />
-    <Content Include="Scripts\UI\customfunction-new2.js" />
-    <Content Include="Scripts\UI\customfunction-new.js" />
     <Content Include="Scripts\UI\customfunction.js" />
     <Content Include="Scripts\UI\functions.js" />
     <Content Include="Scripts\UI\functions.min.js" />
@@ -4632,6 +4630,7 @@
     <Compile Include="Controllers\BlogsController.cs" />
     <Compile Include="Controllers\ColorsController.cs" />
     <Compile Include="Controllers\CommentsController.cs" />
+    <Compile Include="Controllers\DiscountCodesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImageBrowserController.cs" />
     <Compile Include="Controllers\KiyanBaseServiceController.cs" />
@@ -4977,6 +4976,14 @@
     <Compile Include="Migrations\202011261111011_V77.Designer.cs">
       <DependentUpon>202011261111011_V77.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202011291926524_V78.cs" />
+    <Compile Include="Migrations\202011291926524_V78.Designer.cs">
+      <DependentUpon>202011291926524_V78.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011292100371_V79.cs" />
+    <Compile Include="Migrations\202011292100371_V79.Designer.cs">
+      <DependentUpon>202011292100371_V79.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DatabaseContext.cs" />
     <Compile Include="Models\DatabaseContextInitializer.cs" />
@@ -4988,6 +4995,7 @@
     <Compile Include="Models\Entities\Color.cs" />
     <Compile Include="Models\Entities\Comment.cs" />
     <Compile Include="Models\Entities\Configuration.cs" />
+    <Compile Include="Models\Entities\DiscountCode.cs" />
     <Compile Include="Models\Entities\KiyanLog.cs" />
     <Compile Include="Models\Entities\KiyanProductCategory.cs" />
     <Compile Include="Models\Entities\Order.cs" />
@@ -5050,6 +5058,7 @@
     <Compile Include="ViewModels\BlogListViewModel.cs" />
     <Compile Include="ViewModels\ProductListViewModel.cs" />
     <Compile Include="ViewModels\ProductQuickViewModel.cs" />
+    <Compile Include="ViewModels\ActivateViewModel.cs" />
     <Compile Include="ViewModels\RecoveryPasswordViewModel.cs" />
     <Compile Include="ViewModels\RegisterViewModel.cs" />
     <Compile Include="ViewModels\SamanCallbackViewModel.cs" />
@@ -5238,9 +5247,8 @@
     <Content Include="Views\Orders\OrderHistory.cshtml" />
     <Content Include="Views\OrderDetail\OrderDetailHistory.cshtml" />
     <Content Include="Views\Products\PurchaseGuide.cshtml" />
+    <Content Include="Views\Account\OldLogin.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Login - Copy.cshtml" />
-    <Content Include="Views\Account\RecoveryPassword.cshtml" />
     <Content Include="Views\ProductCategories\List.cshtml" />
     <Content Include="Views\Billing\Result.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
@@ -5359,6 +5367,13 @@
     <Content Include="Views\Shared\FrontEndLayout\_MenuPartial_Home.cshtml" />
     <Content Include="Views\Home\ChangeCurrency.cshtml" />
     <Content Include="Views\Home\BlackFriday.cshtml" />
+    <Content Include="Views\Orders\CheckOut.cshtml" />
+    <Content Include="Views\Account\Activate.cshtml" />
+    <Content Include="Views\DiscountCodes\Create.cshtml" />
+    <Content Include="Views\DiscountCodes\Delete.cshtml" />
+    <Content Include="Views\DiscountCodes\Details.cshtml" />
+    <Content Include="Views\DiscountCodes\Edit.cshtml" />
+    <Content Include="Views\DiscountCodes\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -5607,6 +5622,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202011261111011_V77.resx">
       <DependentUpon>202011261111011_V77.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011291926524_V78.resx">
+      <DependentUpon>202011291926524_V78.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011292100371_V79.resx">
+      <DependentUpon>202011292100371_V79.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

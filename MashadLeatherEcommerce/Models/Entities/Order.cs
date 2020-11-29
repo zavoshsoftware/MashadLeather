@@ -72,7 +72,9 @@ namespace Models
                     .WithMany(j => j.Orders)
                     .HasForeignKey(p => p.CityId);
 
-
+                HasOptional(p => p.DiscountCode)
+                    .WithMany(j => j.Orders)
+                    .HasForeignKey(p => p.DiscountCodeId);
             }
         }
 
@@ -89,5 +91,8 @@ namespace Models
                 return "پرداخت آنلاین";
             }
         }
+
+        public Guid? DiscountCodeId { get; set; }
+        public virtual DiscountCode DiscountCode { get; set; }
     }
 }

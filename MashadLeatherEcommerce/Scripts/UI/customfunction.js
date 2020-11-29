@@ -13,8 +13,6 @@ function LoadOrders() {
 
             }).done(function (result) {
 
-
-
                 for (var i = 0; i < result.ShopCartItems.length; i++) {
                     var rowItems = GetRemoveButton(result.ShopCartItems[i].Id);
 
@@ -24,7 +22,7 @@ function LoadOrders() {
                         GetProductSize(result.ShopCartItems[i].SizeTitle) +
                         GetProductPrice(result.ShopCartItems[i].Price) +
                         GetProductQty(result.ShopCartItems[i].Qty, result.ShopCartItems[i].Id) +
-
+                        GetProductRowAmount(result.ShopCartItems[i].Amount) +
                         "</tr>";
 
                     rows = rows + rowItems;
@@ -36,11 +34,14 @@ function LoadOrders() {
                 $('#shippmentAmount').html(result.ShippmentPrice);
                 $('#DiscountAmount').html(result.Discount);
                 $('#total').html(result.TotalPayment);
+                $('.loading-fuulpage').css('display', 'none');
 
             });
     } else {
         $('#shop-cart').css('display', 'none');
         $('#shop-cart-empty').css('display', 'block');
+        $('.loading-fuulpage').css('display', 'none');
+
     }
 }
 
@@ -51,7 +52,7 @@ function addToBasket(id) {
         event: 'addtocart'
     });
     //EventSetup
-    
+
     var currentBasket = get();
     var qty = $("#txtCount").val();
     //var color = $('#ddlColor')[0].title();
@@ -179,7 +180,7 @@ function setBasketCount() {
         else {
             $(".basketCounter").css('display', 'none');
         }
-        
+
     } else {
         $('#basketItemCount').html('0');
         $(".basketCounter").html('0');
@@ -220,7 +221,9 @@ function removeOrderDetail(productId) {
 
 }
 function UpdateBasket() {
-    $('#updateLoadingImg').css('display', 'block');
+    $('.loading-fuulpage').css('display', 'block');
+
+    //$('#updateLoadingImg').css('display', 'block');
     $('#btnUpdateBasket').css('display', 'none');
     var currentBasket;
     var basket = get();
@@ -250,9 +253,10 @@ function UpdateBasket() {
         }
         localStorage.setItem("basket", currentBasket);
     }
-    $('#updateLoadingImg').css('display', 'none');
-    $('#btnUpdateBasket').css('display', 'block');
+
     LoadOrders();
+    $('#btnUpdateBasket').css('display', 'block');
+
 }
 function GetRemoveButton(productId) {
     var product = "<tr id='" +
@@ -290,6 +294,16 @@ function GetProductPrice(productPrice) {
     return product;
 
 }
+function GetProductRowAmount(productAmount) {
+
+    var product = " <td class='cart-product-price'>" +
+        "<span class='amount'>" +
+        productAmount + " ريال" +
+        "</span></td>";
+
+    return product;
+
+}
 function GetProductColor(productColor) {
 
     var product = " <td class='cart-product-color'>" +
@@ -316,14 +330,35 @@ function GetProductQty(productQty, productId) {
     //var value = input.value();
     var product = " <td class='cart-product-quantity'>" +
         " <div class='quantity'>" +
+        "<input class='minus' type='button' value='-' onclick=\"qtydown('" +
+        productId + "');\">" +
         //"<input onchange=changevaluebasket('" + productId + "'," + productQty + "); type='number' style='width:80px;' value='" +
         //"<input onchange=changevaluebasket('" + productId + "'); type='number' style='width:80px;' value='" +
-        "<input type='number' style='width:80px;' value='" +
+        "<input type='text' style='width:80px;' value='" +
         productQty +
-        "' name='quantity' min='1' id='quantity_" + productId + "'>" +
+        "' name='quantity' class='qty' min='1' id='quantity_" + productId + "'>" +
+
+        "<input class='plus' type='button' value='+' onclick=\"qtyup('" +
+        productId + "');\">" +
         "   </div></td>";
 
     return product;
+}
+
+function qtyup(id) {
+    var currentVal = $('#quantity_' + id).val();
+    currentVal++;
+    $('#quantity_' + id).val(currentVal);
+    UpdateBasket();
+
+}
+function qtydown(id) {
+    var currentVal = $('#quantity_' + id).val();
+    currentVal--;
+    if (currentVal >= 0)
+        $('#quantity_' + id).val(currentVal);
+    UpdateBasket();
+
 }
 function GetRefIdFromResult(result) {
     var refId = result.split('-')[1];
@@ -343,7 +378,7 @@ function postRefId(refIdValue) {
     form.submit();
     document.body.removeChild(form);
 }
-var refffid = 1;
+//var refffid = 1;
 
 
 
@@ -389,7 +424,7 @@ function postSamanRefId() {
     //    alert(err);
     //    });
 
-    
+
     $.ajax({
         type: "POST",
         url: "https://sep.shaparak.ir/payment.aspx",
@@ -417,9 +452,11 @@ function postSamanRefId() {
 
 
 function FinalizeOrder() {
+
+
     var gateway = $('#payment-gateway').val();
-  
-        
+
+
     var jsondata = get();
     var t = $('#total').html();
     if (jsondata !== "" && t !== "0") {
@@ -436,7 +473,7 @@ function FinalizeOrder() {
             var txtAddress = $("#txtAddress").val();
             var txtPhone = $("#txtPhone").val();
             var txtPostalCode = $("#txtPostalCode").val();
-            var paymentType = $('input[name="payment_option"]:checked').val();
+            // var paymentType = $('input[name="payment_option"]:checked').val();
 
             if (txtCity === undefined || txtCity === "0") {
                 $('#errorOrder').css('display', 'block');
@@ -453,13 +490,13 @@ function FinalizeOrder() {
                 $('#loadingImg').css('display', 'none');
                 $('#btnFinalizeOrder').css('display', 'block');
             }
-            else if (paymentType === "recieve" && (txtCity !== "2c730dce-774d-4007-88a9-4acb1dd48cea" && txtCity !=="88e17e07-d8fc-4989-96b6-a9fbf394b521")) {
-                $('#errorOrder').css('display', 'block');
-                $('#errorOrder').html('امکان پرداخت در محل فقط برای سفارشات شهر تهران و مشهد امکان پذیر می باشد.');
-                $('#successOrder').css('display', 'none');
-                $('#loadingImg').css('display', 'none');
-                $('#btnFinalizeOrder').css('display', 'block');
-            }
+            //else if (paymentType === "recieve" && (txtCity !== "2c730dce-774d-4007-88a9-4acb1dd48cea" && txtCity !=="88e17e07-d8fc-4989-96b6-a9fbf394b521")) {
+            //    $('#errorOrder').css('display', 'block');
+            //    $('#errorOrder').html('امکان پرداخت در محل فقط برای سفارشات شهر تهران و مشهد امکان پذیر می باشد.');
+            //    $('#successOrder').css('display', 'none');
+            //    $('#loadingImg').css('display', 'none');
+            //    $('#btnFinalizeOrder').css('display', 'block');
+            //}
             else if (txtFirstName !== "" && txtLastName !== "" && txtAddress !== "" && txtCellNumber !== "" &&
                 txtEmail !== "" && txtCity !== "" && txtProvince !== "" && txtCity !== "undefined") {
                 $.ajax(
@@ -477,15 +514,27 @@ function FinalizeOrder() {
                             phone: txtPhone,
                             postalCode: txtPostalCode,
                             bank: gateway,
-                            paymentType: paymentType
+                            // paymentType: paymentType
                         },
                         type: "GET"
                     }).done(function (result) {
                         if (result.includes('true')) {
-                            $("#myModal").modal();
-                            
-                                refffid = GetRefIdFromResult(result);
-                           
+                            //$("#myModal").modal();
+
+                            var refffid = GetRefIdFromResult(result);
+
+                            var gateway = $('#payment-gateway').val();
+
+
+                            if (gateway === 'mellat') {
+                                postRefId(refffid);
+                            } else {
+                                window.location.href = "/saman?refId=" + refffid;
+                            }
+                            $('#successOrder').css('display', 'block');
+                            $('#errorOrder').css('display', 'none');
+                            localStorage.clear();
+                            setBasketCount();
 
                             //var refId = GetRefIdFromResult(result);
                             //postRefId(refId);
@@ -499,32 +548,40 @@ function FinalizeOrder() {
                             $('#errorOrder').css('display', 'block');
                             $('#errorOrder').html('شماره موبایل وارد شده صحیح نمی باشد');
                             $('#successOrder').css('display', 'none');
+                            $('#loadingImg').css('display', 'none');
+                            $('#btnFinalizeOrder').css('display', 'block');
 
-                        } else if (result === 'invalidPaymentType') {
+                        } else if (result === 'invalidEmail') {
 
                             $('#errorOrder').css('display', 'block');
                             $('#errorOrder').html('ایمیل وارد شده صحیح نمی باشد');
                             $('#successOrder').css('display', 'none');
+                            $('#loadingImg').css('display', 'none');
+                            $('#btnFinalizeOrder').css('display', 'block');
 
-                        }else if (result === 'invalidEmail') {
+                        } else if (result === 'invalidPaymentType') {
 
                             $('#errorOrder').css('display', 'block');
                             $('#errorOrder').html('امکان پرداخت در محل فقط برای سفارشات شهر تهران و مشهد امکان پذیر می باشد.');
                             $('#successOrder').css('display', 'none');
+                            $('#loadingImg').css('display', 'none');
+                            $('#btnFinalizeOrder').css('display', 'block');
 
                         } else if (result.includes('invalidQty')) {
                             var message = result.split('|')[1];
                             $('#errorOrder').css('display', 'block');
                             $('#errorOrder').html(message);
                             $('#successOrder').css('display', 'none');
-
+                            $('#loadingImg').css('display', 'none');
+                            $('#btnFinalizeOrder').css('display', 'block');
                         }
                         else if (result.includes('bankerror')) {
                             var omessage = result.split('|')[1];
                             $('#errorOrder').css('display', 'block');
                             $('#errorOrder').html(omessage);
                             $('#successOrder').css('display', 'none');
-                         
+                            $('#loadingImg').css('display', 'none');
+                            $('#btnFinalizeOrder').css('display', 'block');
                         }
                         else {
                             console.log(result);
@@ -532,10 +589,10 @@ function FinalizeOrder() {
                             $('#errorOrder')
                                 .html('متاسفانه هنگام پردازش درخواست شما خطایی رخ داده است. لطفا مجددا تلاش کنید');
                             $('#successOrder').css('display', 'none');
-
+                            $('#loadingImg').css('display', 'none');
+                            $('#btnFinalizeOrder').css('display', 'block');
                         }
-                        $('#loadingImg').css('display', 'none');
-                        $('#btnFinalizeOrder').css('display', 'block');
+
                     });
             }
 
@@ -564,25 +621,26 @@ function FinalizeOrder() {
 }
 
 function redirectToBank() {
-   // alert(refffid);
+    // alert(refffid);
 
-    var paymentType = $('input[name="payment_option"]:checked').val();
+    //var paymentType = $('input[name="payment_option"]:checked').val();
 
     var gateway = $('#payment-gateway').val();
 
-    if (paymentType === "online") {
+    //if (paymentType === "online") {
 
-        if (gateway === 'mellat') {
-            postRefId(refffid);
-        } else {
-            window.location.href = "/saman?refId=" + refffid;
-        }
-        $('#successOrder').css('display', 'block');
+    if (gateway === 'mellat') {
+        postRefId(refffid);
     } else {
-        $('#successOrder').css('display', 'block');
-        $('#successOrder').html('سفارش مشا با موفقیت ثبت گردید. همکاران ما جهت هماهنگی ارسال با شما تماس خواهند گرفت');
+        window.location.href = "/saman?refId=" + refffid;
     }
-  
+    $('#successOrder').css('display', 'block');
+    //}
+    //else {
+    //    $('#successOrder').css('display', 'block');
+    //    $('#successOrder').html('سفارش مشا با موفقیت ثبت گردید. همکاران ما جهت هماهنگی ارسال با شما تماس خواهند گرفت');
+    //}
+
     $('#errorOrder').css('display', 'none');
     localStorage.clear();
     setBasketCount();
