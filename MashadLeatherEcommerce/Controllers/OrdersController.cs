@@ -909,7 +909,7 @@ namespace MashadLeatherEcommerce.Controllers
                         //{
                         if (bank == "mellat")
                         {
-                            string log = PayRequest(order.Id, uniqueOrderId, order.TotalAmount.ToString());
+                            string log = PayRequest(order.Id, uniqueOrderId, order.TotalAmount.ToString().Split('/')[0]);
                             // string log = PayRequest(order.Id, uniqueOrderId, "3000");
                             if (!log.Contains("false"))
                             {
@@ -964,7 +964,7 @@ namespace MashadLeatherEcommerce.Controllers
         {
             string[] discountCookie = GetCookie();
 
-            if (discountCookie.Any())
+            if (discountCookie!=null)
             {
                 int len = discountCookie.Length;
                 string code = discountCookie[len - 1];
