@@ -8,10 +8,10 @@ namespace ViewModels
     public class ShopCartList
     {
         public List<ShopCartItemViewModel> ShopCartItems { get; set; }
-        public string Amount { get; set; }
-        public string ShippmentPrice { get; set; }
-        public string Discount { get; set; }
-        public string TotalPayment { get; set; }
+        public decimal Amount { get; set; }
+        public decimal ShippmentPrice { get; set; }
+        public decimal Discount { get; set; }
+        public decimal TotalPayment { get; set; }
     }
     public class ShopCartItemViewModel
     {

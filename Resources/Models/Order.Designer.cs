@@ -97,6 +97,15 @@ namespace Resources.Models {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to مبلغ تخفیف.
+        /// </summary>
+        public static string DiscountAmount {
+            get {
+                return ResourceManager.GetString("DiscountAmount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to فایل.
         /// </summary>
         public static string OrderFileUrl {
@@ -120,6 +129,24 @@ namespace Resources.Models {
         public static string SaleReferenceId {
             get {
                 return ResourceManager.GetString("SaleReferenceId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to هزینه حمل.
+        /// </summary>
+        public static string ShipmentAmount {
+            get {
+                return ResourceManager.GetString("ShipmentAmount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to جمع فاکتور.
+        /// </summary>
+        public static string SubAmount {
+            get {
+                return ResourceManager.GetString("SubAmount", resourceCulture);
             }
         }
         

@@ -45,8 +45,7 @@ namespace MashadLeatherEcommerce.Controllers
             if (ModelState.IsValid)
             {
                 User oUser = db.Users.Include(u => u.Role)
-                    .Where(a => a.CellNum == model.Login.Username && a.Password == model.Login.Password)
-                    .FirstOrDefault();
+                    .FirstOrDefault(a => a.CellNum == model.Login.Username && a.Password == model.Login.Password);
 
                 if (oUser != null)
                 {

@@ -1,4 +1,4 @@
-﻿@model Models.DiscountCode
+﻿@model ViewModels.DiscountCodeCreateViewModel
 
 @{
     ViewBag.Title = "ویرایش " + Server.HtmlDecode(Html.DisplayNameFor(model => model).ToString());
@@ -56,13 +56,25 @@
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.UserId, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("UserId", String.Empty)
-                @Html.ValidationMessageFor(model => model.UserId)
-            </div>
-        </div>
+	    <div class="form-group">
+		    <div class="col-md-2">
+		    </div>
+		    <div class="col-md-10">
+			    @Html.EditorFor(model => model.IsPublic)
+
+			    @Html.LabelFor(model => model.IsPublic)
+			    @Html.ValidationMessageFor(model => model.IsPublic)
+		    </div>
+	    </div>
+
+	    <div class="form-group">
+		    @Html.LabelFor(model => model.UserCellNumber, new { @class = "control-label col-md-2" })
+		    <div class="col-md-10">
+			    @Html.EditorFor(model => model.UserCellNumber)
+
+			    @Html.ValidationMessageFor(model => model.UserCellNumber)
+		    </div>
+	    </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.IsActive, new { @class = "control-label col-md-2" })
@@ -72,7 +84,6 @@
             </div>
         </div>
 
-	 @Html.HiddenFor(model => model.CreationDate)
         <div class="form-group">
             @Html.LabelFor(model => model.Description, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -81,22 +92,7 @@
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.DescriptionEn, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                                  @Html.EditorFor(model => model.DescriptionEn)
-                @Html.ValidationMessageFor(model => model.DescriptionEn)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.DescriptionAr, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                                  @Html.EditorFor(model => model.DescriptionAr)
-                @Html.ValidationMessageFor(model => model.DescriptionAr)
-            </div>
-        </div>
-
+        
         <div class="form-group" id="buttons">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="ثبت" class="btn btn-primary" />

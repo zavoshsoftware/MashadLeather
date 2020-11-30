@@ -1,19 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Data.Entity.ModelConfiguration;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web;
 
-namespace Models
+namespace ViewModels
 {
-   public class DiscountCode:BaseEntity
+    public class DiscountCodeCreateViewModel
     {
-        public DiscountCode()
-        {
-            Orders=new List<Order>();
-        }
+        public Guid Id { get; set; }
         [Display(Name = "کد تخفیف")]
         [Required(ErrorMessage = "لطفا {0} را وارد نمایید.")]
         [StringLength(10, ErrorMessage = "طول {0} نباید بیشتر از {1} باشد")]
@@ -27,30 +22,24 @@ namespace Models
         public bool IsPercent { get; set; }
 
         [Display(Name = "مقدار تخفیف")]
-        [Required(ErrorMessage = "لطفا {0} را وارد نمایید.")] 
+        [Required(ErrorMessage = "لطفا {0} را وارد نمایید.")]
         public decimal Amount { get; set; }
 
         [Display(Name = "چند بار مصرف")]
         public bool IsMultiUsing { get; set; }
 
+        [Display(Name = "شماره موبایل کاربر")]
+        public string UserCellNumber { get; set; }
+
         [Display(Name = "کد عمومی است؟")]
         public bool IsPublic { get; set; }
 
-        public Guid? UserId { get; set; }
-        public virtual User User { get; set; }
+ 
+        [Display(Name = "Description", ResourceType = typeof(Resources.Models.BaseEntity))]
+        [DataType(DataType.MultilineText)]
+        public string Description { get; set; }
 
-        public virtual ICollection<Order> Orders { get; set; }
-
-        internal class Configuration : EntityTypeConfiguration<DiscountCode>
-        {
-            public Configuration()
-            {
-                HasOptional(p => p.User)
-                    .WithMany(j => j.DiscountCodes)
-                    .HasForeignKey(p => p.UserId);
-
-             
-            }
-        }
+        [Display(Name = "IsActive", ResourceType = typeof(Resources.Models.BaseEntity))]
+        public bool IsActive { get; set; }
     }
 }

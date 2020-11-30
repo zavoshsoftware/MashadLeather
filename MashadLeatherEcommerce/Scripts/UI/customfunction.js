@@ -44,6 +44,51 @@ function LoadOrders() {
 
     }
 }
+function LoadCheckoutOrders() {
+    var jsondata = get();
+    if (jsondata !== null) {
+        $('#shop-cart').css('display', 'block');
+        $('#shop-cart-empty').css('display', 'none');
+        var rows = '';
+        $.ajax(
+            {
+                url: "/Orders/LoadShopCart",
+                data: { jsonvar: jsondata },
+                type: "GET"
+
+            }).done(function (result) {
+
+                for (var i = 0; i < result.ShopCartItems.length; i++) {
+                    var rowItems = GetRemoveButton(result.ShopCartItems[i].Id);
+
+                    rowItems = rowItems +
+                        GetProductTitleAndImage(result.ShopCartItems[i].ImageUrl, result.ShopCartItems[i].Title, result.ShopCartItems[i].Id) +
+                        GetProductColor(result.ShopCartItems[i].colorTitle) +
+                        GetProductSize(result.ShopCartItems[i].SizeTitle) +
+                        GetProductPrice(result.ShopCartItems[i].Price) +
+                        GetProductQtyForCheckout(result.ShopCartItems[i].Qty) +
+                        GetProductRowAmount(result.ShopCartItems[i].Amount) +
+                        "</tr>";
+
+                    rows = rows + rowItems;
+                }
+
+                $('#rows').html(rows);
+
+                $('#orderAmount').html(result.Amount);
+                $('#shippmentAmount').html(result.ShippmentPrice);
+                $('#DiscountAmount').html(result.Discount);
+                $('#total').html(result.TotalPayment);
+                $('.loading-fuulpage').css('display', 'none');
+
+            });
+    } else {
+        $('#shop-cart').css('display', 'none');
+        $('#shop-cart-empty').css('display', 'block');
+        $('.loading-fuulpage').css('display', 'none');
+
+    }
+}
 
 function addToBasket(id) {
     //EventSetup
@@ -324,6 +369,15 @@ function GetProductSize(productSize) {
     return product;
 
 }
+function GetProductQtyForCheckout(productQty) {
+    var product = " <td class='cart-product-quantity'>" +
+        " <span class='quantity'>" + 
+        productQty + 
+        "   </span></td>";
+
+    return product;
+}
+
 function GetProductQty(productQty, productId) {
     //var id = "quantity_" + productId
     //var input = document.getElementById(id);
@@ -534,6 +588,7 @@ function FinalizeOrder() {
                             $('#successOrder').css('display', 'block');
                             $('#errorOrder').css('display', 'none');
                             localStorage.clear();
+                            document.cookie = "mashadleather-discount= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
                             setBasketCount();
 
                             //var refId = GetRefIdFromResult(result);
@@ -701,6 +756,48 @@ function changeColor(color, id, proId) {
 }
 
 
+function addDiscountCode() {
+    var coupon = $("#coupon").val();
+    $('#errorDiv-discount').css('display', 'none');
+    var jsondata = get();
+
+
+    if (coupon !== "") {
+        $.ajax(
+            {
+                url: "/Orders/DiscountRequestPost",
+                data: { coupon: coupon, jsonVar: jsondata},
+                type: "GET"
+            }).done(function (result) {
+                if (result !== "Invald" && result !== "Used" && result !== "Expired" && result !=="usererror") {
+                location.reload();
+            }
+            else if (result !== true) {
+                $('#errorDiv-discount').css('display', 'block');
+                if (result.toLowerCase() === "used") {
+                    $('#errorDiv-discount').html("این کد تخفیف قبلا استفاده شده است.");
+                }
+                else if (result.toLowerCase() === "usererror") {
+                    $('#errorDiv-discount').html("این کد برای شما معتبر نمی باشد.");
+                } else if (result.toLowerCase() === "expired") {
+                    $('#errorDiv-discount').html("کد تخفیف وارد شده منقضی شده است.");
+                }
+                else if (result.toLowerCase() === "invald") {
+                    $('#errorDiv-discount').html("کد تخفیف وارد شده معتبر نمی باشد.");
+                }
+                else if (result.toLowerCase() === "true") {
+                    $('#SuccessDiv-discount').css('display', 'block');
+                    $('#errorDiv-discount').css('display', 'none');
+                }
+            }
+        });
+
+    } else {
+        $('#SuccessDiv-discount').css('display', 'none');
+        $('#errorDiv-discount').html('کد تخفیف را وارد نمایید.');
+        $('#errorDiv-discount').css('display', 'block');
+    }
+}
 
 
 

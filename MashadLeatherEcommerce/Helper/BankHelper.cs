@@ -236,8 +236,10 @@ namespace Helper
 
             db.Payments.Add(payment);
             if (isSuccess)
-                UpdateOrderStatus(db, orderId, SaleRefrenceID);
+            {
+                UpdateOrderStatus(db, orderId, SaleRefrenceID); 
 
+            }
             db.SaveChanges();
         }
 
@@ -256,6 +258,7 @@ namespace Helper
             }
         }
 
+   
         public static Guid? GetOrderStatusIdByCode(int statusCode)
         {
             DatabaseContext db = new DatabaseContext();

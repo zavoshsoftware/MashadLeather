@@ -33,7 +33,6 @@ namespace Models
         [Display(Name = "Amount", ResourceType = typeof(Resources.Models.Order))]
         [Column(TypeName = "Money")]
         public decimal TotalAmount { get; set; }
-
         [Display(Name = "OrderStatusId", ResourceType = typeof(Resources.Models.Order))]
         [Required]
         public Guid OrderStatusId { get; set; }
@@ -94,5 +93,24 @@ namespace Models
 
         public Guid? DiscountCodeId { get; set; }
         public virtual DiscountCode DiscountCode { get; set; }
+
+
+
+        [Display(Name = "SubAmount", ResourceType = typeof(Resources.Models.Order))]
+        [Column(TypeName = "Money")]
+        public decimal? SubAmount { get; set; }
+
+
+
+        [Display(Name = "ShipmentAmount", ResourceType = typeof(Resources.Models.Order))]
+        [Column(TypeName = "Money")]
+        public decimal? ShipmentAmount { get; set; }
+
+
+
+        [Display(Name = "DiscountAmount", ResourceType = typeof(Resources.Models.Order))]
+        [Column(TypeName = "Money")]
+        public decimal? DiscountAmount { get; set; }
+
     }
 }

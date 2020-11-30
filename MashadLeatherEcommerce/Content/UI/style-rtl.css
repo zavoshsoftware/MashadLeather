@@ -720,3 +720,11 @@ ul .single-dropdown-menu {
 .auth-page p {
     direction: rtl;
 }
+
+.discount-code-box {
+    direction: rtl;
+}
+
+#errorDiv-discount, #SuccessDiv-discount {
+    display: none;
+}

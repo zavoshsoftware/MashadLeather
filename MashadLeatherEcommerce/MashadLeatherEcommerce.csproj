@@ -4660,6 +4660,7 @@
     <Compile Include="Helper\BankHelper.cs" />
     <Compile Include="Helper\BaseViewModelHelper.cs" />
     <Compile Include="Helper\BitmapManipulator.cs" />
+    <Compile Include="Helper\DiscountHelper.cs" />
     <Compile Include="Helper\DownloadFileActionResult.cs" />
     <Compile Include="Helper\GetCulture.cs" />
     <Compile Include="Helper\GetCurrency.cs" />
@@ -4984,6 +4985,14 @@
     <Compile Include="Migrations\202011292100371_V79.Designer.cs">
       <DependentUpon>202011292100371_V79.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202011300702068_V80.cs" />
+    <Compile Include="Migrations\202011300702068_V80.Designer.cs">
+      <DependentUpon>202011300702068_V80.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011300907306_V81.cs" />
+    <Compile Include="Migrations\202011300907306_V81.Designer.cs">
+      <DependentUpon>202011300907306_V81.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DatabaseContext.cs" />
     <Compile Include="Models\DatabaseContextInitializer.cs" />
@@ -5037,6 +5046,7 @@
     <Compile Include="ViewModels\BillingResultViewModel.cs" />
     <Compile Include="ViewModels\BlogDetailViewModel.cs" />
     <Compile Include="ViewModels\AboutViewModel.cs" />
+    <Compile Include="ViewModels\DiscountCodeCreateViewModel.cs" />
     <Compile Include="ViewModels\GalleryDetailViewModel.cs" />
     <Compile Include="ViewModels\GalleryListViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
@@ -5628,6 +5638,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202011292100371_V79.resx">
       <DependentUpon>202011292100371_V79.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011300702068_V80.resx">
+      <DependentUpon>202011300702068_V80.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011300907306_V81.resx">
+      <DependentUpon>202011300907306_V81.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -223,11 +223,22 @@ namespace MashadLeatherEcommerce.Controllers
                 {
                     Product pro = db.Products.Find(orderDetail.ProductId);
 
+                    if (pro != null)
+                    {
+                        pro.Quantity = pro.Quantity - orderDetail.Quantity;
+
+                        if (pro.Quantity <= 0)
+                            pro.IsAvailable = false;
+
+                        pro.LastModifiedDate=DateTime.Now;
+
+                        db.SaveChanges();
+                    }
+
                     Product parentPro = db.Products.Find(pro.ParentId);
                     ProductCategory productCategory = db.ProductCategories.Find(parentPro.ProductCategoryId);
 
-
-
+                  
                     products.Add(new EventStatusProduct()
                     {
                         Id = pro.Id.ToString(),

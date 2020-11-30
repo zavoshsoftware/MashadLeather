@@ -35,7 +35,7 @@
                             <p class="alert alert-danger" id="wrongEmail">@TempData["WrongPass"]</p>
                         }
                       
-                        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "panel-body wrapper-lg", role = "form" }))
+                        @using (Html.BeginForm("OldLogin", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "panel-body wrapper-lg", role = "form" }))
                         {
                             @Html.AntiForgeryToken()
                             @Html.ValidationSummary(false, "", new { @class = "alert-danger" })

@@ -129,6 +129,9 @@
   <data name="Code" xml:space="preserve">
     <value>کد سفارش</value>
   </data>
+  <data name="DiscountAmount" xml:space="preserve">
+    <value>مبلغ تخفیف</value>
+  </data>
   <data name="OrderFileUrl" xml:space="preserve">
     <value>فایل</value>
   </data>
@@ -137,6 +140,12 @@
   </data>
   <data name="SaleReferenceId" xml:space="preserve">
     <value>کد رهگیری پرداخت</value>
+  </data>
+  <data name="ShipmentAmount" xml:space="preserve">
+    <value>هزینه حمل</value>
+  </data>
+  <data name="SubAmount" xml:space="preserve">
+    <value>جمع فاکتور</value>
   </data>
   <data name="UserId" xml:space="preserve">
     <value>کاربر</value>

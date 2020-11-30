@@ -527,9 +527,7 @@ namespace MashadLeatherEcommerce.Controllers
                     }
                     totalPrice = (decimal)(totalPrice + (amount * Convert.ToDecimal(orderDetailCount[1])));
                 }
-
-                //String.Format("{0:n0}", product.Amount);
-
+ 
                 decimal shippmentprice = 0;
 
                 decimal shippmetFreeLimit =
@@ -538,14 +536,14 @@ namespace MashadLeatherEcommerce.Controllers
                 if (totalPrice < shippmetFreeLimit && totalPrice > 0)
                     shippmentprice = Convert.ToDecimal(System.Configuration.ConfigurationManager.AppSettings["shippment"]);
 
-                decimal discountAmount = GetDiscountAmount(totalPrice, shopCartItems);
+                decimal discountAmount = GetStepDiscountAmount(totalPrice, shopCartItems);
                 ShopCartList shopCart = new ShopCartList
                 {
                     ShopCartItems = shopCartItems,
-                    ShippmentPrice = String.Format("{0:n0}", shippmentprice),
-                    Amount = String.Format("{0:n0}", totalPrice),
-                    Discount = discountAmount.ToString("n0"),
-                    TotalPayment = String.Format("{0:n0}", shippmentprice + totalPrice - discountAmount)
+                    ShippmentPrice = shippmentprice ,
+                    Amount =  totalPrice ,
+                    Discount = discountAmount ,
+                    TotalPayment =  shippmentprice + totalPrice - discountAmount
                 };
 
                 return shopCart;
@@ -557,7 +555,7 @@ namespace MashadLeatherEcommerce.Controllers
             }
         }
 
-        public decimal GetDiscountAmount(decimal total, List<ShopCartItemViewModel> shopCartProducts)
+        public decimal GetStepDiscountAmount(decimal total, List<ShopCartItemViewModel> shopCartProducts)
         {
             decimal newTotal = total;
             StepDiscount stepDiscount =
@@ -597,7 +595,88 @@ namespace MashadLeatherEcommerce.Controllers
                 return discount;
             }
             else
-                return 0;
+            {
+                return GetDiscount();
+            }
+        }
+
+
+        [AllowAnonymous]
+        public ActionResult DiscountRequestPost(string coupon,string jsonVar)
+        {
+            DiscountCode discount = db.DiscountCodes.FirstOrDefault(current => current.Code == coupon);
+
+            string result = CheckCouponValidation(discount);
+
+            if (result != "true")
+                return Json(result, JsonRequestBehavior.AllowGet);
+
+            ShopCartList productInCarts = GetShoppingCartInfo(jsonVar);
+             
+            decimal discountAmount = 0;
+
+            if (discount.IsPercent)
+                discountAmount= productInCarts.Amount * discount.Amount / 100;
+            else
+                discountAmount= discount.Amount;
+
+            SetDiscountCookie(discountAmount.ToString(), coupon);
+
+            return Json("true", JsonRequestBehavior.AllowGet);
+        }
+
+        public void SetDiscountCookie(string discountAmount, string discountCode)
+        {
+            HttpContext.Response.Cookies.Set(new HttpCookie("mashadleather-discount")
+            {
+                Name = "mashadleather-discount",
+                Value = discountAmount + "/" + discountCode,
+                Expires = DateTime.Now.AddDays(1)
+            });
+        }
+        public decimal GetDiscount()
+        {
+            if (Request.Cookies["mashadleather-discount"] != null)
+            {
+                try
+                {
+                    string cookievalue = Request.Cookies["mashadleather-discount"].Value;
+
+                    string[] basketItems = cookievalue.Split('/');
+                    return Convert.ToDecimal(basketItems[0]);
+                }
+                catch (Exception)
+                {
+                    return 0;
+                }
+            }
+            return 0;
+        }
+
+        [AllowAnonymous]
+        public string CheckCouponValidation(DiscountCode discount)
+        {
+            var identity = (System.Security.Claims.ClaimsIdentity)User.Identity;
+            string id = identity.FindFirst(System.Security.Claims.ClaimTypes.Name).Value;
+            Guid userId = new Guid(id);
+             
+
+            if (discount == null)
+                return "Invald";
+
+            if (!discount.IsPublic && discount.UserId != userId)
+                return "usererror";
+
+            if (!discount.IsMultiUsing)
+            {
+                if (db.Orders.Any(current => current.DiscountCodeId == discount.Id))
+                    return "Used";
+            }
+
+            if (discount.ExpireDate < DateTime.Today)
+                return "Expired";
+
+            return "true";
         }
 
         public string GetSizeTitle(string sizeId)
@@ -663,36 +742,55 @@ namespace MashadLeatherEcommerce.Controllers
                     {
                         ShopCartList shopCart = GetShoppingCartInfo(jsonvar);
 
+                        //User user = db.Users
+                        //    .FirstOrDefault(current => current.IsDeleted == false && current.CellNum == cellNumber);
+
+                        //if (user == null)
+                        //{
+                        //    user = new User();
+
+                        //    user.CellNum = cellNumber;
+                        //    user.Code = GenerateUserCode();
+                        //    user.Address = address;
+                        //    user.CityId = new Guid(city);
+                        //    user.FirstName = firstName;
+                        //    user.LastName = lastName;
+                        //    user.Email = email;
+                        //    user.RoleId = new Guid("0AEB583A-E4E2-44D6-92AA-39E7D2480127");
+                        //    user.IsActive = true;
+                        //    user.CreationDate = DateTime.Now;
+                        //    user.IsDeleted = false;
+                        //    user.Phone = phone;
+                        //    user.PostalCode = postalCode;
+
+                        //    db.Users.Add(user);
+
+                        //    //db.SaveChanges();
+                        //}
+
+                        var identity = (System.Security.Claims.ClaimsIdentity)User.Identity;
+                        string id = identity.FindFirst(System.Security.Claims.ClaimTypes.Name).Value;
+                        Guid userId = new Guid(id);
+
                         User user = db.Users
-                            .FirstOrDefault(current => current.IsDeleted == false && current.CellNum == cellNumber);
+                             .FirstOrDefault(current => current.IsDeleted == false && current.Id == userId);
 
-                        if (user == null)
+                        if (user != null)
                         {
-                            user = new User();
-
-                            user.CellNum = cellNumber;
-                            user.Code = GenerateUserCode();
                             user.Address = address;
-                            user.CityId = new Guid(city);
                             user.FirstName = firstName;
                             user.LastName = lastName;
-                            user.Email = email;
-                            user.RoleId = new Guid("0AEB583A-E4E2-44D6-92AA-39E7D2480127");
-                            user.IsActive = true;
-                            user.CreationDate = DateTime.Now;
-                            user.IsDeleted = false;
-                            user.Phone = phone;
+                              user.Email = email;
+                              user.Phone = phone;
                             user.PostalCode = postalCode;
-
-                            db.Users.Add(user);
-
-                            //db.SaveChanges();
+                            user.LastModifiedDate=DateTime.Now;
+                            user.Address = address;
                         }
 
                         Order order = new Order()
                         {
                             Code = GenerateOrderCode(),
-                            UserId = user.Id,
+                            UserId = userId,
                             Address = address,
                             TotalAmount = Convert.ToDecimal(shopCart.TotalPayment),
                             OrderStatusId = BankHelper.GetOrderStatusIdByCode(1).Value,
@@ -701,6 +799,10 @@ namespace MashadLeatherEcommerce.Controllers
                             IsDeleted = false,
                             CityId = new Guid(city),
                             BankName = bank,
+                            SubAmount = shopCart.Amount,
+                            ShipmentAmount = shopCart.ShippmentPrice,
+                            DiscountAmount = shopCart.Discount,
+                            DiscountCodeId = GetDiscountIdByCookie()
                             //  PaymentType = paymentType
                         };
                         db.Orders.Add(order);
@@ -841,6 +943,38 @@ namespace MashadLeatherEcommerce.Controllers
             {
                 return Json("false", JsonRequestBehavior.AllowGet);
             }
+        }
+
+
+        public string[] GetCookie()
+        {
+            if (Request.Cookies["mashadleather-discount"] != null)
+            {
+                string cookievalue = Request.Cookies["mashadleather-discount"].Value;
+
+                string[] basketItems = cookievalue.Split('/');
+
+                return basketItems;
+            }
+
+            return null;
+        }
+
+        public Guid? GetDiscountIdByCookie()
+        {
+            string[] discountCookie = GetCookie();
+
+            if (discountCookie.Any())
+            {
+                int len = discountCookie.Length;
+                string code = discountCookie[len - 1];
+                var discountCode = db.DiscountCodes.FirstOrDefault(c => c.Code == code);
+
+                if (discountCode != null)
+                   return discountCode.Id;
+            }
+
+            return null;
         }
 
         public string InvalidQuantityMessage(Product product)
@@ -994,7 +1128,7 @@ namespace MashadLeatherEcommerce.Controllers
                 return "false-" + BankHelper.MellatResult(result);
 
             }
-            catch (Exception e)
+            catch (Exception e)  
             {
                 Console.WriteLine(e);
                 throw;
@@ -1198,18 +1332,7 @@ namespace MashadLeatherEcommerce.Controllers
             //Session["orders"] = gv;
 
         }
-        //public ActionResult Excel_Export_Read([DataSourceRequest]DataSourceRequest request)
-        //{
-        //    return Json(productService.Read().ToDataSourceResult(request));
-        //}
-
-        [HttpPost]
-        public ActionResult Excel_Export_Save(string contentType, string base64, string fileName)
-        {
-            var fileContents = Convert.FromBase64String(base64);
-
-            return File(fileContents, contentType, fileName);
-        }
+     
         public ActionResult Download(int statusId, string status, string start, string end)
         {
             List<OrderListViewModel> orders = GetOrders(statusId, status, start, end);
@@ -1225,6 +1348,116 @@ namespace MashadLeatherEcommerce.Controllers
             }
         }
 
+
+   
+        public ActionResult DownloadTransferPayment()
+        {
+          
+            List<OrderListViewModel> orders = db.Orders.AsNoTracking()
+                .Where(current => current.PaymentType == "recieve" && current.IsDeleted == false)
+                .OrderByDescending(o => o.CreationDate).Select(
+
+                    x => new OrderListViewModel()
+                    {
+                        Code = x.Code,
+                        SaleReferenceId = x.SaleReferenceId,
+                        OrderStatusTitle = x.OrderStatus.Title,
+                        FirstName = x.User.FirstName,
+                        LastName = x.User.LastName,
+                        CellNum = x.User.CellNum,
+                        TotalAmount = x.TotalAmount,
+                        CreationDate = x.CreationDate,
+                        Id = x.Id,
+                        City = x.User.City.Title,
+                        Address = x.Address,
+                        PaymentType = x.PaymentType,
+                        OrderStatusId = x.OrderStatusId
+
+                    }).ToList();
+
+
+
+            List<ExcelGridviewViewModel> gridList = new List<ExcelGridviewViewModel>();
+            foreach (OrderListViewModel order in orders)
+            {
+                string[] totalAmount = order.TotalAmount.ToString("n0").Split('/');
+
+
+                var orderDetails = db.OrderDetails.Where(c => c.OrderId == order.Id).Select(
+
+                    x => new
+                    {
+                        x.Product.Title,
+                        x.Product.ColorId,
+                        x.Product.SizeId
+                    }).ToList();
+
+
+                foreach (var orderOrderDetail in orderDetails)
+                {
+
+                    string colorTitle = "";
+                    if (orderOrderDetail.ColorId != null)
+
+                        colorTitle = db.Colors.Find(orderOrderDetail.ColorId).Title;
+
+                    string sizeTitle = "";
+                    if (orderOrderDetail.SizeId != null)
+                        sizeTitle = db.Sizes.Find(orderOrderDetail.SizeId).Title;
+
+
+                    gridList.Add(new ExcelGridviewViewModel
+                    {
+                        Code = order.Code,
+                        SaleReferenceId = order.SaleReferenceId.ToString(),
+                        OrderStatus = order.OrderStatusTitle,
+                        FirstName = order.FirstName,
+                        LastName = order.LastName,
+                        CellNum = order.CellNum,
+                        CityTitle = order.City,
+                        Address = order.Address,
+                        TotalAmount = totalAmount[0],
+                        CreationDate = order.CreationDate,
+                        ProductTitle = orderOrderDetail.Title,
+                        ColorTitle = colorTitle,
+                        SizeTitle = sizeTitle
+
+                    });
+                }
+            }
+
+            GridView gv = new GridView();
+            gv.DataSource = gridList;
+            gv.DataBind();
+            gv.HeaderRow.Cells[0].Text = "کد سفارش";
+            gv.HeaderRow.Cells[1].Text = "کد رهگیری پرداخت";
+            gv.HeaderRow.Cells[2].Text = "وضعیت سفارش";
+            gv.HeaderRow.Cells[3].Text = "نام";
+            gv.HeaderRow.Cells[4].Text = "نام خانوادگی";
+            gv.HeaderRow.Cells[5].Text = "موبایل";
+            gv.HeaderRow.Cells[6].Text = "شهر";
+            gv.HeaderRow.Cells[7].Text = "آدرس";
+            gv.HeaderRow.Cells[8].Text = "جمع کل سفارش";
+            gv.HeaderRow.Cells[9].Text = "تاریخ";
+            gv.HeaderRow.Cells[10].Text = "محصول";
+            gv.HeaderRow.Cells[11].Text = "رنگ";
+            gv.HeaderRow.Cells[12].Text = "سایز";
+
+            Session["orders-transfer"] = gv;
+
+
+            if (Session["orders-transfer"] != null)
+            {
+                return new DownloadFileActionResult((GridView)Session["orders-transfer"], "orders-recievepayment.xls");
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+       
+ 
 
         public ActionResult DownloadImages()
         {
@@ -1335,6 +1568,15 @@ namespace MashadLeatherEcommerce.Controllers
                 MenuItem = baseViewModelHelper.GetMenuItems(),
 
             };
+            var identity = (System.Security.Claims.ClaimsIdentity)User.Identity;
+            string id = identity.FindFirst(System.Security.Claims.ClaimTypes.Name).Value;
+            Guid userId = new Guid(id);
+
+            User user = db.Users
+                .FirstOrDefault(current => current.IsDeleted == false && current.Id == userId);
+
+            if (user != null)
+                ViewBag.cellNumber = user.CellNum;
             ViewBag.provinceId = new SelectList(db.Provinces.OrderBy(current => current.Title), "Id", "Title");
             ViewBag.cityId = ReturnCities(null);
             return View(shopCart);
