@@ -74,6 +74,9 @@ namespace Models
                 HasOptional(p => p.DiscountCode)
                     .WithMany(j => j.Orders)
                     .HasForeignKey(p => p.DiscountCodeId);
+
+              
+ 
             }
         }
 

@@ -148,8 +148,10 @@ namespace MashadLeatherEcommerce.Controllers
 
                 if (isValidMobile)
                 {
+                    Guid roleId = new Guid((System.Configuration.ConfigurationManager.AppSettings["customerRoleId"]));
+
                     var user = db.Users.FirstOrDefault(current =>
-                        current.CellNum == cellNumber && current.IsDeleted == false);
+                        current.CellNum == cellNumber && current.IsDeleted == false && current.RoleId == roleId);
 
                     string code = RandomCode();
 
@@ -166,7 +168,6 @@ namespace MashadLeatherEcommerce.Controllers
                         return RedirectToAction("Activate", new { returnUrl = returnUrl, id = user.Code });
                     }
 
-                    Guid roleId = new Guid((System.Configuration.ConfigurationManager.AppSettings["customerRoleId"]));
 
                     User oUser = new User()
                     {
@@ -229,14 +230,18 @@ namespace MashadLeatherEcommerce.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Activate(int id, ActivateViewModel activateViewModel, string returnUrl)
         {
-            User user = db.Users.FirstOrDefault(c => c.Code == id && c.Password == activateViewModel.ActivationCode);
+            string code = activateViewModel.ActivationCode.Replace("۰", "0").Replace("۱", "1").Replace("۲", "2")
+                .Replace("۳", "3").Replace("۴", "4").Replace("۵", "5").Replace("۶", "6").Replace("v", "7")
+                .Replace("۸", "8").Replace("۹", "9");
+
+            User user = db.Users.FirstOrDefault(c => c.Code == id && c.Password == code);
 
             if (user != null)
             {
                 if (!user.IsActive)
                 {
                     user.IsActive = true;
-                    user.LastModifiedDate=DateTime.Now;
+                    user.LastModifiedDate = DateTime.Now;
 
                     db.SaveChanges();
                 }
@@ -247,15 +252,15 @@ namespace MashadLeatherEcommerce.Controllers
 
                 return RedirectToAction("index", "home");
             }
-         
-                TempData["WrongActivationCode"] = "کد فعالسازی وارد شده صحیح نمی باشد.";
-                activateViewModel.MenuGalleryGroups = baseViewModelHelper.GetMenuGalleryGroups();
-                activateViewModel.MenuItem = baseViewModelHelper.GetMenuItems();
-                ViewBag.ReturnUrl = returnUrl;
 
-                return View(activateViewModel);
+            TempData["WrongActivationCode"] = "کد فعالسازی وارد شده صحیح نمی باشد.";
+            activateViewModel.MenuGalleryGroups = baseViewModelHelper.GetMenuGalleryGroups();
+            activateViewModel.MenuItem = baseViewModelHelper.GetMenuItems();
+            ViewBag.ReturnUrl = returnUrl;
 
-             
+            return View(activateViewModel);
+
+
 
         }
 
