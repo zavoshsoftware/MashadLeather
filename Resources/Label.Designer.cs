@@ -907,7 +907,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to تلفن فروشگاه اینترنتی.
+        ///   Looks up a localized string similar to فروشگاه اینترنتی.
         /// </summary>
         public static string ShopPhone {
             get {
