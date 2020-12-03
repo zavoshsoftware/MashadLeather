@@ -291,6 +291,9 @@ namespace MashadLeatherEcommerce.Controllers
                 {
                     ViewBag.OrderStatusId = new SelectList(db.OrderStatuses.Where(c=>c.Id== canselOrderStatusId), "Id", "Title", order.OrderStatusId);
                 }
+                else
+                    ViewBag.OrderStatusId = new SelectList(db.OrderStatuses, "Id", "Title", order.OrderStatusId);
+
             }
             return View(orderDetailViewModel);
 

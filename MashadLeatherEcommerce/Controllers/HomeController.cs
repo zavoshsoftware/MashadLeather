@@ -464,6 +464,7 @@ namespace MashadLeatherEcommerce.Controllers
         [Route("blackfriday")]
         public ActionResult BlackFriday()
         {
+            return RedirectToAction("Index");
             BlackFridayViewModel textViewModel = new BlackFridayViewModel()
             {
                 MenuGalleryGroups = baseViewModelHelper.GetMenuGalleryGroups(),

@@ -88,7 +88,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to تهران، خیابان ولیعصر، خیابان شهید عاطفی.
+        ///   Looks up a localized string similar to تهران، خیابان ولیعصر، بالاتر از نیایش، .
         /// </summary>
         public static string Address1 {
             get {
@@ -97,7 +97,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to پلاک 100 طبقه پنجم.
+        ///   Looks up a localized string similar to خیابان شهید عاطفی، پلاک 100 طبقه پنجم.
         /// </summary>
         public static string Address2 {
             get {
