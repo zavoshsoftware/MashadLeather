@@ -33,7 +33,7 @@ function LoadOrders() {
                 $('#orderAmount').html(result.Amount);
                 $('#shippmentAmount').html(result.ShippmentPrice);
                 $('#DiscountAmount').html(result.Discount);
-                $('#total').html(result.TotalPayment);
+                $('#total').html(result.TotalPaymentBeforWallet);
                 $('.loading-fuulpage').css('display', 'none');
 
             });
@@ -79,7 +79,11 @@ function LoadCheckoutOrders() {
                 $('#shippmentAmount').html(result.ShippmentPrice);
                 $('#DiscountAmount').html(result.Discount);
                 $('#total').html(result.TotalPayment);
+                $('#walletAmount').html(result.Wallet);
                 $('.loading-fuulpage').css('display', 'none');
+                if (result.Discount !== 0) {
+                    $('.btn-remove-discount').css('display', 'inline');
+                }
 
             });
     } else {
@@ -371,8 +375,8 @@ function GetProductSize(productSize) {
 }
 function GetProductQtyForCheckout(productQty) {
     var product = " <td class='cart-product-quantity'>" +
-        " <span class='quantity'>" + 
-        productQty + 
+        " <span class='quantity'>" +
+        productQty +
         "   </span></td>";
 
     return product;
@@ -513,7 +517,7 @@ function FinalizeOrder() {
 
     var jsondata = get();
     var t = $('#total').html();
-    if (jsondata !== "" && t !== "0") {
+    if (jsondata !== "") {
         if ($('#chkPolicy').is(':checked')) {
             $('#loadingImg').css('display', 'block');
             $('#btnFinalizeOrder').css('display', 'none');
@@ -598,7 +602,21 @@ function FinalizeOrder() {
                             //localStorage.clear();
                             //setBasketCount();
 
-                        } else if (result === 'invalidCellNumber') {
+                        }
+                        else if (result.includes('free')) {
+                            //$("#myModal").modal(); 
+                            var freeCallbackUrl = result.split('|')[1];
+                            window.location.href = freeCallbackUrl;
+
+                            $('#successOrder').css('display', 'block');
+                            $('#errorOrder').css('display', 'none');
+                            localStorage.clear();
+                            document.cookie = "mashadleather-discount= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
+                            setBasketCount();
+
+
+                        }
+                        else if (result === 'invalidCellNumber') {
 
                             $('#errorOrder').css('display', 'block');
                             $('#errorOrder').html('شماره موبایل وارد شده صحیح نمی باشد');
@@ -766,31 +784,31 @@ function addDiscountCode() {
         $.ajax(
             {
                 url: "/Orders/DiscountRequestPost",
-                data: { coupon: coupon, jsonVar: jsondata},
+                data: { coupon: coupon, jsonVar: jsondata },
                 type: "GET"
             }).done(function (result) {
-                if (result !== "Invald" && result !== "Used" && result !== "Expired" && result !=="usererror") {
-                location.reload();
-            }
-            else if (result !== true) {
-                $('#errorDiv-discount').css('display', 'block');
-                if (result.toLowerCase() === "used") {
-                    $('#errorDiv-discount').html("این کد تخفیف قبلا استفاده شده است.");
+                if (result !== "Invald" && result !== "Used" && result !== "Expired" && result !== "usererror") {
+                    location.reload();
                 }
-                else if (result.toLowerCase() === "usererror") {
-                    $('#errorDiv-discount').html("این کد برای شما معتبر نمی باشد.");
-                } else if (result.toLowerCase() === "expired") {
-                    $('#errorDiv-discount').html("کد تخفیف وارد شده منقضی شده است.");
+                else if (result !== true) {
+                    $('#errorDiv-discount').css('display', 'block');
+                    if (result.toLowerCase() === "used") {
+                        $('#errorDiv-discount').html("این کد تخفیف قبلا استفاده شده است.");
+                    }
+                    else if (result.toLowerCase() === "usererror") {
+                        $('#errorDiv-discount').html("این کد برای شما معتبر نمی باشد.");
+                    } else if (result.toLowerCase() === "expired") {
+                        $('#errorDiv-discount').html("کد تخفیف وارد شده منقضی شده است.");
+                    }
+                    else if (result.toLowerCase() === "invald") {
+                        $('#errorDiv-discount').html("کد تخفیف وارد شده معتبر نمی باشد.");
+                    }
+                    else if (result.toLowerCase() === "true") {
+                        $('#SuccessDiv-discount').css('display', 'block');
+                        $('#errorDiv-discount').css('display', 'none');
+                    }
                 }
-                else if (result.toLowerCase() === "invald") {
-                    $('#errorDiv-discount').html("کد تخفیف وارد شده معتبر نمی باشد.");
-                }
-                else if (result.toLowerCase() === "true") {
-                    $('#SuccessDiv-discount').css('display', 'block');
-                    $('#errorDiv-discount').css('display', 'none');
-                }
-            }
-        });
+            });
 
     } else {
         $('#SuccessDiv-discount').css('display', 'none');
@@ -802,3 +820,7 @@ function addDiscountCode() {
 
 
 
+function removeDiscountCookie() {
+    document.cookie = "mashadleather-discount= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
+    location.reload();
+}

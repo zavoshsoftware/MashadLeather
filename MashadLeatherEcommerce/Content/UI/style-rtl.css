@@ -728,3 +728,10 @@ ul .single-dropdown-menu {
 #errorDiv-discount, #SuccessDiv-discount {
     display: none;
 }
+
+.btn-remove-discount {
+    background-color: transparent;
+    border: none;
+    color: red;
+    display: none;
+}

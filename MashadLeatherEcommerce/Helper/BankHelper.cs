@@ -255,9 +255,24 @@ namespace Helper
                     order.OrderStatusId = orderStatus.Id;
 
                 order.SaleReferenceId = saleRefrenceId;
+
+                UpdateUserWallet(db, order);
             }
         }
 
+        public static void UpdateUserWallet(DatabaseContext db,Order order)
+        {
+            if (order.WalletAmount > 0)
+            {
+                User user = db.Users.Find(order.UserId);
+                if (user != null)
+                {
+                    user.Amount -= order.WalletAmount;
+                    user.LastModifiedDate=DateTime.Now;
+                }
+                
+            }
+        }
    
         public static Guid? GetOrderStatusIdByCode(int statusCode)
         {

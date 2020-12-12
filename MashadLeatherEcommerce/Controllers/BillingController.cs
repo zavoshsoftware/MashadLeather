@@ -36,7 +36,7 @@ namespace MashadLeatherEcommerce.Controllers
             billing.MenuItem = baseViewModelHelper.GetMenuItems();
             billing.MenuGalleryGroups = baseViewModelHelper.GetMenuGalleryGroups();
 
-          
+
 
             MellatReturn();
 
@@ -44,7 +44,102 @@ namespace MashadLeatherEcommerce.Controllers
         }
 
 
-   
+
+        public ActionResult FreeResult(Guid id)
+        {
+            Helper.BaseViewModelHelper baseViewModelHelper = new BaseViewModelHelper();
+
+            BillingResultViewModel billing = new BillingResultViewModel();
+            billing.MenuItem = baseViewModelHelper.GetMenuItems();
+            billing.MenuGalleryGroups = baseViewModelHelper.GetMenuGalleryGroups();
+
+            try
+            {
+                Order order = db.Orders.Find(id);
+
+                if (order != null)
+                {
+                    Int64 resCode = GetRefCodeForFree(id);
+                    OrderStatus orderStatus = db.OrderStatuses.FirstOrDefault(current => current.IsDeleted == false && current.Code == 2);
+
+                    if (orderStatus != null)
+                        order.OrderStatusId = orderStatus.Id;
+
+                    order.SaleReferenceId = resCode;
+
+                    if (order.WalletAmount > 0)
+                    {
+                        User user = db.Users.Find(order.UserId);
+                        if (user != null)
+                        {
+                            user.Amount -= order.WalletAmount;
+                            user.LastModifiedDate = DateTime.Now;
+                        }
+
+                    }
+
+                    ViewBag.Message = "پرداخت با موفقیت انجام شد.";
+                    ViewBag.SaleReferenceId = resCode;
+                    //تراکنش تایید و ستل شده است 
+
+
+                    //SendMessageToUser(order.User.CellNum, order.Code.ToString());
+                    ViewBag.Code = order.Code;
+                    ViewBag.CellNumber = order.User.CellNum;
+                    if (order.DiscountCodeId != null)
+                    {
+                        DiscountCode discountCode = db.DiscountCodes.Find(order.DiscountCodeId);
+
+                        if (discountCode != null)
+                        {
+                            discountCode.IsUsed = true;
+                            discountCode.LastModifiedDate = DateTime.Now;
+
+                            db.SaveChanges();
+                        }
+                    }
+                    ChangeProductStock(order);
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+
+            return View(billing);
+        }
+
+
+        public Int64 GetRefCodeForFree(Guid orderId)
+        {
+            PaymentFreeCode paymentFreeCode = db.PaymentFreeCodes.Where(c => c.IsDeleted == false)
+               .OrderByDescending(c => c.CreationDate).FirstOrDefault();
+
+            Int64 code = 100000;
+
+            if (paymentFreeCode != null)
+                code = paymentFreeCode.Code + 1;
+
+            if (paymentFreeCode != null)
+            {
+                PaymentFreeCode oPaymentFreeCode = new PaymentFreeCode()
+                {
+                    Id = Guid.NewGuid(),
+                    OrderId = orderId,
+                    CreationDate = DateTime.Now,
+                    IsDeleted = false,
+                    IsActive = true,
+                    Code = code
+                };
+
+                db.PaymentFreeCodes.Add(oPaymentFreeCode);
+            }
+
+            return code;
+
+        }
 
 
 
@@ -54,7 +149,7 @@ namespace MashadLeatherEcommerce.Controllers
         }
         private void MellatReturn()
         {
-             MellatWebService.PaymentGatewayClient bpService = new MellatWebService.PaymentGatewayClient();
+            MellatWebService.PaymentGatewayClient bpService = new MellatWebService.PaymentGatewayClient();
 
             BankHelper.BypassCertificateError();
             if (string.IsNullOrEmpty(Request.Params["SaleReferenceId"]))
@@ -70,7 +165,7 @@ namespace MashadLeatherEcommerce.Controllers
                     ViewBag.Message = "رسید قابل قبول نیست";
                     ViewBag.SaleReferenceId = "**************";
 
-              
+
 
                 }
             }
@@ -126,9 +221,23 @@ namespace MashadLeatherEcommerce.Controllers
                                         Order order = db.Orders.Find(orderId);
                                         if (order != null)
                                         {
-                                           //SendMessageToUser(order.User.CellNum, order.Code.ToString());
+                                            //SendMessageToUser(order.User.CellNum, order.Code.ToString());
                                             ViewBag.Code = order.Code;
                                             ViewBag.CellNumber = order.User.CellNum;
+                                            if (order.DiscountCodeId != null)
+                                            {
+                                                DiscountCode discountCode = db.DiscountCodes.Find(order.DiscountCodeId);
+
+                                                if (discountCode != null)
+                                                {
+                                                    discountCode.IsUsed = true;
+                                                    discountCode.LastModifiedDate = DateTime.Now;
+
+                                                    db.SaveChanges();
+                                                }
+                                            }
+                                            ChangeProductStock(order);
+                                            db.SaveChanges();
                                         }
                                     }
                                     else
@@ -161,7 +270,7 @@ namespace MashadLeatherEcommerce.Controllers
                             ViewBag.Message = BankHelper.MellatResult(Result);
                             ViewBag.SaleReferenceId = "**************";
                             long paymentId = Convert.ToInt64(saleOrderId);
-                           
+
                         }
                     }
                     else
@@ -206,6 +315,29 @@ namespace MashadLeatherEcommerce.Controllers
 
 
         }
+
+        public void ChangeProductStock(Order order)
+        {
+            List<OrderDetail> orderDetails = db.OrderDetails.Where(c => c.OrderId == order.Id).ToList();
+
+            foreach (OrderDetail orderDetail in orderDetails)
+            {
+                Product pro = db.Products.Find(orderDetail.ProductId);
+
+                if (pro != null)
+                {
+                    pro.Quantity = pro.Quantity - orderDetail.Quantity;
+
+                    if (pro.Quantity <= 0)
+                        pro.IsAvailable = false;
+
+                    pro.LastModifiedDate = DateTime.Now;
+
+                }
+            }
+
+        }
+
         public ActionResult EventSetup(string orderCode)
         {
             try
@@ -215,35 +347,35 @@ namespace MashadLeatherEcommerce.Controllers
                 Order order = db.Orders.FirstOrDefault(c => c.Code == code);
 
 
-                List<EventStatusProduct> products=new List<EventStatusProduct>();
+                List<EventStatusProduct> products = new List<EventStatusProduct>();
 
-                List<OrderDetail> orderDetails = db.OrderDetails.Where(c => c.OrderId == order.Id).Include(c=>c.Product).ToList();
+                List<OrderDetail> orderDetails = db.OrderDetails.Where(c => c.OrderId == order.Id).Include(c => c.Product).ToList();
 
                 foreach (OrderDetail orderDetail in orderDetails)
                 {
                     Product pro = db.Products.Find(orderDetail.ProductId);
 
-                    if (pro != null)
-                    {
-                        pro.Quantity = pro.Quantity - orderDetail.Quantity;
+                    //if (pro != null)
+                    //{
+                    //    pro.Quantity = pro.Quantity - orderDetail.Quantity;
 
-                        if (pro.Quantity <= 0)
-                            pro.IsAvailable = false;
+                    //    if (pro.Quantity <= 0)
+                    //        pro.IsAvailable = false;
 
-                        pro.LastModifiedDate=DateTime.Now;
+                    //    pro.LastModifiedDate=DateTime.Now;
 
-                        db.SaveChanges();
-                    }
+                    //    db.SaveChanges();
+                    //}
 
                     Product parentPro = db.Products.Find(pro.ParentId);
                     ProductCategory productCategory = db.ProductCategories.Find(parentPro.ProductCategoryId);
 
-                  
+
                     products.Add(new EventStatusProduct()
                     {
                         Id = pro.Id.ToString(),
                         Title = pro.Title,
-                        Amount = (orderDetail.Price/10).ToString().Split('/')[0],
+                        Amount = (orderDetail.Price / 10).ToString().Split('/')[0],
                         Category = productCategory.UrlParam,
                         Color = pro.Color.Title,
                         Quantity = orderDetail.Quantity
@@ -253,7 +385,7 @@ namespace MashadLeatherEcommerce.Controllers
                 EventStatusViewModel eventStatus = new EventStatusViewModel()
                 {
                     Code = orderCode,
-                    Amount = (order.TotalAmount/10).ToString().Split('/')[0],
+                    Amount = (order.TotalAmount / 10).ToString().Split('/')[0],
                     Products = products
                 };
 
@@ -267,6 +399,6 @@ namespace MashadLeatherEcommerce.Controllers
 
         }
 
-      
+
     }
 }

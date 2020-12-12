@@ -15,6 +15,35 @@ namespace MashadLeatherEcommerce.Controllers
     {
         private DatabaseContext db = new DatabaseContext();
 
+        [Authorize(Roles = "Administrator,SuperAdministrator,eshopadmin,operator")]
+
+        public ActionResult IndexForOprator()
+        {
+            var discountCodes = db.DiscountCodes.Include(d => d.User).Where(d => d.IsDeleted == false).OrderByDescending(d => d.CreationDate);
+            return View(discountCodes.ToList());
+        }
+        [Authorize(Roles = "Administrator,SuperAdministrator,eshopadmin,operator")]
+
+        public ActionResult UseInStore(Guid id)
+        {
+            var discountCode = db.DiscountCodes.FirstOrDefault(d => d.Id == id && d.IsDeleted == false);
+
+            if (discountCode != null)
+            {
+                var identity = (System.Security.Claims.ClaimsIdentity)User.Identity;
+                string uid = identity.FindFirst(System.Security.Claims.ClaimTypes.Name).Value;
+                Guid userId = new Guid(uid);
+                var user = db.Users.Find(userId);
+
+                discountCode.IsUsed = true;
+                discountCode.OperatorUsername = user.CellNum;
+                discountCode.LastModifiedDate=DateTime.Now;
+
+                db.SaveChanges();
+            }
+            return RedirectToAction("IndexForOprator");
+        }
+
         [Authorize(Roles = "Administrator,SuperAdministrator,eshopadmin")]
 
         public ActionResult Index()
@@ -46,7 +75,7 @@ namespace MashadLeatherEcommerce.Controllers
         }
 
 
-    [Authorize(Roles = "Administrator,SuperAdministrator,eshopadmin")]
+        [Authorize(Roles = "Administrator,SuperAdministrator,eshopadmin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(DiscountCodeCreateViewModel discountCodeVm)
@@ -65,7 +94,7 @@ namespace MashadLeatherEcommerce.Controllers
                 if (!discountCodeVm.IsPublic)
                 {
                     var user = db.Users.Where(c => c.CellNum == discountCodeVm.UserCellNumber && c.IsDeleted == false)
-                        .Select(c => new {c.Id}).FirstOrDefault();
+                        .Select(c => new { c.Id }).FirstOrDefault();
 
                     if (user == null)
                     {
@@ -80,11 +109,12 @@ namespace MashadLeatherEcommerce.Controllers
                 discountCode.Id = Guid.NewGuid();
                 discountCode.IsPublic = discountCodeVm.IsPublic;
                 discountCode.ExpireDate = discountCodeVm.ExpireDate;
-                discountCode.IsPercent = discountCodeVm.IsPercent;
+                discountCode.MaxAmount = discountCodeVm.MaxAmount;
                 discountCode.IsActive = discountCodeVm.IsActive;
                 discountCode.IsMultiUsing = discountCodeVm.IsMultiUsing;
                 discountCode.Amount = discountCodeVm.Amount;
                 discountCode.Code = discountCodeVm.Code;
+                discountCode.IsUsed = discountCodeVm.IsUsed;
                 discountCode.Description = discountCodeVm.Description;
 
                 db.DiscountCodes.Add(discountCode);
@@ -112,17 +142,18 @@ namespace MashadLeatherEcommerce.Controllers
             if (discountCode.UserId != null)
                 userCellNumber = discountCode.User.CellNum;
 
-            DiscountCodeCreateViewModel discountCodeVm =new DiscountCodeCreateViewModel()
+            DiscountCodeCreateViewModel discountCodeVm = new DiscountCodeCreateViewModel()
             {
                 Id = discountCode.Id,
                 Code = discountCode.Code,
                 IsPublic = discountCode.IsPublic,
                 IsActive = discountCode.IsActive,
                 UserCellNumber = userCellNumber,
-                IsPercent = discountCode.IsPercent,
+                MaxAmount = discountCode.MaxAmount,
                 Amount = discountCode.Amount,
                 ExpireDate = discountCode.ExpireDate,
                 IsMultiUsing = discountCode.IsMultiUsing,
+                IsUsed = discountCode.IsUsed,
                 Description = discountCode.Description
             };
             return View(discountCodeVm);
@@ -138,7 +169,7 @@ namespace MashadLeatherEcommerce.Controllers
                 DiscountCode discountCode = db.DiscountCodes.Find(discountCodeVm.Id);
 
 
-                if (db.DiscountCodes.Any(c => c.Code == discountCodeVm.Code && c.IsDeleted == false&&c.Id!=discountCodeVm.Id))
+                if (db.DiscountCodes.Any(c => c.Code == discountCodeVm.Code && c.IsDeleted == false && c.Id != discountCodeVm.Id))
                 {
                     ModelState.AddModelError("duplicateCode", "این کد قبلا استفاده شده است.");
                     return View(discountCodeVm);
@@ -163,11 +194,12 @@ namespace MashadLeatherEcommerce.Controllers
                 discountCode.LastModifiedDate = DateTime.Now;
                 discountCode.IsPublic = discountCodeVm.IsPublic;
                 discountCode.ExpireDate = discountCodeVm.ExpireDate;
-                discountCode.IsPercent = discountCodeVm.IsPercent;
+                discountCode.MaxAmount = discountCodeVm.MaxAmount;
                 discountCode.IsActive = discountCodeVm.IsActive;
                 discountCode.IsMultiUsing = discountCodeVm.IsMultiUsing;
                 discountCode.Amount = discountCodeVm.Amount;
                 discountCode.Code = discountCodeVm.Code;
+                discountCode.IsUsed = discountCodeVm.IsUsed;
                 discountCode.Description = discountCodeVm.Description;
 
                 db.Entry(discountCode).State = EntityState.Modified;

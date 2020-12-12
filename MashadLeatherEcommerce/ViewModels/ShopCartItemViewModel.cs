@@ -12,6 +12,8 @@ namespace ViewModels
         public decimal ShippmentPrice { get; set; }
         public decimal Discount { get; set; }
         public decimal TotalPayment { get; set; }
+        public decimal TotalPaymentBeforWallet { get; set; }
+        public decimal Wallet { get; set; }
     }
     public class ShopCartItemViewModel
     {

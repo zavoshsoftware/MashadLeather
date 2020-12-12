@@ -17,14 +17,12 @@ ViewBag.Title = "فهرست کدهای تخفیف" ;
         columns.Bound(model => model.ExpireDate);
         columns.Bound(model => model.MaxAmountStr);
         columns.Bound(model => model.AmountStr);
-        columns.Bound(model => model.IsMultiUsing);
-        columns.Bound(model => model.IsActive);
-        columns.Bound(model => model.OperatorUsername);
+        columns.Bound(model => model.IsUsed);
 					columns.Bound(item => @item.Id).Title("دستورات").Filterable(false).Groupable(false)
-							.Template(@<text>
-									@Html.ActionLink("ویرایش", "Edit", new {id = @item.Id}, new {@class = "k-button"})
-									@Html.ActionLink("حذف", "Delete", new {id = @item.Id}, new {@class = "k-button"})
-									</text>).Width(200);  
+						.Template(@<text>
+							          @if (!item.IsUsed) { 
+							          @Html.ActionLink("استفاده در فروشگاه", "UseInStore", new {id = @item.Id}, new {@class = "k-button"})
+							          } </text>).Width(200);  
 		}).Filterable()
 		.ToolBar(toolbar =>
 					{				

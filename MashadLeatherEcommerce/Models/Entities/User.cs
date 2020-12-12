@@ -31,7 +31,7 @@ namespace Models
 
         [Display(Name = "CellNum", ResourceType = typeof(Resources.Models.User))]
         [StringLength(30, ErrorMessage = "طول {0} نباید بیشتر از {1} باشد")]
-        [RegularExpression(@"(^(09|9)[0123456789][0123456789]\d{7}$)|(^(09|9)[0123456789][0123456789]\d{7}$)", ErrorMessageResourceName = "MobilExpersionValidation", ErrorMessageResourceType = typeof(Messages))]
+        //[RegularExpression(@"(^(09|9)[0123456789][0123456789]\d{7}$)|(^(09|9)[0123456789][0123456789]\d{7}$)", ErrorMessageResourceName = "MobilExpersionValidation", ErrorMessageResourceType = typeof(Messages))]
         public string CellNum { get; set; }
 
     
@@ -78,7 +78,8 @@ namespace Models
         public virtual ICollection<UserProductLike> UserProductLike { get; set; }
         public virtual ICollection<DiscountCode> DiscountCodes { get; set; }
 
-
+        [Display(Name="موجودی کیف پول")]
+        public decimal? Amount { get; set; }
 
         internal class Configuration : EntityTypeConfiguration<User>
         {

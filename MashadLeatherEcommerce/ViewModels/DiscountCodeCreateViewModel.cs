@@ -18,10 +18,11 @@ namespace ViewModels
         [Required(ErrorMessage = "لطفا {0} را وارد نمایید.")]
         public DateTime ExpireDate { get; set; }
 
-        [Display(Name = "درصدی؟")]
-        public bool IsPercent { get; set; }
+        [Display(Name = "حداکثر مقدار تخفیف")]
+        [Required(ErrorMessage = "لطفا {0} را وارد نمایید.")]
+        public decimal MaxAmount { get; set; }
 
-        [Display(Name = "مقدار تخفیف")]
+        [Display(Name = "درصد تخفیف")]
         [Required(ErrorMessage = "لطفا {0} را وارد نمایید.")]
         public decimal Amount { get; set; }
 
@@ -41,5 +42,8 @@ namespace ViewModels
 
         [Display(Name = "IsActive", ResourceType = typeof(Resources.Models.BaseEntity))]
         public bool IsActive { get; set; }
+
+        [Display(Name = "استفاده شده است؟")]
+        public bool IsUsed { get; set; }
     }
 }

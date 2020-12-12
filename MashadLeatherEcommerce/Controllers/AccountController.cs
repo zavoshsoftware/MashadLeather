@@ -100,6 +100,8 @@ namespace MashadLeatherEcommerce.Controllers
             }
             else
             {
+                if(role== "operator")
+                return RedirectToAction("IndexForOprator", "DiscountCodes");
                 return RedirectToAction("Index", "Products");
             }
         }

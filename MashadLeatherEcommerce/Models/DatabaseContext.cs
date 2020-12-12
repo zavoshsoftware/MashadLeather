@@ -58,6 +58,7 @@ namespace Models
         public DbSet<ResumeFile> ResumeFiles { get; set; }
         public DbSet<Configuration> Configurations { get; set; }
         public DbSet<DiscountCode> DiscountCodes { get; set; }
+        public DbSet<PaymentFreeCode> PaymentFreeCodes { get; set; }
 
     }
 

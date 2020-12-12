@@ -57,6 +57,9 @@ namespace ViewModels
             }
         }
 
+        [Display(Name = "مبلغ پرداختی")]
+        public decimal? PaymentAmount { get; set; }
+
 
         [Display(Name = "CreationDate", ResourceType = typeof(Resources.Models.BaseEntity))]
         public string CreationDateStr

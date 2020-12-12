@@ -16,6 +16,7 @@ namespace Models
             OrderDetails = new List<OrderDetail>();
             Payments = new List<Payment>();
             PaymentUniqeCodes = new List<PaymentUniqeCodes>();
+            PaymentFreeCodes = new List<PaymentFreeCode>();
         }
 
         [Display(Name = "Code", ResourceType = typeof(Resources.Models.Order))]
@@ -114,6 +115,18 @@ namespace Models
         [Display(Name = "DiscountAmount", ResourceType = typeof(Resources.Models.Order))]
         [Column(TypeName = "Money")]
         public decimal? DiscountAmount { get; set; }
+
+
+        [Display(Name = "مبلغ استفاده شده از کیف پول")]
+        [Column(TypeName = "Money")]
+        public decimal? WalletAmount { get; set; }
+
+
+        [Display(Name = "مبلغ پرداختی")]
+        [Column(TypeName = "Money")]
+        public decimal? PaymentAmount { get; set; }
+
+        public virtual ICollection<PaymentFreeCode> PaymentFreeCodes { get; set; }
 
     }
 }

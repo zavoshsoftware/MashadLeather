@@ -7,12 +7,12 @@ namespace Helpers
 {
     public class DiscountHelper
     {
-        public decimal CalculateDiscountAmount(Models.DiscountCode discountCode, decimal totalAmount)
-        {
-            if (discountCode.IsPercent)
-                return totalAmount * discountCode.Amount / 100;
-            else
-                return discountCode.Amount;
-        }
+        //public decimal CalculateDiscountAmount(Models.DiscountCode discountCode, decimal totalAmount)
+        //{
+        //    if (discountCode.IsPercent)
+        //        return totalAmount * discountCode.Amount / 100;
+        //    else
+        //        return discountCode.Amount;
+        //}
     }
 }
