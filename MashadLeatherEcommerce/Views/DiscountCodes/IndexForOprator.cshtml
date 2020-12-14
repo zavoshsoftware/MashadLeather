@@ -32,8 +32,11 @@ ViewBag.Title = "فهرست کدهای تخفیف" ;
 						.Template(@<text>
 							          @if (!item.IsUsed) { 
 							          @Html.ActionLink("استفاده در فروشگاه", "UseInStore", new {id = @item.Id}, new {@class = "k-button"})
-							          @Html.ActionLink("صفر کردن کیف پول", "UseWaletInStore", new {id = @item.UserId}, new {@class = "k-button"})
-							          } </text>).Width(200);  
+							        
+							          }
+							          @Html.ActionLink("صفر کردن کیف پول", "UseWaletInStore", new {id = @item.UserId}, new {@class = "k-button"})						           
+</text>).Width(200);  
+	                  
 		}).Filterable()
 		.ToolBar(toolbar =>
 					{				

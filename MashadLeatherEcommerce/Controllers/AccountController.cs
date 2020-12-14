@@ -133,6 +133,25 @@ namespace MashadLeatherEcommerce.Controllers
             return View(recoveryPass);
         }
 
+        public string PersianToEnglish(string persianStr)
+        {
+
+            Dictionary<string, string> LettersDictionary = new Dictionary<string, string>
+            {
+                ["۰"] = "0",
+                ["۱"] = "1",
+                ["۲"] = "2",
+                ["۳"] = "3",
+                ["۴"] = "4",
+                ["۵"] = "5",
+                ["۶"] = "6",
+                ["۷"] = "7",
+                ["۸"] = "8",
+                ["۹"] = "9"
+            };
+            return LettersDictionary.Aggregate(persianStr, (current, item) =>
+                current.Replace(item.Key, item.Value));
+        }
 
         [HttpPost]
         [AllowAnonymous]
@@ -142,9 +161,7 @@ namespace MashadLeatherEcommerce.Controllers
         {
             if (ModelState.IsValid)
             {
-                string cellNumber = recoveryPassword.CellNumber.Replace("۰", "0").Replace("۱", "1").Replace("۲", "2")
-                    .Replace("۳", "3").Replace("۴", "4").Replace("۵", "5").Replace("۶", "6").Replace("v", "7")
-                    .Replace("۸", "8").Replace("۹", "9");
+                string cellNumber = PersianToEnglish(recoveryPassword.CellNumber);
 
                 bool isValidMobile = Regex.IsMatch(cellNumber, @"(^(09|9)[0123456789][0123456789]\d{7}$)|(^(09|9)[0123456789][0123456789]\d{7}$)", RegexOptions.IgnoreCase);
 
@@ -232,9 +249,7 @@ namespace MashadLeatherEcommerce.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Activate(int id, ActivateViewModel activateViewModel, string returnUrl)
         {
-            string code = activateViewModel.ActivationCode.Replace("۰", "0").Replace("۱", "1").Replace("۲", "2")
-                .Replace("۳", "3").Replace("۴", "4").Replace("۵", "5").Replace("۶", "6").Replace("v", "7")
-                .Replace("۸", "8").Replace("۹", "9");
+            string code = PersianToEnglish(activateViewModel.ActivationCode);
 
             User user = db.Users.FirstOrDefault(c => c.Code == id && c.Password == code);
 

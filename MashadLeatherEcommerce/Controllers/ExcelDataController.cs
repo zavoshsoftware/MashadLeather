@@ -53,10 +53,20 @@ namespace Khoshdast.Controllers
 
                         foreach (var row in WorkSheet.RowsUsed())
                         {
-                            UpdateRow(row.Cell(1).Value.ToString(), row.Cell(2).Value.ToString(),
-                                 row.Cell(3).Value.ToString(),
-                                row.Cell(4).Value.ToString(),
-                                row.Cell(5).Value.ToString());
+                            string code = row.Cell(4).Value.ToString();
+                            var dis = db.DiscountCodes.FirstOrDefault(c => c.Code == code);
+                            if (dis == null)
+                            {
+                                string wallet = null;
+
+                                if (!string.IsNullOrEmpty(row.Cell(5).Value.ToString()))
+                                    wallet = row.Cell(5).Value.ToString();
+
+                                UpdateRow(row.Cell(1).Value.ToString(), row.Cell(2).Value.ToString(),
+                                    row.Cell(3).Value.ToString(),
+                                    row.Cell(4).Value.ToString(),
+                                    wallet);
+                            }
                         }
                         db.SaveChanges();
                     }
@@ -118,9 +128,11 @@ namespace Khoshdast.Controllers
 
             if (user != null)
             {
-                user.Amount = Convert.ToDecimal(wallet);
-                user.LastModifiedDate=DateTime.Now;
-                
+                if (wallet != null)
+                {
+                    user.Amount = Convert.ToDecimal(wallet);
+                    user.LastModifiedDate = DateTime.Now;
+                }
 
                 decimal amountDecimal = Convert.ToDecimal(amount);
                 decimal maxAmountDecimal = Convert.ToDecimal(maxAmount);

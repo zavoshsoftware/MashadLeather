@@ -281,23 +281,23 @@ namespace MashadLeatherEcommerce.Controllers
             try
             {
 
-        
-            Guid roleid = new Guid("F145BD6B-966C-4E19-AF46-5F3B7B571C7B");
-           Models.User user = new Models.User()
-            {
-                Id = Guid.NewGuid(),
-                CellNum = cellNumber,
-                Password = pass,
-                Code = 1,
-                CreationDate = DateTime.Now,
-                IsActive = true,
-                IsDeleted = false,
-                RoleId = roleid,
-              
 
-            };
-            db.Users.Add(user);
-            db.SaveChanges();
+                Guid roleid = new Guid("F145BD6B-966C-4E19-AF46-5F3B7B571C7B");
+                Models.User user = new Models.User()
+                {
+                    Id = Guid.NewGuid(),
+                    CellNum = cellNumber,
+                    Password = pass,
+                    Code = 1,
+                    CreationDate = DateTime.Now,
+                    IsActive = true,
+                    IsDeleted = false,
+                    RoleId = roleid,
+
+
+                };
+                db.Users.Add(user);
+                db.SaveChanges();
             }
             catch (DbEntityValidationException e)
             {
@@ -314,6 +314,43 @@ namespace MashadLeatherEcommerce.Controllers
                 }
                 throw;
             }
+        }
+
+        public string ClenUpPersianCell()
+        {
+            Guid id = new Guid("0AEB583A-E4E2-44D6-92AA-39E7D2480127");
+            var users = db.Users.Where(c => c.RoleId == id && c.IsDeleted == false).ToList();
+
+            foreach (var user in users)
+            {
+                if (user.CellNum != null)
+                    user.CellNum = PersianToEnglish(user.CellNum);
+
+            }
+
+            db.SaveChanges();
+            return String.Empty;
+
+        }
+
+        public string PersianToEnglish(string persianStr)
+        {
+
+            Dictionary<string, string> LettersDictionary = new Dictionary<string, string>
+            {
+                ["۰"] = "0",
+                ["۱"] = "1",
+                ["۲"] = "2",
+                ["۳"] = "3",
+                ["۴"] = "4",
+                ["۵"] = "5",
+                ["۶"] = "6",
+                ["۷"] = "7",
+                ["۸"] = "8",
+                ["۹"] = "9"
+            };
+            return LettersDictionary.Aggregate(persianStr, (current, item) =>
+                current.Replace(item.Key, item.Value));
         }
     }
 }
