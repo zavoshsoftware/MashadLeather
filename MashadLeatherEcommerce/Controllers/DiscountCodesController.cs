@@ -17,9 +17,12 @@ namespace MashadLeatherEcommerce.Controllers
 
         [Authorize(Roles = "Administrator,SuperAdministrator,eshopadmin,operator")]
 
-        public ActionResult IndexForOprator()
+        public ActionResult IndexForOprator(string cellnumber)
         {
-            var discountCodes = db.DiscountCodes.Include(d => d.User).Where(d => d.IsDeleted == false).OrderByDescending(d => d.CreationDate);
+            if (cellnumber == null)
+                return View();
+
+            var discountCodes = db.DiscountCodes.Include(d => d.User).Where(d =>d.User.CellNum==cellnumber&& d.IsDeleted == false).OrderByDescending(d => d.CreationDate);
             return View(discountCodes.ToList());
         }
         [Authorize(Roles = "Administrator,SuperAdministrator,eshopadmin,operator")]
@@ -44,7 +47,22 @@ namespace MashadLeatherEcommerce.Controllers
             return RedirectToAction("IndexForOprator");
         }
 
-        [Authorize(Roles = "Administrator,SuperAdministrator,eshopadmin")]
+        [Authorize(Roles = "Administrator,SuperAdministrator,eshopadmin,operator")]
+
+        public ActionResult UseWaletInStore(Guid id)
+        {
+            var user = db.Users.FirstOrDefault(d => d.Id == id && d.IsDeleted == false);
+
+            if (user != null)
+            {
+                user.Amount = 0;
+
+                db.SaveChanges();
+            }
+            return RedirectToAction("IndexForOprator");
+        }
+
+        [Authorize(Roles = "Administrator,SuperAdministrator")]
 
         public ActionResult Index()
         {
@@ -52,7 +70,7 @@ namespace MashadLeatherEcommerce.Controllers
             return View(discountCodes.ToList());
         }
 
-        [Authorize(Roles = "Administrator,SuperAdministrator,eshopadmin")]
+        [Authorize(Roles = "Administrator,SuperAdministrator")]
         public ActionResult Details(Guid? id)
         {
             if (id == null)
@@ -67,7 +85,7 @@ namespace MashadLeatherEcommerce.Controllers
             return View(discountCode);
         }
 
-        [Authorize(Roles = "Administrator,SuperAdministrator,eshopadmin")]
+        [Authorize(Roles = "Administrator,SuperAdministrator")]
         public ActionResult Create()
         {
             //    ViewBag.UserId = new SelectList(db.Users, "Id", "Username");
@@ -75,7 +93,7 @@ namespace MashadLeatherEcommerce.Controllers
         }
 
 
-        [Authorize(Roles = "Administrator,SuperAdministrator,eshopadmin")]
+        [Authorize(Roles = "Administrator,SuperAdministrator")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(DiscountCodeCreateViewModel discountCodeVm)
@@ -125,7 +143,7 @@ namespace MashadLeatherEcommerce.Controllers
             return View(discountCodeVm);
         }
 
-        [Authorize(Roles = "Administrator,SuperAdministrator,eshopadmin")]
+        [Authorize(Roles = "Administrator,SuperAdministrator")]
         public ActionResult Edit(Guid? id)
         {
             if (id == null)
@@ -160,7 +178,7 @@ namespace MashadLeatherEcommerce.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "Administrator,SuperAdministrator,eshopadmin")]
+        [Authorize(Roles = "Administrator,SuperAdministrator")]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(DiscountCodeCreateViewModel discountCodeVm)
         {
@@ -209,7 +227,7 @@ namespace MashadLeatherEcommerce.Controllers
             return View(discountCodeVm);
         }
 
-        [Authorize(Roles = "Administrator,SuperAdministrator,eshopadmin")]
+        [Authorize(Roles = "Administrator,SuperAdministrator")]
         public ActionResult Delete(Guid? id)
         {
             if (id == null)
@@ -226,7 +244,7 @@ namespace MashadLeatherEcommerce.Controllers
 
         // POST: DiscountCodes/Delete/5
         [HttpPost, ActionName("Delete")]
-        [Authorize(Roles = "Administrator,SuperAdministrator,eshopadmin")]
+        [Authorize(Roles = "Administrator,SuperAdministrator")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(Guid id)
         {

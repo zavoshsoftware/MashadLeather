@@ -5433,6 +5433,7 @@
     <Content Include="Views\DiscountCodes\IndexForOprator.cshtml" />
     <Content Include="Views\Billing\FreeResult.cshtml" />
     <Content Include="Views\ExcelData\Import.cshtml" />
+    <Content Include="Views\Home\GetUserConflicted.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

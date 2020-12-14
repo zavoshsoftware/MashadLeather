@@ -51,13 +51,12 @@ namespace Khoshdast.Controllers
                         }
                         WorkSheet.FirstRow().Delete();//if you want to remove ist row
 
- 
-
                         foreach (var row in WorkSheet.RowsUsed())
                         {
                             UpdateRow(row.Cell(1).Value.ToString(), row.Cell(2).Value.ToString(),
                                  row.Cell(3).Value.ToString(),
-                                row.Cell(4).Value.ToString());
+                                row.Cell(4).Value.ToString(),
+                                row.Cell(5).Value.ToString());
                         }
                         db.SaveChanges();
                     }
@@ -106,7 +105,7 @@ namespace Khoshdast.Controllers
             }
         }
 
-        public void UpdateRow(string cellnumber, string amount, string maxAmount, string code)
+        public void UpdateRow(string cellnumber, string amount, string maxAmount, string code,string wallet)
         {
 
             User user = db.Users.FirstOrDefault(c => c.CellNum == cellnumber && c.IsDeleted == false);
@@ -119,6 +118,10 @@ namespace Khoshdast.Controllers
 
             if (user != null)
             {
+                user.Amount = Convert.ToDecimal(wallet);
+                user.LastModifiedDate=DateTime.Now;
+                
+
                 decimal amountDecimal = Convert.ToDecimal(amount);
                 decimal maxAmountDecimal = Convert.ToDecimal(maxAmount);
                 DiscountCode discountCode=new DiscountCode()

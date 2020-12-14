@@ -1,0 +1,25 @@
+﻿@model IEnumerable< MashadLeatherEcommerce.Controllers.userConflict>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GetUserConflicted</title>
+</head>
+<body>
+<div>
+	<table>
+	@foreach (var userConflict in Model)
+	{
+		<tr>
+			<td>@userConflict.Version1</td>
+			<td>@userConflict.Version2</td>
+		</tr>
+	}</table>
+</div>
+</body>
+</html>

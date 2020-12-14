@@ -20,6 +20,7 @@ ViewBag.Title = "فهرست کدهای تخفیف" ;
         columns.Bound(model => model.IsMultiUsing);
         columns.Bound(model => model.IsActive);
         columns.Bound(model => model.OperatorUsername);
+        columns.Bound(model => model.IsUsed);
 					columns.Bound(item => @item.Id).Title("دستورات").Filterable(false).Groupable(false)
 							.Template(@<text>
 									@Html.ActionLink("ویرایش", "Edit", new {id = @item.Id}, new {@class = "k-button"})

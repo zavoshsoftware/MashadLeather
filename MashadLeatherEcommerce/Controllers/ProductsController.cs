@@ -386,10 +386,10 @@ namespace MashadLeatherEcommerce.Controllers
             //List<KiyanProductItem> productList988 = GetProductFromInventory(988, ks, header);
 
             ////ونک
-              List<KiyanProductItem> productList209 = GetProductFromInventory(209, ks, header);
+           ////  List<KiyanProductItem> productList209 = GetProductFromInventory(209, ks, header);
           
             ////احمد آباد
-              List<KiyanProductItem> productList862 = GetProductFromInventory(862, ks, header);
+             //List<KiyanProductItem> productList862 = GetProductFromInventory(862, ks, header);
 
             ////کریمخان
             // List<KiyanProductItem> productList698 = GetProductFromInventory(698, ks, header);
@@ -399,8 +399,8 @@ namespace MashadLeatherEcommerce.Controllers
             ChangeChangeStatus();
 
             TransferProducts(productList616, true);
-            TransferProducts(productList209, false);
-            TransferProducts(productList862, false);
+           // TransferProducts(productList209, false);
+          //  TransferProducts(productList862, false);
             db.SaveChanges();
 
             DeleteNotChangedProducts();
@@ -461,13 +461,13 @@ namespace MashadLeatherEcommerce.Controllers
                             currentProduct.LastModifiedDate = DateTime.Now;
                             currentProduct.IsChanged = true;
                             currentProduct.IsAvailable = true;
+                            currentProduct.IsActive = true;
 
                             if (currentProduct.ParentId != null)
                             {
                                 currentProduct.Parent.IsChanged = true;
                                 currentProduct.Parent.Amount = amount;
                                 currentProduct.Parent.IsAvailable = true;
-
                             }
 
                             //اگر قبلا رنگ تعریف نشده بود و کد رنک نال ثبت شده باشد
@@ -504,7 +504,7 @@ namespace MashadLeatherEcommerce.Controllers
                                     product.ParentId = currentProduct.Id;
                                     product.IsDeleted = false;
                                     product.Priority = 100;
-                                    product.IsActive = false;
+                                    product.IsActive = true;
                                     product.CreationDate = DateTime.Now;
                                     product.LastModifiedDate = DateTime.Now;
                                     product.Taxable = item.Taxable;
@@ -559,7 +559,7 @@ namespace MashadLeatherEcommerce.Controllers
                                 product.ParentId = currentProduct.Id;
                                 product.IsDeleted = false;
                                 product.Priority = 100;
-                                product.IsActive = false;
+                                product.IsActive = true;
                                 product.CreationDate = DateTime.Now;
                                 product.LastModifiedDate = DateTime.Now;
                                 product.Taxable = item.Taxable;
@@ -596,7 +596,7 @@ namespace MashadLeatherEcommerce.Controllers
                                 product.ParentId = currentProduct.Id;
                                 product.IsDeleted = false;
                                 product.Priority = 100;
-                                product.IsActive = false;
+                                product.IsActive = true;
                                 product.CreationDate = DateTime.Now;
                                 product.LastModifiedDate = DateTime.Now;
                                 product.Taxable = item.Taxable;
@@ -636,12 +636,12 @@ namespace MashadLeatherEcommerce.Controllers
                                 foreach (Product deleteProduct in deletedProducts)
                                 {
                                     deleteProduct.IsDeleted = false;
-                                    deleteProduct.IsActive = false;
+                                    deleteProduct.IsActive = true;
                                     deleteProduct.DeletionDate = null;
                                     deleteProduct.IsChanged = true;
                                     deleteProduct.LastModifiedDate = DateTime.Now;
                                     deleteProduct.IsAvailable = true;
-
+                                    deleteProduct.Quantity = item.itmQuantity;
                                     //if (deleteProduct.ParentId != null)
                                     //{
                                     //    deleteProduct.Parent.IsChanged = true;
@@ -668,7 +668,7 @@ namespace MashadLeatherEcommerce.Controllers
                                         Id = Guid.NewGuid(),
                                         IsDeleted = false,
                                         Priority = 100,
-                                        IsActive = false,
+                                        IsActive = true,
                                         CreationDate = DateTime.Now,
                                         LastModifiedDate = DateTime.Now,
                                         Taxable = item.Taxable,
@@ -685,7 +685,7 @@ namespace MashadLeatherEcommerce.Controllers
                                     };
                                     db.Products.Add(newParent);
                                     parent = newParent;
-                                    //     db.SaveChanges();
+                                    //db.SaveChanges();
                                 }
 
                                 Guid? colorId = GetColorByBarCode(item.itmBrcd);
@@ -707,7 +707,7 @@ namespace MashadLeatherEcommerce.Controllers
                                 product.ParentId = parent.Id;
                                 product.IsDeleted = false;
                                 product.Priority = 100;
-                                product.IsActive = false;
+                                product.IsActive = true;
                                 product.CreationDate = DateTime.Now;
                                 product.LastModifiedDate = DateTime.Now;
                                 product.Taxable = item.Taxable;
@@ -753,6 +753,7 @@ namespace MashadLeatherEcommerce.Controllers
                         currentProduct.ColorId = null;
                         currentProduct.SizeId = null;
                         currentProduct.IsAvailable = true;
+                        currentProduct.IsActive = true;
                     }
                     else
                     {
@@ -761,10 +762,14 @@ namespace MashadLeatherEcommerce.Controllers
                         if (deleteProduct != null)
                         {
                             deleteProduct.IsDeleted = false;
-                            deleteProduct.IsActive = false;
+                            deleteProduct.IsActive = true;
                             deleteProduct.DeletionDate = null;
                             deleteProduct.IsChanged = true;
                             deleteProduct.IsAvailable = true;
+                            if (isFirstInventory)
+                                deleteProduct.Quantity = deleteProduct.Quantity;
+                            else
+                                deleteProduct.Quantity += deleteProduct.Quantity;
                         }
 
                         else
@@ -774,7 +779,7 @@ namespace MashadLeatherEcommerce.Controllers
                                 Id = Guid.NewGuid(),
                                 IsDeleted = false,
                                 Priority = 100,
-                                IsActive = false,
+                                IsActive = true,
                                 CreationDate = DateTime.Now,
                                 LastModifiedDate = DateTime.Now,
                                 Taxable = item.Taxable,
@@ -789,7 +794,7 @@ namespace MashadLeatherEcommerce.Controllers
                                 IsChanged = true,
                                 ColorId = null,
                                 SizeId = null,
-                                IsAvailable = true
+                                IsAvailable = true,
                             };
                             db.Products.Add(oProduct);
                         }
@@ -1019,7 +1024,7 @@ namespace MashadLeatherEcommerce.Controllers
                 return RedirectPermanent("/category");
 
             List<Product> products = db.Products
-                .Where(current => current.ImageUrl != null && current.IsDeleted == false &&
+                .Where(current => current.ImageUrl != null && current.IsDeleted == false && current.IsActive &&
                                   current.ParentId == null && current.ProductCategoryId == productCategory.Id).ToList();
 
             ViewBag.total = products.Count();

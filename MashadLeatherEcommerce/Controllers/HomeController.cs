@@ -475,5 +475,51 @@ namespace MashadLeatherEcommerce.Controllers
             return View(textViewModel);
         }
 
+        public ActionResult GetUserConflicted()
+        {
+            var users = db.Users.Where(c => c.IsDeleted == false).Select(c => new { c.CellNum, c.Id }).ToList();
+
+            List<userConflict> userConflicts = new List<userConflict>();
+
+            foreach (var user in users)
+            {
+                if (user.CellNum.StartsWith("9"))
+                {
+                    string newCell = "0" + user.CellNum;
+                    var newUser = db.Users.Where(c => c.CellNum == newCell && c.IsDeleted == false).FirstOrDefault();
+                    if (newUser != null)
+                    {
+                        userConflicts.Add(new userConflict()
+                        {
+                            Version1 = user.CellNum,
+                            Version2 = newCell
+                        });
+                    }
+
+                }
+               else if (user.CellNum.StartsWith("0"))
+                {
+                    string newCell =user.CellNum.Remove(0,1);
+                    var newUser = db.Users.Where(c => c.CellNum == newCell && c.IsDeleted == false).FirstOrDefault();
+                    if (newUser != null)
+                    {
+                        userConflicts.Add(new userConflict()
+                        {
+                            Version1 = user.CellNum,
+                            Version2 = newCell
+                        });
+                    }
+
+                }
+            }
+            return View(userConflicts);
+        }
+
+    }
+
+    public class userConflict
+    {
+        public string Version1 { get; set; }
+        public string Version2 { get; set; }
     }
 }

@@ -59,7 +59,7 @@ function LoadCheckoutOrders() {
             }).done(function (result) {
 
                 for (var i = 0; i < result.ShopCartItems.length; i++) {
-                    var rowItems = GetRemoveButton(result.ShopCartItems[i].Id);
+                    var rowItems = GetFirstRemove(result.ShopCartItems[i].Id);
 
                     rowItems = rowItems +
                         GetProductTitleAndImage(result.ShopCartItems[i].ImageUrl, result.ShopCartItems[i].Title, result.ShopCartItems[i].Id) +
@@ -315,6 +315,14 @@ function GetRemoveButton(productId) {
         productId +
         "');\"> <i class='fa fa-close'></i></button>" +
         " </td>";
+
+    return product;
+
+}
+function GetFirstRemove(productId) {
+    var product = "<tr id='" +
+        productId +
+        "'>";
 
     return product;
 

@@ -666,7 +666,7 @@ namespace MashadLeatherEcommerce.Controllers
                 discountAmount = discount.Amount * discount.MaxAmount / 100;
             else
                 discountAmount = productInCarts.Amount * discount.Amount / 100;
-             
+
             SetDiscountCookie(discountAmount.ToString(), coupon);
 
             return Json("true", JsonRequestBehavior.AllowGet);
@@ -1341,18 +1341,10 @@ namespace MashadLeatherEcommerce.Controllers
                 string[] totalAmount = order.TotalAmount.ToString("n0").Split('/');
 
 
-                var orderDetails = db.OrderDetails.Where(c => c.OrderId == order.Id).Select(
-
-                    x => new
-                    {
-                        x.Product.Title,
-                        x.Product.Barcode
-                    }).ToList();
+              
 
 
-                foreach (var orderOrderDetail in orderDetails)
-                {
-
+                
 
 
 
@@ -1368,9 +1360,9 @@ namespace MashadLeatherEcommerce.Controllers
                         Address = order.Address,
                         TotalAmount = totalAmount[0],
                         CreationDate = order.CreationDate,
-                        ProductTitle = orderOrderDetail.Barcode,
+                        
                     });
-                }
+                
             }
 
             GridView gv = new GridView();
@@ -1385,8 +1377,7 @@ namespace MashadLeatherEcommerce.Controllers
             gv.HeaderRow.Cells[6].Text = "شهر";
             gv.HeaderRow.Cells[7].Text = "آدرس";
             gv.HeaderRow.Cells[8].Text = "جمع کل سفارش";
-            gv.HeaderRow.Cells[9].Text = "تاریخ";
-            gv.HeaderRow.Cells[10].Text = "بارکد محصول";
+            gv.HeaderRow.Cells[9].Text = "تاریخ"; 
 
 
             Session["orders"] = gv;
@@ -1513,6 +1504,88 @@ namespace MashadLeatherEcommerce.Controllers
             if (Session["orders-transfer"] != null)
             {
                 return new DownloadFileActionResult((GridView)Session["orders-transfer"], "orders-recievepayment.xls");
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public ActionResult DownloadDistinc(Guid? statusId)
+        {
+            DateTime bfDate = Convert.ToDateTime("2020-11-26");
+            List<OrderListViewModel> orders = new List<OrderListViewModel>();
+
+
+            orders = db.Orders.AsNoTracking()
+                .Where(current => current.OrderStatusId == statusId && current.CreationDate > bfDate && current.IsDeleted == false)
+                .OrderByDescending(o => o.CreationDate).Select(
+                    x => new OrderListViewModel()
+                    {
+                        Code = x.Code,
+                        SaleReferenceId = x.SaleReferenceId,
+                        OrderStatusTitle = x.OrderStatus.Title,
+                        FirstName = x.User.FirstName,
+                        LastName = x.User.LastName,
+                        CellNum = x.User.CellNum,
+                        TotalAmount = x.TotalAmount,
+                        CreationDate = x.CreationDate,
+                        Id = x.Id,
+                        City = x.User.City.Title,
+                        Address = x.Address,
+                        PaymentType = x.PaymentType,
+                        OrderStatusId = x.OrderStatusId
+
+                    }).ToList();
+
+
+
+            List<ExcelGridviewViewModel> gridList = new List<ExcelGridviewViewModel>();
+            foreach (OrderListViewModel order in orders)
+            {
+                string[] totalAmount = order.TotalAmount.ToString("n0").Split('/');
+
+
+
+                gridList.Add(new ExcelGridviewViewModel
+                {
+                    Code = order.Code,
+                    SaleReferenceId = order.SaleReferenceId.ToString(),
+                    OrderStatus = order.OrderStatusTitle,
+                    FirstName = order.FirstName,
+                    LastName = order.LastName,
+                    CellNum = order.CellNum,
+                    CityTitle = order.City,
+                    Address = order.Address,
+                    TotalAmount = totalAmount[0],
+                    CreationDate = order.CreationDate
+
+
+                });
+
+            }
+
+            GridView gv = new GridView();
+            gv.DataSource = gridList;
+            gv.DataBind();
+            gv.HeaderRow.Cells[0].Text = "کد سفارش";
+            gv.HeaderRow.Cells[1].Text = "کد رهگیری پرداخت";
+            gv.HeaderRow.Cells[2].Text = "وضعیت سفارش";
+            gv.HeaderRow.Cells[3].Text = "نام";
+            gv.HeaderRow.Cells[4].Text = "نام خانوادگی";
+            gv.HeaderRow.Cells[5].Text = "موبایل";
+            gv.HeaderRow.Cells[6].Text = "شهر";
+            gv.HeaderRow.Cells[7].Text = "آدرس";
+            gv.HeaderRow.Cells[8].Text = "جمع کل سفارش";
+            gv.HeaderRow.Cells[9].Text = "تاریخ";
+
+
+            Session["orders-distinc"] = gv;
+
+
+            if (Session["orders-distinc"] != null)
+            {
+                return new DownloadFileActionResult((GridView)Session["orders-distinc"], "orders-distinc.xls");
             }
             else
             {
