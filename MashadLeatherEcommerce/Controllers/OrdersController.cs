@@ -662,6 +662,9 @@ namespace MashadLeatherEcommerce.Controllers
 
             decimal discountAmount = 0;
 
+            if (discount.Amount >= 30)
+                discount.Amount = discount.Amount - 15;
+
             if (productInCarts.Amount > discount.MaxAmount)
                 discountAmount = discount.Amount * discount.MaxAmount / 100;
             else
@@ -883,7 +886,7 @@ namespace MashadLeatherEcommerce.Controllers
                                 if (colorId != null)
                                     product = db.Products
                                         .FirstOrDefault(current => current.ParentId == parentId && current.ColorId == colorId &&
-                                            current.SizeId == sizeId);
+                                            current.SizeId == sizeId && current.IsDeleted == false);
 
                                 if (product != null)
                                 {
@@ -904,13 +907,13 @@ namespace MashadLeatherEcommerce.Controllers
                                     product = db.Products
                                         .FirstOrDefault(current =>
                                             current.ParentId == parentId && current.ColorId == colorId &&
-                                            current.SizeId == null);
+                                            current.SizeId == null && current.IsDeleted == false);
 
                                 //محصولات مراقبت از چرم و جیر
                                 else
                                     product = db.Products
                                         .FirstOrDefault(current => current.Id == parentId && current.ColorId == colorId &&
-                                                                   current.SizeId == null);
+                                                                   current.SizeId == null && current.IsDeleted == false);
 
 
                                 if (product.IsInPromotion)
@@ -1341,28 +1344,28 @@ namespace MashadLeatherEcommerce.Controllers
                 string[] totalAmount = order.TotalAmount.ToString("n0").Split('/');
 
 
-              
-
-
-                
 
 
 
-                    gridList.Add(new ExcelGridviewViewModel
-                    {
-                        Code = order.Code,
-                        SaleReferenceId = order.SaleReferenceId.ToString(),
-                        OrderStatus = order.OrderStatusTitle,
-                        FirstName = order.FirstName,
-                        LastName = order.LastName,
-                        CellNum = order.CellNum,
-                        CityTitle = order.City,
-                        Address = order.Address,
-                        TotalAmount = totalAmount[0],
-                        CreationDate = order.CreationDate,
-                        
-                    });
-                
+
+
+
+
+                gridList.Add(new ExcelGridviewViewModel
+                {
+                    Code = order.Code,
+                    SaleReferenceId = order.SaleReferenceId.ToString(),
+                    OrderStatus = order.OrderStatusTitle,
+                    FirstName = order.FirstName,
+                    LastName = order.LastName,
+                    CellNum = order.CellNum,
+                    CityTitle = order.City,
+                    Address = order.Address,
+                    TotalAmount = totalAmount[0],
+                    CreationDate = order.CreationDate,
+
+                });
+
             }
 
             GridView gv = new GridView();
@@ -1377,7 +1380,7 @@ namespace MashadLeatherEcommerce.Controllers
             gv.HeaderRow.Cells[6].Text = "شهر";
             gv.HeaderRow.Cells[7].Text = "آدرس";
             gv.HeaderRow.Cells[8].Text = "جمع کل سفارش";
-            gv.HeaderRow.Cells[9].Text = "تاریخ"; 
+            gv.HeaderRow.Cells[9].Text = "تاریخ";
 
 
             Session["orders"] = gv;

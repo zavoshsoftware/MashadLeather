@@ -29,11 +29,11 @@ namespace MashadLeatherEcommerce.Controllers
             {
                 UpdateProductsCode();
 
-                products = db.Products.Include(p => p.ProductCategory).Where(p => p.IsDeleted == false).OrderBy(p => p.Priority).ToList();
+                products = db.Products.Where(p => p.IsDeleted == false).OrderBy(p => p.Priority).ToList();
             }
             else
             {
-                products = db.Products.Include(p => p.ProductCategory).Where(p => p.IsDeleted == false && p.ParentId == id).OrderBy(p => p.Priority).ToList();
+                products = db.Products.Where(p => p.IsDeleted == false && p.ParentId == id).OrderBy(p => p.Priority).ToList();
                 ViewBag.Id = id;
                 ViewBag.ParentId = id.Value;
             }
@@ -397,6 +397,12 @@ namespace MashadLeatherEcommerce.Controllers
             // //ولیعصر
             // List<KiyanProductItem> productList290 = GetProductFromInventory(290, ks, header);
             ChangeChangeStatus();
+            var aaa = productList616.FirstOrDefault(c => c.itmBrcd == "S0012S0743011604Z001");
+
+            if (aaa != null)
+            {
+                string bbb = aaa.itmQuantity.ToString();
+            }
 
             TransferProducts(productList616, true);
            // TransferProducts(productList209, false);
@@ -406,6 +412,32 @@ namespace MashadLeatherEcommerce.Controllers
             DeleteNotChangedProducts();
         }
 
+        //public string RemoveDuplicated()
+        //{
+        //    List<Product> products = db.Products.Where(c => c.IsDeleted == false).ToList();
+
+        //    foreach (Product product in products)
+        //    {
+        //        List<Product> dupProductss =
+        //            products.Where(c => c.Barcode == product.Barcode && c.Id != product.Id).ToList();
+
+        //        if (dupProductss.Any())
+        //        {
+        //            foreach (Product product1 in dupProductss)
+        //            {
+        //                product1.IsDeleted = true;
+        //                product1.DeletionDate=DateTime.Now;
+        //                product1.LastModifiedDate=DateTime.Now;
+
+        //                db.SaveChanges();
+                        
+        //            }
+        //            products = db.Products.Where(c => c.IsDeleted == false).ToList();
+        //        }
+        //    }
+
+        //    return  String.Empty;
+        //}
         public void ResolveDuplicateProduct()
         {
 

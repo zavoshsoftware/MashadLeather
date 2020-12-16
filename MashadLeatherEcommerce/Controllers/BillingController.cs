@@ -333,6 +333,18 @@ namespace MashadLeatherEcommerce.Controllers
 
                     pro.LastModifiedDate = DateTime.Now;
 
+                    var otherProductWithSameBarcode = db.Products
+                        .Where(c => c.Barcode == pro.Barcode && c.IsDeleted == false && c.Id != pro.Id).ToList();
+
+                    foreach (Product product in otherProductWithSameBarcode)
+                    {
+                        product.Quantity = product.Quantity - orderDetail.Quantity;
+
+                        if (product.Quantity <= 0)
+                            product.IsAvailable = false;
+
+                        product.LastModifiedDate = DateTime.Now;
+                    }
                 }
             }
 

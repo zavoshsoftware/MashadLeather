@@ -15,6 +15,7 @@ namespace Models
         {
             Orders = new List<Order>();
         }
+
         [Display(Name = "کد تخفیف")]
         [Required(ErrorMessage = "لطفا {0} را وارد نمایید.")]
         [StringLength(50, ErrorMessage = "طول {0} نباید بیشتر از {1} باشد")]
@@ -30,6 +31,9 @@ namespace Models
         [Display(Name = "درصد تخفیف")]
         [Required(ErrorMessage = "لطفا {0} را وارد نمایید.")]
         public decimal Amount { get; set; }
+
+
+
 
         [Display(Name = "حداکثر مبلغ سفارش")]
         [Required(ErrorMessage = "لطفا {0} را وارد نمایید.")]
@@ -66,8 +70,27 @@ namespace Models
         [NotMapped]
         public string AmountStr => Amount.ToString("N0");
 
+        [Display(Name = "درصد تخفیف")]
+        [NotMapped]
+        public string AmountStr2 => (Amount + 15).ToString("N0");
+
         [Display(Name = "حداکثر مقدار تخفیف")]
         [NotMapped]
         public string MaxAmountStr => MaxAmount.ToString("N0");
+
+
+        //[NotMapped]
+        //[Display(Name = "درصد تخفیف")]
+        //[Required(ErrorMessage = "لطفا {0} را وارد نمایید.")]
+        //public decimal? ShowOperatorAmount
+        //{
+        //    get
+        //    {
+        //        if (Amount<30)
+        //            return Amount;
+        //        else
+        //            return Amount-15;
+        //    }
+        //}
     }
 }

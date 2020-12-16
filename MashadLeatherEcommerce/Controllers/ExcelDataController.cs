@@ -61,6 +61,8 @@ namespace Khoshdast.Controllers
 
                                 if (!string.IsNullOrEmpty(row.Cell(5).Value.ToString()))
                                     wallet = row.Cell(5).Value.ToString();
+                                else
+                                    wallet = "0";
 
                                 UpdateRow(row.Cell(1).Value.ToString(), row.Cell(2).Value.ToString(),
                                     row.Cell(3).Value.ToString(),
