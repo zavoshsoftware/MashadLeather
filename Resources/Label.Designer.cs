@@ -457,7 +457,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ارسال رایگان به سراسر ایران.
+        ///   Looks up a localized string similar to ارسال رایگان به سراسر ایران برای خریدهای بالای 300 هزار تومان.
         /// </summary>
         public static string FreeShipping {
             get {

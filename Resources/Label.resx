@@ -193,7 +193,7 @@
     <value>نام</value>
   </data>
   <data name="FreeShipping" xml:space="preserve">
-    <value>ارسال رایگان به سراسر ایران</value>
+    <value>ارسال رایگان به سراسر ایران برای خریدهای بالای 300 هزار تومان</value>
   </data>
   <data name="FreeShippingDesc" xml:space="preserve">
     <value>برای تمام سفارشات</value>

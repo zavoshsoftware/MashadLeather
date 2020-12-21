@@ -662,8 +662,8 @@ namespace MashadLeatherEcommerce.Controllers
 
             decimal discountAmount = 0;
 
-            if (discount.Amount >= 30)
-                discount.Amount = discount.Amount - 15;
+            //if (discount.Amount >= 30)
+            //    discount.Amount = discount.Amount - 15;
 
             if (productInCarts.Amount > discount.MaxAmount)
                 discountAmount = discount.Amount * discount.MaxAmount / 100;
