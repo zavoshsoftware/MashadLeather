@@ -263,12 +263,21 @@ function removeOrderDetail(productId) {
             }
         }
         localStorage.setItem("basket", newStorage);
-        setBasketCount();
-        LoadOrders();
+        deleteCookie('mashadleather-discount');
+        location.reload();
+
+        //setBasketCount();
+        //LoadOrders();
+  
     }
 
 
 }
+
+function deleteCookie(name) {
+    setCookie(name, "", null, null, null, 1);
+}
+
 function UpdateBasket() {
     $('.loading-fuulpage').css('display', 'block');
 
@@ -305,6 +314,7 @@ function UpdateBasket() {
 
     LoadOrders();
     $('#btnUpdateBasket').css('display', 'block');
+    deleteCookie('mashadleather-discount');
 
 }
 function GetRemoveButton(productId) {
@@ -829,6 +839,9 @@ function addDiscountCode() {
 
 
 function removeDiscountCookie() {
-    document.cookie = "mashadleather-discount= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
+    removeDiscountCookieAction();
     location.reload();
+}
+function removeDiscountCookieAction() {
+    document.cookie = "mashadleather-discount= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
 }

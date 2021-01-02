@@ -397,12 +397,12 @@ namespace MashadLeatherEcommerce.Controllers
             // //ولیعصر
             // List<KiyanProductItem> productList290 = GetProductFromInventory(290, ks, header);
             ChangeChangeStatus();
-            var aaa = productList616.FirstOrDefault(c => c.itmBrcd == "S0012S0743011604Z001");
+            //var aaa = productList616.FirstOrDefault(c => c.itmBrcd == "S0012S0743011604Z001");
 
-            if (aaa != null)
-            {
-                string bbb = aaa.itmQuantity.ToString();
-            }
+            //if (aaa != null)
+            //{
+            //    string bbb = aaa.itmQuantity.ToString();
+            //}
 
             TransferProducts(productList616, true);
            // TransferProducts(productList209, false);
@@ -1289,7 +1289,7 @@ namespace MashadLeatherEcommerce.Controllers
             List<Size> sizes = new List<Size>();
             if (IsProductSizable(code))
             {
-                List<Product> products = db.Products.Where(current => current.ParentId == product.Id && current.IsDeleted == false).OrderBy(current => current.Size.Title).ToList();
+                List<Product> products = db.Products.Where(current => current.ParentId == product.Id&&current.Quantity>0 && current.IsDeleted == false).OrderBy(current => current.Size.Title).ToList();
 
                 foreach (Product productItem in products)
                 {
@@ -1311,7 +1311,7 @@ namespace MashadLeatherEcommerce.Controllers
         {
             List<ProductColor> colors = new List<ProductColor>();
 
-            List<Product> products = db.Products.Where(current => current.ParentId == productId && current.IsDeleted == false).ToList();
+            List<Product> products = db.Products.Where(current => current.ParentId == productId&&current.Quantity>0 && current.IsDeleted == false).ToList();
 
             foreach (Product product in products)
             {
