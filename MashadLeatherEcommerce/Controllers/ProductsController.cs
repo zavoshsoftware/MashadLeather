@@ -329,7 +329,7 @@ namespace MashadLeatherEcommerce.Controllers
 
         public Guid? GetSizeByBarCode(string itmBrcd)
         {
-          
+
             string title = itmBrcd.Substring(10, 2);
 
             string barCodeProductGroup = itmBrcd.Substring(5, 1);
@@ -386,10 +386,10 @@ namespace MashadLeatherEcommerce.Controllers
             //List<KiyanProductItem> productList988 = GetProductFromInventory(988, ks, header);
 
             ////ونک
-           ////  List<KiyanProductItem> productList209 = GetProductFromInventory(209, ks, header);
-          
+            ////  List<KiyanProductItem> productList209 = GetProductFromInventory(209, ks, header);
+
             ////احمد آباد
-             //List<KiyanProductItem> productList862 = GetProductFromInventory(862, ks, header);
+            //List<KiyanProductItem> productList862 = GetProductFromInventory(862, ks, header);
 
             ////کریمخان
             // List<KiyanProductItem> productList698 = GetProductFromInventory(698, ks, header);
@@ -405,8 +405,8 @@ namespace MashadLeatherEcommerce.Controllers
             //}
 
             TransferProducts(productList616, true);
-           // TransferProducts(productList209, false);
-          //  TransferProducts(productList862, false);
+            // TransferProducts(productList209, false);
+            //  TransferProducts(productList862, false);
             db.SaveChanges();
 
             DeleteNotChangedProducts();
@@ -430,7 +430,7 @@ namespace MashadLeatherEcommerce.Controllers
         //                product1.LastModifiedDate=DateTime.Now;
 
         //                db.SaveChanges();
-                        
+
         //            }
         //            products = db.Products.Where(c => c.IsDeleted == false).ToList();
         //        }
@@ -840,10 +840,11 @@ namespace MashadLeatherEcommerce.Controllers
             List<KiyanProductItem> productList = new List<KiyanProductItem>();
             header.TokenAUT = "Charm@#$568";
             //var list = ks.GetItemListWithinventoryID(header, inventoryId);
-            var list = ks.GetItemListWithinventoryID(header,new AuthUser(), inventoryId);
+            var list = ks.GetItemListWithinventoryID(header, new AuthUser(), inventoryId);
 
 
-            InsertIntoKiyanLog(list.ResponseResult.Length, inventoryId);
+            if (list.ResponseResult != null)
+                InsertIntoKiyanLog(list.ResponseResult.Length, inventoryId);
 
             foreach (var item in list.ResponseResult)
             {
@@ -1289,7 +1290,7 @@ namespace MashadLeatherEcommerce.Controllers
             List<Size> sizes = new List<Size>();
             if (IsProductSizable(code))
             {
-                List<Product> products = db.Products.Where(current => current.ParentId == product.Id&&current.Quantity>0 && current.IsDeleted == false).OrderBy(current => current.Size.Title).ToList();
+                List<Product> products = db.Products.Where(current => current.ParentId == product.Id && current.Quantity > 0 && current.IsDeleted == false).OrderBy(current => current.Size.Title).ToList();
 
                 foreach (Product productItem in products)
                 {
@@ -1311,7 +1312,7 @@ namespace MashadLeatherEcommerce.Controllers
         {
             List<ProductColor> colors = new List<ProductColor>();
 
-            List<Product> products = db.Products.Where(current => current.ParentId == productId&&current.Quantity>0 && current.IsDeleted == false).ToList();
+            List<Product> products = db.Products.Where(current => current.ParentId == productId && current.Quantity > 0 && current.IsDeleted == false).ToList();
 
             foreach (Product product in products)
             {
@@ -1700,8 +1701,8 @@ namespace MashadLeatherEcommerce.Controllers
             ValidationSoapHeader header = kiyan.ConnectToService();
 
             //ورودی مربوط به ای دی فروشگاه مهم نیست چه عددی باشد
-           // var pro = ks.GetPromotions(header, 616);
-            var pro = ks.GetPromotions(header,new AuthUser(), 616);
+            // var pro = ks.GetPromotions(header, 616);
+            var pro = ks.GetPromotions(header, new AuthUser(), 616);
 
             int promotionIndex = 0;
 

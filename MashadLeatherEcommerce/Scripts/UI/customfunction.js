@@ -803,29 +803,34 @@ function addDiscountCode() {
             {
                 url: "/Orders/DiscountRequestPost",
                 data: { coupon: coupon, jsonVar: jsondata },
-                type: "GET"
-            }).done(function (result) {
-                if (result !== "Invald" && result !== "Used" && result !== "Expired" && result !== "usererror") {
-                    location.reload();
+                type: "POST",
+                success: function (result) {
+                    if (result !== "Invald" && result !== "Used" && result !== "Expired" && result !== "usererror" && result !== "promotionProduct") {
+                        location.reload();
+                    }
+                    else if (result !== true) {
+                        $('#errorDiv-discount').css('display', 'block');
+                        if (result.toLowerCase() === "used") {
+                            $('#errorDiv-discount').html("این کد تخفیف قبلا استفاده شده است.");
+                        }
+                        else if (result.toLowerCase() === "usererror") {
+                            $('#errorDiv-discount').html("این کد برای شما معتبر نمی باشد.");
+                        } else if (result.toLowerCase() === "expired") {
+                            $('#errorDiv-discount').html("کد تخفیف وارد شده منقضی شده است.");
+                        }
+                        else if (result.toLowerCase() === "invald") {
+                            $('#errorDiv-discount').html("کد تخفیف وارد شده معتبر نمی باشد.");
+                        }
+                        else if (result.toLowerCase() === "promotionproduct") {
+                            $('#errorDiv-discount').html("با توجه به اینکه در سبد خرید شما محصولاتی دارای تخفیف وجود دارد، نمی توانید از کد تخفیف استفاده کنید.");
+                        }
+                        else if (result.toLowerCase() === "true") {
+                            $('#SuccessDiv-discount').css('display', 'block');
+                            $('#errorDiv-discount').css('display', 'none');
+                        }
+                    }
                 }
-                else if (result !== true) {
-                    $('#errorDiv-discount').css('display', 'block');
-                    if (result.toLowerCase() === "used") {
-                        $('#errorDiv-discount').html("این کد تخفیف قبلا استفاده شده است.");
-                    }
-                    else if (result.toLowerCase() === "usererror") {
-                        $('#errorDiv-discount').html("این کد برای شما معتبر نمی باشد.");
-                    } else if (result.toLowerCase() === "expired") {
-                        $('#errorDiv-discount').html("کد تخفیف وارد شده منقضی شده است.");
-                    }
-                    else if (result.toLowerCase() === "invald") {
-                        $('#errorDiv-discount').html("کد تخفیف وارد شده معتبر نمی باشد.");
-                    }
-                    else if (result.toLowerCase() === "true") {
-                        $('#SuccessDiv-discount').css('display', 'block');
-                        $('#errorDiv-discount').css('display', 'none');
-                    }
-                }
+            
             });
 
     } else {

@@ -649,30 +649,44 @@ namespace MashadLeatherEcommerce.Controllers
 
 
         [AllowAnonymous]
+        [HttpPost]
         public ActionResult DiscountRequestPost(string coupon, string jsonVar)
         {
-            DiscountCode discount = db.DiscountCodes.FirstOrDefault(current => current.Code == coupon);
+            try
+            {
 
-            string result = CheckCouponValidation(discount);
 
-            if (result != "true")
-                return Json(result, JsonRequestBehavior.AllowGet);
+                ShopCartList productInCarts = GetShoppingCartInfo(jsonVar);
 
-            ShopCartList productInCarts = GetShoppingCartInfo(jsonVar);
 
-            decimal discountAmount = 0;
+                DiscountCode discount = db.DiscountCodes.FirstOrDefault(current => current.Code == coupon);
 
-            //if (discount.Amount >= 30)
-            //    discount.Amount = discount.Amount - 15;
+                string result = CheckCouponValidation(discount, productInCarts);
 
-            if (productInCarts.Amount > discount.MaxAmount)
-                discountAmount = discount.Amount * discount.MaxAmount / 100;
-            else
-                discountAmount = productInCarts.Amount * discount.Amount / 100;
+                if (result != "true")
+                    return Json(result, JsonRequestBehavior.AllowGet);
 
-            SetDiscountCookie(discountAmount.ToString(), coupon);
 
-            return Json("true", JsonRequestBehavior.AllowGet);
+                decimal discountAmount = 0;
+
+                //if (discount.Amount >= 30)
+                //    discount.Amount = discount.Amount - 15;
+
+                if (productInCarts.Amount > discount.MaxAmount)
+                    discountAmount = discount.Amount * discount.MaxAmount / 100;
+                else
+                    discountAmount = productInCarts.Amount * discount.Amount / 100;
+
+                SetDiscountCookie(discountAmount.ToString(), coupon);
+
+                return Json("true", JsonRequestBehavior.AllowGet);
+
+            }
+            catch (Exception e)
+            {
+                return Json("true", JsonRequestBehavior.AllowGet);
+                throw;
+            }
         }
 
         public void SetDiscountCookie(string discountAmount, string discountCode)
@@ -704,7 +718,7 @@ namespace MashadLeatherEcommerce.Controllers
         }
 
         [AllowAnonymous]
-        public string CheckCouponValidation(DiscountCode discount)
+        public string CheckCouponValidation(DiscountCode discount, ShopCartList productInCarts)
         {
             var identity = (System.Security.Claims.ClaimsIdentity)User.Identity;
             string id = identity.FindFirst(System.Security.Claims.ClaimTypes.Name).Value;
@@ -726,9 +740,35 @@ namespace MashadLeatherEcommerce.Controllers
             if (discount.ExpireDate < DateTime.Today)
                 return "Expired";
 
-            return "true";
+            string res = "true";
+            res= CheckPromotionOnDiscountCode(productInCarts);
+
+            return res;
         }
 
+        public string CheckPromotionOnDiscountCode(ShopCartList productInCarts)
+        {
+            bool isPromotion = false;
+
+            foreach (var product in productInCarts.ShopCartItems)
+            {
+                Guid proId = new Guid(product.Id);
+
+                var pro = db.Products.FirstOrDefault(c =>
+                    c.Id == proId && c.IsInPromotion );
+
+                if (pro != null)
+                {
+                    isPromotion = true;
+                    break;
+                }
+            }
+
+            if (isPromotion)
+                return "promotionProduct";
+
+            return "true";
+        }
         public string GetSizeTitle(string sizeId)
         {
             if (sizeId == "nosize")

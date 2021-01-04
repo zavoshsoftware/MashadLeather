@@ -29,12 +29,12 @@ namespace MashadLeatherEcommerce
             //Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
             //Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
 
-            Thread.CurrentThread.CurrentCulture = new CultureInfo("ar-AE");
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo("ar-AE");
+            //Thread.CurrentThread.CurrentCulture = new CultureInfo("ar-AE");
+            //Thread.CurrentThread.CurrentUICulture = new CultureInfo("ar-AE");
 
-            //var persianCulture = new PersianCulture();
-            //Thread.CurrentThread.CurrentCulture = persianCulture;
-            //Thread.CurrentThread.CurrentUICulture = persianCulture;
+            var persianCulture = new PersianCulture();
+            Thread.CurrentThread.CurrentCulture = persianCulture;
+            Thread.CurrentThread.CurrentUICulture = persianCulture;
         }
     }
 }
