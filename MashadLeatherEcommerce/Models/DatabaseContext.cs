@@ -59,7 +59,7 @@ namespace Models
         public DbSet<Configuration> Configurations { get; set; }
         public DbSet<DiscountCode> DiscountCodes { get; set; }
         public DbSet<PaymentFreeCode> PaymentFreeCodes { get; set; }
-
+        public DbSet<UserInformation> UserInformations { get; set; }
     }
 
 }

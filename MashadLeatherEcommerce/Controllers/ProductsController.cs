@@ -24,21 +24,24 @@ namespace MashadLeatherEcommerce.Controllers
         [Authorize(Roles = "Administrator,SuperAdministrator,eshopadmin")]
         public ActionResult Index(Guid? id)
         {
-            List<Product> products = new List<Product>();
+            // List<Product> products = new List<Product>();
             if (!id.HasValue)
             {
+                db.Products.AsNoTracking();
                 UpdateProductsCode();
 
-                products = db.Products.Where(p => p.IsDeleted == false).OrderBy(p => p.Priority).ToList();
+                var products = db.Products.Where(p => p.IsDeleted == false).OrderBy(p => p.Priority);
+                return View(products);
             }
             else
             {
-                products = db.Products.Where(p => p.IsDeleted == false && p.ParentId == id).OrderBy(p => p.Priority).ToList();
+                var products = db.Products.Where(p => p.IsDeleted == false && p.ParentId == id).OrderBy(p => p.Priority).ToList();
                 ViewBag.Id = id;
                 ViewBag.ParentId = id.Value;
+                return View(products);
+
             }
 
-            return View(products.ToList());
         }
 
         //internal class ListViewModel<T>
@@ -394,8 +397,8 @@ namespace MashadLeatherEcommerce.Controllers
             ////کریمخان
             // List<KiyanProductItem> productList698 = GetProductFromInventory(698, ks, header);
 
-            // //ولیعصر
-            // List<KiyanProductItem> productList290 = GetProductFromInventory(290, ks, header);
+            //ولیعصر
+            List<KiyanProductItem> productList290 = GetProductFromInventory(290, ks, header);
             ChangeChangeStatus();
             //var aaa = productList616.FirstOrDefault(c => c.itmBrcd == "S0012S0743011604Z001");
 
@@ -405,7 +408,7 @@ namespace MashadLeatherEcommerce.Controllers
             //}
 
             TransferProducts(productList616, true);
-            // TransferProducts(productList209, false);
+             TransferProducts(productList290, false);
             //  TransferProducts(productList862, false);
             db.SaveChanges();
 
@@ -1056,7 +1059,7 @@ namespace MashadLeatherEcommerce.Controllers
             if (productCategory == null)
                 return RedirectPermanent("/category");
 
-            List<Product> products = db.Products
+            var products = db.Products
                 .Where(current => current.ImageUrl != null && current.IsDeleted == false && current.IsActive &&
                                   current.ParentId == null && current.ProductCategoryId == productCategory.Id).ToList();
 
@@ -1071,6 +1074,34 @@ namespace MashadLeatherEcommerce.Controllers
                 Commnets = db.Comments.Where(c => c.ProductCategoryId == productCategory.Id && c.IsActive && c.IsDeleted == false && c.ParentId == null).ToList()
                 ,
                 BreadcrumpItems = GetProductCategoryBreadcrump(productCategory),
+                CurrentCurrency = oGetCurrency.CurrentCurrency()
+            };
+
+            return View(productList);
+        }
+
+        [AllowAnonymous]
+        [Route("promotion")]
+        public ActionResult PromotionList()
+        {
+            Helper.BaseViewModelHelper baseViewModelHelper = new BaseViewModelHelper();
+
+
+            var products = db.Products
+                .Where(current => current.ImageUrl != null && current.IsInPromotion && current.IsDeleted == false && current.IsActive &&
+                                  current.ParentId == null).ToList();
+
+ 
+            ViewBag.total = products.Count();
+
+            ProductListViewModel productList = new ProductListViewModel
+            {
+                MenuItem = baseViewModelHelper.GetMenuItems(),
+                Products = GetProductList(products).OrderByDescending(c => c.IsAvailable).ToList(),
+                MenuGalleryGroups = baseViewModelHelper.GetMenuGalleryGroups(),
+                //ProductCategory = GetProductCategory(productCategory),
+                //Commnets = db.Comments.Where(c => c.ProductCategoryId == productCategory.Id && c.IsActive && c.IsDeleted == false && c.ParentId == null).ToList(),
+                //BreadcrumpItems = GetProductCategoryBreadcrump(productCategory),
                 CurrentCurrency = oGetCurrency.CurrentCurrency()
             };
 
@@ -1722,6 +1753,10 @@ namespace MashadLeatherEcommerce.Controllers
                 List<Product> products = db.Products
                     .Where(current => current.Barcode == barcode && current.IsDeleted == false).ToList();
 
+                if (barcode.Contains("j2390"))
+                {
+                    int a = 93893;
+                }
 
                 //Product product = db.Products
                 //    .FirstOrDefault(current => current.Barcode == barcode && current.IsDeleted == false);
@@ -1731,6 +1766,12 @@ namespace MashadLeatherEcommerce.Controllers
                     {
                         decimal discountAmount =
                             Convert.ToDecimal(product.Amount - product.Amount * (promotion.DecreaseAmount / 100));
+
+                        if (discountAmount == 0)
+                        {
+                            int v = 121212;
+                        }
+
                         product.IsInPromotion = true;
                         product.DiscountAmount = discountAmount;
                         product.DecreaseAmount = promotion.DecreaseAmount;
@@ -1880,11 +1921,15 @@ namespace MashadLeatherEcommerce.Controllers
 
         public void UpdateProductsCode()
         {
-            List<Product> products = db.Products.Where(c => c.Code == 0).ToList();
+            var products = db.Products.Where(c => c.Code == 0);
 
-            Product lastProduct = db.Products.OrderByDescending(c => c.Code).FirstOrDefault();
+            Product lastProduct = products.OrderByDescending(c => c.Code).FirstOrDefault();
 
-            int code = lastProduct.Code;
+            int code = 0;
+
+            if (lastProduct != null)
+                code = lastProduct.Code;
+
             foreach (Product product in products)
             {
                 code = code + 1;

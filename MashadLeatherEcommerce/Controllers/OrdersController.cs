@@ -659,7 +659,7 @@ namespace MashadLeatherEcommerce.Controllers
                 ShopCartList productInCarts = GetShoppingCartInfo(jsonVar);
 
 
-                DiscountCode discount = db.DiscountCodes.FirstOrDefault(current => current.Code == coupon);
+                DiscountCode discount = db.DiscountCodes.FirstOrDefault(current => current.Code == coupon && current.IsDeleted == false && current.IsActive);
 
                 string result = CheckCouponValidation(discount, productInCarts);
 
@@ -741,7 +741,7 @@ namespace MashadLeatherEcommerce.Controllers
                 return "Expired";
 
             string res = "true";
-            res= CheckPromotionOnDiscountCode(productInCarts);
+            res = CheckPromotionOnDiscountCode(productInCarts);
 
             return res;
         }
@@ -755,7 +755,7 @@ namespace MashadLeatherEcommerce.Controllers
                 Guid proId = new Guid(product.Id);
 
                 var pro = db.Products.FirstOrDefault(c =>
-                    c.Id == proId && c.IsInPromotion );
+                    c.Id == proId && c.IsInPromotion);
 
                 if (pro != null)
                 {
@@ -1116,13 +1116,17 @@ namespace MashadLeatherEcommerce.Controllers
                 return 999;
         }
 
-
+        private static object lockobj = new object();
         public int GenerateOrderCode()
         {
-            return FindeLastOrderCode() + 1;
+            lock (lockobj)
+            {
+                return FindeLastOrderCode() + 1;
+            }
+
         }
 
-        public int FindeLastOrderCode()
+        private int FindeLastOrderCode()
         {
             Order order = db.Orders.Where(current => current.IsDeleted == false).OrderByDescending(current => current.Code).FirstOrDefault();
 

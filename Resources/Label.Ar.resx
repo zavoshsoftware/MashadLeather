@@ -441,4 +441,7 @@
   <data name="SizeGuid" xml:space="preserve">
     <value>دليل المقاسات</value>
   </data>
+  <data name="promotion" xml:space="preserve">
+    <value>تخفیفات</value>
+  </data>
 </root>

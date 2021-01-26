@@ -12,6 +12,7 @@ using System.Net.Http;
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
 using ViewModels;
@@ -497,9 +498,9 @@ namespace MashadLeatherEcommerce.Controllers
                     }
 
                 }
-               else if (user.CellNum.StartsWith("0"))
+                else if (user.CellNum.StartsWith("0"))
                 {
-                    string newCell =user.CellNum.Remove(0,1);
+                    string newCell = user.CellNum.Remove(0, 1);
                     var newUser = db.Users.Where(c => c.CellNum == newCell && c.IsDeleted == false).FirstOrDefault();
                     if (newUser != null)
                     {
@@ -515,6 +516,68 @@ namespace MashadLeatherEcommerce.Controllers
             return View(userConflicts);
         }
 
+        [Route("bahman")]
+        public ActionResult WinterPromotion()
+        {
+
+            BlackFridayViewModel textViewModel = new BlackFridayViewModel()
+            {
+                MenuGalleryGroups = baseViewModelHelper.GetMenuGalleryGroups(),
+                MenuItem = baseViewModelHelper.GetMenuItems(),
+                ProductCategories = db.ProductCategories.Where(c => c.IsDeleted == false && c.ParentId == null && c.IsActive).Take(4).ToList(),
+
+            };
+            return View(textViewModel);
+        }
+
+        [HttpPost]
+        [Route("bahman")]
+        public ActionResult WinterPromotion(WinterPromotionViewModel input)
+        {
+            BlackFridayViewModel textViewModel = new BlackFridayViewModel()
+            {
+                MenuGalleryGroups = baseViewModelHelper.GetMenuGalleryGroups(),
+                MenuItem = baseViewModelHelper.GetMenuItems(),
+                ProductCategories = db.ProductCategories.Where(c => c.IsDeleted == false && c.ParentId == null && c.IsActive).Take(4).ToList(),
+
+            };
+
+            bool isEmail = Regex.IsMatch(input.Email,
+                @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z",
+                RegexOptions.IgnoreCase);
+
+            if (isEmail == false)
+            {
+                TempData["InvalidEmail"] = "ایمیل وارد شده صحیح نمی باشد";
+                return View(textViewModel);
+            }
+
+            input.CellNumber = input.CellNumber.Replace("۰", "0").Replace("۱", "1").Replace("۲", "2").Replace("۳", "3").Replace("۴", "4").Replace("۵", "5").Replace("۶", "6").Replace("v", "7").Replace("۸", "8").Replace("۹", "9");
+
+            bool isValidMobile = Regex.IsMatch(input.CellNumber, @"(^(09|9)[0123456789][0123456789]\d{7}$)|(^(09|9)[0123456789][0123456789]\d{7}$)", RegexOptions.IgnoreCase);
+
+            if (isValidMobile == false)
+            {
+                TempData["WrongCellNumber"] = "شماره موبایل وارد شده صحیح نمی باشد";
+                return View(textViewModel);
+            }
+
+
+
+            UserInformation userInformation =new UserInformation()
+            {
+                Email = input.Email,
+                CellNumber = input.CellNumber,
+                CreationDate = DateTime.Now,
+                IsActive = true,
+                IsDeleted = false
+            };
+            db.UserInformations.Add(userInformation);
+            db.SaveChanges();
+
+            TempData["success"] = "با تشکر. اطلاعات شما با موفقیت ثبت شد.";
+            return View(textViewModel);
+        }
     }
 
     public class userConflict

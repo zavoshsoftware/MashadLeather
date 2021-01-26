@@ -442,4 +442,7 @@
   <data name="SizeGuid" xml:space="preserve">
     <value>Size Guid</value>
   </data>
+  <data name="promotion" xml:space="preserve">
+    <value>promotion</value>
+  </data>
 </root>

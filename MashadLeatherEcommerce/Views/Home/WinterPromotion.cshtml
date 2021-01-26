@@ -1,0 +1,269 @@
+﻿@model ViewModels.BlackFridayViewModel
+@{
+		ViewBag.Title = "فروش ویژه بهمن ماه چرم مشهد ";
+		Layout = "~/Views/Shared/FrontEndLayout/_FrontEndLayout.cshtml";
+		ViewBag.Canonical = "https://www.mashadleather.com/winterpromotion";
+}
+@section head{
+	<style>
+		.bg-gray {
+			background-color: #efefef;
+			direction: rtl;
+			text-align: right;
+			color: #000
+		}
+
+		.bg-gray h2 {
+			text-align: center
+		}
+
+		.bg-gray ul {
+			background-color: #ddd;
+			direction: rtl;
+			text-align: right;
+		}
+
+		.bc-card {
+			padding: 15px;
+			border: 1px solid #000;
+			text-align: center
+		}
+
+		.bc-card img {
+			margin-bottom: 15px;
+		}
+
+		.nextline-row {
+			margin-top: 30px;
+		}
+
+		.row label {
+			min-height: 80px;
+		}
+
+		.product-title h3 {
+			text-align: center !important;
+			margin-bottom: 8px !important;
+		}
+
+		.gotodiscount {
+			margin-top: 30px !important;
+		}
+
+		.gotodiscount a {
+			font-size: 1.5rem
+		}
+
+		.gotodiscount i {
+			margin: 0 30px !important;
+		}
+
+		.product-title .btn {
+			padding: 12px !important;
+			font-size: 1rem;
+		}
+		#discountsec h2 {
+			text-align: center;
+			color: #ED1C24;
+			direction: rtl;
+			margin-bottom: 40px;
+		}
+		section {
+			padding: 40px 0;
+		}
+	</style>
+	
+	<meta property="og:title" content="@ViewBag.Title" />
+	<meta property="og:url" content="https://www.mashadleather.com/WinterPromotion" />
+	<meta property="og:image" content="https://www.mashadleather.com/images/logo.png" />
+	<meta property="og:description" content="از 15 تا ٧٠ درصد تخفیف ویژه برای کلیه محصولات در جشنواره زمستانه چرم مشهد" />
+}
+@section scripts{
+	<script src="~/Scripts/UI/plugins/components/particles-animation.js"></script>
+	<script src="~/Scripts/UI/plugins/components/particles.js"></script>
+	
+	<script>
+		$(document).ready(function () {
+			var sss = '@TempData["success"]';
+			if (sss!== '') {
+				alert(sss);
+			}
+			var InvalidEmail = '@TempData["InvalidEmail"]';
+			if (InvalidEmail!== '') {
+				alert(InvalidEmail);
+			}
+			var WrongCellNumber = '@TempData["WrongCellNumber"]';
+			if (WrongCellNumber!== '') {
+				alert(WrongCellNumber);
+			}
+		});
+	</script>
+}
+<section id="page-title" data-parallax-image="/images/mashad-faq-img.jpg">
+	<div id="particles-js" class="particles" style="background: none"></div>
+	<div class="container">
+		<div class="slide-captions text-center text-light about-caption">
+		 <label>@ViewBag.Title</label>
+		</div>
+	</div>
+</section>
+<section class="bg-gray">
+	<div class="container">
+		<div class="row ">
+			<div class="col-md-12">
+				<div>
+					<h2>
+					فروش ویژه بهمن ماه چرم مشهد آغاز شد.
+					</h2>
+					<div class="row">
+						<div class="col-md-12">
+							<h3>
+								جشنواره رنگی چرم مشهد به صورت هماهنگ در تمام فروشگاه های چرم مشهد و فروشگاه اینترنتی برگزار می شود.
+							</h3>
+						</div>
+					</div>
+
+			 
+					<div class="gotodiscount">
+						<a class="btn fullwidth" href="#discountsec"><i class="fa fa-angle-down"></i>مشاهده تخفیفات<i class="fa fa-angle-down"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="p-b-0" id="discountsec">
+	<div class="container">
+		<div class="row">
+			<h2>فرصت استفاده از این جشنواره را از دست ندهید.</h2>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<div class="product">
+					<div class="product-image">
+						<a href="/category/women">
+							<img alt="	محصولات بانوان" src="/images/final-2.jpg">
+						</a>
+					</div>
+					<div class="product-description">
+						<div class="product-title">
+							<h3><a href="/category/women">محصولات بانوان</a></h3>
+							<a class="btn fullwidth" href="/category/women">مشاهده دسته بندی محصولات و تخفیفات</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3">
+				<div class="product">
+					<div class="product-image">
+						<a href="/category/men">
+							<img alt="محصولات آقایان" src="/images/final-7.jpg">
+						</a>
+					</div>
+					<div class="product-description">
+						<div class="product-title">
+							<h3><a href="/category/men">محصولات آقایان</a></h3>
+							<a class="btn fullwidth" href="/category/men">مشاهده دسته بندی محصولات و تخفیفات</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3">
+				<div class="product">
+					<div class="product-image">
+						<a href="/category/gifts">
+							<img alt="ست هدیه" src="/images/3c25c6ed8a5e4201963b441e4af2f0c2.jpg">
+						</a>
+					</div>
+					<div class="product-description">
+						<div class="product-title">
+							<h3><a href="/category/gifts">ست هدیه</a></h3>
+							<a class="btn fullwidth" href="/category/gifts">مشاهده دسته بندی محصولات و تخفیفات</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3">
+				<div class="product">
+					<div class="product-image">
+						<a href="/category/leather-care">
+							<img alt="مراقبت از چرم و جیر" src="/images/1786dea72fa342799ccc49f13f59d249.jpg">
+						</a>
+					</div>
+					<div class="product-description">
+						<div class="product-title">
+							<h3><a href="/category/leather-care">مراقبت از چرم و جیر</a></h3>
+							<a class="btn fullwidth" href="/category/leather-care">مشاهده دسته بندی محصولات و تخفیفات</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<section class="bg-gray">
+	<div class="container">
+		<div class="row ">
+			<div class="col-md-12">
+				<div>
+					<h2>
+				برای اطلاع سریعتر از تخفیفات آینده چرم مشهد فرم زیر را تکمیل نمایید.
+					</h2>
+					<div class="row">
+						<div class="col-sm-4 col-sm-offset-4 recoverypass-page">
+							<h2>
+								<img src="/images/logo.png" />
+							</h2>
+							@if (TempData["InvalidEmail"] != null)
+							{
+								<p class="alert alert-danger" id="wrongEmail">@TempData["InvalidEmail"]</p>
+							}
+							@if (TempData["WrongCellNumber"] != null)
+							{
+								<p class="alert alert-danger" id="wrongEmail">@TempData["WrongCellNumber"]</p>
+							}
+							@if (TempData["success"] != null)
+							{
+								<p class="alert alert-success" id="wrongEmail">@TempData["success"]</p>
+							}
+							@using (Html.BeginForm("WinterPromotion", "Home", new { returnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "", role = "form" }))
+							{
+								@Html.AntiForgeryToken()
+								@Html.ValidationSummary(false, "", new { @class = "alert-danger" })
+
+
+								<div class="form-group">
+									<p class="center"> شماره موبایل خود را وارد کنید </p>
+
+									<input type="text" required name="CellNumber" id="CellNumber" class = "form-control form-white" placeholder = "شماره موبایل*"/>
+						
+							 
+								</div>
+						 
+								<div class="form-group">
+									<p class="center"> ایمیل خود را وارد کنید </p>
+
+									<input type="text" required name="Email" id="Email" class = "form-control form-white" placeholder = "ایمیل* "/>
+								</div>
+								<div class="text-center">
+									<button type="submit" class="btn btn-default btn-full">ثبت</button>
+								</div>
+							}
+						</div>
+					</div>
+
+			 
+					 
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+ 

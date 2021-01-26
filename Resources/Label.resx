@@ -447,4 +447,7 @@
   <data name="ShopPhone" xml:space="preserve">
     <value>فروشگاه اینترنتی</value>
   </data>
+  <data name="promotion" xml:space="preserve">
+    <value>تخفیفات</value>
+  </data>
 </root>

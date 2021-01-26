@@ -4673,6 +4673,7 @@
     <Compile Include="Controllers\StepDiscountsController.cs" />
     <Compile Include="Controllers\TextsController.cs" />
     <Compile Include="Controllers\TextTypesController.cs" />
+    <Compile Include="Controllers\UserInformationsController.cs" />
     <Compile Include="Controllers\UserProductLikeController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
@@ -5038,6 +5039,10 @@
     <Compile Include="Migrations\202012120911450_V87.Designer.cs">
       <DependentUpon>202012120911450_V87.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202101261312415_V88.cs" />
+    <Compile Include="Migrations\202101261312415_V88.Designer.cs">
+      <DependentUpon>202101261312415_V88.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DatabaseContext.cs" />
     <Compile Include="Models\DatabaseContextInitializer.cs" />
@@ -5076,6 +5081,7 @@
     <Compile Include="Models\Entities\Text.cs" />
     <Compile Include="Models\Entities\TextType.cs" />
     <Compile Include="Models\Entities\User.cs" />
+    <Compile Include="Models\Entities\UserInformation.cs" />
     <Compile Include="Models\Entities\UserProductLike.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -5123,6 +5129,7 @@
     <Compile Include="ViewModels\BlackFridayViewModel.cs" />
     <Compile Include="ViewModels\TextViewModel.cs" />
     <Compile Include="ViewModels\UploadFile.cs" />
+    <Compile Include="ViewModels\WinterPromotionViewModel.cs" />
     <Compile Include="ViewModels\_BaseViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -5435,6 +5442,13 @@
     <Content Include="Views\Billing\FreeResult.cshtml" />
     <Content Include="Views\ExcelData\Import.cshtml" />
     <Content Include="Views\Home\GetUserConflicted.cshtml" />
+    <Content Include="Views\Products\PromotionList.cshtml" />
+    <Content Include="Views\Home\WinterPromotion.cshtml" />
+    <Content Include="Views\UserInformations\Create.cshtml" />
+    <Content Include="Views\UserInformations\Delete.cshtml" />
+    <Content Include="Views\UserInformations\Details.cshtml" />
+    <Content Include="Views\UserInformations\Edit.cshtml" />
+    <Content Include="Views\UserInformations\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -5713,6 +5727,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202012120911450_V87.resx">
       <DependentUpon>202012120911450_V87.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101261312415_V88.resx">
+      <DependentUpon>202101261312415_V88.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

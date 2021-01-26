@@ -781,6 +781,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to تخفیفات.
+        /// </summary>
+        public static string promotion {
+            get {
+                return ResourceManager.GetString("promotion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to تعداد.
         /// </summary>
         public static string Qty {
