@@ -13,7 +13,7 @@ using ViewModels;
 
 namespace MashadLeatherEcommerce.Controllers
 {
-    [Authorize(Roles = "Administrator,SuperAdministrator")]
+    [Authorize(Roles = "Administrator,SuperAdministrator,eshopadmin")]
     public class CommentsController : Controller
     {
         private DatabaseContext db = new DatabaseContext();

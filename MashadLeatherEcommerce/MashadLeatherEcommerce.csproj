@@ -4682,6 +4682,7 @@
     <Compile Include="Helper\BankHelper.cs" />
     <Compile Include="Helper\BaseViewModelHelper.cs" />
     <Compile Include="Helper\BitmapManipulator.cs" />
+    <Compile Include="Helper\CodeGenerator.cs" />
     <Compile Include="Helper\DiscountHelper.cs" />
     <Compile Include="Helper\DownloadFileActionResult.cs" />
     <Compile Include="Helper\GetCulture.cs" />

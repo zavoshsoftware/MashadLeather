@@ -463,6 +463,53 @@ namespace MashadLeatherEcommerce.Controllers
             }
             return cities;
         }
+
+        public List<ShopCartItemViewModel> UpdateShopCartByAvailability(List<ShopCartItemViewModel> shopCartItems)
+        {
+            foreach (ShopCartItemViewModel product in shopCartItems.ToList())
+            {
+                Guid id = new Guid(product.Id);
+
+                if (product.SizeTitle != "-" && product.colorTitle != "-")
+                {
+                    Guid sizeId = new Guid(product.size);
+                    Guid colorId = new Guid(product.color);
+
+                    if (!db.Products.Any(c =>
+                        c.ParentId == id && c.SizeId == sizeId && c.ColorId == colorId && c.IsAvailable &&
+                        c.IsDeleted == false && c.IsActive && c.Quantity > 0))
+                    {
+                        shopCartItems.Remove(product);
+                    }
+                }
+
+                else if (product.SizeTitle == "-" && product.colorTitle != "-")
+                {
+                    Guid colorId = new Guid(product.color);
+
+                    if (!db.Products.Any(c =>
+                        c.ParentId == id && c.ColorId == colorId && c.IsAvailable &&
+                        c.IsDeleted == false && c.IsActive && c.Quantity > 0))
+                    {
+                        shopCartItems.Remove(product);
+                    }
+                }
+
+                else if (product.SizeTitle == "-" && product.colorTitle == "-")
+                {
+                    if (!db.Products.Any(c =>
+                        c.Id == id && c.IsAvailable &&
+                        c.IsDeleted == false && c.IsActive && c.Quantity > 0))
+                    {
+                        shopCartItems.Remove(product);
+                    }
+                }
+
+            }
+
+            return shopCartItems;
+        }
+
         public ShopCartList GetShoppingCartInfo(string jsonvar)
         {
             try
@@ -483,7 +530,7 @@ namespace MashadLeatherEcommerce.Controllers
                     }
 
                     Guid proId = new Guid(orderDetailCount[0]);
-                    var product = db.Products.Where(c => c.Id == proId).Select(x => new
+                    var product = db.Products.Where(c => c.Id == proId && c.IsAvailable).Select(x => new
                     {
                         x.Id,
                         x.Title,
@@ -500,11 +547,20 @@ namespace MashadLeatherEcommerce.Controllers
                         if (orderDetailCount[2] != "undefined" && orderDetailCount[2] != "nocolor")
                         {
                             Guid colorIdGuid = new Guid(orderDetailCount[2]);
-                            Product productItem = db.Products.FirstOrDefault(current =>
-                                    current.ParentId == product.Id && current.ColorId == colorIdGuid && current.IsDeleted == false);
 
-                            if (productItem?.DiscountAmount != null)
-                                amount = productItem.DiscountAmount.Value;
+                            Product productItem = db.Products.FirstOrDefault(current =>
+                                current.ParentId == product.Id && current.ColorId == colorIdGuid &&
+                                current.IsDeleted == false);
+
+                            if (productItem != null)
+                            {
+                                if (productItem.DiscountAmount != null)
+                                    amount = productItem.DiscountAmount.Value;
+                                else if (productItem.Amount != null)
+                                    amount = productItem.Amount.Value;
+
+
+                            }
                         }
                         else if (product.DiscountAmount != null)
                             amount = product.DiscountAmount.Value;
@@ -515,9 +571,9 @@ namespace MashadLeatherEcommerce.Controllers
 
                     // Color color = db.Colors.Find(new Guid(orderDetailCount[2]));
 
-                    ShopCartItemViewModel currentShopItem = shopCartItems.Where(current =>
+                    ShopCartItemViewModel currentShopItem = shopCartItems.FirstOrDefault(current =>
                         current.Id == orderDetailCount[0] && current.color == orderDetailCount[2] &&
-                        current.size == orderDetailCount[3]).FirstOrDefault();
+                        current.size == orderDetailCount[3]);
 
                     if (currentShopItem == null)
                     {
@@ -548,7 +604,13 @@ namespace MashadLeatherEcommerce.Controllers
                     {
                         currentShopItem.Qty = (Convert.ToInt32(currentShopItem.Qty) + Convert.ToInt32(orderDetailCount[1])).ToString();
                     }
-                    totalPrice = (decimal)(totalPrice + (amount * Convert.ToDecimal(orderDetailCount[1])));
+                }
+
+                shopCartItems = UpdateShopCartByAvailability(shopCartItems);
+
+                foreach (ShopCartItemViewModel product in shopCartItems)
+                {
+                    totalPrice = (decimal)(totalPrice + (Convert.ToDecimal(product.Amount) * Convert.ToDecimal(product.Qty)));
                 }
 
                 decimal shippmentprice = 0;
@@ -926,7 +988,7 @@ namespace MashadLeatherEcommerce.Controllers
                                 if (colorId != null)
                                     product = db.Products
                                         .FirstOrDefault(current => current.ParentId == parentId && current.ColorId == colorId &&
-                                            current.SizeId == sizeId && current.IsDeleted == false);
+                                            current.SizeId == sizeId && current.IsDeleted == false && current.Quantity > 0);
 
                                 if (product != null)
                                 {
@@ -947,26 +1009,34 @@ namespace MashadLeatherEcommerce.Controllers
                                     product = db.Products
                                         .FirstOrDefault(current =>
                                             current.ParentId == parentId && current.ColorId == colorId &&
-                                            current.SizeId == null && current.IsDeleted == false);
+                                            current.SizeId == null && current.IsDeleted == false && current.Quantity > 0);
 
                                 //محصولات مراقبت از چرم و جیر
                                 else
                                     product = db.Products
                                         .FirstOrDefault(current => current.Id == parentId && current.ColorId == colorId &&
-                                                                   current.SizeId == null && current.IsDeleted == false);
+                                                                   current.SizeId == null && current.IsDeleted == false && current.Quantity > 0);
 
+
+
+                                if (product == null)
+
+                                    return Json("invalidQty| " + InvalidQuantityMessage(product),
+                                        JsonRequestBehavior.AllowGet);
+
+
+                                else
+                                {
+                                    if (product.Quantity < quantity)
+                                        return Json("invalidQty| " + InvalidQuantityMessage(product),
+                                            JsonRequestBehavior.AllowGet);
+                                }
 
                                 if (product.IsInPromotion)
                                     amount = product.DiscountAmount.Value;
                                 else
                                     amount = product.Amount.Value;
 
-                                if (product != null)
-                                {
-                                    if (product.Quantity < quantity)
-                                        return Json("invalidQty| " + InvalidQuantityMessage(product),
-                                            JsonRequestBehavior.AllowGet);
-                                }
                             }
                             OrderDetail orderDetail = new OrderDetail()
                             {

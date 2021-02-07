@@ -12,6 +12,7 @@ using Helper;
 using MashadLeatherEcommerce.KiyanService;
 using ViewModels;
 using System.Text.RegularExpressions;
+using Helpers;
 
 namespace MashadLeatherEcommerce.Controllers
 {
@@ -21,9 +22,13 @@ namespace MashadLeatherEcommerce.Controllers
         GetCurrency oGetCurrency = new GetCurrency();
 
         // GET: Products
+
         [Authorize(Roles = "Administrator,SuperAdministrator,eshopadmin")]
         public ActionResult Index(Guid? id)
         {
+            var identity = (System.Security.Claims.ClaimsIdentity)User.Identity;
+            string roleName = identity.FindFirst(System.Security.Claims.ClaimTypes.Role).Value;
+            ViewBag.roleName = roleName;
             // List<Product> products = new List<Product>();
             if (!id.HasValue)
             {
@@ -82,12 +87,18 @@ namespace MashadLeatherEcommerce.Controllers
             {
                 return HttpNotFound();
             }
+            bool isAvailable = product.IsAvailable;
+
+            List<ProductColor> childColors = GetProductColor(product.Id);
+
+            if (product.Barcode.Length == 20 && !childColors.Any())
+                isAvailable = false;
             ProductQuickViewModel quickProduct = new ProductQuickViewModel();
 
             quickProduct.Id = product.Id;
             quickProduct.Title = product.Title;
             quickProduct.Sizes = GetProductSize(product);
-            quickProduct.Colors = GetProductColor(product.Id);
+            quickProduct.Colors = childColors;
             quickProduct.Price = string.Format("{0:#,#}", product.AmountSrt);
             quickProduct.ProductImages = GetProductImages(product.Id);
             quickProduct.Description = product.Description;
@@ -115,7 +126,7 @@ namespace MashadLeatherEcommerce.Controllers
             quickProduct.SecondColor = ReturnSecondColor(product);
             quickProduct.IsInPromotion = product.IsInPromotion;
             quickProduct.DiscountAmount = string.Format("{0:#,#}", product.DiscountAmountSrt);
-            quickProduct.IsAvailable = product.IsAvailable;
+            quickProduct.IsAvailable = isAvailable;
 
             quickProduct.CurrentCurrency = oGetCurrency.CurrentCurrency();
             ViewBag.Title = product.Title + " | چرم مشهد";
@@ -127,7 +138,8 @@ namespace MashadLeatherEcommerce.Controllers
         }
 
         // GET: Products/Create
-        [Authorize(Roles = "Administrator,SuperAdministrator")]
+        [Authorize(Roles = "Administrator,SuperAdministrator,eshopadmin")]
+
         public ActionResult Create()
         {
             ViewBag.ProductCategoryId = new SelectList(db.ProductCategories.Where(current => current.IsDeleted == false), "Id", "Title");
@@ -141,7 +153,8 @@ namespace MashadLeatherEcommerce.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Administrator,SuperAdministrator")]
+        [Authorize(Roles = "Administrator,SuperAdministrator,eshopadmin")]
+
         public ActionResult Create(Product product, HttpPostedFileBase fileupload)
         {
             if (ModelState.IsValid)
@@ -177,6 +190,7 @@ namespace MashadLeatherEcommerce.Controllers
 
         // GET: Products/Edit/5
         [Authorize(Roles = "Administrator,SuperAdministrator,eshopadmin")]
+
         public ActionResult Edit(Guid? id)
         {
             if (id == null)
@@ -211,6 +225,7 @@ namespace MashadLeatherEcommerce.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Administrator,SuperAdministrator,eshopadmin")]
+
         public ActionResult Edit(Product product, HttpPostedFileBase fileupload)
         {
             if (ModelState.IsValid)
@@ -274,6 +289,7 @@ namespace MashadLeatherEcommerce.Controllers
 
         // GET: Products/Delete/5
         [Authorize(Roles = "Administrator,SuperAdministrator,eshopadmin")]
+
         public ActionResult Delete(Guid? id)
         {
             if (id == null)
@@ -398,7 +414,7 @@ namespace MashadLeatherEcommerce.Controllers
             // List<KiyanProductItem> productList698 = GetProductFromInventory(698, ks, header);
 
             //ولیعصر
-            List<KiyanProductItem> productList290 = GetProductFromInventory(290, ks, header);
+            //  List<KiyanProductItem> productList290 = GetProductFromInventory(290, ks, header);
             ChangeChangeStatus();
             //var aaa = productList616.FirstOrDefault(c => c.itmBrcd == "S0012S0743011604Z001");
 
@@ -408,7 +424,7 @@ namespace MashadLeatherEcommerce.Controllers
             //}
 
             TransferProducts(productList616, true);
-             TransferProducts(productList290, false);
+            // TransferProducts(productList290, false);
             //  TransferProducts(productList862, false);
             db.SaveChanges();
 
@@ -468,6 +484,8 @@ namespace MashadLeatherEcommerce.Controllers
 
         public void TransferProducts(List<KiyanProductItem> products, bool isFirstInventory)
         {
+            CodeGenerator codeGenerator = new CodeGenerator();
+            int productCode = codeGenerator.ReturnProductCode();
             foreach (var item in products)
             {
                 decimal? amount = CalculateAmount(item.itmPrice);
@@ -610,7 +628,8 @@ namespace MashadLeatherEcommerce.Controllers
                                 product.IsAvailable = true;
                                 //if (product.ParentId != null)
                                 //    product.Parent.Amount = amount;
-
+                                product.Code = productCode;
+                                productCode++;
                                 if (currentProduct.ParentId != null)
                                     currentProduct.Parent.IsChanged = true;
 
@@ -645,7 +664,8 @@ namespace MashadLeatherEcommerce.Controllers
                                 product.Title = ReturnTitle(code);
                                 product.IsChanged = true;
                                 product.IsAvailable = true;
-
+                                product.Code = productCode;
+                                productCode++;
                                 if (currentProduct.ParentId != null)
                                     currentProduct.Parent.IsChanged = true;
 
@@ -716,8 +736,11 @@ namespace MashadLeatherEcommerce.Controllers
                                         KiyanId = item.itmID,
                                         Title = ReturnTitle(code),
                                         IsChanged = true,
-                                        IsAvailable = true
+                                        IsAvailable = true,
+                                        Code = productCode
+
                                     };
+                                    productCode++;
                                     db.Products.Add(newParent);
                                     parent = newParent;
                                     //db.SaveChanges();
@@ -756,6 +779,8 @@ namespace MashadLeatherEcommerce.Controllers
                                 product.Title = ReturnTitle(code);
                                 product.IsChanged = true;
                                 product.IsAvailable = true;
+                                product.Code = productCode;
+                                productCode++;
                                 db.Products.Add(product);
                                 //     db.SaveChanges();
                             }
@@ -789,6 +814,7 @@ namespace MashadLeatherEcommerce.Controllers
                         currentProduct.SizeId = null;
                         currentProduct.IsAvailable = true;
                         currentProduct.IsActive = true;
+
                     }
                     else
                     {
@@ -830,7 +856,9 @@ namespace MashadLeatherEcommerce.Controllers
                                 ColorId = null,
                                 SizeId = null,
                                 IsAvailable = true,
+                                Code = productCode
                             };
+                            productCode++;
                             db.Products.Add(oProduct);
                         }
                     }
@@ -1091,7 +1119,7 @@ namespace MashadLeatherEcommerce.Controllers
                 .Where(current => current.ImageUrl != null && current.IsInPromotion && current.IsDeleted == false && current.IsActive &&
                                   current.ParentId == null).ToList();
 
- 
+
             ViewBag.total = products.Count();
 
             ProductListViewModel productList = new ProductListViewModel
@@ -1189,6 +1217,12 @@ namespace MashadLeatherEcommerce.Controllers
 
             foreach (Product product in products)
             {
+                bool isAvailable = product.IsAvailable;
+
+                if (product.Barcode.Length == 20 && !db.Products.Any(c =>
+                     c.ParentId == product.Id && c.IsActive && c.IsDeleted == false && c.Quantity > 0))
+                    isAvailable = false;
+
                 productItems.Add(new ProductListItem()
                 {
                     Id = product.Id,
@@ -1201,7 +1235,7 @@ namespace MashadLeatherEcommerce.Controllers
                     IsInPromotion = product.IsInPromotion,
                     HasTag = product.HasTag,
                     TagTitle = product.TagTitleSrt,
-                    IsAvailable = product.IsAvailable
+                    IsAvailable = isAvailable
                 });
             }
 
@@ -1281,12 +1315,19 @@ namespace MashadLeatherEcommerce.Controllers
         {
             Product product = db.Products.Find(id);
 
+            bool isAvailable = product.IsAvailable;
+
+            List<ProductColor> childColors = GetProductColor(id);
+
+            if (product.Barcode.Length == 20 && !childColors.Any())
+                isAvailable = false;
+
             ProductQuickViewModel quickProduct = new ProductQuickViewModel
             {
                 Id = product.Id,
                 Title = product.TitleSrt,
                 Sizes = GetProductSize(product),
-                Colors = GetProductColor(id),
+                Colors = childColors,
                 Price = string.Format("{0:#,#}", product.AmountSrt),
                 ProductImages = GetProductImages(id),
                 Description = product.DescriptionSrt,
@@ -1298,7 +1339,7 @@ namespace MashadLeatherEcommerce.Controllers
                 SecondColor = ReturnSecondColor(product),
                 IsInPromotion = product.IsInPromotion,
                 DiscountAmount = string.Format("{0:#,#}", product.DiscountAmountSrt),
-                IsAvailable = product.IsAvailable,
+                IsAvailable = isAvailable,
                 CurrentCurrency = oGetCurrency.CurrentCurrency()
             };
 
@@ -1702,6 +1743,7 @@ namespace MashadLeatherEcommerce.Controllers
             db.SaveChanges();
         }
 
+        [Authorize(Roles = "Administrator,SuperAdministrator")]
         public ActionResult ConfigurePromotion()
         {
             return View();
@@ -1921,7 +1963,7 @@ namespace MashadLeatherEcommerce.Controllers
 
         public void UpdateProductsCode()
         {
-            var products = db.Products.Where(c => c.Code == 0);
+            var products = db.Products.Where(c => c.Code == 0 || c.Code == 1);
 
             Product lastProduct = products.OrderByDescending(c => c.Code).FirstOrDefault();
 
@@ -1935,8 +1977,8 @@ namespace MashadLeatherEcommerce.Controllers
                 code = code + 1;
                 product.Code = code;
             }
-
             db.SaveChanges();
+
         }
 
 
@@ -1951,6 +1993,58 @@ namespace MashadLeatherEcommerce.Controllers
 
             db.SaveChanges();
             return string.Empty;
+        }
+
+
+        public string RemoveDuplicates()
+        {
+
+            var products = db.Products.Where(c => c.IsDeleted == false).Select(c => new
+            {
+                c.Id,
+                c.Barcode,
+                c.ColorId,
+                c.SizeId,
+                c.ParentId
+            }).ToList();
+
+            foreach (var product in products.ToList())
+            {
+                var duplicatedProduct = db.Products.Where(c =>
+                    c.Barcode == product.Barcode && c.ColorId == product.ColorId && c.IsDeleted == false &&
+                    c.SizeId == product.SizeId && c.ParentId == product.ParentId && c.Id != product.Id).ToList();
+
+                if (duplicatedProduct.Any())
+                {
+                    foreach (var duplicate in duplicatedProduct)
+                    {
+                        duplicate.IsDeleted = true;
+                        duplicate.DeletionDate = DateTime.Now;
+
+                        if (products.Any(c => c.Id == duplicate.Id))
+                            products.Remove(products.FirstOrDefault(c => c.Id == duplicate.Id));
+                    }
+
+                    db.SaveChanges();
+                }
+            }
+
+
+            return "true";
+        }
+
+        public string UpdateProductCodes()
+        {
+            var products = db.Products.OrderBy(c=>c.Code);
+            int code = 100;
+            foreach (var product in products)
+            {
+                product.Code = code;
+                code ++;
+            }
+
+            db.SaveChanges();
+            return String.Empty;
         }
     }
 }
