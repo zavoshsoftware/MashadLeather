@@ -5450,6 +5450,8 @@
     <Content Include="Views\UserInformations\Details.cshtml" />
     <Content Include="Views\UserInformations\Edit.cshtml" />
     <Content Include="Views\UserInformations\Index.cshtml" />
+    <Content Include="Views\Home\TestChart.cshtml" />
+    <Content Include="Views\Home\TestChart2.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

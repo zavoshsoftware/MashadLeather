@@ -423,7 +423,7 @@ namespace MashadLeatherEcommerce.Controllers
             //    string bbb = aaa.itmQuantity.ToString();
             //}
 
-            TransferProducts(productList616, true);
+            TransferProductsNew(productList616, true);
             // TransferProducts(productList290, false);
             //  TransferProducts(productList862, false);
             db.SaveChanges();
@@ -479,6 +479,407 @@ namespace MashadLeatherEcommerce.Controllers
                     }
                 }
 
+            }
+        }
+
+        public void TransferProductsNew(List<KiyanProductItem> products, bool isFirstInventory)
+        {
+            CodeGenerator codeGenerator = new CodeGenerator();
+            int productCode = codeGenerator.ReturnProductCode();
+
+            foreach (KiyanProductItem item in products)
+            {
+                decimal? amount = CalculateAmount(item.itmPrice);
+                if (item.itmBrcd.Length == 20)
+                {
+                    string code = item.itmBrcd.Substring(5, 5);
+
+               
+                    Product currentProductParent = db.Products
+                        .FirstOrDefault(current =>
+                            current.IsDeleted == false &&
+                            current.Barcode.Substring(5, 5) == code &&
+                            current.ParentId == null);
+
+                    if (currentProductParent != null)
+                    {
+                        Guid? colorId = GetColorByBarCode(item.itmBrcd);
+
+                        if (IsProductSizable(code))
+                        {
+                            Guid? sizeId = GetSizeByBarCode(item.itmBrcd);
+
+                            var childProduct = db.Products.FirstOrDefault(c =>
+                                c.ColorId == colorId && c.SizeId == sizeId && c.ParentId == currentProductParent.Id &&
+                                c.IsDeleted == false);
+
+                            if (childProduct != null)
+                            {
+                                UpdateProduct(childProduct, isFirstInventory, item, amount);
+                            }
+                            else
+                            {
+                                var childProductDeleted = db.Products.FirstOrDefault(c => c.SizeId == sizeId &&
+                                                                                          c.ColorId == colorId &&
+                                                                                          c.ParentId ==
+                                                                                          currentProductParent.Id &&
+                                                                                          c.IsDeleted == true);
+
+                                if (childProductDeleted != null)
+                                {
+                                    RestoreProduct(childProductDeleted, isFirstInventory, item, amount);
+                                }
+                                else
+                                {
+                                    InserNewChildProduct(item, colorId, currentProductParent, amount, code,
+                                        productCode, sizeId);
+
+                                    productCode++;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            var childProduct = db.Products.FirstOrDefault(c =>
+                                c.ColorId == colorId && c.ParentId == currentProductParent.Id && c.IsDeleted == false);
+
+                            if (childProduct != null)
+                            {
+                                UpdateProduct(childProduct, isFirstInventory, item, amount);
+                            }
+                            else
+                            {
+                                var childProductDeleted = db.Products.FirstOrDefault(c =>
+                                    c.ColorId == colorId && c.ParentId == currentProductParent.Id &&
+                                    c.IsDeleted == true);
+
+                                if (childProductDeleted != null)
+                                {
+                                    RestoreProduct(childProductDeleted, isFirstInventory, item, amount);
+                                }
+                                else
+                                {
+                                    InserNewChildProduct(item, colorId, currentProductParent, amount, code,
+                                        productCode, null);
+
+                                    productCode++;
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        Product currentProductParentDeleted = db.Products
+                            .FirstOrDefault(current =>
+                                current.IsDeleted &&
+                                current.Barcode.Substring(5, 5) == code &&
+                                current.ParentId == null);
+
+                        if (currentProductParentDeleted != null)
+                        {
+                            RestoreProduct(currentProductParentDeleted, isFirstInventory, item, amount);
+
+                            string actionType = UpdateChildProductOfNullParent(item, amount, code, currentProductParentDeleted,
+                                 isFirstInventory, productCode);
+
+                            if (actionType == "insert")
+                                productCode++;
+                        }
+
+                        else
+                        {
+                            Product newParent = InsertParentProduct(item, amount, code, productCode);
+                            productCode++;
+
+                            string actionType = UpdateChildProductOfNullParent(item, amount, code, newParent,
+                                isFirstInventory, productCode);
+
+                            if (actionType == "insert")
+                                productCode++;
+
+                        }
+                    }
+
+                }
+
+                else if (item.itmBrcd.Length == 13)
+                {
+                    Product currentProduct = db.Products
+                        .FirstOrDefault(current => current.IsDeleted == false && current.Barcode == item.itmBrcd);
+
+                    if (currentProduct != null)
+                    {
+                        currentProduct.Taxable = item.Taxable;
+                        currentProduct.Barcode = item.itmBrcd;
+                        currentProduct.KiyanCreateDate = item.itmCreateDate;
+                        currentProduct.KiyanName = item.itmName;
+                        currentProduct.Amount = amount;
+                        if (isFirstInventory)
+                            currentProduct.Quantity = item.itmQuantity;
+                        else
+                            currentProduct.Quantity = currentProduct.Quantity + item.itmQuantity;
+                        currentProduct.DiscountAmount = item.itmTempPrice;
+                        currentProduct.KiyanId = item.itmID;
+                        currentProduct.LastModifiedDate = DateTime.Now;
+                        currentProduct.IsChanged = true;
+                        currentProduct.ParentId = null;
+                        currentProduct.ColorId = null;
+                        currentProduct.SizeId = null;
+                        currentProduct.IsAvailable = true;
+                        currentProduct.IsActive = true;
+
+                    }
+                    else
+                    {
+                        Product deleteProduct = db.Products.FirstOrDefault(current => current.Barcode == item.itmBrcd && current.IsDeleted == true);
+
+                        if (deleteProduct != null)
+                        {
+                            deleteProduct.IsDeleted = false;
+                            deleteProduct.IsActive = true;
+                            deleteProduct.DeletionDate = null;
+                            deleteProduct.IsChanged = true;
+                            deleteProduct.IsAvailable = true;
+                            if (isFirstInventory)
+                                deleteProduct.Quantity = deleteProduct.Quantity;
+                            else
+                                deleteProduct.Quantity += deleteProduct.Quantity;
+                        }
+
+                        else
+                        {
+                            Product oProduct = new Product()
+                            {
+                                Id = Guid.NewGuid(),
+                                IsDeleted = false,
+                                Priority = 100,
+                                IsActive = true,
+                                CreationDate = DateTime.Now,
+                                LastModifiedDate = DateTime.Now,
+                                Taxable = item.Taxable,
+                                Barcode = item.itmBrcd,
+                                KiyanCreateDate = item.itmCreateDate,
+                                KiyanName = item.itmName,
+                                Amount = amount,
+                                Quantity = item.itmQuantity,
+                                DiscountAmount = item.itmTempPrice,
+                                KiyanId = item.itmID,
+                                Title = item.itmBrcd,
+                                IsChanged = true,
+                                ColorId = null,
+                                SizeId = null,
+                                IsAvailable = true,
+                                Code = productCode
+                            };
+                            productCode++;
+                            db.Products.Add(oProduct);
+                        }
+                    }
+                }
+            }
+        }
+
+        public Product InsertParentProduct(KiyanProductItem item, decimal? amount, string code, int productCode)
+        {
+            Product newParent = new Product()
+            {
+                Id = Guid.NewGuid(),
+                IsDeleted = false,
+                Priority = 100,
+                IsActive = true,
+                CreationDate = DateTime.Now,
+                LastModifiedDate = DateTime.Now,
+                Taxable = item.Taxable,
+                Barcode = item.itmBrcd,
+                KiyanCreateDate = item.itmCreateDate,
+                KiyanName = item.itmName,
+                Amount = amount,
+                Quantity = item.itmQuantity,
+                DiscountAmount = item.itmTempPrice,
+                KiyanId = item.itmID,
+                Title = ReturnTitle(code),
+                IsChanged = true,
+                IsAvailable = true,
+                Code = productCode
+
+            };
+            db.Products.Add(newParent);
+
+            return newParent;
+        }
+        public string UpdateChildProductOfNullParent(KiyanProductItem item, decimal? amount, string code, Product currentProductParentDeleted, bool isFirstInventory, int productCode)
+        {
+            Guid? colorId = GetColorByBarCode(item.itmBrcd);
+
+            if (IsProductSizable(code))
+            {
+                Guid? sizeId = GetSizeByBarCode(item.itmBrcd);
+
+                var childProduct = db.Products.FirstOrDefault(c =>
+                    c.ColorId == colorId && c.SizeId == sizeId &&
+                    c.ParentId == currentProductParentDeleted.Id &&
+                    c.IsDeleted == false);
+
+                if (childProduct != null)
+                {
+                    UpdateProduct(childProduct, isFirstInventory, item, amount);
+                    return "update";
+                }
+                else
+                {
+                    var childProductDeleted = db.Products.FirstOrDefault(c => c.SizeId == sizeId &&
+                                                                              c.ColorId == colorId &&
+                                                                              c.ParentId ==
+                                                                              currentProductParentDeleted
+                                                                                  .Id &&
+                                                                              c.IsDeleted == true);
+
+                    if (childProductDeleted != null)
+                    {
+                        RestoreProduct(childProductDeleted, isFirstInventory, item, amount);
+                        return "update";
+
+                    }
+                    else
+                    {
+                        InserNewChildProduct(item, colorId, currentProductParentDeleted, amount, code,
+                            productCode, sizeId);
+
+                        return "insert";
+                    }
+                }
+            }
+            else
+            {
+                var childProduct = db.Products.FirstOrDefault(c =>
+                    c.ColorId == colorId && c.ParentId == currentProductParentDeleted.Id &&
+                    c.IsDeleted == false);
+
+                if (childProduct != null)
+                {
+                    UpdateProduct(childProduct, isFirstInventory, item, amount);
+                    return "update";
+                }
+                else
+                {
+                    var childProductDeleted = db.Products.FirstOrDefault(c =>
+                        c.ColorId == colorId && c.ParentId == currentProductParentDeleted.Id &&
+                        c.IsDeleted == true);
+
+                    if (childProductDeleted != null)
+                    {
+                        RestoreProduct(childProductDeleted, isFirstInventory, item, amount);
+                        return "update";
+                    }
+                    else
+                    {
+                        InserNewChildProduct(item, colorId, currentProductParentDeleted, amount, code,
+                            productCode, null);
+
+                        return "insert";
+                    }
+                }
+            }
+        }
+
+        public void InserNewChildProduct(KiyanProductItem item, Guid? colorId, Product parent, decimal? amount, string code, int productCode, Guid? sizeId)
+        {
+            Product product = new Product();
+
+            product.Id = Guid.NewGuid();
+            if (colorId != null)
+            {
+                product.ColorId = colorId;
+            }
+            if (sizeId != null)
+            {
+                product.SizeId = sizeId;
+            }
+
+            product.ParentId = parent.Id;
+            product.IsDeleted = false;
+            product.Priority = 100;
+            product.IsActive = true;
+            product.CreationDate = DateTime.Now;
+            product.LastModifiedDate = DateTime.Now;
+            product.Taxable = item.Taxable;
+            product.Barcode = item.itmBrcd;
+            product.KiyanCreateDate = item.itmCreateDate;
+            product.KiyanName = item.itmName;
+            product.Amount = amount;
+            product.Quantity = item.itmQuantity;
+            product.DiscountAmount = item.itmTempPrice;
+            product.KiyanId = item.itmID;
+            product.Title = ReturnTitle(code);
+            product.IsChanged = true;
+            product.IsAvailable = true;
+            product.Code = productCode;
+
+
+
+            parent.IsChanged = true;
+            parent.IsAvailable = true;
+            parent.IsActive = true;
+            //if (product.ParentId != null)
+            //    product.Parent.Amount = amount;
+
+
+            db.Products.Add(product);
+        }
+
+        public void RestoreProduct(Product deleteProduct, bool isFirstInventory, KiyanProductItem item, decimal? amount)
+        {
+            deleteProduct.IsDeleted = false;
+            deleteProduct.IsActive = true;
+            deleteProduct.DeletionDate = null;
+            deleteProduct.IsChanged = true;
+            deleteProduct.LastModifiedDate = DateTime.Now;
+            deleteProduct.IsAvailable = true;
+            if (deleteProduct.ParentId != null)
+            {
+                deleteProduct.Parent.IsAvailable = true;
+                deleteProduct.Parent.IsChanged = true;
+                deleteProduct.Parent.IsActive = true;
+            }
+            deleteProduct.Amount = amount;
+            if (isFirstInventory)
+                deleteProduct.Quantity = item.itmQuantity;
+            else
+                deleteProduct.Quantity = deleteProduct.Quantity + item.itmQuantity;
+        }
+
+        public void UpdateProduct(Product product, bool isFirstInventory, KiyanProductItem item, decimal? amount)
+        {
+            product.Taxable = item.Taxable;
+            product.Barcode = item.itmBrcd;
+            product.KiyanCreateDate = item.itmCreateDate;
+            product.KiyanName = item.itmName;
+            product.Amount = amount;
+            if (isFirstInventory)
+                product.Quantity = item.itmQuantity;
+            else
+                product.Quantity = product.Quantity + item.itmQuantity;
+            product.DiscountAmount = item.itmTempPrice;
+            product.KiyanId = item.itmID;
+            product.Title = ReturnTitle(item.itmBrcd.Substring(5, 5));
+            product.LastModifiedDate = DateTime.Now;
+            product.IsChanged = true;
+            product.IsAvailable = true;
+            product.IsActive = true;
+            if (product.ParentId != null)
+            {
+                product.Parent.IsAvailable = true;
+                product.Parent.IsChanged = true;
+                product.Parent.IsActive = true;
+            }
+            product.IsActive = true;
+
+            //اگر قبلا رنگ تعریف نشده بود و کد رنک نال ثبت شده باشد
+            if (product.ColorId == null)
+            {
+                Guid? colorId = GetColorByBarCode(item.itmBrcd);
+                if (colorId != null)
+                    product.ColorId = colorId;
             }
         }
 
@@ -697,14 +1098,16 @@ namespace MashadLeatherEcommerce.Controllers
                                     deleteProduct.LastModifiedDate = DateTime.Now;
                                     deleteProduct.IsAvailable = true;
                                     deleteProduct.Quantity = item.itmQuantity;
-                                    //if (deleteProduct.ParentId != null)
-                                    //{
-                                    //    deleteProduct.Parent.IsChanged = true;
-                                    //    deleteProduct.Parent.IsDeleted = false;
-                                    //    deleteProduct.Parent.IsActive = false;
-                                    //    deleteProduct.Parent.DeletionDate = null;
-                                    //    deleteProduct.Parent.LastModifiedDate = DateTime.Now;
-                                    //}
+                                    if (deleteProduct.ParentId != null)
+                                    {
+                                        deleteProduct.Parent.IsChanged = true;
+                                        deleteProduct.Parent.IsDeleted = false;
+                                        deleteProduct.Parent.IsActive = false;
+                                        deleteProduct.Parent.DeletionDate = null;
+                                        deleteProduct.Parent.IsAvailable = true;
+                                        deleteProduct.Parent.Quantity = item.itmQuantity;
+                                        deleteProduct.Parent.LastModifiedDate = DateTime.Now;
+                                    }
                                 }
                             }
                             else
@@ -713,7 +1116,7 @@ namespace MashadLeatherEcommerce.Controllers
                                 //panet product not exist in database
 
                                 //Loocking for parent product on Deleted products
-                                Product parent = IsParentProductOnDeleted(code);
+                                Product parent = IsParentProductOnDeleted(code, item.itmQuantity);
 
                                 if (parent == null)
                                 {
@@ -745,7 +1148,7 @@ namespace MashadLeatherEcommerce.Controllers
                                     parent = newParent;
                                     //db.SaveChanges();
                                 }
-
+                                parent.Code = productCode;
                                 Guid? colorId = GetColorByBarCode(item.itmBrcd);
 
                                 Product product = new Product();
@@ -894,7 +1297,7 @@ namespace MashadLeatherEcommerce.Controllers
 
             return productList;
         }
-        public Product IsParentProductOnDeleted(string code)
+        public Product IsParentProductOnDeleted(string code, decimal qty)
         {
             Product product = db.Products.FirstOrDefault(current =>
                 current.IsDeleted == true && current.ParentId == null && current.Barcode.Substring(5, 5) == code);
@@ -906,6 +1309,8 @@ namespace MashadLeatherEcommerce.Controllers
                 product.IsChanged = true;
                 product.LastModifiedDate = DateTime.Now;
                 product.IsActive = false;
+                product.IsAvailable = true;
+                product.Quantity = qty;
             }
             return product;
         }
@@ -2035,12 +2440,12 @@ namespace MashadLeatherEcommerce.Controllers
 
         public string UpdateProductCodes()
         {
-            var products = db.Products.OrderBy(c=>c.Code);
+            var products = db.Products.OrderBy(c => c.Code);
             int code = 100;
             foreach (var product in products)
             {
                 product.Code = code;
-                code ++;
+                code++;
             }
 
             db.SaveChanges();

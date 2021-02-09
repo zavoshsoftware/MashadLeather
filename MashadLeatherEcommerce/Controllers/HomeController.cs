@@ -530,6 +530,15 @@ namespace MashadLeatherEcommerce.Controllers
             return View(textViewModel);
         }
 
+        public ActionResult TestChart()
+        {
+            return View();
+        }
+        public ActionResult TestChart2()
+        {
+            return View();
+        }
+
         [HttpPost]
         [Route("bahman")]
         public ActionResult WinterPromotion(WinterPromotionViewModel input)
