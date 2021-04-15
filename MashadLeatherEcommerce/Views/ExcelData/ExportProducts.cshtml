@@ -1,0 +1,31 @@
+﻿@model IEnumerable<ViewModels.ProductExportViewModel>
+
+@{
+ViewBag.Title = "فهرست محصولات موجود";
+    
+    Layout = "~/Views/Shared/BackEndLayout/_BackEndLayout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+<a href="/ExcelData/DownloadProductExcel" class="btn btn-primary">دانلود اکسل</a> 
+<br />       @(Html.Kendo().Grid(Model)
+							.Name("Grid")
+							.Columns(columns =>
+							{
+								columns.Bound(model => model.Title);
+								columns.Bound(model => model.Code);
+								columns.Bound(model => model.Barcode);
+								columns.Bound(model => model.Color);
+								columns.Bound(model => model.Size);
+								columns.Bound(model => model.Amount);
+								columns.Bound(model => model.DiscountAmount);
+								columns.Bound(model => model.Quantity);
+
+							})
+							.Sortable().Filterable()
+		.DataSource(dataSource => dataSource
+									.Server()
+									
+									.Model(model => model.Id(item => item.Id))
+					)
+	)

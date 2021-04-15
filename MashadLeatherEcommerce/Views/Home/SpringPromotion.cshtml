@@ -1,0 +1,299 @@
+﻿@model ViewModels.SpringPromotionViewModel
+@{
+		ViewBag.Title = "تخفیف باران چرم مشهد";
+		Layout = "~/Views/Shared/FrontEndLayout/_FrontEndLayout.cshtml";
+		ViewBag.Canonical = "https://www.mashadleather.com/spring";
+}
+@section head{
+	<style>
+		body {
+			
+		}
+		 .bg-gray {
+			 background-color: #efefef;
+			 direction: rtl;
+			 text-align: right;
+			 color: #000
+		 }
+
+			.bg-gray h2 {
+				text-align: center;
+				color: #ED1C24
+			}
+
+		.bg-gray ul {
+			background-color: #ddd;
+			direction: rtl;
+			text-align: right;
+		}
+
+		.bc-card {
+			padding: 15px;
+			border: 1px solid #000;
+			text-align: center
+		}
+
+		.bc-card img {
+			margin-bottom: 15px;
+		}
+
+		.nextline-row {
+			margin-top: 30px;
+		}
+
+		.row label {
+			min-height: 80px;
+		}
+
+		.product-title h3 {
+			text-align: center !important;
+			margin-bottom: 8px !important;
+		}
+
+		.gotodiscount {
+			margin-top: 30px !important;
+		}
+
+		.gotodiscount a {
+			font-size: 1.5rem
+		}
+
+		.gotodiscount i {
+			margin: 0 30px !important;
+		}
+
+		.product-title .btn {
+			padding: 12px !important;
+			font-size: 1rem;
+		}
+		#discountsec h2 {
+			text-align: center;
+			color: #ED1C24;
+			direction: rtl;
+			margin-bottom: 40px;
+		}
+		section {
+			padding: 40px 0;
+		}
+
+		.branchCard {
+			padding:20px 10px;
+			background-color: #fff;
+			margin-bottom: 20px;
+		}
+
+		.branchCard p{
+		 
+			margin-bottom: 0px;
+		}
+
+		.branchname {
+			float: right;
+			color: #ED1C24;
+		}
+		.branchNumber {
+			float: left;
+			direction: ltr;
+			text-align: left;
+			font-size: 0.9rem;
+			color: #000;
+		}
+
+		.springdesc p {
+			text-align: center;
+			margin-bottom: 0;
+			color: #464646;
+			font-size: 1.1rem;
+		line-height: 2.1rem;
+		}
+
+		.branchCity {
+			padding: 10px;
+			text-align: center;
+			background-color: #ddd;
+		}
+	</style>
+	
+	<meta property="og:title" content="@ViewBag.Title" />
+	<meta property="og:url" content="https://www.mashadleather.com/spring" />
+	<meta property="og:image" content="https://www.mashadleather.com/images/logo.png" />
+	<meta property="og:description" content="تخفیفات باورنکردنی برای کلیه محصولات در جشنواره تخفیف باران چرم مشهد" />
+}
+@section scripts{
+	<script src="~/Scripts/UI/plugins/components/particles-animation.js"></script>
+	<script src="~/Scripts/UI/plugins/components/particles.js"></script>
+	 
+}
+<section id="page-title" data-parallax-image="/images/mashad-faq-img.jpg">
+	<div id="particles-js" class="particles" style="background: none"></div>
+	<div class="container">
+		<div class="slide-captions text-center text-light about-caption">
+		 <label>@ViewBag.Title</label>
+		</div>
+	</div>
+</section>
+<section class="bg-gray">
+	<div class="container">
+		<div class="row ">
+			<div class="col-md-12">
+				<div>
+					<h2>
+						تخفیف باران چرم مشهد آغاز شد.
+					</h2>
+					<div class="row">
+						<div class="col-md-2"></div>
+						<div class="col-md-8 springdesc">
+							<p>
+								همراهان گرامی چرم مشهد
+							</p>
+							<p>
+								با آرزوی سلامتی برای شما و خانواده عزیزتان، به اطلاع می رساند چرم مشهد جهت رفاه حال شما عزیزان فروش فوق العاده یک روزه ای ترتیب داده است تا شما بتوانید به راحتی خرید خود را از منزل و به صورت غیرحضوری انجام دهید و سلامت خود و جامعه را تضمین نمایید.
+							</p>
+							<p>
+								فروش فوق العاده پیش رو تخفیف باران نام دارد و شرایط آن به شرح زیر است:
+							</p>
+							<p>
+							</p>
+							<p> ۱. از بامداد روز جمعه تا ساعت ۲۴ همان روز (27 فروردین 1400)
+							</p>
+							<p> ۲. تا ۵۰ درصد تخفیف روی همه کالاها
+							</p>
+							<p>ارسال رایگان برای تمامی سفارشات
+							</p>
+							<p> ۴.امکان مرجوع کردن کالا
+								<a href="https://www.mashadleather.com/blog/news/return">
+									(قوانین مرجوعی را مطالعه نمایید.)
+								</a>
+							</p>
+							<p> لیست فروشگاه های چرم مشهد و شماره تماس آن ها نیز در ادامه همین صفحه موجود می باشد
+							</p>
+						</div>
+					</div>
+
+			 
+					<div class="gotodiscount">
+						<a class="btn fullwidth" href="#discountsec"><i class="fa fa-angle-down"></i>مشاهده تخفیفات<i class="fa fa-angle-down"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="p-b-0" id="discountsec">
+	<div class="container">
+		<div class="row">
+			<h2>فرصت استفاده از این جشنواره را از دست ندهید.</h2>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<div class="product">
+					<div class="product-image">
+						<a href="/category/women">
+							<img alt="	محصولات بانوان" src="/images/final-2.jpg">
+						</a>
+					</div>
+					<div class="product-description">
+						<div class="product-title">
+							<h3><a href="/category/women">محصولات بانوان</a></h3>
+							<a class="btn fullwidth" href="/category/women">مشاهده دسته بندی محصولات و تخفیفات</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3">
+				<div class="product">
+					<div class="product-image">
+						<a href="/category/men">
+							<img alt="محصولات آقایان" src="/images/final-7.jpg">
+						</a>
+					</div>
+					<div class="product-description">
+						<div class="product-title">
+							<h3><a href="/category/men">محصولات آقایان</a></h3>
+							<a class="btn fullwidth" href="/category/men">مشاهده دسته بندی محصولات و تخفیفات</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3">
+				<div class="product">
+					<div class="product-image">
+						<a href="/category/gifts">
+							<img alt="ست هدیه" src="/images/3c25c6ed8a5e4201963b441e4af2f0c2.jpg">
+						</a>
+					</div>
+					<div class="product-description">
+						<div class="product-title">
+							<h3><a href="/category/gifts">ست هدیه</a></h3>
+							<a class="btn fullwidth" href="/category/gifts">مشاهده دسته بندی محصولات و تخفیفات</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3">
+				<div class="product">
+					<div class="product-image">
+						<a href="/category/leather-care">
+							<img alt="مراقبت از چرم و جیر" src="/images/1786dea72fa342799ccc49f13f59d249.jpg">
+						</a>
+					</div>
+					<div class="product-description">
+						<div class="product-title">
+							<h3><a href="/category/leather-care">مراقبت از چرم و جیر</a></h3>
+							<a class="btn fullwidth" href="/category/leather-care">مشاهده دسته بندی محصولات و تخفیفات</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<section class="bg-gray">
+	<div class="container">
+		<div class="row ">
+			<div class="col-md-12">
+				<div>
+					<h2>
+				فروشگاه های چرم مشهد
+					</h2>
+					<div class="row">
+				
+						@foreach (var branch in Model.SiteBranches)
+						{
+							<div class="col-md-3">
+								<div class="branchCity">
+									@branch.SiteBranchGroup.Title
+								</div>
+								<div class="branchCard">
+
+									<div class="branchinfo">
+										<div class="branchname">
+											شعبه @branch.Title
+										</div>
+										<div class="branchNumber">
+											<i class="fa fa-phone"></i>
+											<a href="tel:@branch.Phone.Split('-')[0]">@branch.Phone.Split('-')[0]</a>
+										</div>
+										<p class="clearfix"></p>
+									</div>
+								</div>
+							</div>
+						}
+
+					</div>
+
+			 
+					 
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+ 

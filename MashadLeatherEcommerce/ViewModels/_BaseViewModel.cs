@@ -23,6 +23,28 @@ namespace ViewModels
         {
             get { return helper.GetMenExtraMenuCategory(); }
         }
+        public User UserInfo { get { return helper.GetLoginUser(); } }
+
+        public string LoginUserFullName
+        {
+            get
+            {
+                if (UserInfo != null)
+                    return UserInfo.FirstName + " " + UserInfo.LastName;
+
+                return null;
+            }
+        }
+
+        public string LoginUserCellNumber { get
+            {
+                if (UserInfo != null)
+                    return UserInfo.CellNum ;
+
+                return null;
+            }
+        }
+
     }
 
     public class MenuItem

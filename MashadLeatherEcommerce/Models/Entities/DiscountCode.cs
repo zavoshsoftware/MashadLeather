@@ -48,6 +48,9 @@ namespace Models
         [Display(Name = "استفاده شده است؟")]
         public bool IsUsed { get; set; }
 
+        [Display(Name = "امکان استفاده برای محصولات در پروموشن")]
+        public bool AvailableInPromotion { get; set; }
+
         public Guid? UserId { get; set; }
         public virtual User User { get; set; }
 

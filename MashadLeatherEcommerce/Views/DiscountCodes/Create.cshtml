@@ -58,6 +58,17 @@
 			<div class="col-md-2">
             </div>
             <div class="col-md-10">
+                    @Html.EditorFor(model => model.AvailableInPromotion)
+
+				@Html.LabelFor(model => model.AvailableInPromotion)
+                @Html.ValidationMessageFor(model => model.AvailableInPromotion)
+            </div>
+        </div>
+
+        <div class="form-group">
+			<div class="col-md-2">
+            </div>
+            <div class="col-md-10">
                     @Html.EditorFor(model => model.IsUsed)
 
 				@Html.LabelFor(model => model.IsUsed)

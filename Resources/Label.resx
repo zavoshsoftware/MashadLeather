@@ -313,7 +313,7 @@
     <value>بروزرسانی سبد خرید</value>
   </data>
   <data name="WorkTime" xml:space="preserve">
-    <value>شنبه تا پنجشنبه:</value>
+    <value>شنبه تا چهارشنبه:</value>
   </data>
   <data name="you" xml:space="preserve">
     <value>شما</value>
@@ -449,5 +449,8 @@
   </data>
   <data name="promotion" xml:space="preserve">
     <value>تخفیفات</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>حساب کاربری</value>
   </data>
 </root>

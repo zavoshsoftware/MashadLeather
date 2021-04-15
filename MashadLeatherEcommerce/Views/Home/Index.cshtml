@@ -17,13 +17,18 @@
 	<link rel="preload" as="font" href="https://www.mashadleather.com/Content/fonts/fontawesome-webfont.woff" type="font/woff" crossorigin="anonymous">
 	<link rel="preload" as="font" href="https://www.mashadleather.com/Content/fonts/fontawesome-webfont.woff2" type="font/woff2" crossorigin="anonymous">
 	<link rel="preload" as="font" href="https://www.mashadleather.com/Scripts/UI/plugins/revolution/fonts/revicons/revicons.woff?5510888" type="font/woff" crossorigin="anonymous">
+
+	<link href="/Content/UI/plugins.css" rel="stylesheet">
+	<link href="~/Content/UI/style.css?v=2.0" rel="stylesheet" />
+	<link href="/Content/UI/responsive.css" rel="stylesheet">
+	<link href="~/Content/UI/style-rtl.css?v=2.0" rel="stylesheet" />
 	<link rel="icon" href="/Images/favicon.png">
 	<link rel="shortcut icon" href="/Images/favicon.png" type="image/x-icon">
 	<link rel="apple-touch-icon" href="/Images/favicon.png">
 	<link rel="canonical" href="https://www.mashadleather.com/" />
 	@*<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,800,700,600|Montserrat:400,500,600,700|Raleway:100,300,600,700,800" rel="stylesheet" type="text/css" />*@
 	@*<link href="~/Content/UI/style-En.css" rel="stylesheet" />*@
-	<script>
+	@*<script>
 	(function (w, d, s, l, i) {
 		w[l] = w[l] || []; w[l].push({
 			'gtm.start':
@@ -31,9 +36,18 @@
 		}); var f = d.getElementsByTagName(s)[0],
 			j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
 			'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-	})(window, document, 'script', 'dataLayer', 'GTM-WCLJHZZ');</script>
-	
+	})(window, document, 'script', 'dataLayer', 'GTM-WCLJHZZ');</script>*@
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-164633799-1"></script>
 	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-164633799-1');
+	</script>
+
+	@*<script>
 		!function (t, e, n) {
 			t.yektanetAnalyticsObject = n, t[n] = t[n] || function () {
 				t[n].q.push(arguments)
@@ -43,13 +57,13 @@
 			s.id = "ua-script-YdvEuFZH"; s.dataset.analyticsobject = n; s.async = 1; s.type = "text/javascript";
 			s.src = "https://cdn.yektanet.com/rg_woebegone/scripts_v3/YdvEuFZH/rg.complete.js?v=" + r, c.parentNode.insertBefore(s, c)
 		}(window, document, "yektanet");
-	</script>
+	</script>*@
 </head>
 <body class="no-page-loader">
-	<noscript>
+	@*<noscript>
 		<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WCLJHZZ"
 						height="0" width="0" style="display:none;visibility:hidden"></iframe>
-	</noscript>
+	</noscript>*@
 	<div id="wrapper">
 		@Html.Partial("FrontEndLayout/_MenuPartial_Home")
 		<div id="slider" dir="ltr">
@@ -220,10 +234,16 @@
 		@Html.Partial("FrontEndLayout/_FooterPartial")
 	</div>
 	<a id="goToTop"><i class="fa fa-angle-up top-icon"></i><i class="fa fa-angle-up"></i></a>
-	<link href="/Content/UI/plugins.css" rel="stylesheet">
-	<link href="~/Content/UI/style.css?v=2.0" rel="stylesheet" />
-	<link href="/Content/UI/responsive.css" rel="stylesheet">
-	<link href="~/Content/UI/style-rtl.css?v=2.0" rel="stylesheet" />
+
+	<script type="text/javascript">
+		window.vasleSettings = {
+			app_id: "T25WwGKi",
+		}
+	</script>
+	<script type="text/javascript">
+		!function () { function t() { var t = n.createElement("script"); t.type = "text/javascript", t.async = !0, t.src = "https://www.retain.ir/app/T25WwGKi/widget/?" + Math.random().toString(34).slice(2); var e = n.getElementsByTagName("script")[0]; e.parentNode.insertBefore(t, e) } var e = window, a = e.Vasle; if ("function" == typeof a) a("reattach_activator"), a("update", e.vasleSettings); else { var n = document, c = function () { c.c(arguments) }; c.q = [], c.c = function (t) { c.q.push(t) }, e.Vasle = c, e.attachEvent ? e.attachEvent("onload", t) : e.addEventListener("load", t, !1) } }();
+	</script>
+
 	<script src="/Scripts/UI/jquery.js"></script>
 	<script src="/Scripts/UI/plugins.js"></script>
 	<script src="/Scripts/UI/functions.js"></script>
@@ -320,7 +340,7 @@
 			}
 		});
 	</script>
-	<script src="~/Scripts/UI/customfunction.js?v=2.6"></script>
+	<script src="~/Scripts/UI/customfunction.js?v=2.11"></script>
     <script>
         $(document).ready(function () {
             setBasketCount();

@@ -286,21 +286,65 @@ namespace MashadLeatherEcommerce.Controllers
             if (role == "Administrator" || role == "SuperAdministrator")
             {
 
-                ViewBag.OrderStatusId = new SelectList(db.OrderStatuses, "Id", "Title", order.OrderStatusId);
+                ViewBag.OrderStatusId = new SelectList(db.OrderStatuses.OrderBy(c => c.Code), "Id", "Title", order.OrderStatusId);
             }
             else
             {
                 Guid canselOrderStatusId = new Guid("D563EBA9-DFB4-4AE6-AEA6-8801CC37B0D4");
                 if (order.OrderStatusId == canselOrderStatusId)
                 {
-                    ViewBag.OrderStatusId = new SelectList(db.OrderStatuses.Where(c => c.Id == canselOrderStatusId), "Id", "Title", order.OrderStatusId);
+                    ViewBag.OrderStatusId = new SelectList(db.OrderStatuses.Where(c => c.Id == canselOrderStatusId).OrderBy(c => c.Code), "Id", "Title", order.OrderStatusId);
                 }
                 else
-                    ViewBag.OrderStatusId = new SelectList(db.OrderStatuses, "Id", "Title", order.OrderStatusId);
+                    ViewBag.OrderStatusId = new SelectList(db.OrderStatuses.OrderBy(c => c.Code), "Id", "Title", order.OrderStatusId);
 
             }
+            ViewBag.ExitInventory = new SelectList(GetExitInventoryList(order.ExitInventory), "Value", "Title", order.ExitInventory);
+
             return View(orderDetailViewModel);
 
+        }
+
+        public List<DropdownCustomViewModel> GetExitInventoryList(string selected)
+        {
+            List<DropdownCustomViewModel> result = new List<DropdownCustomViewModel>();
+
+            //result.Add(new DropdownCustomViewModel()
+            //{
+            //    Value = "0",
+            //    Title = "انتخاب انبار",
+            //    IsSelected = false
+            //});
+            result.Add(new DropdownCustomViewModel()
+            {
+                Value = "1",
+                Title = "تهران",
+                IsSelected = false
+            });
+            result.Add(new DropdownCustomViewModel()
+            {
+                Value = "2",
+                Title = "مشهد",
+                IsSelected = false
+            });
+
+            if (selected == "1")
+            {
+                var teh = result.FirstOrDefault(c => c.Value == "1");
+                teh.IsSelected = true;
+            }
+            else if (selected == "2")
+            {
+                var mashad = result.FirstOrDefault(c => c.Value == "2");
+                mashad.IsSelected = true;
+            }
+            //else
+            //{
+            //    var other = result.FirstOrDefault(c => c.Value == "0");
+            //    other.IsSelected = true;
+            //}
+
+            return result;
         }
 
         // GET: Orders/Create
@@ -430,7 +474,7 @@ namespace MashadLeatherEcommerce.Controllers
             {
                 MenuGalleryGroups = baseViewModelHelper.GetMenuGalleryGroups(),
                 MenuItem = baseViewModelHelper.GetMenuItems(),
-                Orders = db.Orders.Where(current => current.IsDeleted == false && current.UserId == id).ToList()
+                Orders = db.Orders.Where(current => current.IsDeleted == false && current.UserId == id).OrderByDescending(c => c.CreationDate).ToList()
             };
             return View(orderHistory);
         }
@@ -469,6 +513,15 @@ namespace MashadLeatherEcommerce.Controllers
             foreach (ShopCartItemViewModel product in shopCartItems.ToList())
             {
                 Guid id = new Guid(product.Id);
+
+                if (int.Parse(product.Qty) > 1)
+                {
+                    if (product.Price == product.Amount)
+                    {
+                        decimal newAmount = Convert.ToDecimal(product.Price) * Convert.ToDecimal(product.Qty);
+                        product.Amount = newAmount.ToString("n0");
+                }
+                }
 
                 if (product.SizeTitle != "-" && product.colorTitle != "-")
                 {
@@ -510,6 +563,7 @@ namespace MashadLeatherEcommerce.Controllers
             return shopCartItems;
         }
 
+    
         public ShopCartList GetShoppingCartInfo(string jsonvar)
         {
             try
@@ -520,7 +574,7 @@ namespace MashadLeatherEcommerce.Controllers
                 List<ShopCartItemViewModel> shopCartItems = new List<ShopCartItemViewModel>();
 
                 string[] orderDetailItems = jsonvar.Split('/');
-
+                 
                 for (int i = 0; i < orderDetailItems.Length - 1; i++)
                 {
                     string[] orderDetailCount = orderDetailItems[i].Split('.');
@@ -554,7 +608,7 @@ namespace MashadLeatherEcommerce.Controllers
 
                             if (productItem != null)
                             {
-                                if (productItem.DiscountAmount != null)
+                                if (productItem.IsInPromotion && productItem.DiscountAmount != null)
                                     amount = productItem.DiscountAmount.Value;
                                 else if (productItem.Amount != null)
                                     amount = productItem.Amount.Value;
@@ -577,15 +631,20 @@ namespace MashadLeatherEcommerce.Controllers
 
                     if (currentShopItem == null)
                     {
+                        string sizeId = "nosize";
                         string sizeTitle = string.Empty;
                         if (orderDetailCount[3] != "undefined")
+                        {
                             sizeTitle = GetSizeTitle(orderDetailCount[3]);
-
+                            sizeId = orderDetailCount[3];
+                        }
+                        string colorId = "nocolor";
                         string colorTitle = string.Empty;
                         if (orderDetailCount[2] != "undefined")
+                        {
                             colorTitle = GetColorTitle(orderDetailCount[2]);
-
-
+                            colorId = orderDetailCount[2];
+                        }
                         shopCartItems.Add(new ShopCartItemViewModel()
                         {
                             Id = orderDetailCount[0],
@@ -597,7 +656,9 @@ namespace MashadLeatherEcommerce.Controllers
                             color = orderDetailCount[2],
                             size = orderDetailCount[3],
                             colorTitle = colorTitle,
-                            SizeTitle = sizeTitle
+                            SizeTitle = sizeTitle,
+                            ColorId = colorId,
+                            SizeId = sizeId
                         });
                     }
                     else
@@ -610,7 +671,7 @@ namespace MashadLeatherEcommerce.Controllers
 
                 foreach (ShopCartItemViewModel product in shopCartItems)
                 {
-                    totalPrice = (decimal)(totalPrice + (Convert.ToDecimal(product.Amount) * Convert.ToDecimal(product.Qty)));
+                    totalPrice = (decimal)(totalPrice + (Convert.ToDecimal(product.Amount)));
                 }
 
                 decimal shippmentprice = 0;
@@ -632,7 +693,7 @@ namespace MashadLeatherEcommerce.Controllers
                     Guid userId = new Guid(uid);
                     var user = db.Users.Find(userId);
 
-                    if (user.Amount != null)
+                    if (user?.Amount != null)
                         wallet = user.Amount.Value;
                 }
 
@@ -803,7 +864,8 @@ namespace MashadLeatherEcommerce.Controllers
                 return "Expired";
 
             string res = "true";
-            res = CheckPromotionOnDiscountCode(productInCarts);
+            if (!discount.AvailableInPromotion)
+                res = CheckPromotionOnDiscountCode(productInCarts);
 
             return res;
         }
@@ -868,7 +930,7 @@ namespace MashadLeatherEcommerce.Controllers
             return Json(GetShoppingCartInfo(jsonvar), JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult Finalize(string jsonvar, string firstName, string lastName, string cellNumber, string email, string province, string city, string address, string phone, string postalCode, string bank)
+        public ActionResult Finalize(string jsonvar, string firstName, string lastName, string cellNumber, string email, string province, string city, string address, string phone, string postalCode, string bank,string factor)
         {
             try
             {
@@ -894,6 +956,10 @@ namespace MashadLeatherEcommerce.Controllers
                     {
                         ShopCartList shopCart = GetShoppingCartInfo(jsonvar);
 
+                        if (!shopCart.ShopCartItems.Any())
+                        {
+                            return Json("emptybasket", JsonRequestBehavior.AllowGet);
+                        }
                         //User user = db.Users
                         //    .FirstOrDefault(current => current.IsDeleted == false && current.CellNum == cellNumber);
 
@@ -939,10 +1005,10 @@ namespace MashadLeatherEcommerce.Controllers
                             user.Address = address;
                         }
 
-                        decimal wallet = shopCart.Wallet;
-                        if (shopCart.TotalPaymentBeforWallet < wallet)
-                            wallet = shopCart.TotalPaymentBeforWallet;
-
+                        //decimal wallet = shopCart.Wallet;
+                        //if (shopCart.TotalPaymentBeforWallet < wallet)
+                        //    wallet = shopCart.TotalPaymentBeforWallet;
+                        decimal wallet = 0;
                         Order order = new Order()
                         {
                             Code = GenerateOrderCode(),
@@ -961,6 +1027,8 @@ namespace MashadLeatherEcommerce.Controllers
                             WalletAmount = wallet,
                             PaymentAmount = shopCart.TotalPayment,
                             TotalAmount = shopCart.TotalPaymentBeforWallet,
+                            PostalCode = postalCode,
+                            SendFactor = Convert.ToBoolean(factor)
 
                             //PaymentType = paymentType
                         };
@@ -1224,7 +1292,7 @@ namespace MashadLeatherEcommerce.Controllers
         }
 
 
-        public ActionResult ChangeStatus(string orderId, string statusId)
+        public ActionResult ChangeStatus(string orderId, string statusId, string exitInventory)
         {
             try
             {
@@ -1232,6 +1300,7 @@ namespace MashadLeatherEcommerce.Controllers
                 Guid statusIdGuid = new Guid(statusId);
                 Order order = db.Orders.Find(orderIdGuid);
                 order.OrderStatusId = statusIdGuid;
+                order.ExitInventory = exitInventory;
                 order.LastModifiedDate = DateTime.Now;
                 db.SaveChanges();
 
@@ -1835,5 +1904,58 @@ namespace MashadLeatherEcommerce.Controllers
             ViewBag.cityId = ReturnCities(null);
             return View(shopCart);
         }
+
+
+        [Authorize(Roles = "Administrator,SuperAdministrator")]
+        public ActionResult ChangeAddress(Guid? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Order order = db.Orders.Find(id);
+            if (order == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.Title = "تغییر آدرس سفارش کد " + order.Code;
+            ChangeAddressViewModel orderAddress = new ChangeAddressViewModel()
+            {
+                Id = order.Id,
+                Address = order.Address,
+                PostalCode = order.PostalCode,
+
+            };
+            ViewBag.CityId = new SelectList(db.Cities.Where(c => c.ProvinceId == order.City.ProvinceId).OrderBy(c => c.Title), "Id", "Title", order.CityId);
+            ViewBag.ProvinceId = new SelectList(db.Provinces.OrderBy(c => c.Title), "Id", "Title", order.City.ProvinceId);
+            return View(orderAddress);
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator,SuperAdministrator")]
+        public ActionResult ChangeAddress(ChangeAddressViewModel orderAddress)
+        {
+            if (ModelState.IsValid)
+            {
+                Order order = db.Orders.Find(orderAddress.Id);
+
+                order.Address = orderAddress.Address;
+                order.CityId = orderAddress.CityId;
+                order.PostalCode = orderAddress.PostalCode;
+                order.LastModifiedDate = DateTime.Now;
+
+                order.Description = "تغییر آدرس توسط ادمین";
+
+                db.SaveChanges();
+                return RedirectToAction("Details", new { id = orderAddress.Id });
+            }
+            ViewBag.CityId = new SelectList(db.Cities.Where(c => c.ProvinceId == orderAddress.ProvinceId).OrderBy(c => c.Title), "Id", "Title", orderAddress.CityId);
+            ViewBag.ProvinceId = new SelectList(db.Provinces.OrderBy(c => c.Title), "Id", "Title", orderAddress.ProvinceId);
+
+            return View(orderAddress);
+        }
+
     }
 }

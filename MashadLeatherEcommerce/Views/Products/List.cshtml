@@ -59,7 +59,7 @@
                             <div class="product-description">
                                 <div class="product-category">@product.ProductCategoryTitle</div>
                                 <div class="product-title">
-                                    <h2><a href="/product-detail/@product.Id">@product.Title</a></h2>
+                                    <h2><a href="/product-detail/@product.Code">@product.Title</a></h2>
                                 </div>
                                 <div class="product-price">
                                     @if (product.IsInPromotion)
@@ -88,14 +88,26 @@
                     </div>
                 }
             </div>
-            <hr>
-            <div class="pagination">
-                <ul>
-                    <li><a href="#" aria-label="Previous"> <span aria-hidden="true"><i class="fa fa-angle-left"></i></span> </a></li>
-                    <li><a href="#">1</a> </li>
-                    <li><a href="#" aria-label="Next"> <span aria-hidden="true"><i class="fa fa-angle-right"></i></span> </a></li>
-                </ul>
-            </div>
+	        <hr>
+					
+
+	        <div class="pagination pagination-simple">
+		        <ul style="direction: rtl;">
+			    
+						
+		        @foreach (var pageItem in Model.PageItems)
+		        {
+			        if (pageItem.IsCurrentPage)
+			        {
+				        <li class="active"><a href="#">@pageItem.PageId</a> </li>
+			        }
+			        else
+			        {
+				        <li><a href="/product/@Model.ProductCategory.UrlParam?pageid=@pageItem.PageId">@pageItem.PageId</a> </li>
+			        }
+		        }
+		        </ul>
+	        </div>
         </div>
     </div>
 </section>

@@ -444,4 +444,7 @@
   <data name="promotion" xml:space="preserve">
     <value>تخفیفات</value>
   </data>
+  <data name="Profile" xml:space="preserve">
+    <value>الحساب</value>
+  </data>
 </root>

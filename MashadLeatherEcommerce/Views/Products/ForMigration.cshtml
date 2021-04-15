@@ -1,0 +1,38 @@
+﻿ 
+
+@{
+    ViewBag.Title = "فهرست ";
+
+}
+
+<h2>@ViewBag.Title</h2>
+@if (ViewBag.roleName != "eshopadmin") {
+using (Html.BeginForm("Migration", "Products", FormMethod.Post))
+{
+    <button type="submit" class="btn btn-primary">همگام سازی محصولات با سرور</button>
+}
+
+
+
+using (Html.BeginForm("Promotion10", "Products", FormMethod.Post))
+{
+	<button type="submit" class="btn btn-warning">اعمال تخفیف 10 درصدی برای محصولات</button>
+}
+
+using (Html.BeginForm("Promotion15", "Products", FormMethod.Post))
+{
+    <button type="submit" class="btn btn-warning">اعمال تخفیف 15 درصدی برای محصولات</button>
+}
+
+
+using (Html.BeginForm("Promotion20", "Products", FormMethod.Post))
+{
+    <button type="submit" class="btn btn-warning">اعمال تخفیف 20 درصدی برای محصولات</button>
+}
+
+
+
+<a href="/products/configurepromotion" class="btn btn-warning">اعمال پروموشن کیان برای محصولات</a>
+}
+ 
+ 

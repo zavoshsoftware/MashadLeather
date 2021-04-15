@@ -1,198 +1,293 @@
 ﻿@using Resources.Models
 @model ViewModels.OrderDetailHistoryViewModel
 @{
-    ViewBag.Title = "جزییات سفارش";
-    Layout = "~/Views/Shared/FrontEndLayout/_FrontEndLayout.cshtml";
+		ViewBag.Title = "جزییات سفارش";
+		Layout = "~/Views/Shared/FrontEndLayout/_FrontEndLayout.cshtml";
 }
 
-<section id="page-title" data-parallax-image="/images/mashad-faq-img.jpg">
-    <div class="container">
-        <div class="page-title">
-            <h1>جزییات سفارش</h1>
-            <span>لیست محصولات</span>
-        </div>
 
-    </div>
+@section head{
+	<style>
+		.panel-heading {
+			text-align: right;
+			direction: rtl;
+		} .table-responsive {
+			border: 1px solid #ddd;
+		}
+
+		.sidebar-card {
+			border: 1px solid #ddd;
+		}
+
+		.sidebar-card ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			text-align: right;
+			direction: rtl;
+		}
+
+		.sidebar-card ul li {
+			border-bottom: 1px solid #ddd;
+		}
+
+		.sidebar-card ul li a {
+			display: block;
+			padding: 10px;
+		}
+
+		.sidebar-userinfo {
+			background-color: #6c5f5f;
+			margin-bottom: 20px;
+			padding: 10px;
+			color: #fff;
+		}
+
+		.sidebar-userinfo p {
+			margin-bottom: 0px;
+		}
+
+		.sidebar-userinfo .user-img {
+			float: right;
+		}
+
+		.sidebar-userinfo .user-img img {
+			border-radius: 50%;
+		}
+
+		.sidebar-userinfo .user-info {
+			float: right;
+			padding-top: 20px;
+			margin-right: 5px;
+		}
+	</style>
+}
+
+
+<section id="page-title" data-parallax-image="/images/mashad-faq-img.jpg">
+	<div class="container">
+		<div class="page-title">
+			<h1>جزییات سفارش</h1>
+			<span>لیست محصولات</span>
+		</div>
+
+	</div>
 </section>
 <section>
-    <div class="container">
-        @if (!Model.OrderDetails.Any())
-        {
+	<div class="container">
+		<div class="row">
 
-            <div class="p-t-10 m-b-20 text-center">
-                <div class="heading-fancy heading-line text-center">
-                    <h4>جزییات سفارش شما خالی می باشد</h4>
-                </div>
-            </div>
+			<div class="col-md-3 p-r-10 ">
+				@Html.Partial("_CustomerDashboardMenuPartial")
 
-        }
-        else
-        {
-        <div class="shop-cart">
-            <div class="table table-condensed table-striped table-responsive">
+			</div>
+			<div class="col-md-9 p-r-10 ">
 
-                <table class="table">
-                    <thead>
-                    <tr>
+				<div class="panel panel-default">
+					<div class="panel-heading">اقلام سفارش کد @Model.Code</div>
+					<div class="panel-body">
 
-                        <th class="cart-product-thumbnail">محصول</th>
-                        <th class="cart-product-color">رنگ</th>
-                        <th class="cart-product-price">قیمت واحد</th>
-                        <th class="cart-product-quantity">تعداد</th>
-                        @*<th class="cart-product-subtotal">مجموع</th>*@
-                    </tr>
-                    </thead>
-                    <tbody>
+				@if (!Model.OrderDetails.Any())
+				{
 
-                    @foreach (var item in Model.OrderDetails)
-                    {
-                        <tr>
-                            <td>
-                                @item.Product.Title
-                            </td>
-                            <td>
-                                @item.Product.Color.Title
-                            </td>
-                            <td>
-                                @item.Price
-                            </td>
-                            <td>
-                                @item.Quantity
-                            </td>
-                        </tr>
-                    }
+						<div class="p-t-10 m-b-20 text-center">
+							<div class="heading-fancy heading-line text-center">
+								<h4>جزییات سفارش شما خالی می باشد</h4>
+							</div>
+						</div>
 
+				}
+				else
+				{
+						<div class="shop-cart">
+							<div class="table table-condensed table-striped table-responsive">
 
-                    </tbody>
-                </table>
+								<table class="table">
+									<thead>
+										<tr>
 
-            </div>
-            <div class="row">
-                <hr class="space">
-                <div class="col-md-6 p-r-10 ">
-                    <h4>مجموع هزینه ها</h4>
-                    <div class="table-responsive">
+											<th class="cart-product-thumbnail">محصول</th>
+											<th class="cart-product-color">رنگ</th>
+											<th class="cart-product-price">قیمت واحد</th>
+											<th class="cart-product-quantity">تعداد</th>
+											@*<th class="cart-product-subtotal">مجموع</th>*@
+										</tr>
+									</thead>
+									<tbody>
 
-                        <table class="table">
-                            <tbody>
-                            <tr>
-                                <td class="cart-product-name">
-                                    <strong>جمع فاکتور</strong>
-                                </td>
-
-                                <td class="cart-product-name text-right">
-                                    @Model.Amount
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="cart-product-name">
-                                    <strong>هزینه ارسال</strong>
-                                </td>
-
-                                <td class="cart-product-name  text-right">
-                                    @Model.ShippmentPrice
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="cart-product-name">
-                                    <strong>مالیات بر ارزش افزوده</strong>
-                                </td>
-
-                                <td class="cart-product-name  text-right">
-                                    @Model.Vat
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td class="cart-product-name">
-                                    <strong>مجموع قابل پرداخت</strong>
-                                </td>
-
-                                <td class="cart-product-name text-right">
-                                    @Model.TotalPayment
-                                </td>
-                            </tr>
-                            </tbody>
-
-                        </table>
-
-                    </div>
-
-                </div>
-
-                <div class="col-md-6 p-r-10">
-                    <h4>اطلاعات مشتری</h4>
-                    <div class="row customerInfo">
-                        <div class="table-responsive">
-
-                            <table class="table">
-                                <tbody>
-                                <tr>
-                                    <td>
-                                        <strong>نام</strong>
-                                    </td>
-
-                                    <td class="text-right">
-                                        @Model.User.FirstName
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <strong>نام خانوادگی</strong>
-                                    </td>
-
-                                    <td class="text-right">
-                                        @Model.User.LastName
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <strong>شماره موبایل</strong>
-                                    </td>
-
-                                    <td class="text-right">
-                                        @Model.User.CellNum
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <strong>ایمیل</strong>
-                                    </td>
-
-                                    <td class="text-right">
-                                        @Model.User.Email
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <strong>شهر</strong>
-                                    </td>
-
-                                    <td class="text-right">
-                                        @Model.User.City.Title
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <strong>آدرس</strong>
-                                    </td>
-
-                                    <td class="text-right">
-                                        @Model.User.Address
-                                    </td>
-                                </tr>
-                                </tbody>
-
-                            </table>
-
-                        </div>
-                    </div>
+										@foreach (var item in Model.OrderDetails)
+						{
+							<tr>
+								<td>
+									@item.Product.Title
+								</td>
+								<td>
+									@item.Product.Color.Title
+								</td>
+								<td>
+									@item.Price.ToString("n0")
+								</td>
+								<td>
+									@item.Quantity
+								</td>
+							</tr>
+						}
 
 
-                </div>
-            </div>
-        </div>
-        }
-    </div>
-    </section>
+									</tbody>
+								</table>
+
+							</div>
+							<div class="row">
+								<hr class="space">
+								<div class="col-md-6 p-r-10 ">
+									<div class="panel panel-default">
+										<div class="panel-heading">مجموع هزینه ها</div>
+										<div class="panel-body">
+											
+											<div class="table-responsive">
+
+												<table class="table">
+													<tbody>
+													<tr>
+														<td class="cart-product-name">
+															<strong>جمع فاکتور</strong>
+														</td>
+
+														<td class="cart-product-name text-right">
+															@Model.Amount
+														</td>
+													</tr>
+													<tr>
+														<td class="cart-product-name">
+															<strong>هزینه ارسال</strong>
+														</td>
+
+														<td class="cart-product-name  text-right">
+															@Model.ShippmentPrice
+														</td>
+													</tr>
+													<tr>
+														<td class="cart-product-name">
+															<strong>تخفیف</strong>
+														</td>
+
+														<td class="cart-product-name  text-right">
+															@Model.DiscountAmount
+														</td>
+													</tr>
+													<tr>
+														<td class="cart-product-name">
+															<strong>مبلغ استفاده شده از کیف پول</strong>
+														</td>
+
+														<td class="cart-product-name  text-right">
+															@Model.Wallet
+														</td>
+													</tr>
+
+													<tr>
+														<td class="cart-product-name">
+															<strong>مجموع قابل پرداخت</strong>
+														</td>
+
+														<td class="cart-product-name text-right">
+															@Model.TotalPayment
+														</td>
+													</tr>
+													</tbody>
+
+												</table>
+
+											</div>
+										</div>
+										</div>
+										
+
+										</div>
+
+								<div class="col-md-6 p-r-10">
+									
+									<div class="panel panel-default">
+										<div class="panel-heading">اطلاعات مشتری</div>
+										<div class="panel-body">
+									<div class="row customerInfo">
+										<div class="table-responsive">
+
+											<table class="table">
+												<tbody>
+												<tr>
+													<td>
+														<strong>نام</strong>
+													</td>
+
+													<td class="text-right">
+														@Model.User.FirstName
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<strong>نام خانوادگی</strong>
+													</td>
+
+													<td class="text-right">
+														@Model.User.LastName
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<strong>شماره موبایل</strong>
+													</td>
+
+													<td class="text-right">
+														@Model.User.CellNum
+													</td>
+												</tr>
+
+												<tr>
+													<td>
+														<strong>ایمیل</strong>
+													</td>
+
+													<td class="text-right">
+														@Model.User.Email
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<strong>شهر</strong>
+													</td>
+
+													<td class="text-right">
+														@Model.User.City.Title
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<strong>آدرس</strong>
+													</td>
+
+													<td class="text-right">
+														@Model.User.Address
+													</td>
+												</tr>
+												</tbody>
+
+											</table>
+
+										</div>
+									</div>
+									</div>
+									</div>
+
+
+								</div>
+							</div>
+						</div>
+				}
+			</div></div>
+			</div>
+		</div>
+	</div>
+</section>
+

@@ -14,5 +14,8 @@ namespace Models
 
         public int Count { get; set; }
         public int? InventoryId { get; set; }
+
+        public string FileUrl { get; set; }
+        public bool IsSuccess { get; set; }
     }
 }

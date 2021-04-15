@@ -4,6 +4,62 @@
     Layout = "~/Views/Shared/FrontEndLayout/_FrontEndLayout.cshtml";
 }
 
+
+@section head{
+	<style>
+		.table-responsive {
+			border: 1px solid #ddd;
+		}
+
+		.sidebar-card {
+			border: 1px solid #ddd;
+		}
+
+			.sidebar-card ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				text-align: right;
+				direction: rtl;
+			}
+
+				.sidebar-card ul li {
+					border-bottom: 1px solid #ddd;
+				}
+
+					.sidebar-card ul li a {
+						display: block;
+						padding: 10px;
+					}
+
+		.sidebar-userinfo {
+			background-color: #6c5f5f;
+			margin-bottom: 20px;
+			padding: 10px;
+			color: #fff;
+		}
+
+			.sidebar-userinfo p {
+				margin-bottom: 0px;
+			}
+
+			.sidebar-userinfo .user-img {
+				float: right;
+			}
+
+				.sidebar-userinfo .user-img img {
+					border-radius: 50%;
+				}
+
+			.sidebar-userinfo .user-info {
+				float: right;
+				padding-top: 20px;
+				margin-right: 5px;
+			}
+	</style>
+}
+
+
 <section id="page-title" data-parallax-image="/images/mashad-faq-img.jpg">
     <div class="container">
         <div class="page-title">
@@ -18,7 +74,11 @@
         <div class="shop-cart">
             <div class="row">
                 
-                <div class="col-md-12 p-r-10 ">
+	            <div class="col-md-3 p-r-10 ">
+					@Html.Partial("_CustomerDashboardMenuPartial")
+		  
+	            </div>
+                <div class="col-md-9 p-r-10 ">
                     <div class="table-responsive">
                       @if (!Model.Orders.Any())
                       {
@@ -37,6 +97,7 @@
                             <tr>
                                 <th>شماره فاکتور</th>
                                 <th>تاریخ فاکتور</th>
+                                <th>وضعیت فاکتور</th>
                                 <th>جمع کل</th>
                                 <th>جزییات</th>
                             </tr>
@@ -53,7 +114,10 @@
                                         @item.CreationDate.ToShortDateString()
                                     </td>
                                     <td>
-                                        @item.TotalAmount
+                                        @item.OrderStatus.Title
+                                    </td>
+                                    <td>
+                                        @item.TotalAmount.ToString("N0") ریال
                                     </td>
                                     <td>
                                         <a href="/historyDetails/@item.Id">مشاهده جزییات</a>

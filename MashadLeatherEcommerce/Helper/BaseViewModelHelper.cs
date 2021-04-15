@@ -28,7 +28,7 @@ namespace Helper
             && current.UrlParam.ToLower() != "gifts" && current.UrlParam.ToLower() != "leather-care"
             ).OrderBy(current => current.Priority).ToList();
 
-            List <MenuProductCategory> menuProductCategories = new List<MenuProductCategory>();
+            List<MenuProductCategory> menuProductCategories = new List<MenuProductCategory>();
 
             foreach (ProductCategory productCategory in ProductCategories)
             {
@@ -52,7 +52,7 @@ namespace Helper
                     UrlParam = productCategory.UrlParam
                 });
             }
-          
+
 
             return menuProductCategories;
         }
@@ -60,7 +60,7 @@ namespace Helper
         public List<ProductCategory> GetMenuJoinProductCategory()
         {
             return db.ProductCategories.Where(current => current.IsDeleted == false
-            &&  current.UrlParam.ToLower() == "leather-care"
+            && current.UrlParam.ToLower() == "leather-care"
             ).OrderBy(current => current.Priority).ToList();
 
         }
@@ -68,16 +68,42 @@ namespace Helper
 
         public string GetMenExtraMenuCategory()
         {
-            ProductCategory productCategory= db.ProductCategories.FirstOrDefault(current => current.IsDeleted == false
-            &&  current.UrlParam.ToLower() == "gifts");
+            ProductCategory productCategory = db.ProductCategories.FirstOrDefault(current => current.IsDeleted == false
+             && current.UrlParam.ToLower() == "gifts");
 
 
             if (productCategory != null)
                 return productCategory.TitleSrt;
 
-             return string.Empty;
+            return string.Empty;
         }
 
+        public User GetLoginUser()
+        {
+            try
+            {
 
+                if (HttpContext.Current.User.Identity.IsAuthenticated)
+                {
+                    var identity = (System.Security.Claims.ClaimsIdentity)HttpContext.Current.User.Identity;
+                    string name = identity.FindFirst(System.Security.Claims.ClaimTypes.Name).Value;
+                    Guid userId = new Guid(name);
+
+                    User user = db.Users.FirstOrDefault(c => c.Id == userId && c.IsDeleted == false);
+
+                    if (user != null)
+                        return user;
+
+                    return null;
+                }
+
+                return null;
+
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
     }
 }

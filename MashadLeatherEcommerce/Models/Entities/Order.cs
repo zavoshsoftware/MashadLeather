@@ -120,13 +120,20 @@ namespace Models
         [Display(Name = "مبلغ استفاده شده از کیف پول")]
         [Column(TypeName = "Money")]
         public decimal? WalletAmount { get; set; }
-
-
+         
         [Display(Name = "مبلغ پرداختی")]
         [Column(TypeName = "Money")]
         public decimal? PaymentAmount { get; set; }
 
+
+        [Display(Name = "انبار خروجی")]
+        public string ExitInventory  { get; set; }
+        [Display(Name = "PostalCode", ResourceType = typeof(Resources.Models.User))]
+        public string PostalCode  { get; set; }
         public virtual ICollection<PaymentFreeCode> PaymentFreeCodes { get; set; }
+
+        [Display(Name="فاکتور ارسال شود")]
+        public bool SendFactor { get; set; }
 
     }
 }

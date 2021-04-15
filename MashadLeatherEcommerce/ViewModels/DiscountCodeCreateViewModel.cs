@@ -45,5 +45,9 @@ namespace ViewModels
 
         [Display(Name = "استفاده شده است؟")]
         public bool IsUsed { get; set; }
+
+        [Display(Name = "امکان استفاده برای محصولات در پروموشن")]
+        public bool AvailableInPromotion { get; set; }
+
     }
 }

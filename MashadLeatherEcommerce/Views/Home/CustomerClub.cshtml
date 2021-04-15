@@ -5,8 +5,22 @@
 		ViewBag.Canonical = "https://www.mashadleather.com/customerclub";
 		Layout = "~/Views/Shared/FrontEndLayout/_FrontEndLayout.cshtml";
 }
-
-
+@section head{
+	<style>
+		p {
+			font-family: IRANSans !important;
+			color: #000 !important;
+			direction: rtl !important;
+			text-align: justify !important;
+			margin-bottom: 0 !important;
+			font-size: 15px !important;
+			line-height: 35px;
+		}
+			p a {
+				color:  #ED1C24;
+			}
+	</style>
+}
 <section id="page-title" data-parallax-image="@Model.CustomerClub.ImageUrl">
 	<div class="container">
 		<div class="page-title">

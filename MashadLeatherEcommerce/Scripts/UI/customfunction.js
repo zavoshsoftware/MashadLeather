@@ -21,7 +21,7 @@ function LoadOrders() {
                         GetProductColor(result.ShopCartItems[i].colorTitle) +
                         GetProductSize(result.ShopCartItems[i].SizeTitle) +
                         GetProductPrice(result.ShopCartItems[i].Price) +
-                        GetProductQty(result.ShopCartItems[i].Qty, result.ShopCartItems[i].Id) +
+                        GetProductQty(result.ShopCartItems[i].Qty, result.ShopCartItems[i].Id, result.ShopCartItems[i].ColorId, result.ShopCartItems[i].SizeId) +
                         GetProductRowAmount(result.ShopCartItems[i].Amount) +
                         "</tr>";
 
@@ -30,10 +30,10 @@ function LoadOrders() {
 
                 $('#rows').html(rows);
 
-                $('#orderAmount').html(result.Amount);
-                $('#shippmentAmount').html(result.ShippmentPrice);
-                $('#DiscountAmount').html(result.Discount);
-                $('#total').html(result.TotalPaymentBeforWallet);
+                $('#orderAmount').html(result.AmountStr);
+                $('#shippmentAmount').html(result.ShippmentPriceStr);
+                $('#DiscountAmount').html(result.DiscountStr);
+                $('#total').html(result.TotalPaymentBeforWalletStr);
                 $('.loading-fuulpage').css('display', 'none');
 
             });
@@ -75,11 +75,11 @@ function LoadCheckoutOrders() {
 
                 $('#rows').html(rows);
 
-                $('#orderAmount').html(result.Amount);
-                $('#shippmentAmount').html(result.ShippmentPrice);
-                $('#DiscountAmount').html(result.Discount);
-                $('#total').html(result.TotalPayment);
-                $('#walletAmount').html(result.Wallet);
+                $('#orderAmount').html(result.AmountStr);
+                $('#shippmentAmount').html(result.ShippmentPriceStr);
+                $('#DiscountAmount').html(result.DiscountStr);
+                $('#total').html(result.TotalPaymentStr);
+                $('#walletAmount').html(result.WalletStr);
                 $('.loading-fuulpage').css('display', 'none');
                 if (result.Discount !== 0) {
                     $('.btn-remove-discount').css('display', 'inline');
@@ -95,12 +95,12 @@ function LoadCheckoutOrders() {
 }
 
 function addToBasket(id) {
-    //EventSetup
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-        event: 'addtocart'
-    });
-    //EventSetup
+    ////EventSetup
+    //window.dataLayer = window.dataLayer || [];
+    //window.dataLayer.push({
+    //    event: 'addtocart'
+    //});
+    ////EventSetup
 
     var currentBasket = get();
     var qty = $("#txtCount").val();
@@ -125,8 +125,43 @@ function addToBasket(id) {
             if (currentBasket === null) {
                 currentBasket = '';
             }
-            currentBasket = currentBasket + id + "." + qty + "." + color + "." + size + "/";
 
+            if (currentBasket.includes(id) && currentBasket.includes(color)) {
+                var basketItems = currentBasket.split('/');
+
+                //این بیت برای این است که اگر یک رکورد در سبد خرید، محصول کد 1 بود و یک محصول دیگر رنگ کد 2 بود، حالا یک محصول جدید با کد محصول 1 و کد رنگ 2 در سبد خرید اضافه نمیشد
+                var includeInThisRecord = false;
+
+                var newBasketItem = '';
+
+                for (var i = 0; i < basketItems.length - 1; i++) {
+                    if (basketItems[i].includes(id) && basketItems[i].includes(color)) {
+
+                        includeInThisRecord = true;
+
+                        var basketDetails = basketItems[i].split('.');
+
+                        var newqty = parseInt(basketDetails[1]) + parseInt(qty);
+
+                        basketItems[i] = basketDetails[0] +
+                            '.' +
+                            newqty +
+                            '.' +
+                            basketDetails[2] +
+                            '.' +
+                            basketDetails[3];
+                    }
+
+                    newBasketItem = newBasketItem + basketItems[i] + "/";
+                }
+                currentBasket = newBasketItem;
+                if (!includeInThisRecord) {
+                    currentBasket = currentBasket + id + "." + qty + "." + color + "." + size + "/";
+
+                }
+            } else {
+                currentBasket = currentBasket + id + "." + qty + "." + color + "." + size + "/";
+            }
             localStorage.setItem("basket", currentBasket);
             successMessage();
             setBasketCount();
@@ -144,8 +179,46 @@ function addToBasket(id) {
                         if (currentBasket === null) {
                             currentBasket = '';
                         }
-                        currentBasket = currentBasket + id + "." + qty + "." + color + "." + size + "/";
 
+
+                        if (currentBasket.includes(id) &&
+                            currentBasket.includes(color) &&
+                            currentBasket.includes(size)) {
+                            var basketItems = currentBasket.split('/');
+                            var includeInThisRecord = false;
+
+                            var newBasketItem = '';
+
+                            for (var i = 0; i < basketItems.length - 1; i++) {
+                                if (basketItems[i].includes(id) &&
+                                    basketItems[i].includes(color) &&
+                                    basketItems[i].includes(size)) {
+
+                                    includeInThisRecord = true;
+
+                                    var basketDetails = basketItems[i].split('.');
+
+                                    var newqty = parseInt(basketDetails[1]) + parseInt(qty);
+
+                                    basketItems[i] = basketDetails[0] +
+                                        '.' +
+                                        newqty +
+                                        '.' +
+                                        basketDetails[2] +
+                                        '.' +
+                                        basketDetails[3];
+                                }
+
+                                newBasketItem = newBasketItem + basketItems[i] + "/";
+                            }
+                            currentBasket = newBasketItem;
+
+                            if (!includeInThisRecord) {
+                                currentBasket = currentBasket + id + "." + qty + "." + color + "." + size + "/";
+                            }
+                        } else {
+                            currentBasket = currentBasket + id + "." + qty + "." + color + "." + size + "/";
+                        }
                         localStorage.setItem("basket", currentBasket);
                         successMessage();
                         setBasketCount();
@@ -197,9 +270,11 @@ function get() {
     return localStorage.getItem("basket");
 }
 function successMessage() {
-    $('#errorMessage').css('display', 'none');
-    $('#successMessage').css('display', 'block');
-    $('#successMessage').html('<a href="/Orders/ShopCart">این کالا با موفقیت به سبد خرید افزوده شد. جهت مشاهده سبد خرید و نهایی سازی خرید  <span class="underline-text">اینجا</span> را کلیک کنید.</a>');
+    //$('#errorMessage').css('display', 'none');
+    //$('#successMessage').css('display', 'block');
+    //$('#successMessage').html('<a href="/Orders/ShopCart">این کالا با موفقیت به سبد خرید افزوده شد. جهت مشاهده سبد خرید و نهایی سازی خرید  <span class="underline-text">اینجا</span> را کلیک کنید.</a>');
+
+    window.location.replace("/orders/shopcart");
 }
 function setBasketCount() {
     var basket = get();
@@ -268,7 +343,7 @@ function removeOrderDetail(productId) {
 
         //setBasketCount();
         //LoadOrders();
-  
+
     }
 
 
@@ -297,7 +372,7 @@ function UpdateBasket() {
                 orderDetail[0] = t[1];
             }
 
-            var id = "quantity_" + orderDetail[0];
+            var id = "quantity_" + orderDetail[0] + "_" + orderDetail[2] + "_" + orderDetail[3];
             var input = document.getElementById(id);
             var value = input.value;
             if (value !== "0") {
@@ -400,39 +475,38 @@ function GetProductQtyForCheckout(productQty) {
     return product;
 }
 
-function GetProductQty(productQty, productId) {
+function GetProductQty(productQty, productId, colorId,sizeId) {
     //var id = "quantity_" + productId
     //var input = document.getElementById(id);
     //var value = input.value();
     var product = " <td class='cart-product-quantity'>" +
         " <div class='quantity'>" +
-        "<input class='minus' type='button' value='-' onclick=\"qtydown('" +
-        productId + "');\">" +
-        //"<input onchange=changevaluebasket('" + productId + "'," + productQty + "); type='number' style='width:80px;' value='" +
-        //"<input onchange=changevaluebasket('" + productId + "'); type='number' style='width:80px;' value='" +
-        "<input type='text' style='width:80px;' value='" +
+        "<input class='minus' disable type='button' value='-' onclick=\"qtydown('" +
+        productId + "','" + colorId + "','" + sizeId + "');\">" +
+
+        "<input type='text' readonly style='width:80px;' value='" +
         productQty +
-        "' name='quantity' class='qty' min='1' id='quantity_" + productId + "'>" +
+        "' name='quantity' class='qty' min='1' id='quantity_" + productId + "_" + colorId + "_" + sizeId + "'>" +
 
         "<input class='plus' type='button' value='+' onclick=\"qtyup('" +
-        productId + "');\">" +
+        productId + "','" + colorId + "','" + sizeId + "');\">" +
         "   </div></td>";
 
     return product;
 }
 
-function qtyup(id) {
-    var currentVal = $('#quantity_' + id).val();
+function qtyup(id, colorId,sizeId) {
+    var currentVal = $('#quantity_' + id + '_' + colorId + '_' + sizeId).val();
     currentVal++;
-    $('#quantity_' + id).val(currentVal);
+    $('#quantity_' + id + '_' + colorId + '_' + sizeId).val(currentVal);
     UpdateBasket();
 
 }
-function qtydown(id) {
-    var currentVal = $('#quantity_' + id).val();
+function qtydown(id, colorId, sizeId) {
+    var currentVal = $('#quantity_' + id + '_' + colorId + '_' + sizeId).val();
     currentVal--;
     if (currentVal >= 0)
-        $('#quantity_' + id).val(currentVal);
+        $('#quantity_' + id + '_' + colorId + '_' + sizeId).val(currentVal);
     UpdateBasket();
 
 }
@@ -550,7 +624,10 @@ function FinalizeOrder() {
             var txtPhone = $("#txtPhone").val();
             var txtPostalCode = $("#txtPostalCode").val();
             // var paymentType = $('input[name="payment_option"]:checked').val();
-
+            var factor = "false";
+            if ($('#chkfactor').is(':checked')) {
+                factor = "true";
+            }
             if (txtCity === undefined || txtCity === "0") {
                 $('#errorOrder').css('display', 'block');
                 $('#errorOrder').html('استان و شهر خود را انتخاب نمایید');
@@ -590,6 +667,7 @@ function FinalizeOrder() {
                             phone: txtPhone,
                             postalCode: txtPostalCode,
                             bank: gateway,
+                            factor: factor
                             // paymentType: paymentType
                         },
                         type: "GET"
@@ -638,6 +716,15 @@ function FinalizeOrder() {
 
                             $('#errorOrder').css('display', 'block');
                             $('#errorOrder').html('شماره موبایل وارد شده صحیح نمی باشد');
+                            $('#successOrder').css('display', 'none');
+                            $('#loadingImg').css('display', 'none');
+                            $('#btnFinalizeOrder').css('display', 'block');
+
+                        } 
+                        else if (result === 'emptybasket') {
+
+                            $('#errorOrder').css('display', 'block');
+                            $('#errorOrder').html('سبد خرید شما خالی است');
                             $('#successOrder').css('display', 'none');
                             $('#loadingImg').css('display', 'none');
                             $('#btnFinalizeOrder').css('display', 'block');
@@ -830,7 +917,7 @@ function addDiscountCode() {
                         }
                     }
                 }
-            
+
             });
 
     } else {

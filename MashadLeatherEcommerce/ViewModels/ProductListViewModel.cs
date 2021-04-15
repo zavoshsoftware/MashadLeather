@@ -13,6 +13,8 @@ namespace ViewModels
         public List<Comment> Commnets { get; set; }
         public List<BreadcrumpItemViewModel> BreadcrumpItems { get; set; }
         public string CurrentCurrency { get; set; }
+        public List<PageItem> PageItems { get; set; }
+
     }
 
     public class ProductListItem
@@ -28,6 +30,13 @@ namespace ViewModels
         public bool HasTag { get; set; }
         public string TagTitle { get; set; }
         public bool IsAvailable { get; set; }
+        public int  Code { get; set; }
     }
-   
+
+    public class PageItem
+    {
+        public int PageId { get; set; }
+        public bool IsCurrentPage { get; set; }
+    }
+
 }

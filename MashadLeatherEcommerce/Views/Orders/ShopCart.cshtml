@@ -4,7 +4,7 @@
 		ViewBag.Title = "سبد خرید | فروشگاه اینترنتی چرم مشهد";
 		Layout = "~/Views/Shared/FrontEndLayout/_FrontEndLayout.cshtml";
 }
-
+ 
 <!-- Page title -->
 <section id="page-title" data-parallax-image="/images/mashad-faq-img.jpg">
 	<div class="container">
@@ -110,7 +110,10 @@
 	<script>
 		$(document).ready(function () {
 			LoadOrders();
-
+			document.getElementById("minus").disabled = true; 
+			document.getElementById("plus").disabled = true; 
+			$(".plus").attr("disabled", true);
+			$(".minus").attr("disabled", true);
 		});
 	</script>
 }

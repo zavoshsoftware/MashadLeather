@@ -530,6 +530,20 @@ namespace MashadLeatherEcommerce.Controllers
             return View(textViewModel);
         }
 
+        [Route("spring")]
+        public ActionResult SpringPromotion()
+        {
+
+            SpringPromotionViewModel textViewModel = new SpringPromotionViewModel()
+            {
+                MenuGalleryGroups = baseViewModelHelper.GetMenuGalleryGroups(),
+                MenuItem = baseViewModelHelper.GetMenuItems(),
+                ProductCategories = db.ProductCategories.Where(c => c.IsDeleted == false && c.ParentId == null && c.IsActive).Take(4).ToList(),
+                SiteBranches = db.SiteBranches.Where(c=>c.IsDeleted==false&&c.Phone!=null&&c.IsActive).OrderBy(c=>c.SiteBranchGroup.Order).ToList()
+            };
+            return View(textViewModel);
+        }
+
         public ActionResult TestChart()
         {
             return View();

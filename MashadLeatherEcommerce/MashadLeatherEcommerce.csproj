@@ -1087,6 +1087,7 @@
     <Content Include="Images\blog\thumbnail\7.jpg" />
     <Content Include="Images\blog\thumbnail\8.jpg" />
     <Content Include="Images\card-images.png" />
+    <Content Include="Images\check.png" />
     <Content Include="Images\clients\1-w.png" />
     <Content Include="Images\clients\1.png" />
     <Content Include="Images\clients\10-w.png" />
@@ -1299,6 +1300,7 @@
     <Content Include="Images\portfolio\project\60.jpg" />
     <Content Include="Images\preloader1.gif" />
     <Content Include="Images\quote.png" />
+    <Content Include="Images\remove.png" />
     <Content Include="Images\rvs-addon.jpg" />
     <Content Include="Images\scrolldown-dark.png" />
     <Content Include="Images\scrolldown-mouse-dark.png" />
@@ -1326,6 +1328,7 @@
     <Content Include="Images\shop\shop-category\4.jpg" />
     <Content Include="Images\shortcode-megamenu-bg.png" />
     <Content Include="Images\side-logo-light.png" />
+    <Content Include="Images\slide1.jpg" />
     <Content Include="Images\slider\100.jpg" />
     <Content Include="Images\slider\103.jpg" />
     <Content Include="Images\slider\104.jpg" />
@@ -4689,6 +4692,7 @@
     <Compile Include="Helper\GetCurrency.cs" />
     <Compile Include="Helper\KiyanHelper.cs" />
     <Compile Include="Helper\PersianCulture.cs" />
+    <Compile Include="Helper\ProductHelper.cs" />
     <Compile Include="Helper\Sitemap.cs" />
     <Compile Include="Helper\SmsMessageHelper.cs" />
     <Compile Include="Helper\Utils.cs" />
@@ -5044,6 +5048,26 @@
     <Compile Include="Migrations\202101261312415_V88.Designer.cs">
       <DependentUpon>202101261312415_V88.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202103161201127_V89.cs" />
+    <Compile Include="Migrations\202103161201127_V89.Designer.cs">
+      <DependentUpon>202103161201127_V89.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104040822474_V90.cs" />
+    <Compile Include="Migrations\202104040822474_V90.Designer.cs">
+      <DependentUpon>202104040822474_V90.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104040917092_V91.cs" />
+    <Compile Include="Migrations\202104040917092_V91.Designer.cs">
+      <DependentUpon>202104040917092_V91.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104121136227_V92.cs" />
+    <Compile Include="Migrations\202104121136227_V92.Designer.cs">
+      <DependentUpon>202104121136227_V92.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104140659075_V100.cs" />
+    <Compile Include="Migrations\202104140659075_V100.Designer.cs">
+      <DependentUpon>202104140659075_V100.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DatabaseContext.cs" />
     <Compile Include="Models\DatabaseContextInitializer.cs" />
@@ -5092,7 +5116,9 @@
     </Compile>
     <Compile Include="Services\Sms\SendSms.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\SpringPromotionViewModel.cs" />
     <Compile Include="ViewModels\BranchListViewMoel.cs" />
+    <Compile Include="ViewModels\ChangeAddressViewModel.cs" />
     <Compile Include="ViewModels\ContactViewModel.cs" />
     <Compile Include="ViewModels\CooperationViewModel.cs" />
     <Compile Include="ViewModels\CustomerClubViewModel.cs" />
@@ -5100,6 +5126,7 @@
     <Compile Include="ViewModels\BlogDetailViewModel.cs" />
     <Compile Include="ViewModels\AboutViewModel.cs" />
     <Compile Include="ViewModels\DiscountCodeCreateViewModel.cs" />
+    <Compile Include="ViewModels\DropdownCustomViewModel.cs" />
     <Compile Include="ViewModels\GalleryDetailViewModel.cs" />
     <Compile Include="ViewModels\GalleryListViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
@@ -5119,6 +5146,7 @@
     <Compile Include="ViewModels\ProductCategoryViewModel.cs" />
     <Compile Include="ViewModels\ProductDetailViewModel.cs" />
     <Compile Include="ViewModels\BlogListViewModel.cs" />
+    <Compile Include="ViewModels\ProductExportViewModel.cs" />
     <Compile Include="ViewModels\ProductListViewModel.cs" />
     <Compile Include="ViewModels\ProductQuickViewModel.cs" />
     <Compile Include="ViewModels\ActivateViewModel.cs" />
@@ -5135,7 +5163,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
-    <Content Include="Models\Views\Shared\_Layout.cshtml" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
@@ -5452,6 +5479,11 @@
     <Content Include="Views\UserInformations\Index.cshtml" />
     <Content Include="Views\Home\TestChart.cshtml" />
     <Content Include="Views\Home\TestChart2.cshtml" />
+    <Content Include="Views\Products\ForMigration.cshtml" />
+    <Content Include="Views\Shared\_CustomerDashboardMenuPartial.cshtml" />
+    <Content Include="Views\Orders\ChangeAddress.cshtml" />
+    <Content Include="Views\ExcelData\ExportProducts.cshtml" />
+    <Content Include="Views\Home\SpringPromotion.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -5733,6 +5765,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202101261312415_V88.resx">
       <DependentUpon>202101261312415_V88.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103161201127_V89.resx">
+      <DependentUpon>202103161201127_V89.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104040822474_V90.resx">
+      <DependentUpon>202104040822474_V90.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104040917092_V91.resx">
+      <DependentUpon>202104040917092_V91.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104121136227_V92.resx">
+      <DependentUpon>202104121136227_V92.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104140659075_V100.resx">
+      <DependentUpon>202104140659075_V100.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

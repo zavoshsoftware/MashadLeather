@@ -4,6 +4,15 @@
     ViewBag.Title = "سبد خرید | فروشگاه اینترنتی چرم مشهد";
     Layout = "~/Views/Shared/FrontEndLayout/_FrontEndLayout.cshtml";
 }
+@section head
+{
+	<style>
+		.policy a{ margin-right: 10px;}
+		.border-checkout {
+			border: 1px solid #ddd; padding: 10px;
+		}
+	</style>
+}
 
 <!-- Page title -->
 <section id="page-title" data-parallax-image="/images/mashad-faq-img.jpg">
@@ -45,12 +54,16 @@
 		        <tbody id="rows"></tbody>
 		        <tfoot>
 		        <tr>
-			        <td colspan="4"></td>
+			        <td colspan="4">
+				        
+			        </td>
 			        <td colspan="3">
 				        <div class="form-inline discount-code-box">
 					        <div class="form-group">
 						        <input type="text" placeholder="کد تخفیف" style="margin-top: 7px;" id="coupon" class="form-control">
 						        <button type="button" onclick="addDiscountCode();" class="btn btn-default"><span>اعمال کد تخفیف</span> </button>
+
+
 						        <p class="small">اگر کد تخفیف معتبری دارید در این قسمت وارد نمایید.</p>
 										<p class="alert alert-danger" id="errorDiv-discount"></p>
 										<p class="alert alert-success" id="SuccessDiv-discount">کد تخفیف با موفقیت اعمال شد</p>
@@ -70,8 +83,8 @@
 
 						<div class="row">
 							<hr class="space">
-							<div class="col-md-6 p-r-10 ">
-								<div class="table-responsive">
+							<div class="col-md-6 p-r-10">
+								<div class="table-responsive  border-checkout">
 									<h4>@Resources.Label.TotalAmount</h4>
 									<table class="table">
 										<tbody>
@@ -133,7 +146,8 @@
 
 							</div>
 
-							<div class="col-md-6">
+							<div class="col-md-6 ">
+								<div class="border-checkout"> 
 								<h4>@Resources.Label.CustomerInfo</h4>
 								<div class="row customerInfo">
 									<div class="col-md-12 m-b-20"></div>
@@ -156,13 +170,13 @@
 
 									@using (Html.BeginForm())
 									{
-											<div class="col-md-6  form-group">
-												@Html.DropDownList("provinceId", null, new { @id = "ddlProvince" })
-											</div>
+										<div class="col-md-6  form-group">
+											@Html.DropDownList("provinceId", null, new {@id = "ddlProvince"})
+										</div>
 
-														<div class="col-md-5  form-group">
-															<select id="ddlCity" name="cityId" style="width: 200px"></select>
-														</div>
+										<div class="col-md-5  form-group">
+											<select id="ddlCity" name="cityId" style="width: 200px"></select>
+										</div>
 
 									}
 
@@ -184,6 +198,13 @@
 
 											</a>
 											@Resources.Label.PolicyRead
+										</label>
+									</div>
+
+									<div class="col-md-12 m-b-20 policy">
+										<input type="checkbox" class="form-control" id="chkfactor">
+										<label for="chkfactor">
+										 فاکتور کاغذی برایم ارسال شود
 										</label>
 									</div>
 
@@ -211,32 +232,34 @@
 											<option value="mellat">درگاه پرداخت بانک ملت</option>
 											<option value="saman">درگاه پرداخت سامان کیش</option>
 										</select>
-										<img id="loadingImg" src="~/images/loading.gif" />
+										<img id="loadingImg" src="~/images/loading.gif"/>
 									</div>
 									<div class="col-md-12 m-b-20 policy">
-										<div class="col-md-4 text-center">
-											<button type="button" onclick="FinalizeOrder();" id="btnFinalizeOrder" class="btn btn-default icon-left float-right"><span>@Resources.Label.Finlize</span></button>
-											<img id="loadingImg" src="~/images/loading.gif" />
-										</div>
-								
+										@*<div class="col-md-4 text-center">*@
+										<button type="button" onclick="FinalizeOrder();" id="btnFinalizeOrder" class="btn btn-default icon-left float-right"><span>@Resources.Label.Finlize</span></button>
+										<a type="button" href="/orders/shopcart" class="btn btn-primary">ویرایش سبد خرید</a>
+
+										<img id="loadingImg" src="~/images/loading.gif"/>
+										@*</div>*@
+
 									</div>
 									<div class="col-md-12 m-b-20 policy">
-									
+
 
 										<div class="alert alert-success" id="successOrder">
-											سفارش شما با موفقیت ثبت گردید؛ <br />
+											سفارش شما با موفقیت ثبت گردید؛ <br/>
 											در حال انتقال به سایت بانک
-											&nbsp;&nbsp;<img src="/images/loading_dots.gif" width="50" />
+											&nbsp;&nbsp;<img src="/images/loading_dots.gif" width="50"/>
 											@ViewBag.result
 										</div>
 
 										<div class="alert alert-danger" id="errorOrder"> </div>
-								
+
 									</div>
 								</div>
 							</div>
 
-
+						</div>
 
 							<div class="col-md-4 text-center">
 
@@ -256,6 +279,7 @@
 										</div>
 										<div class="modal-footer">
 											<button type="button" class="btn btn-default" data-dismiss="modal" onclick="redirectToBank();">متوجه شدم</button>
+									
 										</div>
 									</div>
 								</div>

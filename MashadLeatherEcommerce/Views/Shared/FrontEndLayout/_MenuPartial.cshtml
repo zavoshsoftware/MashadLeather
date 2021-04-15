@@ -16,16 +16,23 @@
 				</form>
 			</div>
 			<div class="header-extras">
-				<ul>
-                    <li class="hidden-xs">
-                        <div class="topbar-dropdown">
-                            <a class="title"><i class="fa fa-money"></i></a>
-                            <div class="dropdown-list">
-                                <a class="list-entry" onclick="SetCurrency('toman');" href="#">@Resources.Label.Rial <i class="fa">R</i></a>
-                                <a class="list-entry" onclick="SetCurrency('euro');" href="#"> @Resources.Label.Euro <i class="fa fa-euro"></i></a>
-                            </div>
-                        </div>
-                    </li>
+				<ul>  
+					@*<li>
+						<a id="top-search-trigger" href="#" class="toggle-item">
+							<i class="fa fa-search"></i>
+							<i class="fa fa-close"></i>
+						</a>
+					</li>*@
+					
+					<li class="hidden-xs">
+						<div class="topbar-dropdown">
+							<a class="title"><i class="fa fa-money"></i></a>
+							<div class="dropdown-list">
+								<a class="list-entry" onclick="SetCurrency('toman');" href="#">@Resources.Label.Rial <i class="fa">R</i></a>
+								<a class="list-entry" onclick="SetCurrency('euro');" href="#"> @Resources.Label.Euro <i class="fa fa-euro"></i></a>
+							</div>
+						</div>
+					</li>
 					<li>
 						<div id="shopping-cart">
 							<a href="/orders/shopcart">
@@ -48,12 +55,12 @@
 						<div class="topbar-dropdown">
 							<a class="title"><i class="fa fa-user"></i></a>
 							<div class="dropdown-list">
-								<a class="list-entry" href="/history">@Resources.Label.history</a>
+								<a class="list-entry" href="/history">@Resources.Label.Profile</a>
 								<a class="list-entry" href="/Orders/OrderTracking">@Resources.Label.OrderTracking</a>
 							</div>
 						</div>
 					</li>
-                   
+
 				</ul>
 			</div>
 			<div id="mainMenu-trigger">

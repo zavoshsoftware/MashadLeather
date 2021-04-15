@@ -14,6 +14,14 @@ namespace ViewModels
         public decimal TotalPayment { get; set; }
         public decimal TotalPaymentBeforWallet { get; set; }
         public decimal Wallet { get; set; }
+
+
+        public string AmountStr { get { return Amount.ToString("n0"); } }
+        public string ShippmentPriceStr { get { return ShippmentPrice.ToString("n0"); } }
+        public string DiscountStr { get { return Discount.ToString("n0"); } }
+        public string TotalPaymentStr { get { return TotalPayment.ToString("n0"); } }
+        public string TotalPaymentBeforWalletStr { get { return TotalPaymentBeforWallet.ToString("n0"); } }
+        public string WalletStr { get { return Wallet.ToString("n0"); } }
     }
     public class ShopCartItemViewModel
     {
@@ -27,6 +35,7 @@ namespace ViewModels
         public string colorTitle { get; set; }
         public string size { get; set; }
         public string SizeTitle { get; set; }
-
+        public string ColorId { get; set; }
+        public string SizeId { get; set; }
     }
 }

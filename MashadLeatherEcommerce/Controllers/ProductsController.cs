@@ -12,6 +12,8 @@ using Helper;
 using MashadLeatherEcommerce.KiyanService;
 using ViewModels;
 using System.Text.RegularExpressions;
+using System.Web.Configuration;
+using System.Web.UI.WebControls;
 using Helpers;
 
 namespace MashadLeatherEcommerce.Controllers
@@ -49,6 +51,11 @@ namespace MashadLeatherEcommerce.Controllers
 
         }
 
+        [Authorize(Roles = "Administrator,SuperAdministrator,eshopadmin")]
+        public ActionResult ForMigration(Guid? id)
+        {
+            return View();
+        }
         //internal class ListViewModel<T>
         //{
         //    public Guid Id { get; set; }
@@ -336,6 +343,7 @@ namespace MashadLeatherEcommerce.Controllers
                 CheckConflict();
                 CheckConflictDeletedParent();
                 SetSecondColor();
+                UpdateProductCodes();
             }
             catch (Exception e)
             {
@@ -399,7 +407,9 @@ namespace MashadLeatherEcommerce.Controllers
 
 
             //تمدن
-            List<KiyanProductItem> productList616 = GetProductFromInventory(616, ks, header);
+            List<KiyanProductItem> productList3032 = GetProductFromInventory(3032, ks, header);
+            //تمدن
+            //List<KiyanProductItem> productList616 = GetProductFromInventory(616, ks, header);
 
             //فردوسی
             //List<KiyanProductItem> productList988 = GetProductFromInventory(988, ks, header);
@@ -415,6 +425,10 @@ namespace MashadLeatherEcommerce.Controllers
 
             //ولیعصر
             //  List<KiyanProductItem> productList290 = GetProductFromInventory(290, ks, header);
+
+            //هایپراستار
+            //  List<KiyanProductItem> productList4334 = GetProductFromInventory(4334, ks, header);
+
             ChangeChangeStatus();
             //var aaa = productList616.FirstOrDefault(c => c.itmBrcd == "S0012S0743011604Z001");
 
@@ -423,12 +437,117 @@ namespace MashadLeatherEcommerce.Controllers
             //    string bbb = aaa.itmQuantity.ToString();
             //}
 
-            TransferProductsNew(productList616, true);
-            // TransferProducts(productList290, false);
+            TransferProductsNew(productList3032, true);
+            //   TransferProducts(productList4334, false);
             //  TransferProducts(productList862, false);
             db.SaveChanges();
 
             DeleteNotChangedProducts();
+
+
+        }
+
+        public void UpdateExcellLog()
+        {
+            KiyanLog kiyanlog = db.KiyanLogs.OrderByDescending(c => c.LogDate).FirstOrDefault();
+
+            List<ProductExportViewModel> products = GetAvailableProduct();
+
+            List<ProductExportForExcelViewModel> excellProducts = new List<ProductExportForExcelViewModel>();
+            foreach (ProductExportViewModel product in products)
+            {
+                excellProducts.Add(new ProductExportForExcelViewModel()
+                {
+                    Amount = product.Amount,
+                    Quantity = product.Quantity,
+                    Barcode = product.Barcode,
+                    Code = product.Code,
+                    Title = product.Title,
+                    DiscountAmount = product.DiscountAmount,
+                    Color = product.Color,
+                    Size = product.Size
+                });
+            }
+
+
+            GridView gv = new GridView();
+            gv.DataSource = excellProducts;
+            gv.DataBind();
+            gv.HeaderRow.Cells[0].Text = "عنوان محصول";
+            gv.HeaderRow.Cells[1].Text = "کد محصول";
+            gv.HeaderRow.Cells[2].Text = "بارکد";
+            gv.HeaderRow.Cells[3].Text = "رنگ";
+            gv.HeaderRow.Cells[4].Text = "سایز";
+            gv.HeaderRow.Cells[5].Text = "قیمت";
+            gv.HeaderRow.Cells[6].Text = "قیمت بعد از تخفیف";
+            gv.HeaderRow.Cells[7].Text = "موجودی";
+
+
+            Session["orders-distinc"] = gv;
+
+
+            if (Session["orders-distinc"] != null)
+            {
+                //   return new DownloadFileActionResult((GridView)Session["orders-distinc"], "available-products.xls");
+            }
+            else
+            {
+                //   return null;
+            }
+        }
+
+
+
+        public List<ViewModels.ProductExportViewModel> GetAvailableProduct()
+        {
+            List<ViewModels.ProductExportViewModel> result = new List<ProductExportViewModel>();
+
+
+            var products = db.Products.Where(c => c.IsDeleted == false && c.Quantity > 0 && c.ParentId != null).Select(c => new
+            {
+                c.Id,
+                c.Barcode,
+                c.Quantity,
+                ColorTitle = c.Color.Title,
+                c.Amount,
+                c.DiscountAmount,
+                Title = c.Title,
+                c.SizeId,
+
+            })
+                .ToList();
+
+            foreach (var product in products)
+            {
+                string size = "-";
+
+                if (product.SizeId != null)
+                    size = db.Sizes.Find(product.SizeId).Title;
+
+                string code = product.Barcode;
+                if (code.Length == 20)
+                {
+                    code = product.Barcode.Substring(5, 5);
+                }
+
+                string discount = "-";
+                if (product.DiscountAmount != null)
+                    discount = product.DiscountAmount.Value.ToString("N0");
+
+                result.Add(new ProductExportViewModel()
+                {
+                    Id = product.Id,
+                    Barcode = product.Barcode,
+                    Amount = product.Amount.Value.ToString("n0"),
+                    DiscountAmount = discount,
+                    Title = product.Title,
+                    Color = product.ColorTitle,
+                    Size = size,
+                    Code = code,
+                    Quantity = product.Quantity.ToString("N0")
+                });
+            }
+            return result;
         }
 
         //public string RemoveDuplicated()
@@ -481,10 +600,10 @@ namespace MashadLeatherEcommerce.Controllers
 
             }
         }
+        CodeGenerator codeGenerator = new CodeGenerator();
 
         public void TransferProductsNew(List<KiyanProductItem> products, bool isFirstInventory)
         {
-            CodeGenerator codeGenerator = new CodeGenerator();
             int productCode = codeGenerator.ReturnProductCode();
 
             foreach (KiyanProductItem item in products)
@@ -494,7 +613,7 @@ namespace MashadLeatherEcommerce.Controllers
                 {
                     string code = item.itmBrcd.Substring(5, 5);
 
-               
+
                     Product currentProductParent = db.Products
                         .FirstOrDefault(current =>
                             current.IsDeleted == false &&
@@ -820,6 +939,7 @@ namespace MashadLeatherEcommerce.Controllers
             parent.IsChanged = true;
             parent.IsAvailable = true;
             parent.IsActive = true;
+            parent.Amount = amount;
             //if (product.ParentId != null)
             //    product.Parent.Amount = amount;
 
@@ -840,6 +960,7 @@ namespace MashadLeatherEcommerce.Controllers
                 deleteProduct.Parent.IsAvailable = true;
                 deleteProduct.Parent.IsChanged = true;
                 deleteProduct.Parent.IsActive = true;
+                deleteProduct.Parent.Amount = amount;
             }
             deleteProduct.Amount = amount;
             if (isFirstInventory)
@@ -871,6 +992,7 @@ namespace MashadLeatherEcommerce.Controllers
                 product.Parent.IsAvailable = true;
                 product.Parent.IsChanged = true;
                 product.Parent.IsActive = true;
+                product.Parent.Amount = amount;
             }
             product.IsActive = true;
 
@@ -1354,7 +1476,8 @@ namespace MashadLeatherEcommerce.Controllers
                 LogDate = DateTime.Now,
                 Count = length,
                 Id = Guid.NewGuid(),
-                InventoryId = inventoryId
+                InventoryId = inventoryId,
+                IsSuccess = false
 
             };
 
@@ -1481,7 +1604,7 @@ namespace MashadLeatherEcommerce.Controllers
 
         [AllowAnonymous]
         [Route("product/{urlParam}")]
-        public ActionResult List(string urlParam)
+        public ActionResult List(string urlParam, int? pageId)
         {
             Helper.BaseViewModelHelper baseViewModelHelper = new BaseViewModelHelper();
 
@@ -1492,26 +1615,38 @@ namespace MashadLeatherEcommerce.Controllers
             if (productCategory == null)
                 return RedirectPermanent("/category");
 
+
+            Helper.ProductHelper productHelper = new Helper.ProductHelper();
+
+            if (pageId == null)
+                pageId = 1;
+
             var products = db.Products
                 .Where(current => current.ImageUrl != null && current.IsDeleted == false && current.IsActive &&
-                                  current.ParentId == null && current.ProductCategoryId == productCategory.Id).ToList();
+                                  current.ParentId == null && current.ProductCategoryId == productCategory.Id).ToList()
+               ;
 
             ViewBag.total = products.Count();
+
 
             ProductListViewModel productList = new ProductListViewModel
             {
                 MenuItem = baseViewModelHelper.GetMenuItems(),
-                Products = GetProductList(products).OrderByDescending(c => c.IsAvailable).ToList(),
+                Products = GetProductList(products).OrderByDescending(c => c.IsAvailable)
+                    .Skip(_productPagination * (pageId.Value - 1)).Take(_productPagination).ToList().ToList(),
                 MenuGalleryGroups = baseViewModelHelper.GetMenuGalleryGroups(),
                 ProductCategory = GetProductCategory(productCategory),
-                Commnets = db.Comments.Where(c => c.ProductCategoryId == productCategory.Id && c.IsActive && c.IsDeleted == false && c.ParentId == null).ToList()
-                ,
+                Commnets = db.Comments.Where(c => c.ProductCategoryId == productCategory.Id && c.IsActive && c.IsDeleted == false && c.ParentId == null).ToList(),
                 BreadcrumpItems = GetProductCategoryBreadcrump(productCategory),
-                CurrentCurrency = oGetCurrency.CurrentCurrency()
+                CurrentCurrency = oGetCurrency.CurrentCurrency(),
+                PageItems = productHelper.GetPagination(products.Count(), pageId),
             };
 
             return View(productList);
         }
+
+        private readonly int _productPagination = Convert.ToInt32(WebConfigurationManager.AppSettings["productPaginationSize"]);
+
 
         [AllowAnonymous]
         [Route("promotion")]
@@ -1640,7 +1775,8 @@ namespace MashadLeatherEcommerce.Controllers
                     IsInPromotion = product.IsInPromotion,
                     HasTag = product.HasTag,
                     TagTitle = product.TagTitleSrt,
-                    IsAvailable = isAvailable
+                    IsAvailable = isAvailable,
+                    Code = product.Code
                 });
             }
 
@@ -1796,13 +1932,20 @@ namespace MashadLeatherEcommerce.Controllers
                 Color color = db.Colors.Find(product.ColorId);
 
                 if (!colors.Any(current => current.Id == color.Id))
+                {
+                    string decreaseAmoun = "";
+
+                    if (product.IsInPromotion)
+                        decreaseAmoun = string.Format("{0:#,#}", product.DecreaseAmount);
+
                     colors.Add(new ProductColor()
                     {
                         Id = color.Id,
                         TitleSrt = color.TitleSrt,
-                        DecreaseAmount = string.Format("{0:#,#}", product.DecreaseAmount),
+                        DecreaseAmount = decreaseAmoun,
                         HexCode = color.HexCode
                     });
+                }
             }
 
             return colors;
@@ -2198,12 +2341,12 @@ namespace MashadLeatherEcommerce.Controllers
                 string barcode = promotion.BarCode;
 
                 List<Product> products = db.Products
-                    .Where(current => current.Barcode == barcode && current.IsDeleted == false).ToList();
+                    .Where(current => current.Barcode == barcode && current.IsDeleted == false && current.ParentId != null).ToList();
 
-                if (barcode.Contains("j2390"))
-                {
-                    int a = 93893;
-                }
+                //if (barcode.Contains("j2390"))
+                //{
+                //    int a = 93893;
+                //}
 
                 //Product product = db.Products
                 //    .FirstOrDefault(current => current.Barcode == barcode && current.IsDeleted == false);
@@ -2214,10 +2357,10 @@ namespace MashadLeatherEcommerce.Controllers
                         decimal discountAmount =
                             Convert.ToDecimal(product.Amount - product.Amount * (promotion.DecreaseAmount / 100));
 
-                        if (discountAmount == 0)
-                        {
-                            int v = 121212;
-                        }
+                        //if (discountAmount == 0)
+                        //{
+                        //    int v = 121212;
+                        //}
 
                         product.IsInPromotion = true;
                         product.DiscountAmount = discountAmount;
@@ -2286,10 +2429,12 @@ namespace MashadLeatherEcommerce.Controllers
                     current.ParentId == parentProduct.Id && current.ColorId == colorIdGuid);
 
                 if (childProduct != null)
-                    return Json(string.Format("{0:#,#}", childProduct.DiscountAmount), JsonRequestBehavior.AllowGet);
+                    if (childProduct.IsInPromotion)
+                        return Json(string.Format("{0:#,#}", childProduct.DiscountAmount), JsonRequestBehavior.AllowGet);
+                    else
+                        return Json("", JsonRequestBehavior.AllowGet);
                 else
                     return Json("error", JsonRequestBehavior.AllowGet);
-
             }
             catch (Exception e)
             {
@@ -2438,18 +2583,19 @@ namespace MashadLeatherEcommerce.Controllers
             return "true";
         }
 
-        public string UpdateProductCodes()
+        public void UpdateProductCodes()
         {
-            var products = db.Products.OrderBy(c => c.Code);
-            int code = 100;
+            var products = db.Products.Where(c => c.Code < 100).OrderBy(c => c.Code);
+
+            int code = codeGenerator.ReturnProductCode();
             foreach (var product in products)
             {
                 product.Code = code;
                 code++;
             }
-
             db.SaveChanges();
-            return String.Empty;
+
+            // return String.Empty;
         }
     }
 }

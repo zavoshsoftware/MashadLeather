@@ -781,6 +781,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to حساب کاربری.
+        /// </summary>
+        public static string Profile {
+            get {
+                return ResourceManager.GetString("Profile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to تخفیفات.
         /// </summary>
         public static string promotion {
@@ -1033,7 +1042,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to شنبه تا پنجشنبه:.
+        ///   Looks up a localized string similar to شنبه تا چهارشنبه:.
         /// </summary>
         public static string WorkTime {
             get {
