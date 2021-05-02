@@ -74,6 +74,10 @@
       <HintPath>..\lib\KENDOUIMVC\2017.3.913.545\Kendo.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="LibExcel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stimulsoft.Reports.Engine.2020.4.2\lib\net45\LibExcel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
@@ -108,6 +112,46 @@
     </Reference>
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Base, Version=2020.4.2.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stimulsoft.Reports.Engine.2020.4.2\lib\net45\Stimulsoft.Base.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Stimulsoft.Data, Version=2020.4.2.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stimulsoft.Reports.Engine.2020.4.2\lib\net45\Stimulsoft.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Stimulsoft.Map, Version=2020.4.2.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stimulsoft.Reports.Engine.2020.4.2\lib\net45\Stimulsoft.Map.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Stimulsoft.Report, Version=2020.4.2.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stimulsoft.Reports.Engine.2020.4.2\lib\net45\Stimulsoft.Report.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.Check, Version=2020.4.2.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stimulsoft.Reports.Engine.2020.4.2\lib\net45\Stimulsoft.Report.Check.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.Helper, Version=2020.4.2.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stimulsoft.Reports.Engine.2020.4.2\lib\net45\Stimulsoft.Report.Helper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.Mvc, Version=2020.4.2.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stimulsoft.Reports.Web.2020.4.2\lib\net45\Stimulsoft.Report.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.Web, Version=2020.4.2.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stimulsoft.Reports.Web.2020.4.2\lib\net45\Stimulsoft.Report.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.WebDesign, Version=2020.4.2.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stimulsoft.Reports.Web.2020.4.2\lib\net45\Stimulsoft.Report.WebDesign.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Svg, Version=2.4.3.29446, Culture=neutral, PublicKeyToken=12a0bac221edeae2, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stimulsoft.Reports.Engine.2020.4.2\lib\net45\Svg.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Deployment" />
     <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -1329,6 +1373,7 @@
     <Content Include="Images\shortcode-megamenu-bg.png" />
     <Content Include="Images\side-logo-light.png" />
     <Content Include="Images\slide1.jpg" />
+    <Content Include="Images\SLIDER5.jpg" />
     <Content Include="Images\slider\100.jpg" />
     <Content Include="Images\slider\103.jpg" />
     <Content Include="Images\slider\104.jpg" />
@@ -1402,6 +1447,44 @@
     <Content Include="Images\triangle-divider-top.png" />
     <Content Include="Images\world-map-dark.png" />
     <Content Include="Images\world-map.png" />
+    <Content Include="Localization\ar.xml" />
+    <Content Include="Localization\be.xml" />
+    <Content Include="Localization\bg.xml" />
+    <Content Include="Localization\bh.xml" />
+    <Content Include="Localization\ca-ES.xml" />
+    <Content Include="Localization\cs.xml" />
+    <Content Include="Localization\de.xml" />
+    <Content Include="Localization\el-GR.xml" />
+    <Content Include="Localization\en-GB.xml" />
+    <Content Include="Localization\en.xml" />
+    <Content Include="Localization\es.xml" />
+    <Content Include="Localization\eu-ES.xml" />
+    <Content Include="Localization\fa.xml" />
+    <Content Include="Localization\fr.xml" />
+    <Content Include="Localization\gl-ES.xml" />
+    <Content Include="Localization\hr.xml" />
+    <Content Include="Localization\hu.xml" />
+    <Content Include="Localization\id.xml" />
+    <Content Include="Localization\it.xml" />
+    <Content Include="Localization\ja.xml" />
+    <Content Include="Localization\ka.xml" />
+    <Content Include="Localization\ko.xml" />
+    <Content Include="Localization\lt.xml" />
+    <Content Include="Localization\nb-NO.xml" />
+    <Content Include="Localization\nl.xml" />
+    <Content Include="Localization\pl.xml" />
+    <Content Include="Localization\pt-BR.xml" />
+    <Content Include="Localization\pt.xml" />
+    <Content Include="Localization\ro.xml" />
+    <Content Include="Localization\ru.xml" />
+    <Content Include="Localization\sk.xml" />
+    <Content Include="Localization\sr.xml" />
+    <Content Include="Localization\sv.xml" />
+    <Content Include="Localization\tr.xml" />
+    <Content Include="Localization\uk.xml" />
+    <Content Include="Localization\vi.xml" />
+    <Content Include="Localization\zh-CHS.xml" />
+    <Content Include="Localization\zh-CHT.xml" />
     <Content Include="Scripts\AdminJS\app.v2.js" />
     <Content Include="Scripts\AdminJS\app.v2.min.js" />
     <Content Include="Scripts\AdminJS\jquery-ui-1.10.3.custom.min.js" />
@@ -1415,12 +1498,14 @@
     <None Include="Connected Services\SamanWebService\referencepayment.wsdl" />
     <Content Include="Images\slider\revolution\polo-homepage\Three-Swans.ogv" />
     <Content Include="Content\CoOperation.doc" />
+    <Content Include="Content\license.key" />
     <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile2.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Content Include="Reports\Mrt\Invoice.mrt" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -4653,6 +4738,7 @@
     <Compile Include="Controllers\BlogsController.cs" />
     <Compile Include="Controllers\ColorsController.cs" />
     <Compile Include="Controllers\CommentsController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\DiscountCodesController.cs" />
     <Compile Include="Controllers\ExcelDataController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -4664,6 +4750,7 @@
     <Compile Include="Controllers\ProductCategoryApiController.cs" />
     <Compile Include="Controllers\ProductImagesController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\ResumeFilesController.cs" />
     <Compile Include="Controllers\SamanPaymentController.cs" />
     <Compile Include="Controllers\SiteBranchesController.cs" />
@@ -5068,6 +5155,14 @@
     <Compile Include="Migrations\202104140659075_V100.Designer.cs">
       <DependentUpon>202104140659075_V100.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105020452133_V101.cs" />
+    <Compile Include="Migrations\202105020452133_V101.Designer.cs">
+      <DependentUpon>202105020452133_V101.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105020615489_V102.cs" />
+    <Compile Include="Migrations\202105020615489_V102.Designer.cs">
+      <DependentUpon>202105020615489_V102.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DatabaseContext.cs" />
     <Compile Include="Models\DatabaseContextInitializer.cs" />
@@ -5114,8 +5209,10 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Reports\Models\InvoiceReportViewModel.cs" />
     <Compile Include="Services\Sms\SendSms.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\OrderDashboardViewModel.cs" />
     <Compile Include="ViewModels\SpringPromotionViewModel.cs" />
     <Compile Include="ViewModels\BranchListViewMoel.cs" />
     <Compile Include="ViewModels\ChangeAddressViewModel.cs" />
@@ -5484,6 +5581,8 @@
     <Content Include="Views\Orders\ChangeAddress.cshtml" />
     <Content Include="Views\ExcelData\ExportProducts.cshtml" />
     <Content Include="Views\Home\SpringPromotion.cshtml" />
+    <Content Include="Views\Dashboard\OrderList.cshtml" />
+    <Content Include="Views\Report\Invoice.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -5780,6 +5879,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104140659075_V100.resx">
       <DependentUpon>202104140659075_V100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105020452133_V101.resx">
+      <DependentUpon>202105020452133_V101.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105020615489_V102.resx">
+      <DependentUpon>202105020615489_V102.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -9,7 +9,7 @@
 <h2>@ViewBag.Title</h2>
 <div class="row">
     <div class="col-md-2">
-        <input type="text" onclick="PersianDatePiccker.Show(this,'@DateTime.Now');" placeholder="تاریخ شروع" class="form-control" width="150" id="startDate" value="@ViewBag.startDate" />
+        <input type="text" onclick="PersianDatePicker.Show(this,'@DateTime.Now');" placeholder="تاریخ شروع" class="form-control" width="150" id="startDate" value="@ViewBag.startDate" />
     </div>
     <div class="col-md-2">
         <input type="text" onclick="PersianDatePicker.Show(this,'@DateTime.Now');" placeholder="تاریخ ‍‍پایان" class="form-control" width="150" id="endDate" value="@ViewBag.endDate"/> 
@@ -40,8 +40,8 @@
 				 columns.Bound(model => model.PaymentTypeTitle);
 				columns.Bound(model => model.SaleReferenceId);
 				columns.Bound(model => model.OrderStatusTitle);
-				columns.Bound(model => model.FirstName);
-				columns.Bound(model => model.LastName);
+				columns.Bound(model => model.FullName);
+				columns.Bound(model => model.City);
 				columns.Bound(model => model.CellNum);
 				columns.Bound(model => model.TotalAmount).Format("{0:n0}");
 				columns.Bound(model => model.PaymentAmount).Format("{0:n0}");

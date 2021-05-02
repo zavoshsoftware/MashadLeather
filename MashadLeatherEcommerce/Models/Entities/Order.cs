@@ -135,5 +135,11 @@ namespace Models
         [Display(Name="فاکتور ارسال شود")]
         public bool SendFactor { get; set; }
 
+        [Display(Name="نحوه ارسال")]
+        public string ShipmentType { get; set; }
+
+        [Display(Name="تاریخ ارسال")]
+        public DateTime? SentDate { get; set; }
+
     }
 }

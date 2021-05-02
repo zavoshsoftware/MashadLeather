@@ -12,12 +12,12 @@ using ViewModels;
 
 namespace Khoshdast.Controllers
 {
-    [Authorize(Roles = "Administrator")]
+    [Authorize(Roles = "Administrator,SuperAdministrator,eshopadmin")]
     public class ExcelDataController : Controller
     {
         public ActionResult ExportProducts()
         {
-        
+
             return View(GetAvailableProduct());
         }
 
@@ -26,21 +26,19 @@ namespace Khoshdast.Controllers
             List<ViewModels.ProductExportViewModel> result = new List<ProductExportViewModel>();
 
 
-            var products = db.Products.Where(c => c.IsDeleted == false && c.Quantity > 0 && c.ParentId != null).Select(c => new
-                {
-                    c.Id,
-                    c.Barcode,
-                    c.Quantity,
-                    ColorTitle = c.Color.Title,
-                    c.Amount,
-                    c.DiscountAmount,
-                    Title = c.Title,
-                    c.SizeId,
+            var products = db.Products.Where(c => c.IsDeleted == false && c.Quantity > 0 && c.ParentId != null && c.Parent.Quantity > 0 && c.Parent.IsAvailable && c.IsAvailable).Select(c => new
+            {
+                c.Id,
+                c.Barcode,
+                c.Quantity,
+                ColorTitle = c.Color.Title,
+                c.Amount,
+                c.DiscountAmount,
+                Title = c.Title,
+                c.SizeId,
+            });
 
-                })
-                .ToList();
-
-            foreach (var product in products)
+            foreach (var product in products.ToList())
             {
                 string size = "-";
 
@@ -74,10 +72,10 @@ namespace Khoshdast.Controllers
         }
         public ActionResult DownloadProductExcel()
         {
-        
+
             List<ProductExportViewModel> products = GetAvailableProduct();
-             
-            List<ProductExportForExcelViewModel> excellProducts=new List<ProductExportForExcelViewModel>();
+
+            List<ProductExportForExcelViewModel> excellProducts = new List<ProductExportForExcelViewModel>();
             foreach (ProductExportViewModel product in products)
             {
                 excellProducts.Add(new ProductExportForExcelViewModel()
@@ -92,7 +90,7 @@ namespace Khoshdast.Controllers
                     Size = product.Size
                 });
             }
-       
+
 
             GridView gv = new GridView();
             gv.DataSource = excellProducts;

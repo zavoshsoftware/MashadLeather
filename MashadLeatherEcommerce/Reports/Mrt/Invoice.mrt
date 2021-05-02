@@ -1,0 +1,364 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="1">
+      <KhoshdastInvoice Ref="2" type="Stimulsoft.Report.Dictionary.StiBusinessObject" isKey="true">
+        <Alias>KhoshdastInvoice</Alias>
+        <BusinessObjects isList="true" count="0" />
+        <Category>KhoshdastInvoice</Category>
+        <Columns isList="true" count="7">
+          <value>ORIGINAL,Address,Address,Address,System.String,_x0036_610949c76b046109ead3a6efc23ac2d</value>
+          <value>ORIGINAL,OrderCode,OrderCode,OrderCode,System.String,ac40be0a190548299f6113a5247eb0ac</value>
+          <value>ORIGINAL,CellNumber,CellNumber,CellNumber,System.String,b00a29d9a9b34384998fbc7be772e960</value>
+          <value>ORIGINAL,Total,Total,Total,System.String,_x0038_f103a9e55004f86a34ba010414d4e96</value>
+          <value>ORIGINAL,City,City,City,System.String,_x0036_3237df617b94d65b27a1ffd4011aa19</value>
+          <value>ORIGINAL,PostalCode,PostalCode,PostalCode,System.String,_x0032_1ba9f23e30c40f7bb967c97c8d71f74</value>
+          <value>FullName,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Guid>1ef1efc3cad24dffa345039df8166b25</Guid>
+        <Key>5370c906f7ce45b180d7ce24bc08128c</Key>
+        <Name>KhoshdastInvoice</Name>
+      </KhoshdastInvoice>
+    </BusinessObjects>
+    <Databases isList="true" count="0" />
+    <DataSources isList="true" count="0" />
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Resources isList="true" count="0" />
+    <Variables isList="true" count="0" />
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <Key>166fe593e28b48c1b4c57fcfb5dcac29</Key>
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="3" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="12">
+        <PageFooterBand1 Ref="4" type="PageFooterBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,16.2,12.8,2.8</ClientRectangle>
+          <Components isList="true" count="0" />
+          <Conditions isList="true" count="0" />
+          <Name>PageFooterBand1</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+        </PageFooterBand1>
+        <Text6 Ref="5" type="Text" isKey="true">
+          <Border>Left;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>-12.4,2.8,4.6,1</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Tahoma,8</Font>
+          <HorAlignment>Right</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text6</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <Text>نوع پرداخت: </Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text6>
+        <Image3 Ref="6" type="Image" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>3.2,-0.2,6.59,1.83</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <ImageBytes>iVBORw0KGgoAAAANSUhEUgAAARsAAABQCAYAAAApxdE6AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJ
+bWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdp
+bj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6
+eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0
+NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJo
+dHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlw
+dGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAv
+IiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RS
+ZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpD
+cmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNl
+SUQ9InhtcC5paWQ6NUY4NkJGQjg3QUIyMTFFNzg5Q0I4RkJGRkIyRjdFNTciIHhtcE1NOkRvY3Vt
+ZW50SUQ9InhtcC5kaWQ6NUY4NkJGQjk3QUIyMTFFNzg5Q0I4RkJGRkIyRjdFNTciPiA8eG1wTU06
+RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo1Rjg2QkZCNjdBQjIxMUU3ODlD
+QjhGQkZGQjJGN0U1NyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo1Rjg2QkZCNzdBQjIxMUU3
+ODlDQjhGQkZGQjJGN0U1NyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1w
+bWV0YT4gPD94cGFja2V0IGVuZD0iciI/PmoLeaoAAA//SURBVHja7F0LmF3TGd2TYSYTeUklJTIk
+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</ImageBytes>
+          <Margins>0,0,0,0</Margins>
+          <Name>Image3</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+        </Image3>
+        <Text5 Ref="7" type="Text" isKey="true">
+          <Border>Left, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>6.8,2.8,6,0.8</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Tahoma,10</Font>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text5</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <Text>تلفن: 09195001883</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text5>
+        <Text11 Ref="8" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,2,12.8,0.8</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Tahoma,10</Font>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text11</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <Text>آدرس فرستنده: فروشگاه اینترنتی چرم مشهد</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text11>
+        <Text1 Ref="9" type="Text" isKey="true">
+          <Border>Left, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,2.8,6.8,0.8</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Tahoma,10</Font>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text1</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <Text>www.mashadleather.com</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text1>
+        <Text2 Ref="10" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,3.6,12.8,1.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Tahoma,10</Font>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <MaxNumberOfLines>3</MaxNumberOfLines>
+          <Name>Text2</Name>
+          <OnlyText>True</OnlyText>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <Text>آدرس گیرنده:{KhoshdastInvoice.City} - {KhoshdastInvoice.Address}</Text>
+          <TextBrush>Black</TextBrush>
+          <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text2>
+        <Text3 Ref="11" type="Text" isKey="true">
+          <Border>Left, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>6.8,5.2,6,0.8</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Tahoma,10</Font>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text3</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <Text>کد سفارش: {KhoshdastInvoice.OrderCode}</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text3>
+        <Text4 Ref="12" type="Text" isKey="true">
+          <Border>Left, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,5.2,6.8,0.8</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Tahoma,10</Font>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text4</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <Text>موبایل: {KhoshdastInvoice.CellNumber}</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text4>
+        <Text7 Ref="13" type="Text" isKey="true">
+          <Border>Left, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>6.8,6,6,0.8</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Tahoma,10</Font>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text7</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <Text>کد پستی: {KhoshdastInvoice.PostalCode}</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text7>
+        <Text8 Ref="14" type="Text" isKey="true">
+          <Border>Left, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,6,6.8,0.8</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Tahoma,10</Font>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text8</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <Text>نام گیرنده: {KhoshdastInvoice.FullName}</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text8>
+        <Text9 Ref="15" type="Text" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,6.8,12.8,0.8</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>Tahoma,10</Font>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text9</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <Text>توضیحات: {KhoshdastInvoice.Total}</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text9>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>4642f32f3a9f429394d85d8f4cd88d29</Guid>
+      <Margins>1,1,1,1</Margins>
+      <Name>Page1</Name>
+      <PageHeight>21</PageHeight>
+      <PageWidth>14.8</PageWidth>
+      <PaperSize>A5</PaperSize>
+      <Report isRef="0" />
+    </Page1>
+  </Pages>
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>4/20/2021 2:44:33 PM</ReportChanged>
+  <ReportCreated>12/5/2020 5:48:42 PM</ReportCreated>
+  <ReportFile>c:\users\hossein\documents\github\mashadleather\mashadleatherecommerce\reports\mrt\invoice.mrt</ReportFile>
+  <ReportGuid>2a69126260184be88fb695c8ba926653</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2020.4.2.0</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+	 
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

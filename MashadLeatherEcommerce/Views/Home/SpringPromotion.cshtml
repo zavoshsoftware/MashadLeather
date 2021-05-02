@@ -112,6 +112,11 @@
 			text-align: center;
 			background-color: #ddd;
 		}
+
+		.newimg img {
+			max-height: 500px;
+			margin: 0 auto
+		}
 	</style>
 	
 	<meta property="og:title" content="@ViewBag.Title" />
@@ -128,10 +133,15 @@
 	<div id="particles-js" class="particles" style="background: none"></div>
 	<div class="container">
 		<div class="slide-captions text-center text-light about-caption">
-		 <label>@ViewBag.Title</label>
+			<label>@ViewBag.Title</label>
 		</div>
 	</div>
 </section>
+
+@*<section style="text-align: center;" class="newimg">
+	<img src="/images/slider5.jpg" class="img-responsive" />
+	
+</section>*@
 <section class="bg-gray">
 	<div class="container">
 		<div class="row ">

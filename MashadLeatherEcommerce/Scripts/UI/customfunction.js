@@ -12,30 +12,39 @@ function LoadOrders() {
                 type: "GET"
 
             }).done(function (result) {
+                if (result !== "error") {
+                    for (var i = 0; i < result.ShopCartItems.length; i++) {
+                        var rowItems = GetRemoveButton(result.ShopCartItems[i].Id);
 
-                for (var i = 0; i < result.ShopCartItems.length; i++) {
-                    var rowItems = GetRemoveButton(result.ShopCartItems[i].Id);
+                        rowItems = rowItems +
+                            GetProductTitleAndImage(result.ShopCartItems[i].ImageUrl,
+                                result.ShopCartItems[i].Title,
+                                result.ShopCartItems[i].Id) +
+                            GetProductColor(result.ShopCartItems[i].colorTitle) +
+                            GetProductSize(result.ShopCartItems[i].SizeTitle) +
+                            GetProductPrice(result.ShopCartItems[i].Price) +
+                            GetProductQty(result.ShopCartItems[i].Qty,
+                                result.ShopCartItems[i].Id,
+                                result.ShopCartItems[i].ColorId,
+                                result.ShopCartItems[i].SizeId) +
+                            GetProductRowAmount(result.ShopCartItems[i].Amount) +
+                            "</tr>";
 
-                    rowItems = rowItems +
-                        GetProductTitleAndImage(result.ShopCartItems[i].ImageUrl, result.ShopCartItems[i].Title, result.ShopCartItems[i].Id) +
-                        GetProductColor(result.ShopCartItems[i].colorTitle) +
-                        GetProductSize(result.ShopCartItems[i].SizeTitle) +
-                        GetProductPrice(result.ShopCartItems[i].Price) +
-                        GetProductQty(result.ShopCartItems[i].Qty, result.ShopCartItems[i].Id, result.ShopCartItems[i].ColorId, result.ShopCartItems[i].SizeId) +
-                        GetProductRowAmount(result.ShopCartItems[i].Amount) +
-                        "</tr>";
+                        rows = rows + rowItems;
+                    }
 
-                    rows = rows + rowItems;
+                    $('#rows').html(rows);
+
+                    $('#orderAmount').html(result.AmountStr);
+                    $('#shippmentAmount').html(result.ShippmentPriceStr);
+                    $('#DiscountAmount').html(result.DiscountStr);
+                    $('#total').html(result.TotalPaymentBeforWalletStr);
+                    $('.loading-fuulpage').css('display', 'none');
+                } else {
+                    localStorage.setItem("basket", '');
+                    $('.loading-fuulpage').css('display', 'none');
+
                 }
-
-                $('#rows').html(rows);
-
-                $('#orderAmount').html(result.AmountStr);
-                $('#shippmentAmount').html(result.ShippmentPriceStr);
-                $('#DiscountAmount').html(result.DiscountStr);
-                $('#total').html(result.TotalPaymentBeforWalletStr);
-                $('.loading-fuulpage').css('display', 'none');
-
             });
     } else {
         $('#shop-cart').css('display', 'none');

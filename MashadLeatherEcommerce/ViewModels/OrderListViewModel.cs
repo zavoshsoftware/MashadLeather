@@ -60,6 +60,7 @@ namespace ViewModels
         [Display(Name = "مبلغ پرداختی")]
         public decimal? PaymentAmount { get; set; }
 
+        public Guid? CityId { get; set; }
 
         [Display(Name = "CreationDate", ResourceType = typeof(Resources.Models.BaseEntity))]
         public string CreationDateStr
@@ -74,5 +75,7 @@ namespace ViewModels
                 return String.Format("{0}/{1}/{2}", year, month, day) + " " + CreationDate.ToString("HH:mm:ss");
             }
         }
+        [Display(Name = "نام")]
+        public string FullName { get { return FirstName + " - " + LastName; } }
     }
 }

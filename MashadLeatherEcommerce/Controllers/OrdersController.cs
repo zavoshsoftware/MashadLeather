@@ -32,7 +32,7 @@ namespace MashadLeatherEcommerce.Controllers
 
         #region CRUD
 
-        [Authorize(Roles = "Administrator,SuperAdministrator,eshopadmin")]
+        [Authorize(Roles = "Administrator,SuperAdministrator,eshopadmin,orderadmin")]
         [Route("orders/{statusId:int}")]
         public ActionResult Index(int statusId, string status, string start, string end)
         {
@@ -75,11 +75,12 @@ namespace MashadLeatherEcommerce.Controllers
                             TotalAmount = x.TotalAmount,
                             CreationDate = x.CreationDate,
                             Id = x.Id,
-                            City = x.User.City.Title,
+                            City = x.City.Title,
                             Address = x.Address,
                             PaymentType = x.PaymentType,
                             OrderStatusId = x.OrderStatusId,
-                            PaymentAmount = x.PaymentAmount
+                            PaymentAmount = x.PaymentAmount,
+                            
 
                         }).ToList();
 
@@ -111,7 +112,7 @@ namespace MashadLeatherEcommerce.Controllers
                             TotalAmount = x.TotalAmount,
                             CreationDate = x.CreationDate,
                             Id = x.Id,
-                            City = x.User.City.Title,
+                            City = x.City.Title,
                             Address = x.Address,
                             PaymentType = x.PaymentType,
                             OrderStatusId = x.OrderStatusId,
@@ -140,7 +141,7 @@ namespace MashadLeatherEcommerce.Controllers
                             TotalAmount = x.TotalAmount,
                             CreationDate = x.CreationDate,
                             Id = x.Id,
-                            City = x.User.City.Title,
+                            City = x.City.Title,
                             Address = x.Address,
                             PaymentType = x.PaymentType,
                             OrderStatusId = x.OrderStatusId,
@@ -172,7 +173,7 @@ namespace MashadLeatherEcommerce.Controllers
                             TotalAmount = x.TotalAmount,
                             CreationDate = x.CreationDate,
                             Id = x.Id,
-                            City = x.User.City.Title,
+                            City = x.City.Title,
                             Address = x.Address,
                             PaymentType = x.PaymentType,
                             OrderStatusId = x.OrderStatusId,
@@ -255,7 +256,7 @@ namespace MashadLeatherEcommerce.Controllers
             return orderlist;
         }
         // GET: Orders/Details/5
-        [Authorize(Roles = "Administrator,SuperAdministrator,eshopadmin")]
+        [Authorize(Roles = "Administrator,SuperAdministrator,eshopadmin,orderadmin")]
         public ActionResult Details(Guid? id)
         {
             if (id == null)
@@ -300,7 +301,10 @@ namespace MashadLeatherEcommerce.Controllers
 
             }
             ViewBag.ExitInventory = new SelectList(GetExitInventoryList(order.ExitInventory), "Value", "Title", order.ExitInventory);
-
+            ViewBag.shipmentType = new SelectList(GetShippmentList(order.ShipmentType), "Value", "Title", order.ShipmentType);
+            if(order.SentDate!=null)
+            ViewBag.sentDate = order.SentDate.Value.ToShortDateString();
+            ViewBag.role = role;
             return View(orderDetailViewModel);
 
         }
@@ -337,6 +341,43 @@ namespace MashadLeatherEcommerce.Controllers
             {
                 var mashad = result.FirstOrDefault(c => c.Value == "2");
                 mashad.IsSelected = true;
+            }
+            //else
+            //{
+            //    var other = result.FirstOrDefault(c => c.Value == "0");
+            //    other.IsSelected = true;
+            //}
+
+            return result;
+        }
+
+        public List<DropdownCustomViewModel> GetShippmentList(string selected)
+        {
+            List<DropdownCustomViewModel> result = new List<DropdownCustomViewModel>();
+
+          
+            result.Add(new DropdownCustomViewModel()
+            {
+                Value = "1",
+                Title = "پست",
+                IsSelected = false
+            });
+            result.Add(new DropdownCustomViewModel()
+            {
+                Value = "2",
+                Title = "پیک",
+                IsSelected = false
+            });
+
+            if (selected == "1")
+            {
+                var post = result.FirstOrDefault(c => c.Value == "1");
+                post.IsSelected = true;
+            }
+            else if (selected == "2")
+            {
+                var peik = result.FirstOrDefault(c => c.Value == "2");
+                peik.IsSelected = true;
             }
             //else
             //{
@@ -520,7 +561,7 @@ namespace MashadLeatherEcommerce.Controllers
                     {
                         decimal newAmount = Convert.ToDecimal(product.Price) * Convert.ToDecimal(product.Qty);
                         product.Amount = newAmount.ToString("n0");
-                }
+                    }
                 }
 
                 if (product.SizeTitle != "-" && product.colorTitle != "-")
@@ -563,18 +604,17 @@ namespace MashadLeatherEcommerce.Controllers
             return shopCartItems;
         }
 
-    
+
         public ShopCartList GetShoppingCartInfo(string jsonvar)
         {
-            try
-            {
+            
                 //string currency = (System.Configuration.ConfigurationManager.AppSettings["currency"]);
 
                 decimal totalPrice = 0;
                 List<ShopCartItemViewModel> shopCartItems = new List<ShopCartItemViewModel>();
 
                 string[] orderDetailItems = jsonvar.Split('/');
-                 
+
                 for (int i = 0; i < orderDetailItems.Length - 1; i++)
                 {
                     string[] orderDetailCount = orderDetailItems[i].Split('.');
@@ -717,12 +757,7 @@ namespace MashadLeatherEcommerce.Controllers
                 };
 
                 return shopCart;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                throw;
-            }
+            
         }
 
         public decimal GetStepDiscountAmount(decimal total, List<ShopCartItemViewModel> shopCartProducts)
@@ -927,10 +962,20 @@ namespace MashadLeatherEcommerce.Controllers
         }
         public ActionResult LoadShopCart(string jsonvar)
         {
-            return Json(GetShoppingCartInfo(jsonvar), JsonRequestBehavior.AllowGet);
+            try
+            {
+
+
+                return Json(GetShoppingCartInfo(jsonvar), JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception e)
+            {
+                return Json("error", JsonRequestBehavior.AllowGet);
+
+            }
         }
 
-        public ActionResult Finalize(string jsonvar, string firstName, string lastName, string cellNumber, string email, string province, string city, string address, string phone, string postalCode, string bank,string factor)
+        public ActionResult Finalize(string jsonvar, string firstName, string lastName, string cellNumber, string email, string province, string city, string address, string phone, string postalCode, string bank, string factor)
         {
             try
             {
@@ -1292,7 +1337,7 @@ namespace MashadLeatherEcommerce.Controllers
         }
 
 
-        public ActionResult ChangeStatus(string orderId, string statusId, string exitInventory)
+        public ActionResult ChangeStatus(string orderId, string statusId, string exitInventory, string shipmentType,string sentDate)
         {
             try
             {
@@ -1301,7 +1346,9 @@ namespace MashadLeatherEcommerce.Controllers
                 Order order = db.Orders.Find(orderIdGuid);
                 order.OrderStatusId = statusIdGuid;
                 order.ExitInventory = exitInventory;
+                order.ShipmentType = shipmentType;
                 order.LastModifiedDate = DateTime.Now;
+                order.SentDate = Convert.ToDateTime(sentDate);
                 db.SaveChanges();
 
                 return Json("true", JsonRequestBehavior.AllowGet);
@@ -1587,7 +1634,8 @@ namespace MashadLeatherEcommerce.Controllers
             List<OrderListViewModel> orders = new List<OrderListViewModel>();
             if (statusId != null)
                 orders = db.Orders.AsNoTracking()
-                    .Where(current => current.PaymentType == "recieve" && current.OrderStatusId == statusId && current.IsDeleted == false)
+                    .Where(current => current.Code > 53212 && current.OrderStatusId == statusId &&
+                    current.IsDeleted == false && current.SaleReferenceId != null)
                     .OrderByDescending(o => o.CreationDate).Select(
                         x => new OrderListViewModel()
                         {
@@ -1609,7 +1657,9 @@ namespace MashadLeatherEcommerce.Controllers
 
             else
                 orders = db.Orders.AsNoTracking()
-                    .Where(current => current.PaymentType == "recieve" && current.IsDeleted == false)
+                    .Where(current => current.Code > 53212 && current.IsDeleted == false
+                                      && current.SaleReferenceId != null
+                    )
                     .OrderByDescending(o => o.CreationDate).Select(
                         x => new OrderListViewModel()
                         {
