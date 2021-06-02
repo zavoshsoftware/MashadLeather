@@ -1186,6 +1186,7 @@
     <Content Include="Images\markers\marker5.png" />
     <Content Include="Images\markers\marker6.png" />
     <Content Include="Images\mashad-faq-img.jpg" />
+    <Content Include="Images\ml-factory.jpg" />
     <Content Include="Images\mockup\1.jpg" />
     <Content Include="Images\mockup\10.jpg" />
     <Content Include="Images\mockup\11.jpg" />
@@ -4766,6 +4767,7 @@
     <Compile Include="Controllers\UserInformationsController.cs" />
     <Compile Include="Controllers\UserProductLikeController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Controllers\_TestApiController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -5162,6 +5164,14 @@
     <Compile Include="Migrations\202105020615489_V102.cs" />
     <Compile Include="Migrations\202105020615489_V102.Designer.cs">
       <DependentUpon>202105020615489_V102.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105091320344_V103.cs" />
+    <Compile Include="Migrations\202105091320344_V103.Designer.cs">
+      <DependentUpon>202105091320344_V103.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105110527347_V104.cs" />
+    <Compile Include="Migrations\202105110527347_V104.Designer.cs">
+      <DependentUpon>202105110527347_V104.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DatabaseContext.cs" />
@@ -5599,6 +5609,7 @@
     <Folder Include="Uploads\Resume\" />
     <Folder Include="Uploads\slider\" />
     <Folder Include="Uploads\text\" />
+    <Folder Include="Views\_TestApi\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201805310938557_v001.resx">
@@ -5885,6 +5896,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105020615489_V102.resx">
       <DependentUpon>202105020615489_V102.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105091320344_V103.resx">
+      <DependentUpon>202105091320344_V103.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105110527347_V104.resx">
+      <DependentUpon>202105110527347_V104.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

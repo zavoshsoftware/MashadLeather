@@ -2298,6 +2298,45 @@ namespace MashadLeatherEcommerce.Controllers
         }
 
 
+        public string KiyanPromotion2(string containCharachter)
+        {
+            try
+            {
+                string result = "";
+                KiyanHelper kiyan = new KiyanHelper();
+
+                KyanOnlineSaleServiceSoapClient ks = new KyanOnlineSaleServiceSoapClient();
+
+                ValidationSoapHeader header = kiyan.ConnectToService();
+
+                //ورودی مربوط به ای دی فروشگاه مهم نیست چه عددی باشد
+                // var pro = ks.GetPromotions(header, 616);
+                var pro = ks.GetPromotions(header, new AuthUser(), 616);
+
+                int promotionIndex = 0;
+
+                foreach (var promotionHeaderModel in pro.ResponseResult)
+                {
+                    if (promotionHeaderModel.PromotionName.Contains(containCharachter))
+                        break;
+
+                    else
+                        promotionIndex++;
+                }
+
+                foreach (var promotion in pro.ResponseResult[promotionIndex].PromotionLineItem)
+                {
+                    string barcode = promotion.BarCode;
+                    result += barcode +" : "+ promotion.DecreaseAmount + " | ";
+                }
+
+                return result;
+            }
+            catch (Exception e)
+            {
+                return "false";
+            }
+        }
         public ActionResult KiyanPromotion(string containCharachter)
         {
             try
@@ -2338,11 +2377,15 @@ namespace MashadLeatherEcommerce.Controllers
 
             foreach (var promotion in pro.ResponseResult[promotionIndex].PromotionLineItem)
             {
-                string barcode = promotion.BarCode;
+                string barcode = promotion.BarCode.ToLower();
 
-                List<Product> products = db.Products
-                    .Where(current => current.Barcode == barcode && current.IsDeleted == false && current.ParentId != null).ToList();
+                var products= db.Products
+                    .Where(current => current.Barcode.ToLower() == barcode && current.IsDeleted == false && current.ParentId != null);
 
+                //if (barcode.Contains("x0114")|| barcode.Contains("x5014"))
+                //{
+                //    int a = 93893;
+                //}
                 //if (barcode.Contains("j2390"))
                 //{
                 //    int a = 93893;
@@ -2350,7 +2393,7 @@ namespace MashadLeatherEcommerce.Controllers
 
                 //Product product = db.Products
                 //    .FirstOrDefault(current => current.Barcode == barcode && current.IsDeleted == false);
-                foreach (Product product in products)
+                foreach (var product in products.ToList())
                 {
                     if (product != null)
                     {
@@ -2372,7 +2415,7 @@ namespace MashadLeatherEcommerce.Controllers
 
             CalculateParentPrices();
 
-            //SetOtherProductDiscount();
+           // SetOtherProductDiscount();
 
             db.SaveChanges();
         }
@@ -2465,11 +2508,11 @@ namespace MashadLeatherEcommerce.Controllers
 
             foreach (Product product in products)
             {
-                decimal disVal = ((decimal)product.Amount * (decimal)(0.2));
+                decimal disVal = ((decimal)product.Amount * (decimal)(0.15));
                 decimal discountAmount = Convert.ToDecimal(product.Amount - disVal);
                 product.IsInPromotion = true;
                 product.DiscountAmount = discountAmount;
-                product.DecreaseAmount = 20;
+                product.DecreaseAmount = 15;
             }
         }
 

@@ -11,6 +11,7 @@ using ViewModels;
 using System.Web.UI.WebControls;
 using System.Text.RegularExpressions;
 using System.Configuration;
+using MashadLeatherEcommerce.KiyanService;
 using MashadLeatherEcommerce.MellatWebService;
 namespace MashadLeatherEcommerce.Controllers
 {
@@ -80,7 +81,7 @@ namespace MashadLeatherEcommerce.Controllers
                             PaymentType = x.PaymentType,
                             OrderStatusId = x.OrderStatusId,
                             PaymentAmount = x.PaymentAmount,
-                            
+
 
                         }).ToList();
 
@@ -302,8 +303,8 @@ namespace MashadLeatherEcommerce.Controllers
             }
             ViewBag.ExitInventory = new SelectList(GetExitInventoryList(order.ExitInventory), "Value", "Title", order.ExitInventory);
             ViewBag.shipmentType = new SelectList(GetShippmentList(order.ShipmentType), "Value", "Title", order.ShipmentType);
-            if(order.SentDate!=null)
-            ViewBag.sentDate = order.SentDate.Value.ToShortDateString();
+            if (order.SentDate != null)
+                ViewBag.sentDate = order.SentDate.Value.ToShortDateString();
             ViewBag.role = role;
             return View(orderDetailViewModel);
 
@@ -355,7 +356,7 @@ namespace MashadLeatherEcommerce.Controllers
         {
             List<DropdownCustomViewModel> result = new List<DropdownCustomViewModel>();
 
-          
+
             result.Add(new DropdownCustomViewModel()
             {
                 Value = "1",
@@ -604,160 +605,254 @@ namespace MashadLeatherEcommerce.Controllers
             return shopCartItems;
         }
 
-
-        public ShopCartList GetShoppingCartInfo(string jsonvar)
+        public string[] GetCustomerClubTitle(User user)
         {
-            
-                //string currency = (System.Configuration.ConfigurationManager.AppSettings["currency"]);
-
-                decimal totalPrice = 0;
-                List<ShopCartItemViewModel> shopCartItems = new List<ShopCartItemViewModel>();
-
-                string[] orderDetailItems = jsonvar.Split('/');
-
-                for (int i = 0; i < orderDetailItems.Length - 1; i++)
+            if (user != null)
+            {
+                if (user.ClubLevelCode != null && !string.IsNullOrEmpty(user.ClubLevelTitle))
                 {
-                    string[] orderDetailCount = orderDetailItems[i].Split('.');
-                    if (orderDetailCount[0].Contains("undefined"))
+                    string[] res =
                     {
-                        orderDetailCount[0] = orderDetailCount[0].Replace("undefined", "");
-                    }
+                        user.ClubLevelTitle, user.ClubLevelCode.ToString()
+                    };
+                    return res;
+                }
+                else
+                {
+                    string cellNumber = user.CellNum;
+                    KiyanHelper kiyan = new KiyanHelper();
 
-                    Guid proId = new Guid(orderDetailCount[0]);
-                    var product = db.Products.Where(c => c.Id == proId && c.IsAvailable).Select(x => new
+                    KyanOnlineSaleServiceSoapClient ks = new KyanOnlineSaleServiceSoapClient();
+
+                    ValidationSoapHeader header = kiyan.ConnectToService();
+
+                    header.TokenAUT = "Charm@#$568";
+
+                    string[] users = { cellNumber };
+
+                    var result = ks.GetCustomersBaseInfo(header, new AuthUser(), KiyanService.FiledName.Mobile, users);
+
+                    if (result.ResponseResult != null)
                     {
-                        x.Id,
-                        x.Title,
-                        x.IsInPromotion,
-                        x.DiscountAmount,
-                        x.Amount,
-                        x.ImageUrl
-                    }).FirstOrDefault();
+                        user.ClubLevelCode = result.ResponseResult[0].GroupID;
+                        user.ClubLevelTitle = result.ResponseResult[0].GroupName;
+                        db.SaveChanges();
 
-                    decimal amount = 0;
-
-                    if (product.IsInPromotion)
-                    {
-                        if (orderDetailCount[2] != "undefined" && orderDetailCount[2] != "nocolor")
+                        string[] res =
                         {
-                            Guid colorIdGuid = new Guid(orderDetailCount[2]);
-
-                            Product productItem = db.Products.FirstOrDefault(current =>
-                                current.ParentId == product.Id && current.ColorId == colorIdGuid &&
-                                current.IsDeleted == false);
-
-                            if (productItem != null)
-                            {
-                                if (productItem.IsInPromotion && productItem.DiscountAmount != null)
-                                    amount = productItem.DiscountAmount.Value;
-                                else if (productItem.Amount != null)
-                                    amount = productItem.Amount.Value;
-
-
-                            }
-                        }
-                        else if (product.DiscountAmount != null)
-                            amount = product.DiscountAmount.Value;
-                    }
-                    else if (product.Amount != null)
-                        amount = product.Amount.Value;
-
-
-                    // Color color = db.Colors.Find(new Guid(orderDetailCount[2]));
-
-                    ShopCartItemViewModel currentShopItem = shopCartItems.FirstOrDefault(current =>
-                        current.Id == orderDetailCount[0] && current.color == orderDetailCount[2] &&
-                        current.size == orderDetailCount[3]);
-
-                    if (currentShopItem == null)
-                    {
-                        string sizeId = "nosize";
-                        string sizeTitle = string.Empty;
-                        if (orderDetailCount[3] != "undefined")
-                        {
-                            sizeTitle = GetSizeTitle(orderDetailCount[3]);
-                            sizeId = orderDetailCount[3];
-                        }
-                        string colorId = "nocolor";
-                        string colorTitle = string.Empty;
-                        if (orderDetailCount[2] != "undefined")
-                        {
-                            colorTitle = GetColorTitle(orderDetailCount[2]);
-                            colorId = orderDetailCount[2];
-                        }
-                        shopCartItems.Add(new ShopCartItemViewModel()
-                        {
-                            Id = orderDetailCount[0],
-                            Title = product.Title,
-                            ImageUrl = product.ImageUrl,
-                            Amount = (amount * Convert.ToDecimal(orderDetailCount[1])).ToString("N0"),
-                            Price = String.Format("{0:n0}", amount),
-                            Qty = orderDetailCount[1],
-                            color = orderDetailCount[2],
-                            size = orderDetailCount[3],
-                            colorTitle = colorTitle,
-                            SizeTitle = sizeTitle,
-                            ColorId = colorId,
-                            SizeId = sizeId
-                        });
+                            result.ResponseResult[0].GroupName, result.ResponseResult[0].GroupID.ToString()
+                        };
+                        return res;
                     }
                     else
                     {
-                        currentShopItem.Qty = (Convert.ToInt32(currentShopItem.Qty) + Convert.ToInt32(orderDetailCount[1])).ToString();
+                        user.ClubLevelCode =4105;
+                        user.ClubLevelTitle = "عادی";
+                        db.SaveChanges();
+
+                        string[] res =
+                        {
+                            "", "4105"
+                        };
+                        return res;
                     }
                 }
+            }
+            return null;
+        }
 
-                shopCartItems = UpdateShopCartByAvailability(shopCartItems);
+        public decimal GetClubDiscountPercentByCustomerGroupId(int customerGroupId)
+        {
+            if (customerGroupId == 4105)
+                return 0;
+            if (customerGroupId == 4106)
+                return 6m / 100m;
+            if (customerGroupId == 4107)
+                return 12m / 100m;
+            if (customerGroupId == 4108)
+                return 18m / 100m;
+            if (customerGroupId == 4109)
+                return 24m / 100m;
 
-                foreach (ShopCartItemViewModel product in shopCartItems)
+            return 0;
+        }
+
+        public ShopCartList GetShoppingCartInfo(string jsonvar)
+        {
+
+            //string currency = (System.Configuration.ConfigurationManager.AppSettings["currency"]);
+
+            decimal totalPrice = 0;
+            List<ShopCartItemViewModel> shopCartItems = new List<ShopCartItemViewModel>();
+
+            string[] orderDetailItems = jsonvar.Split('/');
+
+            for (int i = 0; i < orderDetailItems.Length - 1; i++)
+            {
+                string[] orderDetailCount = orderDetailItems[i].Split('.');
+                if (orderDetailCount[0].Contains("undefined"))
                 {
-                    totalPrice = (decimal)(totalPrice + (Convert.ToDecimal(product.Amount)));
+                    orderDetailCount[0] = orderDetailCount[0].Replace("undefined", "");
                 }
 
-                decimal shippmentprice = 0;
-
-                decimal shippmetFreeLimit =
-                    Convert.ToDecimal(System.Configuration.ConfigurationManager.AppSettings["shippmentFree"]);
-
-                if (totalPrice < shippmetFreeLimit && totalPrice > 0)
-                    shippmentprice = Convert.ToDecimal(System.Configuration.ConfigurationManager.AppSettings["shippment"]);
-
-                decimal discountAmount = GetStepDiscountAmount(totalPrice, shopCartItems);
-
-                decimal wallet = 0;
-
-                if (HttpContext.User.Identity.IsAuthenticated)
+                Guid proId = new Guid(orderDetailCount[0]);
+                var product = db.Products.Where(c => c.Id == proId && c.IsAvailable).Select(x => new
                 {
-                    var identity = (System.Security.Claims.ClaimsIdentity)User.Identity;
-                    string uid = identity.FindFirst(System.Security.Claims.ClaimTypes.Name).Value;
-                    Guid userId = new Guid(uid);
-                    var user = db.Users.Find(userId);
+                    x.Id,
+                    x.Title,
+                    x.IsInPromotion,
+                    x.DiscountAmount,
+                    x.Amount,
+                    x.ImageUrl
+                }).FirstOrDefault();
 
-                    if (user?.Amount != null)
-                        wallet = user.Amount.Value;
+                decimal amount = 0;
+
+                if (product.IsInPromotion)
+                {
+                    if (orderDetailCount[2] != "undefined" && orderDetailCount[2] != "nocolor")
+                    {
+                        Guid colorIdGuid = new Guid(orderDetailCount[2]);
+
+                        Product productItem = db.Products.FirstOrDefault(current =>
+                            current.ParentId == product.Id && current.ColorId == colorIdGuid &&
+                            current.IsDeleted == false);
+
+                        if (productItem != null)
+                        {
+                            if (productItem.IsInPromotion && productItem.DiscountAmount != null)
+                                amount = productItem.DiscountAmount.Value;
+                            else if (productItem.Amount != null)
+                                amount = productItem.Amount.Value;
+                        }
+                    }
+                    else if (product.DiscountAmount != null)
+                        amount = product.DiscountAmount.Value;
                 }
+                else if (product.Amount != null)
+                    amount = product.Amount.Value;
 
 
+                // Color color = db.Colors.Find(new Guid(orderDetailCount[2]));
 
-                decimal totalPayment = shippmentprice + totalPrice - discountAmount - wallet;
-                if (totalPayment <= 0)
+                ShopCartItemViewModel currentShopItem = shopCartItems.FirstOrDefault(current =>
+                    current.Id == orderDetailCount[0] && current.color == orderDetailCount[2] &&
+                    current.size == orderDetailCount[3]);
+
+                if (currentShopItem == null)
                 {
-                    totalPayment = 0;
+                    string sizeId = "nosize";
+                    string sizeTitle = string.Empty;
+                    if (orderDetailCount[3] != "undefined")
+                    {
+                        sizeTitle = GetSizeTitle(orderDetailCount[3]);
+                        sizeId = orderDetailCount[3];
+                    }
+                    string colorId = "nocolor";
+                    string colorTitle = string.Empty;
+                    if (orderDetailCount[2] != "undefined")
+                    {
+                        colorTitle = GetColorTitle(orderDetailCount[2]);
+                        colorId = orderDetailCount[2];
+                    }
+                    shopCartItems.Add(new ShopCartItemViewModel()
+                    {
+                        Id = orderDetailCount[0],
+                        Title = product.Title,
+                        ImageUrl = product.ImageUrl,
+                        Amount = (amount * Convert.ToDecimal(orderDetailCount[1])).ToString("N0"),
+                        Price = String.Format("{0:n0}", amount),
+                        Qty = orderDetailCount[1],
+                        color = orderDetailCount[2],
+                        size = orderDetailCount[3],
+                        colorTitle = colorTitle,
+                        SizeTitle = sizeTitle,
+                        ColorId = colorId,
+                        SizeId = sizeId
+                    });
                 }
-                decimal totalBeforWallet = shippmentprice + totalPrice - discountAmount;
-                ShopCartList shopCart = new ShopCartList
+                else
                 {
-                    ShopCartItems = shopCartItems,
-                    ShippmentPrice = shippmentprice,
-                    Amount = totalPrice,
-                    Discount = discountAmount,
-                    TotalPayment = totalPayment,
-                    Wallet = wallet,
-                    TotalPaymentBeforWallet = totalBeforWallet
-                };
+                    currentShopItem.Qty = (Convert.ToInt32(currentShopItem.Qty) + Convert.ToInt32(orderDetailCount[1])).ToString();
+                }
+            }
 
-                return shopCart;
-            
+            shopCartItems = UpdateShopCartByAvailability(shopCartItems);
+
+            foreach (ShopCartItemViewModel product in shopCartItems)
+            {
+                totalPrice = (decimal)(totalPrice + (Convert.ToDecimal(product.Amount)));
+            }
+
+            decimal shippmentprice = 0;
+
+            decimal shippmetFreeLimit =
+                Convert.ToDecimal(System.Configuration.ConfigurationManager.AppSettings["shippmentFree"]);
+
+            if (totalPrice < shippmetFreeLimit && totalPrice > 0)
+                shippmentprice = Convert.ToDecimal(System.Configuration.ConfigurationManager.AppSettings["shippment"]);
+
+            decimal discountAmount = GetStepDiscountAmount(totalPrice, shopCartItems);
+
+            decimal wallet = 0;
+
+            string clubTitle = "کلاسیک";
+
+            decimal clubPercent = 0;
+
+            if (HttpContext.User.Identity.IsAuthenticated)
+            {
+                var identity = (System.Security.Claims.ClaimsIdentity)User.Identity;
+                string uid = identity.FindFirst(System.Security.Claims.ClaimTypes.Name).Value;
+                Guid userId = new Guid(uid);
+                var user = db.Users.Find(userId);
+
+                if (user?.Amount != null)
+                    wallet = user.Amount.Value;
+
+                string[] clubInfo = GetCustomerClubTitle(user);
+
+                if (clubInfo != null)
+                {
+                    if (!string.IsNullOrEmpty(clubInfo[0]))
+                    {
+                        clubTitle = clubInfo[0];
+                    }
+                    clubPercent = GetClubDiscountPercentByCustomerGroupId(Convert.ToInt32(clubInfo[1]));
+                }
+            }
+
+            wallet = 0;
+
+            decimal totalBeforShippment = totalPrice - discountAmount;
+
+            decimal clubDiscountAmount = clubPercent * totalBeforShippment;
+
+            totalBeforShippment -= clubDiscountAmount;
+
+            decimal totalBeforWallet = shippmentprice + totalBeforShippment;
+
+            decimal totalPayment = totalBeforWallet - wallet;
+            if (totalPayment <= 0)
+            {
+                totalPayment = 0;
+            }
+
+            ShopCartList shopCart = new ShopCartList
+            {
+                ShopCartItems = shopCartItems,
+                ShippmentPrice = shippmentprice,
+                Amount = totalPrice,
+                Discount = discountAmount,
+                TotalPayment = totalPayment,
+                Wallet = wallet,
+                TotalPaymentBeforWallet = totalBeforWallet,
+                ClubTitle = clubTitle,
+                ClubDiscount = clubDiscountAmount
+            };
+
+            return shopCart;
+
         }
 
         public decimal GetStepDiscountAmount(decimal total, List<ShopCartItemViewModel> shopCartProducts)
@@ -997,6 +1092,7 @@ namespace MashadLeatherEcommerce.Controllers
                         @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z",
                         RegexOptions.IgnoreCase);
 
+                    isEmail = true;
                     if (isEmail)
                     {
                         ShopCartList shopCart = GetShoppingCartInfo(jsonvar);
@@ -1073,7 +1169,9 @@ namespace MashadLeatherEcommerce.Controllers
                             PaymentAmount = shopCart.TotalPayment,
                             TotalAmount = shopCart.TotalPaymentBeforWallet,
                             PostalCode = postalCode,
-                            SendFactor = Convert.ToBoolean(factor)
+                            SendFactor = Convert.ToBoolean(factor),
+                            CustomerClubDiscountAmount = shopCart.ClubDiscount,
+                            CustomerClubGroup = shopCart.ClubTitle
 
                             //PaymentType = paymentType
                         };
@@ -1337,7 +1435,7 @@ namespace MashadLeatherEcommerce.Controllers
         }
 
 
-        public ActionResult ChangeStatus(string orderId, string statusId, string exitInventory, string shipmentType,string sentDate)
+        public ActionResult ChangeStatus(string orderId, string statusId, string exitInventory, string shipmentType, string sentDate)
         {
             try
             {

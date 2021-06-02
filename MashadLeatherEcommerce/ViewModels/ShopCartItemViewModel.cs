@@ -14,7 +14,8 @@ namespace ViewModels
         public decimal TotalPayment { get; set; }
         public decimal TotalPaymentBeforWallet { get; set; }
         public decimal Wallet { get; set; }
-
+        public string ClubTitle { get; set; }
+        public decimal ClubDiscount { get; set; }
 
         public string AmountStr { get { return Amount.ToString("n0"); } }
         public string ShippmentPriceStr { get { return ShippmentPrice.ToString("n0"); } }
@@ -22,6 +23,7 @@ namespace ViewModels
         public string TotalPaymentStr { get { return TotalPayment.ToString("n0"); } }
         public string TotalPaymentBeforWalletStr { get { return TotalPaymentBeforWallet.ToString("n0"); } }
         public string WalletStr { get { return Wallet.ToString("n0"); } }
+        public string ClubDiscountStr { get { return ClubDiscount.ToString("n0"); } }
     }
     public class ShopCartItemViewModel
     {

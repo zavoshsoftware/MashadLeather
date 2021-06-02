@@ -64,12 +64,17 @@ namespace Models
 
         [Display(Name = "Email", ResourceType = typeof(Resources.Models.User))]
         [StringLength(256, ErrorMessage = "طول {0} نباید بیشتر از {1} باشد")]
-        [RegularExpression(@"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$", ErrorMessageResourceName = "EmailExpersionValidation", ErrorMessageResourceType = typeof(Messages))]
+        //[RegularExpression(@"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$", ErrorMessageResourceName = "EmailExpersionValidation", ErrorMessageResourceType = typeof(Messages))]
         public string Email { get; set; }
 
         public string Token { get; set; }
 
         public Guid RoleId { get; set; }
+
+        [Display(Name="کد سطح باشگاه مشتریان")]
+        public int? ClubLevelCode { get; set; }
+        [Display(Name="سطح باشگاه مشتریان")]
+        public string ClubLevelTitle { get; set; }
 
         public virtual Role Role { get; set; }
         public virtual City City { get; set; }

@@ -39,6 +39,8 @@ function LoadOrders() {
                     $('#shippmentAmount').html(result.ShippmentPriceStr);
                     $('#DiscountAmount').html(result.DiscountStr);
                     $('#total').html(result.TotalPaymentBeforWalletStr);
+                    $('#ClubDiscountAmount').html(result.ClubDiscount);
+
                     $('.loading-fuulpage').css('display', 'none');
                 } else {
                     localStorage.setItem("basket", '');
@@ -94,7 +96,10 @@ function LoadCheckoutOrders() {
                     $('.btn-remove-discount').css('display', 'inline');
                 }
 
-            });
+                $('#customerClubTitle').html(result.ClubTitle);
+                $('#ClubDiscountAmount').html(result.ClubDiscount);
+
+        });
     } else {
         $('#shop-cart').css('display', 'none');
         $('#shop-cart-empty').css('display', 'block');

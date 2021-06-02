@@ -36,6 +36,11 @@
 				<div class="col-md-8">@string.Format("{0:#,#}", Model.Order.DiscountAmount) </div>
 			</div>
 			<div class="row">
+				<div class="col-md-4">تخفیف باشگاه مشتریان</div>
+
+				<div class="col-md-8">  @string.Format("{0:#,#}", Model.Order.CustomerClubDiscountAmount)</div>
+			</div>
+			<div class="row">
 				<div class="col-md-4">هزینه ارسال</div>
 				<div class="col-md-8">@string.Format("{0:#,#}", Model.Order.ShipmentAmount) </div>
 			</div>
@@ -112,6 +117,10 @@
 			<div class="row">
 				<div class="col-md-4">شماره موبایل</div>
 				<div class="col-md-8">@Model.Order.User.CellNum</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">سطح باشگاه مشتریان</div>
+				<div class="col-md-8">@Model.Order.User.ClubLevelTitle</div>
 			</div>
 
 			<div class="row">

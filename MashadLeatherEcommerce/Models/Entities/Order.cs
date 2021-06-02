@@ -141,5 +141,11 @@ namespace Models
         [Display(Name="تاریخ ارسال")]
         public DateTime? SentDate { get; set; }
 
+        [Display(Name="سطح باشگاه مشتریان کاربر")]
+        public string CustomerClubGroup { get; set; }
+
+        [Display(Name="مبلغ تخفیف باشگاه مشتریان")]
+        [Column(TypeName = "Money")]
+        public decimal?  CustomerClubDiscountAmount { get; set; }
     }
 }

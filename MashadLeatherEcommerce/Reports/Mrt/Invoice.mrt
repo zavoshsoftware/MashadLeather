@@ -36,7 +36,7 @@
     <Page1 Ref="3" type="Page" isKey="true">
       <Border>None;Black;2;Solid;False;4;Black</Border>
       <Brush>Transparent</Brush>
-      <Components isList="true" count="12">
+      <Components isList="true" count="11">
         <PageFooterBand1 Ref="4" type="PageFooterBand" isKey="true">
           <Brush>Transparent</Brush>
           <ClientRectangle>0,16.2,12.8,2.8</ClientRectangle>
@@ -207,26 +207,7 @@ ILIRBEFkIwiCILIRBEFkIwhCp8T/BRgAWgV3cqdr4CwAAAAASUVORK5CYII=</ImageBytes>
           <Type>Expression</Type>
           <VertAlignment>Center</VertAlignment>
         </Text1>
-        <Text2 Ref="10" type="Text" isKey="true">
-          <Border>All;Black;1;Solid;False;4;Black</Border>
-          <Brush>Transparent</Brush>
-          <ClientRectangle>0,3.6,12.8,1.6</ClientRectangle>
-          <Conditions isList="true" count="0" />
-          <Font>Tahoma,10</Font>
-          <HorAlignment>Center</HorAlignment>
-          <Margins>0,0,0,0</Margins>
-          <MaxNumberOfLines>3</MaxNumberOfLines>
-          <Name>Text2</Name>
-          <OnlyText>True</OnlyText>
-          <Page isRef="3" />
-          <Parent isRef="3" />
-          <Text>آدرس گیرنده:{KhoshdastInvoice.City} - {KhoshdastInvoice.Address}</Text>
-          <TextBrush>Black</TextBrush>
-          <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
-          <Type>Expression</Type>
-          <VertAlignment>Center</VertAlignment>
-        </Text2>
-        <Text3 Ref="11" type="Text" isKey="true">
+        <Text3 Ref="10" type="Text" isKey="true">
           <Border>Left, Right, Bottom;Black;1;Solid;False;4;Black</Border>
           <Brush>Transparent</Brush>
           <ClientRectangle>6.8,5.2,6,0.8</ClientRectangle>
@@ -242,7 +223,7 @@ ILIRBEFkIwiCILIRBEFkIwhCp8T/BRgAWgV3cqdr4CwAAAAASUVORK5CYII=</ImageBytes>
           <Type>Expression</Type>
           <VertAlignment>Center</VertAlignment>
         </Text3>
-        <Text4 Ref="12" type="Text" isKey="true">
+        <Text4 Ref="11" type="Text" isKey="true">
           <Border>Left, Right, Bottom;Black;1;Solid;False;4;Black</Border>
           <Brush>Transparent</Brush>
           <ClientRectangle>0,5.2,6.8,0.8</ClientRectangle>
@@ -258,7 +239,7 @@ ILIRBEFkIwiCILIRBEFkIwhCp8T/BRgAWgV3cqdr4CwAAAAASUVORK5CYII=</ImageBytes>
           <Type>Expression</Type>
           <VertAlignment>Center</VertAlignment>
         </Text4>
-        <Text7 Ref="13" type="Text" isKey="true">
+        <Text7 Ref="12" type="Text" isKey="true">
           <Border>Left, Right, Bottom;Black;1;Solid;False;4;Black</Border>
           <Brush>Transparent</Brush>
           <ClientRectangle>6.8,6,6,0.8</ClientRectangle>
@@ -274,7 +255,7 @@ ILIRBEFkIwiCILIRBEFkIwhCp8T/BRgAWgV3cqdr4CwAAAAASUVORK5CYII=</ImageBytes>
           <Type>Expression</Type>
           <VertAlignment>Center</VertAlignment>
         </Text7>
-        <Text8 Ref="14" type="Text" isKey="true">
+        <Text8 Ref="13" type="Text" isKey="true">
           <Border>Left, Right, Bottom;Black;1;Solid;False;4;Black</Border>
           <Brush>Transparent</Brush>
           <ClientRectangle>0,6,6.8,0.8</ClientRectangle>
@@ -290,10 +271,10 @@ ILIRBEFkIwiCILIRBEFkIwhCp8T/BRgAWgV3cqdr4CwAAAAASUVORK5CYII=</ImageBytes>
           <Type>Expression</Type>
           <VertAlignment>Center</VertAlignment>
         </Text8>
-        <Text9 Ref="15" type="Text" isKey="true">
+        <Text9 Ref="14" type="Text" isKey="true">
           <Border>All;Black;1;Solid;False;4;Black</Border>
           <Brush>Transparent</Brush>
-          <ClientRectangle>0,6.8,12.8,0.8</ClientRectangle>
+          <ClientRectangle>0,3.6,12.8,1.6</ClientRectangle>
           <Conditions isList="true" count="0" />
           <Font>Tahoma,10</Font>
           <HorAlignment>Center</HorAlignment>
@@ -301,8 +282,9 @@ ILIRBEFkIwiCILIRBEFkIwhCp8T/BRgAWgV3cqdr4CwAAAAASUVORK5CYII=</ImageBytes>
           <Name>Text9</Name>
           <Page isRef="3" />
           <Parent isRef="3" />
-          <Text>توضیحات: {KhoshdastInvoice.Total}</Text>
+          <Text>آدرس گیرنده: {KhoshdastInvoice.City} - {KhoshdastInvoice.Address}</Text>
           <TextBrush>Black</TextBrush>
+          <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
           <Type>Expression</Type>
           <VertAlignment>Center</VertAlignment>
         </Text9>
@@ -328,10 +310,10 @@ ILIRBEFkIwiCILIRBEFkIwhCp8T/BRgAWgV3cqdr4CwAAAAASUVORK5CYII=</ImageBytes>
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>4/20/2021 2:44:33 PM</ReportChanged>
+  <ReportChanged>5/5/2021 3:55:49 PM</ReportChanged>
   <ReportCreated>12/5/2020 5:48:42 PM</ReportCreated>
   <ReportFile>c:\users\hossein\documents\github\mashadleather\mashadleatherecommerce\reports\mrt\invoice.mrt</ReportFile>
-  <ReportGuid>2a69126260184be88fb695c8ba926653</ReportGuid>
+  <ReportGuid>8303dcca0f884a67ab76c37eb82b2eb0</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2020.4.2.0</ReportVersion>
