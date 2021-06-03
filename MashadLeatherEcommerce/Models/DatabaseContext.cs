@@ -60,6 +60,8 @@ namespace Models
         public DbSet<DiscountCode> DiscountCodes { get; set; }
         public DbSet<PaymentFreeCode> PaymentFreeCodes { get; set; }
         public DbSet<UserInformation> UserInformations { get; set; }
+
+        public DbSet<BlackListUser> BlackListUsers { get; set; }
     }
 
 }

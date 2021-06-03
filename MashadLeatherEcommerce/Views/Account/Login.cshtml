@@ -23,6 +23,10 @@
 				{
 						<p class="alert alert-danger" id="wrongEmail">@TempData["WrongCellNumber"]</p>
 				}
+				@if (TempData["blackListUser"] != null)
+				{
+						<p class="alert alert-danger" id="wrongEmail">@TempData["blackListUser"]</p>
+				}
 				@if (TempData["success"] != null)
 				{
 						<p class="alert alert-success" id="wrongEmail">@TempData["success"]</p>

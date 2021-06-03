@@ -5,10 +5,12 @@ using System.Data.Entity;
 using System.Data.Entity.Validation;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.UI.WebControls;
 using Helper;
+using MashadLeatherEcommerce.KiyanService;
 using Models;
 using ViewModels;
 
@@ -351,6 +353,78 @@ namespace MashadLeatherEcommerce.Controllers
             };
             return LettersDictionary.Aggregate(persianStr, (current, item) =>
                 current.Replace(item.Key, item.Value));
+        }
+
+        public async Task<ActionResult> UpdateCustomerClub()
+        {
+            try
+            {
+                var users = db.Users.Where(c => c.ClubLevelTitle != null && c.IsDeleted == false)
+                    .ToList();
+
+
+                KiyanHelper kiyan = new KiyanHelper();
+
+                KyanOnlineSaleServiceSoapClient ks = new KyanOnlineSaleServiceSoapClient();
+
+                ValidationSoapHeader header = kiyan.ConnectToService();
+
+                header.TokenAUT = "Charm@#$568";
+
+                foreach (var user in users)
+                {
+                    GetCustomerClubTitle(user, ks, header);
+                }
+
+                return View(true);
+            }
+            catch (Exception e)
+            {
+                return View(false);
+
+            }
+        }
+
+        public string[] GetCustomerClubTitle(User user, KyanOnlineSaleServiceSoapClient ks, ValidationSoapHeader header)
+        {
+            if (user != null)
+            {
+                string cellNumber = user.CellNum;
+
+                string[] users = { cellNumber };
+
+                var result = ks.GetCustomersBaseInfo(header, new AuthUser(), KiyanService.FiledName.Mobile, users);
+
+                if (result.ResponseResult != null)
+                {
+                    user.ClubLevelCode = result.ResponseResult[0].GroupID;
+                    user.ClubLevelTitle = result.ResponseResult[0].GroupName;
+                    db.SaveChanges();
+
+                    string[] res =
+                    {
+                            result.ResponseResult[0].GroupName, result.ResponseResult[0].GroupID.ToString()
+                        };
+                    return res;
+                }
+                else
+                {
+                    user.ClubLevelCode = 4105;
+                    user.ClubLevelTitle = "عادی";
+                    user.LastModifiedDate=DateTime.Now;
+                    
+                    db.SaveChanges();
+
+                    string[] res =
+                    {
+                            "", "4105"
+                        };
+                    return res;
+                }
+
+            }
+
+            return null;
         }
     }
 }

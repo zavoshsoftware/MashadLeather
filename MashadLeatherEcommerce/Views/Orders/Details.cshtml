@@ -246,6 +246,57 @@
 </div>
 
 
+<div class="col-md-12">
+<div class="panel panel-primary">
+<div class="panel-heading">سایر سفارشات این مشتری</div>
+<div class="panel-body">
+
+	<table class="table orderdetailtable table-bordered">
+		<thead>
+		<tr>
+			<th>شماره سفارش</th>
+			<th>تاریخ سفارش</th>
+			<th>وضعیت</th>
+			<th>جمع کل</th>
+			<th>جزییات</th>
+		</tr>
+		</thead>
+		<tbody>
+		@foreach (var item in Model.OtherOrders)
+		{
+			<tr>
+				<td>
+					@item.Code
+				</td>
+				<td>
+					@item.CreationDate
+				</td>
+				<td>
+					@item.OrderStatus.Title
+				</td>
+				<td>
+					@string.Format("{0:#,#}", item.TotalAmount)
+				</td>
+				
+				 
+				<td>
+					<a href="/Orders/Details/@item.Id">
+						<i class="fa fa-eye"></i> مشاهده جزییات سفارش
+					</a>
+				</td>
+			 
+			</tr>
+		}
+
+
+		</tbody>
+
+	</table>
+</div>
+</div>
+</div>
+
+
 
 @section scripts{
 	<script src="~/Scripts/PersianDatePicker.min.js"></script>

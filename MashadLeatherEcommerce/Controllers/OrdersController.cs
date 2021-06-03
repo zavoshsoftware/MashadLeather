@@ -57,11 +57,11 @@ namespace MashadLeatherEcommerce.Controllers
 
         public List<OrderListViewModel> GetOrders(int statusId, string status, string start, string end)
         {
-            List<OrderListViewModel> orders = new List<OrderListViewModel>();
+            //   List<OrderListViewModel> orders = new List<OrderListViewModel>();
             //مشاهده همه سفارشات
             if (statusId == 0)
             {
-                orders = db.Orders.AsNoTracking()
+                List<OrderListViewModel> orders = db.Orders.AsNoTracking()
                     .Where(current => current.IsDeleted == false)
                   .OrderByDescending(o => o.CreationDate).Select(
 
@@ -81,45 +81,46 @@ namespace MashadLeatherEcommerce.Controllers
                             PaymentType = x.PaymentType,
                             OrderStatusId = x.OrderStatusId,
                             PaymentAmount = x.PaymentAmount,
-
-
                         }).ToList();
 
 
                 if (!string.IsNullOrEmpty(status) || !string.IsNullOrEmpty(start) || !string.IsNullOrEmpty(end))
                 {
-
                     orders = ReturnFilteredOrders(orders, status, start, end);
                 }
 
+                return orders.ToList();
 
 
             }
             //مشاهده سفارشات حذف شده
             else if (statusId == 1)
             {
-                orders = db.Orders.AsNoTracking()
-                    .Where(current => current.IsDeleted == true)
-                    .Include(o => o.OrderStatus).OrderByDescending(o => o.CreationDate).Include(o => o.User).Select(
+                var orders = db.Orders.AsNoTracking()
+                     .Where(current => current.IsDeleted == true)
+                     .Include(o => o.OrderStatus).OrderByDescending(o => o.CreationDate).Include(o => o.User).Select(
 
-                        x => new OrderListViewModel()
-                        {
-                            Code = x.Code,
-                            SaleReferenceId = x.SaleReferenceId,
-                            OrderStatusTitle = x.OrderStatus.Title,
-                            FirstName = x.User.FirstName,
-                            LastName = x.User.LastName,
-                            CellNum = x.User.CellNum,
-                            TotalAmount = x.TotalAmount,
-                            CreationDate = x.CreationDate,
-                            Id = x.Id,
-                            City = x.City.Title,
-                            Address = x.Address,
-                            PaymentType = x.PaymentType,
-                            OrderStatusId = x.OrderStatusId,
-                            PaymentAmount = x.PaymentAmount
+                         x => new OrderListViewModel()
+                         {
+                             Code = x.Code,
+                             SaleReferenceId = x.SaleReferenceId,
+                             OrderStatusTitle = x.OrderStatus.Title,
+                             FirstName = x.User.FirstName,
+                             LastName = x.User.LastName,
+                             CellNum = x.User.CellNum,
+                             TotalAmount = x.TotalAmount,
+                             CreationDate = x.CreationDate,
+                             Id = x.Id,
+                             City = x.City.Title,
+                             Address = x.Address,
+                             PaymentType = x.PaymentType,
+                             OrderStatusId = x.OrderStatusId,
+                             PaymentAmount = x.PaymentAmount
 
-                        }).ToList();
+                         });
+
+                return orders.ToList();
+
             }
             //مشاهده سفارشات پرداخت شده
             else if (statusId == 2)
@@ -127,31 +128,30 @@ namespace MashadLeatherEcommerce.Controllers
 
                 Guid isPayedStatus = BankHelper.GetOrderStatusIdByCode(2).Value;
 
-                orders = db.Orders.AsNoTracking()
-                    .Where(current => current.OrderStatusId == isPayedStatus && current.IsDeleted == false)
-                    .Include(o => o.OrderStatus).OrderByDescending(o => o.CreationDate).Include(o => o.User).Select(
+                var orders = db.Orders.AsNoTracking()
+                     .Where(current => current.OrderStatusId == isPayedStatus && current.IsDeleted == false)
+                     .Include(o => o.OrderStatus).OrderByDescending(o => o.CreationDate).Include(o => o.User).Select(
 
-                        x => new OrderListViewModel()
-                        {
-                            Code = x.Code,
-                            SaleReferenceId = x.SaleReferenceId,
-                            OrderStatusTitle = x.OrderStatus.Title,
-                            FirstName = x.User.FirstName,
-                            LastName = x.User.LastName,
-                            CellNum = x.User.CellNum,
-                            TotalAmount = x.TotalAmount,
-                            CreationDate = x.CreationDate,
-                            Id = x.Id,
-                            City = x.City.Title,
-                            Address = x.Address,
-                            PaymentType = x.PaymentType,
-                            OrderStatusId = x.OrderStatusId,
-                            PaymentAmount = x.PaymentAmount
+                         x => new OrderListViewModel()
+                         {
+                             Code = x.Code,
+                             SaleReferenceId = x.SaleReferenceId,
+                             OrderStatusTitle = x.OrderStatus.Title,
+                             FirstName = x.User.FirstName,
+                             LastName = x.User.LastName,
+                             CellNum = x.User.CellNum,
+                             TotalAmount = x.TotalAmount,
+                             CreationDate = x.CreationDate,
+                             Id = x.Id,
+                             City = x.City.Title,
+                             Address = x.Address,
+                             PaymentType = x.PaymentType,
+                             OrderStatusId = x.OrderStatusId,
+                             PaymentAmount = x.PaymentAmount
 
-                        }).ToList();
+                         });
 
-
-
+                return orders.ToList();
             }
 
             //مشاهده سفارشات ارسال شده
@@ -159,32 +159,35 @@ namespace MashadLeatherEcommerce.Controllers
             {
                 Guid isPayedStatus = BankHelper.GetOrderStatusIdByCode(3).Value;
 
-                orders = db.Orders.AsNoTracking()
-                    .Where(current => current.OrderStatusId == isPayedStatus && current.IsDeleted == false)
-                    .Include(o => o.OrderStatus).OrderByDescending(o => o.CreationDate).Include(o => o.User).Select(
+                var orders = db.Orders.AsNoTracking()
+                      .Where(current => current.OrderStatusId == isPayedStatus && current.IsDeleted == false)
+                      .Include(o => o.OrderStatus).OrderByDescending(o => o.CreationDate).Include(o => o.User).Select(
 
-                        x => new OrderListViewModel()
-                        {
-                            Code = x.Code,
-                            SaleReferenceId = x.SaleReferenceId,
-                            OrderStatusTitle = x.OrderStatus.Title,
-                            FirstName = x.User.FirstName,
-                            LastName = x.User.LastName,
-                            CellNum = x.User.CellNum,
-                            TotalAmount = x.TotalAmount,
-                            CreationDate = x.CreationDate,
-                            Id = x.Id,
-                            City = x.City.Title,
-                            Address = x.Address,
-                            PaymentType = x.PaymentType,
-                            OrderStatusId = x.OrderStatusId,
-                            PaymentAmount = x.PaymentAmount
+                          x => new OrderListViewModel()
+                          {
+                              Code = x.Code,
+                              SaleReferenceId = x.SaleReferenceId,
+                              OrderStatusTitle = x.OrderStatus.Title,
+                              FirstName = x.User.FirstName,
+                              LastName = x.User.LastName,
+                              CellNum = x.User.CellNum,
+                              TotalAmount = x.TotalAmount,
+                              CreationDate = x.CreationDate,
+                              Id = x.Id,
+                              City = x.City.Title,
+                              Address = x.Address,
+                              PaymentType = x.PaymentType,
+                              OrderStatusId = x.OrderStatusId,
+                              PaymentAmount = x.PaymentAmount
 
-                        }).ToList();
+                          });
+                return orders.ToList();
+
 
             }
 
-            return orders;
+
+            return new List<OrderListViewModel>();
         }
 
         public List<OrderListViewModel> ReturnFilteredOrders(List<OrderListViewModel> orders, string status, string start, string end)
@@ -275,10 +278,15 @@ namespace MashadLeatherEcommerce.Controllers
             List<OrderDetail> orderDetails = db.OrderDetails
                 .Where(current => current.OrderId == order.Id && current.IsDeleted == false).ToList();
 
+            var otherOrders = db.Orders.Where(c => c.UserId == order.UserId && c.Id != order.Id)
+                .OrderByDescending(c => c.CreationDate);
+
+
             ViewModels.OrderDetailViewModel orderDetailViewModel = new ViewModels.OrderDetailViewModel()
             {
                 Order = order,
-                OrderDetails = orderDetails
+                OrderDetails = orderDetails,
+                OtherOrders = otherOrders.ToList()
             };
 
 
@@ -605,6 +613,48 @@ namespace MashadLeatherEcommerce.Controllers
             return shopCartItems;
         }
 
+        public string TestAlmas(string cell)
+        {
+            var user = db.Users.FirstOrDefault(c => c.CellNum == cell);
+            string cellNumber = cell;
+            KiyanHelper kiyan = new KiyanHelper();
+
+            KyanOnlineSaleServiceSoapClient ks = new KyanOnlineSaleServiceSoapClient();
+
+            ValidationSoapHeader header = kiyan.ConnectToService();
+
+            header.TokenAUT = "Charm@#$568";
+
+            string[] users = { cellNumber };
+
+            var result = ks.GetCustomersBaseInfo(header, new AuthUser(), KiyanService.FiledName.Mobile, users);
+
+            if (result.ResponseResult != null)
+            {
+                user.ClubLevelCode = result.ResponseResult[0].GroupID;
+                user.ClubLevelTitle = result.ResponseResult[0].GroupName;
+                db.SaveChanges();
+
+                string[] res =
+                {
+                    result.ResponseResult[0].GroupName, result.ResponseResult[0].GroupID.ToString()
+                };
+                //   return res;
+            }
+            else
+            {
+                user.ClubLevelCode = 4105;
+                user.ClubLevelTitle = "عادی";
+                db.SaveChanges();
+
+                string[] res =
+                {
+                    "", "4105"
+                };
+                //   return res;
+            }
+            return "";
+        }
         public string[] GetCustomerClubTitle(User user)
         {
             if (user != null)
@@ -646,7 +696,7 @@ namespace MashadLeatherEcommerce.Controllers
                     }
                     else
                     {
-                        user.ClubLevelCode =4105;
+                        user.ClubLevelCode = 4105;
                         user.ClubLevelTitle = "عادی";
                         db.SaveChanges();
 
@@ -666,13 +716,15 @@ namespace MashadLeatherEcommerce.Controllers
             if (customerGroupId == 4105)
                 return 0;
             if (customerGroupId == 4106)
-                return 6m / 100m;
+                return 0;
             if (customerGroupId == 4107)
-                return 12m / 100m;
+                return 3m / 100m;
             if (customerGroupId == 4108)
-                return 18m / 100m;
+                return 5m / 100m;
             if (customerGroupId == 4109)
-                return 24m / 100m;
+                return 8m / 100m;
+            if (customerGroupId == 2244)
+                return 10m / 100m;
 
             return 0;
         }

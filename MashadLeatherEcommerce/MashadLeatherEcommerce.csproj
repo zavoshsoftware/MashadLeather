@@ -1187,6 +1187,7 @@
     <Content Include="Images\markers\marker6.png" />
     <Content Include="Images\mashad-faq-img.jpg" />
     <Content Include="Images\ml-factory.jpg" />
+    <Content Include="Images\ml-spring.jpg" />
     <Content Include="Images\mockup\1.jpg" />
     <Content Include="Images\mockup\10.jpg" />
     <Content Include="Images\mockup\11.jpg" />
@@ -4735,6 +4736,7 @@
     </Compile>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BillingController.cs" />
+    <Compile Include="Controllers\BlackListUsersController.cs" />
     <Compile Include="Controllers\BlogGroupsController.cs" />
     <Compile Include="Controllers\BlogsController.cs" />
     <Compile Include="Controllers\ColorsController.cs" />
@@ -5173,6 +5175,10 @@
     <Compile Include="Migrations\202105110527347_V104.Designer.cs">
       <DependentUpon>202105110527347_V104.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106031105588_V105.cs" />
+    <Compile Include="Migrations\202106031105588_V105.Designer.cs">
+      <DependentUpon>202106031105588_V105.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DatabaseContext.cs" />
     <Compile Include="Models\DatabaseContextInitializer.cs" />
@@ -5181,6 +5187,7 @@
     <Compile Include="Models\Entities\Blog.cs" />
     <Compile Include="Models\Entities\BlogGroup.cs" />
     <Compile Include="Models\Entities\City.cs" />
+    <Compile Include="Models\Entities\BlackListUser.cs" />
     <Compile Include="Models\Entities\Color.cs" />
     <Compile Include="Models\Entities\Comment.cs" />
     <Compile Include="Models\Entities\Configuration.cs" />
@@ -5593,6 +5600,12 @@
     <Content Include="Views\Home\SpringPromotion.cshtml" />
     <Content Include="Views\Dashboard\OrderList.cshtml" />
     <Content Include="Views\Report\Invoice.cshtml" />
+    <Content Include="Views\Users\UpdateCustomerClub.cshtml" />
+    <Content Include="Views\BlackListUsers\Create.cshtml" />
+    <Content Include="Views\BlackListUsers\Delete.cshtml" />
+    <Content Include="Views\BlackListUsers\Details.cshtml" />
+    <Content Include="Views\BlackListUsers\Edit.cshtml" />
+    <Content Include="Views\BlackListUsers\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -5902,6 +5915,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105110527347_V104.resx">
       <DependentUpon>202105110527347_V104.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106031105588_V105.resx">
+      <DependentUpon>202106031105588_V105.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

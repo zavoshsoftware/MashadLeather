@@ -10,5 +10,6 @@ namespace ViewModels
     {
         public Order Order { get; set; }
         public List<OrderDetail> OrderDetails { get; set; }
+        public List<Order> OtherOrders { get; set; }
     }
 }

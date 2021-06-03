@@ -28,7 +28,7 @@ namespace MashadLeatherEcommerce.Controllers
         [Authorize(Roles = "Administrator,SuperAdministrator,eshopadmin")]
         public ActionResult Index(Guid? id)
         {
-            var identity = (System.Security.Claims.ClaimsIdentity)User.Identity;
+            var identity = (System.Security.Claims.ClaimsIdentity) User.Identity;
             string roleName = identity.FindFirst(System.Security.Claims.ClaimTypes.Role).Value;
             ViewBag.roleName = roleName;
             // List<Product> products = new List<Product>();
@@ -42,7 +42,8 @@ namespace MashadLeatherEcommerce.Controllers
             }
             else
             {
-                var products = db.Products.Where(p => p.IsDeleted == false && p.ParentId == id).OrderBy(p => p.Priority).ToList();
+                var products = db.Products.Where(p => p.IsDeleted == false && p.ParentId == id).OrderBy(p => p.Priority)
+                    .ToList();
                 ViewBag.Id = id;
                 ViewBag.ParentId = id.Value;
                 return View(products);
@@ -138,7 +139,8 @@ namespace MashadLeatherEcommerce.Controllers
             quickProduct.CurrentCurrency = oGetCurrency.CurrentCurrency();
             ViewBag.Title = product.Title + " | چرم مشهد";
             ViewBag.Canonical = "https://www.mashadleather.com/product-detail/" + product.Code;
-            ViewBag.Description = "بررسی ابعاد، رنگ و مشخصات " + product.Title + " با امکان خرید اینترنتی از وب‌سایت رسمی چرم مشهد.";
+            ViewBag.Description = "بررسی ابعاد، رنگ و مشخصات " + product.Title +
+                                  " با امکان خرید اینترنتی از وب‌سایت رسمی چرم مشهد.";
 
             quickProduct.BreadcrumpItems = GetProductBreadcrump(product);
             return View(quickProduct);
@@ -149,7 +151,8 @@ namespace MashadLeatherEcommerce.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.ProductCategoryId = new SelectList(db.ProductCategories.Where(current => current.IsDeleted == false), "Id", "Title");
+            ViewBag.ProductCategoryId =
+                new SelectList(db.ProductCategories.Where(current => current.IsDeleted == false), "Id", "Title");
             ViewBag.SizeId = new SelectList(db.Sizes.Where(current => current.IsDeleted == false), "Id", "Title");
             ViewBag.ColorId = new SelectList(db.Colors.Where(current => current.IsDeleted == false), "Id", "Title");
             return View();
@@ -167,6 +170,7 @@ namespace MashadLeatherEcommerce.Controllers
             if (ModelState.IsValid)
             {
                 #region Upload and resize image if needed
+
                 string newFilenameUrl = string.Empty;
                 if (fileupload != null)
                 {
@@ -181,7 +185,9 @@ namespace MashadLeatherEcommerce.Controllers
 
                     product.ImageUrl = newFilenameUrl;
                 }
+
                 #endregion
+
                 product.IsDeleted = false;
                 product.CreationDate = DateTime.Now;
 
@@ -212,16 +218,21 @@ namespace MashadLeatherEcommerce.Controllers
             if (product.ProductCategoryId != null)
             {
                 //   ViewBag.ParentProductCategoryId = new SelectList(db.ProductCategories.Where(current => current.IsDeleted == false && current.ParentId == null), "Id", "Title", product.ProductCategory.ParentId);
-                ViewBag.ProductCategoryId = new SelectList(db.ProductCategories.Where(current => current.IsDeleted == false), "Id", "Title", product.ProductCategoryId);
+                ViewBag.ProductCategoryId =
+                    new SelectList(db.ProductCategories.Where(current => current.IsDeleted == false), "Id", "Title",
+                        product.ProductCategoryId);
 
             }
             else
             {
-                ViewBag.ProductCategoryId = new SelectList(db.ProductCategories.Where(current => current.IsDeleted == false), "Id", "Title");
+                ViewBag.ProductCategoryId =
+                    new SelectList(db.ProductCategories.Where(current => current.IsDeleted == false), "Id", "Title");
             }
 
-            ViewBag.SizeId = new SelectList(db.Sizes.Where(current => current.IsDeleted == false), "Id", "Title", product.SizeId);
-            ViewBag.ColorId = new SelectList(db.Colors.Where(current => current.IsDeleted == false), "Id", "Title", product.ColorId);
+            ViewBag.SizeId = new SelectList(db.Sizes.Where(current => current.IsDeleted == false), "Id", "Title",
+                product.SizeId);
+            ViewBag.ColorId = new SelectList(db.Colors.Where(current => current.IsDeleted == false), "Id", "Title",
+                product.ColorId);
             ViewBag.Id = product.ParentId;
             return View(product);
         }
@@ -238,6 +249,7 @@ namespace MashadLeatherEcommerce.Controllers
             if (ModelState.IsValid)
             {
                 #region Upload and resize image if needed
+
                 string newFilenameUrl = string.Empty;
                 if (fileupload != null)
                 {
@@ -252,19 +264,27 @@ namespace MashadLeatherEcommerce.Controllers
 
                     product.ImageUrl = newFilenameUrl;
                 }
+
                 #endregion
 
                 product.IsDeleted = false;
                 product.LastModifiedDate = DateTime.Now;
                 db.Entry(product).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index", new { id = product.ParentId });
+                return RedirectToAction("Index", new {id = product.ParentId});
             }
             //ViewBag.ProductCategoryId = new SelectList(db.ProductCategories, "Id", "Title", product.ProductCategoryId);
 
 
-            ViewBag.ParentProductCategoryId = new SelectList(db.ProductCategories.Where(current => current.IsDeleted == false && current.ParentId == null), "Id", "Title", product.ProductCategory.ParentId);
-            ViewBag.ProductCategoryId = new SelectList(db.ProductCategories.Where(current => current.IsDeleted == false && current.ParentId == product.ProductCategory.ParentId), "Id", "Title", product.ProductCategoryId);
+            ViewBag.ParentProductCategoryId =
+                new SelectList(
+                    db.ProductCategories.Where(current => current.IsDeleted == false && current.ParentId == null), "Id",
+                    "Title", product.ProductCategory.ParentId);
+            ViewBag.ProductCategoryId =
+                new SelectList(
+                    db.ProductCategories.Where(current =>
+                        current.IsDeleted == false && current.ParentId == product.ProductCategory.ParentId), "Id",
+                    "Title", product.ProductCategoryId);
 
             return View(product);
         }
@@ -344,6 +364,7 @@ namespace MashadLeatherEcommerce.Controllers
                 CheckConflictDeletedParent();
                 SetSecondColor();
                 UpdateProductCodes();
+                UpdateProductParentQty();
             }
             catch (Exception e)
             {
@@ -353,6 +374,35 @@ namespace MashadLeatherEcommerce.Controllers
             return RedirectToAction("Index");
         }
 
+        public void UpdateProductParentQty()
+        {
+            var parentProducts = db.Products.Where(current =>
+                current.ParentId == null && current.ImageUrl != null && current.IsDeleted == false &&
+                current.Barcode.Length == 20);
+
+
+            foreach (var parentProduct in parentProducts)
+            {
+                var childProducts = db.Products.Where(c => c.ParentId == parentProduct.Id && c.IsDeleted == false);
+
+                decimal qty = 0;
+
+                foreach (var childProduct in childProducts)
+                {
+                    qty += childProduct.Quantity;
+                }
+
+                parentProduct.Quantity = qty;
+                parentProduct.LastModifiedDate=DateTime.Now;
+
+                if (qty == 0)
+                    parentProduct.IsAvailable = false;
+                else
+                    parentProduct.IsAvailable = true;
+            }
+
+            db.SaveChanges();
+        }
 
         public Guid? GetSizeByBarCode(string itmBrcd)
         {
@@ -2092,6 +2142,8 @@ namespace MashadLeatherEcommerce.Controllers
             List<Product> products = db.Products.Where(current =>
                 current.ParentId == null && current.ImageUrl != null && current.IsDeleted == false && current.Barcode.Length == 20).ToList();
 
+
+
             foreach (Product product in products)
             {
                 string code = product.Barcode.Substring(5, 5);
@@ -2124,6 +2176,9 @@ namespace MashadLeatherEcommerce.Controllers
 
                     childProduct.LastModifiedDate = DateTime.Now;
                 }
+
+
+
             }
 
             db.SaveChanges();

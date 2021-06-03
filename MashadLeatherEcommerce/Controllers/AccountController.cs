@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Security.Claims;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Helper;
@@ -100,10 +101,10 @@ namespace MashadLeatherEcommerce.Controllers
             }
             else
             {
-                if(role== "operator")
-                return RedirectToAction("IndexForOprator", "DiscountCodes");
-                if(role== "orderadmin")
-                return RedirectToAction("Index", "Orders",new{ statusId = 0});
+                if (role == "operator")
+                    return RedirectToAction("IndexForOprator", "DiscountCodes");
+                if (role == "orderadmin")
+                    return RedirectToAction("Index", "Orders", new { statusId = 0 });
                 return RedirectToAction("Index", "Products");
             }
         }
@@ -159,7 +160,7 @@ namespace MashadLeatherEcommerce.Controllers
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
         [Route("Login")]
-        public ActionResult Login(RecoveryPasswordViewModel recoveryPassword, string returnUrl)
+        public async Task< ActionResult> Login(RecoveryPasswordViewModel recoveryPassword, string returnUrl)
         {
             if (ModelState.IsValid)
             {
@@ -169,6 +170,17 @@ namespace MashadLeatherEcommerce.Controllers
 
                 if (isValidMobile)
                 {
+
+                    if (IsInBlackList(cellNumber))
+                    {
+                        TempData["blackListUser"] = "کاربر گرامی با این شماره موبایل نمی توانید در سایت وارد شوید.";
+                        RecoveryPasswordViewModel recoveryPass2 = new RecoveryPasswordViewModel()
+                        {
+                            MenuItem = baseViewModelHelper.GetMenuItems()
+                        };
+                        return View(recoveryPass2);
+                    }
+
                     Guid roleId = new Guid((System.Configuration.ConfigurationManager.AppSettings["customerRoleId"]));
 
                     var user = db.Users.FirstOrDefault(current =>
@@ -222,7 +234,39 @@ namespace MashadLeatherEcommerce.Controllers
         }
 
 
+        public bool IsInBlackList(string cellNumber)
+        {
+            if (!cellNumber.Trim().StartsWith("0"))
+            {
+                string newcellnumber = "0" + cellNumber;
 
+                if (db.BlackListUsers.Any(c =>
+                    c.CellNumber == newcellnumber && c.IsActive && c.IsDeleted == false))
+                    return true;
+
+                if (db.BlackListUsers.Any(c =>
+                   c.CellNumber == cellNumber && c.IsActive && c.IsDeleted == false))
+                    return true;
+
+                return false;
+            }
+            else
+            {
+                char[] myChar = { '0' };
+                string newcellnumber = cellNumber.TrimStart(myChar);
+
+
+                if (db.BlackListUsers.Any(c =>
+                    c.CellNumber == newcellnumber && c.IsActive && c.IsDeleted == false))
+                    return true;
+
+                if (db.BlackListUsers.Any(c =>
+                  c.CellNumber == cellNumber && c.IsActive && c.IsDeleted == false))
+                    return true;
+
+                return false;
+            }
+        }
 
         [Route("Activate/{id:int}")]
         [AllowAnonymous]

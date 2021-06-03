@@ -1,0 +1,75 @@
+﻿@model bool
+@{
+    ViewBag.Title = "به روزرسانی باشگاه مشتریان";
+    Layout = "~/Views/Shared/BackEndLayout/_BackEndLayout.cshtml";
+}
+<div class="col-md-3">
+</div>
+    <div class="col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+	            به روزرسانی باشگاه مشتریان
+            </div>
+            <div class="panel-body">
+                <div class="form-horizontal">
+	                <div class="form-group">
+		                @if (Model)
+		                {
+			                <div  class="alert alert-success">به روزرسانی باشگاه مشتریان کاربران با موفقیت انجام شد</div>
+										}
+										else
+										{
+												<div  class="alert alert-danger">در فرایند به روز رسانی باشگاه مشتریان خطای اتفاق افتاده است</div>
+}
+
+	                </div>
+                </div>
+            </div>
+            @*<div class="panel-footer">
+                @Html.ActionLink("بازگشت به لیست محصولات", "Index")
+
+                
+            </div>*@
+        </div>
+    </div>
+
+    @section scripts{
+        <script type="text/javascript">
+
+            function addKiyanPromotion() {
+                $('#btn-promotion').css('display', 'none');
+                $('#wait').css('display', 'block');
+
+                var charachter = $("#contain-charachter").val();
+                if (charachter !== "") {
+                    $.ajax(
+                        {
+                            url: "/Products/KiyanPromotion",
+                            data: {
+                                containCharachter: charachter
+                            },
+                            type: "GET"
+                        }).done(function (result) {
+                            if (result.includes('true')) {
+                                $('#successMessage').css('display', 'block');
+                                $('#errorMessage').css('display', 'none');
+
+                            } else {
+                                $('#successMessage').css('display', 'none');
+                                $('#errorMessage').css('display', 'block');
+                                $('#errorMessage').html('خطایی رخ داده است. لطفا مجددا تلاش کنید');
+
+                            }
+                            $('#btn-promotion').css('display', 'block');
+                            $('#wait').css('display', 'none');
+                        });
+                } else {
+                    $('#successMessage').css('display', 'none');
+                    $('#errorMessage').css('display', 'block');
+                    $('#errorMessage').html('کاراکتر موجود در نام پروموشن را وارد نمایید');
+                    $('#btn-promotion').css('display', 'block');
+                    $('#wait').css('display', 'none');
+                }
+            }
+        </script>
+    }

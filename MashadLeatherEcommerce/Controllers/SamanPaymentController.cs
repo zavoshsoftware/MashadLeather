@@ -121,8 +121,13 @@ namespace MashadLeatherEcommerce.Controllers
                                             "بانک صحت رسيد ديجيتالي شما را تصديق نمود. فرايند خريد تکميل گشت";
                                         samanCallback.RefrenceNumber = RRN;
                                         samanCallback.TrackNumber = TRACENO;
+
+                                        ChangeProductStock(order);
+
                                         BankHelper.UpdatePayment(orderId, stateCode, Convert.ToInt64(TRACENO), refNum,
                                             true);
+
+
                                     }
 
                                 }
@@ -255,6 +260,52 @@ namespace MashadLeatherEcommerce.Controllers
         {
             long id = Convert.ToInt64(uniqeOrderId);
             return db.PaymentUniqeCodes.Find(id).OrderId;
+        }
+
+        public void ChangeProductStock(Order order)
+        {
+            List<OrderDetail> orderDetails = db.OrderDetails.Where(c => c.OrderId == order.Id).ToList();
+
+            foreach (OrderDetail orderDetail in orderDetails)
+            {
+                Product pro = db.Products.Find(orderDetail.ProductId);
+
+                if (pro != null)
+                {
+                    var parentProduct = db.Products.FirstOrDefault(c => c.Id == pro.ParentId && c.IsDeleted == false);
+
+                    pro.Quantity = pro.Quantity - orderDetail.Quantity;
+                    pro.LastModifiedDate = DateTime.Now;
+
+                    if (pro.Quantity <= 0)
+                        pro.IsAvailable = false;
+
+                    if (parentProduct != null)
+                    {
+                        parentProduct.Quantity = parentProduct.Quantity - orderDetail.Quantity;
+                        parentProduct.LastModifiedDate = DateTime.Now;
+
+                        if (parentProduct.Quantity <= 0)
+                            parentProduct.IsAvailable = false;
+                    }
+
+                    var otherProductWithSameBarcode = db.Products
+                        .Where(c => c.Barcode == pro.Barcode && c.IsDeleted == false && c.Id != pro.Id).ToList();
+
+                    foreach (Product product in otherProductWithSameBarcode)
+                    {
+                        product.Quantity = product.Quantity - orderDetail.Quantity;
+
+                        if (product.Quantity <= 0)
+                            product.IsAvailable = false;
+
+                        product.LastModifiedDate = DateTime.Now;
+
+
+                    }
+                }
+            }
+
         }
     }
 }

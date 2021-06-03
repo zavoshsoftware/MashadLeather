@@ -13175,10 +13175,14 @@ footer.background-grey .copyright-content {
 #footer.footer-light {
   background-color: #f7f7f7;
   border-top: 1px solid #e5e5e5; }
-  #footer.footer-light,
-  #footer.footer-light .widget h4,
-  #footer.footer-light a {
-    color: #494949 !important; }
+    #footer.footer-light,
+    #footer.footer-light .widget h4,
+    #footer.footer-light a {
+        color: #494949;
+    }
+    .copyright-text a {
+        color: #000 !important;
+    }
   #footer.footer-light span {
     color: #898989 !important; }
   #footer.footer-light .copyright-content {

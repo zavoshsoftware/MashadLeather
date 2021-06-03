@@ -326,15 +326,25 @@ namespace MashadLeatherEcommerce.Controllers
 
                 if (pro != null)
                 {
+                    var parentProduct = db.Products.FirstOrDefault(c => c.Id == pro.ParentId && c.IsDeleted == false);
+
                     pro.Quantity = pro.Quantity - orderDetail.Quantity;
+                    pro.LastModifiedDate = DateTime.Now;
 
                     if (pro.Quantity <= 0)
                         pro.IsAvailable = false;
 
-                    pro.LastModifiedDate = DateTime.Now;
+                    if (parentProduct != null)
+                    {
+                        parentProduct.Quantity = parentProduct.Quantity - orderDetail.Quantity;
+                        parentProduct.LastModifiedDate = DateTime.Now;
+
+                        if (parentProduct.Quantity <= 0)
+                            parentProduct.IsAvailable = false;
+                    }
 
                     var otherProductWithSameBarcode = db.Products
-                        .Where(c => c.Barcode == pro.Barcode && c.IsDeleted == false && c.Id != pro.Id).ToList();
+                        .Where(c => c.Barcode == pro.Barcode && c.IsDeleted == false && c.Id != pro.Id && c.ParentId != null).ToList();
 
                     foreach (Product product in otherProductWithSameBarcode)
                     {

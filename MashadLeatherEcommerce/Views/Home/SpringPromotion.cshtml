@@ -1,6 +1,6 @@
 ﻿@model ViewModels.SpringPromotionViewModel
 @{
-		ViewBag.Title = "تخفیف باران چرم مشهد";
+		ViewBag.Title = "فروش ویژه بهارانه چرم مشهد";
 		Layout = "~/Views/Shared/FrontEndLayout/_FrontEndLayout.cshtml";
 		ViewBag.Canonical = "https://www.mashadleather.com/spring";
 }
@@ -100,11 +100,21 @@
 		}
 
 		.springdesc p {
-			text-align: center;
+			text-align: justify;
 			margin-bottom: 0;
 			color: #464646;
-			font-size: 1.1rem;
+			font-size: 1.35rem;
 		line-height: 2.1rem;
+		}
+
+			.springdesc p a {
+				color: #ED1C24;
+			}
+			.springdesc p a:hover {
+				text-decoration: underline;
+			}
+		.springdesc h3 {
+			margin-top: 1rem;
 		}
 
 		.branchCity {
@@ -121,8 +131,8 @@
 	
 	<meta property="og:title" content="@ViewBag.Title" />
 	<meta property="og:url" content="https://www.mashadleather.com/spring" />
-	<meta property="og:image" content="https://www.mashadleather.com/images/logo.png" />
-	<meta property="og:description" content="تخفیفات باورنکردنی برای کلیه محصولات در جشنواره تخفیف باران چرم مشهد" />
+	<meta property="og:image" content="https://www.mashadleather.com/images/ml-spring.jpg" />
+	<meta property="og:description" content="تخفیفات باورنکردنی برای کلیه محصولات در فروش ویژه بهارانه چرم مشهد" />
 }
 @section scripts{
 	<script src="~/Scripts/UI/plugins/components/particles-animation.js"></script>
@@ -148,39 +158,26 @@
 			<div class="col-md-12">
 				<div>
 					<h2>
-						تخفیف باران چرم مشهد آغاز شد.
+						فروش ویژه بهارانه چرم مشهد آغاز شد.
 					</h2>
+		
 					<div class="row">
-						<div class="col-md-2"></div>
+						<div class="col-md-4">
+							<div class="text-center">
+								<img src="~/Images/ml-spring.jpg" class="img-responsive" />
+							</div>
+						</div>
 						<div class="col-md-8 springdesc">
-							<p>
-								همراهان گرامی چرم مشهد
-							</p>
-							<p>
-								با آرزوی سلامتی برای شما و خانواده عزیزتان، به اطلاع می رساند چرم مشهد جهت رفاه حال شما عزیزان فروش فوق العاده یک روزه ای ترتیب داده است تا شما بتوانید به راحتی خرید خود را از منزل و به صورت غیرحضوری انجام دهید و سلامت خود و جامعه را تضمین نمایید.
-							</p>
-							<p>
-								فروش فوق العاده پیش رو تخفیف باران نام دارد و شرایط آن به شرح زیر است:
-							</p>
-							<p>
-							</p>
-							<p> ۱. از بامداد روز جمعه تا ساعت ۲۴ همان روز (27 فروردین 1400)
-							</p>
-							<p> ۲. تا ۵۰ درصد تخفیف روی همه کالاها
-							</p>
-							<p>ارسال رایگان برای تمامی سفارشات
-							</p>
-							<p> ۴.امکان مرجوع کردن کالا
-								<a href="https://www.mashadleather.com/blog/news/return">
-									(قوانین مرجوعی را مطالعه نمایید.)
-								</a>
-							</p>
-							<p> لیست فروشگاه های چرم مشهد و شماره تماس آن ها نیز در ادامه همین صفحه موجود می باشد
-							</p>
+							<h3>همراهان گرامی چرم مشهد</h3>
+							<p>چرم مشهد تصمیم گرفته است در آخرین بهار قرن برای شما عزیزان خاطره ای زیبا بیافریند .بدین منظور پیشنهادات ویژه ای روی تمامی محصولات خود برای شما دارد . شرایط شرکت در این بهارانه به شرح زیر است : </p>
+							<p>1-	تا 50% تخفیف برروی تمامی کالاها</p>
+							<p>2-	از 13 الی 22 خرداد ماه 1400</p>
+							<p>3-	امکان استفاده در تمامی <a href="#branch">شعب</a> و فروشگاه اینترنتی</p>
+							<p>4-	امکان بهره مندی از 
+								<a href="https://www.mashadleather.com/customerclub">باشگاه مشتریان</a></p>
 						</div>
 					</div>
-
-			 
+				
 					<div class="gotodiscount">
 						<a class="btn fullwidth" href="#discountsec"><i class="fa fa-angle-down"></i>مشاهده تخفیفات<i class="fa fa-angle-down"></i></a>
 					</div>
@@ -264,7 +261,7 @@
 </section>
 
 
-<section class="bg-gray">
+<section class="bg-gray" id="branch">
 	<div class="container">
 		<div class="row ">
 			<div class="col-md-12">
