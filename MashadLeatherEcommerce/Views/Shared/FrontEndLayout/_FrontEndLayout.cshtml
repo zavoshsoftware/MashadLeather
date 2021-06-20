@@ -28,16 +28,16 @@
 	<link rel="apple-touch-icon" href="/Images/favicon.png">
 	@*<link href="~/Content/UI/style-En.css" rel="stylesheet" />*@
 	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-164633799-1"></script>
-	<script>
+	@*<script async src="https://www.googletagmanager.com/gtag/js?id=UA-164633799-1"></script>*@
+	@*<script>
 		window.dataLayer = window.dataLayer || [];
 		function gtag(){dataLayer.push(arguments);}
 		gtag('js', new Date());
 
 		gtag('config', 'UA-164633799-1');
-	</script>
+	</script>*@
 
-	@*<script>
+	<script>
 	(function (w, d, s, l, i) {
 		w[l] = w[l] || []; w[l].push({
 			'gtm.start':
@@ -45,9 +45,9 @@
 		}); var f = d.getElementsByTagName(s)[0],
 			j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
 			'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-	})(window, document, 'script', 'dataLayer', 'GTM-WCLJHZZ');</script>*@
+	})(window, document, 'script', 'dataLayer', 'GTM-WCLJHZZ');</script>
 	
-	@*<script>
+	<script>
 		!function (t, e, n) {
 			t.yektanetAnalyticsObject = n, t[n] = t[n] || function () {
 				t[n].q.push(arguments)
@@ -57,14 +57,14 @@
 			s.id = "ua-script-YdvEuFZH"; s.dataset.analyticsobject = n; s.async = 1; s.type = "text/javascript";
 			s.src = "https://cdn.yektanet.com/rg_woebegone/scripts_v3/YdvEuFZH/rg.complete.js?v=" + r, c.parentNode.insertBefore(s, c)
 		}(window, document, "yektanet");
-	</script>*@
+	</script>
 	@RenderSection("head", required: false)
 </head>
 <body class="no-page-loader">
-	@*<noscript>
+	<noscript>
 		<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WCLJHZZ"
 						height="0" width="0" style="display:none;visibility:hidden"></iframe>
-	</noscript>*@
+	</noscript>
 	<div id="wrapper">
 		@Html.Partial("FrontEndLayout/_MenuPartial")
 		@RenderBody()
@@ -92,11 +92,11 @@ window.vasleSettings = {
 		});
 	</script>
 	@RenderSection("scripts", required: false)
-	@*<script type="text/javascript">
+	<script type="text/javascript">
 		window.vasleSettings = {
 			app_id: "l1Qkq69o"
 		};
-	</script>*@
+	</script>
 	<script src="~/Scripts/UI/custom.js"></script>
 </body>
 </html>

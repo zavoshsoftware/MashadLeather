@@ -34,7 +34,7 @@ namespace Helper
             }
 
         }
-        public static string OrderCompletionText(string orderCode)
+        public static string  OrderCompletionText(string orderCode)
         {
             string nextLine = "\n";
 

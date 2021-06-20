@@ -1,0 +1,205 @@
+﻿@model ViewModels.BillingResultViewModel
+@{
+    ViewBag.Title = "نتیجه پرداخت";
+    Layout = "~/Views/Shared/FrontEndLayout/_FrontEndLayout.cshtml";
+}
+
+<!-- Page title -->
+<section id="page-title" data-parallax-image="/images/mashad-faq-img.jpg">
+    <div class="container">
+        <div class="page-title">
+            <h1>نهایی سازی سفارش</h1>
+            <span>@ViewBag.Message</span>
+        </div>
+
+    </div>
+</section>
+<!-- end: Page title -->
+<!-- SHOP CART -->
+<section id="shop-cart-empty">
+    <div class="container">
+        <div class="p-t-10 m-b-20 text-center">
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <table class="table table-hover table-responsive table-bordered">
+                        <input type="hidden" id="hiddenCode" data-myValue="@ViewBag.Code" />
+                        <input type="hidden" id="hiddenCellNumber" data-myValue="@ViewBag.CellNumber"  />
+
+                        <tr>
+                            <td class="alert-success"> وضعیت پرداخت</td>
+                            <td>@ViewBag.Message</td>
+                        </tr>
+                        <tr>
+                            <td class="alert-success">کد رهگیری</td>
+                            <td>@ViewBag.SaleReferenceId</td>
+	                    </tr>  
+	                    
+											<tr style="">
+                      
+                            <td>@ViewBag.ResCode</td>
+                            <td>@ViewBag.saleOrderId</td>
+                            <td>@ViewBag.refId</td>
+                        </tr>
+                    </table>
+                </div>
+	            <div class="col-lg-8 text-right">
+		            <p>لطفا جهت پیگیری سفارش با شماره 05131711 تماس حاصل فرمایید.</p>
+								
+		            <p>
+		            کاربر گرامی وضعیت پرداخت خود را مشاهده می نمایید.
+		            </p>  <br/>
+		            <a href="/history">
+			            جهت مشاهده لیست سفارشات خود کلیک کنید
+		            </a>
+	            </div>
+
+
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+<!-- end: SHOP CART -->
+<!-- DELIVERY INFO -->
+<section class="background-grey p-t-40 p-b-0">
+    <div class="container" style="direction:ltr;">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="icon-box effect small clean">
+                    <div class="icon">
+                        <a href="#"><i class="fa fa-gift"></i></a>
+                    </div>
+                    <h3>ارسال رایگان به سراسر ایران</h3>
+                    <p>برای سفارشات بالای 200 هزار تومان</p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="icon-box effect small clean">
+                    <div class="icon">
+                        <a href="#"><i class="fa fa-plane"></i></a>
+                    </div>
+                    <h3>بازگشت کالا</h3>
+                    <p>24 ساعت گارانتی بازگشت کالا و 6 روز گارانتی تعویض</p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="icon-box effect small clean">
+                    <div class="icon">
+                        <a href="#"><i class="fa fa-history"></i></a>
+                    </div>
+                    <h3>خدمات مشتریان</h3>
+                    <p>پاسخگوی تمامی پرسش های شما</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="icon-box effect small clean">
+                    <div class="icon">
+                        <a href="#"><i class="fa fa-history"></i></a>
+                    </div>
+                    <h3>فروشگاه ها</h3>
+                    <p>نمایندگی های ما را بر روی نقشه بیابید</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section scripts{
+	<script>
+        $(document).ready(function () {
+			 	SendMessage();
+	        eventSetup();
+        });
+
+
+        function SendMessage() {
+
+
+            var code = @ViewBag.SaleReferenceId;
+
+            var cellNumber = @ViewBag.CellNumber;
+            console.log(code);
+            console.log(cellNumber);
+            if (cellNumber !== null && code !== null) {
+                $.ajax(
+                    {
+                        url: "/billing/SendMessageToUser",
+                        data: { cellNumber: cellNumber, orderCode: code },
+                        type: "GET"
+
+                    }).done(function (result) {
+                        console.log(result);
+
+                    });
+            } else {
+
+            }
+			};
+
+
+
+        function eventSetup() {
+	        // $("#customInput").data("value");
+
+	        var code = @ViewBag.Code;
+					//var code ='12093';
+
+	        if ( code !== null) {
+		        $.ajax(
+			        {
+				        url: "/billing/EventSetup",
+				        data: {  orderCode: code },
+				        type: "GET"
+
+			        }).done(function (result) {
+								if (result !== "NotOk") {
+
+
+									var productJson = [];
+
+									for(var i in result.Products) {
+										var item = result.Products[i];
+
+										productJson.push({
+											id: item.Id,
+											name:item.Title,
+											category: item.Category,
+											variant: item.Color,
+											quantity: item.Quantity,
+											price: item.Amount
+
+										});
+									}
+
+
+
+									window.dataLayer = window.dataLayer || [];
+
+									window.dataLayer.push({
+										event: 'eec.purchase',
+										ecommerce: {
+											purchase: {
+												actionField: {
+													id: code,
+													revenue: result.Amount
+												},
+												products: productJson
+											}
+										}
+									});
+								}
+			        console.log(result);
+
+		        });
+	        } else {
+
+	        }
+        };
+
+	</script>
+}

@@ -848,7 +848,7 @@ namespace MashadLeatherEcommerce.Controllers
 
             decimal wallet = 0;
 
-            string clubTitle = "کلاسیک";
+            string clubTitle = "عادی";
 
             decimal clubPercent = 0;
 

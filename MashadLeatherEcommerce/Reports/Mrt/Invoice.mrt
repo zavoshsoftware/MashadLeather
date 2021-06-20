@@ -170,7 +170,7 @@ ILIRBEFkIwiCILIRBEFkIwhCp8T/BRgAWgV3cqdr4CwAAAAASUVORK5CYII=</ImageBytes>
           <Name>Text5</Name>
           <Page isRef="3" />
           <Parent isRef="3" />
-          <Text>تلفن: 09195001883</Text>
+          <Text>تلفن: 31711-051</Text>
           <TextBrush>Black</TextBrush>
           <Type>Expression</Type>
           <VertAlignment>Center</VertAlignment>
@@ -310,10 +310,10 @@ ILIRBEFkIwiCILIRBEFkIwhCp8T/BRgAWgV3cqdr4CwAAAAASUVORK5CYII=</ImageBytes>
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>5/5/2021 3:55:49 PM</ReportChanged>
+  <ReportChanged>6/12/2021 10:04:05 AM</ReportChanged>
   <ReportCreated>12/5/2020 5:48:42 PM</ReportCreated>
   <ReportFile>c:\users\hossein\documents\github\mashadleather\mashadleatherecommerce\reports\mrt\invoice.mrt</ReportFile>
-  <ReportGuid>8303dcca0f884a67ab76c37eb82b2eb0</ReportGuid>
+  <ReportGuid>f4ae39fd4dd54b5eb7df171c514c0df1</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2020.4.2.0</ReportVersion>

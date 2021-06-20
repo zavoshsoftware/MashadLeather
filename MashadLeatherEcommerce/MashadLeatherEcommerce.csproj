@@ -4764,6 +4764,7 @@
     <Compile Include="Controllers\SiteSlidersController.cs" />
     <Compile Include="Controllers\StepDiscountDetailsController.cs" />
     <Compile Include="Controllers\StepDiscountsController.cs" />
+    <Compile Include="Controllers\TempController.cs" />
     <Compile Include="Controllers\TextsController.cs" />
     <Compile Include="Controllers\TextTypesController.cs" />
     <Compile Include="Controllers\UserInformationsController.cs" />
@@ -5622,6 +5623,7 @@
     <Folder Include="Uploads\Resume\" />
     <Folder Include="Uploads\slider\" />
     <Folder Include="Uploads\text\" />
+    <Folder Include="Views\Temp\" />
     <Folder Include="Views\_TestApi\" />
   </ItemGroup>
   <ItemGroup>
