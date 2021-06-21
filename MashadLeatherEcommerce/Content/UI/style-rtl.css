@@ -738,3 +738,9 @@ ul .single-dropdown-menu {
     color: red;
     display: none;
 }
+
+@media (max-width: 991px) {
+    #logo {
+        padding: 10px 60px 10px 10px;
+    }
+}
