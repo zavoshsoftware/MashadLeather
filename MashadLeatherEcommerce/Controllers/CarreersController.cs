@@ -183,33 +183,44 @@ namespace MashadLeatherEcommerce.Controllers
         public ActionResult CreateByUser(CarreerViewModel carreer, HttpPostedFileBase fileupload)
         {
             Carreer modelCarreer = new Carreer();
-            #region Upload and resize image if needed
-            string newFilenameUrl = string.Empty;
-            if (fileupload != null)
+            Helper.BaseViewModelHelper baseViewModelHelper = new BaseViewModelHelper();
+
+
+            carreer.MenuGalleryGroups = baseViewModelHelper.GetMenuGalleryGroups();
+            carreer.MenuItem = baseViewModelHelper.GetMenuItems();
+ 
+   
+            if (ModelState.IsValid)
             {
-                string filename = Path.GetFileName(fileupload.FileName);
-                string newFilename = Guid.NewGuid().ToString().Replace("-", string.Empty)
-                                     + Path.GetExtension(filename);
+                #region Upload and resize image if needed
+                string newFilenameUrl = string.Empty;
+                if (fileupload != null)
+                {
+                    string filename = Path.GetFileName(fileupload.FileName);
+                    string newFilename = Guid.NewGuid().ToString().Replace("-", string.Empty)
+                                         + Path.GetExtension(filename);
 
-                newFilenameUrl = "/Uploads/Carreer/" + newFilename;
-                string physicalFilename = Server.MapPath(newFilenameUrl);
-                fileupload.SaveAs(physicalFilename);
-                carreer.ResumeFile = newFilenameUrl;
+                    newFilenameUrl = "/Uploads/Carreer/" + newFilename;
+                    string physicalFilename = Server.MapPath(newFilenameUrl);
+                    fileupload.SaveAs(physicalFilename);
+                    carreer.ResumeFile = newFilenameUrl;
+                }
+
+
+                #endregion
+
+                modelCarreer.FullName = carreer.FullName;
+                modelCarreer.Email = carreer.Email;
+                modelCarreer.Id = Guid.NewGuid();
+                modelCarreer.ResumeFile = carreer.ResumeFile;
+                modelCarreer.CreationDate = DateTime.Now;
+                modelCarreer.CellNumber = carreer.CellNumber;
+                modelCarreer.IsDeleted = false;
+                db.Carreers.Add(modelCarreer);
+                db.SaveChanges();
+                return RedirectToAction("CreateByUser");
             }
-
-
-            #endregion
-           
-            modelCarreer.FullName = carreer.FullName;
-            modelCarreer.Email = carreer.Email;
-            modelCarreer.Id = Guid.NewGuid();
-            modelCarreer.ResumeFile = carreer.ResumeFile;
-            modelCarreer.CreationDate = DateTime.Now;
-            modelCarreer.CellNumber = carreer.CellNumber;
-            modelCarreer.IsDeleted = false;
-            db.Carreers.Add(modelCarreer);
-            db.SaveChanges();
-            return RedirectToAction("CreateByUser");
+            return View(carreer);
         }
 
         protected override void Dispose(bool disposing)
