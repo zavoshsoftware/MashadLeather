@@ -62,6 +62,8 @@ namespace Models
         public DbSet<UserInformation> UserInformations { get; set; }
 
         public DbSet<BlackListUser> BlackListUsers { get; set; }
+
+        public System.Data.Entity.DbSet<Models.Carreer> Carreers { get; set; }
     }
 
 }
