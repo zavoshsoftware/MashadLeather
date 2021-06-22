@@ -192,6 +192,7 @@ namespace MashadLeatherEcommerce.Controllers
    
             if (ModelState.IsValid)
             {
+
                 #region Upload and resize image if needed
                 string newFilenameUrl = string.Empty;
                 if (fileupload != null)
