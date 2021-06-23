@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Models.CarreerEducationalCourse>
+
+@{
+ViewBag.Title = "سایر دوره های آموزشی";
+    
+    Layout = "~/Views/Shared/BackEndLayout/_BackEndLayout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+        @(Html.Kendo().Grid(Model)
+              .Name("Grid")
+              .Columns(columns =>
+                  {
+                                  columns.Bound(model => model.Carreer.FullName);
+        columns.Bound(model => model.CourseName);
+        columns.Bound(model => model.InstitutionName);
+        columns.Bound(model => model.CourseDuration);
+        columns.Bound(model => model.Skill);
+        columns.Bound(model => model.IsActive);
+        columns.Bound(model => model.CreationDate);
+					columns.Bound(item => @item.Id).Title("دستورات").Filterable(false).Groupable(false)
+							.Template(@<text>
+									@Html.ActionLink("ویرایش", "Edit", new {id = @item.Id}, new {@class = "k-button"})
+									@Html.ActionLink("حذف", "Delete", new {id = @item.Id}, new {@class = "k-button"})
+									</text>).Width(200);  
+		})
+		.ToolBar(toolbar =>
+					{				
+						toolbar.Custom().Action("Create","CarreerEducationalCourses").Text("افزودن");                          
+					}
+		)         
+		.DataSource(dataSource => dataSource
+									.Server()
+							
+									.Model(model => model.Id(item => item.Id))
+					)              
+	)

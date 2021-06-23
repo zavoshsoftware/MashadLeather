@@ -49,28 +49,11 @@ namespace MashadLeatherEcommerce.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Carreer carreer, HttpPostedFileBase fileupload)
+        public ActionResult Create(Carreer carreer)
         {
             if (ModelState.IsValid)
             {
-
-                #region Upload and resize image if needed
-                string newFilenameUrl = string.Empty;
-                if (fileupload != null)
-                {
-                    string filename = Path.GetFileName(fileupload.FileName);
-                    string newFilename = Guid.NewGuid().ToString().Replace("-", string.Empty)
-                                         + Path.GetExtension(filename);
-
-                    newFilenameUrl = "/Uploads/Carreer/" + newFilename;
-                    string physicalFilename = Server.MapPath(newFilenameUrl);
-                    fileupload.SaveAs(physicalFilename);
-                    carreer.ResumeFile = newFilenameUrl;
-                }
-
-
-                #endregion
-                carreer.IsDeleted=false;
+				carreer.IsDeleted=false;
 				carreer.CreationDate= DateTime.Now; 
 					
                 carreer.Id = Guid.NewGuid();
@@ -102,27 +85,11 @@ namespace MashadLeatherEcommerce.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Carreer carreer, HttpPostedFileBase fileupload)
+        public ActionResult Edit(Carreer carreer)
         {
             if (ModelState.IsValid)
             {
-                #region Upload and resize image if needed
-                string newFilenameUrl = string.Empty;
-                if (fileupload != null)
-                {
-                    string filename = Path.GetFileName(fileupload.FileName);
-                    string newFilename = Guid.NewGuid().ToString().Replace("-", string.Empty)
-                                         + Path.GetExtension(filename);
-
-                    newFilenameUrl = "/Uploads/Carreer/" + newFilename;
-                    string physicalFilename = Server.MapPath(newFilenameUrl);
-                    fileupload.SaveAs(physicalFilename);
-                    carreer.ResumeFile = newFilenameUrl;
-                }
-
-
-                #endregion
-                carreer.IsDeleted=false;
+				carreer.IsDeleted=false;
 					carreer.LastModifiedDate=DateTime.Now;
                 db.Entry(carreer).State = EntityState.Modified;
                 db.SaveChanges();
@@ -170,7 +137,7 @@ namespace MashadLeatherEcommerce.Controllers
                 MenuGalleryGroups = baseViewModelHelper.GetMenuGalleryGroups(),
                 MenuItem = baseViewModelHelper.GetMenuItems(),
                 //Carreer = new Carreer()
-                
+
 
 
             };
@@ -180,7 +147,7 @@ namespace MashadLeatherEcommerce.Controllers
         [Route("carreer")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateByUser(CarreerViewModel carreer, HttpPostedFileBase fileupload)
+        public ActionResult CreateByUser(CarreerViewModel carreer)
         {
             Carreer modelCarreer = new Carreer();
             Helper.BaseViewModelHelper baseViewModelHelper = new BaseViewModelHelper();
@@ -188,32 +155,32 @@ namespace MashadLeatherEcommerce.Controllers
 
             carreer.MenuGalleryGroups = baseViewModelHelper.GetMenuGalleryGroups();
             carreer.MenuItem = baseViewModelHelper.GetMenuItems();
- 
-   
+
+
             if (ModelState.IsValid)
             {
 
-                #region Upload and resize image if needed
-                string newFilenameUrl = string.Empty;
-                if (fileupload != null)
-                {
-                    string filename = Path.GetFileName(fileupload.FileName);
-                    string newFilename = Guid.NewGuid().ToString().Replace("-", string.Empty)
-                                         + Path.GetExtension(filename);
+                //#region Upload and resize image if needed
+                //string newFilenameUrl = string.Empty;
+                //if (fileupload != null)
+                //{
+                //    string filename = Path.GetFileName(fileupload.FileName);
+                //    string newFilename = Guid.NewGuid().ToString().Replace("-", string.Empty)
+                //                         + Path.GetExtension(filename);
 
-                    newFilenameUrl = "/Uploads/Carreer/" + newFilename;
-                    string physicalFilename = Server.MapPath(newFilenameUrl);
-                    fileupload.SaveAs(physicalFilename);
-                    carreer.ResumeFile = newFilenameUrl;
-                }
+                //    newFilenameUrl = "/Uploads/Carreer/" + newFilename;
+                //    string physicalFilename = Server.MapPath(newFilenameUrl);
+                //    fileupload.SaveAs(physicalFilename);
+                //    carreer.ResumeFile = newFilenameUrl;
+                //}
 
 
-                #endregion
+                //#endregion
 
                 modelCarreer.FullName = carreer.FullName;
                 modelCarreer.Email = carreer.Email;
                 modelCarreer.Id = Guid.NewGuid();
-                modelCarreer.ResumeFile = carreer.ResumeFile;
+                //modelCarreer.ResumeFile = carreer.ResumeFile;
                 modelCarreer.CreationDate = DateTime.Now;
                 modelCarreer.CellNumber = carreer.CellNumber;
                 modelCarreer.IsDeleted = false;

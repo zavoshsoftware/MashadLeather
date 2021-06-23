@@ -14,9 +14,477 @@
         </div>
     </div>
 </section>
-@using (Html.BeginForm("CreateByUser", "Carreers", FormMethod.Post, new { enctype = "multipart/form-data" }))
-{
-    @Html.AntiForgeryToken()
+<div class="container" style="direction:rtl">
+
+    <div class="panel-group">
+        <div class="panel panel-default">
+            <div class="panel-heading">فرم استخدام</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="form-group col-sm-6">
+                        @Html.LabelFor(model => model.Email)
+                        @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Email)
+                    </div>
+                    <div class="form-group col-sm-6">
+                        @Html.LabelFor(model => model.FullName)
+                        @Html.TextBoxFor(model => model.FullName, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.FullName)
+                    </div>
+                    <div class="form-group col-sm-6">
+                        @Html.LabelFor(model => model.CellNumber)
+                        @Html.TextBoxFor(model => model.CellNumber, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.CellNumber)
+                    </div>
+                    <div class="form-group col-sm-6">
+                        @Html.LabelFor(model => model.NationalCode)
+                        @Html.TextBoxFor(model => model.NationalCode, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.NationalCode)
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <form style="direction:rtl; width:300px">
+                            <label class="m-l-xs">وضعیت تاهل:</label>
+                            <label class="" for="marriedCheck">مجرد</label>
+                            <input type="radio" name="marriedRadio" class="m-l-10" id="marriedCheck1">
+                            <label class="" for="marriedCheck">متاهل</label>
+                            <input type="radio" name="marriedRadio" class="" id="marriedCheck2">
+
+                        </form>
+
+                    </div>
+                    <div class="form-group col-sm-6">
+                        @*@Html.LabelFor(model => model.IsLady)
+                            @Html.CheckBox("خانم", false, new { @class = "form-control" })
+                            @Html.CheckBox("آقا", false, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.NationalCode)*@
+
+                        <form style="direction:rtl; width:300px">
+                            <label class="m-l-xs">جنسیت:</label>
+                            <label class="" for="genderCheck">خانم</label>
+                            <input type="radio" name="genderRadio" class="m-l-10" id="gendereCheck1">
+                            <label class="" for="genderCheck">آقا</label>
+                            <input type="radio" name="genderRadio" class="" id="genderCheck2">
+
+                        </form>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        @Html.LabelFor(model => model.ChidNumber)
+                        <input id="chidnumber" type="number" class="form-control" />
+                        @Html.ValidationMessageFor(model => model.ChidNumber)
+                    </div>
+                    <div class="form-group col-sm-6">
+                        @Html.LabelFor(model => model.PeopleInChargeNumber)
+                        <input id="chidnumber" type="number" class="form-control" />
+                        @Html.ValidationMessageFor(model => model.PeopleInChargeNumber)
+                    </div>
+                    @*<div class="form-group col-sm-6">
+                            @Html.LabelFor(model => model.BirthdayDate)
+                            @Html.EditorFor(model => model.BirthdayDate)
+                            @Html.ValidationMessageFor(model => model.BirthdayDate)
+                        </div>*@
+                    <div class="form-group col-sm-6">
+                        @Html.LabelFor(model => model.PlaceOfBirth)
+                        @Html.TextBoxFor(model => model.PlaceOfBirth, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.PlaceOfBirth)
+                    </div>
+                    <div class="form-group col-sm-6">
+                        @Html.LabelFor(model => model.Nationality)
+                        @Html.TextBoxFor(model => model.Nationality, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Nationality)
+                    </div>
+                    <div class="form-group col-sm-6">
+                        @Html.LabelFor(model => model.BirthdayDate)
+                        <input type="text" onclick="PersianDatePicker.Show(this,'@DateTime.Now');" placeholder="تاریخ تولد" class="form-control" id="birthdayDate" value="@ViewBag.birthdayDate" />
+                        @Html.ValidationMessageFor(model => model.BirthdayDate)
+                    </div>
+                    <div class="form-group col-sm-6">
+                        @Html.LabelFor(model => model.Address)
+                        @Html.TextAreaFor(model => model.Address, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Address)
+                    </div>
+                    <div class="form-group col-sm-12">
+                        <form style="direction:rtl; width:100%">
+                            @Html.LabelFor(model => model.MilitaryStatus)
+                            <label class="m-l-xs" for="militaryCheck">معافیت: تحصیلی</label>
+                            <input type="radio" name="militaryRadio" class="m-l-10" id="militaryCheck1">
+                            <label class="" for="militaryCheck">پزشکی</label>
+                            <input type="radio" name="militaryRadio" class="m-l-10" id="militaryCheck2">
+                            <label class="" for="militaryCheck">مشمول</label>
+                            <input type="radio" name="militaryRadio" class="m-l-10" id="militaryCheck3">
+                            <label class="" for="militaryCheck">پایان خدمت</label>
+                            <input type="radio" name="militaryRadio" class="" id="militaryCheck4">
+                        </form>
+                    </div>
+                    <div class="form-group col-sm-12">
+                        @*@Html.LabelFor(model => model.IsLady)
+                            @Html.CheckBox("خانم", false, new { @class = "form-control" })
+                            @Html.CheckBox("آقا", false, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.NationalCode)*@
+
+                        <form style="direction:rtl; width:100%">
+                            @Html.LabelFor(model => model.PhysicalCondition)
+                            <label class="m-l-xs" for="physicalCheck">کاملا سالم</label>
+                            <input type="radio" name="physicalRadio" class="m-l-10" id="physicalCheck1">
+                            <label class="" for="physicalCheck">بیماری خاص</label>
+                            <input type="radio" name="physicalRadio" class="m-l-10" id="physicalCheck2">
+                            <label class="" for="physicalCheck">سابقه جراحی</label>
+                            <input type="radio" name="physicalRadio" class="m-l-10" id="physicalCheck3">
+                            <label class="" for="physicalCheck">نقص عضو</label>
+                            <input type="radio" name="physicalRadio" class="" id="physicalCheck4">
+                        </form>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        @Html.LabelFor(model => model.DurationInsuranceHistory)
+                        <input id="insuranceYear" type="number" class="form-control" />
+                        @Html.ValidationMessageFor(model => model.DurationInsuranceHistory)
+                    </div>
+                    <div class="form-group col-sm-6">
+
+                        <form style="direction:rtl; width:300px">
+                            @Html.LabelFor(model => model.IsInsurance)
+                            <label class="" for="insuranceCheck">بله</label>
+                            <input type="radio" name="insuranceRadio" class="m-l-10" id="insuranceCheck1">
+                            <label class="" for="insuranceCheck">خیر</label>
+                            <input type="radio" name="insuranceRadio" class="" id="insuranceCheck2">
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">تحصیلات</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="form-group col-sm-6">
+                        @Html.LabelFor(model => model.Major)
+                        @Html.TextBoxFor(model => model.Major, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Major)
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <form style="direction:rtl; width:100%">
+                            @Html.LabelFor(model => model.Education)
+                            <label class="m-l-xs" for="educationCheck">زیر دیپلم</label>
+                            <input type="radio" name="educationRadio" class="m-l-10" id="educationCheck1">
+                            <label class="" for="educationCheck">دیپلم</label>
+                            <input type="radio" name="educationRadio" class="m-l-10" id="educationCheck2">
+                            <label class="" for="educationCheck">فوق دیپلم</label>
+                            <input type="radio" name="educationRadio" class="m-l-10" id="educationCheck3">
+                            <label class="" for="educationCheck">لیسانس</label>
+                            <input type="radio" name="educationRadio" class="" id="educationCheck4">
+                            <label class="" for="educationCheck">فوق لیسانس</label>
+                            <input type="radio" name="educationRadio" class="m-l-10" id="educationCheck5">
+                            <label class="" for="educationCheck">دکترا</label>
+                            <input type="radio" name="educationRadio" class="" id="educationCheck6">
+                        </form>
+
+                    </div>
+                    <div class="form-group col-sm-6">
+                        @Html.LabelFor(model => model.LastCertificateDateTime)
+                        <input type="text" onclick="PersianDatePicker.Show(this,'@DateTime.Now');" placeholder="تاریخ اخذ آخرین مدرک تحصیلی" class="form-control" id="lastCertificateDate" value="@ViewBag.lastCertificateDate" />
+                        @Html.ValidationMessageFor(model => model.LastCertificateDateTime)
+                    </div>
+                    <div class="form-group col-sm-6">
+                        @Html.LabelFor(model => model.LastUniversity)
+                        @Html.TextBoxFor(model => model.LastUniversity, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.LastUniversity)
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">معرف(مشخصات سه نفر غیر از خانواده )</div>
+                <div class="panel-body">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="form-group col-sm-6">
+                                <label class="">نسبت</label>
+                                <input id="introduceRelative1" type="text" class="form-control" />
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label class="">نام و نام خانوادگی</label>
+                                <input id="introduceName1" type="text" class="form-control" />
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label class="">محل کار</label>
+                                <input id="introduceWorkPlace1" type="text" class="form-control" />
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label class="">شغل</label>
+                                <input id="introduceJob1" type="text" class="form-control" />
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label class="">تلفن همراه</label>
+                                <input id="introduceCellNumber1" type="text" class="form-control" />
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label class="">تلفن منزل</label>
+                                <input id="introduceHomePhone1" type="text" class="form-control" />
+                            </div>
+                            <div class="form-group col-sm-12">
+                                <label class="">آدرس</label>
+                                <input id="introduceAddress1" type="text" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="form-group col-sm-6">
+                                <label class="">نسبت</label>
+                                <input id="introduceRelative2" type="text" class="form-control" />
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label class="">نام و نام خانوادگی</label>
+                                <input id="introduceName2" type="text" class="form-control" />
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label class="">محل کار</label>
+                                <input id="introduceWorkPlace2" type="text" class="form-control" />
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label class="">شغل</label>
+                                <input id="introduceJob2" type="text" class="form-control" />
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label class="">تلفن همراه</label>
+                                <input id="introduceCellNumber2" type="text" class="form-control" />
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label class="">تلفن منزل</label>
+                                <input id="introduceHomePhone2" type="text" class="form-control" />
+                            </div>
+                            <div class="form-group col-sm-12">
+                                <label class="">آدرس</label>
+                                <input id="introduceAddress2" type="text" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="form-group col-sm-6">
+                                <label class="">نسبت</label>
+                                <input id="introduceRelative3" type="text" class="form-control" />
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label class="">نام و نام خانوادگی</label>
+                                <input id="introduceName3" type="text" class="form-control" />
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label class="">محل کار</label>
+                                <input id="introduceWorkPlace3" type="text" class="form-control" />
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label class="">شغل</label>
+                                <input id="introduceJob3" type="text" class="form-control" />
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label class="">تلفن همراه</label>
+                                <input id="introduceCellNumber3" type="text" class="form-control" />
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label class="">تلفن منزل</label>
+                                <input id="introduceHomePhone3" type="text" class="form-control" />
+                            </div>
+                            <div class="form-group col-sm-12">
+                                <label class="">آدرس</label>
+                                <input id="introduceAddress3" type="text" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">تجارب کاری  پیشین (به ترتیب از آخرین محل کار بنویسید) </div>
+            <div class="panel-body">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="form-group col-sm-6">
+                            <label class="">سمت</label>
+                            <input id="post1" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">نام شرکت/سازمان</label>
+                            <input id="companyName1" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">تاریخ پایان کار</label>
+                            <input type="text" onclick="PersianDatePicker.Show(this,'@DateTime.Now');" placeholder="تاریخ پایان کار" class="form-control" id="workEndDate1" value="@ViewBag.workEndDate" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">تاریخ شروع کار</label>
+                            <input type="text" onclick="PersianDatePicker.Show(this,'@DateTime.Now');" placeholder="تاریخ شروع کار" class="form-control" id="workStartDate1" value="@ViewBag.workStartDate" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">علت ترک کار</label>
+                            <input id="leaveWorkReason1" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">مبلغ دریافتی</label>
+                            <input id="recievedPrice1" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">آدرس</label>
+                            <input id="Address1" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">تلفن</label>
+                            <input id="Phone1" type="text" class="form-control" />
+                        </div>
+
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="form-group col-sm-6">
+                            <label class="">سمت</label>
+                            <input id="post2" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">نام شرکت/سازمان</label>
+                            <input id="companyName2" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">تاریخ پایان کار</label>
+                            <input type="text" onclick="PersianDatePicker.Show(this,'@DateTime.Now');" placeholder="تاریخ پایان کار" class="form-control" id="workEndDate2" value="@ViewBag.workEndDate" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">تاریخ شروع کار</label>
+                            <input type="text" onclick="PersianDatePicker.Show(this,'@DateTime.Now');" placeholder="تاریخ شروع کار" class="form-control" id="workStartDate2" value="@ViewBag.workStartDate" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">علت ترک کار</label>
+                            <input id="leaveWorkReason2" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">مبلغ دریافتی</label>
+                            <input id="recievedPrice2" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">آدرس</label>
+                            <input id="Address2" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">تلفن</label>
+                            <input id="Phone2" type="text" class="form-control" />
+                        </div>
+
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="form-group col-sm-6">
+                            <label class="">سمت</label>
+                            <input id="post3" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">نام شرکت/سازمان</label>
+                            <input id="companyName3" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">تاریخ پایان کار</label>
+                            <input type="text" onclick="PersianDatePicker.Show(this,'@DateTime.Now');" placeholder="تاریخ پایان کار" class="form-control" id="workEndDate3" value="@ViewBag.workEndDate" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">تاریخ شروع کار</label>
+                            <input type="text" onclick="PersianDatePicker.Show(this,'@DateTime.Now');" placeholder="تاریخ شروع کار" class="form-control" id="workStartDate3" value="@ViewBag.workStartDate" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">علت ترک کار</label>
+                            <input id="leaveWorkReason3" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">مبلغ دریافتی</label>
+                            <input id="recievedPrice3" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">آدرس</label>
+                            <input id="Address3" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">تلفن</label>
+                            <input id="Phone3" type="text" class="form-control" />
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">مهارتها و دانش زبان</div>
+            <div class="panel-body">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <label class="form-group col-sm-12">سطح زبان انگلیسی</label>
+                        <div class="form-group col-sm-6">
+                            <form style="direction:rtl; width:100%">
+                                <label class="m-l-10">خواندنReading</label>
+                                <label class="m-l-xs" for="readingCheck">مبتدی</label>
+                                <input type="radio" name="readingRadio" class="m-l-10" id="readingCheck1">
+                                <label class="" for="readingCheck">متوسط</label>
+                                <input type="radio" name="readingRadio" class="m-l-10" id="readingCheck2">
+                                <label class="" for="readingCheck">خوب</label>
+                                <input type="radio" name="readingRadio" class="m-l-10" id="readingCheck3">
+                                <label class="" for="readingCheck">پیشرفته</label>
+                                <input type="radio" name="readingRadio" class="" id="readingCheck4">
+                            </form>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <form style="direction:rtl; width:100%">
+                                <label class="m-l-10">نوشتن Writing</label>
+                                <label class="m-l-xs" for="writingCheck">مبتدی</label>
+                                <input type="radio" name="writingRadio" class="m-l-10" id="writingCheck1">
+                                <label class="" for="writingCheck">متوسط</label>
+                                <input type="radio" name="writingRadio" class="m-l-10" id="writingCheck2">
+                                <label class="" for="writingCheck">خوب</label>
+                                <input type="radio" name="writingRadio" class="m-l-10" id="writingCheck3">
+                                <label class="" for="writingCheck">پیشرفته</label>
+                                <input type="radio" name="writingRadio" class="" id="writingCheck4">
+                            </form>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <form style="direction:rtl; width:100%">
+                                <label class="m-l-10">گوش کردن listening</label>
+                                <label class="m-l-xs" for="listeningCheck">مبتدی</label>
+                                <input type="radio" name="listeningRadio" class="m-l-10" id="listeningCheck1">
+                                <label class="" for="listeningCheck">متوسط</label>
+                                <input type="radio" name="listeningRadio" class="m-l-10" id="listeningCheck2">
+                                <label class="" for="listeningCheck">خوب</label>
+                                <input type="radio" name="listeningRadio" class="m-l-10" id="listeningCheck3">
+                                <label class="" for="listeningCheck">پیشرفته</label>
+                                <input type="radio" name="listeningRadio" class="" id="listeningCheck4">
+                            </form>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <form style="direction:rtl; width:100%">
+                                <label class="m-l-10">صحبت کردن Speaking</label>
+                                <label class="m-l-xs" for="speakingCheck">مبتدی</label>
+                                <input type="radio" name="speakingRadio" class="m-l-10" id="speakingCheck1">
+                                <label class="" for="speakingCheck">متوسط</label>
+                                <input type="radio" name="speakingRadio" class="m-l-10" id="speakingCheck2">
+                                <label class="" for="speakingCheck">خوب</label>
+                                <input type="radio" name="speakingRadio" class="m-l-10" id="speakingCheck3">
+                                <label class="" for="speakingCheck">پیشرفته</label>
+                                <input type="radio" name="speakingRadio" class="" id="speakingCheck4">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
     <section class="contact-section">
         <div class="container">
             <div class="row">
@@ -46,11 +514,11 @@
 
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    @Html.LabelFor(model => model.ResumeFile)
-                                    @Html.Kendo().Upload().Name("fileupload").Multiple(false)
-                                </div>
+                                    @*@Html.LabelFor(model => model.ResumeFile)
+                                        @Html.Kendo().Upload().Name("fileupload").Multiple(false)*@
                                 </div>
                             </div>
+                        </div>
 
 
 
@@ -77,37 +545,38 @@
                                 @*اشخاصی که حداقل 3 سال سابقه فروش دارند و اجتماعی هستند رزومه خود را آپلود کنند.
                                     در رزومه خود حتما محل زندگی و سن را ذکر کنید.*@
 
-                            </div>
-                            <div class="row">
-                                <div  class="col-md-12" >
-                                    اشخاصی که حداقل 3 سال سابقه فروش دارند و اجتماعی هستند رزومه خود را آپلود کنند.
-                                    در رزومه خود حتما محل زندگی و سن را ذکر کنید.
-                                </div>
-                            </div>
-                            @*<div class="form-group">
-                                    <label for="cContent">@Resources.Label.Message</label>
-                                    <textarea type="text" name="cContent" id="cContent" rows="5" class="form-control required" placeholder="@Resources.Label.Message"></textarea>
-                                </div>
+                                <!--</div>
+                                <div class="row">
+                                    <div  class="col-md-12" >
+                                        اشخاصی که حداقل 3 سال سابقه فروش دارند و اجتماعی هستند رزومه خود را آپلود کنند.
+                                        در رزومه خود حتما محل زندگی و سن را ذکر کنید.
+                                    </div>
+                                </div>-->
+                                @*<div class="form-group">
+                                        <label for="cContent">@Resources.Label.Message</label>
+                                        <textarea type="text" name="cContent" id="cContent" rows="5" class="form-control required" placeholder="@Resources.Label.Message"></textarea>
+                                    </div>
 
-                                <div class="form-group">
-                                    <script src="https://www.google.com/recaptcha/api.js"></script>
-                                    <div class="g-recaptcha" data-sitekey="6Ldb6nQUAAAAAEnfWXSJNjhqU7bOerUAC-tfQkKw"></div>
-                                </div>*@
-
-
-
-                        </div>
+                                    <div class="form-group">
+                                        <script src="https://www.google.com/recaptcha/api.js"></script>
+                                        <div class="g-recaptcha" data-sitekey="6Ldb6nQUAAAAAEnfWXSJNjhqU7bOerUAC-tfQkKw"></div>
+                                    </div>*@
 
 
 
+                                <!--</div>
 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-}
-@section scripts{
-    <script src="~/Scripts/UI/plugins/components/particles-animation.js"></script>
-    <script src="~/Scripts/UI/plugins/components/particles.js"></script>
-}
+
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>-->
+                                <script src="~/Scripts/PersianDatePicker.min.js"></script>
+                                <link href="~/Content/PersianDatePicker.min.css" rel="stylesheet" />
+                                @section scripts{
+                                    <script src="~/Scripts/UI/plugins/components/particles-animation.js"></script>
+                                    <script src="~/Scripts/UI/plugins/components/particles.js"></script>
+                                }
