@@ -54,9 +54,9 @@
                     </div>
                     <div class="form-group col-sm-6">
                         @*@Html.LabelFor(model => model.IsLady)
-                            @Html.CheckBox("خانم", false, new { @class = "form-control" })
-                            @Html.CheckBox("آقا", false, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.NationalCode)*@
+                        @Html.CheckBox("خانم", false, new { @class = "form-control" })
+                        @Html.CheckBox("آقا", false, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.NationalCode)*@
 
                         <form style="direction:rtl; width:300px">
                             <label class="m-l-xs">جنسیت:</label>
@@ -78,10 +78,10 @@
                         @Html.ValidationMessageFor(model => model.PeopleInChargeNumber)
                     </div>
                     @*<div class="form-group col-sm-6">
-                            @Html.LabelFor(model => model.BirthdayDate)
-                            @Html.EditorFor(model => model.BirthdayDate)
-                            @Html.ValidationMessageFor(model => model.BirthdayDate)
-                        </div>*@
+                        @Html.LabelFor(model => model.BirthdayDate)
+                        @Html.EditorFor(model => model.BirthdayDate)
+                        @Html.ValidationMessageFor(model => model.BirthdayDate)
+                    </div>*@
                     <div class="form-group col-sm-6">
                         @Html.LabelFor(model => model.PlaceOfBirth)
                         @Html.TextBoxFor(model => model.PlaceOfBirth, new { @class = "form-control" })
@@ -117,9 +117,9 @@
                     </div>
                     <div class="form-group col-sm-12">
                         @*@Html.LabelFor(model => model.IsLady)
-                            @Html.CheckBox("خانم", false, new { @class = "form-control" })
-                            @Html.CheckBox("آقا", false, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.NationalCode)*@
+                        @Html.CheckBox("خانم", false, new { @class = "form-control" })
+                        @Html.CheckBox("آقا", false, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.NationalCode)*@
 
                         <form style="direction:rtl; width:100%">
                             @Html.LabelFor(model => model.PhysicalCondition)
@@ -192,108 +192,109 @@
                     </div>
                 </div>
             </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">معرف(مشخصات سه نفر غیر از خانواده )</div>
-                <div class="panel-body">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <div class="form-group col-sm-6">
-                                <label class="">نسبت</label>
-                                <input id="introduceRelative1" type="text" class="form-control" />
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <label class="">نام و نام خانوادگی</label>
-                                <input id="introduceName1" type="text" class="form-control" />
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <label class="">محل کار</label>
-                                <input id="introduceWorkPlace1" type="text" class="form-control" />
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <label class="">شغل</label>
-                                <input id="introduceJob1" type="text" class="form-control" />
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <label class="">تلفن همراه</label>
-                                <input id="introduceCellNumber1" type="text" class="form-control" />
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <label class="">تلفن منزل</label>
-                                <input id="introduceHomePhone1" type="text" class="form-control" />
-                            </div>
-                            <div class="form-group col-sm-12">
-                                <label class="">آدرس</label>
-                                <input id="introduceAddress1" type="text" class="form-control" />
-                            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">معرف(مشخصات سه نفر غیر از خانواده )</div>
+            <div class="panel-body">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="form-group col-sm-6">
+                            <label class="">نسبت</label>
+                            <input id="introduceRelative1" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">نام و نام خانوادگی</label>
+                            <input id="introduceName1" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">محل کار</label>
+                            <input id="introduceWorkPlace1" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">شغل</label>
+                            <input id="introduceJob1" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">تلفن همراه</label>
+                            <input id="introduceCellNumber1" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">تلفن منزل</label>
+                            <input id="introduceHomePhone1" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <label class="">آدرس</label>
+                            <input id="introduceAddress1" type="text" class="form-control" />
                         </div>
                     </div>
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <div class="form-group col-sm-6">
-                                <label class="">نسبت</label>
-                                <input id="introduceRelative2" type="text" class="form-control" />
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <label class="">نام و نام خانوادگی</label>
-                                <input id="introduceName2" type="text" class="form-control" />
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <label class="">محل کار</label>
-                                <input id="introduceWorkPlace2" type="text" class="form-control" />
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <label class="">شغل</label>
-                                <input id="introduceJob2" type="text" class="form-control" />
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <label class="">تلفن همراه</label>
-                                <input id="introduceCellNumber2" type="text" class="form-control" />
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <label class="">تلفن منزل</label>
-                                <input id="introduceHomePhone2" type="text" class="form-control" />
-                            </div>
-                            <div class="form-group col-sm-12">
-                                <label class="">آدرس</label>
-                                <input id="introduceAddress2" type="text" class="form-control" />
-                            </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="form-group col-sm-6">
+                            <label class="">نسبت</label>
+                            <input id="introduceRelative2" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">نام و نام خانوادگی</label>
+                            <input id="introduceName2" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">محل کار</label>
+                            <input id="introduceWorkPlace2" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">شغل</label>
+                            <input id="introduceJob2" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">تلفن همراه</label>
+                            <input id="introduceCellNumber2" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">تلفن منزل</label>
+                            <input id="introduceHomePhone2" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <label class="">آدرس</label>
+                            <input id="introduceAddress2" type="text" class="form-control" />
                         </div>
                     </div>
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <div class="form-group col-sm-6">
-                                <label class="">نسبت</label>
-                                <input id="introduceRelative3" type="text" class="form-control" />
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <label class="">نام و نام خانوادگی</label>
-                                <input id="introduceName3" type="text" class="form-control" />
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <label class="">محل کار</label>
-                                <input id="introduceWorkPlace3" type="text" class="form-control" />
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <label class="">شغل</label>
-                                <input id="introduceJob3" type="text" class="form-control" />
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <label class="">تلفن همراه</label>
-                                <input id="introduceCellNumber3" type="text" class="form-control" />
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <label class="">تلفن منزل</label>
-                                <input id="introduceHomePhone3" type="text" class="form-control" />
-                            </div>
-                            <div class="form-group col-sm-12">
-                                <label class="">آدرس</label>
-                                <input id="introduceAddress3" type="text" class="form-control" />
-                            </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="form-group col-sm-6">
+                            <label class="">نسبت</label>
+                            <input id="introduceRelative3" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">نام و نام خانوادگی</label>
+                            <input id="introduceName3" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">محل کار</label>
+                            <input id="introduceWorkPlace3" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">شغل</label>
+                            <input id="introduceJob3" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">تلفن همراه</label>
+                            <input id="introduceCellNumber3" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">تلفن منزل</label>
+                            <input id="introduceHomePhone3" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <label class="">آدرس</label>
+                            <input id="introduceAddress3" type="text" class="form-control" />
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
         <div class="panel panel-default">
             <div class="panel-heading">تجارب کاری  پیشین (به ترتیب از آخرین محل کار بنویسید) </div>
             <div class="panel-body">
@@ -472,111 +473,258 @@
                 </div>
                 <div class="panel panel-default">
                     <div class="panel-body">
+                        <label class="form-group col-sm-12">مهارت های کامپیوتری: ( لطفا میزان تسلط خود را بر هریک از نرم افزارها به تفکیک روشن فرمایید).</label>
+                        <div class="form-group col-sm-6">
+                            @Html.LabelFor(model => model.Windows)
+                            @Html.TextBoxFor(model => model.Windows, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Windows)
+                        </div>
+                        <div class="form-group col-sm-6">
+                            @Html.LabelFor(model => model.Software)
+                            @Html.TextBoxFor(model => model.Software, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Software)
+                        </div>
+                        <div class="form-group col-sm-12">
+                            @Html.LabelFor(model => model.OtherSoftware)
+                            @Html.TextBoxFor(model => model.OtherSoftware, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.OtherSoftware)
+                        </div>
                     </div>
                 </div>
                 <div class="panel panel-default">
                     <div class="panel-body">
+                        <div class="form-group col-sm-12">
+                            @Html.LabelFor(model => model.SportHistory)
+                            @Html.TextBoxFor(model => model.SportHistory, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.SportHistory)
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">سایر دوره های آموزشی</div>
+            <div class="panel-body">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="form-group col-sm-6">
+                            <label class="">نام موسسه / مرکز آموزشی</label>
+                            <input id="educationalCenterName1" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">نام دوره آموزشی</label>
+                            <input id="courseName1" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">مدت دوره</label>
+                            <input id="durationofCourse1" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">مهارت کسب شده</label>
+                            <input id="skill1" type="text" class="form-control" />
+                        </div>
 
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="form-group col-sm-6">
+                            <label class="">نام موسسه / مرکز آموزشی</label>
+                            <input id="educationalCenterName2" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">نام دوره آموزشی</label>
+                            <input id="courseName2" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">مدت دوره</label>
+                            <input id="durationofCourse2" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">مهارت کسب شده</label>
+                            <input id="skill2" type="text" class="form-control" />
+                        </div>
+
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="form-group col-sm-6">
+                            <label class="">نام موسسه / مرکز آموزشی</label>
+                            <input id="educationalCenterName3" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">نام دوره آموزشی</label>
+                            <input id="courseName3" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">مدت دوره</label>
+                            <input id="durationofCourse3" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">مهارت کسب شده</label>
+                            <input id="skill3" type="text" class="form-control" />
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">اطلاعات اعضای خانواده</div>
+            <div class="panel-body">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="form-group col-sm-6">
+                            <label class="">نسبت</label>
+                            <input id="familyRelative1" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">نام و نام خانوادگی</label>
+                            <input id="familyName1" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">میزان تحصیلات</label>
+                            <input id="educationalLevel1" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">تاریخ تولد</label>
+                            <input type="text" onclick="PersianDatePicker.Show(this,'@DateTime.Now');" placeholder="تاریخ تولد" class="form-control" id="birthdayDate1" value="@ViewBag.birthdayDate1" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">شماره تلفن</label>
+                            <input id="familyPhone1" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">شغل</label>
+                            <input id="familyJob1" type="text" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="form-group col-sm-6">
+                            <label class="">نسبت</label>
+                            <input id="familyRelative2" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">نام و نام خانوادگی</label>
+                            <input id="familyName2" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">میزان تحصیلات</label>
+                            <input id="educationalLevel2" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">تاریخ تولد</label>
+                            <input type="text" onclick="PersianDatePicker.Show(this,'@DateTime.Now');" placeholder="تاریخ تولد" class="form-control" id="birthdayDate2" value="@ViewBag.birthdayDate2" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">شماره تلفن</label>
+                            <input id="familyPhone2" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">شغل</label>
+                            <input id="familyJob2" type="text" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="form-group col-sm-6">
+                            <label class="">نسبت</label>
+                            <input id="familyRelative3" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">نام و نام خانوادگی</label>
+                            <input id="familyName3" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">میزان تحصیلات</label>
+                            <input id="educationalLevel3" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">تاریخ تولد</label>
+                            <input type="text" onclick="PersianDatePicker.Show(this,'@DateTime.Now');" placeholder="تاریخ تولد" class="form-control" id="birthdayDate3" value="@ViewBag.birthdayDate3" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">شماره تلفن</label>
+                            <input id="familyPhone3" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="">شغل</label>
+                            <input id="familyJob3" type="text" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">آشنایی با شرکت چرم مشهد</div>
+            <div class="panel-body">
+                <div class="form-group col-sm-12">
+
+                    <form style="direction:rtl; width:100%">
+                        <label class="m-l-10">نحوه آشنایی با شرکت چرم مشهد: </label>
+                        <label class="m-l-xs" for="familierWithCompanyCheck">دوستان و آشنایان</label>
+                        <input type="radio" name="familierWithCompanyRadio" class="m-l-10" id="familierWithCompanyCheck1">
+                        <label class="" for="familierWithCompanyCheck">آگهی روزنامه</label>
+                        <input type="radio" name="familierWithCompanyRadio" class="m-l-10" id="familierWithCompanyCheck2">
+                        <label class="" for="familierWithCompanyCheck">سایت چرم مشهد</label>
+                        <input type="radio" name="familierWithCompanyRadio" class="m-l-10" id="familierWithCompanyCheck3">
+                        <label class="" for="familierWithCompanyCheck">تلگرام</label>
+                        <input type="radio" name="familierWithCompanyRadio" class="" id="familierWithCompanyCheck4">
+                        <label class="" for="familierWithCompanyCheck">آگهی سایت های استخدامی</label>
+                        <input type="radio" name="familierWithCompanyRadio" class="m-l-10" id="familierWithCompanyCheck5">
+                        <label class="" for="familierWithCompanyCheck">دریافت پیامک</label>
+                        <input type="radio" name="familierWithCompanyRadio" class="" id="familierWithCompanyCheck6">
+                        <label class="" for="familierWithCompanyCheck">معرف دارم</label>
+                        <input type="radio" name="familierWithCompanyRadio" class="m-l-10" id="familierWithCompanyCheck7">
+                    </form>
+                </div>
+                <div class="form-group col-sm-6">
+                    @Html.LabelFor(model => model.IntroducePost)
+                    @Html.TextBoxFor(model => model.IntroducePost, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.IntroducePost)
+                </div>
+                <div class="form-group col-sm-6">
+                    @Html.LabelFor(model => model.IntroduceName)
+                    @Html.TextBoxFor(model => model.IntroduceName, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.IntroduceName)
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">سمت شغلی</div>
+            <div class="panel-body">
+                <div class="form-group col-sm-12">
+
+                    <form style="direction:rtl; width:100%">
+                        <label class="m-l-10">حقوق مورد انتظار: </label>
+                        <label class="m-l-xs" for="expectedSalaryCheck">مطابق با ضوابط شرکت</label>
+                        <input type="radio" name="expectedSalaryRadio" class="m-l-10" id="expectedSalaryCheck1">
+                        <label class="" for="expectedSalaryCheck">پیشنهادی</label>
+                        <input type="radio" name="expectedSalaryRadio" class="m-l-10" id="expectedSalaryCheck2">
+                    </form>
+                </div>
+                <div class="form-group col-sm-6">
+                    @Html.LabelFor(model => model.RequestedPrice)
+                    @Html.TextBoxFor(model => model.RequestedPrice, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.RequestedPrice)
+                </div>
+                <div class="form-group col-sm-6">
+                    @Html.LabelFor(model => model.InterestedJob)
+                    @Html.TextBoxFor(model => model.InterestedJob, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.InterestedJob)
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-default" type="submit" id="form-submit"><i class="fa fa-paper-plane"></i>&nbsp;@Resources.Label.Send</button>
     </div>
 
-
-
-    <section class="contact-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6" style="background-color:#ececec;padding: 15px;">
-                    <h3 class="text-uppercase">فرم استخدام</h3>
-                    <div class="widget-contact-form" id="contact_form">
-                        <div class="row">
-                            <div class="form-group col-sm-6">
-                                @Html.LabelFor(model => model.Email)
-                                @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
-                                @Html.ValidationMessageFor(model => model.Email)
-                            </div>
-                            <div class="form-group col-sm-6">
-                                @Html.LabelFor(model => model.FullName)
-                                @Html.TextBoxFor(model => model.FullName, new { @class = "form-control" })
-                                @Html.ValidationMessageFor(model => model.FullName)
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 col-md-6">
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.CellNumber)
-                                    @Html.TextBoxFor(model => model.CellNumber, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.CellNumber)
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    @*@Html.LabelFor(model => model.ResumeFile)
-                                        @Html.Kendo().Upload().Name("fileupload").Multiple(false)*@
-                                </div>
-                            </div>
-                        </div>
-
-
-
-
-                        <button class="btn btn-default" type="submit" id="form-submit"><i class="fa fa-paper-plane"></i>&nbsp;@Resources.Label.Send</button>
-                    </div>
-
-
-                </div>
-                <div class="col-md-5">
-
-
-                    <div class="m-t-30">
-                        <div class="contact_info" id="c2" style="display:none;">
-                            <h3>@Resources.Label.Thanks</h3>
-                            <h5>@Resources.Label.Success_Message</h5>
-                            <h6>@Resources.Label.CallYou</h6>
-                            <hr>
-                        </div>
-
-
-                        <div>
-                            <div class="row">
-                                @*اشخاصی که حداقل 3 سال سابقه فروش دارند و اجتماعی هستند رزومه خود را آپلود کنند.
-                                    در رزومه خود حتما محل زندگی و سن را ذکر کنید.*@
-
-                                <!--</div>
-                                <div class="row">
-                                    <div  class="col-md-12" >
-                                        اشخاصی که حداقل 3 سال سابقه فروش دارند و اجتماعی هستند رزومه خود را آپلود کنند.
-                                        در رزومه خود حتما محل زندگی و سن را ذکر کنید.
-                                    </div>
-                                </div>-->
-                                @*<div class="form-group">
-                                        <label for="cContent">@Resources.Label.Message</label>
-                                        <textarea type="text" name="cContent" id="cContent" rows="5" class="form-control required" placeholder="@Resources.Label.Message"></textarea>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <script src="https://www.google.com/recaptcha/api.js"></script>
-                                        <div class="g-recaptcha" data-sitekey="6Ldb6nQUAAAAAEnfWXSJNjhqU7bOerUAC-tfQkKw"></div>
-                                    </div>*@
-
-
-
-                                <!--</div>
-
-
-
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>-->
-                                <script src="~/Scripts/PersianDatePicker.min.js"></script>
-                                <link href="~/Content/PersianDatePicker.min.css" rel="stylesheet" />
-                                @section scripts{
-                                    <script src="~/Scripts/UI/plugins/components/particles-animation.js"></script>
-                                    <script src="~/Scripts/UI/plugins/components/particles.js"></script>
-                                }
+                                    <script src="~/Scripts/PersianDatePicker.min.js"></script>
+                                    <link href="~/Content/PersianDatePicker.min.css" rel="stylesheet" />
+                                    @section scripts{
+                                        <script src="~/Scripts/UI/plugins/components/particles-animation.js"></script>
+                                        <script src="~/Scripts/UI/plugins/components/particles.js"></script>
+                                    }
