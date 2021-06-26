@@ -13,13 +13,13 @@ namespace ViewModels
         //{
         //    Carreer = new Carreer();
         //}
-        [Display(Name = "نام و نام خانوادگی")]
+        [Display(Name = "نام و نام خانوادگی *")]
         [Required(ErrorMessage = "فیلد {0} اجباری می باشد.")]
         public string FullName { get; set; }
-        [Display(Name = "ایمیل")]
+        [Display(Name = "ایمیل *")]
         [Required(ErrorMessage = "فیلد {0} اجباری می باشد.")]
         public string Email { get; set; }
-        [Display(Name = "شماره تماس")]
+        [Display(Name = "شماره تماس *")]
         [Required(ErrorMessage = "فیلد {0} اجباری می باشد.")]
         public string CellNumber { get; set; }
         [Display(Name = "مسیر فایل رزومه")]

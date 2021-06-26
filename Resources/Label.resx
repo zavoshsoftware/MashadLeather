@@ -453,4 +453,7 @@
   <data name="Profile" xml:space="preserve">
     <value>حساب کاربری</value>
   </data>
+  <data name="Career" xml:space="preserve">
+    <value>همکاری با ما</value>
+  </data>
 </root>

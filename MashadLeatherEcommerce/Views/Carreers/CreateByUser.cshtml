@@ -1,113 +1,119 @@
 ﻿@model ViewModels.CarreerViewModel
 @{
-    ViewBag.Title = Resources.Label.ContactUs + " | " + Resources.Label.MashadLeather;
-    ViewBag.Description = "تلفن فروشگاه اینترنتی 02188310259 تلفن دفتر مرکزی 05138475880 آدرس: تهران، خیابان ولیعصر، خیابان عاطفی، پلاک 100";
-    ViewBag.Canonical = "https://www.mashadleather.com/contact";
-    Layout = "~/Views/Shared/FrontEndLayout/_FrontEndLayout.cshtml";
+	ViewBag.Title =  "همکاری با ما  | " + Resources.Label.MashadLeather;
+	ViewBag.Description = "همکاری با چرم مشهد | استخدام در شرکت چرم مشهد";
+	ViewBag.Canonical = "https://www.mashadleather.com/carreer";
+	Layout = "~/Views/Shared/FrontEndLayout/_FrontEndLayout.cshtml";
 }
-
+@section head
+{
+	<style>
+		.field-validation-error {
+			color: red;
+		}
+	</style>
+}
 <section id="page-title" data-parallax-image="/images/mashad-faq-img.jpg">
-    <div id="particles-js" class="particles" style="background: none"></div>
-    <div class="container">
-        <div class="slide-captions text-center text-light about-caption">
-            <h1 class="strong">فرم استخدام</h1> <label>@Resources.Label.MashadLeather</label>
-        </div>
-    </div>
+	<div id="particles-js" class="particles" style="background: none"></div>
+	<div class="container">
+		<div class="slide-captions text-center text-light about-caption">
+			<h1 class="strong">همکاری با ما</h1> <label>@Resources.Label.MashadLeather</label>
+		</div>
+	</div>
 </section>
 @using (Html.BeginForm("CreateByUser", "Carreers", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
-    @Html.AntiForgeryToken()
-    <section class="contact-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6" style="background-color:#ececec;padding: 15px;">
-                    <h3 class="text-uppercase">فرم استخدام</h3>
-                    <div class="widget-contact-form" id="contact_form">
-                        <div class="row">
-                            <div class="form-group col-sm-6">
-                                @Html.LabelFor(model => model.Email)
-                                @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
-                                @Html.ValidationMessageFor(model => model.Email)
-                            </div>
-                            <div class="form-group col-sm-6">
-                                @Html.LabelFor(model => model.FullName)
-                                @Html.TextBoxFor(model => model.FullName, new { @class = "form-control" })
-                                @Html.ValidationMessageFor(model => model.FullName)
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 col-md-6">
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.CellNumber)
-                                    @Html.TextBoxFor(model => model.CellNumber, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.CellNumber)
-                                </div>
-                            </div>
+	@Html.AntiForgeryToken()
+	<section class="contact-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6" style="background-color:#ececec;padding: 15px;">
+					<h3 class="text-uppercase">فرم همکاری با چرم مشهد</h3>
+					<div class="widget-contact-form" id="contact_form">
 
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.ResumeFile)
-                                    @Html.Kendo().Upload().Name("fileupload").Multiple(false)
-                                </div>
-                                </div>
-                            </div>
+						@if (TempData["successMessage"] != null)
+						{
+							<div class="row">
+								<div class="col-md-12">
+									<p class="alert alert-success">
+										@TempData["successMessage"]
+									</p>
+								</div>
+							</div>
+						}
 
+						<div class="row">
 
+							<div class="form-group col-sm-6">
+								@Html.LabelFor(model => model.Email)
+								@Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+								@Html.ValidationMessageFor(model => model.Email)
+							</div>
+							<div class="form-group col-sm-6">
+								@Html.LabelFor(model => model.FullName)
+								@Html.TextBoxFor(model => model.FullName, new { @class = "form-control" })
+								@Html.ValidationMessageFor(model => model.FullName)
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12 col-md-6">
+								<div class="form-group">
+									@Html.LabelFor(model => model.CellNumber)
+									@Html.TextBoxFor(model => model.CellNumber, new { @class = "form-control" })
+									@Html.ValidationMessageFor(model => model.CellNumber)
+								</div>
+							</div>
 
-
-                        <button class="btn btn-default" type="submit" id="form-submit"><i class="fa fa-paper-plane"></i>&nbsp;@Resources.Label.Send</button>
-                    </div>
-
-
-                </div>
-                <div class="col-md-5">
-
-
-                    <div class="m-t-30">
-                        <div class="contact_info" id="c2" style="display:none;">
-                            <h3>@Resources.Label.Thanks</h3>
-                            <h5>@Resources.Label.Success_Message</h5>
-                            <h6>@Resources.Label.CallYou</h6>
-                            <hr>
-                        </div>
-
-
-                        <div>
-                            <div class="row">
-                                @*اشخاصی که حداقل 3 سال سابقه فروش دارند و اجتماعی هستند رزومه خود را آپلود کنند.
-                                    در رزومه خود حتما محل زندگی و سن را ذکر کنید.*@
-
-                            </div>
-                            <div class="row">
-                                <div  class="col-md-12" >
-                                    اشخاصی که حداقل 3 سال سابقه فروش دارند و اجتماعی هستند رزومه خود را آپلود کنند.
-                                    در رزومه خود حتما محل زندگی و سن را ذکر کنید.
-                                </div>
-                            </div>
-                            @*<div class="form-group">
-                                    <label for="cContent">@Resources.Label.Message</label>
-                                    <textarea type="text" name="cContent" id="cContent" rows="5" class="form-control required" placeholder="@Resources.Label.Message"></textarea>
-                                </div>
-
-                                <div class="form-group">
-                                    <script src="https://www.google.com/recaptcha/api.js"></script>
-                                    <div class="g-recaptcha" data-sitekey="6Ldb6nQUAAAAAEnfWXSJNjhqU7bOerUAC-tfQkKw"></div>
-                                </div>*@
-
-
-
-                        </div>
+							<div class="col-md-4">
+								<div class="form-group">
+									@Html.LabelFor(model => model.ResumeFile)
+									@Html.Kendo().Upload().Name("fileupload").Multiple(false)
+								</div>
+							</div>
+						</div>
 
 
 
 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+						<button class="btn btn-default" type="submit" id="form-submit"><i class="fa fa-paper-plane"></i>&nbsp;@Resources.Label.Send</button>
+					</div>
+
+
+				</div>
+				<div class="col-md-5">
+
+
+					<div class="m-t-30">
+						<div class="contact_info" id="c2" style="display:none;">
+							<h3>@Resources.Label.Thanks</h3>
+							<h5>@Resources.Label.Success_Message</h5>
+							<h6>@Resources.Label.CallYou</h6>
+							<hr>
+						</div>
+
+						<div>
+							<div class="row">
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<p class="alert alert-info">
+										کاربر گرامی لطفا فایل رزومه را از
+										<a style="color: red" href="https://mashadleather.com/uploads/ml-career.docx">
+											اینجا
+										</a>
+										دانلود کرده و پس از تکمیل فایل، فرم روبه رو را تکمیل فرمایید
+									</p>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 }
 @section scripts{
-    <script src="~/Scripts/UI/plugins/components/particles-animation.js"></script>
-    <script src="~/Scripts/UI/plugins/components/particles.js"></script>
+	<script src="~/Scripts/UI/plugins/components/particles-animation.js"></script>
+	<script src="~/Scripts/UI/plugins/components/particles.js"></script>
 }

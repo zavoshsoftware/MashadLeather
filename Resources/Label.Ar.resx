@@ -447,4 +447,7 @@
   <data name="Profile" xml:space="preserve">
     <value>الحساب</value>
   </data>
+  <data name="Career" xml:space="preserve">
+    <value>اعمل معنا</value>
+  </data>
 </root>

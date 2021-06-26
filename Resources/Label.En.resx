@@ -448,4 +448,7 @@
   <data name="Profile" xml:space="preserve">
     <value>Profile</value>
   </data>
+  <data name="Career" xml:space="preserve">
+    <value>Career</value>
+  </data>
 </root>

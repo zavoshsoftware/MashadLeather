@@ -219,7 +219,9 @@ namespace MashadLeatherEcommerce.Controllers
                 modelCarreer.IsDeleted = false;
                 db.Carreers.Add(modelCarreer);
                 db.SaveChanges();
-                return RedirectToAction("CreateByUser");
+                //return RedirectToAction("CreateByUser");
+
+                TempData["successMessage"] = "درخواست شما با موفقیت ثبت گردید.";
             }
             return View(carreer);
         }

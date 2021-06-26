@@ -4710,6 +4710,9 @@
     <Content Include="Scripts\UI\plugins\revolution\revolution-addons\whiteboard\js\index.php" />
     <Content Include="Scripts\UI\plugins\revolution\revolution-addons\whiteboard\js\revolution.addon.whiteboard.min.js" />
     <Content Include="Scripts\UI\plugins\revolution\revolution-addons\whiteboard\js\source\revolution.addon.whiteboard.js" />
+    <Content Include="Uploads\Editor\glove-size-guide.jpg" />
+    <Content Include="Uploads\Editor\images %282%29.png" />
+    <Content Include="Uploads\Editor\یییی.png" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -5627,6 +5630,10 @@
     <Content Include="Views\Carreers\Edit.cshtml" />
     <Content Include="Views\Carreers\Index.cshtml" />
     <Content Include="Views\Carreers\CreateByUser.cshtml" />
+    <Content Include="Uploads\Carreer\297d4a88023f4f3985843fc966619173.docx" />
+    <Content Include="Uploads\Carreer\44324e1ab54e4cca83fa690e9dadc020.pdf" />
+    <Content Include="Uploads\Carreer\801080680d074402b67de9ef90dcd7c9.docx" />
+    <Content Include="Uploads\Carreer\f1689388c43242feaae05185785079be.docx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
