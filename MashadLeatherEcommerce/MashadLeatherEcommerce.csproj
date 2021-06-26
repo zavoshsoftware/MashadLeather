@@ -5668,6 +5668,7 @@
     <Content Include="Views\CarreerPreviousExperiences\Edit.cshtml" />
     <Content Include="Views\CarreerPreviousExperiences\Index.cshtml" />
     <Content Include="Views\Carreers\CreateByUser.cshtml" />
+    <Content Include="Views\Home\Search.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
