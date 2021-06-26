@@ -1,0 +1,155 @@
+﻿@model Models.CarreerPreviousExperience
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/BackEndLayout/_BackEndLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CarreerPreviousExperience</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Carreer.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Carreer.FullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CompanyName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompanyName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Post)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Post)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartDatetime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartDatetime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EndDatetime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndDatetime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LeavingWorkReason)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeavingWorkReason)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReceivedMoney)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReceivedMoney)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsActive)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreationDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastModifiedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastModifiedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsDeleted)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsDeleted)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeletionDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeletionDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DescriptionEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DescriptionEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DescriptionAr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DescriptionAr)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

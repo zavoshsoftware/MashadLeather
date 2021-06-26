@@ -64,6 +64,14 @@ namespace Models
         public DbSet<BlackListUser> BlackListUsers { get; set; }
 
         public System.Data.Entity.DbSet<Models.Carreer> Carreers { get; set; }
+
+        public System.Data.Entity.DbSet<Models.CarreerEducationalCourse> CarreerEducationalCourses { get; set; }
+
+        public System.Data.Entity.DbSet<Models.CarreerFamilyInformation> CarreerFamilyInformations { get; set; }
+
+        public System.Data.Entity.DbSet<Models.CarreerIntroduced> CarreerIntroduceds { get; set; }
+
+        public System.Data.Entity.DbSet<Models.CarreerPreviousExperience> CarreerPreviousExperiences { get; set; }
     }
 
 }

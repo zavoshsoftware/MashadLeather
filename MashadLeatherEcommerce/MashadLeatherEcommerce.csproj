@@ -4741,6 +4741,10 @@
     <Compile Include="Controllers\BlackListUsersController.cs" />
     <Compile Include="Controllers\BlogGroupsController.cs" />
     <Compile Include="Controllers\BlogsController.cs" />
+    <Compile Include="Controllers\CarreerEducationalCoursesController.cs" />
+    <Compile Include="Controllers\CarreerFamilyInformationsController.cs" />
+    <Compile Include="Controllers\CarreerIntroducedsController.cs" />
+    <Compile Include="Controllers\CarreerPreviousExperiencesController.cs" />
     <Compile Include="Controllers\CarreersController.cs" />
     <Compile Include="Controllers\ColorsController.cs" />
     <Compile Include="Controllers\CommentsController.cs" />
@@ -4774,6 +4778,7 @@
     <Compile Include="Controllers\UserProductLikeController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\_TestApiController.cs" />
+    <Compile Include="EnumModel\EnumData.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -5195,6 +5200,18 @@
     <Compile Include="Migrations\202106201030481_v108.Designer.cs">
       <DependentUpon>202106201030481_v108.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106220956077_v109.cs" />
+    <Compile Include="Migrations\202106220956077_v109.Designer.cs">
+      <DependentUpon>202106220956077_v109.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106230534455_v110.cs" />
+    <Compile Include="Migrations\202106230534455_v110.Designer.cs">
+      <DependentUpon>202106230534455_v110.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106230537312_v111.cs" />
+    <Compile Include="Migrations\202106230537312_v111.Designer.cs">
+      <DependentUpon>202106230537312_v111.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DatabaseContext.cs" />
     <Compile Include="Models\DatabaseContextInitializer.cs" />
@@ -5209,6 +5226,9 @@
     <Compile Include="Models\Entities\Comment.cs" />
     <Compile Include="Models\Entities\Configuration.cs" />
     <Compile Include="Models\Entities\DiscountCode.cs" />
+    <Compile Include="Models\Entities\CarreerEducationalCourse.cs" />
+    <Compile Include="Models\Entities\CarreerFamilyInformation.cs" />
+    <Compile Include="Models\Entities\CarreerIntroduced.cs" />
     <Compile Include="Models\Entities\KiyanLog.cs" />
     <Compile Include="Models\Entities\KiyanProductCategory.cs" />
     <Compile Include="Models\Entities\Order.cs" />
@@ -5237,6 +5257,7 @@
     <Compile Include="Models\Entities\User.cs" />
     <Compile Include="Models\Entities\UserInformation.cs" />
     <Compile Include="Models\Entities\UserProductLike.cs" />
+    <Compile Include="Models\Entities\CarreerPreviousExperience.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -5629,6 +5650,26 @@
     <Content Include="Views\Carreers\Details.cshtml" />
     <Content Include="Views\Carreers\Edit.cshtml" />
     <Content Include="Views\Carreers\Index.cshtml" />
+    <Content Include="Views\CarreerEducationalCourses\Create.cshtml" />
+    <Content Include="Views\CarreerEducationalCourses\Delete.cshtml" />
+    <Content Include="Views\CarreerEducationalCourses\Details.cshtml" />
+    <Content Include="Views\CarreerEducationalCourses\Edit.cshtml" />
+    <Content Include="Views\CarreerEducationalCourses\Index.cshtml" />
+    <Content Include="Views\CarreerFamilyInformations\Create.cshtml" />
+    <Content Include="Views\CarreerFamilyInformations\Delete.cshtml" />
+    <Content Include="Views\CarreerFamilyInformations\Details.cshtml" />
+    <Content Include="Views\CarreerFamilyInformations\Edit.cshtml" />
+    <Content Include="Views\CarreerFamilyInformations\Index.cshtml" />
+    <Content Include="Views\CarreerIntroduceds\Create.cshtml" />
+    <Content Include="Views\CarreerIntroduceds\Delete.cshtml" />
+    <Content Include="Views\CarreerIntroduceds\Details.cshtml" />
+    <Content Include="Views\CarreerIntroduceds\Edit.cshtml" />
+    <Content Include="Views\CarreerIntroduceds\Index.cshtml" />
+    <Content Include="Views\CarreerPreviousExperiences\Create.cshtml" />
+    <Content Include="Views\CarreerPreviousExperiences\Delete.cshtml" />
+    <Content Include="Views\CarreerPreviousExperiences\Details.cshtml" />
+    <Content Include="Views\CarreerPreviousExperiences\Edit.cshtml" />
+    <Content Include="Views\CarreerPreviousExperiences\Index.cshtml" />
     <Content Include="Views\Carreers\CreateByUser.cshtml" />
     <Content Include="Uploads\Carreer\297d4a88023f4f3985843fc966619173.docx" />
     <Content Include="Uploads\Carreer\44324e1ab54e4cca83fa690e9dadc020.pdf" />
@@ -5956,6 +5997,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106201030481_v108.resx">
       <DependentUpon>202106201030481_v108.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106220956077_v109.resx">
+      <DependentUpon>202106220956077_v109.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106230534455_v110.resx">
+      <DependentUpon>202106230534455_v110.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106230537312_v111.resx">
+      <DependentUpon>202106230537312_v111.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
