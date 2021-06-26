@@ -31,12 +31,12 @@ namespace Models
         [Display(Name = "محل تولد")]
         [Required(ErrorMessage = "فیلد {0} اجباری می باشد.")]
         public string PlaceOfBirth { get; set; }
-        [Display(Name = "جنسیت خانم")]
-        [Required(ErrorMessage = "فیلد {0} اجباری می باشد.")]
-        public bool IsLady { get; set; }
-        [Display(Name = "متاهل")]
-        [Required(ErrorMessage = "فیلد {0} اجباری می باشد.")]
-        public bool IsMarried { get; set; }
+        [Display(Name = "جنسیت")]
+        public string GenderTitle { get; set; }
+
+        [Display(Name = "وضعیت تاهل")]
+        public string MarriedStatus { get; set; }
+
         [Display(Name = "تعداد فرزندان")]
         public int ChidNumber { get; set; }
         [Display(Name = "تعداد افراد تحت تکلف")]
@@ -89,7 +89,7 @@ namespace Models
         [Display(Name = "تمایل دارید در چه سمت شغلی مشغول به کارشوید")]
         public string InterestedJob { get; set; }
         [Display(Name = "حقوق مورد انتظار")]
-        public string IsExpectedSalary { get; set; }
+        public string ExpectedSalary { get; set; }
         [Display(Name = "مبلغ مورد درخواست")]
         public string RequestedPrice { get; set; }
         [Display(Name = "نام مصاحبه کننده منابع انسانی")]

@@ -5212,6 +5212,14 @@
     <Compile Include="Migrations\202106230537312_v111.Designer.cs">
       <DependentUpon>202106230537312_v111.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106261222373_V112.cs" />
+    <Compile Include="Migrations\202106261222373_V112.Designer.cs">
+      <DependentUpon>202106261222373_V112.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106261306556_V113.cs" />
+    <Compile Include="Migrations\202106261306556_V113.Designer.cs">
+      <DependentUpon>202106261306556_V113.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DatabaseContext.cs" />
     <Compile Include="Models\DatabaseContextInitializer.cs" />
@@ -5267,6 +5275,7 @@
     <Compile Include="Reports\Models\InvoiceReportViewModel.cs" />
     <Compile Include="Services\Sms\SendSms.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\CareerPostViewModel.cs" />
     <Compile Include="ViewModels\CarreerViewModel.cs" />
     <Compile Include="ViewModels\OrderDashboardViewModel.cs" />
     <Compile Include="ViewModels\SpringPromotionViewModel.cs" />
@@ -6006,6 +6015,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106230537312_v111.resx">
       <DependentUpon>202106230537312_v111.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106261222373_V112.resx">
+      <DependentUpon>202106261222373_V112.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106261306556_V113.resx">
+      <DependentUpon>202106261306556_V113.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

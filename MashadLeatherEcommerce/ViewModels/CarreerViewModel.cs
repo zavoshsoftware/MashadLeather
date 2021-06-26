@@ -13,78 +13,83 @@ namespace ViewModels
         //{
         //    Carreer = new Carreer();
         //}
-        [Display(Name = "نام و نام خانوادگی")]
+        [Display(Name = "نام و نام خانوادگی*")]
         [Required(ErrorMessage = "فیلد {0} اجباری می باشد.")]
         public string FullName { get; set; }
-        [Display(Name = "آدرس ایمیل")]
+        [Display(Name = "ایمیل*")]
         [Required(ErrorMessage = "فیلد {0} اجباری می باشد.")]
         public string Email { get; set; }
-        [Display(Name = "شماره تلفن همراه")]
+        [Display(Name = "شماره تلفن همراه*")]
         [Required(ErrorMessage = "فیلد {0} اجباری می باشد.")]
-        [StringLength(11, ErrorMessage = "طول {0} نباید بیشتر از {1} باشد")]
         public string CellNumber { get; set; }
-        //[Display(Name = "مسیر فایل رزومه")]
-        //public string ResumeFile { get; set; }
-        [Display(Name = "کدملی")]
+        [Display(Name = "کدملی*")]
         [Required(ErrorMessage = "فیلد {0} اجباری می باشد.")]
-        [StringLength(10, ErrorMessage = "طول {0} نباید بیشتر از {1} باشد")]
         public string NationalCode { get; set; }
-        [Display(Name = "تاریخ تولد")]
+        
+        [Display(Name = "تاریخ تولد*")]
         [Required(ErrorMessage = "فیلد {0} اجباری می باشد.")]
         public DateTime BirthdayDate { get; set; }
-        [Display(Name = "محل تولد")]
+       
+        [Display(Name = "محل تولد*")]
         [Required(ErrorMessage = "فیلد {0} اجباری می باشد.")]
         public string PlaceOfBirth { get; set; }
-        [Display(Name = "جنسیت")]
+        [Display(Name = "جنسیت*")]
         [Required(ErrorMessage = "فیلد {0} اجباری می باشد.")]
         public bool IsLady { get; set; }
-        [Display(Name = "متاهل")]
+        [Display(Name = "متاهل*")]
         [Required(ErrorMessage = "فیلد {0} اجباری می باشد.")]
         public bool IsMarried { get; set; }
-        [Display(Name = "تعداد فرزندان")]
+
+        [Display(Name = "تعداد فرزندان)")]
         public int ChidNumber { get; set; }
-        [Display(Name = "تعداد افراد تحت تکلف")]
+        [Display(Name = "تعداد افراد تحت تکلف*")]
         public int PeopleInChargeNumber { get; set; }
-        [Display(Name = "ملیت")]
+        [Display(Name = "ملیت*")]
         [Required(ErrorMessage = "فیلد {0} اجباری می باشد.")]
         public string Nationality { get; set; }
-        [Display(Name = "آدرس محل سکونت")]
+        [Display(Name = "آدرس محل سکونت*")]
         [Required(ErrorMessage = "فیلد {0} اجباری می باشد.")]
         public string Address { get; set; }
-        [Display(Name = "وضعیت نظام وظیفه")]
+        [Display(Name = "وضعیت نظام وظیفه*")]
         public string MilitaryStatus { get; set; }
-        [Display(Name = "وضعیت جسمانی")]
+        [Display(Name = "وضعیت جسمانی*")]
         public string PhysicalCondition { get; set; }
-        [Display(Name = "آیا دارای سابقه پرداخت حق بیمه هستید")]
+        [Display(Name = "آیا دارای سابقه پرداخت حق بیمه هستید*")]
         [Required(ErrorMessage = "فیلد {0} اجباری می باشد.")]
         public bool IsInsurance { get; set; }
-        [Display(Name = "مدت سابقه بیمه کار")]
+     
+        [Display(Name = "مدت سابقه بیمه کار*")]
         [Required(ErrorMessage = "فیلد {0} اجباری می باشد.")]
         public int DurationInsuranceHistory { get; set; }
-        [Display(Name = "مدرک تحصیلی")]
+     
+        [Display(Name = "مدرک تحصیلی*")]
         [Required(ErrorMessage = "فیلد {0} اجباری می باشد.")]
         public string Education { get; set; }
-        [Display(Name = "رشته تحصیلی")]
+      
+        [Display(Name = "رشته تحصیلی*")]
         [Required(ErrorMessage = "فیلد {0} اجباری می باشد.")]
         public string Major { get; set; }
-        [Display(Name = "محل اخذ مدرک (دانشگاه آخرین مدرک تحصیلی)")]
+    
+        [Display(Name = "محل اخذ مدرک (دانشگاه آخرین مدرک تحصیلی)*")]
         public string LastUniversity { get; set; }
-        [Display(Name = "تاریخ اخذ آخرین مدرک تحصیلی")]
+      
+        [Display(Name = "تاریخ اخذ آخرین مدرک تحصیلی*")]
         [Required(ErrorMessage = "فیلد {0} اجباری می باشد.")]
         public DateTime LastCertificateDateTime { get; set; }
-        [Display(Name = "نرم افزارهای office Word, Excel ,Power Point))")]
+      
+        [Display(Name = "نرم افزارهای office Word, Excel ,Power Point))*")]
         public string Software { get; set; }
-        [Display(Name = "Windows")]
+        [Display(Name = "Windows*")]
         public string Windows { get; set; }
-        [Display(Name = "سایر نرم افزارها")]
+        [Display(Name = "سایر نرم افزارها*")]
         public string OtherSoftware { get; set; }
-        [Display(Name = "Writing نوشتن")]
+        [Display(Name = "Writing نوشتن*")]
         public string Writing { get; set; }
-        [Display(Name = "Reading خواندن")]
+        [Display(Name = "Reading خواندن*")]
         public string Reading { get; set; }
-        [Display(Name = "Speaking خواندن")]
+        [Display(Name = "Speaking خواندن*")]
         public string Speaking { get; set; }
-        [Display(Name = "Listening گوش کردن")]
+        [Display(Name = "Listening گوش کردن*")]
         public string Listening { get; set; }
         [Display(Name = "نام معرف خود")]
         public string IntroduceName { get; set; }
@@ -110,7 +115,7 @@ namespace ViewModels
         public string SpecializedInterviewerDescription { get; set; }
         [Display(Name = "استخدام نامبرد مورد تایید است")]
         public bool IsConfirmed { get; set; }
-        [Display(Name = "نحوه آشنایی با شرکت چرم مشهد")]
+        [Display(Name = "نحوه آشنایی با شرکت چرم مشهد*")]
         public string Familiar { get; set; }
         [Display(Name = "آیا سابقه فعالیت های ورزشی و هنری داشته اید ؟ ذکر نمایید")]
         public string SportHistory { get; set; }
