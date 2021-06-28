@@ -5684,6 +5684,7 @@
     <Content Include="Uploads\Carreer\44324e1ab54e4cca83fa690e9dadc020.pdf" />
     <Content Include="Uploads\Carreer\801080680d074402b67de9ef90dcd7c9.docx" />
     <Content Include="Uploads\Carreer\f1689388c43242feaae05185785079be.docx" />
+    <Content Include="Views\Home\Search.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
