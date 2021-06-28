@@ -1914,6 +1914,7 @@ body.top-search-active #mainMenu-trigger {
   height: 100%;
   letter-spacing: 2px;
   outline: 0 none;
+  float:right;
   padding: 0 94px 0 0; }
 
 #header.header-fullwidth #top-search form input {

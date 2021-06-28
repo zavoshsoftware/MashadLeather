@@ -1,0 +1,210 @@
+﻿@model ViewModels.ProductListViewModel
+@{
+    Layout = "~/Views/Shared/FrontEndLayout/_FrontEndLayout.cshtml";
+}
+
+@*id="particles-js" class="particles"*@
+<section id="page-title" data-parallax-image="/images/mashad-faq-img.jpg">
+    <div id="particles-js" class="particles" style="background: none"></div>
+    <div class="container">
+        <div class="slide-captions text-center text-light about-caption">
+            <label>@Resources.Label.MashadLeather</label>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <div class="row m-b-20">
+        </div>
+        <div class="shop">
+            <div class="grid-layout grid-4-columns" data-item="grid-item">
+                @foreach (var product in Model.Products)
+                {
+                    <div class="grid-item">
+                        <div class="product">
+                            <div class="product-image">
+                                <a href="/productQuiockView/@product.Id" data-lightbox="ajax">
+                                    <img alt="Shop product image!" src="https://mashadleather.com/@product.ImageUrl">
+                                </a>
+                                @if (product.HasTag)
+                                {
+                                    <span class="product-new">@product.TagTitle</span>
+                                }
+                                @if (product.IsAvailable == false)
+                                {
+                                    <span class="product-hot">ناموجود</span>
+                                }
+                                <span class="product-wishlist" id="likeBtn_@product.Id">
+                                    <a onclick="like('@product.Id');"><i class="fa fa-heart"></i></a>
+                                    <span class="hidden @product.LikeClass" id="like_@product.Id"><i class="fa fa-heart"></i></span>
+                                </span>
+                                <div class="product-overlay">
+                                    <a href="/productQuiockView/@product.Id" data-lightbox="ajax">@Resources.Label.QuickView</a>
+                                </div>
+                            </div>
+
+                            <div class="product-description">
+                                <div class="product-category">@product.ProductCategoryTitle</div>
+                                <div class="product-title">
+                                    <h2><a href="/product-detail/@product.Code">@product.Title</a></h2>
+                                </div>
+                                <div class="product-price">
+                                    @if (product.IsInPromotion)
+                                    {
+                                        <del>@product.Amount</del>@*<text>ریال</text>*@
+                                        <ins>@product.DiscountAmount</ins>
+
+                                        @*<text>@Resources.Label.Rial</text>*@
+                                    }
+                                    else
+                                    {
+                                        <ins>@product.Amount</ins>
+                                        @*<text>@Resources.Label.Rial</text>*@
+                                    }
+                                    @if (Model.CurrentCurrency != "euro")
+                                    {
+                                        <text>@Resources.Label.Rial</text>
+                                    }
+                                    else
+                                    {
+                                        <span><i class="fa fa-euro"></i></span>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+            <hr>
+
+
+            <div class="pagination pagination-simple">
+                <ul style="direction: rtl;">
+
+
+                    @foreach (var pageItem in Model.PageItems)
+                    {
+                        if (pageItem.IsCurrentPage)
+                        {
+                            <li class="active"><a href="#">@pageItem.PageId</a> </li>
+                        }
+                        else
+                        {
+                            <li><a href="/home/search?name=@ViewBag.searchField&pageid=@pageItem.PageId">@pageItem.PageId</a> </li>
+                        }
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="page-content" class="sidebar-right">
+    <div class="container">
+        <div class="row">
+            <div class="content col-md-12">
+                <div id="blog" class="single-post">
+                    <div class="post-item">
+                        <div class="post-item-wrap">
+                            <div class="comments rtl-comment" id="comments">
+                                <div class="comment_number">
+                                    @Model.Commnets.Count()   <span>@Resources.Label.Comment</span>
+                                </div>
+                                <div class="comment-list">
+                                    @foreach (var comment in Model.Commnets)
+                                    {
+                                        <div class="comment" id="comment-1">
+                                            <div class="image"><img alt="" src="/Images/avatar_default.jpg" class="avatar"></div>
+                                            <div class="text dir-rtl">
+                                                <h5 class="name dir-rtl">@comment.Name</h5>
+                                                <span class="comment_date dir-rtl">@comment.CreationDate.ToShortDateString()</span>
+                                                <a class="comment-reply-link  dir-rtl" href="#" onClick="LeaveComment('@comment.Id');return false;">@Resources.Label.Response</a>
+                                                <div class="text_holder rtl-paragragh">
+                                                    <p>@Html.Raw(comment.CommentBody)</p>
+                                                </div>
+                                            </div>
+                                            @if (!string.IsNullOrEmpty(comment.Response))
+                                            {
+                                                <div class="comment" id="comment-1-1">
+                                                    <div class="image"><img alt="" src="/Images/avatar_default.jpg" class="avatar"></div>
+                                                    <div class="text dir-rtl">
+                                                        <h5 class="name dir-rtl">چرم مشهد</h5>
+                                                        <div class="text_holder rtl-paragragh">
+                                                            <p>@Html.Raw(comment.Response)</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            }
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                            <div class="respond-form" id="respond">
+                                <div class="respond-comment">
+                                    <span>@Resources.Label.Comment </span>@Resources.Label.you
+                                </div>
+                                <div class="alert alert-danger dir-rtl" id="errorDiv"></div>
+                                <div class="alert alert-success dir-rtl" id="SuccessDiv">@Resources.Messages.SuccessComment.</div>
+                                <form class="form-gray-fields">
+                                    <div class="row">
+                                        <div class="col-md-6 float-left">
+                                            <div class="form-group">
+                                                <label class="upper dir-rtl" for="email">@Resources.Label.Email</label>
+                                                <input class="form-control required email dir-rtl" name="senderEmail" placeholder="@Resources.Label.Email" id="commentEmail" aria-required="true" type="email">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 float-left">
+                                            <div class="form-group">
+                                                <label class="upper dir-rtl" for="name">@Resources.Label.Name</label>
+                                                <input class="form-control required dir-rtl" name="senderName" placeholder="@Resources.Label.Name" id="commentName" aria-required="true" type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="upper dir-rtl" for="comment">@Resources.Label.Comment</label>
+                                                <textarea class="form-control required dir-rtl" name="comment" rows="9" placeholder="@Resources.Label.Comment" id="commentBody" aria-required="true"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group text-center">
+                                                <button class="btn" type="submit" onClick="SubmitComment(); return false;">@Resources.Label.Send</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@Html.Partial("FrontEndLayout/_MiniFooter")
+
+<div class="modal fade" id="exampleModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body dir-rtl">
+                کاربر گرامی، برای افزودن محصول به لیست علاقمندی ها باید وارد سایت شوید
+                <button type="button" class="btn-default" data-dismiss="modal"><i class="fa fa-close"></i></button>
+            </div>
+            <div class="modal-footer dir-rtl">
+                <a href="/Register" class="btn first-btn">ثبت نام</a>
+                <a href="/login" class="btn">ورود</a>
+                <a href="/RecoveryPassword" class="btn">فراموشی رمز عبور</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@*@section scripts{
+        <script src="~/Scripts/UI/plugins/components/particles-animation.js"></script>
+        <script src="~/Scripts/UI/plugins/components/particles.js"></script>
+    }*@
+

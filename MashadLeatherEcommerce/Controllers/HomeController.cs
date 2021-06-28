@@ -14,6 +14,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Web;
+using System.Web.Configuration;
 using System.Web.Mvc;
 using ViewModels;
 
@@ -539,7 +540,7 @@ namespace MashadLeatherEcommerce.Controllers
                 MenuGalleryGroups = baseViewModelHelper.GetMenuGalleryGroups(),
                 MenuItem = baseViewModelHelper.GetMenuItems(),
                 ProductCategories = db.ProductCategories.Where(c => c.IsDeleted == false && c.ParentId == null && c.IsActive).Take(4).ToList(),
-                SiteBranches = db.SiteBranches.Where(c=>c.IsDeleted==false&&c.Phone!=null&&c.IsActive).OrderBy(c=>c.SiteBranchGroup.Order).ToList()
+                SiteBranches = db.SiteBranches.Where(c => c.IsDeleted == false && c.Phone != null && c.IsActive).OrderBy(c => c.SiteBranchGroup.Order).ToList()
             };
             return View(textViewModel);
         }
@@ -587,7 +588,7 @@ namespace MashadLeatherEcommerce.Controllers
 
 
 
-            UserInformation userInformation =new UserInformation()
+            UserInformation userInformation = new UserInformation()
             {
                 Email = input.Email,
                 CellNumber = input.CellNumber,
@@ -601,11 +602,86 @@ namespace MashadLeatherEcommerce.Controllers
             TempData["success"] = "با تشکر. اطلاعات شما با موفقیت ثبت شد.";
             return View(textViewModel);
         }
-    }
+        [Route("home/search")]
+        public ActionResult Search(string name, int? pageId)
+        {
+            Helper.BaseViewModelHelper baseViewModelHelper = new BaseViewModelHelper();
+            ProductCategory productCategory =
+                db.ProductCategories.FirstOrDefault(current => current.Title == name);
 
-    public class userConflict
-    {
-        public string Version1 { get; set; }
-        public string Version2 { get; set; }
+            Helper.ProductHelper productHelper = new Helper.ProductHelper();
+
+            if (pageId == null)
+                pageId = 1;
+            //if (productCategory == null)
+            //    return RedirectPermanent("/category");
+            //var products = db.Products
+            //    .Where(current => current.ImageUrl != null && current.IsDeleted == false && current.IsActive &&
+            //                      current.ParentId == null).Where(t => name.Any(s => t.Title.ToLower().Contains(s))).ToList();
+            //;
+
+            var productsList = db.Products
+                .Where(current => current.ImageUrl != null && current.IsDeleted == false && current.IsActive &&
+                                  current.ParentId == null).ToList();
+
+            var products = productsList.Where(c => c.Title.Contains(name)).ToList();
+
+
+            ViewBag.total = products.Count();
+            ViewBag.searchField = name;
+
+            ProductListViewModel productList = new ProductListViewModel
+            {
+                MenuItem = baseViewModelHelper.GetMenuItems(),
+                Products = GetProductList(products).OrderByDescending(c => c.IsAvailable)
+                    .Skip(_productPagination * (pageId.Value - 1)).Take(_productPagination).ToList().ToList(),
+                MenuGalleryGroups = baseViewModelHelper.GetMenuGalleryGroups(),
+                //ProductCategory = GetProductCategory(productCategory),
+                Commnets = db.Comments.Where(c => c.IsActive && c.IsDeleted == false && c.ParentId == null).ToList(),
+                //BreadcrumpItems = GetProductCategoryBreadcrump(productCategory),
+                CurrentCurrency = oGetCurrency.CurrentCurrency(),
+                PageItems = productHelper.GetPagination(products.Count(), pageId),
+            };
+            return View(productList);
+        }
+
+        private readonly int _productPagination = Convert.ToInt32(WebConfigurationManager.AppSettings["productPaginationSize"]);
+        public List<ProductListItem> GetProductList(List<Product> products)
+        {
+            List<ProductListItem> productItems = new List<ProductListItem>();
+
+            foreach (Product product in products)
+            {
+                bool isAvailable = product.IsAvailable;
+
+                if (product.Barcode.Length == 20 && !db.Products.Any(c =>
+                     c.ParentId == product.Id && c.IsActive && c.IsDeleted == false && c.Quantity > 0))
+                    isAvailable = false;
+
+                productItems.Add(new ProductListItem()
+                {
+                    Id = product.Id,
+                    ImageUrl = product.ImageUrl,
+                    Amount = string.Format("{0:#,#}", product.AmountSrt),
+                    Title = product.TitleSrt,
+                    ProductCategoryTitle = product.ProductCategory.TitleSrt,
+                    LikeClass = ReturnUserLike(product.Id),
+                    DiscountAmount = string.Format("{0:#,#}", product.DiscountAmountSrt),
+                    IsInPromotion = product.IsInPromotion,
+                    HasTag = product.HasTag,
+                    TagTitle = product.TagTitleSrt,
+                    IsAvailable = isAvailable,
+                    Code = product.Code
+                });
+            }
+
+            return productItems;
+        }
+
+        public class userConflict
+        {
+            public string Version1 { get; set; }
+            public string Version2 { get; set; }
+        }
     }
 }
