@@ -1174,6 +1174,8 @@
     <Content Include="Images\login-bg.jpg" />
     <Content Include="Images\logo-dark.png" />
     <Content Include="Images\logo-en.jpg" />
+    <Content Include="Images\logo-gold.png" />
+    <Content Include="Images\logo-mashad leather-capital-gold.png" />
     <Content Include="Images\logo-sidebar-dark.png" />
     <Content Include="Images\logo-sidebar.png" />
     <Content Include="Images\logo.png" />
