@@ -618,8 +618,8 @@ function postSamanRefId() {
 function FinalizeOrder() {
 
 
-    var gateway = $('#payment-gateway').val();
-
+/* var gateway = $('#payment-gateway').val();*/
+    var gateway = $('input[name="payment-gateway"]:checked').val();
 
     var jsondata = get();
     var t = $('#total').html();
@@ -691,8 +691,8 @@ function FinalizeOrder() {
 
                             var refffid = GetRefIdFromResult(result);
 
-                            var gateway = $('#payment-gateway').val();
-
+                        /* var gateway = $('#payment-gateway').val();*/
+                            var gateway = $('input[name="payment-gateway"]:checked').val();
 
                             if (gateway === 'mellat') {
                                 postRefId(refffid);
@@ -817,8 +817,8 @@ function redirectToBank() {
 
     //var paymentType = $('input[name="payment_option"]:checked').val();
 
-    var gateway = $('#payment-gateway').val();
-
+/*var gateway = $('#payment-gateway').val();*/
+    var gateway = $('input[name="payment-gateway"]:checked').val();
     //if (paymentType === "online") {
 
     if (gateway === 'mellat') {

@@ -852,27 +852,27 @@ namespace MashadLeatherEcommerce.Controllers
 
             decimal clubPercent = 0;
 
-            if (HttpContext.User.Identity.IsAuthenticated)
-            {
-                var identity = (System.Security.Claims.ClaimsIdentity)User.Identity;
-                string uid = identity.FindFirst(System.Security.Claims.ClaimTypes.Name).Value;
-                Guid userId = new Guid(uid);
-                var user = db.Users.Find(userId);
+            //if (HttpContext.User.Identity.IsAuthenticated)
+            //{
+            //    var identity = (System.Security.Claims.ClaimsIdentity)User.Identity;
+            //    string uid = identity.FindFirst(System.Security.Claims.ClaimTypes.Name).Value;
+            //    Guid userId = new Guid(uid);
+            //    var user = db.Users.Find(userId);
 
-                if (user?.Amount != null)
-                    wallet = user.Amount.Value;
+            //    if (user?.Amount != null)
+            //        wallet = user.Amount.Value;
 
-                string[] clubInfo = GetCustomerClubTitle(user);
+            //    string[] clubInfo = GetCustomerClubTitle(user);
 
-                if (clubInfo != null)
-                {
-                    if (!string.IsNullOrEmpty(clubInfo[0]))
-                    {
-                        clubTitle = clubInfo[0];
-                    }
-                    clubPercent = GetClubDiscountPercentByCustomerGroupId(Convert.ToInt32(clubInfo[1]));
-                }
-            }
+            //    if (clubInfo != null)
+            //    {
+            //        if (!string.IsNullOrEmpty(clubInfo[0]))
+            //        {
+            //            clubTitle = clubInfo[0];
+            //        }
+            //        clubPercent = GetClubDiscountPercentByCustomerGroupId(Convert.ToInt32(clubInfo[1]));
+            //    }
+            //}
 
             wallet = 0;
 

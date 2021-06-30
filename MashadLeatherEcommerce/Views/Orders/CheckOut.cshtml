@@ -239,13 +239,23 @@
 						</div>
 						</div>*@
 
-									<div class="col-md-12 m-b-20 policy">
-										<select id="payment-gateway">
-											<option value="mellat">درگاه پرداخت بانک ملت</option>
-											<option value="saman">درگاه پرداخت سامان کیش</option>
-										</select>
-										<img id="loadingImg" src="~/images/loading.gif"/>
-									</div>
+                                <div class="col-md-12 m-b-20 policy">
+                                    @*<select id="payment-gateway">
+            <option value="mellat">درگاه پرداخت بانک ملت</option>
+            <option value="saman">درگاه پرداخت سامان کیش</option>
+        </select>*@
+                                    <label class="" for="payment-gateway1">درگاه ملت</label>
+                                    <input type="radio" name="payment-gateway" class="m-l-10" id="payment-gateway1" value="mellat" checked>
+                                    <label for="payment-gateway1">
+                                        <img src="~/Images/mellat.jpg" >
+                                    </label>
+                                    <label class="" for="payment-gateway2">درگاه سامان</label>
+                                    <input type="radio" name="payment-gateway" class="" id="payment-gateway2" value="saman">
+                                    <label for="payment-gateway2">
+										<img src="~/Images/saman.png" >
+									</label>
+                                    <img id="loadingImg" src="~/images/loading.gif" />
+                                </div>
 									<div class="col-md-12 m-b-20 policy">
 										@*<div class="col-md-4 text-center">*@
 										<button type="button" onclick="FinalizeOrder();" id="btnFinalizeOrder" class="btn btn-default icon-left float-right"><span>@Resources.Label.Finlize</span></button>
