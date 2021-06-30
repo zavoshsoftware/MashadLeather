@@ -718,13 +718,13 @@ namespace MashadLeatherEcommerce.Controllers
             if (customerGroupId == 4106)
                 return 0;
             if (customerGroupId == 4107)
-                return 3m / 100m;
-            if (customerGroupId == 4108)
                 return 5m / 100m;
-            if (customerGroupId == 4109)
-                return 8m / 100m;
-            if (customerGroupId == 2244)
+            if (customerGroupId == 4108)
                 return 10m / 100m;
+            if (customerGroupId == 4109)
+                return 15m / 100m;
+            if (customerGroupId == 2244)
+                return 20m / 100m;
 
             return 0;
         }
@@ -852,27 +852,27 @@ namespace MashadLeatherEcommerce.Controllers
 
             decimal clubPercent = 0;
 
-            //if (HttpContext.User.Identity.IsAuthenticated)
-            //{
-            //    var identity = (System.Security.Claims.ClaimsIdentity)User.Identity;
-            //    string uid = identity.FindFirst(System.Security.Claims.ClaimTypes.Name).Value;
-            //    Guid userId = new Guid(uid);
-            //    var user = db.Users.Find(userId);
+            if (HttpContext.User.Identity.IsAuthenticated)
+            {
+                var identity = (System.Security.Claims.ClaimsIdentity)User.Identity;
+                string uid = identity.FindFirst(System.Security.Claims.ClaimTypes.Name).Value;
+                Guid userId = new Guid(uid);
+                var user = db.Users.Find(userId);
 
-            //    if (user?.Amount != null)
-            //        wallet = user.Amount.Value;
+                if (user?.Amount != null)
+                    wallet = user.Amount.Value;
 
-            //    string[] clubInfo = GetCustomerClubTitle(user);
+                string[] clubInfo = GetCustomerClubTitle(user);
 
-            //    if (clubInfo != null)
-            //    {
-            //        if (!string.IsNullOrEmpty(clubInfo[0]))
-            //        {
-            //            clubTitle = clubInfo[0];
-            //        }
-            //        clubPercent = GetClubDiscountPercentByCustomerGroupId(Convert.ToInt32(clubInfo[1]));
-            //    }
-            //}
+                if (clubInfo != null)
+                {
+                    if (!string.IsNullOrEmpty(clubInfo[0]))
+                    {
+                        clubTitle = clubInfo[0];
+                    }
+                    clubPercent = GetClubDiscountPercentByCustomerGroupId(Convert.ToInt32(clubInfo[1]));
+                }
+            }
 
             wallet = 0;
 
