@@ -11,6 +11,7 @@ using ViewModels;
 using System.Web.UI.WebControls;
 using System.Text.RegularExpressions;
 using System.Configuration;
+using System.Threading.Tasks;
 using MashadLeatherEcommerce.KiyanService;
 using MashadLeatherEcommerce.MellatWebService;
 namespace MashadLeatherEcommerce.Controllers
@@ -35,7 +36,7 @@ namespace MashadLeatherEcommerce.Controllers
 
         [Authorize(Roles = "Administrator,SuperAdministrator,eshopadmin,orderadmin")]
         [Route("orders/{statusId:int}")]
-        public ActionResult Index(int statusId, string status, string start, string end)
+        public async Task<ActionResult> Index(int statusId, string status, string start, string end)
         {
             ViewBag.vb1 = statusId;
             ViewBag.vb2 = status;

@@ -112,6 +112,10 @@ namespace Models
         public string SportHistory { get; set; }
         [Display(Name = "توضیحات")]
         public string ConfirmedDescription { get; set; }
+
+        public Guid? CareerTypeId { get; set; }
+        public virtual CareerType CareerType { get; set; }
+
         public virtual ICollection<CarreerIntroduced> CarreerIntroduceds { get; set; }
         public virtual ICollection<CarreerPreviousExperience> CarreerPreviousExperiences { get; set; }
         public virtual ICollection<CarreerFamilyInformation> CarreerFamilyInformation { get; set; }

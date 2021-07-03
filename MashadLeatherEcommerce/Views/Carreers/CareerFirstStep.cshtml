@@ -1,0 +1,52 @@
+﻿@model ViewModels.CareerTypeViewModel
+@{
+	ViewBag.Title = Resources.Label.Career + " | " + Resources.Label.MashadLeather;
+	ViewBag.Description = "همکاری با چرم مشهد";
+	ViewBag.Canonical = "https://www.mashadleather.com/carreer";
+	Layout = "~/Views/Shared/FrontEndLayout/_FrontEndLayout.cshtml";
+}
+@section head
+{
+	<style>
+	 
+		#career {
+			margin-top: 30px;
+		}
+
+		#careerPreForm {
+			padding-top: 40px;
+			padding-bottom: 40px;
+			margin-top: 40px;
+			margin-bottom: 30px;
+			background-color: #ececec;
+		}
+		#careerPreForm a {
+			width: 250px;
+			font-size: 18px
+		}
+	</style>
+}
+<section id="page-title" data-parallax-image="/images/mashad-faq-img.jpg">
+	<div id="particles-js" class="particles" style="background: none"></div>
+	<div class="container">
+		<div class="slide-captions text-center text-light about-caption">
+			<h1 class="strong">فرم استخدام</h1> <label>@Resources.Label.MashadLeather</label>
+		</div>
+	</div>
+</section>
+<div class="container" style="direction: rtl; text-align: center">
+	<div  id="careerPreForm">
+	@*<p class="alert alert-info">بر روی یکی از آیتم های زیر کلیک کنید</p>*@
+	<h2>فرصت های شغلی</h2>
+	@foreach (var careerType in Model.CareerTypes)
+	{
+		<p><a class="btn btn-primary" href="/career/@careerType.Id">@careerType.Title</a></p>
+
+	}
+</div>
+</div>
+@section scripts{
+	<script src="~/Scripts/UI/plugins/components/particles-animation.js"></script>
+	<script src="~/Scripts/UI/plugins/components/particles.js"></script>
+
+}

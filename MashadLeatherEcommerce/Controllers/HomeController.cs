@@ -13,6 +13,7 @@ using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Configuration;
 using System.Web.Mvc;
@@ -31,7 +32,7 @@ namespace MashadLeatherEcommerce.Controllers
         GetCurrency oGetCurrency = new GetCurrency();
         // GET: Home
         Helper.BaseViewModelHelper baseViewModelHelper = new BaseViewModelHelper();
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
 
 
@@ -357,86 +358,86 @@ namespace MashadLeatherEcommerce.Controllers
             return View(organizationalSale);
         }
 
-        [Route("career")]
-        public ActionResult Cooperation()
-        {
-            CooperationViewModel cooperationViewModel = new CooperationViewModel();
-            cooperationViewModel.MenuItem = baseViewModelHelper.GetMenuItems();
-            cooperationViewModel.MenuGalleryGroups = baseViewModelHelper.GetMenuGalleryGroups();
-            Text mainText = db.Texts.Where(current => current.Name == "cooperation").FirstOrDefault();
-            if (mainText != null)
-            {
-                cooperationViewModel.MainText = mainText;
-                cooperationViewModel.HeaderImage = mainText.ImageUrl;
-            }
-            TempData["alertText"] = "";
-            //if (!string.IsNullOrEmpty(alertText))
-            //{
-            //    TempData["alertText"] = alertText;
-            //}
-            return View(cooperationViewModel);
-        }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        [Route("career")]
-        public ActionResult Cooperation(CooperationViewModel model, HttpPostedFileBase fileUpload)
-        {
-            model.MenuItem = baseViewModelHelper.GetMenuItems();
-            model.MenuGalleryGroups = baseViewModelHelper.GetMenuGalleryGroups();
-            Text mainText = db.Texts.Where(current => current.Name == "cooperation").FirstOrDefault();
-            if (mainText != null)
-            {
-                model.MainText = mainText;
-                model.HeaderImage = mainText.ImageUrl;
-            }
+        //[Route("career")]
+        //public ActionResult Cooperation()
+        //{
+        //    CooperationViewModel cooperationViewModel = new CooperationViewModel();
+        //    cooperationViewModel.MenuItem = baseViewModelHelper.GetMenuItems();
+        //    cooperationViewModel.MenuGalleryGroups = baseViewModelHelper.GetMenuGalleryGroups();
+        //    Text mainText = db.Texts.Where(current => current.Name == "cooperation").FirstOrDefault();
+        //    if (mainText != null)
+        //    {
+        //        cooperationViewModel.MainText = mainText;
+        //        cooperationViewModel.HeaderImage = mainText.ImageUrl;
+        //    }
+        //    TempData["alertText"] = "";
+        //    //if (!string.IsNullOrEmpty(alertText))
+        //    //{
+        //    //    TempData["alertText"] = alertText;
+        //    //}
+        //    return View(cooperationViewModel);
+        //}
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //[Route("career")]
+        //public ActionResult Cooperation(CooperationViewModel model, HttpPostedFileBase fileUpload)
+        //{
+        //    model.MenuItem = baseViewModelHelper.GetMenuItems();
+        //    model.MenuGalleryGroups = baseViewModelHelper.GetMenuGalleryGroups();
+        //    Text mainText = db.Texts.Where(current => current.Name == "cooperation").FirstOrDefault();
+        //    if (mainText != null)
+        //    {
+        //        model.MainText = mainText;
+        //        model.HeaderImage = mainText.ImageUrl;
+        //    }
 
 
-            try
-            {
+        //    try
+        //    {
 
 
-                string newFilenameUrl = string.Empty;
+        //        string newFilenameUrl = string.Empty;
 
 
-                if (fileUpload != null)
-                {
-                    string filename = Path.GetFileName(fileUpload.FileName);
-                    string newFilename = Guid.NewGuid().ToString().Replace("-", string.Empty)
-                                         + Path.GetExtension(filename);
+        //        if (fileUpload != null)
+        //        {
+        //            string filename = Path.GetFileName(fileUpload.FileName);
+        //            string newFilename = Guid.NewGuid().ToString().Replace("-", string.Empty)
+        //                                 + Path.GetExtension(filename);
 
-                    newFilenameUrl = "/Uploads/Resume/" + newFilename;
-                    string physicalFilename = Server.MapPath(newFilenameUrl);
+        //            newFilenameUrl = "/Uploads/Resume/" + newFilename;
+        //            string physicalFilename = Server.MapPath(newFilenameUrl);
 
-                    fileUpload.SaveAs(physicalFilename);
-                    TempData["alertText"] = "رزومه شما با موفقیت ثبت گردید.";
+        //            fileUpload.SaveAs(physicalFilename);
+        //            TempData["alertText"] = "رزومه شما با موفقیت ثبت گردید.";
 
-                    ResumeFile resume = new ResumeFile()
-                    {
-                        Id = Guid.NewGuid(),
-                        CreationDate = DateTime.Now,
-                        IsDeleted = false,
-                        IsActive = true,
-                        FileUrl = newFilenameUrl
-                    };
-                    db.ResumeFiles.Add(resume);
-                    db.SaveChanges();
+        //            ResumeFile resume = new ResumeFile()
+        //            {
+        //                Id = Guid.NewGuid(),
+        //                CreationDate = DateTime.Now,
+        //                IsDeleted = false,
+        //                IsActive = true,
+        //                FileUrl = newFilenameUrl
+        //            };
+        //            db.ResumeFiles.Add(resume);
+        //            db.SaveChanges();
 
-                    return View(model);
-                    //return RedirectToAction("Cooperation",new { alertText = message });
+        //            return View(model);
+        //            //return RedirectToAction("Cooperation",new { alertText = message });
 
 
-                }
-                TempData["alertText"] = "خطا در ثبت رزومه!! مجددا تلاش نمایید";
-                return View(model);
-            }
-            catch (Exception e)
-            {
-                TempData["alertText"] = "خطا در ثبت رزومه!! مجددا تلاش نمایید";
-                return View(model);
-            }
+        //        }
+        //        TempData["alertText"] = "خطا در ثبت رزومه!! مجددا تلاش نمایید";
+        //        return View(model);
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        TempData["alertText"] = "خطا در ثبت رزومه!! مجددا تلاش نمایید";
+        //        return View(model);
+        //    }
 
-            //return RedirectToAction("Cooperation", new { alertText = message });
-        }
+        //    //return RedirectToAction("Cooperation", new { alertText = message });
+        //}
 
         [Authorize(Roles = "Administrator,SuperAdministrator,eshopadmin")]
         public ActionResult ChangeCurrency()
@@ -602,8 +603,8 @@ namespace MashadLeatherEcommerce.Controllers
             TempData["success"] = "با تشکر. اطلاعات شما با موفقیت ثبت شد.";
             return View(textViewModel);
         }
-        [Route("home/search")]
-        public ActionResult Search(string name, int? pageId)
+        //[Route("home/search/")]
+        public async Task<ActionResult> Search(string name, int? pageId)
         {
             Helper.BaseViewModelHelper baseViewModelHelper = new BaseViewModelHelper();
             ProductCategory productCategory =
@@ -624,7 +625,7 @@ namespace MashadLeatherEcommerce.Controllers
                 .Where(current => current.ImageUrl != null && current.IsDeleted == false && current.IsActive &&
                                   current.ParentId == null).ToList();
 
-            var products = productsList.Where(c => c.Title.Contains(name)).ToList();
+            var products = productsList.Where(c => c.Barcode.Contains(name)).ToList();
 
 
             ViewBag.total = products.Count();

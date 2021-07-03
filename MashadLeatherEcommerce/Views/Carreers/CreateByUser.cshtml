@@ -726,7 +726,7 @@
 		</div>
 	</div>
 </div>
-<button class="btn btn-default" onclick="submitCareer();" type="button" id="form-submit"><i class="fa fa-paper-plane"></i>&nbsp;@Resources.Label.Send</button>
+<button class="btn btn-default" onclick="submitCareer('@Model.TypeId');" type="button" id="form-submit"><i class="fa fa-paper-plane"></i>&nbsp;@Resources.Label.Send</button>
 
 <div class="alert alert-danger" id="errorDiv"></div>
 <div class="alert alert-success" id="successDiv">اطلاعات شما با موفقیت ثبت گردید و توسط همکاران ما مورد بررسی قرار خواهد گرفت</div>
@@ -741,7 +741,7 @@
 		<script>
 
 
-			function submitCareer() {
+			function submitCareer(id) {
 				var FullName = $('#FullName').val();
 				var Email = $('#Email').val();
 				var NationalCode = $('#NationalCode').val();
@@ -898,6 +898,7 @@
 						{
 							url: "/carreers/AjaxPost",
 							data: {
+								TypeId: id,
 								FullName: FullName,
 								Email: Email,
 								NationalCode: NationalCode,

@@ -13,6 +13,8 @@ namespace ViewModels
         //{
         //    Carreer = new Carreer();
         //}
+
+        public Guid  TypeId { get; set; }
         [Display(Name = "نام و نام خانوادگی*")]
         [Required(ErrorMessage = "فیلد {0} اجباری می باشد.")]
         public string FullName { get; set; }

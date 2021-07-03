@@ -72,6 +72,8 @@ namespace Models
         public System.Data.Entity.DbSet<Models.CarreerIntroduced> CarreerIntroduceds { get; set; }
 
         public System.Data.Entity.DbSet<Models.CarreerPreviousExperience> CarreerPreviousExperiences { get; set; }
+
+        public System.Data.Entity.DbSet<Models.CareerType> CareerTypes { get; set; }
     }
 
 }

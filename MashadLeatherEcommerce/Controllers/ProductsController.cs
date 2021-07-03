@@ -12,6 +12,7 @@ using Helper;
 using MashadLeatherEcommerce.KiyanService;
 using ViewModels;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Web.Configuration;
 using System.Web.UI.WebControls;
 using Helpers;
@@ -65,7 +66,7 @@ namespace MashadLeatherEcommerce.Controllers
 
         // GET: Products/Details/5
         [Route("product-detail/{id:Guid?}")]
-        public ActionResult Details(Guid? id)
+        public async Task<ActionResult> Details(Guid? id)
         {
             Helper.BaseViewModelHelper baseViewModelHelper = new BaseViewModelHelper();
 
@@ -85,7 +86,7 @@ namespace MashadLeatherEcommerce.Controllers
 
 
         [Route("product-detail/{code:int}")]
-        public ActionResult Details(int code)
+        public async Task<ActionResult> Details(int code)
         {
             Helper.BaseViewModelHelper baseViewModelHelper = new BaseViewModelHelper();
 
@@ -1654,7 +1655,7 @@ namespace MashadLeatherEcommerce.Controllers
 
         [AllowAnonymous]
         [Route("product/{urlParam}")]
-        public ActionResult List(string urlParam, int? pageId)
+        public async Task<ActionResult> List(string urlParam, int? pageId)
         {
             Helper.BaseViewModelHelper baseViewModelHelper = new BaseViewModelHelper();
 
@@ -1902,7 +1903,7 @@ namespace MashadLeatherEcommerce.Controllers
 
         [AllowAnonymous]
         [Route("productQuiockView/{id:Guid}")]
-        public ActionResult ProductQuiockView(Guid id)
+        public async Task<ActionResult> ProductQuiockView(Guid id)
         {
             Product product = db.Products.Find(id);
 

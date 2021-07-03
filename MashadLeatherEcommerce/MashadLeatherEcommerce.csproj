@@ -4743,6 +4743,7 @@
     <Compile Include="Controllers\BlackListUsersController.cs" />
     <Compile Include="Controllers\BlogGroupsController.cs" />
     <Compile Include="Controllers\BlogsController.cs" />
+    <Compile Include="Controllers\CareerTypesController.cs" />
     <Compile Include="Controllers\CarreerEducationalCoursesController.cs" />
     <Compile Include="Controllers\CarreerFamilyInformationsController.cs" />
     <Compile Include="Controllers\CarreerIntroducedsController.cs" />
@@ -5222,6 +5223,10 @@
     <Compile Include="Migrations\202106261306556_V113.Designer.cs">
       <DependentUpon>202106261306556_V113.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107030556408_V114.cs" />
+    <Compile Include="Migrations\202107030556408_V114.Designer.cs">
+      <DependentUpon>202107030556408_V114.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DatabaseContext.cs" />
     <Compile Include="Models\DatabaseContextInitializer.cs" />
@@ -5229,6 +5234,7 @@
     <Compile Include="Models\Entities\BaseEntity.cs" />
     <Compile Include="Models\Entities\Blog.cs" />
     <Compile Include="Models\Entities\BlogGroup.cs" />
+    <Compile Include="Models\Entities\CareerType.cs" />
     <Compile Include="Models\Entities\Carreer.cs" />
     <Compile Include="Models\Entities\City.cs" />
     <Compile Include="Models\Entities\BlackListUser.cs" />
@@ -5278,6 +5284,7 @@
     <Compile Include="Services\Sms\SendSms.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\CareerPostViewModel.cs" />
+    <Compile Include="ViewModels\CareerTypeViewModel.cs" />
     <Compile Include="ViewModels\CarreerViewModel.cs" />
     <Compile Include="ViewModels\OrderDashboardViewModel.cs" />
     <Compile Include="ViewModels\SpringPromotionViewModel.cs" />
@@ -5687,6 +5694,12 @@
     <Content Include="Uploads\Carreer\801080680d074402b67de9ef90dcd7c9.docx" />
     <Content Include="Uploads\Carreer\f1689388c43242feaae05185785079be.docx" />
     <Content Include="Views\Home\Search.cshtml" />
+    <Content Include="Views\CareerTypes\Create.cshtml" />
+    <Content Include="Views\CareerTypes\Delete.cshtml" />
+    <Content Include="Views\CareerTypes\Details.cshtml" />
+    <Content Include="Views\CareerTypes\Edit.cshtml" />
+    <Content Include="Views\CareerTypes\Index.cshtml" />
+    <Content Include="Views\Carreers\CareerFirstStep.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -6024,6 +6037,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106261306556_V113.resx">
       <DependentUpon>202106261306556_V113.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107030556408_V114.resx">
+      <DependentUpon>202107030556408_V114.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
