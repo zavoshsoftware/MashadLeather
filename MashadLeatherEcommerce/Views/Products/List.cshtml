@@ -2,6 +2,56 @@
 @{
     Layout = "~/Views/Shared/FrontEndLayout/_FrontEndLayout.cshtml";
 }
+
+@section head{
+	<script type="application/ld+json">
+		{
+		"@@context": "http://schema.org",
+		"@@type": "BreadcrumbList",
+		"itemListElement": [{
+		"@@type": "ListItem",
+		"position": 1,
+		"item": {
+		"@@id": "https://www.mashadleather.com/",
+		"name": "چرم مشهد"
+		}
+		},
+		@{
+			int i = 2;
+			foreach (var item in Model.BreadcrumpItems)
+			{
+				if (item.IsLast)
+				{
+					<text> {
+					"@@type": "ListItem",
+					"position": 2,
+					"item": {
+					"@@id": "/product/@item.UrlParam",
+					"name": "@item.Title"
+					}
+					}
+				</text>
+				}
+				else
+				{
+					<text> {
+					"@@type": "ListItem",
+					"position": 2,
+					"item": {
+					"@@id": "/category/@item.UrlParam",
+					"name": "@item.Title"
+					}
+					},
+				</text>
+				}
+			
+				i++;
+			}
+		}
+	 ]
+		}
+	</script>
+}
 @*id="particles-js" class="particles"*@
 <section id="page-title" data-parallax-image="@ViewBag.SlideImage">
     <div style="background: none"></div>

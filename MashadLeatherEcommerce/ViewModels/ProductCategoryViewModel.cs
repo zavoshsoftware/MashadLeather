@@ -25,5 +25,6 @@ namespace ViewModels
         public string Title { get; set; }
         public string UrlParam { get; set; }
         public int Order { get; set; }
+        public bool IsLast { get; set; }
     }
 }

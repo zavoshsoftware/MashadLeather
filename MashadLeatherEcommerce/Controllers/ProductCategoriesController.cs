@@ -254,8 +254,8 @@ namespace MashadLeatherEcommerce.Controllers
         [Route("productCategory/list/{parentId:Guid?}")]
         public ActionResult List(Guid? parentId)
         {
-            if(parentId==null)
-                return RedirectPermanent("/category" );
+            if (parentId == null)
+                return RedirectPermanent("/category");
 
             ProductCategory pc = db.ProductCategories.Find(parentId);
 
@@ -316,7 +316,7 @@ namespace MashadLeatherEcommerce.Controllers
 
             if (!db.ProductCategories.Any(c => c.ParentId == oProductCategory.Id))
                 return RedirectPermanent("/product/" + urlParam);
-            
+
             ProductCategoryViewModel productCategoryList = new ProductCategoryViewModel
             {
                 MenuGalleryGroups = baseViewModelHelper.GetMenuGalleryGroups(),
@@ -339,6 +339,7 @@ namespace MashadLeatherEcommerce.Controllers
                 Order = 10,
                 Title = currentProductCategory.TitleSrt,
                 UrlParam = currentProductCategory.UrlParam,
+                IsLast = true
             });
 
             if (currentProductCategory.ParentId != null)
@@ -347,7 +348,8 @@ namespace MashadLeatherEcommerce.Controllers
                 {
                     Order = 9,
                     Title = currentProductCategory.Parent.TitleSrt,
-                UrlParam = currentProductCategory.Parent.UrlParam,
+                    UrlParam = currentProductCategory.Parent.UrlParam,
+                    IsLast = false
                 });
 
                 if (currentProductCategory.Parent.ParentId != null)
@@ -356,24 +358,25 @@ namespace MashadLeatherEcommerce.Controllers
                     {
                         Order = 8,
                         Title = currentProductCategory.Parent.Parent.TitleSrt,
-                UrlParam = currentProductCategory.Parent.Parent.UrlParam,
+                        UrlParam = currentProductCategory.Parent.Parent.UrlParam,
+                    IsLast = false
                     });
                 }
-                }
-            return list.OrderBy(c=>c.Order).ToList();
+            }
+            return list.OrderBy(c => c.Order).ToList();
         }
-      
+
         public List<ProductCategoryListItem> GetProductCategory(ProductCategory oProductCategory)
         {
 
             if (oProductCategory == null)
                 return null;
-             
+
 
             List<ProductCategoryListItem> productCategories = new List<ProductCategoryListItem>();
             ViewBag.FontSize = "50px;";
 
-            ViewBag.Canonical = "https://www.mashadleather.com/category/"+ oProductCategory.UrlParam.ToLower();
+            ViewBag.Canonical = "https://www.mashadleather.com/category/" + oProductCategory.UrlParam.ToLower();
             ViewBag.Description = "خرید اینترنتی محصولات " + oProductCategory.Title +
                                   " از فروشگاه اینترنتی چرم مشهد. بهره مندی از تخفیفات و امتیازات باشگاه مشتریان چرم مشهد با خرید آنلاین محصولات چرم مشهد";
 

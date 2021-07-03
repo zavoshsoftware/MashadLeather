@@ -29,7 +29,7 @@ namespace MashadLeatherEcommerce.Controllers
         [Authorize(Roles = "Administrator,SuperAdministrator,eshopadmin")]
         public ActionResult Index(Guid? id)
         {
-            var identity = (System.Security.Claims.ClaimsIdentity) User.Identity;
+            var identity = (System.Security.Claims.ClaimsIdentity)User.Identity;
             string roleName = identity.FindFirst(System.Security.Claims.ClaimTypes.Role).Value;
             ViewBag.roleName = roleName;
             // List<Product> products = new List<Product>();
@@ -272,7 +272,7 @@ namespace MashadLeatherEcommerce.Controllers
                 product.LastModifiedDate = DateTime.Now;
                 db.Entry(product).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index", new {id = product.ParentId});
+                return RedirectToAction("Index", new { id = product.ParentId });
             }
             //ViewBag.ProductCategoryId = new SelectList(db.ProductCategories, "Id", "Title", product.ProductCategoryId);
 
@@ -394,7 +394,7 @@ namespace MashadLeatherEcommerce.Controllers
                 }
 
                 parentProduct.Quantity = qty;
-                parentProduct.LastModifiedDate=DateTime.Now;
+                parentProduct.LastModifiedDate = DateTime.Now;
 
                 if (qty == 0)
                     parentProduct.IsAvailable = false;
@@ -1736,6 +1736,7 @@ namespace MashadLeatherEcommerce.Controllers
                 Order = 10,
                 Title = currentProductCategory.TitleSrt,
                 UrlParam = currentProductCategory.UrlParam,
+                IsLast = true
             });
 
             if (currentProductCategory.ParentId != null)
@@ -1745,6 +1746,7 @@ namespace MashadLeatherEcommerce.Controllers
                     Order = 9,
                     Title = currentProductCategory.Parent.TitleSrt,
                     UrlParam = currentProductCategory.Parent.UrlParam,
+                    IsLast = false
                 });
 
                 if (currentProductCategory.Parent.ParentId != null)
@@ -1754,6 +1756,7 @@ namespace MashadLeatherEcommerce.Controllers
                         Order = 8,
                         Title = currentProductCategory.Parent.Parent.TitleSrt,
                         UrlParam = currentProductCategory.Parent.Parent.UrlParam,
+                        IsLast = false
                     });
                 }
             }
@@ -1769,6 +1772,7 @@ namespace MashadLeatherEcommerce.Controllers
                 Order = 10,
                 Title = currentProduct.TitleSrt,
                 UrlParam = currentProduct.Code.ToString(),
+                IsLast = true
             });
 
             if (currentProduct.ProductCategoryId != null)
@@ -1778,6 +1782,7 @@ namespace MashadLeatherEcommerce.Controllers
                     Order = 9,
                     Title = currentProduct.ProductCategory.TitleSrt,
                     UrlParam = currentProduct.ProductCategory.UrlParam,
+                    IsLast = false
                 });
 
                 if (currentProduct.ProductCategory.ParentId != null)
@@ -1787,6 +1792,7 @@ namespace MashadLeatherEcommerce.Controllers
                         Order = 8,
                         Title = currentProduct.ProductCategory.Parent.TitleSrt,
                         UrlParam = currentProduct.ProductCategory.Parent.UrlParam,
+                        IsLast = false
                     });
                     if (currentProduct.ProductCategory.Parent.ParentId != null)
                     {
@@ -1795,6 +1801,7 @@ namespace MashadLeatherEcommerce.Controllers
                             Order = 7,
                             Title = currentProduct.ProductCategory.Parent.Parent.TitleSrt,
                             UrlParam = currentProduct.ProductCategory.Parent.Parent.UrlParam,
+                            IsLast = false
                         });
                     }
                 }
@@ -2383,7 +2390,7 @@ namespace MashadLeatherEcommerce.Controllers
                 foreach (var promotion in pro.ResponseResult[promotionIndex].PromotionLineItem)
                 {
                     string barcode = promotion.BarCode;
-                    result += barcode +" : "+ promotion.DecreaseAmount + " | ";
+                    result += barcode + " : " + promotion.DecreaseAmount + " | ";
                 }
 
                 return result;
@@ -2435,7 +2442,7 @@ namespace MashadLeatherEcommerce.Controllers
             {
                 string barcode = promotion.BarCode.ToLower();
 
-                var products= db.Products
+                var products = db.Products
                     .Where(current => current.Barcode.ToLower() == barcode && current.IsDeleted == false && current.ParentId != null);
 
                 //if (barcode.Contains("x0114")|| barcode.Contains("x5014"))
@@ -2471,7 +2478,7 @@ namespace MashadLeatherEcommerce.Controllers
 
             CalculateParentPrices();
 
-           // SetOtherProductDiscount();
+            // SetOtherProductDiscount();
 
             db.SaveChanges();
         }
