@@ -625,7 +625,7 @@ namespace MashadLeatherEcommerce.Controllers
                 .Where(current => current.ImageUrl != null && current.IsDeleted == false && current.IsActive &&
                                   current.ParentId == null).ToList();
 
-            var products = productsList.Where(c => c.Barcode.Contains(name)).ToList();
+            var products = productsList.Where(c => c.Barcode.ToLower().Contains(name)).ToList();
 
 
             ViewBag.total = products.Count();

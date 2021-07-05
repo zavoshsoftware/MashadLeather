@@ -2065,7 +2065,7 @@ namespace MashadLeatherEcommerce.Controllers
             string productGroup = productCode.Substring(0, 1).ToLower();
 
             if (productGroup == "c" || productGroup == "b" || productGroup == "k" || productGroup == "j" ||
-                productGroup == "m" || productGroup == "r")
+                productGroup == "m" || productGroup == "r" || productGroup == "w")
                 return true;
 
             return false;
