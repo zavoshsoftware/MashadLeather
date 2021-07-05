@@ -142,7 +142,8 @@ namespace Models
         public string TagTitleEn { get; set; }
         [Display(Name = "عنوان تگ عربی")]
         public string TagTitleAr { get; set; }
-
+        [Display(Name = "تعداد بازدید")]
+        public int? Visit { get; set; }
         public bool IsAvailable { get; set; }
 
         [NotMapped]

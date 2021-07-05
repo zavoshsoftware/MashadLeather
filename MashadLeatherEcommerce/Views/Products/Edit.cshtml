@@ -19,7 +19,7 @@
     @Html.HiddenFor(model => model.ColorId)
     @Html.HiddenFor(model => model.Barcode)
     @Html.HiddenFor(model => model.KiyanCreateDate)
-    @Html.HiddenFor(model => model.Quantity) 
+    @Html.HiddenFor(model => model.Quantity)
 
     <div class="form-group">
         @Html.LabelFor(model => model.Title, new { @class = "control-label col-md-2" })
@@ -33,6 +33,15 @@
         <div class="col-md-10">
             @Html.EditorFor(model => model.TitleEn)
             @Html.ValidationMessageFor(model => model.TitleEn)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Visit, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Visit)
+
+            @Html.ValidationMessageFor(model => model.Visit)
         </div>
     </div>
 
@@ -71,6 +80,7 @@
                 @Html.ValidationMessageFor(model => model.Size)
             </div>
         </div>
+
 
         <div class="form-group">
             @Html.LabelFor(model => model.Color.Title, new { @class = "control-label col-md-2" })
@@ -201,23 +211,23 @@
             @Html.ValidationMessageFor(model => model.HasTag)
         </div>
     </div>
-	
-	
-<div class="form-group">
-	@Html.LabelFor(model => model.TagTitle, new { @class = "control-label col-md-2" })
-	<div class="col-md-10">
-		@Html.EditorFor(model => model.TagTitle)
-		@Html.ValidationMessageFor(model => model.TagTitle)
-	</div>
-</div>
 
-<div class="form-group">
-	@Html.LabelFor(model => model.TagTitleEn, new { @class = "control-label col-md-2" })
-	<div class="col-md-10">
-		@Html.EditorFor(model => model.TagTitleEn)
-		@Html.ValidationMessageFor(model => model.TagTitleEn)
-	</div>
-</div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.TagTitle, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.TagTitle)
+            @Html.ValidationMessageFor(model => model.TagTitle)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.TagTitleEn, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.TagTitleEn)
+            @Html.ValidationMessageFor(model => model.TagTitleEn)
+        </div>
+    </div>
 
     <div class="form-group">
         @Html.LabelFor(model => model.TagTitleAr, new { @class = "control-label col-md-2" })
@@ -228,7 +238,7 @@
     </div>
 
 
-<div class="form-group">
+    <div class="form-group">
         @Html.LabelFor(model => model.IsAvailable, new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.IsAvailable)
@@ -236,7 +246,7 @@
         </div>
     </div>
 
-<div class="form-group">
+    <div class="form-group">
         @Html.LabelFor(model => model.IsActive, new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.IsActive)

@@ -5227,6 +5227,10 @@
     <Compile Include="Migrations\202107030556408_V114.Designer.cs">
       <DependentUpon>202107030556408_V114.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107041032192_v115.cs" />
+    <Compile Include="Migrations\202107041032192_v115.Designer.cs">
+      <DependentUpon>202107041032192_v115.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DatabaseContext.cs" />
     <Compile Include="Models\DatabaseContextInitializer.cs" />
@@ -5286,6 +5290,7 @@
     <Compile Include="ViewModels\CareerPostViewModel.cs" />
     <Compile Include="ViewModels\CareerTypeViewModel.cs" />
     <Compile Include="ViewModels\CarreerViewModel.cs" />
+    <Compile Include="ViewModels\DropDownViewModel.cs" />
     <Compile Include="ViewModels\OrderDashboardViewModel.cs" />
     <Compile Include="ViewModels\SpringPromotionViewModel.cs" />
     <Compile Include="ViewModels\BranchListViewMoel.cs" />
@@ -6040,6 +6045,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107030556408_V114.resx">
       <DependentUpon>202107030556408_V114.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107041032192_v115.resx">
+      <DependentUpon>202107041032192_v115.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -871,7 +871,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ریال.
+        ///   Looks up a localized string similar to تومان.
         /// </summary>
         public static string Rial {
             get {

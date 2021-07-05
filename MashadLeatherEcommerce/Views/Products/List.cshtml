@@ -77,10 +77,18 @@
 </section>
 <section>
     <div class="container">
-        <div class="row m-b-20">
+        <div class="row row m-b-20" style="width:300px">
+            @*<select onchange="sortProduct('@Model.ProductCategory.UrlParam', '@ViewBag.PageId')" name="sortProduct" id="sortProduct" class="form-control">
+            <option value="mostVisited">پربازدیدترین</option>
+            <option value="newest">جدیدترین</option>
+            <option value="risingPrice">قیمت از کم به زیاد</option>
+            <option value="downwardPrice">قیمت از زیاد به کم</option>
+        </select>*@
+            @Html.DropDownList("SortItemId", null, new { @class = "form-control" })
         </div>
         <div class="shop">
-            <div class="grid-layout grid-4-columns" data-item="grid-item">
+            <div class="grid-layout grid-4-columns" data-item="grid-item">  
+                
                 @foreach (var product in Model.Products)
                 {
                     <div class="grid-item">
@@ -142,21 +150,21 @@
 					
 
 	        <div class="pagination pagination-simple">
-		        <ul style="direction: rtl;">
-			    
-						
-		        @foreach (var pageItem in Model.PageItems)
-		        {
-			        if (pageItem.IsCurrentPage)
-			        {
-				        <li class="active"><a href="#">@pageItem.PageId</a> </li>
-			        }
-			        else
-			        {
-				        <li><a href="/product/@Model.ProductCategory.UrlParam?pageid=@pageItem.PageId">@pageItem.PageId</a> </li>
-			        }
-		        }
-		        </ul>
+                <ul style="direction: rtl;">
+
+
+                    @foreach (var pageItem in Model.PageItems)
+                    {
+                        if (pageItem.IsCurrentPage)
+                        {
+                            <li class="active"><a href="#">@pageItem.PageId</a> </li>
+                        }
+                        else
+                        {
+                            <li><a href="/product/@Model.ProductCategory.UrlParam?pageid=@pageItem.PageId">@pageItem.PageId</a> </li>
+                        }
+                    }
+                </ul>
 	        </div>
         </div>
     </div>
@@ -264,6 +272,21 @@
         </div>
     </div>
 </div>
+<script>
+
+    function sortProduct(urlparam, pageid) {
+        var sortitem = $('#SortItemId').val();
+        document.location.href = '/Product/' + urlparam + '?pageid=' + pageid + '&sortby=' + sortitem;
+    };
+    {
+        @*onchange = $"`sortProduct('{@Model.ProductCategory.UrlParam}', '{@ViewBag.PageId}')`" }*@
+    let sortItem = document.querySelector("#SortItemId");
+    sortItem.addEventListener("change", () => {
+        sortProduct('@Model.ProductCategory.UrlParam', '@ViewBag.PageId');
+    });
+    }
+</script>
+
 
 
 @*@section scripts{

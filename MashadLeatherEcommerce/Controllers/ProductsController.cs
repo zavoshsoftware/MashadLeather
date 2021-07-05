@@ -1655,8 +1655,9 @@ namespace MashadLeatherEcommerce.Controllers
 
         [AllowAnonymous]
         [Route("product/{urlParam}")]
-        public async Task<ActionResult> List(string urlParam, int? pageId)
+        public async Task<ActionResult> List(string urlParam, int? pageId,string sortby)
         {
+            ViewBag.PageId = pageId;
             Helper.BaseViewModelHelper baseViewModelHelper = new BaseViewModelHelper();
 
             ProductCategory productCategory =
@@ -1672,19 +1673,21 @@ namespace MashadLeatherEcommerce.Controllers
             if (pageId == null)
                 pageId = 1;
 
+            ViewBag.PageId = pageId;
+
             var products = db.Products
                 .Where(current => current.ImageUrl != null && current.IsDeleted == false && current.IsActive &&
                                   current.ParentId == null && current.ProductCategoryId == productCategory.Id).ToList()
                ;
 
             ViewBag.total = products.Count();
-
+            List<ProductListItem> productListItems = GetProductList(products);
 
             ProductListViewModel productList = new ProductListViewModel
             {
                 MenuItem = baseViewModelHelper.GetMenuItems(),
-                Products = GetProductList(products).OrderByDescending(c => c.IsAvailable)
-                    .Skip(_productPagination * (pageId.Value - 1)).Take(_productPagination).ToList().ToList(),
+                Products = GetSortedProducts(productListItems, sortby)
+                    .Skip(_productPagination * (pageId.Value - 1)).Take(_productPagination).ToList(),
                 MenuGalleryGroups = baseViewModelHelper.GetMenuGalleryGroups(),
                 ProductCategory = GetProductCategory(productCategory),
                 Commnets = db.Comments.Where(c => c.ProductCategoryId == productCategory.Id && c.IsActive && c.IsDeleted == false && c.ParentId == null).ToList(),
@@ -1693,7 +1696,46 @@ namespace MashadLeatherEcommerce.Controllers
                 PageItems = productHelper.GetPagination(products.Count(), pageId),
             };
 
+            List<DropDownViewModel> sortDropDowns = new List<DropDownViewModel>()
+            {
+                new DropDownViewModel() {Text = "پربازدیدترین",Value = "mostVisited" },
+                new DropDownViewModel() {Text = "جدیدترین",Value = "newest" },
+                new DropDownViewModel() {Text = "قیمت از کم به زیاد",Value = "risingPrice" },
+                new DropDownViewModel() {Text = "قیمت از زیاد به کم",Value = "downwardPrice" },
+                //........................ and so on
+            };
+
+            ViewBag.SortItemId =
+                new SelectList( sortDropDowns, "Value",
+                    "Text", sortby);
             return View(productList);
+        }
+        public List<ProductListItem> GetSortedProducts(List<ProductListItem> products,string sortBy)
+        {
+            int cnt = products.Where(x => x.IsInPromotion == true).Count();
+            //.OrderByDescending(c => c.IsAvailable)
+            List<ProductListItem> productlist = products;
+            if (sortBy == "newest")
+                productlist = products.OrderByDescending(x => x.CreationDate).ToList();
+            else if (sortBy == "risingPrice")
+            {
+                if(cnt>0)
+                    productlist = products.OrderBy(x => x.DiscountAmount).ToList();
+                else
+                    productlist = products.OrderBy(x => x.Amount).ToList();
+            }
+            else if (sortBy == "downwardPrice")
+            {
+                if (cnt > 0)
+                    productlist = products.OrderByDescending(x => x.DiscountAmount).ToList();
+                else
+                    productlist = products.OrderBy(x => x.Amount).ToList();
+            }
+            else if (sortBy == "mostVisited")
+                productlist = products.OrderByDescending(x => x.Visit).ToList();
+            else
+                productlist = products;
+            return productlist;
         }
 
         private readonly int _productPagination = Convert.ToInt32(WebConfigurationManager.AppSettings["productPaginationSize"]);
@@ -1834,8 +1876,10 @@ namespace MashadLeatherEcommerce.Controllers
                     HasTag = product.HasTag,
                     TagTitle = product.TagTitleSrt,
                     IsAvailable = isAvailable,
-                    Code = product.Code
-                });
+                    Code = product.Code,
+                    CreationDate = product.CreationDate,
+                    Visit = product.Visit
+                }) ;
             }
 
             return productItems;

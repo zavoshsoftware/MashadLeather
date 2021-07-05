@@ -31,6 +31,8 @@ namespace ViewModels
         public string TagTitle { get; set; }
         public bool IsAvailable { get; set; }
         public int  Code { get; set; }
+        public DateTime CreationDate { get; set; }
+        public int? Visit { get; set; }
     }
 
     public class PageItem
