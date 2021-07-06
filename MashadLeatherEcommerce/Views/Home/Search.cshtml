@@ -14,8 +14,24 @@
 </section>
 <section>
     <div class="container">
-        <div class="row m-b-20">
+        <div class="input-group">
+            <span class="input-group-btn">
+                <button class="btn btn-default" id="searchbtn" type="button">جستجو</button>
+            </span>
+            <input type="text" id="searchtxt" value="@Request.QueryString["name"].ToString()" style="text-align:right" class="form-control">
         </div>
+
+        @*<form action="/home/search" method="get" id="searchform">*@
+        <!--<div style="width:380px; position:absolute; right:100px; top:35px; float:right">
+            <div class="row ">
+                <input type="text"  style="text-align:right; width:300px;" id="searchtxt" value="@Request.QueryString["name"].ToString()" style="width:300px;" class="form-control" />
+                <input type="button" id="searchbtn" value="جستجو" class="form-control" />
+            </div>-->
+            @*<div>
+                <input type="button" id="searchbtn" value="جستجو" class="form-control" />
+            </div>*@
+        <!--</div>-->
+         @*</form>*@
         <div class="shop">
             <div class="grid-layout grid-4-columns" data-item="grid-item">
                 @foreach (var product in Model.Products)
@@ -201,7 +217,17 @@
         </div>
     </div>
 </div>
-
+<script>
+    {
+        @* onchange = $"`sortProduct('{@Model.ProductCategory.UrlParam}', '{@ViewBag.PageId}')`"
+    }*@
+        
+        searchbtn.addEventListener("click", () => {
+        let searchItem = document.getElementById("searchtxt").value;
+        document.location.href = '/home/Search/?name=' + searchItem;
+    });
+    }
+</script>
 
 @*@section scripts{
         <script src="~/Scripts/UI/plugins/components/particles-animation.js"></script>

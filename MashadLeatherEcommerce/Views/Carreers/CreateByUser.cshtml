@@ -53,7 +53,7 @@
 			</div>
 			<div class="form-group col-sm-6">
 				<div style="direction:rtl; width:300px">
-					<label class="m-l-xs">وضعیت تاهل*:</label>
+					<label class="m-l-xs" id="married">وضعیت تاهل*:</label>
 					<label class="" for="marriedCheck1">مجرد</label>
 					<input type="radio" name="marriedRadio" class="m-l-10" id="marriedCheck1" value="مجرد">
 					<label class="" for="marriedCheck2">متاهل</label>
@@ -69,7 +69,7 @@
 							@Html.ValidationMessageFor(model => model.NationalCode)*@
 
 				<div style="direction:rtl; width:300px">
-					<label class="m-l-xs">جنسیت*:</label>
+					<label id ="gender" class="m-l-xs">جنسیت*:</label>
 					<label class="" for="gendereCheck1">خانم</label>
 					<input type="radio" name="genderRadio" class="m-l-10" id="gendereCheck1" value="خانم">
 					<label class="" for="genderCheck2">آقا</label>
@@ -113,9 +113,9 @@
 				@Html.ValidationMessageFor(model => model.Address)
 			</div>
 			<div class="form-group col-sm-12">
-				<form style="direction:rtl; width:100%">
-					@Html.LabelFor(model => model.MilitaryStatus)
-					<label class="m-l-xs" for="militaryCheck1">معافیت: تحصیلی</label>
+				<form style="direction:rtl; color:red; width:100%">
+					@Html.LabelFor(model => model.MilitaryStatus, new { @id = "military" })
+					<label class="m-l-xs" id="military" for="militaryCheck1">معافیت: تحصیلی</label>
 					<input type="radio" name="militaryRadio" class="m-l-10" id="militaryCheck1" value="تحصیلی">
 					<label class="" for="militaryCheck2">پزشکی</label>
 					<input type="radio" name="militaryRadio" class="m-l-10" id="militaryCheck2" value="پزشکی">
@@ -129,7 +129,7 @@
 
 
 				<form style="direction:rtl; width:100%">
-					@Html.LabelFor(model => model.PhysicalCondition)
+					@Html.LabelFor(model => model.PhysicalCondition, new { @id = "physical" })
 					<label class="m-l-xs" for="physicalCheck1">کاملا سالم</label>
 					<input type="radio" name="physicalRadio" class="m-l-10" id="physicalCheck1" value="کاملا سالم">
 					<label class="" for="physicalCheck2">بیماری خاص</label>
@@ -148,7 +148,7 @@
 			<div class="form-group col-sm-6">
 
 				<div style="direction:rtl; width:300px">
-					@Html.LabelFor(model => model.IsInsurance)
+					@Html.LabelFor(model => model.IsInsurance, new { @id = "insurance" })
 					<label class="" for="insuranceCheck1">بله</label>
 					<input type="radio" name="insuranceRadio" class="m-l-10" id="insuranceCheck1" value="True">
 					<label class="" for="insuranceCheck2">خیر</label>
@@ -171,7 +171,7 @@
 			</div>
 			<div class="form-group col-sm-6">
 				<div style="direction:rtl; width:100%">
-					@Html.LabelFor(model => model.Education)
+					@Html.LabelFor(model => model.Education, new { @id = "education" })
 					<label class="m-l-xs" for="educationCheck1">زیر دیپلم</label>
 					<input type="radio" name="educationRadio" class="m-l-10" id="educationCheck1" value="زیر دیپلم">
 					<label class="" for="educationCheck2">دیپلم</label>
@@ -861,7 +861,120 @@
 				var InterestedJob = $('#InterestedJob').val();
 				var RequestedPrice = $('#RequestedPrice').val();
 
-
+                if ($('#FullName').val() == '') {
+                    $('#FullName').css('border-color', 'red');
+                }
+                else {
+                    $('#FullName').css('border-color', '');
+				}
+                if ($('#Email').val() == '') {
+                    $('#Email').css('border-color', 'red');
+                }
+                else {
+                    $('#Email').css('border-color', '');
+				}
+                if ($('#NationalCode').val() == '') {
+                    $('#NationalCode').css('border-color', 'red');
+                }
+                else {
+                    $('#NationalCode').css('border-color', '');
+				}
+                if ($('#CellNumber').val() == '') {
+                    $('#CellNumber').css('border-color', 'red');
+                }
+                else {
+                    $('#CellNumber').css('border-color', '');
+				}
+                if ($('input[name="genderRadio"]').is(":checked")) {
+                    $('gender').css('color', '#444');
+                }
+                else {
+					$('#gender').css('color', 'red');
+				}
+				if ($('input[name="marriedRadio"]').is(":checked")) {
+                    $('#married').css('color', '#444');                    
+                }
+                else {
+                    $('#married').css('color', 'red');
+				}
+                if ($('#PeopleInChargeNumber').val() == '') {
+                    $('#PeopleInChargeNumber').css('border-color', 'red');
+                }
+                else {
+                    $('#PeopleInChargeNumber').css('border-color', '');
+				}
+                if ($('#Nationality').val() == '') {
+                    $('#Nationality').css('border-color', 'red');
+                }
+                else {
+                    $('#Nationality').css('border-color', '');
+				}
+                if ($('#PlaceOfBirth').val() == '') {
+                    $('#PlaceOfBirth').css('border-color', 'red');
+                }
+                else {
+                    $('#PlaceOfBirth').css('border-color', '');
+				}
+                if ($('#Address').val() == '') {
+                    $('#Address').css('border-color', 'red');
+                }
+                else {
+                    $('#Address').css('border-color', '');
+				}
+                if ($('#birthdayDate').val() == '') {
+                    $('#birthdayDate').css('border-color', 'red');
+                }
+                else {
+                    $('#birthdayDate').css('border-color', '');
+				}
+                if ($('input[name="militaryRadio"]').is(":checked")) {
+                    $('#military').css('color', '#444');
+                }
+                else {
+                    $('#military').css('color', 'red');
+				}
+                if ($('input[name="physicalRadio"]').is(":checked")) {
+                    $('#physical').css('color', '#444');
+                }
+                else {
+                    $('#physical').css('color', 'red');
+				}
+                if ($('input[name="insuranceRadio"]').is(":checked")) {
+                    $('#insurance').css('color', '#444');
+                }
+                else {
+                    $('#insurance').css('color', 'red');
+				}
+                if ($('#insuranceYear').val() == '') {
+                    $('#insuranceYear').css('border-color', 'red');
+                }
+                else {
+                    $('#insuranceYear').css('border-color', '');
+				}
+                if ($('input[name="educationRadio"]').is(":checked")) {
+                    $('#education').css('color', '#444');
+                }
+                else {
+					$('#education').css('color', 'red');
+				}
+                if ($('#Major').val() == '') {
+                    $('#Major').css('border-color', 'red');
+                }
+                else {
+                    $('#Major').css('border-color', '');
+				}
+                if ($('#LastUniversity').val() == '') {
+                    $('#LastUniversity').css('border-color', 'red');
+                }
+                else {
+                    $('#LastUniversity').css('border-color', '');
+				}
+                if ($('#lastCertificateDate').val() == '') {
+                    $('#lastCertificateDate').css('border-color', 'red');
+                }
+                else {
+                    $('#lastCertificateDate').css('border-color', '');
+                }
 
 
 				if (FullName !== '' &&

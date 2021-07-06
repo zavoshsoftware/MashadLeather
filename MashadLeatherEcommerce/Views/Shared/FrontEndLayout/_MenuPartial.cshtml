@@ -65,11 +65,16 @@
 
 				</ul>
 			</div>
-			<div id="top-search">
-				<form action="/Home/Search" method="post">
-					<input type="text" name="name" style="width:250px" class="form-control" value="" placeholder="جستجو ....">
-				</form>
-			</div>
+
+                <div id="top-search">
+                    <form action="/home/search" method="get" id="searchform">
+                        <input type="text" id="searchTxt" style="width:250px" name="name" class="form-control" value="" placeholder="جستجو ...">
+                    </form>
+                </div>
+                @*@using (@Html.BeginForm("Search","Home", FormMethod.Get))
+                {
+                    <input type="text" name="name" style="width:250px" class="form-control" value="" placeholder="جستجو ....">
+                }*@
 			<div id="mainMenu-trigger">
 				<button class="lines-button x"> <span class="lines"></span> </button>
 			</div>
@@ -168,4 +173,6 @@
 	function dropdownMainMenu(urlParam) {
 		window.location.replace("/category/" + urlParam);
 	};
+
+
 </script>

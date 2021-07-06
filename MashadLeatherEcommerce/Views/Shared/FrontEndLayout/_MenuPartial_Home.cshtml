@@ -152,11 +152,11 @@
 					</nav>
 				</div>
 			</div>
-			<div id="top-search">
-				<form action="Home/Search" method="post">
-					<input type="text" style="width:250px" name="name" class="form-control" value="" placeholder="جستجو ...">
-				</form>
-			</div>
+            <div id="top-search">
+                <form action="home/search" method="get" id="searchform">
+                    <input type="text" id="searchTxt" style="width:250px" name="name" class="form-control" value="" placeholder="جستجو ...">
+                </form>
+            </div>
 		</div>
 	</div>
 </header>
@@ -164,4 +164,6 @@
 	function dropdownMainMenu(urlParam) {
 		window.location.replace("/category/" + urlParam);
 	};
+
+  
 </script>
