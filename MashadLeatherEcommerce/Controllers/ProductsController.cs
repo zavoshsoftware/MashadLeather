@@ -1718,18 +1718,12 @@ namespace MashadLeatherEcommerce.Controllers
             if (sortBy == "newest")
                 productlist = products.OrderByDescending(x => x.CreationDate).ToList();
             else if (sortBy == "risingPrice")
-            {
-                if(cnt>0)
-                    productlist = products.OrderBy(x => x.DiscountAmount).ToList();
-                else
+            {               
                     productlist = products.OrderBy(x => x.Amount).ToList();
             }
             else if (sortBy == "downwardPrice")
             {
-                if (cnt > 0)
-                    productlist = products.OrderByDescending(x => x.DiscountAmount).ToList();
-                else
-                    productlist = products.OrderBy(x => x.Amount).ToList();
+                    productlist = products.OrderByDescending(x => x.Amount).ToList();
             }
             else if (sortBy == "mostVisited")
                 productlist = products.OrderByDescending(x => x.Visit).ToList();

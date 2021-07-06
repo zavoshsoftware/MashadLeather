@@ -301,9 +301,12 @@ namespace MashadLeatherEcommerce.Controllers
         {
             try
             {
+                var order = db.Orders.Where(x => x.Code == Int32.Parse(orderCode)).FirstOrDefault();
                 SmsMessageHelper.SendSms(cellNumber,
                     SmsMessageHelper.OrderCompletionText(orderCode));
 
+                SmsMessageHelper.SendSms("+989155838355",
+                  @"نام مشتری: " + order.User.FirstName + "\r\n\r\n نام خانوادگی مشتری: " + order.User.LastName + "\r\n\r\n مبلغ: " + order.TotalAmount + "\r\n\r\n تاریخ خرید: " + order.CreationDate);
                 return Json("Ok", JsonRequestBehavior.AllowGet);
             }
             catch (Exception e)
