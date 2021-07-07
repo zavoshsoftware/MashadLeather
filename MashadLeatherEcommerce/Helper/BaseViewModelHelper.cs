@@ -19,8 +19,8 @@ namespace Helper
         }
         public List<SiteGalleryGroup> GetMenuGalleryGroups()
         {
-
-            return db.SiteGalleryGroups.Where(c => c.IsDeleted == false && c.IsActive).ToList();
+            return new List<SiteGalleryGroup>();
+            // return db.SiteGalleryGroups.Where(c => c.IsDeleted == false && c.IsActive).ToList();
         }
         public List<MenuProductCategory> GetMenuProductCategory()
         {
